@@ -10,4 +10,6 @@ public class testClass {
     public static void doAThing() {
     	//Test feature commit
     }
+    
+    //Remote edit
 }
