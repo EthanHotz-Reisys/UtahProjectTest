@@ -10,4 +10,8 @@ public class testClass {
     public static void doAThing() {
     	//Test feature commit
     }
+    
+    public void localThing() {
+    	
+    }
 }
