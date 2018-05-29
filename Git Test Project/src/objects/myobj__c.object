@@ -53,10 +53,17 @@
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
         <fullName>autonum__c</fullName>
-        <externalId>true</externalId>
+        <externalId>false</externalId>
         <label>autonum</label>
         <trackTrending>false</trackTrending>
         <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>testField__c</fullName>
+        <label>testField</label>
+		<trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <length>100</length>
     </fields>
     <label>myobj</label>
     <nameField>
