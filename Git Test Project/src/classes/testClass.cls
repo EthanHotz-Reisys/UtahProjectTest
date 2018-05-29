@@ -4,6 +4,7 @@ public class testClass {
     //Branching business
     public testClass() {
     	//Master commit
+    	myobj__c obj = new myobj__c(newField__c = 'test');
     }
     
     
