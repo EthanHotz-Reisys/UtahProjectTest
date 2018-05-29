@@ -12,7 +12,7 @@ public class testClass {
     }
     
     public void localThing() {
-    	
+    	//Auto-deployment test
     }
     
     
