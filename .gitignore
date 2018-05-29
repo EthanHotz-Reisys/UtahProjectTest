@@ -1,0 +1,4 @@
+#Ignore ant config files
+build.properties
+build.xml
+src/package.xml
