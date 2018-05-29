@@ -1,4 +1,5 @@
 #Ignore ant config files
 build.properties
 build.xml
-src/package.xml
+Git Test Project/src/package.xml
+test.txt
