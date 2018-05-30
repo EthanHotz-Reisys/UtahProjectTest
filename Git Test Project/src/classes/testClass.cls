@@ -8,5 +8,6 @@ public class testClass {
     
     public static void patch() {
     	//I am patch
+    	//patch me
     }
 }
