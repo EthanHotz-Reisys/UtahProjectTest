@@ -1,6 +1,5 @@
 public class testClass {
     //Look at me I'ma code!
-    //NO U
     //Branching business
     public testClass() {
     	//Master commit
@@ -17,6 +16,11 @@ public class testClass {
     	//2
     }
     
+    
+    public static void patch() {
+    	//I am patch
+    	//patch me
+    }
     
     //Remote edit
 }
