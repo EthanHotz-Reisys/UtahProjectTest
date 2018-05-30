@@ -16,6 +16,9 @@ public class testClass {
     	//2
     }
     
+    public void remoteCommit() {
+        //Someone else's commit
+    }
     
     public static void patch() {
     	//I am patch
