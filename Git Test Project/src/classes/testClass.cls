@@ -14,4 +14,16 @@ public class testClass {
     public void localThing() {
     	//My local commit
     }
+
+    
+    public void remoteCommit() {
+        //Someone else's commit
+    }
+    
+    public static void patch() {
+    	//I am patch
+    	//patch me
+    }
+    
+    //Remote edit
 }
