@@ -2,4 +2,7 @@
 build.properties
 build.xml
 Git Test Project/src/package.xml
-test.txt
+*test
+*.project
+*.schema
+*.prefs
