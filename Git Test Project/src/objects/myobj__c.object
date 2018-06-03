@@ -52,13 +52,6 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
-        <fullName>autonum__c</fullName>
-        <externalId>false</externalId>
-        <label>autonum</label>
-        <trackTrending>false</trackTrending>
-        <type>AutoNumber</type>
-    </fields>
-    <fields>
         <fullName>newField__c</fullName>
         <label>newField</label>
 		<trackFeedHistory>false</trackFeedHistory>
