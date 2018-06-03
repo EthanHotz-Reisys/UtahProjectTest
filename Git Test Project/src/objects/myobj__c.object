@@ -59,13 +59,6 @@
         <type>AutoNumber</type>
     </fields>
     <fields>
-        <fullName>testField__c</fullName>
-        <label>testField</label>
-		<trackFeedHistory>false</trackFeedHistory>
-        <type>Text</type>
-        <length>100</length>
-    </fields>
-    <fields>
         <fullName>newField__c</fullName>
         <label>newField</label>
 		<trackFeedHistory>false</trackFeedHistory>
