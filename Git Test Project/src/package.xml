@@ -4,5 +4,9 @@
         <members>testClass</members>
         <name>ApexClass</name>
     </types>
+    <types>
+        <members>*</members>
+        <name>CustomObjects</name>
+    </types>
     <version>41.0</version>
 </Package>
