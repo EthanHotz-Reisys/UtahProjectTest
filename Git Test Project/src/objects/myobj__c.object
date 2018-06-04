@@ -52,8 +52,8 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
-        <fullName>newField__c</fullName>
-        <label>newField</label>
+        <fullName>deployField__c</fullName>
+        <label>deployField</label>
 		<trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <length>100</length>
