@@ -10,4 +10,8 @@ public class testClass {
     	//I am patch
     	//patch me
     }
+    
+    public static void FeatureCommit() {
+    	//Feature!
+    }
 }
