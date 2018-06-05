@@ -1,9 +1,10 @@
+
 public class testClass {
     //Look at me I'ma code!
-    //NO U
     //Branching business
     public testClass() {
-    	//UAT commit
+    	//Master commit
+    	//myobj__c obj = new myobj__c(newField__c = 'test');
     }
     
     
@@ -12,9 +13,36 @@ public class testClass {
     }
     
     public void localThing() {
-    	//Auto-deployment test
-    	//2
+    	//My local commit
+    }
+
+    
+    public void remoteCommit() {
+        //Someone else's commit
     }
     
+    public static void patch() {
+    	//I am patch
+    	//patch me
+    }
     
+    //Remote edit
+}
+public class testClass {
+    //Look at me I'ma code!
+    //NO U
+    //Branching business
+}
+    public static void doAThing() {
+    	//Test feature commit
+    }
+    
+    public static void patch() {
+    	//I am patch
+    	//patch me
+    }
+    
+    public static void FeatureCommit() {
+    	//Feature!
+    }
 }
