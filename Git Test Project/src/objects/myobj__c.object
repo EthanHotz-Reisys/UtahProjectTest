@@ -52,13 +52,6 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
-        <fullName>deployField__c</fullName>
-        <label>deployField</label>
-		<trackFeedHistory>false</trackFeedHistory>
-        <type>Text</type>
-        <length>100</length>
-    </fields>
-    <fields>
         <fullName>extraField__c</fullName>
         <label>extraField</label>
 		<trackFeedHistory>false</trackFeedHistory>
