@@ -58,6 +58,13 @@
         <type>Text</type>
         <length>100</length>
     </fields>
+    <fields>
+        <fullName>extraField__c</fullName>
+        <label>extraField</label>
+		<trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <length>100</length>
+    </fields>
     <label>myobj</label>
     <nameField>
         <label>myobj Name</label>
