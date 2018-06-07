@@ -52,8 +52,8 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
-        <fullName>extraField__c</fullName>
-        <label>extraField</label>
+        <fullName>garrrminarar__c</fullName>
+        <label>toast</label>
 		<trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <length>100</length>
