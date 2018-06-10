@@ -1,0 +1,36 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<br>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<div><p class="MsoNormal" style="margin-bottom: 12pt; line-height: normal;"><font face="Times New Roman, Times, serif">Hello
+{!Case__c.ReportedByName__c<span style="background: rgb(248, 248, 248);">}</span>,&nbsp;<o:p></o:p></font></p><p class="MsoNormal" style="margin-bottom: 12pt; line-height: normal;"><font face="Times New Roman, Times, serif">The GovGrants
+Technical Support Staff is in receipt of your inquiry/case. We will follow-up
+with you in the order the issue was received.<o:p></o:p></font></p><p class="MsoNormal" style="margin-bottom: 12pt; line-height: normal;"><font face="Times New Roman, Times, serif">Below is the Case
+Number for your issue.<br>
+<b>Case Number</b>:{!Case__c.CaseNumber__c}<o:p></o:p></font></p><p class="MsoNormal" style="margin-bottom: 12pt; line-height: normal;"><font face="Times New Roman, Times, serif">Please include this
+Case Number in all your future communication on this issue.<o:p></o:p></font></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><font face="Times New Roman, Times, serif"><b>Case Description</b>&nbsp;: {!Case__c.Description__c}<o:p></o:p></font></p><p class="MsoNormal" style="margin-bottom: 12pt; line-height: normal;"><font face="Times New Roman, Times, serif">ref:[{!Case__c.Id}]:ref<o:p></o:p></font></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><font face="Times New Roman, Times, serif">Sincerely,<o:p></o:p></font></p><p class="MsoNormal">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="line-height: 107%;"><font face="Times New Roman, Times, serif">GovGrants Support,<br>
+Phone Number : (703)-480-7600<br>
+Email:GovGrantsSupport@reisystems.com</font></span></p></div>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[<br>]]></td>
+</tr>
+</table>

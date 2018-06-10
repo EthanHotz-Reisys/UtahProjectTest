@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email sent to Grantee with the site visit information.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>GranteeSiteVisitNotifyEmailTemplate</name>
+    <style>formalLetter</style>
+    <subject>Notification: Information for Site Visit {!SiteVisit__c.Name}.</subject>
+    <textOnly>This email is to notify the details of the Site Visit scheduled.
+
+Details of Site Visit {!SiteVisit__c.Name} for the Reporting Period {!SiteVisit__c.ReportingPeriodStartDate__c} to {!SiteVisit__c.ReportingPeriodEndDate__c} are as follows:
+
+Date and Time: {!SiteVisit__c.VisitDateandTime__c}
+
+Location:
+Street: {!SiteVisit__c.Street__c}
+City: {!SiteVisit__c.City__c}
+State: {!SiteVisit__c.StatePicklist__c}
+
+Reason for visit:
+{!SiteVisit__c.ActivityQuestion1__c}
+
+Site Visit Attendees:
+{!SiteVisit__c.SiteVisitPersons__c}</textOnly>
+    <type>html</type>
+</EmailTemplate>

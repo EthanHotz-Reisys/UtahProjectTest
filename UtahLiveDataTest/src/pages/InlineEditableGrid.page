@@ -1,0 +1,10 @@
+<apex:page showHeader="false" title="InlineEditableGrid" standardStylesheets="false" sidebar="false">
+<c:ExternalLibrary />
+
+<apex:composition template="GNT__MasterTemplate">
+    <apex:define name="body">
+        <GNT:FlexGrid tableId="TestEG"/>
+    </apex:define>
+</apex:composition>
+
+</apex:page>

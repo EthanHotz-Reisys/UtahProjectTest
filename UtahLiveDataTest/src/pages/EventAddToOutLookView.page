@@ -1,0 +1,3 @@
+<apex:page controller="EventResponseCtrl" action="/servlet/servlet.OutlookEvent?rnd=1234567890123&id={!eventId}">
+ 
+</apex:page>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email alert notifying Comptroller of Award submission approval</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Award Approval submission to comptroller</name>
+    <style>freeForm</style>
+    <subject>Notification: Award {!Award__c.Name} assigned for your Review and Approval</subject>
+    <textOnly>Subject: Notification of Application {!Application__c.Name} assignment
+
+
+
+This email is to inform you that the Application {!Application__c.Name} has been assigned to you for review and approval.
+
+
+
+{!User.Profile} comments:
+{!ApprovalRequest.Comments}
+
+
+
+To access the task and take relevant action, click the following link: {!Application__c.Link}
+
+If you have any questions or concerns, please contact {!User.FirstName} {!User.LastName} at {!User.Email}.
+
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

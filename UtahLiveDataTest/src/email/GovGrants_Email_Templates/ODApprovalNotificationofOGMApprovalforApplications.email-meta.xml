@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email Template sent to OD Approval: Notification of OGM Approval for Applications</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Notification of Approval for Applications</name>
+    <style>formalLetter</style>
+    <subject>Notification: Review Decision Document for {!ReviewStep__c.AnnouncementNumber__c}</subject>
+    <textOnly>This is notification that the review and certification process for the following funding opportunity has been completed by the Administration and the Grants Management team:
+
+
+
+Below are the details:
+
+Announcement Number: {!ReviewStepTemplate__c.Announcement__c}
+
+Program Name:  {!ReviewStepTemplate__c.Program__c}
+
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

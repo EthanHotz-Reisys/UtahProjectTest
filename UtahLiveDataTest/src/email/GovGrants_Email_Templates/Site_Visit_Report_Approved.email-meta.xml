@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email to GA after report is approved</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Site Visit Report Approved</name>
+    <style>freeForm</style>
+    <subject>Site Visit {!SiteVisit__c.Name} report has been approved</subject>
+    <textOnly>Hello {!SiteVisit__c.GrantAdministrator__c},
+
+This email is to notify that the report associated with Site Visit &quot;{!SiteVisit__c.Name}&quot; is approved by Site Visit Approver and can be sent to Sub recipient. You are requested to go through the site visit details under &quot;Manage Site Visit &quot; in the Activities links for monitoring section in UGMS.
+
+Date and Time:
+
+{!SiteVisit__c.VisitDateandTime__c}
+
+Location:
+
+{!SiteVisit__c.SiteLocation__c}
+
+Reason for visit:
+
+{!SiteVisit__c.ActivityQuestion1__c}
+
+Site Visit Attendees:
+
+{!SiteVisit__c.SiteVisitPersons__c}
+
+Please do not reply to this email. You may contact the Utah Grants Support Team at utahgrants.support@reisystems.com, if you have any questions or need assistance with this task.
+
+Sincerely,
+
+UtahGrants Support Team
+utahgrants.support@reisystems.com
+Ph. No. 703.480.9100</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,15 @@
+<apex:page controller="PreApplicationApprovalCtrl" showHeader="false" sidebar="false" standardStylesheets="false">
+	<c:ExternalLibrary />
+	<apex:composition template="GNT__PhaseTemplate">
+		<apex:define name="body">
+			<div class="panel panel-default">
+				<div class="panel-body panel-body-ext">
+					<apex:form >
+					<GNT:PageMessages />
+					</apex:form>
+					<GNT:FlexTable flexTableName="PreApplicationApproval" tableId="PreApplicationApproval" rendered="true"/>
+				</div>
+			</div>
+   		</apex:define>
+	</apex:composition>
+</apex:page>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE When Fiscal Approver Rejects Progress Report then email sent to Progress Report Owner</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Fiscal Approver Progress Report Rejection</name>
+    <style>formalLetter</style>
+    <subject>Notification: {!ProgressReports__c.Name} requires changes</subject>
+    <textOnly>Hello {!ProgressReports__c.OwnerFullName},
+This email is sent to notify you that the {!ProgressReports__c.ReportType__c} requires changes to be made according to the reviewer comments below:
+
+{!ApprovalRequest.Comments}
+
+Progress Report Details:
+
+Grant Number: {!ProgressReports__c.Grant__c}
+
+{!ProgressReports__c.ReportType__c} Start Date: {!ProgressReports__c.ReportingPeriodStartDate__c}
+
+{!ProgressReports__c.ReportType__c} End Date: {!ProgressReports__c.ReportingPeriodEndDate__c}
+
+
+
+Sincerely,
+
+
+UtahGrants Support Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p style="margin: 0cm 0cm 12pt;"><font face="Times New Roman,Times,Serif" size="3" style="">Dear {!SiteVisit__c.GranteePOC__c},</font></p><p style="margin: 0cm 0cm 12pt;"><font face="Times New Roman, Times, serif"><font size="3">This email is to notify you that, a site visit report&nbsp; for site visit&nbsp;</font>{!SiteVisit__c.SiteVisitName__c}&nbsp;has been generated and requires your response.</font></p><p style="margin: 0cm 0cm 0.0001pt;"><font face="Times New Roman, Times, serif"><br></font></p><p style="margin-right: 0px; margin-bottom: 12pt; margin-left: 0px; color: rgb(34, 34, 34); background: rgb(255, 255, 255); line-height: 18pt;"><font face="Times New Roman, Times, serif"><span style="color: black;">Please do not reply to this email. You may contact the Utah Grants Support Team at&nbsp;<a href="mailto:utahgrants.support@reisystems.com" style="color: rgb(0, 122, 204);">utahgrants.support@reisystems.com</a>, if you have any questions or need assistance with this task.</span><span style="color: black;"></span></font></p><p style="margin-right: 0px; margin-left: 0px; color: rgb(34, 34, 34); background: rgb(255, 255, 255); line-height: 18pt;"><font face="Times New Roman, Times, serif"><span style="color: black;">Sincerely,</span><span style="color: black;"></span></font></p><p style="margin-right: 0px; margin-bottom: 12pt; margin-left: 0px; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255); line-height: 1.5em;"><font face="Times New Roman, Times, serif" style=""><span style="color: black;">UtahGrants Support Team<br></span><span style="color: black;"><a href="mailto:utahgrants.support@reisystems.com" style="color: rgb(0, 122, 204);">utahgrants.support@reisystems.com</a><br>Ph. No. 703.480.9100</span></font></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

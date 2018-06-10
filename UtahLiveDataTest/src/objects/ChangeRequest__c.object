@@ -1,0 +1,1108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>ChangeRequestEdit</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>ChangeRequestView</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>[Business]  Currently used to track pre-award negotiation requests for application only. In the future this can be enhanced for other objects like award or something else.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AnnouncementOwner__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.Announcement__r.Owner:User.FirstName &amp; &apos;&apos; &amp; Application__r.Announcement__r.Owner:User.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AnnouncementOwner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AppChangeRequestStatus__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Application__r.ChangeRequestStatus__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AppChangeRequestStatus</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApplicantAgreedOn__c</fullName>
+        <externalId>false</externalId>
+        <label>Applicant Agreed On</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ApplicantApprovalStatus__c</fullName>
+        <externalId>false</externalId>
+        <label>Applicant Approval Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Denied</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ApplicantComments__c</fullName>
+        <description>Comments by the Applicant</description>
+        <externalId>false</externalId>
+        <label>Applicant Comments</label>
+        <length>130000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ApplicantName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.Owner:User.FirstName &amp; &apos; &apos; &amp; Application__r.Owner:User.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Applicant Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApplicantReadDecision__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ($User.ProfileName__c ==&apos;Project Admin&apos; || $User.ProfileName__c ==&apos;Project Staff&apos;) &amp;&amp;  TEXT(Status__c)=&apos;In Progress&apos;, false, true)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ApplicantReadDecision</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Applicant__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Applicant</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Negotiation_Requests1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ApplicationHtmlLink__c</fullName>
+        <externalId>false</externalId>
+        <formula>HyperLink(LEFT($Api.Partner_Server_URL_260, FIND( &apos;/services&apos;, $Api.Partner_Server_URL_260))&amp;&quot;apex/ApplicationView?id=&quot;&amp;Application__r.Id ,Application__r.Name,&apos;_blank&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Application</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApplicationSections__c</fullName>
+        <externalId>false</externalId>
+        <label>Application Sections</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Applicant Profile</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Overview : Application Overview</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Overview : Organization Contact Information</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Overview : Project Abstract</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Budget Details</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Attachments :  Business Forms</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Attachments : Attachments</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Attachments : Notes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Miscellaneous</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ApplicationSnapshotId__c</fullName>
+        <description>Id of the attachment of Application taken at time of resubmission</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Id of the attachment of Application taken at time of resubmission</inlineHelpText>
+        <label>Application Snapshot Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApplicationSnapshot__c</fullName>
+        <description>Id of the snapshot of Application taken at time of resubmission</description>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(ApplicationSnapshotId__c)),HYPERLINK(&apos;/servlet/servlet.FileDownload?file=&apos;+  ApplicationSnapshotId__c , &apos;View Application&apos; ),&apos;&apos;)</formula>
+        <inlineHelpText>Id of the snapshot of Application taken at time of resubmission</inlineHelpText>
+        <label>Application Submission</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApplicationTitle__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.Title__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Application Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application__c</fullName>
+        <externalId>false</externalId>
+        <label>Application</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipLabel>Negotiation Requests</relationshipLabel>
+        <relationshipName>Change_Requests</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Approver__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Negotiation_Requests</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AwardCreationStatus__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Application__r.AwardDecisionStatus__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AwardCreationStatus</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Award__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Award</label>
+        <referenceTo>Award__c</referenceTo>
+        <relationshipName>Change_Requests</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ChangeReqReview__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Review</label>
+        <referenceTo>Review__c</referenceTo>
+        <relationshipLabel>Negotiation Requests</relationshipLabel>
+        <relationshipName>Negotiation_Requests</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ChangeRequestPendingOn__c</fullName>
+        <description>Indicator  which will specify whether the task is pending on Applicant/Approver user</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicator  which will specify whether the task is pending on Applicant/Approver user</inlineHelpText>
+        <label>Change Request Pending On</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Internal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>External</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ChangeRequestedOnSections__c</fullName>
+        <externalId>false</externalId>
+        <label>Change Requested On Sections</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <description>Change request comment are captured here.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Change request comment are captured here.</inlineHelpText>
+        <label>Description</label>
+        <length>131070</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DEComments__c</fullName>
+        <externalId>false</externalId>
+        <label>Data Evaluator Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DEDecisionIndicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>DEDecisionIndicator</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DEDecision__c</fullName>
+        <externalId>false</externalId>
+        <label>Data Evaluator Decision</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DEReadDecision__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( $User.Id != Application__r.DataEvaluator__r.Id , true, IF(DETaskStatus__c,true,false))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DEReadDecision</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DETaskStatus__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>DETaskStatus</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Decision__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(PODecision__c, &quot;Approved&quot;) &amp;&amp; PODecisionIndicator__c == true, &apos;&lt;i class=&quot;fa fa-thumbs-up&quot; title=&quot;Approved by Project Officer&quot;&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp;&apos;,IF(ISPICKVAL(PODecision__c,&quot;Rejected&quot;) &amp;&amp; PODecisionIndicator__c == true, &apos;&lt;i class=&quot;fa fa-thumbs-down&quot; title=&quot;Rejected by Project Officer&quot;&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp;&apos;,&apos;&lt;i class=&quot;fa fa-clock-o&quot; title=&quot;Project Officer decision is pending&quot;&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp;&apos;))+ 
+
+IF(ISPICKVAL(GMDecision__c, &quot;Approved&quot;) &amp;&amp; GMDecisionIndicator__c == true , &apos;&lt;i class=&quot;fa fa-thumbs-up&quot; title=&quot;Approved by Grant Monitor&quot;&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp;&apos;,IF(ISPICKVAL(GMDecision__c,&quot;Rejected&quot;) &amp;&amp; GMDecisionIndicator__c == true, &apos;&lt;i class=&quot;fa fa-thumbs-down&quot; title=&quot;Rejected by Grant Monitor&quot;&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp;&apos;,&apos;&lt;i class=&quot;fa fa-clock-o&quot; title=&quot;Grant Monitor decision is pending&quot;&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp;&apos;))+ 
+
+IF(ISPICKVAL(DEDecision__c, &quot;Approved&quot;) &amp;&amp; DEDecisionIndicator__c == true , &apos;&lt;i class=&quot;fa fa-thumbs-up&quot; title=&quot;Approved by Data Evaluator&quot;&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp;&apos;,IF(ISPICKVAL(DEDecision__c,&quot;Rejected&quot;) &amp;&amp; DEDecisionIndicator__c == true, &apos;&lt;i class=&quot;fa fa-thumbs-down&quot; title=&quot;Rejected by Data Evaluator&quot;&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp;&apos;,&apos;&lt;i class=&quot;fa fa-clock-o&quot; title=&quot;Data Evaluator decision is pending&quot;&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp;&apos;))</formula>
+        <label>Decision</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DisplayApplicantComments__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(TEXT(Status__c ) = &quot;Submitted By Applicant&quot; || TEXT(Status__c ) = &quot;Completed By Internal&quot; , false, true)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DisplayApplicantComments</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DisplayCREditButton__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Status__c, &quot;Not Initiated&quot;),false,true)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DisplayCREditButton</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DisplayEditButtonPM__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF((TEXT(Status__c) = &apos;Initiated&apos;) , true, false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DisplayEditButtonPM</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DisplayInitiateButton__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(ISPICKVAL(Status__c, &apos;Not Initiated&apos;) &amp;&amp; ISPICKVAL(Application__r.Status__c,&apos;Revision Initiated&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DisplayInitiateButton</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DisplayPOGMDEButton__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF((TEXT(Status__c) = &quot;Submitted By Applicant&quot;),IF($User.Id = Application__r.ProjectOfficer__r.Id &amp;&amp; TEXT(PODecision__c) = &apos;None&apos;,false,IF($User.Id = Application__r.DataEvaluator__r.Id &amp;&amp; TEXT(DEDecision__c) = &apos;None&apos;,false,IF($User.Id =  Application__r.GrantMonitor__r.Id &amp;&amp; TEXT(GMDecision__c) = &apos;None&apos;,false,true))),true)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DisplayPOGMDEButton</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DueDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ExternalOrganization__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.ExternalOrganization__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>External Organization</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FundingOpportunityTitle__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.Announcement__r.AnnouncementName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Funding Opportunity Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GMComments__c</fullName>
+        <externalId>false</externalId>
+        <label>Grant Monitor Comments</label>
+        <length>130000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>GMDecisionIndicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>GMDecisionIndicator</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>GMDecision__c</fullName>
+        <externalId>false</externalId>
+        <label>Grant Monitor Decision</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>GMReadDecision__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( $User.Id != Application__r.GrantMonitor__r.Id , true, IF(GMTaskStatus__c,true,false))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>GMReadDecision</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>GMTaskStatus__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>GMTaskStatus</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>GrantId__c</fullName>
+        <externalId>false</externalId>
+        <formula>Grant__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>GrantId</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Grant__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Grant</label>
+        <referenceTo>Grant__c</referenceTo>
+        <relationshipLabel>Negotiation Requests</relationshipLabel>
+        <relationshipName>Negotiation_Requests</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>GranteeNotified__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Grantee notified of pending negotiation</description>
+        <externalId>false</externalId>
+        <label>Grantee Notified</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideApplicantEdit__c</fullName>
+        <externalId>false</externalId>
+        <formula>OR($User.Id != Application__r.OwnerId, NOT(ISPICKVAL(Status__c,&apos;Initiated&apos;)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideApplicantEdit</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideDEDecision__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( AND( $User.ProfileName__c  = &apos;Program Manager&apos;, DETaskStatus__c == false) , true, false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideDEDecision</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideEditBtnNotOwner__c</fullName>
+        <description>Hides the edit button if HideEditButton__c returns true and if the current user is not the owner of the change request</description>
+        <externalId>false</externalId>
+        <formula>IF(OR(HideEditBtn__c, NotOwner__c), TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideEditBtnNotOwner</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideEditBtn__c</fullName>
+        <externalId>false</externalId>
+        <formula>OR( AND(OR($Profile.Name =&apos;SPI&apos;,$Profile.Name =&apos;SPA&apos;,$Profile.Name =&apos;SME&apos;),(ISPICKVAL(Status__c, &apos;Submitted&apos;))
+  ),
+  AND(NOT(OR($Profile.Name =&apos;SPI&apos;,$Profile.Name =&apos;SPA&apos;,$Profile.Name =&apos;SME&apos;)) 
+   ,NOT(ISPICKVAL(Status__c,&apos;Not Initiated&apos;)))
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide Edit Btn</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideEditCRPanel__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(TEXT( Status__c )=&apos;Completed by Internal&apos; || TEXT( Status__c )=&apos;Review in Progress&apos; || TEXT( Status__c )=&apos;Review Completed&apos;, true, IF(TEXT( Status__c )=&apos;Submitted By Applicant&apos; &amp;&amp;  $User.IsApplicant__c ,true,IF(HideSubmitTaskButton__c,true,false)
+
+))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideEditCRPanel</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideForNotUOVC__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.HideForNotUOVC__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideForNotUOVC</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideForNotUSBE__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.HideForNotUSBE__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideForNotUSBE</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideForOneStepReview__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Application__r.Announcement__r.Program__r.ReviewProcess__c, &apos;One step review&apos;), TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideForOneStepReview</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideForThreeStepReview__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Application__r.Announcement__r.Program__r.ReviewProcess__c, &apos;Three step review&apos;), TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideForThreeStepReview</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideGMDecision__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( AND( $User.ProfileName__c  = &apos;Program Manager&apos;,  GMTaskStatus__c  == false) , true, false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideGMDecision</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideNegotiationButton__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(ISPICKVAL(Application__r.Status__c,&apos;Revision Initiated&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideNegotiationButton</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideNewRevision__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AwardCreationStatus__c=&apos;Award Created&apos;,True,False)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideNewRevision</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HidePODecision__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( AND( $User.ProfileName__c  = &apos;Program Manager&apos;,  POTaskStatus__c == false) , true, false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HidePODecision</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideSubmitRequestButton__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ISPICKVAL(Status__c , &apos;Submitted&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideSubmitRequestButton</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideSubmitTaskButton__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF($User.Id = Application__r.DataEvaluator__r.Id &amp;&amp; DETaskStatus__c=true,true,
+IF($User.Id = Application__r.GrantMonitor__r.Id &amp;&amp; GMTaskStatus__c=true,true,
+IF($User.Id = Application__r.ProjectOfficer__r.Id &amp;&amp; POTaskStatus__c=true,true,
+IF($User.IsApplicant__c, true,
+IF(TEXT(Status__c) &lt;&gt; &apos;Review in Progress&apos;, true,
+IF($User.Id = Application__r.DataEvaluator__r.Id &amp;&amp; DETaskStatus__c =false &amp;&amp;TEXT(DEDecision__c) &lt;&gt; &apos;None&apos; &amp;&amp; NOT(ISBLANK(TEXT(DEDecision__c))) ,false,
+IF($User.Id = Application__r.GrantMonitor__r.Id &amp;&amp; GMTaskStatus__c=false &amp;&amp; TEXT(GMDecision__c) &lt;&gt; &apos;None&apos; &amp;&amp; NOT(ISBLANK(TEXT(GMDecision__c))),false,
+IF($User.Id = Application__r.ProjectOfficer__r.Id &amp;&amp; POTaskStatus__c=false &amp;&amp; TEXT(PODecision__c) &lt;&gt; &apos;None&apos; &amp;&amp; NOT(ISBLANK(TEXT(PODecision__c))),false,true
+))))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideSubmitTaskButton</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>IsApplicant__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(($User.IsApplicant__c ||  $User.IsExternalUser__c || TEXT(Status__c) &lt;&gt; &quot;Submitted By Applicant&quot; || ISNULL(Name)), true, false )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>IsApplicant</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsOpen__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (ISPICKVAL(Status__c,&apos;Change Request Assigned&apos;), true, false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Open</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ManagementCorrections__c</fullName>
+        <description>Corrections specified in Management Review Form are copied to this field</description>
+        <externalId>false</externalId>
+        <label>ManagementCorrections</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>NotOwner__c</fullName>
+        <externalId>false</externalId>
+        <formula>$User.Id != CreatedById</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NotOwner</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>POComments__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Officer Comments</label>
+        <length>130000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PODecisionIndicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>PODecisionIndicator</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PODecision__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Officer Decision</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>POReadDecision__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( $User.Id !=  Application__r.ProjectOfficer__r.Id , true, IF(POTaskStatus__c,true,false))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>POReadDecision</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>POTaskStatus__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>POTaskStatus</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PreAwardNameTemplate__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.Name +&apos;-&apos;+&apos;PA&apos;+&apos;-&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Pre-Award Name Template</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProgramName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.Announcement__r.Program__r.ProgramName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Program Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReadOverview__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF((TEXT(Status__c)!=&apos;Not Initiated&apos;) , true, false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ReadDecisionOverview</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RecordCreatedBy__c</fullName>
+        <externalId>false</externalId>
+        <formula>ENCODED:{!ID:Owner:User.FirstName} &amp; &apos; &apos; &amp;  {!ID:Owner:User.LastName}</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>RecordCreatedBy</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RejectionReason__c</fullName>
+        <description>Field Stores reason for which applicant rejected the change request</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Field Stores reason for which applicant rejected the change request</inlineHelpText>
+        <label>Applicant Rejection Reason</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>RequestName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>RequestName</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReviewerAgreedOn__c</fullName>
+        <externalId>false</externalId>
+        <label>Grantor Agreed On</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ReviewerApprovalStatus__c</fullName>
+        <externalId>false</externalId>
+        <label>Reviewer Approval Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Denied</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SendBackComment__c</fullName>
+        <externalId>false</externalId>
+        <label>Send Back Comment</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Initiated</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Initiated</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submitted for Approval</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Change</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UserIsApplicant__c</fullName>
+        <externalId>false</externalId>
+        <formula>$User.IsApplicant__c</formula>
+        <label>UserIsApplicant</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Negotiation Request</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CR-{000}</displayFormat>
+        <label>ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Negotiation Requests</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Due_Date_Validation_Rule</fullName>
+        <active>true</active>
+        <errorConditionFormula>DueDate__c &lt; Today()   &amp;&amp;   TEXT(Status__c)  = &apos;Not Initiated&apos;</errorConditionFormula>
+        <errorMessage>Due date cannot be earlier than today’s date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>MaxCharValidation</fullName>
+        <active>false</active>
+        <errorConditionFormula>LEN(Comments__c )&gt; 130000</errorConditionFormula>
+        <errorDisplayField>Comments__c</errorDisplayField>
+        <errorMessage>Maximum character count exceeded.</errorMessage>
+    </validationRules>
+</CustomObject>

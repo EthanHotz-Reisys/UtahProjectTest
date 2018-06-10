@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>IN USE This email is sent to the roles and responsibilities owner assoicated with Announcement  to Review the Opportunity</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>GG Review the Opportunity</name>
+    <style>formalLetter</style>
+    <subject>{!RolesAndResponsibilities__c.Position__c} role has been assigned to review Funding Opportunity</subject>
+    <textOnly>Subject: You have been assigned to support the activities related to the Funding Opportunity{!RolesAndResponsibilities__c.Announcement__c}.
+
+Hello {!GO__RolesAndResponsibilities__c.GO__Name__c},
+
+You have been assigned as the {!RolesAndResponsibilities__c.Position__c}for the Funding Opportunity # {!RolesAndResponsibilities__c.Announcement__c}.
+
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,2249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>PreApplicationEdit</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>PreApplicationView</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>[Business] Pre-Application is a trimmed version of the Application with limited information</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Acknowledgement__c</fullName>
+        <externalId>false</externalId>
+        <label>Acknowledgement</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Agreement1__c</fullName>
+        <description>This field is used in Grantor References and Certification Form</description>
+        <externalId>false</externalId>
+        <label>Agreement1</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Agreement2__c</fullName>
+        <description>This field is used in Grantor Pre-Application Education form.</description>
+        <externalId>false</externalId>
+        <label>Agreement2</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Agreement3__c</fullName>
+        <description>This field is used in Grantor Pre-Application Health form.</description>
+        <externalId>false</externalId>
+        <label>Agreement3</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Agreement4__c</fullName>
+        <description>This field is used in Grantor General Pre-Application form.</description>
+        <externalId>false</externalId>
+        <label>Agreement4</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Agreement5__c</fullName>
+        <description>This field is used in Grantor Lobbying Form</description>
+        <externalId>false</externalId>
+        <label>Agreement5</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AllocationPercentage__c</fullName>
+        <description>Allocation Percentage for Formula Grants</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Allocation Percentage for Formula Grants</inlineHelpText>
+        <label>AllocationPercentage</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AmountAllocated__c</fullName>
+        <description>Amount Allocated for Pre application for Formula Grants</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Amount Allocated for Pre application for Formula Grants</inlineHelpText>
+        <label>Amount Allocated</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Announcement__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Announcement</label>
+        <referenceTo>Announcement__c</referenceTo>
+        <relationshipName>PreApplications</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ApplicantNameAcknowledge__c</fullName>
+        <externalId>false</externalId>
+        <label>Applicant&apos;s Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApplicationCreatedOutside__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Announcement__r.ApplicationCreatedOutside__c)== &apos;Yes&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Application Created Outside System</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ApplicationDeadline__c</fullName>
+        <description>The Deadline by by which the Application must be submitted</description>
+        <externalId>false</externalId>
+        <label>Application Deadline</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ApplicationID__c</fullName>
+        <externalId>false</externalId>
+        <label>Application ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApplicationType__c</fullName>
+        <description>The type of application.</description>
+        <externalId>false</externalId>
+        <label>Application Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>TBD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TBD1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TBD2</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AssignedTo__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Project Director populates this field for assigning to individual user</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Project Director populates this field for assigning to individual user</inlineHelpText>
+        <label>Assigned To</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Preapplications2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AwardCeiling__c</fullName>
+        <description>Award Ceiling for the Oppoirtunity</description>
+        <externalId>false</externalId>
+        <label>Award Ceiling</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AwardFloor__c</fullName>
+        <description>The Lowest amount that the Announcement will pay for</description>
+        <externalId>false</externalId>
+        <label>Award Floor</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AwardingAgencyContact__c</fullName>
+        <description>The Contact from Agency who is the point of contact</description>
+        <externalId>false</externalId>
+        <label>Awarding Agency Contact</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BudegetInformation__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Application Budget Category</label>
+        <referenceTo>ApplicationBudgetCategory2__c</referenceTo>
+        <relationshipLabel>Pre-Applications</relationshipLabel>
+        <relationshipName>Pre_Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Budget__c</fullName>
+        <description>The budget Field on the Announcement object which is carried over to Pre-Application or Application</description>
+        <externalId>false</externalId>
+        <label>Budget</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CFDANumber__c</fullName>
+        <description>The CFDA number for the Announcement which is announced by the  Federal Program</description>
+        <externalId>false</externalId>
+        <label>CFDA Number</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CertificationTitle1__c</fullName>
+        <externalId>false</externalId>
+        <label>Certification Title 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CertificationTitle2__c</fullName>
+        <externalId>false</externalId>
+        <label>Certification Title 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CertificationTitle3__c</fullName>
+        <externalId>false</externalId>
+        <label>Certification Title 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ContactSecondary__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Pre-Applications</relationshipLabel>
+        <relationshipName>Pre_Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ContextReference1__c</fullName>
+        <externalId>false</externalId>
+        <label>Context Reference</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ContextReference2__c</fullName>
+        <externalId>false</externalId>
+        <label>Context Reference</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ContextReference3__c</fullName>
+        <externalId>false</externalId>
+        <label>Context Reference</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CreateApplication__c</fullName>
+        <description>Button logic to hide /show the Create Application Button</description>
+        <externalId>false</externalId>
+        <formula>OR(ISPICKVAL( Status__c , &apos;Created&apos;),ISPICKVAL( Status__c , &apos;Reviewed&apos;),ISPICKVAL( Status__c , &apos;Rejected&apos;),ISPICKVAL( Status__c , &apos;Converted to Application&apos;),ISPICKVAL(Status__c , &apos;Submitted for Approval&apos;),ISPICKVAL( Status__c , &apos;Approved&apos;))</formula>
+        <label>Create Application</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CreateHistory__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Decision field to specify that the history record must be created</description>
+        <externalId>false</externalId>
+        <label>Create History</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CreatedDate__c</fullName>
+        <description>Created Date created for displaying just the Date field on the page Details layout</description>
+        <externalId>false</externalId>
+        <formula>DATEVALUE(CreatedDate)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Created Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Of_Acknowledgement__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Of Acknowledgement</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DaysLeft__c</fullName>
+        <externalId>false</externalId>
+        <formula>42</formula>
+        <inlineHelpText>Days left to apply</inlineHelpText>
+        <label>Days Left</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description1__c</fullName>
+        <externalId>false</externalId>
+        <label>Description 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description2__c</fullName>
+        <externalId>false</externalId>
+        <label>Description 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description3__c</fullName>
+        <externalId>false</externalId>
+        <label>Description 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DisplayApprovalButton__c</fullName>
+        <externalId>false</externalId>
+        <formula>OR( 
+(ISPICKVAL(Status__c , &apos;Approved&apos;)), 
+ISPICKVAL( Status__c , &apos;Converted to Application&apos;), 
+ISPICKVAL( Status__c , &apos;Submitted for Approval&apos;), 
+ISPICKVAL( Status__c , &apos;Created&apos;), 
+
+(ISPICKVAL(Status__c , &apos;Sent to Grants.gov&apos;)), 
+(FormsValidated__c == false) 
+
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Display Approval Button</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DocumentDescription1__c</fullName>
+        <externalId>false</externalId>
+        <label>Document Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DocumentDescription2__c</fullName>
+        <externalId>false</externalId>
+        <label>Document Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DocumentDescription3__c</fullName>
+        <externalId>false</externalId>
+        <label>Document Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DocumentName1__c</fullName>
+        <externalId>false</externalId>
+        <label>Document Name 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DocumentName2__c</fullName>
+        <externalId>false</externalId>
+        <label>Document Name 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DocumentName3__c</fullName>
+        <externalId>false</externalId>
+        <label>Document Name 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DueDate__c</fullName>
+        <externalId>false</externalId>
+        <formula>Announcement__r.PreApplicationDeadlineWithDateTime__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EditButton__c</fullName>
+        <externalId>false</externalId>
+        <formula>OR(ISPICKVAL( Status__c , &apos;Converted to Application&apos;),ISPICKVAL( Status__c , &apos;Submitted to Grantor&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>EditButton</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EligibilityDescription__c</fullName>
+        <externalId>false</externalId>
+        <label>Eligibility Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EmailRef1__c</fullName>
+        <externalId>false</externalId>
+        <label>EmailRef1</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmailRef2__c</fullName>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmailRef3__c</fullName>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EnablePreApplicationSubmissionEmail__c</fullName>
+        <externalId>false</externalId>
+        <formula>Announcement__r.EnablePreApplicationSubmissionEmail__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Enable PreApplication Submission Email</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ExpectedOutcomeFromEduProgram__c</fullName>
+        <externalId>false</externalId>
+        <label>Expected Outcome From This Program</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ExpectedOutcomeFromThisProgram__c</fullName>
+        <externalId>false</externalId>
+        <label>Expected Outcome From This Program</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ExternalOrganization__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Which organization owns the pre-application?</inlineHelpText>
+        <label>External Organization</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Preapplications</relationshipLabel>
+        <relationshipName>Preapplications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FederalAwardingAgency__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Federal Agency which has Published this Announcement /Opportunity</description>
+        <externalId>false</externalId>
+        <label>Federal Awarding Agency</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Pre-Applications (Federal Awarding Agency)</relationshipLabel>
+        <relationshipName>Pre_Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FederalProgram__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Federal Program</label>
+        <referenceTo>Program__c</referenceTo>
+        <relationshipLabel>Pre-Applications (Federal Program)</relationshipLabel>
+        <relationshipName>Pre_Applications1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FinalApproverComments__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Field used by the Final Approver to make comments on the Pre-Application during the Pre-Application Approval or Rejection Process</inlineHelpText>
+        <label>Final Approver Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FormsCompleted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Field to identify that the Forms are completed</description>
+        <externalId>false</externalId>
+        <label>Forms Completed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FormsValidated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is used for validation of form depends upon percentage of form filled.</description>
+        <externalId>false</externalId>
+        <label>Forms Validated?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FormulaVariable1__c</fullName>
+        <description>Variable 1 for Formula Grants</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Variable 1 for Formula Grants</inlineHelpText>
+        <label># of Entities</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FormulaVariable2__c</fullName>
+        <description>Variable 2  for Formula Grants</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Variable 2  for Formula Grants</inlineHelpText>
+        <label>Avg Participants/Entity</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FormulaVariable3__c</fullName>
+        <description>Variable 3  for Formula Grants</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Variable 3  for Formula Grants</inlineHelpText>
+        <label>Special Factors</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FundingOpportunityNumber__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK( 
+LEFT($Api.Enterprise_Server_URL_300, FIND(&apos;/services&apos;,$Api.Enterprise_Server_URL_300))
++ Announcement__r.Id, 
+Announcement__r.AnnouncementNumber__c 
+
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Funding Opportunity Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GranteeApproval__c</fullName>
+        <externalId>false</externalId>
+        <formula>OR( 
+(ISPICKVAL(Status__c , &apos;Approved&apos;)), 
+ISPICKVAL( Status__c , &apos;Converted to Application&apos;), 
+ISPICKVAL( Status__c , &apos;Submitted for Approval&apos;), 
+ISPICKVAL( Status__c , &apos;Submitted to Grantor&apos;),
+(ISPICKVAL(Status__c , &apos;Sent to Grants.gov&apos;))
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Display Grantee Submit for Approval</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>GranteeRequestedAmount__c</fullName>
+        <description>Requested amount as rollup summary</description>
+        <externalId>false</externalId>
+        <label>Requested Amount</label>
+        <summarizedField>PreApplicationBudgetCategory__c.GrantorAmount__c</summarizedField>
+        <summaryFilterItems>
+            <field>PreApplicationBudgetCategory__c.IsFirstBudgetPeriodRelated__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>PreApplicationBudgetCategory__c.PreApplication__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>GranteeTypeofSubmission__c</fullName>
+        <externalId>false</externalId>
+        <label>Grantee Type of Submission</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Application</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pre-Application</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>HideNewReviewBtn__c</fullName>
+        <description>Logic for Hiding New Review Button</description>
+        <externalId>false</externalId>
+        <formula>NOT(OR(ISPICKVAL(Status__c,&apos;Created&apos;),ISPICKVAL(Status__c,&apos;Internally Reviewed&apos;)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Logic for Hiding New Review Button</inlineHelpText>
+        <label>Hide New Review Btn</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideShareBtn__c</fullName>
+        <description>Show Share button only to record owner</description>
+        <externalId>false</externalId>
+        <formula>OwnerId !=  $User.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Show Share button only to record owner</inlineHelpText>
+        <label>HideShareBtn</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideSubmitBtn__c</fullName>
+        <externalId>false</externalId>
+        <formula>OR(
+    NOT(OR(Text(Status__c) = &apos;Created&apos;,Text(Status__c) = &apos;Reviewed&apos;) ),
+    DaysLeft__c&lt;0
+    )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideSubmitBtn</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HistoryParentId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>History Parent Id</label>
+        <referenceTo>PreApplication__c</referenceTo>
+        <relationshipName>PreApplicationHistory</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>HistoryReason__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is used to track Object History</inlineHelpText>
+        <label>History Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>IfYesprovidetheamount__c</fullName>
+        <externalId>false</externalId>
+        <label>If Yes, provide the amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>InternalStatus__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(AND(NumberOfReviewersAssigned__c &gt; 0, NumberOfReviewsInProgress__c =0 , NumberOfReviewsFinalized__c =0),&apos;Reviewers Assigned&apos;,
+If(AND(NumberOfReviewersAssigned__c = NumberOfReviewsFinalized__c, NumberOfReviewsInProgress__c =0),&apos;Reviews Finalized&apos;,
+&apos;Reviews In Progress&apos;
+)
+)</formula>
+        <inlineHelpText>Field to find out the status of application. To be used by an internal user ONLY.</inlineHelpText>
+        <label>Internal Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>IsDataAttached__c</fullName>
+        <externalId>false</externalId>
+        <label>Is Data Attached</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IsFormulaGrant__c</fullName>
+        <description>Is this Pre Application related to a Formula Grant Announcement?</description>
+        <externalId>false</externalId>
+        <formula>Announcement__r.IsFormulaGrant__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Is this Pre Application related to a Formula Grant Announcement</inlineHelpText>
+        <label>Is Formula Grant</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsHistory__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is History</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MatchingAmountProvided__c</fullName>
+        <externalId>false</externalId>
+        <label>Matching Amount Provided?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>NameTemplate__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( $Setup.GNT__UserPreferences__c.GNT__ActiveAppName__c = &apos;StateasGrantor&apos;,&apos;PR-&apos;+ Announcement__r.Program__r.Account__r.Code__c +&apos;-&apos;,&apos;PR-&apos;+ Announcement__r.Program__r.Account__r.Code__c +&apos;-&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Defines the template for the Name field which gets populated automatically by the trigger</inlineHelpText>
+        <label>Name Template</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NumberOfPatientsBenefited__c</fullName>
+        <externalId>false</externalId>
+        <label>Number Of Patients Benefited</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NumberOfReviewersAssigned__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Reviewers Assigned</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NumberOfReviewsFinalized__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>System populated. Indicates the number of reviews which are &quot;Review Completed&quot; for this pre-application</inlineHelpText>
+        <label>Number of Reviews Finalized</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NumberOfReviewsInProgress__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>System populated. Indicates the number of reviews which are in progress for this pre-application</inlineHelpText>
+        <label>Number of Reviews In Progress</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NumberOfStepsAddedTo__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Steps Added To</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NumberOfStudentsBenefited__c</fullName>
+        <externalId>false</externalId>
+        <label>Number Of Students Benefited</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OpportunityCategory__c</fullName>
+        <description>Category of the Opportunity</description>
+        <externalId>false</externalId>
+        <label>Opportunity Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Discretionary</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Mandatory</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Continuation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Earmark</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>OpportunityNumber__c</fullName>
+        <description>Field to capture the  Opportunity number from the Opportunity</description>
+        <externalId>false</externalId>
+        <label>Opportunity Number</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OpportunityTitle__c</fullName>
+        <description>Opportunity name of the opportunity for which the PreApplication is being created</description>
+        <externalId>false</externalId>
+        <label>Opportunity Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrgAddress1__c</fullName>
+        <externalId>false</externalId>
+        <label>Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>OrgAddress2__c</fullName>
+        <externalId>false</externalId>
+        <label>Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>OrgAddress3__c</fullName>
+        <externalId>false</externalId>
+        <label>Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>OrganizationAddress__c</fullName>
+        <externalId>false</externalId>
+        <formula>ExternalOrganization__r.FullBillingAddress__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Organization Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrganizationNameRef1__c</fullName>
+        <externalId>false</externalId>
+        <label>Organization Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>OrganizationNameRef2__c</fullName>
+        <externalId>false</externalId>
+        <label>Organization Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrganizationNameRef3__c</fullName>
+        <externalId>false</externalId>
+        <label>Organization Name 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrganizationUnit__c</fullName>
+        <externalId>false</externalId>
+        <label>Organization Unit</label>
+        <length>225</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OwnerManager__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(Owner:User.Manager.Id, Owner:User.Manager.FirstName &amp; &apos; &apos; &amp; Owner:User.Manager.LastName)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Owner Manager</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OwnersManager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Owners Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>PreApplications3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PageTemplateName__c</fullName>
+        <description>Auto populated. Used to print PDF files for pre-applications at Awards or Review Assignment level</description>
+        <externalId>false</externalId>
+        <label>Page Template Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PhoneNumberRef1__c</fullName>
+        <externalId>false</externalId>
+        <label>PhoneNumberRef1</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>PhoneNumberRef2__c</fullName>
+        <externalId>false</externalId>
+        <label>Phone Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>PhoneNumberRef3__c</fullName>
+        <externalId>false</externalId>
+        <label>Phone Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>PreAppGroupCodeFormula__c</fullName>
+        <description>This Field is being used for running the Criteria based formual Fields</description>
+        <externalId>false</externalId>
+        <formula>Announcement__r.Organization__r.GroupCode__c</formula>
+        <label>PreApp Group Code Formula</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PreAppGroupCode__c</fullName>
+        <externalId>false</externalId>
+        <label>PreApp Group Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PreApplicationDeadline__c</fullName>
+        <description>The Deadline for the Preapplication</description>
+        <externalId>false</externalId>
+        <label>Pre-Application Deadline</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>PreApplicationPackage__c</fullName>
+        <externalId>false</externalId>
+        <formula>&apos;&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Pre-Application Package</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PreApplicationScore__c</fullName>
+        <description>Formula Grants Score for Pre Application</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Formula Grants Score for Pre Application</inlineHelpText>
+        <label>PreApplication Score</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PreApplicationSubmissionTemplate__c</fullName>
+        <externalId>false</externalId>
+        <formula>Announcement__r.PreApplicationSubmissionEmailTemplate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PreApplication Submission Email Template</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PrimaryContact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Pre-Applications (Contact)</relationshipLabel>
+        <relationshipName>Pre_Applications1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ProgramApprover__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>ProgramApprover__c field of Announcement</description>
+        <externalId>false</externalId>
+        <label>Program Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Pre_Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ProgramName__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK( &apos;/&apos;+Announcement__r.Program__c , Announcement__r.Program__r.Name)</formula>
+        <label>Program ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProjectAbstract__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Abstract</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ProjectDirector__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project Director</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>PreApplications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ProjectPeriodEndDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Period End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ProjectPeriodStartDate__c</fullName>
+        <description>Project Period Start Date as entered by the applicant.</description>
+        <externalId>false</externalId>
+        <label>Project Period Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ProvidedBy1__c</fullName>
+        <externalId>false</externalId>
+        <label>Provided By 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProvidedBy2__c</fullName>
+        <externalId>false</externalId>
+        <label>Provided By 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProvidedBy3__c</fullName>
+        <externalId>false</externalId>
+        <label>Provided By 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProvidedDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Provided Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>RecordComplete__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Status__c, &apos;Submitted&apos;), FALSE, TRUE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Record Complete ?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RecordCompletionPercentage__c</fullName>
+        <externalId>false</externalId>
+        <label>Record Completion Percentage</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>RecordIncomplete__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Record Incomplete</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ReferenceFullName1__c</fullName>
+        <externalId>false</externalId>
+        <label>Reference Full Name 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReferenceFullName2__c</fullName>
+        <externalId>false</externalId>
+        <label>Reference Full Name 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReferenceFullName3__c</fullName>
+        <externalId>false</externalId>
+        <label>Reference Full Name 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReferenceNumber1__c</fullName>
+        <externalId>false</externalId>
+        <label>Reference Number 1</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReferenceNumber2__c</fullName>
+        <externalId>false</externalId>
+        <label>Reference Number 2</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReferenceNumber3__c</fullName>
+        <externalId>false</externalId>
+        <label>Reference Number 3</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RenderDeleteButton__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF($User.ProfileName__c = &apos;System Administrator&apos;,false,NOT(AND(OR(Text(Status__c) = &apos;In Progress&apos;,Text(Status__c) = &apos;Complete&apos;) , CreatedById = $User.Id )) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Render Delete Button</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RenderEditButton__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+$User.ProfileName__c = &apos;System Administrator&apos;,
+false,
+IF(
+TEXT($User.UserType)= &apos;Internal&apos;,
+true,
+NOT(OR(
+AND(TEXT(Status__c) == &apos;Submitted&apos; , Announcement__r.CloseDate__c &gt; TODAY(), Announcement__r.AllowEditingSubmittedPreApplication__c ),
+Text(Status__c) = &apos;In Progress&apos;,Text(Status__c) = &apos;Complete&apos;
+)
+)
+)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Render Edit Button</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RenderRecordCompleteMessgae__c</fullName>
+        <externalId>false</externalId>
+        <formula>AND(text(Status__c) = &apos;Complete&apos;, RecordComplete__c = TRUE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Render Record Complete Messgae</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RequestAssistanceAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>Request Assistance Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RequestedAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>Requested Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SelectedforApprovalAction__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is updated to checked when the Final Approver selects the Pre-Application to Approve or Reject</inlineHelpText>
+        <label>Selected for Approval Action</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SenttoGrantorButton__c</fullName>
+        <externalId>false</externalId>
+        <formula>OR(ISPICKVAL( Status__c , &apos;Created&apos;),
+ISPICKVAL( Status__c , &apos;Reviewed&apos;),
+ISPICKVAL( Status__c , &apos;Rejected&apos;),
+ISPICKVAL( Status__c , &apos;Converted to Application&apos;),
+ISPICKVAL(Status__c , &apos;Submitted for Approval&apos;),
+ISPICKVAL( Status__c , &apos;Submitted to Grantor&apos;),
+DaysLeft__c&lt;1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sent to Grantor Button</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ServiceAreaInfo__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Application Project Area</label>
+        <referenceTo>ApplicationServiceArea__c</referenceTo>
+        <relationshipLabel>Pre-Applications</relationshipLabel>
+        <relationshipName>Pre_Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ShowDeleteLinkDecision__c</fullName>
+        <description>Decision field to show if the Delete link for PreApplication should be available in the Flex table</description>
+        <externalId>false</externalId>
+        <formula>OR((ISPICKVAL(Status__c,&apos;Approved&apos;)),(ISPICKVAL(Status__c,&apos;Change Requested&apos;)))</formula>
+        <label>Show Delete Link Decision</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>StateProgram__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The State Program to which this PreApplication or Application belongs</description>
+        <externalId>false</externalId>
+        <label>State Program</label>
+        <referenceTo>Program__c</referenceTo>
+        <relationshipLabel>Pre-Applications</relationshipLabel>
+        <relationshipName>Pre_Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Created</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Reviewed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submitted for Approval</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submitted to Grantor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Awarded</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Awarded</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Complete</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Change Requested</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SubmissionDate1__c</fullName>
+        <externalId>false</externalId>
+        <label>Submission Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SubmissionDate2__c</fullName>
+        <externalId>false</externalId>
+        <label>Submission Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SubmissionDate3__c</fullName>
+        <externalId>false</externalId>
+        <label>Submission Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SubmitApplication__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Would be Submitting Application</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SubmittedBy__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Submitted By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Preapplications1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SubmittedOn__c</fullName>
+        <description>Date when the application was submitted.</description>
+        <externalId>false</externalId>
+        <label>Submitted On</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SubmittedToInternal__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Submitted to Internal?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Submitted_to_Internal__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Submitted to Internal</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>TitleRef2__c</fullName>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TitleRef3__c</fullName>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <description>The grantee entered title for the application.</description>
+        <externalId>false</externalId>
+        <label>Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TrackingNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>TrackingNumber</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TypeOfApplication__c</fullName>
+        <description>Specifies the Type of the Application</description>
+        <externalId>false</externalId>
+        <label>Type Of Application</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Continuation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Revision</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>TypeOfEducationHelp__c</fullName>
+        <externalId>false</externalId>
+        <label>Type Of Education Help</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>TypeOfEducationProvided__c</fullName>
+        <externalId>false</externalId>
+        <label>Type Of Education Provided</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>TypeOfMedicalHelpProvided__c</fullName>
+        <externalId>false</externalId>
+        <label>Type Of Medical Help Provided</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>TypeOfServiceProvided__c</fullName>
+        <externalId>false</externalId>
+        <label>Type Of Service Provided</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>TypeOfServiceProvidedtoStudents__c</fullName>
+        <externalId>false</externalId>
+        <label>Type Of Service Provided</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>VersionID__c</fullName>
+        <description>The version of the application. In most cases there will only be one version, but during the negotiation process if applicants are required to submit revised applications, or for administrative reasons changes are made to any application, the original version and each subsequent revision are always available and maintained in their entirety for auditing purpose.</description>
+        <externalId>false</externalId>
+        <label>Version ID</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Pre-Application</label>
+    <nameField>
+        <label>ID</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Pre-Applications</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Grantee</fullName>
+        <active>true</active>
+        <description>This Record Type is Used by the Grantee Application/Module</description>
+        <label>Grantee</label>
+        <picklistValues>
+            <picklist>ApplicationType__c</picklist>
+            <values>
+                <fullName>TBD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TBD1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TBD2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>GranteeTypeofSubmission__c</picklist>
+            <values>
+                <fullName>Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Application</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IsDataAttached__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>MatchingAmountProvided__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>OpportunityCategory__c</picklist>
+            <values>
+                <fullName>Continuation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Discretionary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Earmark</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mandatory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awarded</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Created</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Not Awarded</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviewed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted for Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted to Grantor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TypeOfApplication__c</picklist>
+            <values>
+                <fullName>Continuation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Revision</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Grantor</fullName>
+        <active>true</active>
+        <description>This Record Type is Used by the Grantor Applicaion/Module</description>
+        <label>Grantor</label>
+        <picklistValues>
+            <picklist>ApplicationType__c</picklist>
+            <values>
+                <fullName>TBD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TBD1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TBD2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>GranteeTypeofSubmission__c</picklist>
+            <values>
+                <fullName>Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Application</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IsDataAttached__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>MatchingAmountProvided__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>OpportunityCategory__c</picklist>
+            <values>
+                <fullName>Continuation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Discretionary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Earmark</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mandatory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change Requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Created</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Submitted to Grantor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TypeOfApplication__c</picklist>
+            <values>
+                <fullName>Continuation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Revision</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <sharingReasons>
+        <fullName>PreApplication_After_Submission_Sharing__c</fullName>
+        <label>PreApplication After Submission Sharing</label>
+    </sharingReasons>
+    <sharingReasons>
+        <fullName>Sharing_for_Peer_Review_Author__c</fullName>
+        <label>Sharing for Peer Review Author</label>
+    </sharingReasons>
+    <sharingReasons>
+        <fullName>Sharing_for_Review__c</fullName>
+        <label>Sharing for Review</label>
+    </sharingReasons>
+    <startsWith>Vowel</startsWith>
+</CustomObject>

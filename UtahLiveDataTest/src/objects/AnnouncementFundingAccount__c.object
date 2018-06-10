@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>[Business]  Funding Accounts associated with the opportunity</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AllocatedAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>Allocated Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Announcement__c</fullName>
+        <externalId>false</externalId>
+        <label>Announcement</label>
+        <referenceTo>Announcement__c</referenceTo>
+        <relationshipName>Announcement</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>CommittedAmount__c</fullName>
+        <description>This field  rolls up to Funding Account</description>
+        <externalId>false</externalId>
+        <label>Committed Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FundStatus__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(RemainingBalance__c &lt; 0, &apos;&lt;i class=&quot;fa fa-thumbs-o-down fa-lg&quot; title=&quot;Deficit&quot;&gt;&lt;/i&gt;&apos;, &apos;&lt;i class=&quot;fa fa-thumbs-o-up fa-lg&quot; title=&quot;Ok&quot;&gt;&lt;/i&gt;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Fund Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FundingAccount__c</fullName>
+        <externalId>false</externalId>
+        <label>Funding Account</label>
+        <referenceTo>FundingAccount__c</referenceTo>
+        <relationshipLabel>Funding Opportunity Funding Accounts</relationshipLabel>
+        <relationshipName>Announcement_Funding_Accounts</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>HideAnnouncementEdit__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(OR(ISPICKVAL(Announcement__r.Status__c,&apos;Created&apos;), 
+ISPICKVAL(Announcement__r.Status__c,&apos;Reviewed&apos;)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide Announcement Edit</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideRemoveFundingAccounts__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(AND(Announcement__r.ScheduleManager__c = $User.Id, OR(text(Announcement__r.Status__c) = &apos;In Progress&apos; ,text(Announcement__r.Status__c) = &apos;Validated&apos;) ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideRemoveFundingAccounts</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>IsPrimary__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is Primary Funding Account?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is Primary Funding Account?</inlineHelpText>
+        <label>Is Primary</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <description>Notes for Announcement Funding Account</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Notes for Announcement Funding Account</inlineHelpText>
+        <label>Notes</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>RemainingBalance__c</fullName>
+        <externalId>false</externalId>
+        <formula>FundingAccount__r.AvailableAmount__c - AllocatedAmount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Remaining Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>Funding Opportunity Funding Account</label>
+    <nameField>
+        <displayFormat>AFA-{0000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Funding Opportunity Funding Accounts</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

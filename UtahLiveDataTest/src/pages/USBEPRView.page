@@ -1,0 +1,517 @@
+<apex:page showHeader="false" sidebar="false" cache="false" controller="USBEPaymentRequestViewCtrl" action="{!init}" standardStylesheets="true">  
+         <style>
+            
+        #paymentsOptions {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 96%;
+            margin: 20px;
+        }
+        #paymentsOptions div{
+            margin: 5px;
+        }
+        dl {
+           margin-right: 8em;
+           float: left;
+        }
+        dd{
+          margin: 1em 3em 0em 0em;
+        }
+
+        #paymentsGrid {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 96%;
+            margin: 20px;
+        }
+
+        #paymentsGrid td, #paymentsGrid th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #paymentsGrid tr:nth-child(even){background-color: #f2f2f2;}
+
+        #paymentsGrid tr:hover {background-color: #ddd;}
+
+        #paymentsGrid th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #f2f2f2;;
+            
+        }
+
+        body{
+            background-color: white;
+        }
+        h1, h2, h3, h4, h5, h6 {
+          color: #00396B;
+          margin-top: 1.5em;
+          margin-bottom: 0.3em;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        .row {
+          padding-bottom: 5px;
+        }
+        input, button{
+          border: 1px solid #ccc;
+          font-size: 12px;
+          padding: 5px 10px 5px 10px;
+          
+        }
+        input[type=submit], button{
+          font-size: 16px;
+          color: #fff;
+          background-color: #4c90b5 !important;
+          background-image : none;
+          border: 0;
+          padding: 8px 12px !important;
+          font-weight: 400;
+          border-radius: 4px;
+          margin-bottom: 1px;
+        }
+
+            .num {
+              mso-number-format:General;
+            }
+            .text{
+              mso-number-format:"\@";/*force text*/
+            }
+            .error{
+               color: red;
+              font-weight: bold;
+            }
+        </style>
+    
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="//unpkg.com/xlsx/dist/shim.min.js"></script>
+        <script type="text/javascript" src="//unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+    <script>
+        var j$ = jQuery && jQuery.noConflict();
+    </script>
+
+   <div data-bind="visible:awardsCount==0" style="text-align:center">
+      <h3> No Active Awards</h3>
+   </div>
+    <div data-bind="visible:awardsCount>0">
+           <div class="overview-pane">
+              <div id="" class="panel-body collapse in">
+                <div class="row">
+                  <div class="col-md-3 col-xs-3 col-sm-3">
+                    <dl><dt><span class="customLabelstyle">Program</span></dt>
+                      <dd><span class="field-value" style="">{!program.ProgramName__c}</span></dd>
+                    </dl>
+                  </div>
+                  <div class="col-md-3 col-xs-3 col-sm-3">
+                    <dl><dt><span class="customLabelstyle">Fiscal Year</span></dt>
+                      <dd><span class="field-value" style="">{!program.FiscalYear__r.Name}</span></dd>
+                    </dl>
+                  </div>
+                  <div class="col-md-3 col-xs-3 col-sm-3">
+                    <dl><dt><span class="customLabelstyle">First Approver</span></dt>
+                      <dd><span class="field-value" style="">{!batchRequest.Approver1__r.Name}</span></dd>
+                    </dl>
+                  </div>
+                  <div class="col-md-3 col-xs-3 col-sm-3">
+                    <dl><dt><span class="customLabelstyle">Second Approver</span></dt>
+                      <dd><span class="field-value" style="">{!batchRequest.Approver2__r.Name}</span></dd>
+                    </dl>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+           <div style="clear:both"></div>
+            <div id="paymentsOptions">
+               <div><input type="radio" name="actionGroup" value="1" data-bind="checked: action, disable:status!='created'" /> Pay Remaining</div>
+                <div><input type="radio" name="actionGroup" value="2" data-bind="checked: action, disable:status!='created'" /> Pay Percent <input type="text" name="percent"  data-bind="textInput: percent, enable: action()=='2' && status=='created'"  onkeypress="return isNumberKey(event)" /> </div>
+                <div><input type="radio" name="actionGroup" value="3" data-bind="checked: action , disable:status!='created'" /> Hand-key Payments </div>
+                 <div>  </div>
+            </div>
+            <div id="paymentsOptions"><input type="checkbox" name="selectAllCheck" data-bind="checked: selectAll, disable:status!='created'" /> Select All </div>
+
+           <table id="paymentsGrid" class="tableClass table table-striped table-hover">
+            <thead>
+                <tr class="flexTableHeader">
+                    <th class="headerCell color-white pdf-wrap-th ng-scope"></th>
+                    <th class="headerCell color-white pdf-wrap-th ng-scope"><span>Code</span></th>
+                    <th class="headerCell color-white pdf-wrap-th ng-scope"><span>Name</span></th>
+                    <th class="headerCell color-white pdf-wrap-th ng-scope"><span>Total Award</span></th>
+                    <th class="headerCell color-white pdf-wrap-th ng-scope"><span>Total Paid</span></th>
+                    <th class="headerCell color-white pdf-wrap-th ng-scope"><span>Remaining</span></th>
+                    <th class="headerCell color-white pdf-wrap-th ng-scope"><span>Amount</span>  </th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: payments">
+                <tr class="ng-scope">
+                    <td class="tableCell pdf-wrap-td ng-scope"><input type="checkbox" name="selectAllCheck" value="1" data-bind="checked: selected, disable:$parent.status!='created'" /></td>
+
+                    <td class="tableCell pdf-wrap-td ng-scope" data-bind="text: leaCode"></td>
+                    <td class="tableCell pdf-wrap-td ng-scope" data-bind="text: name"></td>
+                    <td class="tableCell pdf-wrap-td ng-scope" data-bind="text: totalAward"></td>
+                    <td class="tableCell pdf-wrap-td ng-scope" data-bind="text: totalPaid"></td>
+                    <td class="tableCell pdf-wrap-td ng-scope" data-bind="text: remaining"></td>
+                    <td class="tableCell pdf-wrap-td ng-scope"> <span data-bind="text: amount, visible:$parent.action()!='3'"></span><input type="text" data-bind="textInput: amount, visible:$parent.action()=='3', enable: $parent.status=='created'"  onkeypress="return isNumberKey(event)" /></td>
+
+                </tr>
+            </tbody>
+        </table>
+          <apex:form styleClass="w3-center">
+                <div align="center">
+                
+                    <apex:commandButton value="Calculate" id="btnCalculate" rendered="{!renderSave}" styleClass="w3-button w3-teal btn-space calculate" /> 
+                    <apex:commandButton value="Save" id="save" rendered="{!renderSave}" styleClass="w3-button w3-teal btn-space save"/> 
+                     <apex:commandButton value="Send for Approval" id="approve"  rendered="{!renderSendForApproval}" styleClass="w3-button w3-teal btn-space approve"/> 
+                    <apex:commandButton value="Reject" id="reject"  rendered="{!renderReject}" styleClass="w3-button w3-teal btn-space reject"/> 
+                    <apex:commandButton value="Send to FINET" id="sendToFinet"  rendered="{!renderSendToFINET}" styleClass="w3-button w3-teal btn-space sendToFinet"/> 
+                    <a href="#" id ="download" role='button' style="display:none" class="w3-button w3-teal btn-space">Export Table data into Excel</a>
+                    
+                </div>
+            </apex:form>
+   </div>
+       <script>
+       var rawItems = {!stageJSON};
+       var source = '{!source}';
+       var programPathway = '{!program.ProgramPathway__c}';
+       var programId = '{!program.Id}';
+       var requestId = '{!batchRequest.Id}';
+       var awardsCount = '{!awardsCount}';
+       var canEdit = !{!canEdit};
+       var status = '{!program.ProgramPaymentBatchStatus__c}';
+       var data = '{!batchRequest.LEARequests__c}';
+       var originalAmounts = rawItems && rawItems.map(item => {
+                    return new ItemViewModel(item.Id, item.GranteeOrganization__c, item.AwardedAmount__c,
+                         item.PaidAmountOnAwardLS__c, item.YTDRemainingAmount__c, 0, 1,item.Grant__r.InternalOrganization__r.LEA_Id__c);
+                        });
+       function isNumberKey(evt){
+          var charCode = (evt.which) ? evt.which : evt.keyCode;
+          if (charCode != 46 && charCode > 31 
+            && (charCode < 48 || charCode > 57))
+             return false;
+
+          return true;
+       }
+        function ItemViewModel(id, name, totalAward, totalPaid, remaining, amount, selected, leaCode){
+            var self = this;
+            let temp= (totalAward || 0) - (totalPaid || 0);
+            self.id = ko.observable(id);
+            self.leaCode = ko.observable(leaCode);
+            self.name = ko.observable(name);
+            self.totalAward = ko.observable(totalAward && (+totalAward).toFixed(2) || 0.00);
+            self.totalPaid = ko.observable(totalPaid && (+totalPaid).toFixed(2) || 0.00);
+            self.remaining = ko.observable(temp.toFixed(2));//remaining);
+            self.amount = ko.observable(selected && (+amount).toFixed(2) || 0);
+            self.selected = ko.observable(selected);
+                
+        }
+       // Here's my data model
+        function PaymentViewModel(payments, action, percent, selectAll, status, awardsCount, canEdit) {
+            console.log(payments);
+            console.log(action);
+            var self = this;
+            self.percent = ko.observable(percent || '0');
+            self.payments = ko.observableArray(payments || []);
+            self.action = ko.observable(action);
+            self.status = status && status.toLowerCase() || '';
+            self.selectAll = ko.observable(selectAll);
+            self.selectAll.subscribe(function(newValue) {
+               ko.utils.arrayForEach(self.payments(), function(item) {
+                   item.selected(newValue);
+               }); 
+            });
+            self.canEdit = canEdit;
+            self.awardsCount = awardsCount && +awardsCount || 0;
+            self.valid = ko.observable(true);
+            self.calculate = function(){
+                self.valid(true);
+                var action = self.action();
+                if(action == '1'){
+                    ko.utils.arrayForEach(self.payments(), function(item) {
+                        item.amount(item.selected() && (+item.remaining()).toFixed(2) || 0);
+                    }); 
+                }else if(action == '2'){
+                    ko.utils.arrayForEach(self.payments(), function(item) {
+                         //based on remaining
+                         //let percentAmount = +item.remaining()*(+self.percent()/100);
+                        //based on total award
+                        let percentAmount = +item.totalAward()*(+self.percent()/100);
+                        item.amount(item.selected() && percentAmount.toFixed(2) || 0);
+                    }); 
+                }
+                else if(action == '3'){
+                    ko.utils.arrayForEach(self.payments(), function(item) {
+                        item.amount(item.selected() && (+item.amount()).toFixed(2) || 0);
+                    }); 
+                }
+
+                ko.utils.arrayForEach(self.payments(), function(item) {
+                   if(item.selected()){
+                    
+                     console.log('amount' , item.amount());
+                     console.log('remaining' , item.remaining());
+                     console.log('valid' , self.valid());
+                     console.log('first condition' , (+item.amount() <= +item.remaining()));
+                     console.log('second condition' , (item.remaining() != 0));
+                     console.log('third condition',(+item.amount()!=0));
+
+                     let status = self.valid() && (+item.amount() <= +item.remaining()) && (+item.remaining() != 0) && +item.amount()!=0;
+                     console.log(self.valid());
+                     self.valid(status);
+                   }
+                  
+                }); 
+            }
+        }
+        var sample = data || '';//window.localStorage.getItem('paymentViewModel');
+        var existing = sample && sample.length && JSON.parse(sample) || {};
+
+
+        var paymentViewModel = getPaymentViewModel(existing, status, originalAmounts, canEdit);
+        ko.applyBindings(paymentViewModel);
+
+        function getPaymentViewModel(existing, status, originalAmounts, canEdit){
+            var temp =  originalAmounts; //setting original items
+            var action = existing && existing.action || 1;
+            var percent = existing && existing.percent || 0;
+            var selectAll = existing && existing.selectAll;
+            var allSelected = true;
+            var payments = existing && existing.payments && existing.payments.map(payment => {
+                console.log(payment);
+                allSelected = allSelected && payment.selected;
+                return new ItemViewModel(payment.id || '', payment.name || '', payment.totalAward || 0, 
+                    payment.totalPaid || 0, payment.remaining || 0, payment.amount || 0, payment.selected);
+            }) || temp;
+            if(payments.length === 0){
+                payments = temp;
+            }
+            selectAll = allSelected;
+            return new PaymentViewModel(payments, action, percent, selectAll, status, awardsCount, canEdit);
+
+        }
+
+        var closeButton = parent.document.getElementById('Lump-Sum-AppProgramsmodalDivCloseIcon');
+
+        window.onload = function()
+            {
+                setModaldialog(programPathway)
+            };
+
+        function setModaldialog(recordType){
+             let tail = source === 'paymentbatch' && '-C' || '';
+             let framePart = 'iframeContentId', modalPart = 'modalDiv > div > div', closePart = 'modalDivCloseIcon';
+             var selectors = {
+                    'Lump-Sum-App' : {
+                        'frameSelector' : 'Lump-Sum-AppPrograms'+ tail + framePart,
+                        'modalSelector' : '#Lump-Sum-AppPrograms'+ tail + modalPart,
+                        'closeSelector' : 'Lump-Sum-AppPrograms' + tail + closePart,
+                    },
+                     'Lump-Sum-No-App' : {
+                        'frameSelector' : 'Lump-Sum-No-AppPrograms' + tail + framePart,
+                        'modalSelector' : '#Lump-Sum-No-AppPrograms' + tail + modalPart,
+                        'closeSelector' : 'Lump-Sum-No-AppPrograms' + tail + closePart,
+                    },
+
+            };
+
+             let frame =  parent.document.getElementById(selectors[recordType].frameSelector);
+             if(frame){
+                frame.style.height = document.body.clientHeight+105+'px';
+                frame.style.width = document.body.clientWidth+18+'px';
+             }
+
+            
+             let modalContent = parent.document.querySelector(selectors[recordType].modalSelector);
+             if(modalContent){
+                modalContent.style.width = document.body.clientWidth+18+ 20 + 'px';
+             }
+
+             closeButton = parent.document.getElementById(selectors[recordType].closeSelector);
+        }
+
+        j$(document).ready(function(){
+           
+           j$('.save').click(function(event){
+                var self = this;
+                
+               //console.log(ko.toJSON(paymentViewModel));
+               paymentViewModel.calculate();
+               if(!paymentViewModel.valid()){
+                  alert('amount value must be less than remaining amount and the remaining amount for the award should not be zero!');
+                  event.preventDefault();
+                  return;
+               }
+               j$(self).val('Please wait ...')
+                    .attr('disabled','disabled');
+               let paymentModelState = ko.toJSON(paymentViewModel);
+                Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.USBEPaymentRequestViewCtrl.save}',
+                    requestId,paymentModelState,
+                function(result, event) {
+                    console.log(result);
+                    j$(self).val('Save')
+                        .removeAttr('disabled'); 
+                    if(result){
+                        alert('saved successfully');
+                        //closeButton.click();         
+                    }
+                    if (event.status) {
+
+                    } else if (event.type === 'exception') {
+
+                    } else {
+
+                    }
+                }, {
+                    escape: true
+                }
+            );
+               event.preventDefault();
+           });
+
+           j$('.approve').click(function(event){
+                 j$(this).val('Please wait ...')
+                    .attr('disabled','disabled');
+
+                Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.USBEPaymentRequestViewCtrl.approve}',
+                    programId, requestId,
+                function(result, event) {
+                    console.log(result);
+                    if(result){
+                        alert('Successfully Sent for Approval ');
+                        closeButton.click();         
+                    }
+                    if (event.status) {
+
+                    } else if (event.type === 'exception') {
+
+                    } else {
+
+                    }
+                }, {
+                    escape: true
+                }
+            );
+               event.preventDefault();
+           });
+
+           j$('.reject').click(function(event){
+                j$(this).val('Please wait ...')
+                    .attr('disabled','disabled');
+                Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.USBEPaymentRequestViewCtrl.reject}',
+                    programId, requestId,
+                function(result, event) {
+                    console.log(result);
+                    if(result){
+                        alert('Rejected Successfully');
+                        closeButton.click();         
+                    }
+                    if (event.status) {
+
+                    } else if (event.type === 'exception') {
+
+                    } else {
+
+                    }
+                }, {
+                    escape: true
+                }
+            );
+               event.preventDefault();
+           });
+
+           j$('.sendToFinet').click(function(event){
+                j$(this).val('Please wait ...')
+                    .attr('disabled','disabled');
+                
+                let payments = paymentViewModel.payments();
+                console.log(payments);
+                let results = payments.map(item => {
+                    return {
+                        awardId : item.id(),
+                        amount : item.amount().toString(),
+                        totalAward : item.totalAward(),
+                        remaining : item.remaining(),
+                        selected : item.selected()
+                    }
+                }).filter(item => item.selected);
+                console.log(results);
+                let paymentModelState = ko.toJSON(paymentViewModel);
+                var input = {
+                    items : results
+                };
+
+                var inputString = ko.toJSON(input);
+                console.log(inputString);
+                Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.USBEPaymentRequestViewCtrl.sendToFinet}',
+                    programId, requestId,inputString,
+                function(result, event) {
+                    console.log(result);
+                    //debugger;
+                    if(result && result==='Success'){
+                        alert('Sent to Finet Successfully');
+                        closeButton.click();         
+                    }else{
+                        console.log('Payments are initated');
+                         alert('Unable to send payment request to FINET');
+                        closeButton.click();  
+                    }
+                    if (event.status) {
+
+                    } else if (event.type === 'exception') {
+
+
+                    } else {
+
+                    }
+                }, {
+                    escape: true
+                }
+            );
+               event.preventDefault();
+           });
+
+
+           j$('.tempAction').click(function(event){
+                var input = {
+                    items : [{'awardId': "1", "amount": "10000"}, {'awardId': "2", "amount": "10000"}]
+                };
+                var inputString = ko.toJSON(input);
+                Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.USBEPaymentRequestViewCtrl.tempAction}',
+                    requestId, inputString ,
+                function(result, event) {
+                    console.log(result);
+                    alert(result);
+                    if(result){
+                         alert('saved successfully');
+                        
+                    }
+                    if (event.status) {
+
+                    } else if (event.type === 'exception') {
+
+                    } else {
+
+                    }
+                }, {
+                    escape: true
+                }
+            );
+               event.preventDefault();
+           });
+
+           j$('.calculate').click(function(event){
+               paymentViewModel.calculate();
+               event.preventDefault();
+           });
+          
+        });
+
+    </script>
+     
+</apex:page>

@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>[Business] Stores the Budget related information associated with an Application</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AdminCostValue__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>AdminCostValue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Amount1__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Costs Not Allowable for Participation</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AppBudgetCategoryStatus__c</fullName>
+        <description>This field is used to determine which categories are to be used for Construction form.</description>
+        <externalId>false</externalId>
+        <label>App Budget Category Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>InActive</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ApplicationStatus__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Application__r.Status__c, &quot;Converted to Grant&quot;), TRUE, FALSE)</formula>
+        <label>Application Status</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Application__c</fullName>
+        <externalId>false</externalId>
+        <label>Application</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipName>Application_Budget_Categories</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>BudgetAmountUSBE__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>BudgetAmountUSBE</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>BudgetCategoryAmount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>BudgetCategory__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Budget Category</label>
+        <referenceTo>BudgetCategory__c</referenceTo>
+        <relationshipName>Application_Budget_Categories</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BudgetPeriod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Budget Period</label>
+        <referenceTo>BudgetPeriod__c</referenceTo>
+        <relationshipLabel>Application Budget Categories</relationshipLabel>
+        <relationshipName>Application_Budget_Categories</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BuildupRequired__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Application__r.Announcement__r.DetailedBudgetingRequired__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>BuildupRequired</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CashMatch__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Cash</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CatName__c</fullName>
+        <externalId>false</externalId>
+        <formula>BudgetCategory__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Category Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CategoryName__c</fullName>
+        <externalId>false</externalId>
+        <label>Category Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ClassName__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(BudgetCategory__r.Class__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Class Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Currency1__c</fullName>
+        <externalId>false</externalId>
+        <label>Currency1</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Difference__c</fullName>
+        <externalId>false</externalId>
+        <formula>Federal__c - LastYearAmount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Difference</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Federal__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Federal</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Form__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Application Detail (FORMS)</label>
+        <referenceTo>Form__c</referenceTo>
+        <relationshipLabel>Application Budget Categories (Application Detail (FORMS))</relationshipLabel>
+        <relationshipName>Application_Budget_Categories1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FormsValidated__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.FormsValidated__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FormsValidated</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>GranteeAmount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Amount from Grantee in Application for each Budget Category</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Amount from Grantee in Application for each Budget Category</inlineHelpText>
+        <label>Grantee Share</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>GranteeShare__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(Amount__c&lt;=0, 0, GranteeAmount__c / Amount__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Grantee Share %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>GrantorAmount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Grantor Amount</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Grantor Amount</inlineHelpText>
+        <label>Grantor Share</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>HideBudgetEdit__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(BuildupRequired__c==&apos;No&apos; &amp;&amp; Status__c = &apos;Created&apos;,true,false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide Budget Edit</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideBudgetFormBreakdownButton__c</fullName>
+        <description>IF(
+AND(
+BudgetCategory__r.RowNumber__c == &apos;570&apos;,  
+OR(
+TEXT(Application__r.Status__c) = &apos;Created&apos; , 
+TEXT(Application__r.Status__c) = &apos;Revision Initiated&apos;, 
+TEXT(Application__r.Status__c) = &apos;Revision In Progress&apos;
+)
+),
+FALSE, TRUE )</description>
+        <externalId>false</externalId>
+        <formula>IF(
+Application__r.OwnerId &lt;&gt; $User.Id,
+TRUE,
+IF(
+AND(
+BudgetCategory__r.RowNumber__c == &apos;570&apos;,  
+OR(
+TEXT(Application__r.Status__c) = &apos;Created&apos; , 
+TEXT(Application__r.Status__c) = &apos;Revision Initiated&apos;, 
+TEXT(Application__r.Status__c) = &apos;Revision In Progress&apos;
+)
+),
+FALSE, TRUE )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideBudgetFormBreakdownButton</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideBudgetFormEditButton__c</fullName>
+        <description>Previous Formula: 
+IF( 
+OR( 
+AND(Application__r.ProgramBudgetTypeUSBE__c != &apos;CTE&apos;,OR(BudgetCategory__r.RowNumber__c == &apos;570&apos;, 
+BudgetCategory__r.RowNumber__c == &apos;599&apos;)), 
+AND(Application__r.ProgramBudgetTypeUSBE__c == &apos;CTE&apos;,OR(BudgetCategory__r.RowNumber__c == &apos;570&apos;,BudgetCategory__r.RowNumber__c == &apos;599&apos;)),
+NOT(
+OR(
+TEXT(Application__r.Status__c) = &apos;Created&apos;,
+TEXT(Application__r.Status__c) = &apos;Revision Initiated&apos;,
+TEXT(Application__r.Status__c) = &apos;Revision In Progress&apos;
+)
+)
+), TRUE, FALSE )</description>
+        <externalId>false</externalId>
+        <formula>OR(
+Application__r.OwnerId  &lt;&gt; $User.Id,
+AND(Application__r.ProgramBudgetTypeUSBE__c != &apos;CTE&apos;,OR(BudgetCategory__r.RowNumber__c == &apos;570&apos;, 
+BudgetCategory__r.RowNumber__c == &apos;599&apos;)), 
+AND(Application__r.ProgramBudgetTypeUSBE__c == &apos;CTE&apos;,OR(BudgetCategory__r.RowNumber__c == &apos;570&apos;,BudgetCategory__r.RowNumber__c == &apos;599&apos;)),
+NOT(
+OR(
+TEXT(Application__r.Status__c) = &apos;Created&apos;,
+TEXT(Application__r.Status__c) = &apos;Revision Initiated&apos;,
+TEXT(Application__r.Status__c) = &apos;Revision In Progress&apos;
+)
+)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideBudgetFormEditButton</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideEditBtn__c</fullName>
+        <description>hide Edit on Budget Grid on Application</description>
+        <externalId>false</externalId>
+        <formula>Application__r.HideEditBtn__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>hide Edit on Budget Grid on Application</inlineHelpText>
+        <label>Hide Edit Btn</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideIfNotBuildupBudgetCategory__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(BudgetCategory__r.RowNumber__c != &apos;570&apos;, TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide If Not Buildup Budget Category</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideIndirectCostBuildUp__c</fullName>
+        <externalId>false</externalId>
+        <formula>CatName__c = &apos;Indirect Costs&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide Indirect Cost Build Up</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideNewBuildupBtn__c</fullName>
+        <description>Logic for Hiding New Buildup Button</description>
+        <externalId>false</externalId>
+        <formula>Application__r.ExternalApplicantStatus__c == &apos;Submitted to Grantor&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Logic for Hiding New Buildup Button</inlineHelpText>
+        <label>Hide New Buildup Btn</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideNewLine__c</fullName>
+        <externalId>false</externalId>
+        <formula>AND(Application__r.ExternalApplicantStatus__c = &apos;Submitted to Grantor&apos;,NOT(ISPICKVAL(Application__r.ChangeRequestStatus__c, &apos;Revision Request Assigned&apos;)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideNewLine</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>InKind__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>In-Kind</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>IndirectCostEdit__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(CategoryName__c = &apos;indirectCostFake&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>IndirectCostEdit</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IndirectCost__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(BudgetCategory__r.Name = &apos;Equipment&apos;,0,Application__r.IndirectCostPercentage__c * Federal__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Indirect Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>IsBuildupRequired__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(BuildupRequired__c==&apos;No&apos;,true,false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>IsBuildupRequired</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsFirstBudgetPeriodRelated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is this record related to First BP ?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this record related to First BP ?</inlineHelpText>
+        <label>Is First Budget Period Related</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LastYearAmount__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <externalId>false</externalId>
+        <label>Last Year Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Narration__c</fullName>
+        <description>Description for Budget Category</description>
+        <externalId>false</externalId>
+        <label>Narration</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NumberofServiceArea__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.NumberOfServiceAreasRequested__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Number of Service Area</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProjectBudgetPlusAdminCost__c</fullName>
+        <description>Project Budget + Admin Cost</description>
+        <externalId>false</externalId>
+        <formula>AdminCostValue__c +  BudgetAmountUSBE__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ProjectBudgetPlusAdminCost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RequestedAmount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Requested Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RowNumber1__c</fullName>
+        <externalId>false</externalId>
+        <label>Row Number</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RowNumberFormula__c</fullName>
+        <externalId>false</externalId>
+        <formula>BudgetCategory__r.RowsNumber__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Row Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RowNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Row Number</label>
+        <length>3</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ServiceAreaTitle__c</fullName>
+        <externalId>false</externalId>
+        <formula>ServiceArea__r.ServiceAreaTitle__c</formula>
+        <label>Service Area Title</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ServiceArea__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Service Area</label>
+        <referenceTo>ApplicationServiceArea__c</referenceTo>
+        <relationshipName>Application_Budget_Categories</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>text(Application__r.Status__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TestIndirectHideColumn__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( TestIndirectPercentage__c &gt;= 0, TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>TestIndirectHideColumn</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>TestIndirectPercentage__c</fullName>
+        <description>Value of Indirect Percentage used temporarily for testing budget form (until the properly acquired indirect value can be drawn). This formula converts the raw number into a decimal for use in calculations.</description>
+        <externalId>false</externalId>
+        <formula>Application__r.TestIndirectPercentage__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>TestIndirectPercentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>9</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TotalAllowableCosts__c</fullName>
+        <description>This field is used in SF424 Budget Construction grid</description>
+        <externalId>false</externalId>
+        <formula>BudgetCategoryAmount__c  -  RequestedAmount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Allowable Costs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TotalGrantCost__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Total Grant Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Total</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(BudgetCategory__r.Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Application Budget Category</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>AC-{000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Application Budget Categories</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>AmountLessThanZero</fullName>
+        <active>false</active>
+        <errorConditionFormula>Amount__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>Amount__c</errorDisplayField>
+        <errorMessage>The negotiated amount cannot be less than zero.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>AmountLessThanZero1</fullName>
+        <active>false</active>
+        <errorConditionFormula>Amount__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>Total__c</errorDisplayField>
+        <errorMessage>The negotiated amount cannot be less than zero.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>RequestedAmountLessThanZero</fullName>
+        <active>true</active>
+        <errorConditionFormula>RequestedAmount__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>RequestedAmount__c</errorDisplayField>
+        <errorMessage>The requested amount cannot be less than zero.</errorMessage>
+    </validationRules>
+</CustomObject>

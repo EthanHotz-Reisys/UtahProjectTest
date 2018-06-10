@@ -1,0 +1,18 @@
+<apex:page controller="SelectTermRecordsPopUpCtrl" sidebar="false" standardStylesheets="false" showHeader="false">
+    
+    <!-- Including JS and CSS resources  -->
+<!--    <c:ExternalLibrary />
+
+      <div class="bs container-fluid row">
+         <GNT:FlexTable flexTableName="{!templateName}" tableId="popupflextable" flexTableParameters="{!keyValueMap}" listParams="{!listParameters}"  />
+      </div> 
+ -->
+  	<c:ExternalLibrary />   
+    <apex:composition template="GNT__ModalTemplate">
+    <apex:define name="ModalContent">    
+  	<GNT:FlexTable flexTableName="{!templateName}" tableId="popupflextable" flexTableParameters="{!keyValueMap}" listParams="{!listParameters}"  />
+    </apex:define>
+    </apex:composition>
+     
+     
+</apex:page>

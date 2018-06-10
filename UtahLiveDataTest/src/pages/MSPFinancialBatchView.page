@@ -1,0 +1,261 @@
+<apex:page cache="false" standardController="MSPFinancialBatch__c" extensions="MSPFinancialBatchViewCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+    <apex:pageBlock >
+        <apex:pageMessages ></apex:pageMessages>
+        <style>
+            .btn-space {
+                margin-right: 10px;
+            }
+            .td-amount{
+                white-space: nowrap;
+            }
+            .td-total{
+                font-weight: bold;
+            }
+            .th-header{
+                text-align: right;
+                max-width: 500px;
+                min-width: 180px;
+                word-wrap: break-word;
+            }
+            .w3-myfont {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .td-hight{
+                height: 60px;
+            }
+
+            .table-border {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+
+        </style>
+
+
+        <div style='overflow:auto; width:100%;height:93vh;' id="dvData">
+                <table id="personDataTable" class="w3-table-all w3-small w3-centered w3-myfont table-border">
+                </table>
+        </div>
+        <div style='overflow:auto; width:100%;height:1vh;'>
+
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+        
+        <apex:form styleClass="w3-center">
+            <apex:commandButton action="{!approve}" value="Approve" id="approve" styleClass="w3-button w3-teal btn-space" rendered="{!fbStatus == 'Processed' && isCurrentUserBatchApprover}"/> 
+            <apex:commandButton action="{!createAwards}" value="Create Awards" id="createAwardsButton" styleClass="w3-button w3-teal btn-space" rendered="{!fbStatus == 'Approved' && isCurrentUserAwardCreationApprover && fbType == 'Create'}"/>
+            <apex:commandButton action="{!createAwards}" value="Amend Awards" id="amendAwardsButton" styleClass="w3-button w3-teal btn-space" rendered="{!fbStatus == 'Approved' && isCurrentUserAwardCreationApprover && fbType == 'Amend'}"/>
+            <apex:commandButton action="{!reject}" value="Reject" id="reject" styleClass="w3-button w3-teal btn-space" rendered="{!fbStatus == 'Processed' && isCurrentUserBatchApprover == true}"/>
+            <apex:commandButton action="{!reject}" value="Reject Awards" id="rejectAwards" styleClass="w3-button w3-teal btn-space" rendered="{!fbStatus == 'Approved' && isCurrentUserAwardCreationApprover}"/>
+            <apex:commandButton action="{!cancel}" value="Cancel" id="cancelButton" styleClass="w3-button w3-teal btn-space"/>
+            <a href="#" id ="download" role='button' class="w3-button w3-teal btn-space">Export Table data into Excel</a>
+        </apex:form>
+
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></link>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css"></link>
+
+
+        <script>
+            var rawItems = {!stageJSON};
+            var mainItems = {!mainJSON};
+
+            $(document).ready(function() {
+                console.log(mainItems);
+                var items = getItems(rawItems);
+                console.log(items);
+                var columns = [...new Set(items.map(item => item.programId))];
+                console.log(columns);
+                columns.splice(0, 0, "");
+                var results = getTransposeItems(items);
+                console.log(results);
+                drawHeader(columns);
+                drawTable(results);
+            });
+
+            function getItems() {
+                var mainItemsObj = mainItems.reduce((previousValue, currentValue) => {
+                    previousValue[currentValue.uniqueKeyFormula] = currentValue.awardAmount;
+                    return previousValue;
+                }, {});
+                console.log(mainItemsObj);
+                return rawItems.map(rawItem => {
+                    let currentAwardAmount = rawItem.awardAmount && +rawItem.awardAmount || 0;
+                    let mainAwardAmount = +mainItemsObj[rawItem.uniqueKeyFormula] || 0;
+                    let differenceAmount = currentAwardAmount - mainAwardAmount;
+                    return {
+                        "uniqueid": rawItem.uniqueKeyFormula,
+                        "programId": rawItem.programName,
+                        "reciepientId": rawItem.subRecipientName,
+                        "amount": currentAwardAmount,
+                        "amountStatus": differenceAmount !== 0,
+                        "mainAmount": mainAwardAmount,
+                        "amountDifference": differenceAmount,
+                        "objectCode": rawItem.objectCode,
+                        "programCode": rawItem.programCode,
+                        "leaId": rawItem.leaId
+                    }
+                });
+            }
+
+            function getTransposeItems(mappedItems) {
+                /*
+                var programIds = [...new Set(mappedItems.map(item => item.programId))];
+                var reciepientIds = [...new Set(mappedItems.map(item => item.reciepientId))];
+                var results = reciepientIds.map(reciepientId => {
+                    var obj = {};
+                    obj[reciepientId] = reciepientId;
+                    programIds.forEach(programId => {
+                        var award = mappedItems.filter(item => item.programId === programId && item.reciepientId === reciepientId)[0];
+                        var amount = award && award.amount || '';
+                        obj[programId] = award // amount;
+                    });
+
+                    return obj;
+                });
+
+                return results;
+                */
+                var programIds = [...new Set(mappedItems.map(item => item.programId))];
+                var reciepientIds = [...new Set(mappedItems.map(item => item.reciepientId))];
+                var results = [];
+
+                for(i = 0; i < reciepientIds.length; i++){
+                    for(j = 0; j < programIds.length; j++){
+                        var award = mappedItems.filter(award => award.programId === programIds[j] && award.reciepientId === reciepientIds[i]);
+                        //console.log(award);
+                        for(k = 0; k < award.length; k++){
+                            var obj = {};
+                            obj[award[k].leaId] = award[k].leaId;
+                            obj[reciepientIds[i]] = reciepientIds[i];
+                            for(m = 0; m < programIds.length; m++){
+                                for(n = 0; n < mappedItems.length; n++){
+                                    if(programIds[m] === mappedItems[n].programId && mappedItems[n].reciepientId === reciepientIds[i]){
+                                        obj[programIds[m]] = mappedItems[n];
+                                        mappedItems.splice(n, 1);
+                                        break;
+                                    }
+                                }
+                            }
+                            results.push(obj);
+                        }
+                    }
+                }
+
+                var subHeader = {};
+                subHeader["rowHeader1"] = "Phase Code";
+                subHeader["rowHeader"] = "SubRecipient Name";
+
+                var subHeaderRes = programIds.reduce((res, currentProgramName) => {
+                    var awardHeader = {};
+                    awardHeader["programCode"] = "Program Code";
+                    awardHeader["objectCode"] = "Object Code";
+                    awardHeader["awardAmount"] = "Award Amount";
+                    res[currentProgramName] = awardHeader;
+                    return res;
+                }, subHeader);
+
+                results.splice(0, 0, subHeaderRes);
+                return results;
+
+
+                /*
+                var programIds = [...new Set(mappedItems.map(item => item.programId))];
+                var uniqueids = [...new Set(mappedItems.map(item => item.uniqueid))];
+                console.log(mappedItems);
+                var results = uniqueids.map(uniqueid => {
+                    var obj = {};
+                    obj[uniqueid] = uniqueid;
+                    programIds.forEach(programId => {
+                        var award = mappedItems.filter(item => item.programId === programId && item.uniqueid === uniqueid)[0];
+                        var amount = award && award.amount || '';
+                        obj[programId] = award // amount;
+                    });
+
+                    return obj;
+                });
+
+                return results;
+                */
+            }
+
+            function drawTable(data) {
+                for (var i = 0; i < data.length; i++) {
+                    if(i === 0){
+                        drawSubHeader(data[i]);
+                    }else{
+                        drawDollarRow(data[i]);
+                    }
+                }
+                $('.uitip').tooltip();
+            }
+
+            function drawHeader(columns) {
+                var row = $("<tr />")
+                row.addClass("w3-sand");
+                $("#personDataTable").append(row);
+                for (i = 0; i < columns.length; i++) {
+                    if (i == 0) {
+                        row.append($("<th class='th-header table-border' colspan='2'>" + columns[i] + "</th>"));
+                    } else {
+                        row.append($("<th class='th-header table-border' colspan='3'>" + columns[i] + "</th>"));
+                    }
+                }
+            }
+
+            Number.prototype.formatMoney = function(c, d, t) {
+                var n = this,
+                    c = isNaN(c = Math.abs(c)) ? 2 : c,
+                    d = d == undefined ? "." : d,
+                    t = t == undefined ? "," : t,
+                    s = n < 0 ? "-" : "",
+                    i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))),
+                    j = (j = i.length) > 3 ? j % 3 : 0;
+                return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+            };
+
+            function drawSubHeader(rowData) {
+                var row = $("<tr />")
+                $("#personDataTable").append(row);
+                var keys = Object.keys(rowData);
+                for (i = 0; i < keys.length; i++) {
+                    if (i < 2) {
+                        row.append($("<td class='w3-sand td-total td-hight table-border'>" + rowData[keys[i]] + "</td>"));
+                    } else {
+                        let payment = rowData[keys[i]];
+                        row.append($("<td class='w3-sand td-total td-hight table-border'>" + payment.programCode + "</td>"));
+                        row.append($("<td class='w3-sand td-total td-hight table-border'>" + payment.objectCode + "</td>"));
+                        row.append($("<td class='w3-sand td-total td-hight table-border'>" + payment.awardAmount + "</td>"));
+                    }
+                }
+            }
+
+            function drawDollarRow(rowData) {
+                var row = $("<tr />")
+                $("#personDataTable").append(row);
+                var keys = Object.keys(rowData);
+
+                for (i = 0; i < keys.length; i++) {
+                    if (i < 2) {
+                        row.append($("<td class='w3-sand td-total td-hight table-border'>" + rowData[keys[i]] + "</td>"));
+                    } else {
+                        let award = rowData[keys[i]];
+                        let mainAwardAmount = award && award.mainAmount || '',
+                            formattedMainMoney = "$ " + parseFloat(mainAwardAmount).formatMoney(2, '.', ',');
+                        let amount = award && award.amount || '',
+                            formattedMoney = "$ " + parseFloat(amount).formatMoney(2, '.', ',');
+                        let tdCss = award.amountDifference > 0 ? "w3-text-green" : award.amountDifference < 0 && "w3-text-red" || '';
+                        let title = `Fiscal Year: ${formattedMainMoney}</br>Current:${formattedMoney}`;
+                        row.append($("<td class='table-border'>" + award.programCode + "</td>"));
+                        row.append($("<td class='table-border'>" + award.objectCode + "</td>"));
+                        row.append($(`<td class="uitip ${tdCss} td-amount table-border" title="${title}">${formattedMoney}</td>`));
+                    }
+                }
+            }
+
+            $("#download").click(function (event) {
+                window.open('data:application/vnd.ms-excel,' + encodeURIComponent($("#dvData").html()));
+            });
+        </script>
+    </apex:pageBlock>
+</apex:page>

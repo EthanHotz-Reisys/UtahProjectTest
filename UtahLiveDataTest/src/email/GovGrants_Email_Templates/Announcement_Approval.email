@@ -1,0 +1,26 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: medium;">Dear {!Announcement__c.ExecutiveName__c},</span>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: medium;">The announcement {!Announcement__c.AnnouncementName__c} has been submitted for your approval. Please click the below link to review and approve it.</span></p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: medium;">Click <a href="{!Announcement__c.Link}">here</a></span></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">Sincerely,</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+<span style="font-size: 12pt; line-height: 107%; color: black;">UtahGrants Support Team</span></font>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

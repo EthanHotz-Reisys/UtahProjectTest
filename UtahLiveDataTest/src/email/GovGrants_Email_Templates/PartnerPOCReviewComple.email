@@ -1,0 +1,6 @@
+Hello {!Award__c.POUser__c},
+
+This email is to notify you that, the Award {!Award__c.Name}  for the Grant #{!Award__c.Grant__c} has been accepted by {!Award__c.GranteeOrganization__c} agency.
+
+Sincerely,
+{!Award__c.GranteePOC__r.Name}

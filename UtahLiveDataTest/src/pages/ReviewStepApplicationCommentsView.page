@@ -1,0 +1,10 @@
+<apex:page standardController="ReviewStepApplication__c" sidebar="false" showHeader="false" standardStylesheets="false" extensions="ReviewStepApplicationCommentsEditCtrl1">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />    
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">   
+            <GNT:ModalFlexViewLayout templateName="ReviewStepApplicationCommentsEdit1" layoutType="View" recordId="{!recordId}"  flexTableParameters="{!keyValueMap}"/>    
+        </apex:define>
+    </apex:composition> 
+</apex:page>

@@ -1,0 +1,288 @@
+<apex:page controller="SelectApplicationCtrl" showheader="false" sidebar="false" standardStylesheets="false" title="Announcement Profile">
+    <c:WhatFixHelper />
+    
+    <c:ExternalLibrary />
+    <style>
+        table, th, tr, td {
+            border: 1px solid black !important;
+            border-collapse: collapse !important;
+        }
+        th, td {
+            padding: 10px !important;
+        }
+        th{
+            font-weight :bold;
+        }
+        .readOnlyBlock {           
+            display: block;
+            margin-bottom: 10px;
+        }
+        .requiredBlock{
+            right:80px;
+            left:45px;           
+        }    
+        .customPadding{
+            padding: 5px 5px;
+        }
+        #errorDiv{
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+    <apex:composition template="GNT__PhaseTemplate">
+    <apex:define name="body"> 
+                <div class="panel panel-default" ng-app="createAnnouncement" ng-controller="CreateAnnouncementCtrl">
+                <!-- UI-Shrawan-11042015 removed border-add class -->
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span>Select an Application</span>
+                            </div>
+                            <div class="col-md-6">
+                                <span class="pull-right">
+                                    <!-- inputContainer -->                
+                                    <button type="button" class="btn"  ng-click="cancel();">Cancel</button>
+                                    <button type="button" class="btn"  ng-click="saveAndContinue();">Create</button>
+                                </span>
+                            </div>                      
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="errorDiv" ng-if="isMessage == true" ng-class="{'alert-danger alert fade in':isError==true,'alert-success alert fade in':isError==false}">
+                                <button type="button" ng-click="close()" data-dismiss="alert" class="close"  aria-hidden="true"><i class="fa fa-times"></i> 
+                                </button>
+                                <div class="divError"> {{status}} </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">   
+                        <div class="col-md-12">
+                            <div class="pull-right" >
+                                <span class="requiredBlock">Fields marked as * are required</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">   
+                        <div class="col-md-12">
+                            <div id="bodyDivId" class="form-horizontal">
+                               
+                                <div id="bodyDivId">
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-3" for="prg"><span class="requiredField">*</span>Application</label>
+                                        <div class="col-sm-6"> 
+                                            <select id="prg" class="form-control" ng-change="fetchOrganizationName(selectedProgram)" ng-model="selectedProgram" ng-options="object.Label for object in programs|orderObjectBy:'Label':false" aria-label="Program Type"> </select>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>                  
+                </div>
+            </div>
+  </apex:define>
+    </apex:composition> 
+    <script type="text/javascript">
+            var j$ = jQuery.noConflict();
+            var app = angular.module("createAnnouncement",[]);
+            var ctrl = app.controller("CreateAnnouncementCtrl",function($scope,$q){
+            $scope.isError = false;
+            $scope.showPrograms = false;
+            $scope.showServiceAreas = false;
+            $scope.isMessage = false;
+            $scope.programSelected;
+            $scope.ServiceAreaList = [];
+            $scope.OrganizationList;
+
+            $scope.serviceArea = {};
+
+
+           $scope.listOfFoType = function(){
+                $scope.serviceArea = {};
+                $scope.programs = {};
+                $scope.coreServiceArea = {};    
+                var deferred = $q.defer();               
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.SelectApplicationCtrl.getFoType}',
+                    function(result,event){
+                        if(event.status){ 
+                            $scope.$apply(function(){
+                                $scope.annTypes = result;
+                                console.log('result--',result);
+                            });                         
+                        }
+                    }
+                );                    
+            };
+            $scope.listOfFoType(); 
+
+         
+            
+
+         //  $scope.listOfBureaus (); 
+
+
+
+
+
+           
+           $scope.fetchPrograms = function(){
+               var deferred = $q.defer();
+               $scope.serviceArea = {};
+               $scope.programs = {};
+               $scope.coreServiceArea = {};               
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.SelectApplicationCtrl.getAllPrograms}',
+                    function(result,event){
+                        if(event.status){ 
+                            $scope.$apply(
+                                function(){
+                                    $scope.programs =result;
+                                     console.log('result-allprograms------>>',result); 
+                                    if($scope.programs != null && $scope.programs.length > 0){
+                                        $scope.showPrograms = true;
+                                    }else{
+                                        $scope.isMessage = true;
+                                        $scope.programs = {};
+                                        $scope.showPrograms = false;
+                                        $scope.showCoreServiceAreas = false;
+                                        $scope.showServiceAreas = false;
+                                        $scope.isError = true;
+                                        $scope.status = 'No Program associated with the Bureautest';
+                                    }
+                                   console.log('$scope.isMessage-->',$scope.isMessage);
+                                   console.log('$scope.isError-->',$scope.isError);
+                                    console.log('result-->>',result);
+                                });
+                            console.log('result-->>',result);                            
+                        }
+                    });        
+             };
+             
+
+         $scope.fetchOrganizationName = function(program){
+                $scope.serviceArea = {};
+               // $scope.programs = {};
+                $scope.coreServiceArea = {};    
+                //$scope.programSelected = program; 
+                 console.log('fetchOrg-11111111111111111-',program.Value); 
+                var deferred = $q.defer();               
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.SelectApplicationCtrl.getOrganization}',program.Value,
+                    function(result,event){
+                        if(event.status){ 
+                            $scope.$apply(function(){
+                                $scope.OrganizationList = result;
+                                console.log('result--',result);
+                            });                         
+                        }
+                    }
+                );                    
+            };
+
+       
+            $scope.close = function(){
+                $scope.isMessage = false;
+                $scope.isError = false;
+                console.log('$scope.isMessage------>>>>',$scope.isMessage);
+                console.log('$scope.isError ------>>>>',$scope.isError );
+            };
+            
+   
+              
+              $scope.saveAndContinue = function(){
+                console.log('======selectedProgram',$scope.selectedProgram);
+            
+                
+            
+                 if(($scope.selectedProgram == null ||( $scope.selectedProgram.Value == null && $scope.selectedProgram.Value == '') )
+                  
+                     ){
+                     $scope.isMessage = true;
+                     $scope.status ='Please add all Required Fields.';
+                     $scope.isError = true;
+                }else{
+               
+                 
+                     console.log('$scope.selectedProgram.Value--->>>',$scope.selectedProgram.Value);
+                 
+             
+                  
+                     
+                   // console.log('$scope.selectedRFA--->>>',$scope.selectedRFA);
+                        Visualforce.remoting.Manager.invokeAction( 
+                            '{!$RemoteAction.SelectApplicationCtrl.saveAndContinue}',$scope.selectedProgram.Value,"{!$CurrentPage.parameters.id}", 
+                           
+                            function(result,event){
+                                if(event.status){ 
+                                    $scope.$apply(
+                                        function(){
+                                            console.log('result--->>>',result);
+                                            $scope.result=result;
+                                            if($scope.result.Error != ''){
+                                                $scope.isMessage = true;
+                                                $scope.status = $scope.result.Error;
+                                                $scope.isError = true;
+                                            }else{
+                                                window.location.href = $scope.result.URL;
+                                            }
+                                        });
+                                    console.log('result-->>',result);                            
+                                }
+                            });      
+                  }
+              }
+              $scope.cancel = function(){   
+                    window.location.href = '{!$CurrentPage.parameters.retURL}';
+              } 
+              ///////////////////
+             $scope.fetchPrograms();
+            // $scope.fetchOrganizationName();
+            //$scope.saveAndContinue();
+        });  
+        
+        app.filter('orderObjectBy', function() {
+            return function(items, field, reverse) {
+                var filtered = [];
+                angular.forEach(items, function(item) {
+                    filtered.push(item);
+                });
+                filtered.sort(function (a, b) {
+                    return (a[field] > b[field]) ? 1 : ((a[field] < b[field]) ? -1 : 0);
+                });
+                if(reverse) filtered.reverse();
+                    return filtered;
+            };
+        }); 
+        
+        
+        
+        j$("#annTypeDiv").change(function () {
+        
+         console.log('inside competitive block00');
+   
+
+
+    j$("#annTypeDiv :selected").each(function () {
+    
+        if(j$(this).val() == "0") {
+        console.log('inside competitive block12 '+j$(this).val());
+            j$('#rfaTypeDiv').css('display','block');
+            } 
+            else
+            {
+             console.log('inside competitive block22');
+                j$('#rfaTypeDiv').css('display','none');
+            }
+        });
+    });
+        
+        
+    </script>
+</apex:page>

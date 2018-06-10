@@ -1,0 +1,13 @@
+<apex:page cache="false" controller="GrantListCtrl" standardStylesheets="false" sidebar="false" showHeader="false">
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">
+
+                <GNT:FlexTable flexTableName="ActiveGrants" tableId="ActiveGrants" flexTableParameters="{!keyValueMap}"/>
+
+            <apex:outputPanel rendered="{!currentAccount = 'USBE' || currentAccount = 'SYSTEM'}">   
+                <GNT:FlexTable flexTableName="MSPGrants" tableId="MSPGrants" flexTableParameters="{!keyValueMap}"/>
+            </apex:outputPanel>
+        </apex:define>
+    </apex:composition> 
+</apex:page>

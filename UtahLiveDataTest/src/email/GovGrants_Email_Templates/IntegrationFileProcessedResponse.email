@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<img align="left" alt="" src="https://c.na31.content.force.com/servlet/servlet.ImageServer?id=015f4000000GKIy&amp;oid=00Df40000002V1I" border="0">]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<div><div><font face="arial">Dear Integration User,</font></div><div><font face="arial"><br></font></div><div><font face="arial">Your file {!IntegrationHeader__c.Filename__c} submitted on {!IntegrationHeader__c.CreatedDate} is processed. Below is the status.</font></div><div><font face="arial"><br></font></div><div><font face="arial"><b>Status</b>: {!IntegrationHeader__c.Status__c}</font></div><div><font face="arial"><b>Total Records</b>: {!IntegrationHeader__c.TotalChildRecords__c}</font></div><div><font face="arial"><b>Processed Records</b>: {!IntegrationHeader__c.TotalCompetedChildRecords__c}</font></div><div><font face="arial"><b>Failed Records</b>: {!IntegrationHeader__c.TotalFailedChildRecords__c}</font></div><div><font face="arial"><br></font></div><div><font face="arial">Please click on the link below to view the details of the status: {!IntegrationHeader__c.Link}</font></div><div><font face="arial"><br></font></div><div><font face="arial"><img align="left" alt="" src="https://c.na31.content.force.com/servlet/servlet.ImageServer?id=015f40000004yJJ&amp;oid=00Df40000002V1I" border="0"><br></font></div></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><br></div>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

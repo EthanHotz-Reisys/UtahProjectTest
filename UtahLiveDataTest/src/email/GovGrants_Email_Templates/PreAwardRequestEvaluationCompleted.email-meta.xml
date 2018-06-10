@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE - Pre-Award Request Evaluation Completed</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Pre-Award Request Evaluation Completed</name>
+    <style>formalLetter</style>
+    <subject>Notification: Negotiation Request {!ChangeRequest__c.RequestName__c} Evaluation Completed</subject>
+    <textOnly>Subject: Notification of review completion for Negotiation Request {!ChangeRequest__c.Name}
+
+
+
+This email is to notify you that a review has been completed.
+
+
+
+Negotiation Information:
+
+Funding Title #: {!ChangeRequest__c.FundingOpportunityTitle__c}
+
+Application Number #:{!ChangeRequest__c.ApplicationHtmlLink__c}
+
+Negotiation Request #: {!ChangeRequest__c.Name}
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+Sincerely,
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

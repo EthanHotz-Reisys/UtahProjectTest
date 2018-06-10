@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email sent to Program Owner when Program Approver approves the Program</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Program Approved Email Template</name>
+    <style>formalLetter</style>
+    <subject>Notification: Program #{!Program__c.Name} has been Approved</subject>
+    <textOnly>Subject: Notification that the Program # {!Program__c.Name} has been approved
+
+
+
+Hello {!Program__c.OwnerFirstName},
+
+This email is to notify you that the Program # {!Program__c.Name} has been approved.
+To activate the program go to the record by clicking here.
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+Sincerely,
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

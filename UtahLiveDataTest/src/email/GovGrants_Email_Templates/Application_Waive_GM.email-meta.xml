@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>For when an application has been waived</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Application Waive GM</name>
+    <style>formalLetter</style>
+    <subject>Application invite waiver for {!Application__c.ProgramTitle__c} for {!Application__c.FiscalYear__c} by {!Application__c.ExternalOrganizationName__c}</subject>
+    <textOnly>Dear User,
+Application Invite for {!Application__c.ProgramTitle__c} for {!Application__c.FiscalYear__c} by {!Application__c.ExternalOrganizationName__c} has been waived by the LEA for {!Application__c.GranteeRequestedAmount__c} amount.
+
+
+Sincerely,
+
+UtahGrants Support Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,96 @@
+<apex:page standardController="GNT__DataTableConfig__c" extensions="SubTotalJSONBuilderCtrl" showHeader="false" sidebar="false">    
+    
+    <apex:form >
+        <apex:pageBlock id="pagemsg">
+         <apex:pagemessages ></apex:pagemessages> 
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!save}"/>
+                <apex:commandButton value="cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Row Information ">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Main Row Number </apex:outputLabel>
+                    <apex:inputText label="Main Row Number" value="{!mainRowNumber}"/>
+                </apex:pageBlockSectionItem>                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Label Column </apex:outputLabel>
+                    <apex:selectList size="1" value="{!labelColumn}" id="o">
+                        <apex:selectOptions value="{!FieldNames}"/>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Label Value </apex:outputLabel>
+                    <apex:inputTextarea value="{!labelValue}" richText="true" rows="15"/>
+                </apex:pageBlockSectionItem>                                   
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Sub Total Expression"  id="display">
+                <apex:pageblockSectionItem >
+                    <apex:commandButton action="{!changeBracket}" value="{!var}" />
+                    <apex:commandButton action="{!generateExpression}" value="Generate Expression"/>
+                </apex:pageblockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Sub Total Column </apex:outputLabel>
+                    <apex:selectList size="1" value="{!subTotalColumn}" id="c">                    
+                        <apex:selectOptions value="{!FieldNames}"/>
+                        <apex:actionSupport event="onchange" reRender="table,pageblock" action="{!refresh}" /> 
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel id="out" >Prefix </apex:outputLabel>
+                    <apex:inputText label="Prefix" value="{!prefix}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Suffix </apex:outputLabel>
+                    <apex:inputText label="Suffix" value="{!suffix}"/>
+                </apex:pageBlockSectionItem>       
+                <apex:outputPanel id="table" >
+                    <apex:pageBlockTable value="{!wrapperExpressionList}" var="wrapper" id="pageblock">
+                        <apex:column headerValue="#">
+                            <apex:outputText value="{!wrapper.index}"></apex:outputText>
+                        </apex:column>
+                        <apex:column headerValue="Operator">
+                            <apex:selectList size="1" value="{!wrapper.operator}" id="op" >
+                                <apex:selectOptions value="{!operator}"/>
+                            </apex:selectList>
+                        </apex:column>
+                        <apex:column headerValue="Row" >
+                            <apex:inputText value="{!wrapper.rowNumber}" id="r"/>
+                        </apex:column>
+                        <apex:column headerValue="Column">
+                            <apex:selectList size="1" value="{!wrapper.FieldName}" id="c">
+                                <apex:selectOptions value="{!FieldNames}"/>
+                            </apex:selectList>
+                        </apex:column>
+                        <apex:column headerValue="Actions">
+                            <apex:outputPanel rendered="{!IF(wrapper.index==wrapperExpressionlist.size-1,true,false)}" >
+                            <input type="button" onclick="addNewRow('{!wrapper.index}')" value="Add" ></input>
+                            </apex:outputPanel>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                    <apex:pageblockSectionItem >                
+                    </apex:pageblockSectionItem>
+                </apex:outputPanel>
+                <apex:pageblockSectionItem >
+                    <apex:inputtextarea rows="15" value="{!expressionTextArea}" style="width:80%;" readonly="true"  />
+                </apex:pageblockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Final JSON" id="text">  
+                <apex:pageblockSectionItem >
+                    <apex:inputtextarea rows="15" value="{!finalJSONTextArea}" style="width:80%;" readonly="true" />
+                </apex:pageblockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:actionFunction name="add" action="{!addNewRow}" reRender="display" >
+            <apex:param assignTo="{!currentRow}" name="index" value=""/>
+        </apex:actionFunction>
+    </apex:form>
+    <script>
+        function addNewRow(index){
+            console.log(index);          
+            add(index)
+        }
+                    
+    </script>
+</apex:page>

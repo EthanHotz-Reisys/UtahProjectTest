@@ -1,0 +1,98 @@
+<apex:page controller="GNT.NoteAddCtrl" standardStylesheets="false" showHeader="false" sidebar="false">
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__GovGrantsExternal, 'BootStrap/CSS/bootstrap.min.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__GovGrantsExternal, 'BootStrap/CSS/bootstrap-theme.min.css')}" />
+    <c:CustomCSS />
+    <c:ExternalLibrary />  
+    <apex:includeScript value="{!URLFOR($Resource.GNT__GovGrantsExternal, 'jQueryBlockUI/JS/jquery.blockUI.js')}" />  
+    <style>
+        table{
+            
+        }
+        td { 
+            padding: 0 20px 15px 15px !important;
+        }
+        .hidden508{
+            position:absolute;
+            left:-10000px;
+            top:auto;
+            width:1px;
+            height:1px;
+            overflow:hidden;
+        }
+        .textAreaDesc {
+		    height: 65px !important;
+		}
+		
+		table tr:nth-of-type(even), table tr:nth-of-type(even):hover, 
+		table tr:nth-of-type(odd):hover, div#addAtt table tr:hover, div#addAtt table tr:nth-of-type(odd):hover  {
+		background-color: #fff !important;
+		}
+		
+    </style>
+         <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">
+    <apex:form >
+        <div id="addAtt" class="bs container-fluid" onkeyup="closeModal()">                        
+            <c:PageMessages id="addForm"/>
+            <table style="width:100%;border-collapse: collapse;" align="center" cellspacing="10">                
+                 <tr>
+                    <td >
+                        <span for="title" class="control-label col-lg-12 pull-left spacer" style="font-weight: 600 !important;font-size:14px !important;"><span class="requiredField">*</span>Title</span>
+                    </td>
+                    <td>                         
+                        <label for="Title" class="hidden508">Title</label>           
+      					<apex:inputField id="Title" styleClass="form-control spacer" value="{!noteObj.Title}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                        <span for="body" class="col-lg-2 control-label spacer pull-left" style="font-weight: 600 !important;font-size:14px !important;"><span class="requiredField">*</span>Description</span>
+                    </td>
+                    <td> 
+                     	<label for="Description" class="hidden508">Description</label>
+						<apex:inputField styleClass="form-control spacer textAreaDesc"  id="Description" value="{!noteObj.Body}"/>                        
+                       <!-- <apex:inputTextarea cols="21" rows="10"  value="{!noteObj.Body}"/> --> 
+                    </td>
+                </tr>                 
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    	<apex:commandbutton action="{!addAttachment}"  value="Save" reRender="addForm"  styleClass="customBtn pull-right"  /> <!-- onclick="showLoadingPopUp();" onComplete="closeModal();" -->
+                    </td>                    
+                </tr>
+                
+            </table>
+        </div>
+    </apex:form>
+    </apex:define> 
+    </apex:composition>
+    <script>
+    
+  /*  j$(document).ready(function() {
+	    console.log( "ready!" );
+	    console.log('----Attachmentaddheight----',j$('#addAtt').height());
+	    console.log('----Attachmentaddwidth----',j$('#addAtt').width());
+		window.parent.resizenotesmodal(j$('#addAtt').height(),j$('#addAtt').width());
+	});*/
+    
+    
+        var j$ = jQuery.noConflict();                
+        function closeModal(){
+        	//console.log('Entered into close modal function!');
+            parent.closeNoteModal();
+        }
+        function showLoadNotification(){            
+            j$.blockUI({
+                //message: 'Uploading attachment...'                               
+            });                                  
+        }
+        function closeModal() {				/* on ESC key closing modal window*/
+		
+			if(event.keyCode==27)
+		    {	
+				window.parent.parent.closeModalFromModalTemplate();		
+		    }	
+		}
+    </script>     
+</apex:page>

@@ -1,0 +1,14 @@
+<apex:page controller="GNT.AttachmentAddExistingCtrl" standardStylesheets="false" showHeader="false" sidebar="false">
+    <c:ExternalLibrary />  
+	<apex:form >
+		<label for="cclassification" class="hidden508">Classification</label>           
+        <apex:selectList required="true" styleClass="form-control spacer" id="cclassification" size="1" value="{!classificationVal}" title="Classification">
+            <apex:selectOptions value="{!classificationsList}"></apex:selectOptions>
+        </apex:selectList>
+    </apex:form>
+    <!-- <div id="body"> -->
+	    <div class="bs container-fluid">
+			<c:FlexTable tableId="a0hG0000007upG6" FlexTableName="ContentVersions"/>
+		</div>
+	<!-- </div> -->
+</apex:page>

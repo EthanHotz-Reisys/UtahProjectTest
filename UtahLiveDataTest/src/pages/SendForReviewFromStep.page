@@ -1,0 +1,11 @@
+<apex:page controller="SendForReviewFromStepCtrl"  showHeader="false" sidebar="false" standardStylesheets="false">
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">
+            <GNT:FlexTable flexTableHeader="{!flexTableHeader}" listParams="{!listParameters}" flexTableName="SendForReviewFromReviewStep" tableId="SendForReviewFromReviewStepTable" flexTableParameters="{!keyValueMap}"/>
+        </apex:define>
+    </apex:composition>    
+    <script>
+        setPageTitle('{!flexTableHeader}');
+    </script>
+</apex:page>

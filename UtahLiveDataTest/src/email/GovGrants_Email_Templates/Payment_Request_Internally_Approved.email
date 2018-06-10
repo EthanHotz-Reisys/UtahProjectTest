@@ -1,0 +1,16 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: medium; background-color: rgb(255, 255, 255);">Dear&nbsp;{!PaymentRequest__c.Applicant__c},</span>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="line-height: 1.5em; margin: 0cm 0cm 12pt; background-color: rgb(255, 255, 255);"><span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: medium;">This email is to notify you that, the Payment Request #{!PaymentRequest__c.Name} for the Grant #{!PaymentRequest__c.Grant__c} for&nbsp;</span><span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: 12pt;">{!PaymentRequest__c.LEAName__c} for ${!PaymentRequest__c.TotalRequestedAmountthisAction__c}&nbsp;</span><span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: medium;">has been Internally Approved.</span></p><p style="margin: 0cm 0cm 0.0001pt;"><font face="Times New Roman,Times,Serif" size="3"><u><b>Payment Request Details:&nbsp;</b></u></font></p><p style="margin: 0cm 0cm 0.0001pt;"><font face="Times New Roman,Times,Serif" size="3"><b>Award</b>: #{!PaymentRequest__c.Award__c}</font></p><p style="margin: 0cm 0cm 0.0001pt;"><font face="Times New Roman,Times,Serif" size="3"><br></font></p><p style="margin: 0cm 0cm 0.0001pt;"><font face="Times New Roman,Times,Serif" size="3">Sincerely,</font></p><p style="line-height: 1.5em; margin: 0cm 0cm 0.0001pt; background-color: rgb(255, 255, 255);"><font face="Times New Roman,Times,Serif"></font><font face="Times New Roman,Times,Serif"></font><font face="Times New Roman,Times,Serif"></font><font face="Times New Roman,Times,Serif">UtahGrants Support Team</font><span style="font-size: medium; font-family: &quot;Times New Roman&quot;, Times, serif;"></span></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

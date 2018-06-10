@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE When Program Manager approves Funding opportunity email is sent to Funding Opportunity Owner</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Sole Source - Program Manager approves Funding opportunity email to FO Owner</name>
+    <style>formalLetter</style>
+    <subject>Notification: #{!Announcement__c.AnnouncementId__c} has been Approved</subject>
+    <textOnly>Hi {!Announcement__c.OwnerFirstName}
+
+{!Announcement__c.Id} has been approved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

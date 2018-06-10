@@ -1,0 +1,14 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false">
+   
+    <c:ExternalLibrary />
+
+    <apex:outputPanel >
+        <apex:composition template="GNT__PhaseTemplate">
+            <apex:define name="body">    
+                  <GNT:FlexTable flexTableName="BudgetCategories" tableId="BudgetCategories"  headerDescription="" />
+                  <GNT:FlexTable flexTableName="CategoryMapping" tableId="CategoryMapping"  headerDescription="" />
+            </apex:define>
+        </apex:composition>
+    </apex:outputPanel>
+    
+</apex:page>

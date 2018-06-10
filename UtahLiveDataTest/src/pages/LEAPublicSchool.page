@@ -1,0 +1,10 @@
+<apex:page standardController="LEAPublicSchools__c" showHeader="false" standardStylesheets="false" extensions="LEAPublicSchoolCtrl" sidebar="false">
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />    
+    <apex:composition template="GNT__ModalTemplate">
+    <apex:define name="ModalContent">    
+    <GNT:ModalFlexViewLayout templateName="{!pageTemplateName}" recordId="{!recordId}" layoutType="View" flexTableParameters="{!keyValueMap}"  hideSidebar="true"  hideCancelBtn="true" /> 
+  </apex:define>
+    </apex:composition>
+     
+</apex:page>

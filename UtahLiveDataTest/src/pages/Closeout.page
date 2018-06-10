@@ -1,0 +1,10 @@
+<apex:page standardController="CloseoutInventory__c" title="Closeout" extensions="CloseoutCtrl" sidebar="false" showHeader="false" applyHtmlTag="false" standardStylesheets="false">
+
+    <div class="Container">
+            <div class="col-md-12">
+             <!-- <GNT:FlexTable flexTableName="GranteePendingCloseOutRequest"   tableId="GranteePendingCloseOutRequest" flexTableParameters="{!keyValueMap}"/>-->
+             <GNT:FlexTable flexTableName="GranteeCompletedCloseOutRequest"  tableId="GranteeCompletedCloseOutRequest" flexTableParameters="{!keyValueMap}"/>
+            </div>    
+         
+    </div>
+</apex:page>

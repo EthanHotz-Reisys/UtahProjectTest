@@ -1,0 +1,36 @@
+<apex:page cache="false" standardController="Review__c" extensions="ReviewAssignmentViewCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+      <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />  
+  
+      <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">              
+            <GNT:FlexViewLayout templateName="{!pageTemplateName}" layoutType="View" recordId="{!recordId}" 
+                flexTableParameters="{!keyValueMap}"/>    
+        </apex:define>
+    </apex:composition> 
+  
+  <!-- previous code
+    <div class="bs" >        
+        <div id="bodyDivId" class="bodyDiv container-fluid" style="padding-left:30px; float:left; clear:both; width:100%;height:100%;">
+        <GNT:FlexViewLayout templateName="{!pageTemplateName}" layoutType="View" recordId="{!recordId}" 
+                flexTableParameters="{!keyValueMap}" HideSidebar="false" hideHeaderBtns="false"/>    
+        </div>
+    </div>
+
+    -->
+    
+    <!-- Not working - the side bar is overlapping for success scenario. Working for error scenario
+        <apex:composition template="GNT__PhaseTemplate">
+            <apex:define name="body">
+        <GNT:FlexViewLayout templateName="{!pageTemplateName}" layoutType="View" recordId="{!recordId}" 
+              flexTableParameters="{!keyValueMap}" HideSidebar="false" hideHeaderBtns="false" rendered="{!isEligibleToViewReview}"/>  
+            
+          <apex:outputPanel rendered="{!isEligibleToViewReview  == false}">
+                <h3>You do not have sufficient privilege to view this page.</h3>
+            </apex:outputPanel> 
+       
+        </apex:define>
+    </apex:composition>  
+    -->
+        
+</apex:page>

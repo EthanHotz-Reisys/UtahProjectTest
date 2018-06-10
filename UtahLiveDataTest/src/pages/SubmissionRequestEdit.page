@@ -1,0 +1,13 @@
+<apex:page standardController="ChangeRequest__c" extensions="SubmissionRequestEditCtrl" sidebar="false" standardStylesheets="false" showHeader="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">
+            <GNT:FlexEditLayout templateName="ChangeRequest"  recordId="{!recordId}" layoutType="Edit" 
+             flexTableParameters="{!keyValueMap}"
+              createDefaultValues="{!listDefaultValues}" />
+        </apex:define>
+    </apex:composition>
+    
+</apex:page>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE This email is sent to Applicants by a batch process to Create Payment Request</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>GG Create Payment Request</name>
+    <style>formalLetter</style>
+    <subject>Notification: Payment Request #{!PaymentRequest__c.Name} Task has been Created</subject>
+    <textOnly>Subject: Payment Request {!PaymentRequest__c.Name}task has been created.
+
+
+
+This email is to notify you that a Payment Request {!PaymentRequest__c.Name} task has been created.
+
+
+
+Please login to EGMS System to create and submit the task.
+
+
+
+Payment Request Details:
+
+Grant Number: {!PaymentRequest__c.FederalGrantNumber__c}
+
+Budget Period: {!PaymentRequest__c.BudgetPeriod__c}
+
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

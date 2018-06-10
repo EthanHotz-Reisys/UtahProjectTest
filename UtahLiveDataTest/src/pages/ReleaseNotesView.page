@@ -1,0 +1,12 @@
+<apex:page standardController="ReleaseNotes__c" sidebar="false" standardStylesheets="false" showHeader="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+    
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent"> 
+          <GNT:ModalFlexViewLayout templateName="ReleaseNotes" recordId="{!$CurrentPage.parameters.id}" layoutType="view" />
+     </apex:define>
+    </apex:composition>
+    
+</apex:page>

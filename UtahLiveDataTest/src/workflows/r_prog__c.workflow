@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Finalrejectionemail</fullName>
+        <description>Final rejection email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/AWSTest</template>
+    </alerts>
+    <alerts>
+        <fullName>InitialSubmissionApproval</fullName>
+        <description>InitialSubmissionApproval</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/AWSTest</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>InitialSubmitUpdate</fullName>
+        <field>Status__c</field>
+        <literalValue>Submitted for Approval</literalValue>
+        <name>InitialSubmitUpdate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ProgramRejectionFieldUpdate</fullName>
+        <field>Status__c</field>
+        <literalValue>Created</literalValue>
+        <name>ProgramRejectionFieldUpdate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>StatusApprovedProgramApproval</fullName>
+        <field>Status__c</field>
+        <literalValue>Active</literalValue>
+        <name>StatusApprovedProgramApproval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+</Workflow>

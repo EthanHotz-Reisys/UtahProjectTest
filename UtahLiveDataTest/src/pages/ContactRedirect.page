@@ -1,0 +1,10 @@
+<!--
+ Intemediate page for User profile edit
+ **********************************************************
+ Audit History
+ **********************************************************
+ 5/30/2014   Nakul Kadam     Created
+ **********************************************************  
+-->
+<apex:page standardController="Contact" id="MyProfile" sidebar="false" standardStylesheets="false" showHeader="false" extensions="ContactRedirectCtrl" action="{!forwardToProfilePage}">
+</apex:page>

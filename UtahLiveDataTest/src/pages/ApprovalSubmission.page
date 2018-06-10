@@ -1,0 +1,3 @@
+<apex:page sidebar="false" showHeader="false">
+    <Apex:include pageName="GNT__ApprovalSubmission"/>
+</apex:page>

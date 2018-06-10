@@ -1,0 +1,3 @@
+Dear {!Application__c.OwnerFirstName}, 
+
+A Draft application has been created for you for <Program Name> in the amount of ${!Application__c.BudgetAllocation__c}. Your response is due by {!Application__c.ApplicationDeadline__c}.

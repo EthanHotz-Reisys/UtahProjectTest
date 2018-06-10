@@ -1,0 +1,21 @@
+<apex:page controller="GrantListCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+   
+    <c:ExternalLibrary />
+
+    <apex:outputPanel >
+        <apex:composition template="GNT__PhaseTemplate">
+            <apex:define name="body">
+                    
+                <apex:outputPanel rendered="{!currentAccount = 'UOVC' || !isExtUSBE }">    
+                    <GNT:FlexTable flexTableName="ActiveGrants" tableId="ActiveGrants" flexTableParameters="{!keyValueMap}"/>
+                 </apex:outputPanel> 
+                 
+                <apex:outputPanel rendered="{!currentAccount = 'USBE' || isExtUSBE }">    
+                    <GNT:FlexTable flexTableName="ActiveGrantsUSBE" tableId="ActiveGrantsUSBE" flexTableParameters="{!keyValueMap}"/>
+                 </apex:outputPanel> 
+                 
+            </apex:define>
+        </apex:composition>
+    </apex:outputPanel>
+    
+</apex:page>

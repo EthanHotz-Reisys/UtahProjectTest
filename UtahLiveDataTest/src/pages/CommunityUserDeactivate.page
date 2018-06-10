@@ -1,0 +1,33 @@
+<apex:page sidebar="false" standardStylesheets="false" showHeader="false" controller="CommunityUserDeactivateCtrl">
+  
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+    <!--GNT:PageMessages /--> 
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">
+            <apex:form >
+            <div class="bs container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" style="height: 50px;">
+                                <div class="col-lg-10"><b>Remove User</b></div>
+                                <div class="col-lg-1">
+                                    <apex:commandbutton styleclass="customBtn pull-right" action="{!deactivateUser}" rerender="startPanel, confirmationPanel" value="Yes" />
+                                </div>
+                                <div class="col-lg-1">
+                                    <apex:commandbutton styleclass="customBtn pull-right" action="{!cancelPage}" value="No" />
+                                </div>
+                            </div>
+                            <div class="panel-body panel-body-ext"> 
+                                Are you sure to Remove this user from Organization?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </apex:form>
+        </apex:define>
+    </apex:composition>
+    
+</apex:page>

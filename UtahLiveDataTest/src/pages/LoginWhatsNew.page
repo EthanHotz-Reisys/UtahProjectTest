@@ -1,0 +1,59 @@
+<apex:page controller="LoginWhatsNewCtrl" standardstylesheets="false" showHeader="false" sidebar="false">
+
+    <div class="bs funding-opportunities-page">
+        <div class="panel">
+          <!-- <div class="panel-heading" > -->
+            <div class="panel-title color-Cyan-Blue" style="text-align:left;font-weight:600;padding-left: 15px;">
+          
+               <!--  {!$Label.NewFOForLoginPage} -->
+               Funding Opportunities
+            </div>
+         <!--   </div> -->
+            <div class="panel-body panel-body-ext" style="text-align:left;" > <!-- style="min-height:230px !important;background-color:#f5f5f5;" -->
+            
+              <apex:outputPanel rendered="{!(minAnnouncementList.size>0)}">
+                <apex:repeat value="{!minAnnouncementList}" var="announcement">
+                    <div class="loginWhatsNewExtendedLine"></div>
+                    <div class="loginListItemsSpacing">
+                        <div> <!-- class="loginListItemsStyle" -->
+                            <a tabIndex="0" onclick="window.open('/DynamicLayoutView?templateName=Announcement&templateType=Page&id='+'{!announcement.Id}');" style="cursor:pointer;color:#808790;">{!announcement.AnnouncementName__c}</a>
+                        </div>
+                        <apex:outputText value="{0,date,full}" styleClass="loginListItemDateStyle">
+                            <apex:param value="{!announcement.ApplicationDeadlineWithDateTime__c}" /> 
+                        </apex:outputText>
+                    </div>
+                </apex:repeat>
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!(minAnnouncementList.size=0)}"> 
+               <!--  <div style="color:#808790;"> <p>No recent opportunity is published</p></div> -->
+                  <apex:outputLink value="{! $Page.PublicAnnouncements}" styleClass="color-Cyan-Bluish-gray ">View Funding Opportunities</apex:outputLink>
+                 
+                </apex:outputPanel>
+                
+                <div id="viewMore">
+                    <apex:outputPanel rendered="{!actualItemCount > minItemsCount}">
+                        <a href="#" onclick="window.open('/PublicAnnouncements');">View More</a> <!-- class="pull-right"  -->
+                    </apex:outputPanel>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 
+    <script>
+        j$ = jQuery.noConflict();
+        j$( document ).ready(function() {
+            j$('#extendedItemList').hide();
+        });
+        
+        function expandWhatsNew(){
+            j$('#viewAll').hide();
+            j$('#extendedItemList').show('slow');
+        }
+        
+        function collapseWhatsNew(){
+            j$('#extendedItemList').hide();
+            j$('#viewAll').show();
+        }
+    
+    </script> -->
+</apex:page>

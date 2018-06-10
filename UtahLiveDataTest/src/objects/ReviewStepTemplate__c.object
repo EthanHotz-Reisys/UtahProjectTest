@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>ReviewStepTemplateEdit</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>ReviewStepTemplateView</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>[Business] Template defined for a Step Review , Previous Name (Review Step Template)</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Read</externalSharingModel>
+    <fields>
+        <fullName>AdminPageLayout__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Admin Page Layout (Obsolete)</label>
+        <referenceTo>GNT__PageLayoutConfig__c</referenceTo>
+        <relationshipName>Review_Step_Templates</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Announcement__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Link the announcement record.</description>
+        <externalId>false</externalId>
+        <label>Announcement</label>
+        <referenceTo>Announcement__c</referenceTo>
+        <relationshipName>ReviewStepTemplates</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ApplicationAssignment__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>How the Applications needs to be divided between Panels/Reviewers</inlineHelpText>
+        <label>Application Assignment</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Auto-Assign to All</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Auto-Divide Equally</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Manual Assignment</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ApprovalConfirmationFlexTableName__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>This table is used to render a table on the confirmation page for promote button from decisions tab</inlineHelpText>
+        <label>Approval Confirmation Flex Table Name</label>
+        <referenceTo>GNT__DataTableConfig__c</referenceTo>
+        <relationshipName>Approval_Confirmation_Table</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ApprovalConfirmationLayout__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>This layout is used to render the confirmation page for promote button from decisions tab</inlineHelpText>
+        <label>Approval Confirmation Layout (Obsolete)</label>
+        <referenceTo>GNT__PageTemplate__c</referenceTo>
+        <relationshipName>Approval_Confirmation_Layout</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ApprovalEmailTemplate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is used to store the developer name of the email template to notify the Applicant upon Approval/Promotion</inlineHelpText>
+        <label>Approval Email Template</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AssignedReviewerCount__c</fullName>
+        <externalId>false</externalId>
+        <label>Assigned Reviewer Count</label>
+        <summarizedField>ReviewPanelTemplate__c.ReviewersCount__c</summarizedField>
+        <summaryForeignKey>ReviewPanelTemplate__c.ReviewStepTemplate__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>AssignedReviewer__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AssignedReviewerCount__c &gt; 0, &quot;Yes&quot;, &quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Assigned Reviewers</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AssignedReviewers__c</fullName>
+        <externalId>false</externalId>
+        <label>Assigned Reviewers</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ClonedFrom__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Cloned From</label>
+        <referenceTo>ReviewStepTemplate__c</referenceTo>
+        <relationshipName>Review_Step_Templates</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CustomAppName__c</fullName>
+        <externalId>false</externalId>
+        <label>Custom App Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>StateasGrantee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>StateasGrantor</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DefaultStep__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If this Review step is a default step</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If this Review step is a default step</inlineHelpText>
+        <label>Default Step</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EndDate__c</fullName>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ExecutiveApprover__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Executive Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Review_Steps1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>HideAnnouncementEdit__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(OR(ISPICKVAL(Announcement__r.Status__c,&apos;Created&apos;), 
+ISPICKVAL(Announcement__r.Status__c,&apos;Reviewed&apos;)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide Announcement Edit</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HidePanelBtn__c</fullName>
+        <externalId>false</externalId>
+        <formula>ISPICKVAL(MultiplePanelsRequired__c,&apos;No&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide Panel Btn</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideProgramEdit__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(ISPICKVAL(Program__r.Status__c,&apos;Created&apos;)) || Name=&apos;Funding Decision Memo&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide Program Edit</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideView__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Name=&apos;Funding Decision Memo&apos;,True,False)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideView</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>InstructionsToReviewers__c</fullName>
+        <externalId>false</externalId>
+        <label>Instructions to Reviewers (Obsolete)</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>IsStepMandatory__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(IsStepOptional__c,&apos;Optional&apos;),&apos;Optional&apos;,&apos;Mandatory&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Step Mandatory</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsStepOptional__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this Step Required for all Announcements under this program?</inlineHelpText>
+        <label>Is this step Mandatory/Optional?</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Mandatory</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Optional</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IsStepRequiredInApp__c</fullName>
+        <externalId>false</externalId>
+        <formula>ISPICKVAL(IsStepRequired__c,&apos;Yes&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is this Step Required</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsStepRequired__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please select if Step is Required in Application or not</inlineHelpText>
+        <label>Is the Step Required in Application?</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>MaximumReviewers__c</fullName>
+        <externalId>false</externalId>
+        <label>Maximum Reviewers</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MinimumReviewers__c</fullName>
+        <externalId>false</externalId>
+        <label>Minimum Reviewers</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MultiplePanelsRequired__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Does it Require more than 1 Panels for this Review Step? 1 Panel is added by default</inlineHelpText>
+        <label>Does it Require Multiple Review Panels</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>NumberOfReviewPanels__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Review Panels</label>
+        <summaryForeignKey>ReviewPanelTemplate__c.ReviewStepTemplate__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>PanelHeadAssignNotificationTemplate__c</fullName>
+        <externalId>false</externalId>
+        <label>Panel Head Assign Notification Template</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PreventDuplicateReviewers__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Prevent Duplicate Reviewers Across Panels</description>
+        <externalId>false</externalId>
+        <label>Prevent Duplicate Reviewers</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PreviewForm__c</fullName>
+        <externalId>false</externalId>
+        <label>Preview Form</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>PreviewId__c</fullName>
+        <externalId>false</externalId>
+        <label>PreviewId</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PreviewLink__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(PreviewForm__c), &apos;No Link&apos;, HYPERLINK( PreviewForm__c, &apos;Preview&apos;, &apos;_Blank&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Preview Link</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Link to program record.</description>
+        <externalId>false</externalId>
+        <label>Program</label>
+        <referenceTo>Program__c</referenceTo>
+        <relationshipName>ReviewStepTemplates</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>RejectionConfirmationFlexTableName__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>This flex table is used to render the table on confirmation page for reject button from decisions tab</inlineHelpText>
+        <label>Rejection Confirmation Flex Table Name</label>
+        <referenceTo>GNT__DataTableConfig__c</referenceTo>
+        <relationshipName>Review_Step_Templates</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>RejectionConfirmationLayout__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>This layout is used to render the confirmation page for reject button from decisions tab</inlineHelpText>
+        <label>Rejection Confirmation Layout (Obsolete)</label>
+        <referenceTo>GNT__PageTemplate__c</referenceTo>
+        <relationshipName>Rejection_Confirmation_Layout</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>RejectionEmailTemplate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is used to store the developer name of the email template to notify the Applicant upon Rejection</inlineHelpText>
+        <label>Rejection Email Template</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RequiredStep__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(ISPICKVAL( IsStepOptional__c,&apos;Optional&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Optional Step</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ReviewFormConfig__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Review Form Config</label>
+        <referenceTo>GNT__PageTemplate__c</referenceTo>
+        <relationshipName>Review_Step_Templates</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ReviewLevelAcceptance__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Review Level Acceptance</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ReviewPackage__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Review Package</label>
+        <referenceTo>GNT__Package__c</referenceTo>
+        <relationshipName>ReviewStepTemplates</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ReviewStepLayout__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>This layout is used to render the Review step view page</inlineHelpText>
+        <label>Review Step Layout</label>
+        <referenceTo>GNT__PageTemplate__c</referenceTo>
+        <relationshipName>Review_Step_Layout</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ReviewTypeName__c</fullName>
+        <externalId>false</externalId>
+        <label>ReviewTypeName</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReviewerConfirmationRequired__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If the system should show the Confirmation page to each Reviewer for this Review Step?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If the system should show the Confirmation page to each Reviewer for this Review Step?</inlineHelpText>
+        <label>Reviewer Confirmation Required?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>StartDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>StepNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>Step Number</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UserType__c</fullName>
+        <externalId>false</externalId>
+        <label>User Type (Obsolete)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>External</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Internal</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <label>Review Step Template</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Review Step Template Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Review Step Templates</pluralLabel>
+    <recordTypes>
+        <fullName>Application</fullName>
+        <active>true</active>
+        <label>Application</label>
+        <picklistValues>
+            <picklist>ApplicationAssignment__c</picklist>
+            <values>
+                <fullName>Auto-Assign to All</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Auto-Divide Equally</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual Assignment</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CustomAppName__c</picklist>
+            <values>
+                <fullName>StateasGrantee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>StateasGrantor</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IsStepOptional__c</picklist>
+            <values>
+                <fullName>Mandatory</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Optional</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IsStepRequired__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>MultiplePanelsRequired__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>UserType__c</picklist>
+            <values>
+                <fullName>External</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Preapplication</fullName>
+        <active>true</active>
+        <label>Pre-Application</label>
+        <picklistValues>
+            <picklist>ApplicationAssignment__c</picklist>
+            <values>
+                <fullName>Auto-Assign to All</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Auto-Divide Equally</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual Assignment</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CustomAppName__c</picklist>
+            <values>
+                <fullName>StateasGrantee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>StateasGrantor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IsStepOptional__c</picklist>
+            <values>
+                <fullName>Mandatory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Optional</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IsStepRequired__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>MultiplePanelsRequired__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>UserType__c</picklist>
+            <values>
+                <fullName>External</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>Read</sharingModel>
+</CustomObject>

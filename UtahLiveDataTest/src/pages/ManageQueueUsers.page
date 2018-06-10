@@ -1,0 +1,10 @@
+<apex:page standardController="Group" extensions="ManageQueueUsers" sidebar="false" showHeader="false" standardStylesheets="false">
+  <c:ExternalLibrary /> 
+      <apex:composition template="GNT__ModalTemplate"> 
+        <apex:define name="ModalContent"> 
+               <GNT:FlexTable flexTableName="ManageQueueUsers" tableId="ManageQueueUsers" flexTableParameters="{!keyValueMap}"/>
+               <GNT:FlexTable flexTableName="ManageNewUsers" tableId="ManageNewUsers" flexTableParameters="{!keyValueMap}"/>
+
+       </apex:define> 
+    </apex:composition>
+</apex:page>

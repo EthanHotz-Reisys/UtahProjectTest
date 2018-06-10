@@ -1,0 +1,10 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></link>
+	<div class="w3-container w3-light-grey w3-center">
+		<apex:image id="success" value="{!$Resource.CorrectIcon}" width="80" height="80" alt="success"/>
+	</div>
+	<div class="w3-container w3-light-grey w3-center">
+		<h1 style="text-shadow:1px 1px 0 #444">Success!</h1>
+		<h4 style="text-shadow:1px 1px 0 #444">You will get an email when the file is processed.</h4>
+	</div>
+</apex:page>

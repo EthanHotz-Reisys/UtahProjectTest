@@ -1,0 +1,11 @@
+<apex:page controller="AddAnnouncementDocumentCtrl" sidebar="false" standardStylesheets="false" showHeader="false">
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">
+            <GNT:FlexTable listParams="{!ListParams}" flexTableParameters="{!keyValueMap}" flexTableName="AddProgramDocument" tableId="AddProgramDocument"/>
+        </apex:define>
+    </apex:composition>    
+    <script>
+        setPageTitle('{!flexTableHeader}');
+    </script>  
+</apex:page>

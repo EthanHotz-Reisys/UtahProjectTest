@@ -1,0 +1,8 @@
+<apex:page standardController="Contact" extensions="ReviewerInternalViewCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+    <c:ExternalLibrary />   
+    <apex:composition template="GNT__PageTemplate">
+         <apex:define name="content">          
+            <GNT:FlexViewLayout templateName="{!pageTemplateName}" layoutType="View" recordId="{!recordId}" deleteURL="{!deleteURL}" flexTableParameters="{!keyValueMap}" />
+        </apex:define>
+    </apex:composition> 
+</apex:page>

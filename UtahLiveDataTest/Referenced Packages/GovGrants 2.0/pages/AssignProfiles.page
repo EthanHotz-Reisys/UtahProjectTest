@@ -1,0 +1,62 @@
+<apex:page controller="GNT.AssignProfilesCtrl" showHeader="false" sidebar="false">
+	<c:ExternalLibrary />
+	<apex:stylesheet value="{!URLFOR($Resource.GNT__GovGrants, '/Component/CSS/AssignProfiles.css')}"/>
+	<div class="bs container-fluid">
+        <div class="tableBackground tab-content">
+			<div class="panel panel-default">
+		        <div class="panel-heading">
+		            <div class="panel-heading-title">
+		                <h2>Assign Profiles</h2>
+		            </div>
+					<div class="saveContainer">
+						<input id="SaveButton" class="customBtn" type="button" value="Save"/>
+					</div>
+		        </div>
+				<div id="MultiselectPanel" class="duelingListBox">
+					<div class="selectCell">
+						<div class="selectTitle">
+							<label value="Select Options" for="LeftList" />
+						</div>
+						<select id="LeftList" class="multiList" multiple="multiple" size="8" >
+						</select>
+					</div>
+					<div class="buttonCell">
+						<!-- <div class="text">Add</div> -->
+						<div class="text">
+							<a href="#" onClick="moveSelectedOptions('LeftList','RightList');" id="btnRight">
+								<i class="fa fa-arrow-circle-right fa-2x"></i>
+								<span class="hidden508">Select</span>
+							</a>
+						</div>
+						<div class="text">
+							<a href="#" onclick="moveSelectedOptions('RightList', 'LeftList');" id="btnLeft">
+								<i class="fa fa-arrow-circle-left fa-2x"></i>
+								<span class="hidden508">Remove</span>
+							</a>
+						</div>
+						<!-- <div class="duelingText">Remove</div> -->
+					</div>
+					<div class="selectCell">
+						<div class="selectTitle">
+							<label value="Added" for="RightList" />
+						</div>
+						<select id="RightList" class="multiList" multiple="multiple" size="8">
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		var assignProfiles_profiles = '{!profiles}';
+		var assignProfiles_fieldName = '{!JSENCODE(fieldName)}';
+		var assignProfiles_sObjectName = '{!JSENCODE(sObjectName)}';
+		var assignProfiles_sObjectId = '{!JSENCODE(sObjectId)}';
+		
+		_RemotingAssignProfilesActions = {}; 
+		_RemotingAssignProfilesActions.getProfiles = '{!$RemoteAction.AssignProfilesCtrl.getProfiles}';
+		_RemotingAssignProfilesActions.saveProfiles = '{!$RemoteAction.AssignProfilesCtrl.saveProfiles}';
+	</script>
+	<script src="{!URLFOR($Resource.GovGrants)}/Component/JS/AssignProfiles.js"></script>
+</apex:page>

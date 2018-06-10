@@ -1,0 +1,99 @@
+<apex:page controller="AnnouncementFundingAccountCtrl" sidebar="false"
+    showHeader="false" standardStylesheets="false"> 
+
+     <GNT:ExternalLibrary />
+    <c:ExternalLibrary /> 
+          <!-- <div  class="bs container-fluid" style="clear:both; width:100%;height:100%;">-->
+      <!--      <GNT:FlexViewLayout templateName="{!pageTemplateName}" layoutType="View" recordId="{!recordId}" deleteURL="{!deleteURL}"  HideSidebar="true" 
+            flexTableParameters="{!keyValueMap}"/>   -->
+            <apex:composition template="GNT__ModalTemplate">
+            <apex:define name="ModalContent">    
+
+             <GNT:ModalFlexViewLayout templateName="{!pageTemplateName}" layoutType="View" recordId="{!recordId}" deleteURL="{!deleteURL}"  HideSidebar="true"  />
+             </apex:define>
+             </apex:composition>
+ 
+         <!-- </div>-->
+
+    <!-- Including JS and CSS resources --><!--
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">
+            <apex:form >
+                <GNT:PageMessages />
+                <div class="bs container-fluid">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span class="bold-text">
+                                <h3 class="panel-title">Select Funding Accounts -
+                                    {announcement.Name}</h3>
+                            </span>
+                            <span class="button-string">
+                                <apex:commandbutton action="{addToAnnouncement}"
+                                    value="Add to Announcement" styleClass="customBtn"
+                                    rendered="{lstFundingAccountYearWrapper.size>0}" />
+                                <apex:commandbutton action="{Cancel}" value="Cancel"
+                                    styleClass="customBtn"
+                                    rendered="{lstFundingAccountYearWrapper.size>0}" />
+                            </span>
+                        </div>
+                        <div class="panel-body panel-body-ext">
+                            <apex:outputPanel rendered="{lstFundingAccountYearWrapper.size>0}">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <apex:dataTable value="{lstFundingAccountYearWrapper}"
+                                            var="fundingAccount" styleClass="table"
+                                            rendered="{lstFundingAccountYearWrapper.size>0}">
+                                            <apex:column >
+                                                <label for="" class="508Label" style="display: none;">
+                                                    inptCheckbox </label>
+                                                <apex:facet name="header">Select</apex:facet>
+                                                <apex:inputCheckbox id="chkbox"
+                                                    value="{fundingAccount.selected}" styleClass="508Input" />
+                                            </apex:column>
+                                            <apex:column >
+                                                <apex:facet name="header">Fiscal Year</apex:facet>
+                                                <apex:outputText value="{fundingAccount.fundingAccountYear.FiscalYear__c}" />
+                                            </apex:column>
+                                            <apex:column >
+                                                <apex:facet name="header">Funding Account</apex:facet>
+                                                <apex:outputText value="{fundingAccount.fundingAccountYear.FundingAccount__r.Name}" />
+                                            </apex:column>
+                                            <apex:column >
+                                                <apex:facet name="header">Funding Source Year</apex:facet>
+                                                <apex:outputText value="{fundingAccount.fundingAccountYear.FundingSourceYear__r.Name}" />
+                                            </apex:column>
+                                            <apex:column >
+                                                <apex:facet name="header">Funds Awarded by State</apex:facet>
+                                                <apex:outputText value="{fundingAccount.fundingAccountYear.FundsAwardedByState__c}" />
+                                            </apex:column>
+                                            <apex:column >
+                                                <apex:facet name="header">Obligation in Progress</apex:facet>
+                                                <apex:outputText value="{fundingAccount.fundingAccountYear.ObligationInProgress__c}" />
+                                            </apex:column>
+                                            <apex:column >
+                                                <apex:facet name="header">Total Funds</apex:facet>
+                                                <apex:outputText value="{fundingAccount.fundingAccountYear.TotalFunds__c}" />
+                                            </apex:column>
+                                        </apex:dataTable>
+                                    </div>
+                                </div>
+                            </apex:outputPanel>
+                            <apex:outputpanel rendered="{lstFundingAccountYearWrapper.size==0}">
+                                <p class="text-center">
+                                    <apex:outputText value="There are no Funding Accounts available to be added."
+                                        rendered="{lstFundingAccountYearWrapper.size==0}" />
+                                    <br />
+                                    <apex:commandbutton action="{Cancel}"
+                                        value="Click to go back to Announcement"
+                                        rendered="{lstFundingAccountYearWrapper.size==0}"
+                                        styleClass="customBtn" />
+                                </p>
+                            </apex:outputpanel>
+                        </div>
+                    </div>
+                </div>
+            </apex:form>
+        </apex:define>
+    </apex:composition>-->
+</apex:page>

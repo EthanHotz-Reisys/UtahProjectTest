@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email sent to the Reviewer to Review the Grantee application</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Grantee Notify Reviewer to Review Application</name>
+    <style>formalLetter</style>
+    <subject>Notification: You are Requested to Review the Application #{!ApplicationReview__c.ApplicationId__c}</subject>
+    <textOnly>Subject: Notification email that the Application # {!ApplicationReview__c.ApplicationId__c}has to be reviewed.
+
+
+
+This email is to notify you to review the assigned Application {!ApplicationReview__c.ApplicationId__c} for Announcement {!Review__c.FundingOpportunityTitle__c}.
+
+
+
+Please login to EGMS Systems and go to Pending Tasks list to locate the Application.
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

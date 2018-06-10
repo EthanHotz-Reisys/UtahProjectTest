@@ -1,0 +1,150 @@
+<apex:page controller="GNT.PDFGeneratorCtrl" standardStylesheets="false" sidebar="false" showHeader="false">
+    
+    <style type="text/css">
+        #container {
+            margin: 20px;
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+        .icon-div{
+            position: relative;
+            padding-top:100px;
+            width: 100%;
+            margin: auto;
+        }
+        #loading-icon{
+            font-size: 100px !important;
+            color: green;
+        }
+        #fail-icon{
+            font-size: 100px !important;
+            color: red;
+        }
+        .loading-text{
+            padding-top: 35px;
+        }
+    </style>
+    <c:ExternalLibrary ></c:ExternalLibrary>
+ 
+    <div id="pdfGenPage" ng-controller="PDFGenPageCtrl" ng-cloak="true" class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center icon-div">
+                    <div ng-show="processFail == undefined">
+                        <i id="loading-icon" class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+                        <span class="sr-only">Loading...</span>                    
+                    </div>
+                    <div ng-show="processFail == true">
+                        <i id="fail-icon" class="fa fa-exclamation-triangle" aria-hidden="true"></i>                   
+                    </div>                   
+                    <div class="loading-text">
+                        <span ng-bind="message"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+    
+        
+        
+        _RemotingPDFGeneratorActions = {};
+        _RemotingPDFGeneratorActions.GeneratePDF = '{!$RemoteAction.PDFGeneratorCtrl.generatePDF}';
+        _RemotingPDFGeneratorActions.PollForAttachment = '{!$RemoteAction.PDFGeneratorCtrl.pollForAttachment}';
+        
+        var pdfGenPage = angular.module('pdfGenPage',[]);
+        pdfGenPage.controller('PDFGenPageCtrl', function ($q,$scope,$timeout,$sce,$location){ 
+            
+            $scope.messages = [ 'Initializing...',
+                                'Loading PDF template...',
+                                'Extracting data from GovGrants...',
+                                'Processing the data...',
+                                'Merging data in PDF...',
+                                'Finalizing the changes and preparing the document for download...'];   
+            $scope.index = 0;
+            $scope.pollCounter = 0;
+            $scope.timeOfInitialization = Date.now();
+            $scope.showMessage = function(){
+                if($scope.index < $scope.messages.length){
+                    
+                    console.log('$scope.index=====',$scope.index);
+                    console.log('$scope.messages=====',$scope.messages);
+                    console.log('$scope.messages=====',$scope.messages[$scope.index]);
+                    if($scope.index == 0){
+                        $scope.message = $scope.messages[$scope.index];
+                    }else{
+                        $scope.$apply(function (){
+                            $scope.message = $scope.messages[$scope.index];
+                        });
+                    }                                        
+                    $scope.index++;   
+                    setTimeout(function(){ $scope.showMessage(); }, 3000);
+                }
+            }
+            $scope.startPolling = function(){
+                console.log('polling started =====');
+                $scope.pollCounter++;
+                $scope.paramsMap['initTime'] = $scope.timeOfInitialization;
+                Visualforce.remoting.Manager.invokeAction(
+                    _RemotingPDFGeneratorActions.PollForAttachment,
+                    $scope.paramsMap,
+                    function(retVal, event) {
+                        console.log('retVal =====',retVal);
+                        if (event.status) {
+                            $scope.$apply(function() {
+                                if(retVal.Success == true){                                    
+                                    $scope.message = 'Redirecting...';                                                                        
+                                    window.location.href = retVal.URL;
+                                }else if($scope.pollCounter < 10){
+                                    setTimeout(function(){ $scope.startPolling(); }, 5000);
+                                }else{
+                                    $scope.processFail = true;
+                                    $scope.messages = [];
+                                    $scope.message = 'Some problem encountered, please try again. In case the problem persists, please contact administrator.';
+                                }
+                            });
+                        } else {
+                            $scope.message = 'Error...';
+                        }
+                    }, {buffer: false, escape: false, timeout: 120000}
+                );
+            }
+            $scope.initOnLoad = function(){
+                $scope.showMessage();
+                $scope.paramsMap = {};
+                var urlParams = new URLSearchParams(window.location.search);
+                var keys = urlParams.keys();
+                for(key of keys) { 
+                    console.log(key);
+                    $scope.paramsMap[key] = urlParams.get(key); 
+                }
+                console.log('$scope.paramsMap =====',$scope.paramsMap);
+                Visualforce.remoting.Manager.invokeAction(
+                    _RemotingPDFGeneratorActions.GeneratePDF,
+                    $scope.paramsMap,
+                    function(retVal, event) {
+                        console.log('retVal =====',retVal);
+                        if (event.status) {
+                            $scope.$apply(function() {
+                                if(retVal.Success == true){                                    
+                                    $scope.message = 'Redirecting...';                                                                        
+                                    window.location.href = retVal.URL;
+                                }else{
+                                    setTimeout(function(){ $scope.startPolling(); }, 5000);                                    
+                                }
+                            });
+                        } else {
+                            $scope.message = 'Error...';
+                        }
+                    }, {buffer: false, escape: false,timeout: 120000}
+                );
+            } 
+            $scope.initOnLoad();
+        });
+          
+        angular.bootstrap(document.getElementById("pdfGenPage"),['pdfGenPage']);
+    </script>
+</apex:page>

@@ -1,0 +1,54 @@
+@isTest
+private with sharing class TestTermConditionScheduleEditCtrl{
+    static testMethod void testController() {
+          User u = TestHelper.getAdminUser(true);
+          
+          System.runAs(u){
+            
+            TermCondition__c termCond = new TermCondition__c();
+            insert termCond;
+            
+            TermConditionSchedule__c termConSc= new TermConditionSchedule__c(TermAndCondition__c=termCond.Id);
+            insert termConSc;
+            
+            
+        
+         
+        Test.startTest();
+        ApexPages.StandardController sc = new ApexPages.standardController(termConSc);
+        ApexPages.currentPage().getParameters().put('id',termConSc.Id);
+        ApexPages.currentPage().getParameters().put('termConditionId',termCond.Id);
+        TermConditionScheduleEditCtrl ctrl = new TermConditionScheduleEditCtrl();
+        ctrl.getKeyValueMap();
+        Test.stopTest();
+        
+      }
+        
+    }
+    
+     static testMethod void testController2() {
+          User u = TestHelper.getAdminUser(true);
+          
+          System.runAs(u){
+            
+            TermCondition__c termCond = new TermCondition__c();
+            insert termCond;
+            
+            TermConditionSchedule__c termConSc= new TermConditionSchedule__c(TermAndCondition__c=termCond.Id);
+            insert termConSc;
+            
+            
+        
+         
+        Test.startTest();
+        ApexPages.StandardController sc = new ApexPages.standardController(termConSc);
+        ApexPages.currentPage().getParameters().put('id',null);
+        ApexPages.currentPage().getParameters().put('termConditionId',termCond.Id);
+        TermConditionScheduleEditCtrl ctrl = new TermConditionScheduleEditCtrl();
+        ctrl.getKeyValueMap();
+        Test.stopTest();
+        
+      }
+        
+    }
+}

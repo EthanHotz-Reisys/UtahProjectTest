@@ -1,0 +1,14 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false">
+   
+    <c:ExternalLibrary />
+    <c:WhatFixHelper />
+    <apex:outputPanel >
+        <apex:composition template="GNT__PhaseTemplate">
+            <apex:define name="body">    
+                  <GNT:FlexTable flexTableName="Leads" tableId="leads"  headerDescription="" />
+                  <GNT:FlexTable flexTableName="LeadsQualified" tableId="qleads"  headerDescription="" />
+            </apex:define>
+        </apex:composition>
+    </apex:outputPanel>
+    
+</apex:page>

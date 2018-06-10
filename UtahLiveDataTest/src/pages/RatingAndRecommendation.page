@@ -1,0 +1,45 @@
+<apex:page standardController="Review__c" title="Rating And Recommendation" extensions="RatingAndRecommendationCtrl" showHeader="false" standardStylesheets="false" sidebar="false">
+    <style>
+        #PageTemplateApp{
+            min-height : 0px !important;
+        }
+    </style>      
+    
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />  
+     
+    
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">          
+            <GNT:FlexViewLayout templateName="{!pageTemplateName}" recordId="{!recordId}" layoutType="View" flexTableParameters="{!keyValueMap}" HideSidebar="true"/>
+        </apex:define>
+    </apex:composition>
+     
+     
+    <!--
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">    
+            <GNT:ModalFlexViewLayout templateName="{!pageTemplateName}" recordId="{!recordId}"  layoutType="View" flexTableParameters="{!keyValueMap}"  HideSidebar="true"/>                                   
+        </apex:define>
+    </apex:composition>
+    -->
+    
+    
+    <script>  
+        var j$ = jQuery.noConflict(); 
+        j$(document).ready(function(){
+            //buildLookupIcon();
+        });
+
+        var buildLookupIcon = function(){
+            j$('.lookupIcon').each(function(){
+                var currentNode = j$(this);
+                currentNode.parent().append('<span class="glyphicon glyphicon-search"></span>');
+            });
+        }
+        
+    </script>
+    
+    
+</apex:page>

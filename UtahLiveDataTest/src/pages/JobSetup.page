@@ -1,0 +1,29 @@
+<apex:page controller="JobSetupCtrl" showHeader="true" sidebar="false" 
+            setup="true" title="GovGrants Job Setup">
+
+
+<apex:sectionHeader title="GovGrants" subtitle="Job Setup"
+            description="This page allows you to schedule batch jobs. You can also delete and reschedule the jobs any time." /> 
+
+    <apex:form >  
+
+        <apex:outputPanel id="panelId" >
+            <apex:pageMessages />
+
+            <apex:actionStatus startText="Action In Progress..." stopText="" id="statusId"/>
+            <br/><br/>
+
+
+            <apex:commandLink value="Delete {!currentlyRunningJobs} Scheduled Jobs" action="{!deleteScheduledJobs}" status="statusId" rerender="panelId"/>
+            <br/><br/>
+
+            <apex:commandLink value="Schedule Jobs" action="{!scheduleApexJobs}" status="statusId" rerender="panelId"/> 
+            <br/><br/>        
+            <a href="/08e" target="_self">View Scheduled Jobs</a>   
+            <br/><br/>        
+            <a href="/apexpages/setup/listAsyncApexJobs.apexp?setupid=AsyncApexJobs" target="_self">View Apex Jobs</a>
+            <br/><br/>        
+
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

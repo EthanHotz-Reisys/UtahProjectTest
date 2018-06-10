@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE When Program Manager rejects Funding opportunity, then email is sent to Funding Opportunity Owner</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>FAP - Program Manager rejects Funding opportunity email to FO Owner</name>
+    <style>formalLetter</style>
+    <subject>Notification: Funding Opportunity #{!Announcement__c.AnnouncementId__c} has been Rejected</subject>
+    <textOnly>Subject: Notification email that the Funding Opportunity # {!Announcement__c.AnnouncementId__c} has been rejected.
+
+
+
+Hello {!Announcement__c.OwnerFirstName},
+
+
+This email is to notify you the Funding Opportunity #
+{!Announcement__c.AnnouncementId__c} for Program {!Announcement__c.Program__c} has been Rejected.
+
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

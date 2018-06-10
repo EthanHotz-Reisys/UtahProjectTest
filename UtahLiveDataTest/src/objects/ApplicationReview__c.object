@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>ApplicationReviewEdit</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>ApplicationReviewView</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>[Business] This object is used for the Review of the Grantee Application in the State as a Grantee Application</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Agency__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedBy.AccountNameFormulaField__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Agency</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Announcement__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Funding Opportunity</label>
+        <referenceTo>Announcement__c</referenceTo>
+        <relationshipName>Reviews1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Application__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Application for which the review is being done</description>
+        <externalId>false</externalId>
+        <label>Application</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipName>ApplicationReviews</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Award__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Award</label>
+        <referenceTo>Award__c</referenceTo>
+        <relationshipName>Application_Reviews</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EditReview__c</fullName>
+        <description>Field to control the hiding of Delete button when the Application is already approved</description>
+        <externalId>false</externalId>
+        <formula>Application__r.GranteeDisplayEdit__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Edit Review</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EvaluationStatus__c</fullName>
+        <externalId>false</externalId>
+        <label>Evaluation Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Evaluated</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Converted to Opportunity</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FOALead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>FOALead</label>
+        <referenceTo>FOALead__c</referenceTo>
+        <relationshipName>Reviews</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FundingOpportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Funding Opportunity</label>
+        <referenceTo>Announcement__c</referenceTo>
+        <relationshipName>Application_Reviews</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>HideAnnouncementEdit__c</fullName>
+        <externalId>false</externalId>
+        <formula>OR(NOT(ISPICKVAL(FundingOpportunity__r.Status__c,&apos;Created&apos;)), 
+NOT(ISPICKVAL(FundingOpportunity__r.Status__c,&apos;Reviewed&apos;)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide Announcement Edit</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideApplicationEdit__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(OR(ISPICKVAL(Application__r.Status__c,&apos;Created&apos;), ISPICKVAL(Application__r.Status__c,&apos;Internally Reviewed&apos;)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide Application Edit</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideConvertBtn__c</fullName>
+        <externalId>false</externalId>
+        <formula>NotOwner__c || ISPICKVAL(EvaluationStatus__c, &apos;Converted to Opportunity&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideConvertBtn</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideEditBtn__c</fullName>
+        <description>Logic for Hiding Edit Button</description>
+        <externalId>false</externalId>
+        <formula>OR(AND(FundingOpportunity__c!=null,FundingOpportunity__r.HideEditBtn__c),
+   AND(Award__c!=null,Award__r.HideNewBtn__c),
+   AND(Application__c!=null,Application__r.RenderGranteeDelete__c)
+  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Logic for Hiding Edit Button</inlineHelpText>
+        <label>Hide Edit Btn</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideOnAwardStatus__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Award__c!=null,Award__r.HideNewBtn__c,Award__r.HideNewBtn__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideOnAwardStatus</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Impact__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>1 - NA
+2 - Low
+3 - Medium
+4 - High
+5 - Very High</inlineHelpText>
+        <label>Impact</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1 - NA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2 - Low</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>3 - Medium</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4 - High</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5 - Very High</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Justification__c</fullName>
+        <externalId>false</externalId>
+        <label>Justification</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NotOwner__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(CreatedById == $User.Id)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NotOwner</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NotSameAccount__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(CreatedBy.Organization__c == $User.Organization__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NotSameAccount</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PreApplication__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Object to store the PreApplication Reviews</description>
+        <externalId>false</externalId>
+        <label>Pre-Application</label>
+        <referenceTo>PreApplication__c</referenceTo>
+        <relationshipName>PreApplication_Reviews</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Rating__c</fullName>
+        <externalId>false</externalId>
+        <label>Reviewer Rating</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Passed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Failed</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>RecipientAgency__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>RecipientAgency</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Reviews</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Relevance__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>1 - NA 
+2 - Low 
+3 - Medium 
+4 - High 
+5 - Very High</inlineHelpText>
+        <label>Relevance</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1 - NA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2 - Low</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>3 - Medium</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4 - High</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5 - Very High</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ReviewComments__c</fullName>
+        <description>Comments entered by the External Users for the Grantee Application</description>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ReviewType__c</fullName>
+        <externalId>false</externalId>
+        <label>Review Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Fiscal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Program</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Manager</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SME Review</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Peer/Author Review</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Review__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>A checkbox to specify that review was done</description>
+        <externalId>false</externalId>
+        <label>Review</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ReviewandEdit__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>A boolean value to Specify that the Reviewer has also edited the Application/Pre-Application</description>
+        <externalId>false</externalId>
+        <label>Review and Edit</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Score__c</fullName>
+        <externalId>false</externalId>
+        <formula>( IF(ISBLANK(VALUE(LEFT(TEXT(Impact__c),1))),0,VALUE(LEFT(TEXT(Impact__c),1))) + IF(ISBLANK(VALUE(LEFT(TEXT(Relevance__c),1))),0,VALUE(LEFT(TEXT(Relevance__c),1))))
+/
+( (IF(ISBLANK(VALUE(LEFT(TEXT(Impact__c),1))),0,1)) + IF(ISBLANK(VALUE(LEFT(TEXT(Relevance__c),1))),0,1) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Sent for Review</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Under Review</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Review Completed</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>StrategicPlan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>StrategicPlan</label>
+        <referenceTo>StrategicPlan__c</referenceTo>
+        <relationshipName>Reviews</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <description>This specifies the office type</description>
+        <externalId>false</externalId>
+        <label>Office Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Program</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Fiscal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Grants</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Others</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Application Review</label>
+    <nameField>
+        <displayFormat>Rev-{000}</displayFormat>
+        <label>ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Application Reviews</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

@@ -1,0 +1,753 @@
+<apex:page sidebar="false" docType="html-5.0" standardStylesheets="false"  showHeader="false" action="{!redirectPage}"  standardcontroller="UserRegistration__c" extensions="ApplicantRegistrationPage2Ctrl,USPSAddressInformationCtrl,GNT.DynamicLayoutController">
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+     <style>
+        .disableBtnCls { cursor: default !important; }       
+        .orgtable { border: 1px solid !important; padding: 5px !important; }
+        span#recaptcha_privacy { display : none; }
+        .paddingForFields { padding-bottom:5px; }
+        .popupBackground { position:fixed; }       
+        .helpTextPostStyle { font-weight:700; padding-left:10px; padding-right:10px; } 
+        .userInputStyle { width:150px; }
+        .errorMessageStyle { font-weight:bold; padding-left:2px; width: 100%; }
+        .errorMessageStyleIntoForm { font-weight:bold; padding-left:2px; width: 165px;}       
+        .bodyDiv{ overflow: hidden; }               
+        .twoColumns { list-style: none; -webkit-column-count: 2; /* Chrome, Safari, Opera */ -moz-column-count: 2; /* Firefox */ column-count: 2; -webkit-column-gap: 0px; /* Chrome, Safari, Opera */ 
+            -moz-column-gap: 60px; /* Firefox */ column-gap: 60px; -webkit-column-rule-width: 1px; /* Chrome, Safari, Opera */ -moz-column-rule-width: 1px; /* Firefox */ column-rule-width: 1px; } 
+        .twoColumns .listyle { display: inline-block; width: 100%; margin: 2px 5px; }  
+
+         .registration-page-heading{
+            font-size: 14px;
+            font-weight: 600;
+            padding-left: 15px;
+            padding-top: 0;
+            margin-top: 10px;            
+            padding-bottom: 10px;
+        }
+
+        span.pull-right.requiredFieldMessage {
+            margin-right: 10px;
+            margin-top: 5px;           
+        }
+        .registration-page .panel-footer{
+            height: 45px;            
+            padding-right: 0;
+        }  
+    </style> 
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">
+          <div class="bs container-fluid registration-page" style="margin-top: 55px;"> 
+           <apex:form forceSSL="true" > 
+              
+
+                    <apex:outputpanel id="startPanel">
+                        <apex:outputpanel rendered="{!AND(startPanel,isReviewer != 'true')}">
+                            <div class="col-md-12">                                 
+                                <apex:outputPanel >
+                                <div class="panel" style ="margin-top: 20px;">                                        
+                                   <!--  <div class="panel-heading panel-heading-header"> -->
+                                       
+                                    <div class="panel-header registration-page-heading">
+<!--                                         <b id="Registration_Id"> Registration </b> -->
+                                        <a id="Registration_Id" href="#" tabIndex="0"><b> Registration </b></a>
+                                        <span class="hidden508 skipNavSectionItem skipNavSectionItem" id="Registration_Id" name="Registration_Id : Registration">Registration</span>
+                                    </div>
+
+                                         <span class="pull-right  requiredFieldMessage">
+                                          <span class="customLabelstyle">Fields marked as <apex:outputText styleClass="requiredMark" value="*"/> are required</span>
+                                        </span>
+                                        <!-- error message added here - swati -->
+                                        <apex:outputPanel id="testPanel">
+                                            <apex:outputPanel rendered="{!testRendered}">
+                                             <div class="panel-footer" style="color:red; padding-left: 15px;">
+                                                 This Organization already exists in the system. Please contact Utah Grants 
+                                                 Support team. utahgrants.support@reisystems.com. Ph. No. 703.480.9100
+                                                </div>
+                                           </apex:outputPanel> 
+                                        </apex:outputPanel>
+                                       <!-- error message added ends - swati -->
+                                  <!--   </div> -->
+                                    <div class="panel-body panel-body-ext" style="margin-top: 15px;margin-bottom: 10px;">
+                                        <div>
+                                        <p>In order to start the registration, please provide the following information of your organization and click NEXT button.</p>
+                                            <!--{!$Label.SearchOrganizationBodyText}-->
+                                        </div>
+                                        <ul class=" col-md-12" style="list-style: none">
+                                            <apex:repeat value="{!communityRegistrationConfigDetailWrapperList}" var="communityRegistrationConfigDetailWrapper">        
+                                                <li class="listyle col-md-12" style="margin: 0px 0px">
+                                                    <apex:outputPanel rendered="{!communityRegistrationConfigDetailWrapper.isVisible}" >
+                                                        <div class="row paddingForFields">
+                                                            <div class="col-md-4">                  
+                                                                <apex:outputPanel styleClass="bold-text">
+                                                                    <apex:outputText styleClass="requiredMark" value="*" rendered="{!communityRegistrationConfigDetailWrapper.isRequired}" />
+                                                                    <apex:outputText styleClass="customLabelstyle" value="{!communityRegistrationConfigDetailWrapper.fieldLabelOverride}" /> 
+                                                                    <a href="#" title="{!communityRegistrationConfigDetailWrapper.helpText}">
+                                                                        <span class="fa fa-info helpIcon"></span>                 
+                                                                    </a>
+                                                                    <span class="hidden508">{!communityRegistrationConfigDetailWrapper.helpText}</span>
+                                                                </apex:outputPanel>
+                                                            </div>
+                                                            <div class="col-md-8">                                                            
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <apex:outputPanel styleClass="field-value">
+                                                                                 <apex:inputText onblur="validate(this.value,'{!communityRegistrationConfigDetailWrapper.inputField}','{!communityRegistrationConfigDetailWrapper.isRequired}')"  tabIndex="0" value="{!communityRegistrationConfigDetailWrapper.value}" styleClass="508Input userInputStyle {!communityRegistrationConfigDetailWrapper.inputField}" required="{!communityRegistrationConfigDetailWrapper.isRequired}" rendered="{!communityRegistrationConfigDetailWrapper.inputField != 'Country'}" /> 
+                                                                                <apex:selectList styleClass="userInputStyle"  html-customId="country" value="{!countrySelected}" size="1" rendered="{!communityRegistrationConfigDetailWrapper.inputField == 'Country'}">
+                                                                                    <apex:selectOptions value="{!validCountries}"/> 
+                                                                                </apex:selectList>
+                                                                                <apex:outputText styleClass="helpTextPostStyle" value="{!communityRegistrationConfigDetailWrapper.helpTextPost}" />
+                                                                            </apex:outputPanel>
+                                                                        </td>
+                                                                        <td>
+                                                                            <span style="display:none" id="invalid{!communityRegistrationConfigDetailWrapper.inputField}" class="errorMessageStyle">
+                                                                                    {!communityRegistrationConfigDetailWrapper.errorMessage}
+                                                                            </span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table> 
+                                                            </div>
+                                                        </div>
+                                                    </apex:outputPanel>
+                                                </li>
+                                            </apex:repeat>                                                                                              
+                                        </ul>                                                                                                                                          
+                                    </div>
+                                    <div class="panel-footer">
+                                        <div class="col-md-12">
+                                            <apex:commandbutton tabIndex="0" status="busyIcon"  styleclass=" pull-right customBtn searchButton" action="{!fetchOrgnizations}" rerender=" testPanel,OrgInProgressAfterSearchResult, OrgNotExistPanel, startPanel, confirmationPanel, errorPanel" value="Next"  style="margin-right: 15px !important;"/>  
+                                            <input type="button" tabIndex="0" class="pull-right customBtn" onclick="CancelFun()" value="Cancel" style="margin-right: 10px;" />
+                                                                                                        
+                                        </div>
+                                    </div>                                              
+                                </div>
+                                </apex:outputPanel>
+                            </div>
+                        </apex:outputPanel>
+                    
+                        <apex:outputPanel id="OrgInProgressAfterSearchResult" rendered="{!OrgInProgressAfterSearchResult}">
+                            <div class="col-md-12">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h2 class="panel-title">Error</h2>
+                                        <apex:commandbutton status="busyIcon" tabIndex="0" styleclass="customBtn pull-right" action="{!showSearchOrgnizations}" rerender="startPanel" value="Back" />
+                                    </div>                              
+                                   <div class="panel-body panel-body-ext">
+                                        {!$Label.OrganizationInProgressSearchResult}
+                                    </div>
+                                </div>
+                            </div> 
+                        </apex:outputPanel>                                         
+                        
+                        <!-- This panel is used when the matching org not found -->
+                        <apex:outputpanel id="OrgNotExistPanel" rendered="{!OrgNotExistPanel}">
+                            <div class="col-md-12">
+                                <div class="panel">
+                                
+                                    <div class="panel-footer">
+                                        <!--<GNT:ShowCustomLabelSetupIcon labelName="UserRegistrationOrgNotFound" rendered="{!$Setup.GNT__GlobalConfig__c.GNT__EnableAdminSetup__c}"/> -->
+                                        <!-- <b>{!$Label.UserRegistrationOrgNotFound}</b> -->
+                                             <b>{!$Label.UserRegistrationOrgNotFoundDetail}</b>                               
+                                         <!-- <apex:commandbutton status="busyIcon" tabIndex="0" styleclass="customBtn pull-right createOrganizationButton"  action="/apex/ApplicantRegistrationEdit?tempLayout=1" value="Create Organization"  />     orgInfoPanel,rerender="testPanel,startPanel, confirmationPanel, errorPanel"    onComplete="reArangeElement();"   -->
+                                      <!--   <apex:commandbutton status="busyIcon" tabIndex="0" styleclass="customBtn pull-right createOrganizationButton" onclick="orgDetailsRedirect()" value="Create Organization" />  -->
+                                      <apex:commandbutton status="busyIcon" tabIndex="0" styleclass="customBtn pull-right createOrganizationButton"  action="{!CreateOrganization}" value="Create Organization"  />
+                                    </div>
+                                    <!-- <div class="panel-body panel-body-ext">
+                                        <GNT:ShowCustomLabelSetupIcon labelName="UserRegistrationOrgNotFoundDetail" rendered="{!$Setup.GNT__GlobalConfig__c.GNT__EnableAdminSetup__c}"/>
+                                        {!$Label.UserRegistrationOrgNotFoundDetail}
+                                    </div> -->
+                                </div>
+                            </div>
+                        </apex:outputpanel> 
+                    </apex:outputpanel> 
+                    </apex:form> 
+                    
+                 <!-- This panel is used to enter Org information -->
+                    <!-- <apex:outputpanel id="orgInfoPanel">
+                        <apex:outputpanel rendered="{!showOrg
+                        Panel}">
+                        <GNT:FlexViewLayout templateName="{!pageTemplateName}" recordId="{!recordId}" layoutType="View"/>
+                                          
+                        </apex:outputPanel>                
+                    </apex:outputPanel>  -->  
+                   <!-- <apex:outputPanel id="testPanel">
+                        <apex:outputPanel rendered="{!testRendered}">
+                         <div class="panel-footer">
+                             This Organization already exists in the system. Please contact the Key POC {!keyPOCfName}&nbsp;{!keyPOClName} for further support.
+                            </div>
+                       </apex:outputPanel> 
+                    </apex:outputPanel> -->
+                       
+                    
+                
+                
+             
+                    
+  
+                                              
+              </div>     
+   
+        </apex:define>
+    </apex:composition>
+    <script>
+        if('{!isReviewer}' === 'true'){
+            setPageTitle('{!$Label.ExternalReviewerRegistrationPageTitle}');
+        }
+        else{
+            setPageTitle('{!$Label.RegistrationPageTitleForApplicant}');
+        }        
+        function getUrlVars(){
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for(var i = 0; i < hashes.length; i++)
+            {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+        var urlPathName = window.location.pathname;
+        var urlSearch = window.location.search;
+        var fullURLName = urlPathName + urlSearch;
+        
+        if(fullURLName == '/apex/CommunitySelfRegistration?flg=true&isdtp=vw') {
+            window.close();
+            window.opener.location.reload();
+        }
+        var flg = getUrlVars()["flg"];
+        var isdtp = getUrlVars()["isdtp"];
+        //alert('DTP:'+flg+' '+isdtp);
+        if(typeof flg !== typeof undefined && typeof isdtp !== typeof undefined) {
+            window.close();
+        }       
+                                      
+            
+        var handleDatePicker = function(fieldName){            
+            var input = j$(".datepicker."+fieldName);
+        }
+
+        var cancelPage = '{!JSENCODE(cancelPageName)}';
+        var inputId;
+        function setId(tagInfo){
+           inputId=tagInfo.id;
+        }
+        
+        function showRecaptcha(element) {
+            Recaptcha.create("{!publicKey}", element, {
+            theme: "red",
+            callback: Recaptcha.focus_response_field});
+            return true;
+        }
+        var isUserNameAvailable;
+         
+        function emailToUserNamePopulatationOnFocus(){
+            var inputSrcArray = j$( "*[elementId]" );
+            var i;
+            var emailValue = '';
+            var userName;
+            for(i = 0; i < inputSrcArray.size(); i ++){
+                var inputSrcElement = j$(j$( "*[elementId]" )[i]).attr("elementId");
+                var inputSrcId = j$(j$( "*[elementId]" )[i]).attr("id");
+                console.log('inputSrcElement 1---', inputSrcElement);
+                console.log('inputSrcId 1---', inputSrcId);
+                if(inputSrcElement != undefined && inputSrcElement != null){
+                    if(inputSrcElement.indexOf('Email__c') != -1){
+                        emailValue = document.getElementById(inputSrcId).value;
+                        console.log('emailValue ---', emailValue);
+                    }
+                }
+            }
+            if(emailValue != ''){
+                for(i = 0; i < inputSrcArray.size(); i ++){
+                    var inputSrcElement = j$(j$( "*[elementId]" )[i]).attr("elementId");
+                    var inputSrcId = j$(j$( "*[elementId]" )[i]).attr("id");
+                    console.log('inputSrcElement 2---', inputSrcElement);
+                    console.log('inputSrcId 2---', inputSrcId);
+                    if(inputSrcElement != undefined && inputSrcElement != null){
+                        if(inputSrcElement.indexOf('UserName__c') != -1){
+                            if(document.getElementById(inputSrcId).value == ''){
+                                document.getElementById(inputSrcId).value = emailValue;
+                                console.log('userName ---', userName);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+         
+   // function checkUserNameAvailability() is removed
+         
+        function disableSaveButton(){
+            console.log('into the save disable--->>>');
+            j$('.finalButton').attr("disabled");
+            j$('.finalButton').removeClass("customBtn");
+            j$('.finalButton').addClass("customDisableBtn");            
+        }
+         
+        function enableSaveButton(){
+            console.log('into the save enabled--->>>');
+            j$('.finalButton').removeAttr("disabled");
+            j$('.finalButton').addClass("customBtn");
+            j$('.finalButton').removeClass("customDisableBtn");             
+        }
+        function disableSave(btn){
+            // var disableBtn = j$(j$( "*[Btnname]" )[i]).attr("disabled");
+            var btnId = btn.id;
+            console.log('disableBtn',btnId);
+            document.getElementById(btnId).disabled = true;
+            j$(btn).removeClass("customBtn");
+            j$(btn).addClass("customDisableBtn");
+        }
+         
+        var inputSrcArray = [];
+        var valueList = [];
+        function storePrimaryContactInfo(){
+            inputSrcArray = j$( "*[inputSourceId]" );
+            console.log('inputSrcArray---->>>>',inputSrcArray);             
+                for(i = 0; i < inputSrcArray.size(); i ++){
+                    var inputSrcElement = j$(j$( "*[inputSourceId]" )[i]).attr("inputSourceId");
+                    console.log('inputSrcElement---->>>>',inputSrcElement);
+                    
+                    var inputSrcId = j$(j$( "*[inputSourceId]" )[i]).attr("id");
+                    console.log('inputSrcId---->>>>',inputSrcId);
+                                      
+                    if(inputSrcElement != undefined && inputSrcElement != null){
+                        if(inputSrcElement.indexOf('PrimaryPOCFirstName__c') != -1){
+                            valueList[0] = document.getElementById(inputSrcId).value;
+                        }else if(inputSrcElement.indexOf('PrimaryPOCLastName__c') != -1){
+                            valueList[1] = document.getElementById(inputSrcId).value;
+                        }else if(inputSrcElement.indexOf('PrimaryPOCEmail__c') != -1){
+                            valueList[2] = document.getElementById(inputSrcId).value;
+                        }else if(inputSrcElement.indexOf('PrimaryPOCPhone__c') != -1){
+                            valueList[3] = document.getElementById(inputSrcId).value;
+                        }else if(inputSrcElement.indexOf('PrimaryPOCPrefix__c') != -1){
+                            valueList[4] = document.getElementById(inputSrcId).value;
+                        }else if(inputSrcElement.indexOf('PrimaryPOCSuffix__c') != -1){
+                            valueList[5] = document.getElementById(inputSrcId).value;
+                        }else if(inputSrcElement.indexOf('PrimaryPOCFax__c') != -1){
+                            valueList[6] = document.getElementById(inputSrcId).value;
+                        }
+                        
+                    }
+                }
+                
+                console.log('valueList---->>>>',valueList);
+        }
+         
+        function copyPOCInfoToApplicant(){
+            var isCopy = document.getElementById("copyPocToApplicantCheckboxId").checked;
+            if(isCopy == 'true' || isCopy == true){
+                
+                console.log('inputSrcArray---->>>>',inputSrcArray);
+                
+                var inputTargetArray = j$( "*[inputTargetId]" );
+                console.log('inputTargetArray---->>>>',inputTargetArray);
+                
+                var inputTargetId = j$(j$( "*[inputTargetId]" )[i]).attr("id");
+                console.log('inputTargetId---->>>>',inputTargetId);
+                var i;
+                var keyValueMap = {};               
+                
+                for(i = 0; i < inputTargetArray.size(); i ++){
+                    var inputTargetElement = j$(j$( "*[inputTargetId]" )[i]).attr("inputTargetId");
+                    var inputTargetId = j$(j$( "*[inputTargetId]" )[i]).attr("id");
+                    if(inputTargetElement != undefined && inputTargetElement != null){
+                        if(inputTargetElement.indexOf('FirstName__c') != -1){
+                            document.getElementById(inputTargetId).value = valueList[0];
+                        }else if(inputTargetElement.indexOf('LastName__c') != -1){
+                            document.getElementById(inputTargetId).value = valueList[1];
+                        }else if(inputTargetElement.indexOf('Email__c') != -1){
+                            document.getElementById(inputTargetId).value = valueList[2];
+                        }else if(inputTargetElement.indexOf('PhoneNumber__c') != -1){
+                            document.getElementById(inputTargetId).value = valueList[3];
+                        }else if(inputTargetElement.indexOf('Prefix__c') != -1){
+                            document.getElementById(inputTargetId).value = valueList[4];
+                        }else if(inputTargetElement.indexOf('ApplicantSuffix__c') != -1){
+                            document.getElementById(inputTargetId).value = valueList[5];
+                        }else if(inputTargetElement.indexOf('Fax__c') != -1){
+                            document.getElementById(inputTargetId).value = valueList[6 ];
+                        }
+                    }
+                }                               
+            }
+        }
+                 
+        function getAddress(){
+            var zipTextComponentId = j$(j$("[id$='orgZipId']")).attr('id');
+            var val = document.getElementById(zipTextComponentId).value;
+            if(val.length == 5){
+                document.getElementById(zipTextComponentId).maxLength = 5;
+                var errorComponentId = j$(j$("[id$='ErrorId']")).attr('id');
+                document.getElementById(errorComponentId).innerHTML = '';
+                Visualforce.remoting.Manager.invokeAction(                
+                    '{!$RemoteAction.USPSAddressInformationCtrl.GetAddressRemote}',val,
+                    function(result, event){
+                        if(event.status){
+                           console.log('result----',result);
+                           setAddress(result.result);
+                        }
+                    }
+               );
+            }else{
+                var cityTextComponentId = j$(j$("[id$='orgCityId']")).attr('id');
+                var stateTextComponentId = j$(j$("[id$='orgStateId']")).attr('id');
+                document.getElementById(cityTextComponentId).value = '';
+                document.getElementById(stateTextComponentId).value = '';
+            }
+        }
+         
+        function setAddress(result){
+            var cityTextComponentId = j$(j$("[id$='orgCityId']")).attr('id');
+            var stateTextComponentId = j$(j$("[id$='orgStateId']")).attr('id');
+            
+            if(result.USPS_ERROR_CODE == ''){
+                if(result.City != undefined && result.City != 'undefined'){
+                    document.getElementById(cityTextComponentId).value = result.City;
+                }
+                if(result.State != undefined && result.State != 'undefined'){
+                    document.getElementById(stateTextComponentId).value = result.State;
+                }
+            }else{
+                var errorComponentId = j$(j$("[id$='ErrorId']")).attr('id');
+                document.getElementById(errorComponentId).innerHTML = result.USPS_ERROR_DESC;
+                document.getElementById(cityTextComponentId).value = '';
+                document.getElementById(stateTextComponentId).value = '';
+            }
+        }
+         
+        function CancelFun(){
+            //window.location.href = '/'+cancelPage;
+            var nextPage = '/apex/ApplicantLogin4';
+            window.location.replace(nextPage);
+        }
+         
+        var selectedOrgId = '';
+        function setSelectedOrg(orgId){
+            console.log('selecte orgId ----', orgId);
+            selectedOrgId = orgId;
+            applySelectedFlags(selectedOrgId);
+        }
+         
+        function showContactInfoWithOrgSelectedJS(){
+            showContactInfoWithOrgSelected(selectedOrgId);
+        }
+        var disableSearchForEIN = false;  
+        var disableSearchForDUNS = false;  
+        var disableSearchForZipCode = false;
+
+                 
+          
+        function validate(userInput,inputField,isRequried){
+            inputField = inputField + '';       
+            j$(".searchButton").removeAttr("disabled");
+            j$(".searchButton").removeClass("disableBtnCls");
+            //j$('.userInputStyle.EIN').val(j$('.userInputStyle.EIN').val().replace(/,/g,''));
+            if(userInput.trim().length != 0){            
+                if(inputField === 'ZipCode'){
+                console.log('into zip validation code');
+                     var re1 = /(^\d{5}-\d{4}$)/;
+                     if(!((re1.test(userInput)))){         
+
+                        j$("#invalidZipCode").css("display","block");
+                       j$(".createOrgZipCodeValidation").css("display","block");
+                       j$(".createOrgZipCodeValidation").text("Please enter a valid Zip code. Do not enter commas or blank spaces."); 
+                       j$(".invalidZipCodeCreateOrg").css("display","block");  
+                        console.log('Please enter valid zip code.'); 
+                       j$(".searchButton").attr('disabled','disabled'); 
+                       j$(".OrgInfoNextBtnIdValidationForEinAndDuns").attr('disabled','disabled');    
+                       j$(".searchButton").addClass("disableBtnCls");   
+                       j$(".searchButton").removeClass("customBtn");
+                       j$(".searchButton").addClass("customDisableBtn");
+                       j$(".OrgInfoNextBtnIdValidationForEinAndDuns").addClass("customDisableBtn"); 
+                       j$(".OrgInfoNextBtnIdValidationForEinAndDuns").removeClass("customBtn"); 
+                       j$(".createOrganizationButton").removeClass("customBtn");
+                       j$(".createOrganizationButton").addClass("customDisableBtn");
+                       j$(".createOrganizationButton").attr('disabled','disabled');
+                       j$(".createOrganizationButton").addClass("disableBtnCls");     
+                       disableSearchForZipCode = true;                                      
+                     }else{
+                        console.log('Zip is Valid');
+                       j$("#invalidZipCode").css("display","none");
+                       j$(".createOrgZipCodeValidation").css("display","none");                           
+                       j$(".invalidZipCodeCreateOrg").css("display","none");  
+                       j$(".searchButton").removeAttr("disabled");
+                       j$(".OrgInfoNextBtnIdValidationForEinAndDuns").removeAttr("disabled");
+                       j$(".searchButton").addClass("customBtn");
+                       j$(".searchButton").removeClass("customDisableBtn");
+                        j$(".OrgInfoNextBtnIdValidationForEinAndDuns").removeClass("customDisableBtn"); 
+                       j$(".OrgInfoNextBtnIdValidationForEinAndDuns").addClass("customBtn"); 
+                        j$(".createOrganizationButton").addClass("customBtn");
+                       j$(".createOrganizationButton").removeClass("customDisableBtn");
+                       j$(".createOrganizationButton").removeAttr('disabled','disabled');
+                       j$(".createOrganizationButton").removeClass("disableBtnCls"); 
+                       disableSearchForZipCode = false;                  
+                     }
+                }
+                if(inputField === "DUNS"){         
+                   var re1 = /^\d+$/;
+                   var re2 =new RegExp("\^\\d{7}(?:\\d{2})?$","g");
+                   if(userInput.length === 9 || userInput.length === 13){
+                       if(!((re1.test(userInput)))){       invalidDUNS                
+                           j$("#").css("display","block");
+                           j$(".createOrgDUNSValidation").css("display","block");
+                            
+                           j$(".invalidDUNSCreateOrg").css("display","block");                     
+                           j$(".searchButton").attr('disabled','disabled');    
+                           j$(".OrgInfoNextBtnIdValidationForEinAndDuns").attr('disabled','disabled'); 
+                           j$(".searchButton").addClass('disableBtnCls'); 
+                           j$(".searchButton").removeClass("customBtn");
+                           j$(".searchButton").addClass("customDisableBtn"); 
+                           j$(".OrgInfoNextBtnIdValidationForEinAndDuns").addClass("customDisableBtn"); 
+                           j$(".OrgInfoNextBtnIdValidationForEinAndDuns").removeClass("customBtn"); 
+                           j$(".createOrganizationButton").removeClass("customBtn");
+                           j$(".createOrganizationButton").addClass("customDisableBtn");
+                           j$(".createOrganizationButton").attr('disabled','disabled');
+                           j$(".createOrganizationButton").addClass("disableBtnCls");
+                             
+                           disableSearchForDUNS  = true;                 
+                       }else{
+                           j$("#invalidDUNS").css("display","none");
+                           j$(".createOrgDUNSValidation").css("display","none");
+                           
+                           j$(".invalidDUNSCreateOrg").css("display","none");  
+                           j$(".searchButton").removeAttr("disabled");
+                           j$(".OrgInfoNextBtnIdValidationForEinAndDuns").removeAttr("disabled");
+                            j$(".searchButton").addClass("customBtn");
+                            j$(".searchButton").removeClass("customDisableBtn");
+                            j$(".OrgInfoNextBtnIdValidationForEinAndDuns").removeClass("customDisableBtn"); 
+                           j$(".OrgInfoNextBtnIdValidationForEinAndDuns").addClass("customBtn");
+                           j$(".createOrganizationButton").addClass("customBtn");
+                           j$(".createOrganizationButton").removeClass("customDisableBtn");
+                           j$(".createOrganizationButton").removeAttr('disabled','disabled');
+                           j$(".createOrganizationButton").removeClass("disableBtnCls"); 
+                           disableSearchForDUNS= false;
+                       }                   
+                   }else{
+                       j$("#invalidDUNS").css("display","block");
+                       j$(".createOrgDUNSValidation").css("display","block");
+                       
+                       j$(".invalidDUNSCreateOrg").css("display","block");                        
+                       j$(".searchButton").attr('disabled','disabled');  
+                       j$(".OrgInfoNextBtnIdValidationForEinAndDuns").attr('disabled','disabled');                       
+                       j$(".searchButton").addClass('disableBtnCls'); 
+                       j$(".searchButton").removeClass("customBtn");
+                       j$(".searchButton").addClass("customDisableBtn"); 
+                       j$(".OrgInfoNextBtnIdValidationForEinAndDuns").addClass("customDisableBtn"); 
+                       j$(".OrgInfoNextBtnIdValidationForEinAndDuns").removeClass("customBtn");   
+                        j$(".createOrganizationButton").removeClass("customBtn");
+                           j$(".createOrganizationButton").addClass("customDisableBtn");
+                           j$(".createOrganizationButton").attr('disabled','disabled');
+                           j$(".createOrganizationButton").addClass("disableBtnCls");    
+                       disableSearchForDUNS = true;      
+                       }
+                   
+                }else if(inputField === 'EIN'){
+                    var re1 = /^\d+$/;
+                    if(userInput.length === 9){
+                        if(!(re1.test(userInput))){
+                           j$("#invalidEIN").css("display","block");
+                           j$(".createOrgEINValidation").css("display","block");
+                           j$(".createOrgEINValidation").text("Please enter a valid 9 digit EIN. Do not enter commas or blank spaces."); 
+                           j$(".invalidEINCreateOrg").css("display","block");  
+                           console.log('please enter valid EIN');
+                           j$(".searchButton").attr('disabled','disabled'); 
+                           j$(".OrgInfoNextBtnIdValidationForEinAndDuns").attr('disabled','disabled');    
+                           j$(".searchButton").addClass("disableBtnCls");   
+                           j$(".searchButton").removeClass("customBtn");
+                           j$(".searchButton").addClass("customDisableBtn");
+                              j$(".OrgInfoNextBtnIdValidationForEinAndDuns").addClass("customDisableBtn"); 
+                           j$(".OrgInfoNextBtnIdValidationForEinAndDuns").removeClass("customBtn"); 
+                            j$(".createOrganizationButton").removeClass("customBtn");
+                           j$(".createOrganizationButton").addClass("customDisableBtn");
+                           j$(".createOrganizationButton").attr('disabled','disabled');
+                           j$(".createOrganizationButton").addClass("disableBtnCls");     
+                           disableSearchForEIN = true;               
+                       }else{
+                           console.log('EIN is valid');
+                           j$("#invalidEIN").css("display","none");
+                           j$(".createOrgEINValidation").css("display","none");                           
+                           j$(".invalidEINCreateOrg").css("display","none");  
+                           j$(".searchButton").removeAttr("disabled");
+                           j$(".OrgInfoNextBtnIdValidationForEinAndDuns").removeAttr("disabled");
+                           j$(".searchButton").addClass("customBtn");
+                           j$(".searchButton").removeClass("customDisableBtn");
+                            j$(".OrgInfoNextBtnIdValidationForEinAndDuns").removeClass("customDisableBtn"); 
+                           j$(".OrgInfoNextBtnIdValidationForEinAndDuns").addClass("customBtn"); 
+                            j$(".createOrganizationButton").addClass("customBtn");
+                           j$(".createOrganizationButton").removeClass("customDisableBtn");
+                           j$(".createOrganizationButton").removeAttr('disabled','disabled');
+                           j$(".createOrganizationButton").removeClass("disableBtnCls"); 
+                           disableSearchForEIN = false;
+                       }
+                   }else{
+                           j$("#invalidEIN").css("display","block");
+                           j$(".createOrgEINValidation").css("display","block");
+                           j$(".createOrgEINValidation").text("Please enter a valid 9 digit EIN. Do not enter commas or blank spaces.");
+                           j$(".invalidEINCreateOrg").css("display","block");  
+                           console.log('please enter valid EIN');
+                           j$(".searchButton").attr('disabled','disabled');
+                           j$(".OrgInfoNextBtnIdValidationForEinAndDuns").attr('disabled','disabled');      
+                           j$(".searchButton").addClass("disableBtnCls");
+                           j$(".searchButton").removeClass("customBtn");
+                           j$(".searchButton").addClass("customDisableBtn");
+                           j$(".OrgInfoNextBtnIdValidationForEinAndDuns").addClass("customDisableBtn"); 
+                           j$(".OrgInfoNextBtnIdValidationForEinAndDuns").removeClass("customBtn");  
+                            j$(".createOrganizationButton").removeClass("customBtn");
+                           j$(".createOrganizationButton").addClass("customDisableBtn");
+                           j$(".createOrganizationButton").attr('disabled','disabled');
+                           j$(".createOrganizationButton").addClass("disableBtnCls"); 
+                           disableSearchForEIN = true; 
+                   }                   
+                }
+            }
+            if(disableSearchForEIN === true || disableSearchForDUNS === true || disableSearchForZipCode === true){
+                
+                 console.log('please enter valid EIN');
+                 j$(".searchButton").attr('disabled','disabled'); 
+                 j$(".OrgInfoNextBtnIdValidationForEinAndDuns").attr('disabled','disabled');     
+                 j$(".searchButton").addClass("disableBtnCls"); 
+                 j$(".searchButton").removeClass("customBtn");
+                 j$(".searchButton").addClass("customDisableBtn"); 
+                  j$(".OrgInfoNextBtnIdValidationForEinAndDuns").addClass("customDisableBtn"); 
+                 j$(".OrgInfoNextBtnIdValidationForEinAndDuns").removeClass("customBtn");  
+                 j$(".createUserSubmitButton").addClass("customDisableBtn");  
+                j$(".createUserSubmitButton").removeClass("customBtn");    
+                j$(".createOrganizationButton").removeClass("customBtn");
+                j$(".createOrganizationButton").addClass("customDisableBtn");
+                j$(".createOrganizationButton").addClass("disableBtnCls");
+                j$(".createOrganizationButton").attr('disabled','disabled');               
+            }else{
+                  
+                   j$(".searchButton").removeAttr("disabled");
+                   j$(".OrgInfoNextBtnIdValidationForEinAndDuns").removeAttr("disabled");
+                   j$(".searchButton").removeClass("disableBtnCls");  
+                   j$(".searchButton").addClass("customBtn");
+                   j$(".searchButton").removeClass("customDisableBtn");
+                   j$(".OrgInfoNextBtnIdValidationForEinAndDuns").removeClass("customDisableBtn");
+                   j$(".OrgInfoNextBtnIdValidationForEinAndDuns").addClass("customBtn");
+                   j$(".createUserSubmitButton").removeClass("customDisableBtn");  
+                   j$(".createUserSubmitButton").addClass("customBtn"); 
+                   j$(".createOrganizationButton").addClass("customBtn");
+                           j$(".createOrganizationButton").removeClass("customDisableBtn");
+                           j$(".createOrganizationButton").removeAttr('disabled','disabled');
+                           j$(".createOrganizationButton").removeClass("disableBtnCls"); 
+            }
+        }
+        
+        function orgDetailsRedirect(){
+          
+              
+                 var nextPage = '/ApplicantRegistrationEdit';
+                 //var currLoc = window.location.href;
+                 //var newPage = currLoc.substring(0, currLoc.indexOf('force.com/') + 10) + nextPage;
+                 //window.location.href = newPage;
+
+                window.open(nextPage); 
+                //window.location.replace(nextPage);
+               
+            
+        }
+         
+        j$(document).ready(function() {
+            reArangeElement();
+        });
+        
+        // Re-arange fields for mozilla firefox
+        function reArangeElement() {
+            setTimeout(function() {
+                    j$("li[class*='dummyForFireFox']").hide();
+             }, 10);
+        }
+        
+    </script>
+    <script>
+        var isInternalDoc = 'false';
+        var docId = '';
+        //var helpId = '{!pageTemplate.GNT__HelpConfig__c}';
+        var helpId = 'a1Pf4000000Xmas'; 
+        var namespace = '{!namespace}';
+        var j$= jQuery.noConflict();
+            if(j$.cookie('setup') == 'present' && {!enableNativeLayoutFromDynamicLayout}) {
+                j$(".pageLayoutSetupIcon").show();
+                j$("#ViewNativePageLayoutId").show();
+            }
+            else{
+                j$(".pageLayoutSetupIcon").hide();
+                j$("#ViewNativePageLayoutId").hide();
+            }
+        _RemotingActionsHelp = {};
+        _RemotingActionsHelp.fetchHelpDataRemote;
+        function fetchHelpDataJS(){
+            
+        }
+        
+       
+        function closeIframe(hasErrors){
+            if(!hasErrors) {
+                j$(window.frameElement).parent().parent().prev().find('.flexDismiss').click();
+            }
+         }
+         
+         function openViewPage(){
+            closeModal();
+            window.location.href = '{!$CurrentPage.url}';
+        }
+
+        function openHelp(){
+            if(isInternalDoc == 'true' ){
+                window.open('/servlet/servlet.FileDownload?file='+docId,'_blank');
+            }else{
+                window.open('/apex/'+namespace+'Help?id='+helpId, '_blank','width=900, height=700');
+            }
+        }    
+        
+        function Snapshot(){
+            console.log('Snapshot Clicked!');
+            console.log('record id---->','{!rcrdId}');
+        }        
+        
+         j$(document).ready(function(){
+            fetchHelpDataJS();
+            console.log('coo:----------------'+j$.cookie('setup') == 'present');
+            
+         });
+        var setupCookiePresent = (j$.cookie('setup') == 'present');
+        //j$(document).tooltip();
+        
+        var labelsWithHelp = document.getElementsByClassName("labelHelpTooltip");
+        for (i = 0; i < labelsWithHelp.length; i++) {
+            j$(labelsWithHelp[i]).tooltip();
+        }
+        j$('.fa.fa-info.helpIcon').click(function() {
+            if(setupCookiePresent) {
+                j$('.fieldApiNameDisplay').removeClass('active');
+                j$(this).parent().nextAll('.fieldApiNameDisplay').addClass('active');
+            }
+        });        
+        
+        j$('body').click(function(e) {
+            if(j$(e.target).closest('.fieldApiNameDisplay').length < 1 && !(j$(e.target).hasClass('helpIcon'))){
+                j$('.fieldApiNameDisplay').removeClass('active');
+            }
+        });
+
+        if(j$.cookie('setup') == 'present' && {!$Setup.GNT__GlobalConfig__c.GNT__EnableAdminSetup__c}) {
+            j$(".pbSetup").show();
+        }
+        else {
+            j$(".pbSetup").hide();
+        }
+        
+        function takeSnapshot(){
+            var confirmVal = confirm('You are attempting to take a snapshot of the current record which will be saved under attachments tab. Do you want to proceed?'); 
+            if(confirmVal == true){
+                executeClass('tempSnapShot', '');
+            }
+        }
+        
+    </script>
+    
+   
+    
+</apex:page>

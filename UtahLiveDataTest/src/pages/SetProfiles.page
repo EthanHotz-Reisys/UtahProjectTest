@@ -1,0 +1,169 @@
+<apex:page controller="SetProfilesCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+    <style>
+        select > option {
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .profilesHeader {
+            padding-top: 0px !important;
+            padding-bottom: 0px !important;
+            display: block;
+            width: 100%;
+            float: left;
+            position: relative;
+        }
+        .profilesHeader .inputContainer {
+            position: absolute;
+            right: 20px;
+            top: 6px;
+            z-index: 5;
+        }
+        .duelingListBox {
+            padding-left: 15px;
+            padding-bottom: 15px;
+        }
+        #LeftList,
+        #RightList {
+            width: 150px;
+        } 
+        .buttonCell > div {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+    </style>
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">     
+            <apex:form >
+                <div class="tableBackground tab-content">
+                    <div class="panel panel-default">
+                        <div class="panel-heading profilesHeader">
+                            <div class="panel-heading-title">
+                                <h2>Select Profiles</h2>
+                            </div>
+                            <div class="inputContainer">
+                                <input id="ProfileHeaderSaveButton" class="customBtn saveButton" type="button" value="Save"/>
+                                <label for="ProfileHeaderSaveButton" class="sr-only">Save Button</label>
+                                <input id="ProfileHeaderCancelButton" class="customBtn cancelButton" type="button" value="Cancel"/>
+                                <label for="ProfileHeaderCancelButton" class="sr-only">Cancel Button</label>
+                            </div>
+                        </div>
+                        <div id="multiselectPanel" class="duelingListBox">
+                            <table class="layout">
+                                <tbody>
+                                    <tr>
+                                        <td class="selectCell">
+                                            <div class="selectTitle">
+                                                <label value="Select Options" for="LeftList" />
+                                            </div>
+                                            <select id="LeftList" class="multilist" multiple="multiple" size="8" >
+                                            </select>
+                                        </td>
+                                        <td class="buttonCell">
+                                            <!-- <div class="text">Add</div> -->
+                                            <div class="text">
+                                                <a onClick="moveSelectedOptions('LeftList','RightList');" id="btnRight">
+                                                    <i class="fa fa-arrow-circle-right fa-2x"></i>
+                                                </a>
+                                            </div>
+                                            <div class="text">
+                                                <a onclick="moveSelectedOptions('RightList', 'LeftList');" id="btnLeft">
+                                                    <i class="fa fa-arrow-circle-left fa-2x"></i>
+                                                </a>
+                                            </div>
+                                            <!-- <div class="duelingText">Remove</div> -->
+                                        </td>
+                                        <td class="selectCell">
+                                            <div class="selectTitle">
+                                                <label value="Added" for="RightList" />
+                                            </div>
+                                            <select id="RightList" class="multilist" multiple="multiple" size="8">
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </apex:form>
+        </apex:define>
+    </apex:composition>
+    <script type="text/javascript">
+    
+    var profiles = [];
+    var j$ = jQuery.noConflict();
+    j$(document).ready(function() {
+        if('{!profiles}') {
+            var tmp = '{!profiles}';
+            tmp.split(';').forEach(function(profile) {
+            	profiles.push(decodeURI(profile));
+            });
+        }
+        console.log(profiles);
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.SetProfilesCtrl.getProfiles}',
+            function(result,event){
+                var leftHtml = '';
+                var rightHtml = '';
+                result.forEach(function(profile) {
+                    console.log(profile);
+                    if(profiles.lastIndexOf(profile.Name) > -1) {
+                        console.log('In right');
+                        rightHtml += '<option value="' + profile.Name;
+                        rightHtml += '">' + profile.Name;
+                        rightHtml += '</option>';
+                    } else {
+                        console.log('In left');
+                        leftHtml += '<option value="' + profile.Name;
+                        leftHtml += '">' + profile.Name;
+                        leftHtml += '</option>';
+                    }
+                });
+                j$('#RightList').append(rightHtml);
+                j$('#LeftList').append(leftHtml);
+            },
+            {escape:false,buffer:false}
+        );
+        j$('#ProfileHeaderSaveButton').on('click', function(){
+        	save();    
+        });
+    });
+    var save = function() { 
+        console.log('Hit');
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.SetProfilesCtrl.save}',
+            '{!objectType}',
+            '{!objectId}',
+            '{!fieldName}',
+            profiles,
+            function(result,event){
+                console.log(result);
+            },
+            {escape:false,buffer:false}
+        );
+    }
+    var moveSelectedOptions = function(idFrom, idTo) {
+        listFrom = document.getElementById(idFrom);
+        listTo = document.getElementById(idTo);
+
+        for ( var x = 0; x < listTo.options.length; x++) {
+            listTo.options[x].selected = false;
+        }
+
+        for ( var x = 0; x < listFrom.options.length; x++) {
+            if (listFrom.options[x].selected == true) {
+                if (idTo == 'RightList') {
+                    profiles.push(listFrom.options[x].value);
+                } else {
+                    profiles.pop(listFrom.options[x].value);
+                }
+                listTo.appendChild(listFrom.options[x]);
+                x--;
+            }
+        }
+
+        listTo.focus();
+    }
+    </script>
+</apex:page>

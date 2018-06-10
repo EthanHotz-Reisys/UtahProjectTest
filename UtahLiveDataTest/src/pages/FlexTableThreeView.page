@@ -1,0 +1,16 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false">
+   
+    <c:ExternalLibrary />
+
+    <apex:outputPanel >
+        <apex:composition template="GNT__PhaseTemplate">
+            <apex:define name="body">    
+                  <GNT:FlexTable flexTableName="UserRegistration" tableId="UserRegistration"  headerDescription="" />
+                  <GNT:FlexTable flexTableName="UserRegistrationReviewer" tableId="ActiveAccount"  headerDescription="" />
+                  <!--<GNT:FlexTable flexTableName="UserRegistrationIndApp" tableId="ActiveAccountIndApplicant"  headerDescription="" /> -->
+                  <GNT:FlexTable flexTableName="AddAppRegistration" tableId="AddAppRegistration"  headerDescription="" />
+            </apex:define>
+        </apex:composition>
+    </apex:outputPanel> 
+    
+</apex:page>

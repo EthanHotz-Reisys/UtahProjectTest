@@ -1,0 +1,13 @@
+<apex:page controller="QuarterlyExpenditureReportCtrl" sidebar="false" standardStylesheets="false" showHeader="false">
+    
+    <!-- Including JS and CSS resources  -->
+    <c:ExternalLibrary />
+     <GNT:ExternalLibrary />
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent"> 
+      <div class="container-fluid">
+         <GNT:FlexViewLayout templateName="QuarterlyExpenditureReport" recordId="{!recordId}" layoutType="View" flexTableParameters="{!keyValueMap}" HideSidebar="true"/>
+      </div>
+       </apex:define>
+    </apex:composition>      
+</apex:page>

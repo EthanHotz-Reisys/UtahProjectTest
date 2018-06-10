@@ -1,0 +1,16 @@
+<apex:page id="flexTableViewPage"  controller="FlexTableViewCtrl" showHeader="false" sidebar="false" standardStylesheets="false">
+    
+    <c:ExternalLibrary />
+
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">
+            <GNT:FlexTable flexTableHeader="{!$CurrentPage.parameters.flexTableHeader}" listParams="{!parameterMap1}" flexTableName="AnnouncementsGrantee" tableId="AnnouncementsGrantee" flexTableParameters="{!parameterMap}"/>
+              <GNT:FlexTable flexTableHeader="{!$CurrentPage.parameters.flexTableHeader}" listParams="{!parameterMap1}" flexTableName="AnnouncementsGranteeClosed" tableId="AnnouncementsGranteeClosed" flexTableParameters="{!parameterMap}"/>
+        </apex:define>
+    </apex:composition>
+    
+    <script>
+      //  setPageTitle('{!$CurrentPage.parameters.pageTitle}');
+       setPageTitle('Active Opportunites');
+    </script>
+</apex:page>

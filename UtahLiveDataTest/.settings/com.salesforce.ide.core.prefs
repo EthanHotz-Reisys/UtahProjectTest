@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+endpointApiVersion=38.0
+endpointEnvironment=Other (Specify)
+endpointServer=ut-finance--gitfeature.cs33.my.salesforce.com
+httpsProtocol=true
+ideVersion=38.0
+keependpoint=false
+metadataFormatVersion=38.0
+namespacePrefix=
+packageName=unpackaged
+preferToolingDeployment=true
+projectIdentifier=IDE-94754575136960685
+readTimeout=400
+sessionId=
+username=egittest@rei.test

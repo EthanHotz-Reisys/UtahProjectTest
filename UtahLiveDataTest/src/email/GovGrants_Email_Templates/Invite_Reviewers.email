@@ -1,0 +1,35 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<br>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<font face="Times New Roman, Times, serif"><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0cm 0cm 12pt;"><span style="color:black">Hello&nbsp;{!Contact.FirstName}
+&nbsp;{!Contact.LastName},</span><span style="font-family:&quot;Arial&quot;,sans-serif;
+color:black"></span></p>
+
+<p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0cm 0cm 12pt; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; word-spacing: 0px;"><span style="color:black">Congratulations
+on being selected as a SME (subject matter expert) Reviewer&nbsp;for EGMS
+applications.&nbsp;Please click on the below URL to register and
+create&nbsp;your login account.</span><span style="font-family:&quot;Arial&quot;,sans-serif;
+color:black"></span></p>
+
+<p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0cm 0cm 12pt;"><span style="color:black">You
+will be required to provide your contact details and area(s) of expertise in
+order to create the profile in the system. You will also be prompted to sign a
+Non-Disclosure Agreement and Conflict of Interest Agreement. </span><font face="Times New Roman, Times, serif"><font>Click&nbsp;</font><font><a href="https://granteeportal-ggpdev2-developer-edition.na30.force.com/apex/UserRegistrationRedirect?t={!Contact.SecurityToken__c}">here</a>.</font></font></p><p style="margin: 0cm 0cm 12pt;"><span style="font-family: arial; font-size: 12pt;">Please
+do not reply to this system generated email.&nbsp;You may contact the GovGrants
+Support Team at&nbsp;</span><u style="font-family: arial; font-size: 12pt;"><span style="color:#0066CC"><a href="mailto:govgrants@support.com">govgra</a></span></u><span style="font-size: 12pt; font-family: Arial, sans-serif;"><a href="mailto:govgrants@support.com"><span style="font-family:&quot;Times New Roman&quot;,serif">nts@support.com</span></a></span><span style="font-family: arial; font-size: 12pt;">&nbsp;if you have any questions or need assistance with
+this task. <br></span></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0cm 0cm 12pt; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; word-spacing: 0px;"><span style="font-family:&quot;Arial&quot;,sans-serif;color:black"></span></p>
+
+<p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0cm 0cm 0.0001pt; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; word-spacing: 0px;"><span style="color:black">Sincerely,</span><span style="font-family:&quot;Arial&quot;,sans-serif;
+color:black"></span></p>
+
+<p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0cm 0cm 0.0001pt; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; word-spacing: 0px;"><span style="color:black">EGMS Team</span></p></font>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

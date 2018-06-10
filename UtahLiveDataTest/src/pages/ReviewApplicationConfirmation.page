@@ -1,0 +1,14 @@
+<apex:page controller="ReviewApplicationConfirmationCtrl" showHeader="false" sidebar="false" standardStylesheets="false">
+    
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">    
+              <!--  <GNT:DynamicLayout templateName="{!templateName}" recordId="{!recordId}" layoutType="View" listParams="{!listParameters}" flexTableParameters="{!keyValueMap}"/>-->
+              <GNT:FlexTable flexTableHeader="{!flexTableHeader}" listParams="{!listParameters}" flexTableName="{!flexTableName}" tableId="flexTableRandomID" flexTableParameters="{!keyValueMap}"/>
+              <!--flexTableHeader="{!$CurrentPage.parameters.flexTableHeader}" -->  
+        </apex:define>
+    </apex:composition> 
+     <script>
+        setPageTitle('{!flexTableHeader}');
+    </script>
+</apex:page>

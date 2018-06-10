@@ -1,0 +1,24 @@
+<!--
+    
+    **********************************************************
+    Audit History 
+    **********************************************************
+    07/07/2014         Vineeth Shetty            Created
+    **********************************************************  
+
+ -->
+<apex:page controller="RecommendedAnnouncementsExternalCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+	<c:ExternalLibrary />
+    <apex:composition template="GNT__PhaseTemplate">
+		<apex:define name="body">
+			<div class="panel panel-default">
+				<div class="panel-body panel-body-ext">
+					<apex:form >
+					<GNT:PageMessages />
+					</apex:form>
+					<GNT:FlexTable flexTableName="RecommendedAnnouncementsExternal" tableId="RecommendedAnnouncementsExternal" rendered="true" flexTableParameters="{!keyValueMap}"/>
+				</div>
+			</div>
+   		</apex:define>
+	</apex:composition>
+</apex:page>

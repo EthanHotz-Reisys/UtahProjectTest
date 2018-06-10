@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE This email is sent as a confirmation to applicant when an application is submitted to Grantor</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Grantor - Application Submission Confirmation</name>
+    <style>formalLetter</style>
+    <subject>Notification: Application #{!Application__c.Title__c} has been Successfully Submitted</subject>
+    <textOnly>Dear Applicant,
+Your Application {!Application__c.Title__c} has been successfully submitted to the Grantor.
+
+Application Details:
+
+Funding Opportunity ID: {!Application__c.Announcement__c}
+
+Application ID: {!Application__c.Name}
+
+Project Title: {!Application__c.Title__c}
+
+Applicant Organization: {!Application__c.ExternalOrganization__c}
+
+Submitted By: {!Application__c.SubmittedBy__c}
+
+Submitted On: {!Application__c.SubmittedOn__c}
+
+To access the Application, kindly login to the UtahGrants portal.
+
+Sincerely,
+UtahGrants Support Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

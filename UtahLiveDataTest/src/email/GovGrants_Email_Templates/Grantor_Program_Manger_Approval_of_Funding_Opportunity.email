@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="1" >
+<![CDATA[<span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: medium;">Dear {!Announcement__c.OwnerFirstName},</span>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<font face="Times New Roman,Times,Serif" size="3">This email is to notify you that, the Announcement # {!Announcement__c.AnnouncementId__c} has been Approved for the Program # {!Announcement__c.Program__c}.</font><p style="margin: 0cm 0cm 0.0001pt;"><font face="Times New Roman,Times,Serif" size="3"><br></font></p><p style="margin: 0cm 0cm 0.0001pt;"><font face="Times New Roman,Times,Serif" size="3">Sincerely,</font></p><p style="margin: 0cm 0cm 12pt;"><font face="Times New Roman,Times,Serif"></font><font face="Times New Roman,Times,Serif"></font><font face="Times New Roman,Times,Serif"></font></p><p style="margin: 0cm 0cm 12pt;"><font face="Times New Roman,Times,Serif" size="3">UtahGrants Support Team</font></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="1" >
+<![CDATA[]]></td>
+</tr>
+</table>

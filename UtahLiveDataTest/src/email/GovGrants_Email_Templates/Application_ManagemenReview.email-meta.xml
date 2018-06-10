@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email sent to GovGrants Management Reviewer Panel to start review the Application.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Application Management Review</name>
+    <style>formalLetter</style>
+    <subject>Notification: You are Requested to start Management Review the Applications for Announcement {!Application__c.Announcement__c}</subject>
+    <type>html</type>
+</EmailTemplate>

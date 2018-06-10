@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>[Business] This object summarizes number of Applications/Pre-Applications and number of Review Steps. As discussed with Shiva, Shah, Davinder , this object can not removed sometime later when possible.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>AdminPageLayout__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Admin Page Layout</label>
+        <referenceTo>GNT__PageLayoutConfig__c</referenceTo>
+        <relationshipLabel>Review Groups</relationshipLabel>
+        <relationshipName>Review_Groups</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AnnouncementName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Announcement__r.AnnouncementName__c</formula>
+        <label>Funding Opportunity Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Announcement__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Funding Opportunity ID</label>
+        <referenceTo>Announcement__c</referenceTo>
+        <relationshipLabel>Review Groups</relationshipLabel>
+        <relationshipName>Review_Groups</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ApplicationDeadline__c</fullName>
+        <externalId>false</externalId>
+        <formula>Announcement__r.ApplicationDeadlineWithDateTime__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Application Deadline</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ApplicationReviewStatus__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Announcement__r.ApplicationsReviewStatus__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Application Review Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApplicationsInFDM__c</fullName>
+        <externalId>false</externalId>
+        <label>Applications in FDM</label>
+        <summarizedField>ReviewStep__c.NumberOfApprovedApplications__c</summarizedField>
+        <summaryFilterItems>
+            <field>ReviewStep__c.Name</field>
+            <operation>equals</operation>
+            <value>Funding Decision Memo</value>
+        </summaryFilterItems>
+        <summaryForeignKey>ReviewStep__c.ReviewGroup__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>ApplicationsInReview__c</fullName>
+        <externalId>false</externalId>
+        <label>Applications in Review</label>
+        <summarizedField>ReviewStep__c.NumberOfApplications__c</summarizedField>
+        <summaryFilterItems>
+            <field>ReviewStep__c.Name</field>
+            <operation>equals</operation>
+            <value>Pre-Screen Review</value>
+        </summaryFilterItems>
+        <summaryForeignKey>ReviewStep__c.ReviewGroup__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>CurrentReviewStepFormula__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&apos;/apex/ReviewStepView?id=&apos;+CurrentReviewStepId__c, CurrentReviewStep__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current Review Step</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CurrentReviewStepId__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Review Step Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CurrentReviewStep__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Review Step</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FundingOpportunityID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Announcement__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Funding Opportunity ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>IsApplication__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( RecordType.Name == &apos;Application&apos;, true, false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This Field is to check if the record is for Application.</inlineHelpText>
+        <label>Is Application</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsPreApplication__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( RecordType.Name == &apos;Pre-Application&apos;, true, false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This field is to check if it is PreApplication.</inlineHelpText>
+        <label>Is Pre-Application</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NoofNonWinners__c</fullName>
+        <externalId>false</externalId>
+        <label>No. of Non-Winners</label>
+        <summarizedField>ReviewStep__c.NumberofNonWinners__c</summarizedField>
+        <summaryForeignKey>ReviewStep__c.ReviewGroup__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>NoofWinners__c</fullName>
+        <externalId>false</externalId>
+        <label>No. of Winners</label>
+        <summarizedField>ReviewStep__c.NumberofWinners__c</summarizedField>
+        <summaryForeignKey>ReviewStep__c.ReviewGroup__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>NumberOfApplications__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF((Announcement__r.OrganizationName__c == &apos;USBE&apos;), Announcement__r.NumberOfApplicationsInReview__c, Announcement__r.NumberOfApplications__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Number of Applications</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NumberOfNonWinners__c</fullName>
+        <externalId>false</externalId>
+        <formula>NumberOfApplications__c -  NoofWinners__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>No. of Non-Winners</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NumberOfPreApplications__c</fullName>
+        <externalId>false</externalId>
+        <formula>Announcement__r.NumberOfPreApplications__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Number of Pre-Applications</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NumberOfReviewSteps__c</fullName>
+        <defaultValue>4</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>User defined - total number of review steps for an application or pre-application based on record type.</inlineHelpText>
+        <label>Number of Review Steps Allowed</label>
+        <precision>2</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProgramID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Announcement__r.Program__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Program ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Program</label>
+        <referenceTo>Program__c</referenceTo>
+        <relationshipLabel>Review Groups</relationshipLabel>
+        <relationshipName>Review_Groups</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ReviewStepsCreated__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Review Steps Created</label>
+        <summaryForeignKey>ReviewStep__c.ReviewGroup__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submit for Approve</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Review Group</label>
+    <listViews>
+        <fullName>OGM_ReviewGroup</fullName>
+        <filterScope>Queue</filterScope>
+        <label>OGM</label>
+        <queue>OGM</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>RG-{0000}</displayFormat>
+        <label>ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Review Groups</pluralLabel>
+    <recordTypes>
+        <fullName>Application</fullName>
+        <active>true</active>
+        <label>Application</label>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Submit for Approve</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Preapplication</fullName>
+        <active>true</active>
+        <label>Pre-Application</label>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Submit for Approve</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <sharingReasons>
+        <fullName>SharetoAnnouncementReviewerAndApprover__c</fullName>
+        <label>Share to Announcement Reviewer and Appro</label>
+    </sharingReasons>
+    <sharingReasons>
+        <fullName>SharetoReviewers__c</fullName>
+        <label>Share to Reviewers</label>
+    </sharingReasons>
+    <validationRules>
+        <fullName>AllowedReviewSteps</fullName>
+        <active>false</active>
+        <description>Validates to make sure no more than allowed review steps ( defined by Number of Review Steps Allowed Field) are created under the same Review Group</description>
+        <errorConditionFormula>IF(ReviewStepsCreated__c &gt;  NumberOfReviewSteps__c , TRUE, FALSE)</errorConditionFormula>
+        <errorMessage>Review Steps exceed the total number of Review Steps allowed for this Group</errorMessage>
+    </validationRules>
+</CustomObject>

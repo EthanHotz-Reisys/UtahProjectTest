@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE This email is sent to Grantee when requests for Extension rejected by PM</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Grantee Closeout Extension Rejected By PM</name>
+    <style>formalLetter</style>
+    <subject>Notification: Grantee Closeout {!Closeout__c.Name} Extension Rejected</subject>
+    <textOnly>Subject: Request for Closeout {!Closeout__c.Name} Extension
+
+
+
+This email is to notify you that the Grantee has requested Closeout {!Closeout__c.Name} Extension.
+
+
+
+Closeout Details:
+
+
+
+Project Name : {!Closeout__c.ProjectName__c}
+
+Grant Name : {!Closeout__c.GrantName__c}
+
+Project Period Start Date : {!Closeout__c.ProjectPeriodStartDate__c}
+Project Period Start Date : {!Closeout__c.ProjectPeriodEndDate__c}
+
+Closeout Type : {!Closeout__c.Type__c}
+
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

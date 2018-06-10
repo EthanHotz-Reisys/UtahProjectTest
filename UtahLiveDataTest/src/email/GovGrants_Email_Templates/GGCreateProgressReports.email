@@ -1,0 +1,28 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: 12pt;">Hello {!ProgressReports__c.AssignedTo__c},</span></p><div><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="Times New Roman,Times,Serif"><br></font></p><font face="Times New Roman,Times,Serif" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">
+
+</font><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="Times New Roman,Times,Serif"><font style="color: rgb(0, 0, 0);"><font style="color: rgb(0, 0, 0);">This email is to noti</font>fy you to submit Progress
+Report&nbsp; for </font><font style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;, Times, serif; font-size: 12pt;">the Grant # {!ProgressReports__c.GrantName__c}.</font></font></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="Times New Roman,Times,Serif"><br></font></p><font face="Times New Roman,Times,Serif" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">
+
+</font><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><b><span style="line-height: 107%;"><font face="Times New Roman,Times,Serif">Progress Report Details:</font></span></b></p><font face="Times New Roman,Times,Serif" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">
+
+</font><p class="MsoNoSpacing"><span class="field-value"><font face="Times New Roman,Times,Serif"><font face="arial"><span style="font-size: 12pt;">Progress Report&nbsp;Start Date: {!ProgressReports__c.</span></font>ReportingPeriodStartDate__c<font face="arial"><span style="font-size: 12pt;">}</span></font></font></span></p><font face="Times New Roman,Times,Serif" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">
+
+</font><p class="MsoNoSpacing"><span class="field-value"><font face="Times New Roman,Times,Serif"><font face="arial"><span style="font-size: 12pt;">Reporting Period End Date:&nbsp;{!ProgressReports__c.</span></font>ReportingPeriodEndDate__c<font face="arial"><span style="font-size: 12pt;">}</span></font></font></span></p><font face="Times New Roman,Times,Serif" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">
+
+</font><p class="MsoNoSpacing"><font face="Times New Roman,Times,Serif"><font face="arial"><span style="font-size: 12pt;">Report
+Frequency:&nbsp;{!ProgressReports__c.</span></font>Frequency__c<font face="arial"><span style="font-size: 12pt;">}</span></font></font></p><p class="MsoNoSpacing" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="Times New Roman,Times,Serif"><br></font></p><font face="Times New Roman,Times,Serif" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">
+
+</font><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="Times New Roman,Times,Serif">Kindly login to EGMS System&nbsp;and complete further process.</font></p><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="Times New Roman,Times,Serif"><br></font></p><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="Times New Roman,Times,Serif">Sincerely,</font></p><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="Times New Roman,Times,Serif">EGMS Team</font></p></div>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

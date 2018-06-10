@@ -1,0 +1,45 @@
+<apex:page standardController="GNT__PageBlockConfig__c" showHeader="false" standardStylesheets="false" extensions="SectionMappingEditCtrl" sidebar="false">
+    
+    <c:ExternalLibrary />    
+    
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent"> 
+            <GNT:FlexTable flexTableName="UserDetails" tableId="Userinfo"  headerDescription="" />   
+            <GNT:ModalFlexEditLayout templateName="{!pageTemplateName}" recordId="{!recordId}"  layoutType="Edit" flexTableParameters="{!keyValueMap}"  HideSidebar="true" 
+                  createDefaultValues="{!listDefaultValues}" saveURL="{!savePage}" cancelURL="{!cancelPage}" hideCancelBtn="true"/>                                   
+        </apex:define>
+    </apex:composition>
+    <script>
+        var j$ = jQuery.noConflict();
+        j$(document).ready(function(){
+            //buildLookupIcon();
+        });
+
+        var buildLookupIcon = function(){
+            j$('.lookupIcon').each(function(){
+                var currentNode = j$(this);
+                currentNode.parent().append('<span class="glyphicon glyphicon-search"></span>');
+            });
+        }
+    </script>
+
+<script type='text/javascript'>
+ var j$ = jQuery.noConflict();
+j$(document).ready(function(){
+
+    console.log('*******window***height************'+j$(window).height());
+   console.log('*******document***height************'+ j$(document).height());
+     
+parent.resizeParent(j$(document).height());
+
+});
+
+</script>
+
+     <style>
+        #PageTemplateApp{
+                    min-height : 600px !important;
+                   
+        }
+    </style>  
+</apex:page>

@@ -1,0 +1,12 @@
+<apex:page cache="false" standardController="Award__c" extensions="PrintGoalsAndObjCtrl" sidebar="false" standardStylesheets="false" showHeader="false">
+    <c:ExternalLibrary />
+    <GNT:ExternalLibrary />
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">
+            <GNT:FlexViewLayout templateName="GoalsObjectivesPrint" layoutType="View" recordId="{!recordId}" HideSidebar="true"
+                flexTableParameters="{!keyValueMap}"/>
+                <!-- <GNT:FlexGrid tableId="{!templateName}" flexTableParameters="{!keyValueMap}" /> -->
+            
+        </apex:define>
+    </apex:composition>
+</apex:page>

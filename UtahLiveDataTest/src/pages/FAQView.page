@@ -1,0 +1,22 @@
+<apex:page controller="FAQCtrl" title="Case View" sidebar="false" showHeader="false" standardStylesheets="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+<div  class="bodyDiv bs container-fluid" id="myDiv" style="padding-left:30px; float:left; clear:both; width:100%;height:auto;">
+       <apex:repeat value="{!Records}" var="rec" id="theRepeat">
+                    
+        <b>  Question :  </b>  <apex:outputText styleClass="customLabelstyle" value="{!rec.Question__c}"  escape="false"/><br/><br/>
+        <b>  Answer :   </b>  <apex:outputText styleClass="customLabelstyle" value="{!rec.Answer__c}" escape="false"/><br/>
+                </apex:repeat>
+</div>           
+
+
+<script type='text/javascript'>
+ var j$ = jQuery.noConflict();
+  j$(document).ready(function(){   
+  parent.resizeParent(j$(document).height());
+});
+
+</script>
+
+</apex:page>

@@ -1,0 +1,25 @@
+<apex:page title="Calendar" showHeader="false" standardStylesheets="false" sidebar="false">   
+    <c:ExternalLibrary />   
+    <style>
+        @media (min-width: 768px)
+        .form-horizontal .control-label {
+            padding-top: 7px !important;
+            margin-bottom: 0 !important;
+            text-align: right !important;
+        }
+        @media (min-width: 768px)
+        .col-sm-6 {
+        width: 50% !important;
+        }
+    </style>
+    <apex:composition template="GNT__ModalTemplate">
+    <apex:define name="ModalContent">    
+    <GNT:Calendar configName="Program__c" recordId="{!$CurrentPage.parameters.id}"/>  
+    </apex:define>
+    </apex:composition>
+    <script>
+    j$(document).ready(function(){ 
+    parent.showModalTitle('{!$CurrentPage.parameters.title}');
+    });   
+    </script>
+</apex:page>

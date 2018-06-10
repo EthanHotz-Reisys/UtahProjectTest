@@ -1,0 +1,31 @@
+<apex:page controller="ApplicationAddCommentCtrl" showHeader="false" sidebar="false" standardStylesheets="false">
+    <c:ExternalLibrary />
+    <apex:form >
+        <div class="bs container-fluid">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <GNT:PageMessages />
+                        <div class="col-md-4">
+                            <p class="text-center">
+                                <apex:commandButton action="{!btnAddComment}" value="Add Comment" styleClass="customBtn" oncomplete="parent.closeModal()"/>
+                                <apex:commandButton action="{!btnCancel}" value="Cancel" styleClass="customBtn" oncomplete="parent.closeModal()"/>
+                            </p>    
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body panel-body-ext">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <apex:outputLabel for="Id" styleClass="customLabelstyle" value="Comments"/>
+                        </div>
+                        <div class="col-md-8">
+                            <apex:inputField value="{!selectedApp.FinalApproverComments__c}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </apex:form>
+</apex:page>

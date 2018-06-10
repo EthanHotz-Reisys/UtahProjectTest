@@ -1,0 +1,247 @@
+<!--
+ ********************************************************** 
+ Audit History
+ **********************************************************
+ 10/7/2014   Nakul Kadam Created
+ **********************************************************  
+-->
+<apex:page standardstylesheets="false" showHeader="false" sidebar="false" language="en" applyHtmlTag="false">
+<html lang="en">
+    <title>Applicant Login</title>
+    <c:ExternalLibrary />   
+    <style type="text/css">
+    
+
+    a.btn.quickSearchBtn.customBtn.btn {
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7892c2), color-stop(1, #476e9e)) !important;
+        background: -moz-linear-gradient(top, #7892c2 5%, #476e9e 100%) !important;
+        background: -webkit-linear-gradient(top, #7892c2 5%, #476e9e 100%) !important;
+        background: -o-linear-gradient(top, #7892c2 5%, #476e9e 100%) !important;
+        background: -ms-linear-gradient(top, #7892c2 5%, #476e9e 100%) !important;
+        background: linear-gradient(to bottom, #7892c2 5%, #476e9e 100%) !important;
+        color: #fff !important;
+    }
+     a.btn.quickSearchBtn.customBtn.btn:hover {
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #4f73b6), color-stop(1, #476e9e)) !important;
+    background: -moz-linear-gradient(top, #4f73b6 5%, #476e9e 100%) !important;
+    background: -webkit-linear-gradient(top, #4f73b6 5%, #476e9e 100%) !important;
+    background: -o-linear-gradient(top, #4f73b6 5%, #476e9e 100%) !important;
+    background: -ms-linear-gradient(top, #4f73b6 5%, #476e9e 100%) !important;
+    background: linear-gradient(to bottom, #4f73b6 5%, #476e9e 100%) !important;
+    border-color: #2c2c2c;
+     color: #fff !important;
+    }
+    .customBtn {
+             background: #19516f !important;         
+        }
+        button.customBtn.btn-lg.btn-primary.btn-block.dropdown-toggle:hover{      
+                background-color: #00396B !important;               
+                background: #00396B !important;                  
+        }
+       .bs {
+            margin-top: 20px;
+        }
+
+        .banner {
+            height: 253px;
+            width: 100%;
+        }
+        .bs .banner img {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+        .main-tabs .main-heading        {
+            padding: 0 15px; 
+            border-bottom: 0;
+            background-color: #dedede !important;
+        padding: 4px 18px 0px 18px;
+        }
+      
+        .main-heading a {
+           cursor: pointer;
+        }
+
+        .main-tabs table{
+            border: 1px solid #E1E1E1;
+        }
+        
+        .main-tabs thead th a,  .row.main-tabs thead th .tableColumnHeader {            
+            font-weight: 600;            
+        }
+    
+     
+        .main-tabs .autoSuggestionStyleForInput {
+            margin-left: 0 !important;
+        }
+     
+      
+       .main-tabs .totalRecords {            
+            margin-bottom: 0;          
+        }
+        .main-tabs ul.dropdown-menu.dropdown-menu-right {
+            padding: 5px 0px;
+        }
+
+        .main-tabs .nav-tabs>li>a{ border: 0 !important }
+
+         .main-heading .active a,  .main-tabs .nav-tabs>li.active>a{
+            border: 0 !important;
+            border-top: 0px solid #6498E4 !important;
+            border-radius: 0 !important;
+        }
+        .main-heading a:hover, .main-tabs .nav-tabs>li.active>a:hover{            
+            opacity: 0.8;           
+            border-radius: 0 !important
+        }
+              
+        a.btn.quickSearchBtn.customBtn.btn {
+            margin: 0;
+            margin-left: -1px;
+            margin-bottom: 15px;
+        }    
+        .ms-ctn.form-control .ms-trigger {
+            height: 27px;
+              color: #fff!important;
+        }
+        input.btn.btn-lg.btn-primary.btn-block.customBtn {
+                width: 100%;
+                border-radius: 0 !important;
+                margin-top: 2px;               
+                height: 28px;
+        }
+        button.btn.btn-info.pull-right {
+            border: 0px solid #4e6096 !important;
+            color: #fff !important;
+            box-shadow: none !important;
+            opacity: 1 !important;
+            background-color: #2B89BC !important;
+            background: #2B89BC !important;
+            -moz-border-radius: 3px !important;
+            -webkit-border-radius: 3px !important;
+            border-radius: 4px !important;
+            display: inline-block !important;
+            cursor: pointer !important;
+            padding: 4px 8px !important;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            text-decoration: none !important;
+        }
+        ul li.listyle {
+            margin-left: 0;
+        }
+        button.btn-lg.btn-primary.btn-block.customBtn.dropdown-toggle:focus + .dropdown-content, 
+            button.btn-lg.btn-primary.btn-block.customBtn.dropdown-toggle:hover + .dropdown-content
+            {
+                display:block;
+            }     
+            
+        .container.applicant-login-container {
+            width: 100%;
+        }
+        
+        .applicant-login-container .col-md-8 {
+            padding-right: 15px !important;
+        }
+        
+        .applicant-login-container .tableBackground .col-md-3:last-child {
+            float: right;
+        }
+        
+        .nav-tabs.nav-justified > li.active a {
+            background-color: #fff;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-top-left-radius: 4px !important;
+            border-top-right-radius: 4px !important;
+        }
+        
+        .nav-tabs.nav-justified>li a {
+            margin: 0px 2px;
+            background-color: #9BC0E1;
+            border-radius: 4px 4px 0 0;
+        }
+        .nav-tabs.nav-justified>li {
+            vertical-align: bottom;
+        }
+   </style>
+    
+  <!--   <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">
+            <apex:form >
+                <GNT:PageMessages />
+            </apex:form> -->
+                <div class="bs">
+                    <div class="container applicant-login-container">
+                        <div class="row">
+                            <div class="col-md-8" style="padding-right: 0;">
+                                <div class="banner">
+                                    <apex:image url="{!URLFOR($Resource.usFlag)}" alt="Enterprise Grants Management System image"/>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                    <!--  <apex:include pageName="UserLogin4"/>  -->
+                                 <apex:include pageName="UserLogin4New"/> 
+                            </div>
+                            
+                        </div>
+                        <div class="row main-tabs">
+                            <div class="col-md-12">
+                         
+                         <!--  <apex:form > -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading main-heading">                            
+                            <div class="padding-bottom-5"><span class="panel-title"></span></div>
+                            <div class="row">
+                                <ul class="nav nav-tabs nav-justified">
+                                    <li class="active"><a data-target="#programs" data-toggle="tab" href="#"><span class="panel-title">Programs</span></a></li>
+                                    <li ><a data-target="#announcements" data-toggle="tab" href="#"><span class="panel-title" href="#">Opportunities</span></a></li>
+                                    <!-- <li ><a data-target="#faq" data-toggle="tab" href="#"><span class="panel-title">FAQs</span></a></li> -->
+                                    <li ><a data-target="#contactUs" data-toggle="tab" href="#"><span class="panel-title">Contact Us</span></a></li>
+                                    
+                                </ul>
+                            </div>                                                       
+                        </div>
+                        <div class="panel-body">                            
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="programs"><GNT:FlexTable flexTableName="PublicPrograms" tableId="PublicPrograms"
+                                            headerDescription=""
+                                            /></div>
+                                        <div class="tab-pane" id="announcements"><GNT:FlexTable flexTableName="PublicAnnouncements" tableId="PublicAnnouncements"
+                                            headerDescription=""
+                                            /></div>                        
+                                    
+                                        <!--  <div class="tab-pane" id="faq"><GNT:FlexTable flexTableName="FAQs" tableId="FAQs"
+                                            headerDescription=""
+                                            /></div> -->
+                                       <!--  <div class="tab-pane" id="contactUs"><GNT:FlexTable flexTableName="tmpcase1" tableId="tmpcase1"
+                                            headerDescription=""
+                                            /></div> -->
+                                        <div class="tab-pane" id="contactUs">  <apex:include pageName="ContactUs"/>
+                                        </div>  
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+              <!--   </apex:form>   -->
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                
+              
+                <div class="col-md-12" style="bottom: 0px;position: relative;text-align: center;">
+                              <apex:include pageName="FooterLoginPages"/>
+                </div>
+      <!--       
+        </apex:define>
+    </apex:composition>   --> 
+    </html>
+</apex:page>

@@ -1,0 +1,170 @@
+<!--
+ ********************************************************** 
+ Audit History
+ **********************************************************
+ 8/26/2016   Davinder Singh    Created
+ **********************************************************  
+-->
+<apex:page standardstylesheets="false" showHeader="false" sidebar="false" >
+    <c:ExternalLibrary />   
+    <style type="text/css">
+        .pageTemplateContent {
+            margin-top: 135px;
+            margin-bottom: 20px;
+        }
+        .errorDiv {
+            border: 1px solid #E1E1E1;
+            padding: 15px;
+            background-color: #FFF;
+            position: relative;
+        }
+        .errorDiv input {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+        .main-tabs table table {
+            border: none !important;
+        }
+        .main-tabs table table table {
+            border-top: 1px solid #E1E1E1 !important;
+            border-bottom: 1px solid #E1E1E1 !important;
+        }
+        
+        .main-tabs table {
+            width: 100%;
+        }
+
+        .banner {
+            /*height: 253px;*/
+            width: 100%;
+        }
+        .bs .banner img {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+        .main-tabs .main-heading
+        {
+            border-bottom: 0;
+            background-color: #9BC0E1 !important;
+            padding: 15px;
+            border-radius: 6px;
+        }
+        .main-heading a {
+           cursor: pointer;
+        }
+
+        .main-tabs table{
+            border: 1px solid #E1E1E1;
+        }
+        .main-tabs thead th {
+            background-color: #E1E1E1 !important;
+                border-bottom: 1px solid #9F9F9F;
+        }
+        .main-tabs thead th a,  .row.main-tabs thead th .tableColumnHeader {
+            background-color: transparent !important;
+            color: #1C1C1C !important;
+            font-weight: 600;            
+        }
+        .main-tabs .quick-search {
+            margin-bottom: 15px;
+        }
+
+        .main-tabs .ms-ctn.form-control {
+            padding: 6px 12px;
+            border-radius: 5px !important;
+        }
+        .main-tabs .autoSuggestionStyleForInput {
+            margin-left: 0 !important;
+        }
+        .main-tabs a.btn.quickSearchBtn:hover{
+            color: #555 !important;
+            border-color: #C0C0C0;
+        }
+         .main-tabs a.btn.quickSearchBtn, .main-tabs .ms-trigger {
+            background-color: #E1E1E1 !important;
+            border-radius: 0 5px 5px 0;
+            width: 30px; 
+            color: #555 !important;
+            border-color: #C0C0C0;
+        }
+        .main-tabs .ms-ctn .ms-trigger:hover{
+            right: 0;  
+            width: 30px;          
+        }
+       .main-tabs .totalRecords {            
+            margin-bottom: 0;          
+        }
+        .main-tabs ul.dropdown-menu.dropdown-menu-right {
+            padding: 5px 0px;
+        }
+
+        .main-tabs .nav-tabs>li>a{ border: 0 !important }
+
+         .main-heading .active a,  .main-tabs .nav-tabs>li.active>a{
+            border: 0 !important;
+            border-top: 2px solid #6498E4 !important;
+            border-radius: 0 !important;
+        }
+        .main-heading a:hover, .main-tabs .nav-tabs>li.active>a:hover{
+            background-color: #FFF !important;
+            opacity: 0.8;
+            border-top: 2px solid #6498E4 !important;
+            border-radius: 0 !important
+        }
+        .footer {
+            width: 100%;
+            position: fixed !important;
+            bottom: 0px;
+        }
+        .main-tabs {
+            margin-top: 10px;
+        }
+        table > tbody > tr:hover {
+            background-color: #FFF !important;  
+        }
+
+    </style>
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content"> 
+            <div class="bs pageTemplateContent">
+                <div class="container"><!--
+                    <div class="row">
+                        <div class="col-md-12" style="padding-right: 0;">
+                            <div class="banner">
+                                <apex:image url="{!URLFOR($Resource.usFlag)}" />
+                            </div>
+                        </div>
+                    </div>-->
+                    <div class="row main-tabs">
+                        <div class="col-md-12" style="padding-right: 0px;">
+                            <div class="panel panel-default" style="border-radius: 7px;">
+                                <div class="panel-heading main-heading"><!--
+                                   An Error has occured and your request can not be processed.
+                                   <br/><br/>
+                                   You can Click Back button
+                                   <br/>
+                                   Or Report an Error
+                                   <br/>-->
+                                   <div class="errorDiv">
+                                       <span>An Error has occured and your request can not be processed.</span>
+                                       <br/><br/>
+                                       <span>You can click back button or report an error</span>
+                                       <input type="button" class="customBtn" onclick="window.history.back();" value="Back"/>
+                                   </div>
+                                   <br/>
+                                   <apex:insert name="body"/>
+                               </div>
+                           </div>             
+                       </div>
+                   </div>
+               </div>
+           </div>                  
+           <!--
+           <div class="col-md-12" style="bottom: 0px;position: relative;text-align: center;">
+                         <apex:include pageName="FooterLoginPages"/>
+           </div>-->  
+       </apex:define>
+   </apex:composition>
+</apex:page>

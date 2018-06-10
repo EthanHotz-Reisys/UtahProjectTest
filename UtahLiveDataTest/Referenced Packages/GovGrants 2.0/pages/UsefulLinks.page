@@ -1,0 +1,62 @@
+<apex:page controller="GNT.UsefulLinksCtrl" standardstylesheets="false" showHeader="false" sidebar="false">
+    
+    <div>
+        <div class="panel">
+            <!--  <div class="panel-heading"> -->
+            <div class="panel-title color-Cyan-Blue" style="text-align: left;font-weight:600;padding-left: 15px;">
+               Useful Links
+            </div>
+           <!--  </div>  -->
+            <div class="panel-body panel-transparent" style="min-height:236px !important;text-align: left;margin-top: -12px; ">
+              <apex:repeat value="{!minLinksList}" var="usefullink">
+                    <div class="">&nbsp;&nbsp;</div>
+                    <div class="">
+                        <div > <!-- class="loginListItemsStyle" -->
+                          <a href="{!usefullink.url}" target="{!IF(usefullink.openInNewWindow == true, '_blank', '_parent')}" class="color-Cyan-Bluish-gray">{!usefullink.Label}</a>
+                        </div>
+                    </div>
+                </apex:repeat> 
+                
+                <div id="extendedHighlightList">
+                    <apex:repeat value="{!extendedLinksList}" var="usefullink">
+                        <div class="">&nbsp;&nbsp;</div>
+                        <div class="">
+                            <div class="loginListItemsStyle">
+                                <apex:outputLink value="{!usefullink.url}" id="theLink">{!usefullink.Label}</apex:outputLink>
+                            </div>
+                        </div>
+                    </apex:repeat>
+                    <div id="viewLessHighlights">
+                        <apex:outputPanel rendered="{!actualItemCount > minItemsCount}">
+                            <a href="#" onclick="collapseHighlights();" class="pull-right color-Luminos-Vivid-orange" style="font-size: 15px !important; font-weight: 700 !important;">View Less</a>
+                        </apex:outputPanel>
+                    </div>
+                </div>
+                
+                <div id="viewAllHighlights">
+                    <apex:outputPanel rendered="{!actualItemCount > minItemsCount}">
+                        <a href="#" onclick="expandHighlights();" class="pull-right color-Luminos-Vivid-orange" style="font-size: 15px !important; font-weight: 700 !important;">View More</a>
+                    </apex:outputPanel>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        j$ = jQuery.noConflict();
+        j$( document ).ready(function() {
+            j$('#extendedHighlightList').hide();
+        });
+        
+        function expandHighlights(){
+            j$('#viewAllHighlights').hide();
+            j$('#extendedHighlightList').show('slow');
+        }
+        
+        function collapseHighlights(){
+            j$('#extendedHighlightList').hide();
+            j$('#viewAllHighlights').show();
+        }
+    
+    </script>
+</apex:page>

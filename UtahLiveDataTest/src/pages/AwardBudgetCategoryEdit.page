@@ -1,0 +1,9 @@
+<apex:page standardController="AwardBudgetCategory__c" showHeader="false" standardStylesheets="false" extensions="AwardBudgetCategoryEditCtrl" sidebar="false">
+    <c:ExternalLibrary />   
+     <apex:composition template="GNT__ModalTemplate">
+       <apex:define name="ModalContent">    
+         <GNT:ModalFlexEditLayout templateName="{!pageTemplateName}" recordId="{!recordId}" layoutType="Edit" flexTableParameters="{!keyValueMap}"
+          createDefaultValues="{!listDefaultValues}" saveURL="{!savePage}" cancelURL="{!cancelPage}" HideSidebar="true" hideCancelBtn="true"/>
+       </apex:define>
+    </apex:composition>
+</apex:page>

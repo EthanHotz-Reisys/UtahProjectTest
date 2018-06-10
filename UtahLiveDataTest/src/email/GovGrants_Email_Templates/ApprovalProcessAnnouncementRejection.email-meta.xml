@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE - Approval Process Rejection Email for Announcement</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Approval Process Announcement Rejection</name>
+    <style>formalLetter</style>
+    <subject>Notification: Announcement {!Announcement__c.Name} has been Rejected</subject>
+    <textOnly>Subject: Notification of Announcement {!Announcement__c.Name} has been rejected.
+
+This email is to notify that the following Announcement has been Rejected -
+
+Announcement Name  - {!Announcement__c.AnnouncementName__c}
+Program Name - {!Announcement__c.ProgramName__c}
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

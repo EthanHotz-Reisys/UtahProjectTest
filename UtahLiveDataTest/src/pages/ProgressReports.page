@@ -1,0 +1,10 @@
+<apex:page standardController="ProgressReports__c" title="Progress Reports" extensions="CasesMasterCtrl" sidebar="false" showHeader="false" applyHtmlTag="false" standardStylesheets="false">
+
+    <div class="Container">
+            <div class="col-md-12">
+            <!-- <GNT:FlexTable flexTableName="GranteeProgressReports"   tableId="GranteeProgressReports" flexTableParameters="{!keyValueMap}"/>-->
+             <GNT:FlexTable flexTableName="GranteeCompletedProgressReports"  tableId="GranteeCompletedProgressReports" flexTableParameters="{!keyValueMap}"/>
+            </div>    
+         
+    </div>
+</apex:page>

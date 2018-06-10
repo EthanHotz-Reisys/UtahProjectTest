@@ -1,0 +1,10 @@
+<apex:page standardController="SiteVisit__c" extensions="SiteVisitViewCtrl" standardStylesheets="false" showHeader="false" sidebar="false">
+<c:ExternalLibrary />  
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">  
+<!--            a1of4000000bsmRAA0 -->
+            <GNT:FlexViewLayout templateName="{!pageTemplate}" packageId="{!packageId}" recordId="{!recordId}" layoutType="View" flexTableParameters="{!keyValueMap}" />
+        </apex:define> 
+    </apex:composition>
+ 
+</apex:page>

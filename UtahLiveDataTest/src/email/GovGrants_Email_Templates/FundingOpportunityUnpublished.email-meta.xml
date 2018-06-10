@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email sent to Applicants when Funding Opportunity Unpublished</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Funding Opportunity Unpublished</name>
+    <style>formalLetter</style>
+    <subject>Notification: Funding Opportunity {!Announcement__c.Name} Unpublished</subject>
+    <textOnly>Subject: Notification of Funding Opportunity {!Announcement__c.Name} unpublished.
+
+
+This email is to notify you that the following Funding Opportunity is unpublished
+
+
+
+Funding Opportunity Details:
+Funding opportunity Number: {!Application__c.AnnouncementNumber__c}
+Funding Opportunity Title: {!Application__c.Announcement__c}
+
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

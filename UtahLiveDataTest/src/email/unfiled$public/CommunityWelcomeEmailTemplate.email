@@ -1,0 +1,11 @@
+Hi {!Receiving_User.FirstName},
+
+            Welcome to UtahGrants {!Community_Name}! To get started, follow the link below:
+{!Community_Url}
+
+Please note the username provided below. This will be used for all future logins.
+
+            Username: {!Receiving_User.Username}
+
+            Thanks,
+            {!Organization.Name}

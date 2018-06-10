@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>GA approved subrecipient attachments</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Site Visit Attachments Approved</name>
+    <style>freeForm</style>
+    <subject>Site Visit Attachments Approved</subject>
+    <textOnly>Dear {!SiteVisit__r.Award__c.GranteePOC__c},
+
+Your documents have been approved for Site Visit {!SiteVisit__c.SiteVisitName__c}. Your site visit will proceed as planned on the scheduled day.
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com, or your Grant Administrator if you have any questions.
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<span style="font-family: &quot;Times New Roman&quot;, Times, serif;">Dear {!Application__c.ApproverName__c},</span>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p style="margin: 0cm 0cm 12pt;"><span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: 12pt;">The Application for {!Application__c.ProgramTitle__c}&nbsp;has been submitted for your approval. Please click the below link to review and approve it.</span></p><p style="margin: 0cm 0cm 12pt;"><span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: 12pt;">Click <a href="{!Application__c.ApplicationHtmlLink__c}">here</a></span></p><p style="margin: 0cm 0cm 0.0001pt;"><font face="Times New Roman, Times, serif">Sincerely,<o:p></o:p></font></p><p><span style="line-height: 17.12px;"><font face="Times New Roman, Times, serif">UtahGrants Support Team</font></span></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

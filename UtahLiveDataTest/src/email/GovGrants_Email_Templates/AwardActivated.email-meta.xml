@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This email is triggered when award is activated to sub.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>AwardActivated</name>
+    <style>formalLetter</style>
+    <subject>Notification:  {!Award__c.Name} is activated.</subject>
+    <textOnly>Hello User,
+This email is to notify you that, the Award # {!Award__c.AwardNumber__c}, {!Award__c.Name} related to Application {!Award__c.ApplicationTitle__c} has been approved by the Utah grants officials and is activated for use.
+
+Kindly login to the UtahGrants Systems and start reviewing the Award details.
+
+Sincerely,
+
+
+UtahGrants Support Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

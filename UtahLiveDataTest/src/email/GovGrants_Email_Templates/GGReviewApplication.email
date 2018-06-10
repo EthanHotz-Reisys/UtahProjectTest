@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p><font face="Times New Roman,Times,Serif"><b>Subject: </b>Application<strong>&nbsp;</strong>{!ApplicationReview__c.ApplicationId__c} for the Funding Opportunity# {!ApplicationReview__c.FundingOpportunity__c} is ready for your review.</font></p><p><font face="Times New Roman,Times,Serif"><br></font></p><p><font face="Times New Roman,Times,Serif">Hello {!ApplicationReview__c.OwnerId},</font></p><p><font face="Times New Roman,Times,Serif"><br></font></p><font face="Times New Roman,Times,Serif"><p><font face="Times New Roman,Times,Serif">The Application {!ApplicationReview__c.ApplicationId__c}&nbsp;has been assigned to you for your review. Please login to EGMS System to complete the review.</font></p><p><font face="Times New Roman,Times,Serif"><br></font></p><p><font face="Times New Roman,Times,Serif">Please do not reply to this email. You may contact the GovGrants Support Team at </font><a href="mailto:govgrants@support.com"><u><font color="#0000ff" face="Times New Roman,Times,Serif">govgrants@support.com</font></u></a><font face="Times New Roman,Times,Serif"> if you have any questions or need assistance with this task.</font></p><p><br></p><p>Sincerely</p><p>EGMS Team</p><p><br></p><p><img align="left" alt="" src="https://ggpdev1-dev-ed--c.na30.content.force.com/servlet/servlet.ImageServer?id=015f40000004yJ4&amp;oid=00Df4000000Dzb9" border="0"></p></font><p><br></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

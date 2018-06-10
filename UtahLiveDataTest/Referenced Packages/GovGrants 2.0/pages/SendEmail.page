@@ -1,0 +1,230 @@
+<apex:page id="emailPage" standardcontroller="Task" extensions="GNT.SendEmailController" docType="html-5.0" applyBodyTag="false" standardStylesheets="false"  showHeader="false" sidebar="false">
+    <c:ExternalLibrary />
+    <apex:includeScript value="{!URLFOR($Resource.GNT__GovGrantsExternal, 'jQueryBlockUI/JS/jquery.blockUI.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.GNT__GovGrantsExternal, 'jquery-ui/JS/jquery-ui.js')}" />
+    <style>
+        .modalPadding { 
+            padding-left: 50px !important;
+        }
+        .textAreaHeight{
+            height: 230px !important;
+        } 
+        .paddingBottom{
+            padding-bottom: 10px !important;
+        }
+        .tableClass{            
+            width:100%;
+        }
+        .labelCol{
+            width: 15%;
+            padding-right: 10px !important;
+        }               
+        .textCol{
+            width: 100%;
+        }
+        .height90{
+            height: 90%;
+        }
+       .sendbutton {
+            display: inline-block;
+            width: 100%;
+            margin-top: 10px;
+        }
+            
+    </style>
+    
+    <apex:composition template="GNT__ModalTemplate">
+    <apex:define name="ModalContent">
+
+    <apex:form id="theForm">
+    <div class="bs container-fluid height90">   
+        <div class="modalPadding">
+            <c:PageMessages />  
+            <div class="panel panel-default border-add bs">                 
+            <div class="panel-body" >
+
+
+            <apex:outputPanel rendered="{! mode == 'send' || mode == 'reply'}">
+            <table class="tableClass" align="left" cellspacing="10">                
+                <tr class="paddingBottom">
+                    <td class="labelCol">
+                        <apex:outputPanel styleClass="pull-right">                         
+                            <span title="{!$Label.HelpForEmailTo}" class="glyphicon glyphicon-question-sign helpIcon control-label helpIconCls"></span>
+                            <label class="control-label">To</label>                                                
+                        </apex:outputPanel>
+                    </td>
+                    <td>    
+                        <apex:inputField id="toAddress" value="{!emailObj.GNT__ToAddress__c}" styleclass="textCol" html-placeholder="Enter To email address(s)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <p id="p1" class="lead color-red"></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="labelCol">
+                        <apex:outputPanel styleClass="pull-right">                           
+                            <span title="{!$Label.HelpForEmailCc}" class="glyphicon glyphicon-question-sign helpIcon control-label helpIconCls"></span>
+                            <label class="control-label">Cc</label>                                                
+                        </apex:outputPanel>
+                    </td>
+                    <td>    
+                        <apex:inputField id="CCAddress" value="{!emailObj.GNT__CCAddress__c}" styleclass="textCol" html-placeholder="Enter Cc email address(s)"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelCol">
+                        <apex:outputPanel styleClass="pull-right">                           
+                            <span title="Enable this checkbox to include yourself in Bcc" class="glyphicon glyphicon-question-sign helpIcon control-label helpIconCls"></span>
+                            <label class="control-label">Send a copy to me</label>                                                
+                        </apex:outputPanel>
+                    </td>
+                    <td>    
+                        <apex:inputcheckbox value="{!sendACopyToMe}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <p id="p1" class="lead color-red"></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="labelCol">
+                        <apex:outputPanel styleClass="pull-right">                            
+                            <span title="Enter subject here" class="glyphicon glyphicon-question-sign helpIcon control-label helpIconCls"></span>
+                            <label class="control-label">Subject</label>                                                
+                        </apex:outputPanel>
+                    </td>
+                    <td>    
+                        <apex:inputText id="emailSubject" value="{!emailObj.Subject}" styleclass="form-group textCol" html-placeholder="Enter subject"/> 
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <p id="p2" class="lead color-red"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelCol">
+                        <apex:outputPanel styleClass="pull-right">                                                    
+                            <span title="Enter email content here" class="glyphicon glyphicon-question-sign helpIcon control-label helpIconCls"></span>
+                            <label class="control-label">Body Content</label>                                                
+                        </apex:outputPanel>                        
+                    </td>
+                    <td>    
+                        <apex:inputTextarea id="emailBody" rows="100" value="{!emailObj.Description}" styleclass="form-group textAreaHeight textCol"/>
+                    </td>
+                </tr>
+                
+            </table> 
+            <div class='sendbutton'>
+            <apex:outputPanel styleClass="pull-right"> 
+                   <button onclick="sendEmail();" type="button" class="customBtn pull-right">Send</button>
+               </apex:outputPanel>
+            </div>
+            </apex:outputPanel>
+
+            <!-- Below code renders the page for view mode    -->
+
+            <apex:outputPanel rendered="{! mode == 'view'}">
+                 <table class="tableClass"  cellspacing="10">                
+                        <tr class="paddingBottom" valign="top">
+                            <td class="labelCol">
+                                 <apex:outputPanel styleClass="pull-right">
+                                    <label class="control-label">From</label>
+                                 </apex:outputPanel>
+                            </td>
+                            <td>
+                                <apex:outputText value="{!emailObj.GNT__FromAddress__c}"/>    
+                            </td>
+                        </tr>
+                        <tr class="paddingBottom" valign="top">
+                            <td class="labelCol">
+                                 <apex:outputPanel styleClass="pull-right">
+                                    <label class="control-label">To</label>
+                                 </apex:outputPanel>
+                            </td>
+                            <td>
+                                <apex:outputField value="{!emailObj.GNT__ToAddress__c}"/>    
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td class="labelCol">
+                                 <apex:outputPanel styleClass="pull-right">
+                                    <label class="control-label">Cc</label>
+                                 </apex:outputPanel>
+                            </td>
+                            <td>
+                                <apex:outputField value="{!emailObj.GNT__CCAddress__c}"/>    
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td class="labelCol">
+                                <apex:outputPanel styleClass="pull-right">                           
+                                    <label class="control-label">Sent Date</label>                                                
+                                </apex:outputPanel>
+                            </td>
+                            <td>    
+                                <apex:outputField value="{!emailObj.CreatedDate}"/>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td class="labelCol">
+                                 <apex:outputPanel styleClass="pull-right">
+                                    <label class="control-label">Subject</label>
+                                 </apex:outputPanel>
+                            </td>
+                            <td>
+                                <apex:outputField value="{!emailObj.Subject}"/>     
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td class="labelCol">
+                                 <apex:outputPanel styleClass="pull-right">
+                                    <label class="control-label">Body</label>
+                                 </apex:outputPanel>
+                            </td>
+                            <td>
+                                <apex:outputField value="{!emailObj.Description}"/>     
+                            </td>
+                        </tr>
+                     </table>
+                     <div class='sendbutton'>
+                         <apex:outputPanel styleClass="pull-right"> 
+                            <apex:outputPanel rendered="{!emailSent == false}">
+                                <button onclick="window.open('/apex/{!namespace}SendEmail?taskId={!emailObj.id}&mode=reply','_self');" type="button" class="customBtn pull-right">Reply</button>
+                             </apex:outputPanel>
+                            <apex:outputPanel rendered="{!emailSent}">
+                                <button onclick="sendEmailCloseWindow();" type="button" class="customBtn pull-right">Close</button>
+                             </apex:outputPanel>
+                         </apex:outputPanel>
+                     </div>
+                </apex:outputPanel>
+            </div>
+        </div>    
+    </div>
+    <apex:actionFunction action="{!sendEmail}" name="sendEmail" rerender="theForm" onComplete="setTimeout(function(){if(modalHandler(15) != undefined){modalHandler(15);}},300);" />
+    </div>
+    </apex:form>
+
+    </apex:define> 
+    </apex:composition>
+
+    <script>
+        var j$ = jQuery.noConflict();  
+
+        function sendEmailCloseWindow(){
+            //console.log('parent---',parent);
+            //get table id from URL           
+            parent.angular.element(parent.document.getElementById('CommunicationHistory')).scope().$$childTail.closeFlexModal();
+            //parent.closeFlexModal(); 
+            //console.log('in clode mail function');
+        }
+    </script>
+</apex:page>

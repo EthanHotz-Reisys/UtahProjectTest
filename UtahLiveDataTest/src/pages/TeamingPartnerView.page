@@ -1,0 +1,9 @@
+<apex:page cache="false" standardController="TeamingPartners__c" extensions="TeamingPartnerViewCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+    <c:ExternalLibrary />   
+        <apex:composition template="GNT__ModalTemplate">
+            <apex:define name="ModalContent">
+                <GNT:ModalFlexViewLayout templateName="{!pageTemplateName}" layoutType="View" recordId="{!recordId}" deleteURL="{!deleteURL}" HideSidebar="true"
+                  flexTableParameters="{!keyValueMap}"/>
+            </apex:define>
+        </apex:composition>
+</apex:page>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Custom setting to Store the information when the System is under maintenance</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MaintainanceFrom__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Maintainance From</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>MaintenanceMessage__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field will store the help config record name. The actual message is contained in help config object.</description>
+        <externalId>false</externalId>
+        <label>Maintenance Message(Obsolete)</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MaintenanceMessages__c</fullName>
+        <deprecated>false</deprecated>
+        <description>enter Maintenance Messages here.</description>
+        <externalId>false</externalId>
+        <label>Maintenance Messages</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>MaintenanceTitle__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Maintenance Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MaintenanceTo__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Maintenance To</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>WarningFrom__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Warning From</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>WarningMessage__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field will store the help config record name. The actual message is present in help config object.</description>
+        <externalId>false</externalId>
+        <label>Warning Message(Obsolete)</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WarningMessages__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Enter Warning Messages here.</description>
+        <externalId>false</externalId>
+        <label>Warning Messages</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>WarningTitle__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Warning Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WarningTo__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Warning To</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <label>System Maintenance Config</label>
+    <visibility>Public</visibility>
+</CustomObject>

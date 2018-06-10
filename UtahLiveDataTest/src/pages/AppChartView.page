@@ -1,0 +1,20 @@
+<apex:page standardStylesheets="false" showHeader="false" sidebar="false">
+    <c:ExternalLibrary /> 
+    <style>
+      
+    </style>
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">       
+            <div class="container"> 
+                <div class="row">  
+                    <div class="col-md-4">
+                       <GNT:ChartPieBasic chartName="Reviewers View" chartHTMLId="119"/>
+                    </div>
+                    <div class="col-md-4">
+                       <GNT:ChartFunnelBasic chartName="Reviewers Recommendations" chartHTMLId="120"/>
+                    </div>
+                </div>
+             </div>
+       </apex:define> 
+    </apex:composition>   
+</apex:page>

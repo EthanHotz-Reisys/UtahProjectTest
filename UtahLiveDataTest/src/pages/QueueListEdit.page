@@ -1,0 +1,12 @@
+<apex:page standardController="Group" sidebar="false" extensions="QueueListView" standardStylesheets="false" showHeader="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+    
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent"> 
+          <GNT:ModalFlexEditLayout templateName="QueueList" recordId="{!$CurrentPage.parameters.id}" layoutType="Edit" createDefaultValues="{!listDefaultValues}"/>
+     </apex:define>
+    </apex:composition>
+    
+</apex:page>

@@ -1,0 +1,34 @@
+<!--
+ ********************************************************** 
+ Audit History
+ **********************************************************
+ 10/7/2014   Nakul Kadam Created
+ **********************************************************  
+-->
+<apex:page standardstylesheets="false" showHeader="false" sidebar="false" >
+    <c:ExternalLibrary />   
+    
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">
+        	<apex:form >
+		    	<GNT:PageMessages />
+		    </apex:form>
+            <div class="bs">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5 loginInsertpadding">
+                            <div class="banner">
+                                <apex:include pageName="GNT__UsefulLinks"/>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 loginInsertpadding">
+                            <apex:include pageName="UserLogin"/>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </apex:define>
+    </apex:composition>   
+    
+</apex:page>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE USED IN AMENDMENT REQUEST</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Amendment Request Submit to Grantor</name>
+    <style>formalLetter</style>
+    <subject>Notification: Amendment Request #{!AmendmentRequest__c.Name} Assigned to you for your Approval</subject>
+    <textOnly>Amendment Request: Notice of Amendment Request Approval
+
+
+
+Amendment Request Summary:
+Amendment Number #: {!AmendmentRequest__c.Name}
+Grant: {!AmendmentRequest__c.Grant__c}
+
+Please follow all State Government protocols and standards for reviewing the Amendment Request.  Do not reply to this email.  Contact the State Government Office of Grants Management (support@grants.gov) for any technical assistance needed for managing this task.
+
+Sincerely,
+State Government
+Enterprise Grants Management System(EGMS)</textOnly>
+    <type>html</type>
+</EmailTemplate>

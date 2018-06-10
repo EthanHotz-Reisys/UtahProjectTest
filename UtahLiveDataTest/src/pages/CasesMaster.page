@@ -1,0 +1,34 @@
+<apex:page standardController="Case" title="Cases Master" extensions="CasesMasterCtrl" sidebar="false" showHeader="false" applyHtmlTag="false" standardStylesheets="false">
+    <html>
+    <head>
+            <link rel="shortcut icon" href="{!URLFOR($Resource.GNT__Favicon)}" />
+            <link rel="icon" type="/image/ico"  href="{!URLFOR($Resource.GNT__Favicon)}" />
+            <link rel="shortcut icon" type="image/x-icon" href="{!URLFOR($Resource.GNT__Favicon)}"/>
+    </head>
+    <body> 
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+
+    <apex:composition template="GNT__PhaseTemplate">
+     <apex:pageMessages id="error"/>
+        <apex:define name="body">    
+             
+        <!--    <GNT:FlexTable flexTableName="OpenCases_Tier1" rendered="{!displayTableTier1}"  tableId="OpenCases_Tier1" flexTableParameters="{!keyValueMap}"/>
+            
+            <GNT:FlexTable flexTableName="OpenCases_Tier2" rendered="{!displayTableTier2}"  tableId="OpenCases_Tier2" flexTableParameters="{!keyValueMap}"/>
+           
+          <GNT:FlexTable flexTableName="CaseDetails"  tableId="CaseDetails" flexTableParameters="{!keyValueMap}"/>
+         -->
+           
+                <GNT:FlexTable flexTableName="TeamCaseDetails" tableId="teamCaseDetails" flexTableParameters="{!keyValueMap}"/>
+         
+         <!-- <GNT:FlexTable flexTableName="TrackingCases" tableId="trackingCases" flexTableParameters="{!keyValueMap}"/>
+         -->
+         
+         
+        </apex:define>
+    </apex:composition> 
+   
+    </body>
+  </html>
+</apex:page>

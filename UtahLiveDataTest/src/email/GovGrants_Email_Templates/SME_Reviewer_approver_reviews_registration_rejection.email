@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="Times New Roman,Times,Serif" size="3"><span style="font-size: 12pt;">Hi {!UserRegistration__c.</span><span style="background-color: rgb(255, 255, 255);">ExternalReviewerFirstName__c</span><span style="font-size: 12pt;">},</span><br><br></font><div style="font-size: 12pt;"><font face="Times New Roman,Times,Serif" size="3"><span style="font-size: 12pt;">Your registration request (Ref. ID:</span><span style="font-size: 12pt; background-color: rgb(255, 255, 255);">&nbsp;</span><span style="font-size: 12pt; background-color: rgb(255, 255, 255);">{!UserRegistration__c.Name}</span><span style="font-size: 12pt;">) with Utah Grants Management System is not approved for the following reasons:</span></font></div><div style="font-size: 12pt;"><p class="MsoNormal"><font face="Times New Roman,Times,Serif" size="3"><span style="font-size: 12pt;">Reason:<o:p></o:p></span></font></p><p class="MsoNormal"><font face="Times New Roman,Times,Serif" size="3"><span style="font-size: 12pt;">&nbsp;</span></font></p><p><font face="Times New Roman, Times, serif">Please do not reply to this email. You may contact the UtahGrants Support Team at&nbsp;<span style="font-size: medium;">utahgrants.support@reisystems.com</span><span style="font-size: 12pt;">&nbsp;if you have any questions or need assistance with this task.</span></font></p><p><font face="Times New Roman,Times,Serif"><br></font></p><p><font face="Times New Roman, Times, serif">Sincerely,<span style="font-size: 12pt;">&nbsp;<br></span></font></p><p class="MsoNormal"><font face="Times New Roman,Times,Serif" size="3"><span style="font-size: 12pt;">UtahGrants Support Team&nbsp;<o:p></o:p></span></font></p><p class="MsoNormal"><span style="font-size: medium;"><font face="Times New Roman, Times, serif">utahgrants.support@reisystems.com</font></span></p><p class="MsoNormal"><span style="font-size: medium;"><font face="Times New Roman, Times, serif">Ph. No. : 703.480.9100</font></span></p><div><span style="font-size: medium;"><font face="Times New Roman, Times, serif"><br></font></span></div><font face="Times New Roman,Times,Serif"></font></div></div>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

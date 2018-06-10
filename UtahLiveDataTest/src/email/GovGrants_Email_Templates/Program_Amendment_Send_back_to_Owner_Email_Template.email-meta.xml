@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Program Manager not accepted the Amendment then email sent to Program Owner</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Program Amendment Send back to Owner Email Template</name>
+    <style>formalLetter</style>
+    <subject>Notification: Program #{!Program__c.Name} Amendment has sent back to you</subject>
+    <textOnly>Hello {!Program__c.OwnerFirstName},
+
+This email is to notify you that the amendments are not accepted for the Program  #{!Program__c.Name} and has sent back to you.
+Kindly login to the EGMS Systems and click here to view program details,
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+Sincerely,
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

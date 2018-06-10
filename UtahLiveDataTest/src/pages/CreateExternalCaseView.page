@@ -1,0 +1,20 @@
+<apex:page standardController="Case" title="Create Case" extensions="CreateCaseCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+    <html>
+    <head>
+            <link rel="shortcut icon" href="{!URLFOR($Resource.GNT__Favicon)}" />
+            <link rel="icon" type="/image/ico"  href="{!URLFOR($Resource.GNT__Favicon)}" />
+            <link rel="shortcut icon" type="image/x-icon" href="{!URLFOR($Resource.GNT__Favicon)}"/>
+    </head>
+    <body>
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">    
+             <GNT:DynamicLayout templateName="CreateCase" chartParameters="{!keyValueMap}" hideSidebar="true"  recordId="{!recordId}" saveURL="{!savePage}" cancelURL="{!cancelPage}"  layoutType="Edit" 
+                flexTableParameters="{!keyValueMap}" />
+        </apex:define>
+    </apex:composition> 
+     </body>
+  </html>
+</apex:page>

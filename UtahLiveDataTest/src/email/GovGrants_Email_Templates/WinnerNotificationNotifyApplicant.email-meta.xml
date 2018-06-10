@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Custom email template to welcome a new external user(applicant and reviewer both)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Winner Notification - Notify Applicant</name>
+    <style>freeForm</style>
+    <subject>Winner Notification - Application has been Approved</subject>
+    <textOnly>{!Application__c.ExternalOrganization__c}
+
+
+
+Reference: {!Application__c.AnnouncementNumber__c}
+
+
+Dear {!Application__c.AuthorizedRepresentativeName__c} {!Application__c.AuthorizedRepresentativeLastName__c}:
+
+
+Thank you for your application in response to the Department of Health, {!Application__c.Department__c} Request for Applications (RFA) # {!Application__c.AnnouncementNumber__c} ({!Application__c.Announcement__c}). This is a Notification of Intent to Fund. {!Application__c.AuthorizedRepresentativeName__c} {!Application__c.AuthorizedRepresentativeLastName__c} is recommended for funding in the amount of $INSERT Recommended AMOUNT. This amount is based on the estimated costs for implementing the proposed program, as well as your demonstration of your organization’s capacity to do so.
+
+This notification authorizes assigned DOH personnel to proceed with pre-award discussions with your authorized representatives prior to executing a Notice of Grant Award (NOGA) and grant agreement.  The pre-award objective is to obtain an approved scope of work, work plan, budget and spending plan for the project period. Note: Only the applicant organization is eligible to receive a NOGA.  DOH will not honor any requests to transfer this Notice of Intent to Fund to another entity.
+
+
+External Review Results:
+
+Your rank and score placed your proposal in the competitive range to be considered for this funding.  The proposed funding level (i.e. amount) is not based on score or rank.  The summary results are as follows:
+
+
+Application#
+
+RFA Program Area
+
+Score
+
+Rank
+
+Request
+
+Proposed Award
+
+{!Application__c.Name}
+
+{!Application__c.ProgramId__c}
+
+{!Application__c.AverageScore__c}
+
+{!Application__c.ApplicationRank__c}
+
+{!Application__c.00Nf4000000MVv4}
+
+&lt;&gt;
+
+
+Proposed Award Amount:
+
+The proposed award amount is based on a 12 month budget period.  In instances where the initial budget period is longer or shorter than 12 months, the budget amount will be prorated to reflect this 12 month base award.   Any consideration of funding after the initial award period would be based on the availability of funds and a documented satisfactory performance rating from the Department of Health (DOH).   The proposed Award Period for the grant is 17 months, with options for two additional years.
+
+
+DOH NIF (RFA#{!Application__c.AnnouncementNumber__c})
+
+Applicant Name {!Application__c.AuthorizedRepresentativeName__c} {!Application__c.AuthorizedRepresentativeLastName__c} (Appl# {!Application__c.Name})
+
+Date
+
+Page 2 of 2
+
+
+Next Steps:
+
+
+Contact your assigned Project Officer within 48 hours of receipt of this notice to schedule a pre-Award meeting.  Your assigned PO is: FO PO who can be reached at:  PO&apos;s EMAIL ADDRESS and TELEPHONE.
+
+Prepare a draft budget and work plan.  Your Project Officer will establish deadlines for submission and method of delivery.
+
+Notify your Project Officer of any changes in the status of your organization’s capacity to receive funding and to implement the proposed services.  Report any changes in: (a) the status of your organization’s leadership, (b) preliminary partnership agreements as presented in the application and (c) any other sources of funding that were planned to support the full implementation of the proposed program.
+
+A Grants Management Specialist will request, establish deadlines and methods of delivery for required fiscal / administrative business documents as outlined in the RFA.
+
+You will be asked to accept (i.e. sign) the terms of the grant agreement prior to any approval signature by the DOH Director.
+
+
+
+
+Please be reminded that you should not begin your program or publically announce that you have an award until you are in receipt of a fully executed NOGA and Grant Agreement.
+
+The {!Application__c.Department__c} is pleased to partner with your organization to provide this important service to District residents. Congratulations!
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

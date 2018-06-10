@@ -1,0 +1,4 @@
+<apex:page extensions="EventHandlerCtrl" standardStylesheets="false" showHeader="false" sidebar="false" standardController="Event">
+<c:ExternalLibrary />  
+          <GNT:FlexTable flexTableName="{!flexTableName}" tableId="{!flexTableName}" parentRecord="{!recordId}" flexTableParameters="{!keyValueMap}"/> 
+</apex:page>

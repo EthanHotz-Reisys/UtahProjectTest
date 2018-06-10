@@ -1,0 +1,8 @@
+<apex:page controller="RegisteredUserCtrl" sidebar="false" standardStylesheets="false" showHeader="false"> 
+    <c:ExternalLibrary />
+      <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">
+        <GNT:FlexTable flexTableName="RegisteredUsers" tableId="RegisteredUsers" flexTableParameters="{!keyValueMap}" />
+        </apex:define>
+    </apex:composition>
+</apex:page>

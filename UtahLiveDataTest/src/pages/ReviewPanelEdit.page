@@ -1,0 +1,14 @@
+<apex:page standardController="ReviewPanel__c" title="Review Panel Edit" extensions="ReviewPanelEditCtrl" sidebar="false" showHeader="false" standardStylesheets="false" >
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">    
+          <!--  <GNT:FlexEditLayout rendered="{!recordType != null && recordType == 'pre-application'}" templateName="ReviewPanelTemplate" recordId="{!recordId}" layoutType="Edit" createDefaultValues="{!listDefaultValues}"
+                flexTableParameters="{!keyValueMap}" saveURL="{!savePage}" cancelURL="{!cancelPage}"/> -->
+            <GNT:FlexEditLayout rendered="{!recordType != null && recordType == 'application'}" templateName="Review Panel Application Template" recordId="{!recordId}" layoutType="Edit" createDefaultValues="{!listDefaultValues}"
+                flexTableParameters="{!keyValueMap}" saveURL="{!savePage}" cancelURL="{!cancelPage}"/>
+        </apex:define>
+    </apex:composition> 
+</apex:page>

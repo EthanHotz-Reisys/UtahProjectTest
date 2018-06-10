@@ -1,0 +1,13 @@
+<apex:page controller="PanelUserAddCtrl" showHeader="false" sidebar="false" standardStylesheets="false">
+    
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">
+            <GNT:FlexTable listParams="{!listParameters}" flexTableName="PanelUserAdd" tableId="PanelUserAddTable" 
+              flexTableParameters="{!keyValueMap}" flexTableHeader="{!flexTableHeader}"/>
+        </apex:define>
+    </apex:composition>    
+    <script>
+        setPageTitle('{!flexTableHeader}');
+    </script>
+</apex:page>

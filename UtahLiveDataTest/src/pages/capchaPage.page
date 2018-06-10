@@ -1,0 +1,59 @@
+<apex:page sidebar="false" docType="html-5.0" standardStylesheets="false"  showHeader="false"   standardcontroller="UserRegistration__c" extensions="capchaPageCtrl">
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+    
+    <head>
+    <script type="text/javascript">
+        var onloadCallback = function() {
+            grecaptcha.render('captcha1', {
+                'sitekey' : '{!publicKey}'
+                
+            });
+        };
+        
+        var correctCaptcha = function(response) {
+            var responseCaptcha = grecaptcha.getResponse()
+            jQuery('[id$=hiddenField]').val(responseCaptcha);
+        };
+    </script>
+    </head>
+    
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">
+            <apex:form forceSSL="true" >
+                <div class="bs container-fluid">
+                 <!-- This panel is used to enter the contact information of the community user -->
+                    <apex:outputpanel id="captchaPanel">
+             
+                        <apex:outputpanel rendered="{!showCaptcha}">
+                            <div class="col-md-12">
+                                <div class="panel-body">
+                                    <!-- <GNT:ShowCustomLabelSetupIcon labelName="UserRegistrationCaptchaHeaderDesc" rendered="{!$Setup.GNT__GlobalConfig__c.GNT__EnableAdminSetup__c}"/>
+                                    <apex:outputText value="UserRegistrationCaptchaHeaderDesc" escape="false"/>  -->
+                                    <p><b>CAPTCHA (Completely Automated Public Turing test to tell Computers and Humans Apart)</b> is a type of security measure known as challenge-response authentication. CAPTCHA helps protect you from spam and password decryption by asking you to complete a simple test that proves you are human and not a computer trying to break into a password protected account.
+                                    <br></br> <br></br>
+                                    Please click on the "I'm not a robot" checkbox and then follow the instructions provided in the popup (JavaScript is required). If you are not able to solve the CAPTCHA challenge, please click the reload button to get a new CAPTCHA image. If you are having difficulty with the image, please click on the audio (headphone) icon to do an audio based CAPTCHA challenge.</p>
+                                    <div id="captcha1" class="g-recaptcha" data-callback="correctCaptcha"></div>                                                       
+                                </div>                                                              
+                            </div>
+                        </apex:outputpanel>
+                    </apex:outputpanel>                                                 
+                    <apex:inputHidden value="{!responseCaptcha}" id="hiddenField"/>                          
+                    <div class="panel-footer">
+                        <apex:commandbutton status="busyIcon" tabIndex="0" styleclass="customBtn pull-right" style="margin-right: 15px !important;margin-bottom: 10px;"  action="{!saveUserRegistrationEntry}" value="Submit"/>
+                        <apex:commandbutton status="busyIcon" tabIndex="0" styleclass="pull-right customBtn" style="margin-right: 10px;margin-bottom: 10px;"  action="{!cancelPage}" value="Cancel"/> 
+                        <!-- <input type="submit" tabIndex="0" class="customBtn pull-left finalButton" onclick="CancelFun()" value="Cancel" /> -->
+                    </div>
+
+                    <apex:pageMessages />
+                    
+                       
+
+                </div>          
+            </apex:form>
+        </apex:define>
+    </apex:composition>
+    
+    <script src='https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit' async='defer'></script>
+
+</apex:page>

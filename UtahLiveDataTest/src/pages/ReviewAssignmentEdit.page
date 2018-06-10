@@ -1,0 +1,19 @@
+<apex:page standardController="Review__c" title="Review Assignment Edit" extensions="ReviewAssignmentEditCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+    
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">    
+            <GNT:FlexEditLayout templateName="{!pageTemplateName}" recordId="{!recordId}" flexTableParameters="{!keyValueMap}" layoutType="Edit" 
+                saveURL="{!savePage}" cancelURL="{!cancelPage}"/> 
+        </apex:define>
+    </apex:composition> 
+   <!-- <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">    
+            <GNT:FlexEditLayout templateName="{!pageTemplateName}" recordId="{!recordId}" flexTableParameters="{!keyValueMap}" layoutType="Edit" 
+                saveURL="{!savePage}" cancelURL="{!cancelPage}"/> 
+        </apex:define>
+    </apex:composition> -->
+    
+</apex:page>

@@ -1,0 +1,10 @@
+<apex:page standardController="Account" extensions="AssignUsersToOrgCtrl"  standardStylesheets="false" showHeader="false" sidebar="false">
+	<c:ExternalLibrary />  
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">    
+            <GNT:ModalFlexViewLayout templateName="Assign Users to Account" recordId="{!recordId}"  layoutType="View" flexTableParameters="{!keyValueMap}"  HideSidebar="true" 
+                  createDefaultValues=""/>
+                                 
+        </apex:define>
+    </apex:composition>
+</apex:page>

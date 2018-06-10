@@ -1,0 +1,72 @@
+<apex:page controller="ChangeRequestCtrl"  standardStylesheets="false" showHeader="false" sidebar="false" title="Initiate Change Request">
+     <c:ExternalLibrary />
+     <style>
+        .orgtable{
+            border: 1px solid !important;
+            padding: 5px !important;           
+        }
+    </style>
+    <apex:composition template="GNT__PhaseTemplate">
+    <apex:define name="body">  
+    <div class="bs" >        
+    <apex:form >
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default border-add">
+                    <div class="panel-heading">
+                        <b>Initiate Change request for Application</b>
+                        <div class="pull-right">
+                            <apex:commandButton action="{!save}" styleClass="customBtn " value="Release Application" rendered="{!NOT(showWarning)}"/>
+                            <apex:commandButton action="{!cancel}" styleClass="customBtn" value="Cancel" style="margin-left:10px !important;"/>
+                        </div> 
+                    </div>
+                    <div class="panel-body panel-body-ext"> 
+                        <div class="row"> 
+                            <div class="col-md-12">
+                            <apex:outputPanel rendered="{!NOT(showWarning)}">
+                                <table width="100%" border="1" class="orgtable">
+                                    <apex:repeat value="{!tabWithPageBlocks}" var="tab">
+                                        <tr class="tableHeader" >
+                                            <td class="tableCell orgtable" >
+                                                <b>{!tab.tabName}</b>
+                                            </td>
+                                        </tr>
+                                        <tr class="tableHeader">
+                                            <td class="bgColor-white" style="padding: 5px !important;">
+                                                <table  width="100%" class="">
+                                                    <apex:repeat value="{!tab.pgbList}"  var="pgb">
+                                                        <tr class="tableHeader bgColor-white" style=" padding: 5px !important;">
+                                                            <td class="" style="width:25px">
+                                                                <apex:inputCheckbox value="{!pgb.selected}"/>
+                                                            </td>
+                                                            <td class= "" >
+                                                                {!pgb.pgBlock.GNT__PageBlockTitle__c}
+                                                            </td>
+                                                        </tr>
+                                                    </apex:repeat>
+                                                </table>
+                                            </td>
+                                        </tr>                                           
+                                    </apex:repeat>
+                                </table>
+                                <br/><br/>
+                                <div>
+                                    <apex:outputText styleClass="customLabelstyle" value="Comments:" style="vertical-align: top;"/>
+                                    &nbsp;&nbsp;
+                                    <apex:inputTextArea required="true"  value="{!comments}" style="width:350px;height:100px"/>
+                                </div>
+                                </apex:outputPanel>
+                                <apex:outputPanel rendered="{!showWarning}">
+                                	<apex:outputText value="{!$Label.ChangeRequestNewWarning}"/>
+                                </apex:outputPanel>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </apex:form>
+    </div>
+    </apex:define>
+    </apex:composition>
+</apex:page>

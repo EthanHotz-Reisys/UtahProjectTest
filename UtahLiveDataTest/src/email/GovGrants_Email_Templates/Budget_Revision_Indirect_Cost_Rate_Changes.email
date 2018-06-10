@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p style="margin: 0cm 0cm 12pt; line-height: 1.5em; background-color: rgb(255, 255, 255);"><font face="Times New Roman, Times, serif" style=""><font face="arial"><span style="font-size: 12pt;">Dear </span></font>{!Award__c.GranteeOrganization__c}<font face="arial"><span style="font-size: 12pt;">,</span></font></font></p>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p style="margin: 0cm 0cm 12pt; line-height: 1.5em; background-color: rgb(255, 255, 255);"><font face="Times New Roman, Times, serif">A budget revision is required for {!Award__c.ProgramName__c} due to a change in the indirect cost rate.</font></p><p style="margin: 0cm 0cm 12pt; line-height: 1.5em; background-color: rgb(255, 255, 255);"><font face="Times New Roman, Times, serif">Please click the link below to submit a revised budget.</font></p><p style="font-family: arial; margin: 0cm 0cm 12pt; line-height: 1.5em; background-color: rgb(255, 255, 255);"><font face="Times New Roman, Times, serif">Click <a href="{!Award__c.Link}">here</a></font></p><p style="margin-bottom: 12pt; font-size: 12pt;"><font face="Times New Roman,Times,Serif" style="background-color: rgb(255, 255, 255);">Sincerely,</font></p><p style="margin-bottom: 12pt; font-size: 12pt;"><font face="Times New Roman,Times,Serif" style="background-color: rgb(255, 255, 255);">UtahGrants Support Team</font></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

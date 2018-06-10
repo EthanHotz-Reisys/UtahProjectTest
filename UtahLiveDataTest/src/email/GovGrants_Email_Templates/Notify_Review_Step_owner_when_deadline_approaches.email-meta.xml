@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Notify Review Step owner when deadline approaches</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Notify Review Step owner when deadline approaches</name>
+    <style>formalLetter</style>
+    <subject>Notification: Review Step Nearing Deadline</subject>
+    <textOnly>Dear {!ReviewStep__c.Owner__c},
+
+The following review step is nearing its Close date. Please take appropriate actions.
+
+Name: {!ReviewStep__c.Name}
+Description: {!ReviewStep__c.Description__c}
+Status: {!ReviewStep__c.Status__c}
+Close Date: {!ReviewStep__c.EndDate__c}
+
+
+
+Please do not reply to this email. You may contact the GovGrants support govgrant@support.com if you have any questions or need assistance.
+
+
+
+Sincerely,
+
+Enterprise Grants Management System(EGMS)</textOnly>
+    <type>html</type>
+</EmailTemplate>

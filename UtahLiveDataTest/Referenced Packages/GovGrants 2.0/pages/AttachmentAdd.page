@@ -1,0 +1,165 @@
+<apex:page controller="GNT.AttachmentAddCtrl" standardStylesheets="false" showHeader="false" sidebar="false">
+ 
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__GovGrantsExternal, 'BootStrap/CSS/bootstrap-theme.min.css')}" />
+    <c:ExternalLibrary />  
+    <apex:includeScript value="{!URLFOR($Resource.GNT__GovGrantsExternal, 'jQueryBlockUI/JS/jquery.blockUI.js')}" />  
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__GovGrants, '/Component/CSS/AttachmentAdd.css')}"/>
+     <style>
+        table-scroll {
+            overflow: auto;
+            margin-bottom: 10px;
+        }
+        .displayNone{display:none;}
+        table tr:nth-of-type(even), table tr:nth-of-type(even):hover, 
+        table tr:nth-of-type(odd):hover, div#addAtt table tr:hover, div#addAtt table tr:nth-of-type(odd):hover  {
+        background-color: #fff !important;
+        }
+        .nav.attachmentAddTab >li a {
+            position: relative;
+            display: block;
+            padding: 10px 15px;
+        }
+        
+     </style>
+     <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">
+    <apex:form >   
+        <div id="Attachmentadd" class="row" style="overflow: auto;">
+            <div class="bs container-fluid" onkeyup="closeModal()">
+                    <div class="panel-default ">
+                        <div class="panel-heading padding-bottom-0">                                                        
+                            <div class="row" id="rowid">
+                                <ul id="topTabsID" class="nav nav-tabs attachmentAddTab" style="{!if(isDigitalSign == 'true','display:None','')}" >
+                                    <li class="active"><a data-target="#addAtt" data-toggle="tab" href="#" onclick="setTimeout(function(){if(modalHandler(1) != undefined){modalHandler(1);}},200);"><span class="panel-title">{!$Label.AddAttachmentsfromComputer}</span></a></li>
+                                    <li> <apex:outputPanel rendered="{!!hideWorkSpace}"><a data-target="#attachDoc" data-toggle="tab"  href="#" onclick="setTimeout(function(){if(modalHandler(1) != undefined){modalHandler(1);}},200);"><span class="panel-title">{!$Label.AddAttachmentsfromSalesforce}</span></a></apex:outputPanel></li>                                  
+                                </ul>
+                            </div>                                                       
+                        </div>
+                        <div class="panel-body">                            
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="addAtt">
+                                            <div class="row">
+                                             <c:PageMessages id="addForm"/> 
+                                                <div class="col-md-12">
+                                                       
+                                                    <div class="form-horizontal">             
+                                                        <div class="form-group">
+                                                            <div class="col-md-12">
+                                                                <b><apex:outputText id="display" value=" " styleClass="control-label col-lg-12 pull-left spacer" /></b>
+                                                            </div>
+                                                        </div>
+                                                        <!-- commented b@ecause don't see any use-talked with PD -->
+                                                       <!-- <tr style="{!if(isblank(document),'','display:None')}">  style="{!if(isblank(document),'display:run-in','display:None')}" display:run-in issues for IE browser-->
+                                                        <div class="form-group">   
+                                                            <label class="col-md-2 col-sm-3" for="cclassification"><span class="requiredField">*</span>Type</label>
+                                                            <div class="col-md-10 col-sm-9">
+                                                                <label for="cclassification" class="hidden508">Classification</label>
+                                                                <apex:selectList required="true" styleClass="form-control spacer" id="cclassification" size="1" value="{!classificationVal}" title="Classification">
+                                                                    <apex:selectOptions value="{!classificationsList}"></apex:selectOptions>
+                                                                </apex:selectList>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">  
+                                                            <label class="col-md-2 col-sm-3" for="file">
+                                                                <span class="requiredField">*</span>File</label>
+                                                            <div class="col-md-10 col-sm-9">
+                                                                <apex:inputFile styleClass="spacer" filename="{!attachmentObj.name}" value="{!attachmentObj.body}" />                         
+                                                            </div>
+                                                        </div>  
+
+                                                        <div class="form-group">
+                                                            <label class="col-md-2 col-sm-3" for="description" ><span class="requiredField">*</span>Description</label>
+                                                            
+                                                            <div class="col-md-10 col-sm-9">                        
+                                                                <label for="Description" class="hidden508">Description</label>
+                                                                <apex:inputField styleClass="form-control spacer textAreaDesc"  id="Description" value="{!attachmentObj.description}"/>
+                                                            </div>
+                                                        </div> 
+                                                        <!--Added this to pass fieldName and fieldLabel from json o wrapper class-->
+                                                        <div class="form-group">
+                                                            <apex:repeat value="{!wrapFieldsList}" var="e1" >
+                                                            <div class="col-md-2 col-sm-3">
+                                                                <span for="description" class="col-lg-2 control-label spacer pull-left" style="font-weight:600"><span Class ="{!If(e1.requiredField==true,'requiredField','displayNone')}">*</span>{!e1.fieldLabel}</span>
+                                                            </div>
+                                                            <div class="col-md-10 col-sm-9">
+                                                                <apex:inputField value="{!attExtObj[e1.fieldName]}" />
+                                                            </div>
+                                                            </apex:repeat>
+                                                        </div>                     
+                                                        <div class="form-group">
+                                                            <div class="col-md-12">
+                                                                 <apex:commandbutton action="{!addAttachment}" onclick="showLoadNotification();showLoadingPopUp();" value="Save"  styleClass="customBtn pull-right"/>  
+                                                  
+                                                            </div>
+                                                        </div>  
+                                                    </div>
+                                                </div>
+                                            </div>                                        
+                                        </div>
+                                       
+                                        <div class="tab-pane" id="attachDoc" style="{!if(isDigitalSign == 'true','display:None','')}">
+                                  
+                                         
+                                     <apex:actionRegion >
+                                         <apex:outputPanel id="myRow" >
+                                            <c:PageMessages id="addAttachment"/>                                            
+                                            <div class="table-scroll">
+                                             <apex:commandbutton action="{!processSelected}" onclick="showLoadNotification();showLoadingPopUp();" value="Attach"  styleClass="customBtn pull-right" reRender="myRow" onComplete="hideLoadingPopUp();onclickscrolltop();" style="margin-bottom: 15px;"></apex:commandbutton>
+                                            <table class="tableClass table table-striped table-hover dataTable">
+                                                <thead style="font-weight: 600;">
+                                                    <tr>                                                
+                                                        <td><apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId')"/></td>
+                                                        <td> Name</td>
+                                                        <td> Description</td>
+                                                        <td> LastModifiedDate</td>                                          
+                                                    </tr>
+                                                </thead>   
+                                                <tbody>                                             
+                                                    <apex:repeat value="{!wrapAttachmentList}" var="attWrap">                                               
+                                                        <tr>
+                                                            <td><apex:inputCheckbox value="{!attWrap.selected}" id="inputId"/></td>
+                                                            <td> <apex:outputText value="{!attWrap.att.Name}"/></td>
+                                                            <td> <apex:outputText value="{!attWrap.att.Description}"/></td>
+                                                            <td> <apex:outputField value="{!attWrap.att.LastModifiedDate}"/></td> 
+                                                        </tr>                                               
+                                                    </apex:repeat>                                                                                
+                                                </tbody>                                             
+                                            </table></div>
+                                            </apex:outputPanel>
+                                         <apex:commandbutton action="{!processSelected}" onclick="showLoadNotification();showLoadingPopUp();" value="Attach"  styleClass="customBtn pull-right" reRender="myRow" onComplete="hideLoadingPopUp();onclickscrolltop();">                                        
+                                         </apex:commandButton>
+                                         </apex:actionRegion>
+                                        
+                                        </div>                                                                                                           
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+             </div>
+        </div>
+  </apex:form>
+  </apex:define> 
+  </apex:composition>                             
+           
+    <script src="{!URLFOR($Resource.GovGrants)}/Component/JS/AttachmentAdd.js"></script>
+    
+    <script>
+    
+    /*j$(document).ready(function() {
+        console.log( "ready!" );
+        console.log('----Attachmentaddheight----',j$('#Attachmentadd').height());
+        console.log('----Attachmentaddwidth----',j$('#Attachmentadd').width());
+        window.parent.resizemodal(j$('#Attachmentadd').height(),j$('#Attachmentadd').width());
+    });*/
+    function closeModal() {                     /* on ESC key closing modal window*/
+        if(event.keyCode==27)
+        {   
+            window.parent.parent.closeModalFromModalTemplate();     
+        }   
+    }
+    </script>
+</apex:page>

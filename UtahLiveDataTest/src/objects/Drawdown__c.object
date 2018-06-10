@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>DrawDownEdit</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>DrawDownView</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AuthorizedFirstName__c</fullName>
+        <description>This field is used in Advance or Reimbursement form.</description>
+        <externalId>false</externalId>
+        <label>Authorized First Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AuthorizedLastName__c</fullName>
+        <description>This field is used in Payment Request form.</description>
+        <externalId>false</externalId>
+        <label>Authorized Last Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AuthorizedMiddleName__c</fullName>
+        <description>This field is used in Advance or Reimbursement form.</description>
+        <externalId>false</externalId>
+        <label>Authorized Middle Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AuthorizedPrefix__c</fullName>
+        <description>This field is used in Advance or Reimbursement form</description>
+        <externalId>false</externalId>
+        <label>Authorized Prefix</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Mr .</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Mrs .</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Miss</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ms .</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dr .</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rev .</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Prof .</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AuthorizedSuffix__c</fullName>
+        <description>This field is used in Payment Request form.</description>
+        <externalId>false</externalId>
+        <label>Authorized Suffix</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Jr .</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sr .</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>M. D.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ph. D</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AuthorizedTelephone__c</fullName>
+        <description>This field is used in Payment Request form.</description>
+        <externalId>false</externalId>
+        <label>Authorized Telephone</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AuthorizedTitle__c</fullName>
+        <description>This field is used in Payment Request form.</description>
+        <externalId>false</externalId>
+        <label>Authorized Title</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BasisOfRequest__c</fullName>
+        <description>This field is used in Request for Advance or Reimbursement</description>
+        <externalId>false</externalId>
+        <label>Basis Of Request</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contractuals__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Spend</label>
+        <summarizedField>DrawdownDetail__c.AmountSpend__c</summarizedField>
+        <summaryFilterItems>
+            <field>DrawdownDetail__c.SpendPlan__c</field>
+            <operation>equals</operation>
+            <value>Contracts</value>
+        </summaryFilterItems>
+        <summaryForeignKey>DrawdownDetail__c.Drawdown__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>DateRequestSubmitted__c</fullName>
+        <description>This field is used in Advance or Reimbursement form.</description>
+        <externalId>false</externalId>
+        <label>Date Request Submitted</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EmployerIdentificationNumber__c</fullName>
+        <description>This field is used in Advance or Reimbursement form.</description>
+        <externalId>false</externalId>
+        <label>Employer Identification Number</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EndDate__c</fullName>
+        <externalId>false</externalId>
+        <label>EndDate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FederalAmountRemaining__c</fullName>
+        <description>This field is used in Advance or Reimbursement form.</description>
+        <externalId>false</externalId>
+        <formula>FederalCashOutLays__c  -  RemainingFederalCash__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Federal Amount Remaining</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FederalCashOutLays__c</fullName>
+        <description>This field is used in Advance or Reimbursement form</description>
+        <externalId>false</externalId>
+        <label>Federal Cash OutLays</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FinancialAssistanceIdentificationNo__c</fullName>
+        <description>This field is used in Advance or Reimbursement form.</description>
+        <externalId>false</externalId>
+        <label>Financial Assistance Identification No</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Grant__c</fullName>
+        <externalId>false</externalId>
+        <label>Grant</label>
+        <referenceTo>Grant__c</referenceTo>
+        <relationshipLabel>Drawdowns</relationshipLabel>
+        <relationshipName>Drawdowns</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>InternalSpend__c</fullName>
+        <externalId>false</externalId>
+        <label>Internal Spend</label>
+        <summarizedField>DrawdownDetail__c.AmountSpend__c</summarizedField>
+        <summaryFilterItems>
+            <field>DrawdownDetail__c.SpendPlan__c</field>
+            <operation>equals</operation>
+            <value>Internal Spend</value>
+        </summaryFilterItems>
+        <summaryForeignKey>DrawdownDetail__c.Drawdown__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>InvoicePeriod__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(StartDate__c) &amp;&apos;/&apos; &amp; Text(EndDate__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>InvoicePeriod</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MOU__c</fullName>
+        <externalId>false</externalId>
+        <label>ISA Spend</label>
+        <summarizedField>DrawdownDetail__c.AmountSpend__c</summarizedField>
+        <summaryFilterItems>
+            <field>DrawdownDetail__c.SpendPlan__c</field>
+            <operation>equals</operation>
+            <value>ISA</value>
+        </summaryFilterItems>
+        <summaryForeignKey>DrawdownDetail__c.Drawdown__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Name__c</fullName>
+        <displayFormat>DD-{0000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Name</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>PaidAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>PaidAmount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PaidDate__c</fullName>
+        <externalId>false</externalId>
+        <label>PaidDate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PartialPaymentRequestNumber__c</fullName>
+        <description>This field is used in Advance or Reimbursement form</description>
+        <externalId>false</externalId>
+        <label>Partial Payment Request Number</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PaymentReference__c</fullName>
+        <externalId>false</externalId>
+        <label>PaymentReference</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReceiptsUploaded__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>ReceiptsUploaded</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RemainingFederalCash__c</fullName>
+        <externalId>false</externalId>
+        <label>Remaining Federal Cash</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SignedBy__c</fullName>
+        <externalId>false</externalId>
+        <label>SignedBy</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StartDate__c</fullName>
+        <externalId>false</externalId>
+        <label>StartDate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Created</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Paid</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SubAwardSpend__c</fullName>
+        <externalId>false</externalId>
+        <label>Sub Award Spend</label>
+        <summarizedField>DrawdownDetail__c.AmountSpend__c</summarizedField>
+        <summaryFilterItems>
+            <field>DrawdownDetail__c.SpendPlan__c</field>
+            <operation>equals</operation>
+            <value>Sub Awards</value>
+        </summaryFilterItems>
+        <summaryForeignKey>DrawdownDetail__c.Drawdown__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>TermsAgreement__c</fullName>
+        <externalId>false</externalId>
+        <label>TermsAgreement</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>I Agree</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>I Disagree</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total__c</fullName>
+        <externalId>false</externalId>
+        <formula>SubAwardSpend__c +  Contractuals__c  +  InternalSpend__c  +  MOU__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TypeOfPayment2__c</fullName>
+        <description>This field is used in Request for advance or Reimbursement</description>
+        <externalId>false</externalId>
+        <label>Type Of Payment2</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TypeOfPayment__c</fullName>
+        <description>This field is used in Request for Advance or Reimbursement.</description>
+        <externalId>false</externalId>
+        <label>Type Of Payment</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VoucherNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>VoucherNumber</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Drawdown</label>
+    <nameField>
+        <label>Drawdown Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Drawdowns</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

@@ -1,0 +1,13 @@
+<apex:page controller="CreateAmendmentCtrl" sidebar="false" standardStylesheets="false" showHeader="false" title="Amendment Request Edit">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+    
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">
+            <GNT:ModalFlexEditLayout templateName="CreateAmendmentRequest" layoutType="Edit" recordId="{!recordId}"
+            createDefaultValues="{!listDefaultValues}"/>
+        </apex:define>
+    </apex:composition>
+    
+</apex:page>

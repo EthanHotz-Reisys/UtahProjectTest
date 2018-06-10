@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email sent to users when the Funding Allocation is done for Grantor PreApplications</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Grantor Funding Allocation Notification</name>
+    <style>formalLetter</style>
+    <subject>Notification: Funding Allocation is completed for Announcement #{!Announcement__c.AnnouncementId__c}</subject>
+    <textOnly>Subject: Notification email that  Funding Allocation is completed for Announcement # {!Announcement__c.AnnouncementName__c}
+
+
+
+This email is to notify that Funding Allocation is completed for your PreApplication in EGMS System. You are invited to visit the details as per the details:
+
+
+
+Announcement Details:
+
+
+
+Announcement Title : {!Announcement__c.AnnouncementName__c}
+
+
+Awarding Agency :  {!Announcement__c.AccountName__c}
+
+
+Publication Date : {!Announcement__c.FOAPublicationDate__c}
+
+
+Expected Award Date :{!Announcement__c.ProjectedAwardDateTime__c}
+
+
+Link for More Details : {!Announcement__c.FundingOppURL__c}
+
+
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

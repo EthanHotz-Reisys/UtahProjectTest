@@ -1,0 +1,142 @@
+<apex:page showHeader="false" standardStylesheets="false">
+  <head>
+    <title>Home</title>
+     <script>
+           j$(document).ready(function(){   
+              if(document.getElementById('collabFeedWrapperID') != undefined){
+                  document.getElementById('collabFeedWrapperID').style.height = '464px';  
+              }
+              j$(".type").click(function(){
+              j$(".type").removeClass("active");
+               j$(this).addClass("active");
+            });
+        });   
+    </script>
+    </head>
+    <style>
+        .padding-bottom-0{
+            padding-bottom:0;
+        } 
+        .border-top{
+            border-top:1px solid #DDDDDD;            
+        } 
+        .border-right{
+            border-right:1px solid #DDDDDD;            
+        } 
+        .padding-top-5{
+            padding-top:5px;
+        } 
+        .padding-bottom-5{
+            padding-bottom:5px;
+        }  
+        .workspace-tab-link, .workspace-tab-link:hover{
+            text-decoration: none;
+            cursor:pointer;            
+        }
+       
+    </style>
+  <div class="container-fluid">
+        <div class="row">   
+            <div class="col-md-8">
+                <GNT:TaskSummary />
+                <apex:include pageName="GNT__ChartsView"/> 
+            </div>    
+            <div class="col-md-4 collab_files">
+              <apex:form >
+                <GNT:HomeCollab />
+              </apex:form>
+            </div>
+        </div>
+        <!--<div>
+            <apex:form >
+                <GNT:DemoCollabFiles isDialog="false" />
+            </apex:form>
+        </div>
+        -->
+  <div class="row">
+            <div class="col-md-12">
+                <apex:form >
+                    <div class="panel panel-default workspace-panel">
+                        <div class="panel-heading padding-bottom-0">                            
+                            <div class="padding-bottom-5"><span class="panel-title">My Workspace</span>
+                            <span id="My_Workspace" class="hidden508 skipNavSectionItem skipNavSectionItem2" name="My_Workspace :My Workspace">My Workspace</span><!-- For 508 SkipNavigation  -->
+                            </div>
+                            <div class="row">
+                              <!--   <ul id="topTabsID" class="nav nav-tabs">
+                                  <li class="active"><a data-target="#files" data-toggle="tab"><span class="panel-title">Files</span></a></li>
+                                  <li><a data-target="#calendar" data-toggle="tab"><span class="panel-title">Calendar</span></a></li>
+                                  <li><a data-target="#notes" data-toggle="tab"><span class="panel-title">Notes</span></a></li>
+                                  <li><a data-target="#cases" data-toggle="tab"><span class="panel-title">Cases</span></a></li>
+                                  <li><a data-target="#messages" data-toggle="tab"><span class="panel-title">Messages</span></a></li>
+                                  <li><a data-target="#settings" data-toggle="tab"><span class="panel-title">Feeds</span></a></li>
+                              </ul> -->
+                            <div id="topTabsID" class="nav nav-tabs">
+                        <div class="btn-group btn-group-justified" role="group" >
+                          <div class="btn-group active" role="group">
+                           <button type="button" class="btn btn-default type active" data-target="#files" data-toggle="tab" id="My_Workspace_File">
+                                <i class="fa fa-files-o"></i><span class="hidden-xs"><a>Files</a></span>
+                           </button>
+                          <span id="My_Workspace_File" class="hidden508 skipNavSectionItem skipNavSectionItem2" name="My_Workspace :Files">My Workspace - Files</span><!-- For 508 SkipNavigation  --> 
+                          </div>
+                          <div class="btn-group" role="group">
+                           <button type="button" class="btn btn-default type " data-target="#calendar" data-toggle="tab" id="My_Workspace_Calendar">
+                               <i class="fa fa-calendar"></i><span class="hidden-xs"><a>Calendar</a></span>
+                           </button>
+                           <span id="My_Workspace_Calendar" class="hidden508 skipNavSectionItem skipNavSectionItem2" name="My_Workspace :Calendar">My Workspace - Calendar</span> <!-- For 508 SkipNavigation  -->
+                          </div>
+                          <div class="btn-group" role="group">
+                           <button type="button" class="btn btn-default type" data-target="#notes" data-toggle="tab" id="My_Workspace_Notes">
+                               <i class="fa fa-book"></i><span class="hidden-xs"><a>Notes</a></span>
+                           </button>
+                           <span id="My_Workspace_Notes" class="hidden508 skipNavSectionItem skipNavSectionItem2" name="My_Workspace :Notes">My Workspace - Notes</span><!-- For 508 SkipNavigation  --> 
+                          </div>
+                          <div class="btn-group" role="group">
+                           <button type="button" class="btn btn-default type" data-target="#cases" data-toggle="tab" id="tmpcase1FlexTable">
+                               <i class="fa fa-list-alt"></i><span class="hidden-xs"><a>Cases</a></span>
+                           </button>
+                          </div>
+                          <div class="btn-group" role="group">
+                           <button type="button" class="btn btn-default type" data-target="#messages" data-toggle="tab" id="MessagesHomeFlexTable">
+                               <i class="fa fa-envelope-o"></i><span class="hidden-xs"><a>Messages</a></span>
+                           </button>
+                          </div>                         
+                       </div> 
+                      </div>
+                       </div> 
+                          
+
+                        </div>
+                        <div class="panel-body">                            
+                            <div class="row">
+                                <div class="col-md-12">
+                                 <!--    <div class="tab-content">
+                                     <div class="tab-pane active" id="files"><GNT:DemoCollabFiles isDialog="false" /></div>
+                                     <div class="tab-pane" id="calendar"><GNT:Calendar configName="Task" /></div>                        
+                                     <div class="tab-pane" id="notes"><GNT:FlexTable flexTableName="tmpNotes1" tableId="tmpNotes1"
+                                         headerDescription=""
+                                         /></div>
+                                     <div class="tab-pane" id="cases"><GNT:FlexTable flexTableName="tmpcase1" tableId="tmpcase1"
+                                         headerDescription=""
+                                         /></div>
+                                     <div class="tab-pane" id="messages"><GNT:FlexTable flexTableName="MessagesHome" tableId="MessagesHome"
+                                         headerDescription=""
+                                         /></div>
+                                     <div class="tab-pane" id="feeds"><span>Feeds content will come here</span></div>
+                                 </div> -->
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="files"><GNT:DemoCollabFiles isDialog="false" /></div>
+                                        <div class="tab-pane" id="calendar"><GNT:Calendar configName="Task" /></div>                                                                
+                                        <div class="tab-pane" id="notes"><c:UserNotes /></div>                                                                                
+                                        <div class="tab-pane" id="cases"><GNT:FlexTable flexTableName="CaseList" tableId="CaseList" headerDescription="" /></div>                                                                                
+                                        <div class="tab-pane" id="messages"><GNT:FlexTable flexTableName="MessagesHome" tableId="MessagesHome" headerDescription="" /></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </apex:form>                                        
+            </div>
+        </div>
+    </div>
+</apex:page>

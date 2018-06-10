@@ -1,0 +1,9 @@
+<apex:page standardController="RiskItem__c" extensions="RiskItemViewCtrl" 
+        sidebar="false" standardStylesheets="false" showHeader="false">
+    <c:ExternalLibrary />   
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">    
+             <GNT:FlexViewLayout templateName="{!templateName}" flexTableParameters="{!keyValueMap}"   recordId="{!recordId}" layoutType="View" />
+        </apex:define>
+    </apex:composition>
+</apex:page>

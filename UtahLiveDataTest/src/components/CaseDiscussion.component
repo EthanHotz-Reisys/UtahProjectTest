@@ -1,0 +1,106 @@
+<apex:component Controller="CaseDiscussionCtrl">
+    <apex:attribute name="parentRecordId"  description="Parent record id " type="String"/>
+    <div id="caseDiscussionComponent" ng-controller="CaseDiscussionCompCtrl" class="container-fluid">
+        <div class="chat-sec">
+            <div class="panel panel-default" >
+                <div class="panel-heading">                                                                                                                                                                                           
+                    <div class="row">
+                        <div class="col-xs-6 header-title">
+                             {{CaseTitle}}
+                        </div>
+                    </div>  
+                </div> 
+                <div class="panel-body"> 
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            <textArea rows="5" cols="30" aria-label="Description"  ng-model="userComment" class="form-control" style="height:66px"></textArea>
+                            <div class="row">
+                                <div class="col-md-6 pull-right">
+                                    <button Type="button" class="customBtn pull-right" ng-click="addComment();" onClick="showLoadingPopUp();" ng-disabled="userComment== undefined || userComment==''" ng-class="{'btn-comment-disabled': userComment== undefined || userComment==''}" >Add Comment</button>
+                                </div>
+                            </div>
+                        </div>                         
+                    </div>
+                </div>
+                    
+            </div>
+            <div ng-repeat="caseComment in caseComments" class="main-chat">         
+                   <div class="prof-name">
+                        <div class="prof-pic"><div class="name-initials" ng-if="caseComment.photoURL.indexOf('profilephoto/005/T') >= 0" >{{caseComment.nameInitials}}</div><img ng-if="caseComment.photoURL.indexOf('profilephoto/005/T') < 0" ng-src="{{caseComment.photoURL}}" /></div>
+                   </div>
+                   <div class="chatbox">
+                    <h3 class = "panel-title">{{caseComment.userName}}</h3>
+                    <p> {{caseComment.description}}</p>
+                     <div class="footer-chatbox">{{caseComment.commentDetails}} </div>
+                   </div>
+                  
+
+            </div>
+        </div>             
+    </div>
+   <script>
+   var j$ = jQuery.noConflict();
+   _RemotingCaseActions = {};
+   _RemotingCaseActions.getCaseComments = '{!$RemoteAction.CaseDiscussionCtrl.getCaseNotes}';
+   _RemotingCaseActions.createNote = '{!$RemoteAction.CaseDiscussionCtrl.createNote}';
+    var caseDiscussApp = angular.module('caseDiscussionComponent', []);
+    caseDiscussApp.controller('CaseDiscussionCompCtrl', function ($q,$scope,$sce) {
+        $scope.CaseTitle = 'Case Discussion';
+        $scope.userComment = '';
+        
+        $scope.addComment = function() {
+            var deferred = $q.defer();
+            Visualforce.remoting.Manager.invokeAction(
+                _RemotingCaseActions.createNote,
+                '{!parentRecordId}', $scope.userComment,
+                function(dataResult, event){
+                    if (event.status) {
+                        $scope.userComment = '';
+                        $scope.getCaseComments();
+                         hideLoadingPopUp();
+                    } else{
+                     hideLoadingPopUp();
+                        alert('Error on adding case comment. Please contact system administrator');
+                        $scope.$apply(function () {
+                            //todo - replace with messages
+                            //$scope.messages.push({type: 'danger',msg: 'Error:' + event.message});
+                        //render error msg
+                        });
+                    } 
+                },{ buffer: false, escape: false}
+            );
+               
+        }
+        $scope.getCaseComments = function(){
+               var deferred = $q.defer();
+               Visualforce.remoting.Manager.invokeAction(
+                   _RemotingCaseActions.getCaseComments,
+                   '{!parentRecordId}',
+                   function(dataResult, event){
+                       if (event.status) {
+                        console.log('dataResult--', dataResult);
+                           $scope.$apply(function () {
+                               deferred.resolve(dataResult);
+                               $scope.caseComments = dataResult;
+                           });
+                       } else{
+                            alert('Error on loading case discussion. Please contact system administrator');
+                           $scope.$apply(function () {
+                            //todo - replace with messages
+                               //$scope.messages.push({type: 'danger',msg: 'Error:' + event.message});
+                           //render error msg
+                           });
+                       } 
+                   },{ buffer: false, escape: false}
+               );
+           }
+           
+           $scope.getCaseComments();
+    });
+    angular.element(document).ready(function() {
+         j$('#page-content-wrapper').append(j$('#caseDiscussionComponent'));
+         angular.bootstrap(document.getElementById("caseDiscussionComponent"),['caseDiscussionComponent']);
+     });
+   </script>
+</apex:component>

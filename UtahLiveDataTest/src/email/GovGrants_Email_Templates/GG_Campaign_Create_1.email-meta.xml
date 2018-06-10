@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Use to send Campaign to invitees</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>GG_Campaign_Create_1</name>
+    <style>formalLetter</style>
+    <subject>{!Campaign__c.Subject__c}</subject>
+    <type>html</type>
+</EmailTemplate>

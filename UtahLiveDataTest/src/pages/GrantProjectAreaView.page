@@ -1,0 +1,14 @@
+<apex:page cache="false" standardController="GrantServiceArea__c" extensions="GrantProjectAreaViewCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary /> 
+     <!--      <GNT:FlexViewLayout templateName="{!pageTemplateName}" layoutType="View" recordId="{!recordId}" deleteURL="{!deleteURL}" HideSidebar="true"  
+            flexTableParameters="{!keyValueMap}"/>  -->
+            <apex:composition template="GNT__ModalTemplate">
+            <apex:define name="ModalContent"> 
+
+            <GNT:ModalFlexViewLayout templateName="{!pageTemplateName}" layoutType="View" recordId="{!recordId}" deleteURL="{!deleteURL}" HideSidebar="true"  
+            flexTableParameters="{!keyValueMap}"/>
+            </apex:define>
+            </apex:composition>
+
+</apex:page>

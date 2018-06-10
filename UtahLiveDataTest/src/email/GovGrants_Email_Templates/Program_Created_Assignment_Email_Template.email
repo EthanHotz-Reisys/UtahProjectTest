@@ -1,0 +1,45 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">Dear User,</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">This email is to notify you that, the Program {!Program__c.Name}
+has been created and is waiting for your approval.</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black"><b>Program Details:</b><br>
+Program ID: {!Program__c.Name}<br>
+Program Name: {!Program__c.ProgramName__c}<br>
+Program Type: {!Program__c.ProgramType__c}<br>Program Start Date: {!Program__c.StartDate__c}<br>
+Program End Date: {!Program__c.EndDate__c}</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">Kindly login to the UtahGrants Systems and start reviewing the Program details.</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">Please do not reply to this email. You may
+contact the Utah Grants Support Team at utahgrants.support@reisystems.com, if you have any
+questions or need assistance with this task.</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">Sincerely,</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">UtahGrants Support Team<br></span></font><span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: medium;">utahgrants.support@reisystems.com<br>Ph. No. 703.480.9100&nbsp;</span></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[<br>]]></td>
+</tr>
+</table>

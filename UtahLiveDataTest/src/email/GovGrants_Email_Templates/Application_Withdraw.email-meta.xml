@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>For when an application is to be withdrawn</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Application Withdraw</name>
+    <style>formalLetter</style>
+    <subject>Approval Requested For Withdrawing Application for {!Application__c.ProgramTitle__c}</subject>
+    <textOnly>Dear {!Application__c.ApproverName__c},
+A Withdrawal of Funding for the {!Application__c.ProgramTitle__c} program for {!Application__c.FiscalYear__c} has been submitted for your approval.
+
+Please be advised that by waiving this allocation, your school or district is permanently declining these funds and that no application can be submitted during this funding round. The allocation will be redistributed to other eligible organizations, and your school or district will not be able to apply for funds from this program again until the next funding cycle.
+
+To review and reject or approve the withdrawal, please click the link below.
+
+Click here
+
+Sincerely,
+
+
+UtahGrants Support Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

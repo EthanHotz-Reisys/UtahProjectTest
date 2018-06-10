@@ -1,0 +1,40 @@
+<apex:page >
+    
+
+     <html>
+    <head>
+           <link rel="shortcut icon" href="{!URLFOR($Resource.GNT__Favicon)}" />
+            <link rel="icon" type="/image/ico"  href="{!URLFOR($Resource.GNT__Favicon)}" />
+            <link rel="shortcut icon" type="image/x-icon" href="{!URLFOR($Resource.GNT__Favicon)}"/> 
+    </head>
+    <body>  
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+
+    <!-- <apex:composition template="GNT__PhaseTemplate">
+      <apex:define name="content">  -->
+            <!--  <GNT:DynamicLayout templateName="CustomerSupport" chartParameters="{!keyValueMap}" hideSidebar="true" recordId="{!recordId}"  layoutType="View" 
+                flexTableParameters="{!keyValueMap}" /> -->
+                 <apex:image url="{!URLFOR($Resource.ContactUs)}" alt="Contact Logo" />
+                 <b></b>
+    <!-- <p><b>Phone : (703)-480-7600 (Monday - Friday, 9:00 am - 6:00pm )</b> </P>
+      <p><b> Email : GovGrantsSupport@reisystems.com </b></p> -->
+    <!--  <p><b>Agency Contact Information</b> </P>
+      <p> The Utah Government is broken into several government agencies. View the complete agency listing to get in touch with the agency that will address your questions or concerns.</p> 
+      <p><b>Contact Utah.gov Technical Support</b></p> 
+      <p><b> Email: support@utah.gov</b></p> 
+      <p><b> Phone: (801) 983-0275</b></p> 
+      <p><b>Toll-free: (877) 988-3468</b></p> 
+      <p>For other options, Please review the state  website : https://www.utah.gov/contact.html</p> -->
+      <br></br>
+      <br></br>
+      <p>If you are having any difficulties using the system, please contact Technical Support, Monday through Friday,<br></br>
+        For UOVC and CCJJ, please contact utahgrants.support@reisystems.com or (703)480-9100 7AM to 4PM MT. <br></br>
+        For USBE, please contact utahgrants@schoools.utah.gov or (801)538-7604 9AM to 5PM MT.
+      </p>                                                          
+    <!--   </apex:define> 
+    </apex:composition> -->
+   
+   </body>
+  </html>
+</apex:page>

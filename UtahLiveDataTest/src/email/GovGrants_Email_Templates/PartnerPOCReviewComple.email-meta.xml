@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>When Partner POC has reviewed and Approved the award then notify Program Officer</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>PartnerPOCReviewComple</name>
+    <style>none</style>
+    <subject>Notification: Award {!Award__c.Name} has been accepted by {!Award__c.GranteeOrganization__c} agency</subject>
+    <textOnly>This email is to notify you that, the Award {!Award__c.Name}  for the Grant #{!Award__c.Grant__c} has been accepted by {!Award__c.GranteeOrganization__c} agency.  Sincerely, {!Award__c.GranteePOC__r.Name}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

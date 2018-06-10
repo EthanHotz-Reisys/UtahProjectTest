@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE When Funding Oppurtunity Owner Approves and Funding Allocation Plan Status is Created an email is sent to Program Approver</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>FAP - Funding Allocation created/rejected email to Program Approver</name>
+    <style>formalLetter</style>
+    <subject>{!Announcement__c.Id} has been Sole Source or Formulae</subject>
+    <textOnly>Hi {!Announcement__c.ProgramApprover__c}
+
+{!Announcement__c.Id} has been {!Announcement__c.Status__c}.
+Sole source or formulae field scenario</textOnly>
+    <type>html</type>
+</EmailTemplate>

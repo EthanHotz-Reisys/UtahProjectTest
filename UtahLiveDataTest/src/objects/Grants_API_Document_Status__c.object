@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Count_Of_Children__c</fullName>
+        <externalId>false</externalId>
+        <label>Count Of Children</label>
+        <summaryForeignKey>Grants_API_Document_Status_Detail__c.Grants_API_Document_Status__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Count_Of_Inactive_Children__c</fullName>
+        <externalId>false</externalId>
+        <label>Count Of Inactive Children</label>
+        <summaryFilterItems>
+            <field>Grants_API_Document_Status_Detail__c.Active__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Grants_API_Document_Status_Detail__c.Grants_API_Document_Status__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Document_Status_Check__c</fullName>
+        <description>Datetime to store last date of status check.</description>
+        <externalId>false</externalId>
+        <label>Document Status Check</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Document_Transmission_Date__c</fullName>
+        <description>Datetime representing when the Document was successfully transmitted to the Grants API</description>
+        <externalId>false</externalId>
+        <label>Document Transmission Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Document_Transmission_Date_in_MS__c</fullName>
+        <description>Document Transmission Date in milliseconds. This value must be unique due to the need for a proper order of documents. DO NOT REMOVE THE UNIQUE, EXTERNAL ID OR REQUIRED ATTRIBUTES.</description>
+        <externalId>true</externalId>
+        <label>Document Transmission Date in MS</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ErrorCount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>ErrorCount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GovGrants_DOC_ID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Unique ID stored in GovGrants which is attached to the transmitted document through the DOC_DSRC value on the header. This will be used to search the Grantor API for the document if a Grants API DOC_ID is not available.</description>
+        <externalId>true</externalId>
+        <label>GovGrants DOC_ID</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Grants_API_DOC_ID__c</fullName>
+        <description>Grants API DOC_ID</description>
+        <externalId>true</externalId>
+        <label>Grants API DOC_ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Grants_API_Document_Dept_CD__c</fullName>
+        <description>Document Department Code from Document being transmitted to Grants API</description>
+        <externalId>false</externalId>
+        <label>Grants_API_Document_Dept_CD</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Grants_API_Document_Final__c</fullName>
+        <description>Flag to show if the document is in a final state.</description>
+        <externalId>false</externalId>
+        <formula>UPPER( TEXT( Grants_API_Document_Status__c ) ) == &quot;REJECTED&quot; ||
+UPPER( TEXT( Grants_API_Document_Phase__c ) ) == &quot;FINAL&quot; ||
+(Count_Of_Children__c &gt; 0 &amp;&amp; Count_Of_Children__c  ==  Count_Of_Inactive_Children__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Grants API Document Final</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Grants_API_Document_Phase__c</fullName>
+        <description>Grants API Document Phase</description>
+        <externalId>false</externalId>
+        <label>Grants API Document Phase</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Draft</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Final</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Grants_API_Document_Status__c</fullName>
+        <description>Grants API Document Status</description>
+        <externalId>false</externalId>
+        <label>Grants API Document Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Grants_API_Document_Phase__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Held</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Draft</controllingFieldValue>
+                <valueName>Held</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Draft</controllingFieldValue>
+                <valueName>Rejected</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pending</controllingFieldValue>
+                <controllingFieldValue>Final</controllingFieldValue>
+                <valueName>Submitted</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Grants_API_Document_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Grants API Document Type</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>GAX</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GCAM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IET</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Last_Status_Check__c</fullName>
+        <description>Datetime to store last date of status check.</description>
+        <externalId>false</externalId>
+        <label>Last Status Check</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Needs_Status_Check__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Flag to schedule a status check for the document.</description>
+        <externalId>false</externalId>
+        <label>Needs Status Check</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Grants API Document Status</label>
+    <nameField>
+        <displayFormat>GADS-{0}</displayFormat>
+        <label>Grants API Document Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Grants API Document Status</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

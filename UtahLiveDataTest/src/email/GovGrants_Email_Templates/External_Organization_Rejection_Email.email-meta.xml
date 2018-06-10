@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email template sent to the Organization POC upon rejection</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>External Organization Rejection Email</name>
+    <style>formalLetter</style>
+    <subject>Notification that the External Organization {!UserRegistration__c.Organization__c} has been rejected.</subject>
+    <textOnly>This email is to notify you that {!UserRegistration__c.Organization__c} has been rejected.
+
+
+
+Below are the Organization details:
+
+
+
+Organization Name: {!UserRegistration__c.Organization__c}
+
+Organization Type: {!UserRegistration__c.OrganizationTypeSInglePicklist__c}
+
+Organization Details: {!UserRegistration__c.OrganizationDescription__c}
+
+Reason of Rejection: {!ApprovalRequest.Comments}
+
+
+
+Sincerely
+
+UtahGrants Support Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

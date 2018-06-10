@@ -1,0 +1,15 @@
+<apex:page standardController="Case__c" title="Case Edit" extensions="CaseEditCtrl" sidebar="false" showHeader="false" applyHtmlTag="false" standardStylesheets="false">
+  
+    <!-- Including JS and CSS resources -->
+    <script>    
+        var j$ = jQuery.noConflict();
+    </script>   
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">    
+                 <GNT:FlexEditLayout templateName="{!pageTemplateName}" chartParameters="{!keyValueMap}"  recordId="{!recordId}"  createDefaultValues="{!listDefaultValues}"
+                 saveURL="{!savePage}" cancelURL="{!cancelPage}"  layoutType="Edit" flexTableParameters="{!keyValueMap}" hideMenuBar="true" /> 
+        </apex:define>
+    </apex:composition> 
+  
+</apex:page>

@@ -1,0 +1,288 @@
+<apex:page showHeader="false" sidebar="false"  standardStylesheets="false" extensions="MSPPaymentScheduleCtrl" standardController="MSPPaymentSchedule__c">
+    <apex:pageBlock >
+        <apex:pageMessages ></apex:pageMessages>
+        <style>
+            .btn-space {
+                margin-right: 10px;
+            }
+            .td-amount{
+                white-space: nowrap;
+            }
+            .td-total{
+                font-weight: bold;
+            }
+            .th-header{
+                text-align: right;
+                max-width: 500px;
+                min-width: 180px;
+                word-wrap: break-word;
+            }
+            .w3-myfont {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .td-hight{
+                height: 60px;
+            }
+            .table-border {
+			    border: 1px solid black;
+			    border-collapse: collapse;
+			}
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></link>
+        <div style='overflow:auto; width:100%;height:93vh;' id="dvData">
+            <table id="paymentsTable" class="w3-table-all w3-small w3-centered w3-myfont table-border">
+            </table>
+        </div>
+        <div style='overflow:auto; width:100%;height:1vh;'/>
+		<apex:form styleClass="w3-center">
+			<apex:commandButton action="{!approve}" value="Approve" id="Approve" rendered="{!renderForFirstApprover || renderForFinalApprover}" styleClass="w3-button w3-teal btn-space"/>
+			<apex:commandButton action="{!reject}" value="Reject" id="Reject" rendered="{!renderForFirstApprover || renderForFinalApprover}" styleClass="w3-button w3-teal btn-space"/>
+            <apex:commandButton action="{!cancel}" value="Cancel" id="Cancel" styleClass="w3-button w3-teal btn-space"/>
+			<apex:commandButton action="{!sendtoFinet}" value="Send to FINET" id="sendToFinet" rendered="{!renderForSendToFinet}" styleClass="w3-button w3-teal btn-space"/>
+			<a href="#" id ="download" role='button' class="w3-button w3-teal btn-space">Export Table data into Excel</a>
+		</apex:form>
+		<script>
+			var payments = {!paymentJSON};
+			$(document).ready(function() {
+                var rowTotals = {},
+                    colTotals = {};
+                fillTotals(payments, rowTotals, colTotals);
+                console.log(rowTotals);
+                console.log(colTotals);
+			    var headers = [...new Set(payments.map(payment => payment.programName))];
+			    headers.splice(0, 0, "");
+			    drawHeader(headers);
+			    headers.splice(0, 0, "");
+			    drawTable(getTransposeItems(payments), rowTotals, colTotals, headers);
+			});
+
+            function fillTotals(items, rowTotals, colTotals) {
+                items.forEach(a => {
+                    var rowValue = rowTotals[a.leaId] || 0;
+                    rowTotals[a.leaId] = rowValue + a.total;
+                    var colValue = colTotals[a.programName] || 0;
+                    colTotals[a.programName] = colValue + a.total;
+
+                });
+            }
+
+			function drawHeader(headers) {
+			    var row = $("<tr />")
+			    row.addClass("w3-sand");
+			    $("#paymentsTable").append(row);
+
+			    for (i = 0; i < headers.length; i++) {
+			    	if(i == 0){
+			        	row.append($("<th class='th-header table-border' colspan='2'>" + headers[i] + "</th>"));
+			    	}else{
+			    		row.append($("<th class='th-header table-border' colspan='3'>" + headers[i] + "</th>"));
+			    	}
+			    }
+			}
+
+			function getTransposeItems(payments) {
+			    var programIds = [...new Set(payments.map(payment => payment.programName))];
+			    var reciepientIds = [...new Set(payments.map(payment => payment.subRecipientName))];
+			    var results = reciepientIds.reduce((results, subRecipientName) => {
+			        var programRows = programIds.reduce((rowDataArray, programName) => {
+			            var validPayments = payments.filter(payment => payment.programName === programName && payment.subRecipientName === subRecipientName);
+			            var rowDataForLEA = validPayments.reduce((rowData, currentPayment) => {
+			                var rowDataRaw = {};
+			             	rowDataRaw[currentPayment.leaId] = currentPayment.leaId;
+			                rowDataRaw[subRecipientName] = subRecipientName;
+			                var rowDataProcessed = programIds.reduce((rowDataTemp, currentProgramName) => {
+			                    for (n = 0; n < payments.length; n++) {
+			                        if (currentProgramName === payments[n].programName && payments[n].subRecipientName === subRecipientName) {
+			                            rowDataTemp[currentProgramName] = payments[n];
+			                            payments.splice(n, 1);
+			                            break;
+			                        }
+			                    }
+			                    return rowDataTemp;
+			                }, rowDataRaw);
+			                rowData.push(rowDataProcessed);
+			                return rowData;
+			            }, []);
+			            rowDataArray = rowDataArray.concat(rowDataForLEA);
+			            return rowDataArray;
+			        }, []);
+			        results = results.concat(programRows);
+			        return results;
+			    }, []);
+
+                results.forEach(result => {
+                    for(programId of programIds){
+                        if(result[programId] == null){
+                            //console.log("find");
+                            result[programId] = {};
+                        }
+                    }
+                });
+
+			    var subHeader = {};
+			    subHeader["rowHeader"] = "Phase Code"
+			    subHeader["rowHeader1"] = "SubRecipient Name";
+
+			    var subHeaderRes = programIds.reduce((res, currentProgramName) => {
+			        var paymentHeader = {};
+			        paymentHeader["paymentAmount"] = "Payment Amount";
+			        paymentHeader["catchUp"] = "Catch Up";
+			        paymentHeader["total"] = "Total";
+			        res[currentProgramName] = paymentHeader;
+			        return res;
+			    }, subHeader);
+
+			    results.splice(0, 0, subHeaderRes);
+			    return results;
+			}
+
+			function drawTable(data, rowTotals, colTotals, headers) {
+			    for (var i = 0; i < data.length; i++) {
+			        if (i === 0) {
+			            drawSubHeader(data[i]);
+			        } else {
+			            drawDollarRow(data[i], headers);
+			        }
+			    }
+			    drawFooterRow(data[data.length - 1], colTotals, headers);
+			}
+
+    		function drawFooterRow(rowData, colTotals, columns) {
+
+                var row = $("<tr />")
+                $("#paymentsTable").append(row);
+
+                //var keys = Object.keys(rowData);
+                 var keys = columns;
+                //console.log(keys);
+
+                var columnKeys = Object.keys(rowData);
+                keys[1] = columnKeys[1];
+                keys[0] = columnKeys[0];
+                debugger;
+                for (i = 0; i < keys.length; i++) {
+                    if (i < 2) {
+                        var temp = i === 1 && 'Totals' || '';
+                        row.append($("<td class='w3-sand td-total td-hight table-border'>" + temp + "</td>"));
+                    } else {
+                        let amount = colTotals[keys[i]];
+                        let formattedMoney = "$ " + parseFloat(amount).formatMoney(2, '.', ',');
+                        row.append($("<td class='table-border text'>&nbsp;</td>"));
+                        row.append($("<td class='table-border text'>&nbsp;</td>"));
+                        row.append($("<td class='table-border text'>&nbsp;" + formattedMoney + "</td>"));
+                    }
+                }
+            }
+
+			Number.prototype.formatMoney = function(c, d, t) {
+			    var n = this,
+			        c = isNaN(c = Math.abs(c)) ? 2 : c,
+			        d = d == undefined ? "." : d,
+			        t = t == undefined ? "," : t,
+			        s = n < 0 ? "-" : "",
+			        i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))),
+			        j = (j = i.length) > 3 ? j % 3 : 0;
+			    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+			};
+
+			function drawSubHeader(rowData) {
+			    var row = $("<tr />")
+			    $("#paymentsTable").append(row);
+			    var keys = Object.keys(rowData);
+			    for (i = 0; i < keys.length; i++) {
+			        if (i < 2) {
+			            row.append($("<td class='w3-sand td-total td-hight table-border'>" + rowData[keys[i]] + "</td>"));
+			        } else {
+			            let payment = rowData[keys[i]];
+			            row.append($("<td class='w3-sand td-total td-hight table-border'>" + payment.paymentAmount + "</td>"));
+			            row.append($("<td class='w3-sand td-total td-hight table-border'>" + payment.catchUp + "</td>"));
+			            row.append($("<td class='w3-sand td-total td-hight table-border'>" + payment.total + "</td>"));
+			        }
+			    }
+			}
+
+			function drawDollarRow(rowData, headers) {
+			    var row = $("<tr />")
+                var keys = headers;
+                //console.log(keys);
+
+                var columnKeys = Object.keys(rowData);
+                keys[1] = columnKeys[1];
+                keys[0] = columnKeys[0];
+			    $("#paymentsTable").append(row);
+			    //var keys = Object.keys(rowData);
+			    for (i = 0; i < keys.length; i++) {
+			        if (i < 2) {
+			            row.append($("<td class='w3-sand td-total td-hight table-border'>" + rowData[keys[i]] + "</td>"));
+			        } else {
+			            let payment = rowData[keys[i]];
+			            if(!payment.total){
+				            row.append($("<td class='table-border'>" + "</td>"));
+				            row.append($("<td class='table-border'>" + "</td>"));
+				            row.append($("<td class='table-border'>" + "</td>"));
+			            }else{
+				            row.append($("<td class='table-border'>" + '$' + parseFloat(payment.paymentAmount).formatMoney(2, '.', ',') + "</td>"));
+				            
+				            if(parseFloat(payment.catchUp) > 0){	
+				            	row.append($("<td class='table-border w3-text-red'>" + '$' + parseFloat(payment.catchUp).formatMoney(2,'.',',') + "</td>"));
+				            }else{
+				            	row.append($("<td class='table-border'>" + '$' + parseFloat(payment.catchUp).formatMoney(2,'.',',') + "</td>"));
+				            }
+
+				            if(parseFloat(payment.total) < 0){
+				            	row.append($("<td class='table-border w3-text-red'>" + '$' + parseFloat(payment.total).formatMoney(2, '.', ',') + "</td>"));
+				            }else{
+				            	row.append($("<td class='table-border'>" + '$' + parseFloat(payment.total).formatMoney(2, '.', ',') + "</td>"));	
+				            }
+				        }
+			        }
+			    }
+			}
+
+			$("#download").click(function (event) {
+			 	window.open('data:application/vnd.ms-excel,' + encodeURIComponent($("#dvData").html()));
+			});
+			/*
+            function getTransposeItems(payments) {
+            	var programIds = [...new Set(payments.map(payment => payment.programName))];
+            	var reciepientIds = [...new Set(payments.map(payment => payment.subRecipientName))];
+            	var results = [];
+            	//console.log(reciepientIds);
+            	for(i = 0; i < reciepientIds.length; i++){
+            		for(j = 0; j < programIds.length; j++){
+            			var award = payments.filter(payment => payment.programName === programIds[j] && payment.subRecipientName === reciepientIds[i]);
+            			//console.log(award);
+            			for(k = 0; k < award.length; k++){
+            				var obj = {};
+            				obj[reciepientIds[i]] = reciepientIds[i];
+            				for(m = 0; m < programIds.length; m++){
+            					for(n = 0; n < payments.length; n++){
+            						if(programIds[m] === payments[n].programName && payments[n].subRecipientName === reciepientIds[i]){
+            							obj[programIds[m]] = payments[n];
+            							payments.splice(n, 1);
+            							break;
+            						}
+            					}
+            				}
+            				results.push(obj);
+            			}
+            		}
+            	}
+            	console.log(results);
+            	var subHeader = {};
+            	subHeader["rowHeader"] = "SubRecipient Name";
+            	for(i = 0; i < programIds.length; i++){
+            		var paymentHeader = {};
+            		paymentHeader["paymentAmount"] = "Payment Amount";
+            		paymentHeader["catchUp"] = "Catch Up";
+            		subHeader["subheader" + i] = paymentHeader;
+            	}
+            	results.splice(0, 0, subHeader);
+            	console.log(results);
+            	return results;
+            }
+			*/
+		</script>
+	</apex:pageBlock>
+</apex:page>

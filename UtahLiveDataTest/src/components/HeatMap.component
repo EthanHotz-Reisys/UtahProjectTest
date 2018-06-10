@@ -1,0 +1,350 @@
+<apex:component access="global" controller="HeatMapCtrl">
+
+<script src="https://code.highcharts.com/maps/modules/map.js"></script>
+<script src="https://code.highcharts.com/maps/modules/data.js"></script>
+<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
+<script src="https://code.highcharts.com/mapdata/countries/us/us-mn-all.js"></script>
+<style>
+   
+    .hoverTable tr{
+        width:100%; 
+        border-collapse:collapse; 
+    }
+    .hoverTable td{ 
+        padding:3px; border:black 1px solid ;
+    }
+    .hoverTable th{ 
+        padding:3px; border:black 1px solid;
+    }
+    /* Define the default color for all the table rows */
+   .hoverTable tr{
+        background: #00000;
+    }
+    /* Define the hover highlight color for the table row */
+     .hoverTable tr:hover {
+          background-color: #BADA55;
+    }
+    .ui-dialog-titlebar {
+        background-color: #E5F3FF;
+        background-image: none;
+        color: #000;
+    }
+     a {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    #highMapContainer {
+        width: 97%; 
+        //max-width: 1200px; 
+        margin: 0px auto;
+        border-color: gray;
+        padding: 0px 0px;
+        
+    }
+    #highMapContainer .highcharts-background{
+        width: auto;
+    }
+    #highMapTable{
+        border-spacing: 0px !important;
+       
+    }
+</style>
+
+
+
+
+
+<div id="highMapContainer">
+    <div class="loading">
+        <i class="icon-spinner icon-spin icon-large"></i>
+        
+    </div>
+</div>
+
+<pre id="csv" style="display:none"> 
+
+</pre>
+
+<script>
+
+j$ = jQuery.noConflict();
+var result = '';
+
+    function opnRecord(recordId) {
+                    console.log('recordId123 ---'+recordId);
+                    window.open('/'+recordId, '_blank');
+    }
+
+
+var res = "TX, 6\n MN,3\n FL,2\n VA,3\n CA,3\n NY,1\n MI,2\n KS,4\n WY,3\n OH,5\n WA,3\n";
+j$("#csv").html(res);
+//j$("#csv").html("IN, 300");
+
+   j$(function () {
+
+
+
+
+    // Load the data from a Google Spreadsheet
+    // https://docs.google.com/a/highsoft.com/spreadsheet/pub?hl=en_GB&hl=en_GB&key=0AoIaUO7wH1HwdFJHaFI4eUJDYlVna3k5TlpuXzZubHc&output=html
+    Highcharts.data({
+
+        csv: document.getElementById('csv').innerHTML,
+
+        // custom handler when the spreadsheet is parsed
+        parsed: function (columns) {
+function opnRecord(recordId) {
+                    console.log('recordId ---'+recordId);
+                    window.open('/'+recordId, '_blank');
+    }
+
+            // Read the columns into the data array
+            var data = [];
+            j$.each(columns[0], function (i, code) {
+                data.push({
+                    code: code.toUpperCase(),
+                    value: parseFloat(columns[1][i])
+                    //name: columns[1][i]
+                });
+            });
+                
+                function createDynamicTable(result,code,value) {
+                    console.log('result: ', result);
+                    console.log('result1: ', result[1].Id);
+                    console.log('code: ', code);
+                    console.log('value: ', value);
+                    var table = document.createElement('table');
+                    table.setAttribute("id", "highMapTable");
+                    //j$('#myTable').css('border-spacing', '0px !important');
+                    //document.getElementById("myTable").style.borderSpacing = "0px";
+                    console.log('table: '+table);
+                    for (var i = 1; i <= (value + 1); i++){
+                        if(i == 1) {
+                            var tr = document.createElement('tr');
+                            var th1 = document.createElement('th');
+                            var th2 = document.createElement('th');
+                            var th5 = document.createElement('th');
+                            var th3 = document.createElement('th');
+                            var th4 = document.createElement('th');
+                         
+                            var text1 = document.createTextNode('Action');
+                            var text2 = document.createTextNode('Id');
+                            var text5 = document.createTextNode('Funding Opportunity');
+                            var text3 = document.createTextNode('Name');
+                            var text4 = document.createTextNode('Applicant Organization');
+                           
+                            th1.appendChild(text1);
+                            th2.appendChild(text2);
+                            th5.appendChild(text5);
+                            th3.appendChild(text3);
+                            th4.appendChild(text4);
+                          
+                            tr.appendChild(th1);
+                            tr.appendChild(th2);
+                            tr.appendChild(th5);
+                            tr.appendChild(th3);
+                            tr.appendChild(th4);
+                            
+                        }else {
+                            var tr = document.createElement('tr');   
+                            var td1 = document.createElement('td');
+                            var td2 = document.createElement('td');
+                            var td5 = document.createElement('td');
+                            var td3 = document.createElement('td');
+                            var td4 = document.createElement('td');
+                           
+                            var a1 = document.createElement('a');
+                            a1.setAttribute('onclick','opnRecord('+'\''+result[i-2].Id+'\''+');');
+
+                            var text1 = document.createTextNode('View');
+                            console.log('data: '+result[i-2]);
+                            var text3 = document.createTextNode(result[i-2].Title__c);
+                            var text5 = document.createTextNode(result[i-2].Announcement__r.Name);
+                            var text2 = document.createTextNode(result[i-2].Name);
+                            var text4 = document.createTextNode(result[i-2].ExternalOrganization__r.Name);
+                           
+                                                       
+                            a1.appendChild(text1);
+                            td1.appendChild(a1);
+                            td2.appendChild(text2);
+                            td5.appendChild(text5);
+                            td3.appendChild(text3);
+                            td4.appendChild(text4);
+                          
+                            tr.appendChild(td1);
+                            tr.appendChild(td2);
+                            tr.appendChild(td5);
+                            tr.appendChild(td3);
+                            tr.appendChild(td4);
+                          
+                        }
+                        
+
+                        table.appendChild(tr);
+                    }
+                    document.getElementById("appModal").appendChild(table);
+                }
+
+                
+
+                function processApps(code,value) {
+                    Visualforce.remoting.Manager.invokeAction(
+          '{!$RemoteAction.HeatMapCtrl.processApplications}',
+          code,value,
+            function(result, event) {
+              if(event.type === 'exception') {
+                console.log("exception");
+                console.log(event);
+              } else if (event.status) {
+                console.log('code999: '+result);
+                createDynamicTable(result,code,value);
+                if(result == 'Success') {
+                } else {
+                }
+              } else {
+                console.log(event.message);
+              }
+            }
+        );
+                }
+               function pointClick() {
+               // var row = this.options.row,
+               console.log(this.value);
+               processApps(this.code,this.value);
+               var states = ['Texas','Virginia','New York','Florida','Michigan','Wyoming','Washington','California','Kansas','Minnesota','Ohio'];
+               var myMap = new Map();
+               myMap.set("TX","Texas");
+               myMap.set("VA","Virginia");
+               myMap.set("NY","New York");
+               myMap.set("FL","Florida");
+               myMap.set("MI","Michigan");
+               myMap.set("WY","Wyoming");
+               myMap.set("WA","Washington");
+               myMap.set("CA","California");
+               myMap.set("KS","Kansas");
+               myMap.set("MN","Minnesotta");
+               myMap.set("OH","Ohio");
+                   j$div = j$('<div class=\"hoverTable\" id = \"appModal\"> </div>')
+                        .dialog({
+                            title: 'Applications from '+myMap.get(this.code),
+                            width: 600,
+                            height: 400,
+                             buttons: {
+                "Close": function() {
+                    j$(this).dialog('destroy').remove();
+                }
+            }
+                        });
+                        j$(".ui-dialog-titlebar-close").attr("style","display:none");
+               
+            }
+                
+
+
+            // Initiate the chart
+           j$('#highMapContainer').highcharts('Map', {
+                chart : {
+                    borderWidth : 1.5,
+                    borderColor: '#B8B8B8'
+                },
+               
+
+                colors: ['rgba(255,140,0,0.05)', 'rgba(255,140,0,0.2)', 'rgba(255,140,0,0.4)',
+                    'rgba(255,140,0,0.5)', 'rgba(255,140,0,0.6)', 'rgba(255,140,0,0.8)', 'rgba(255,140,0,1)'],
+
+               title : {
+                   //text : 'Applications By States',
+                    text : null,
+                    
+                    fontWeight: 'bold'
+                }, 
+
+                mapNavigation: {
+                    enabled: false
+                },
+
+                legend: {
+                    title: {
+                        text: 'Applications Per State',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+                        }
+                    },
+                    align: 'left',
+                    verticalAlign: 'bottom',
+                    floating: true,
+                    layout: 'vertical',
+                    valueDecimals: 0,
+                    backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || 'rgba(255, 255, 255, 0.85)',
+                    symbolRadius: 0,
+                    symbolHeight: 14
+                },
+
+                colorAxis: {
+                    dataClasses: [{
+                        to: 1
+                    }, {
+                        from: 1,
+                        to: 2
+                    }, {
+                        from: 2,
+                        to: 3
+                    }, {
+                        from: 3,
+                        to: 4
+                    }, {
+                        from: 4,
+                        to: 5
+                    }, {
+                        from: 5,
+                        to: 6
+                    }, {
+                        from: 6
+                    }]
+                },
+
+                series : [{
+                    data : data,
+                    mapData: Highcharts.maps["countries/us/us-all"],
+                    joinBy: ['hc-a2', 'code'],
+                    animation: true,
+                    name: '',
+                    dataLabels: {
+                    enabled: true,
+                    format: '{point.code}'
+            },
+            
+                    states: {
+                        hover: {
+                            color: '#BADA55'
+
+                        }
+                    },
+                    point : {
+                         events: {
+                                click: pointClick
+                            }
+                        },
+                    tooltip: {
+                        valueSuffix: ' applications'
+                    }
+                }]
+            });
+        },
+        error: function () {
+            j$('#container').html('<div class="loading">' +
+                '<i class="icon-frown icon-large"></i> ' +
+                'Error loading data from Google Spreadsheets' +
+                '</div>');
+        }
+
+    });
+    j$("#highMapContainer text[x='1000']").attr("style","display:none");
+   // j$("#highMapContainer text[x='1161']").attr("style","display:none");
+    j$("#highMapContainer text[text-anchor='end']").attr("style","display:none");
+});
+</script>
+
+
+</apex:component>

@@ -1,0 +1,36 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p><br></p>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<font face="Times New Roman,Times,Serif" size="3">Hello {!Award__c.CreatedBy}<span style="color: rgb(0, 0, 0); font-size: 13px; font-style: normal; font-weight: normal; text-decoration: none;"><strong></strong>,</span></font><div><font face="Times New Roman,Times,Serif" size="3"><span style="color: rgb(0, 0, 0); font-style: normal; font-weight: normal; text-decoration: none;"><br></span></font></div><div><font face="Times New Roman,Times,Serif" size="3"><span style="color: rgb(0, 0, 0); font-style: normal; font-weight: normal; text-decoration: none;">This email is to notify that the Award -&nbsp;{!Award__c.Name} has been Rejected</span><span style="color: rgb(0, 0, 0); font-style: normal; font-weight: bold; text-decoration: none;">.
+</span></font></div><div><font face="Times New Roman,Times,Serif" size="3"><u><span style="color: rgb(0, 0, 0); font-style: normal; font-weight: bold; text-decoration: none;"><br></span></u></font></div><div><font face="Times New Roman,Times,Serif" size="3"><u><span style="color: rgb(0, 0, 0); font-style: normal; font-weight: bold; text-decoration: none;">Award Detai</span><span style="color: rgb(0, 0, 0); font-style: normal; font-weight: normal; text-decoration: none;">ls:</span></u></font></div><!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:RelyOnVML/>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]--><font face="Times New Roman,Times,Serif" size="3">
+
+</font><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font face="Times New Roman,Times,Serif" size="3">Award Title:
+{!Award__c.GrantAwardName__c}</font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font face="Times New Roman,Times,Serif" size="3">Award
+Type:&nbsp;{!Award__c.AwardType__c}</font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font face="Times New Roman,Times,Serif" size="3">Sub Award Number:&nbsp;{!Award__c.Name}</font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font face="Times New Roman,Times,Serif" size="3">Grant :&nbsp;{!Award__c.Grant__c}</font></p><font face="Times New Roman,Times,Serif" size="3">
+
+<span style="font-size: 12pt; line-height: 107%;">More Details: {!Award__c.Link}</span><span style="color: rgb(0, 0, 0); font-style: normal; font-weight: normal; text-decoration: none;"></span><br><span style="color: rgb(0, 0, 0); font-style: normal; font-weight: normal; text-decoration: none;"></span></font><div><font face="Times New Roman,Times,Serif" size="3"><span style="color: rgb(0, 0, 0); font-style: normal; font-weight: normal; text-decoration: none;"><br></span></font></div><div><font face="Times New Roman,Times,Serif" size="3"><span style="color: rgb(0, 0, 0); font-style: normal; font-weight: normal; text-decoration: none;">Please do not reply to this email.&nbsp;You may contact the&nbsp;GovGrants support&nbsp;</span><span style="color: rgb(0, 102, 204); font-style: normal; font-weight: normal; text-decoration: underline;">&nbsp;govgrant@support.</span><span style="color: rgb(0, 0, 0); font-style: normal; font-weight: normal; text-decoration: none;">com&nbsp;if you have any questions or need assistance.
+</span></font></div><div><font face="Times New Roman,Times,Serif" size="3"><span style="color: rgb(0, 0, 0); font-style: normal; font-weight: normal; text-decoration: none;"><br></span></font></div><div><font face="Times New Roman,Times,Serif" size="3"><span style="color: rgb(0, 0, 0); font-style: normal; font-weight: normal; text-decoration: none;">Sincerely,
+</span></font></div><div><font face="Times New Roman,Times,Serif" size="3"><span style="color: rgb(0, 0, 0); font-style: normal; font-weight: normal; text-decoration: none;">EGMS Team</span></font></div>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

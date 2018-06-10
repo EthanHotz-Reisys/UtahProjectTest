@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Notification email to program officer that contains information about external reviewer who has registered into the system</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Program Officer Notification</name>
+    <style>formalLetter</style>
+    <subject>External Reviewer Profile has been Registered Successfully</subject>
+    <textOnly>The External Reviewer {!UserRegistration__c.FirstName__c} {!UserRegistration__c.LastName__c} has successfully registered in the Grants Office Enterprise Grants Management System(EGMS).
+
+Please click here to view the registered user&apos;s profile.
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

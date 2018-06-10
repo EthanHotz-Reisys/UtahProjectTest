@@ -1,0 +1,12 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" standardController="ReviewPanel__c" extensions="ReviewPanelViewCtrl">
+<!-- Including JS and CSS Resources -->
+    <c:ExternalLibrary />
+
+  <apex:composition template="GNT__PageTemplate">
+        
+        <apex:define name="content">
+        
+              <GNT:FlexViewLayout rendered="{!recordType != null}"  hideCancelBtn="true"  templateName="{!templateName}" recordId="{!recordId}" layoutType="View" flexTableParameters="{!keyValueMap}"/>  
+       </apex:define> 
+    </apex:composition>  
+</apex:page>

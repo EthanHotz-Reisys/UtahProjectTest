@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p><br></p>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<font face="Times New Roman,Times,Serif" size="3">Hello,<br></font><div style="font-size: 12pt;"><font face="Times New Roman,Times,Serif" size="3"><br></font></div><font face="Times New Roman,Times,Serif" size="3">This email is to Notify you that, the External Reviewer {!UserRegistration__c.FirstName__c} {!UserRegistration__c.LastName__c} has successfully registered in the&nbsp;<span style="background-color: rgb(255, 255, 255);">Grants Office&nbsp;Enterprise Grants Management System(EGMS).</span>&nbsp;</font><div><font face="Times New Roman,Times,Serif" size="3"><br></font></div><div><font face="Times New Roman,Times,Serif" size="3">Please click <a href="http://na17.salesforce.com/{!01If40000004fzZ.00Nf4000000MVv3.Id}">here</a> to view the registered user's profile.</font></div><div><font face="Times New Roman,Times,Serif" size="3"><br></font></div><font face="Times New Roman,Times,Serif" size="3"><span style="color: rgb(0, 0, 0); font-style: normal; font-weight: normal; text-decoration: none;"><p>Please do not reply to this email. You may contact the GovGrants Support Team at <a href="mailto:govgrants@support.com"><u><font color="#0000ff">govgrants@support.com</font></u></a> if you have any questions or need assistance with this task.</p></span></font><p class="MsoNormal" style="color: rgb(0, 0, 0); margin-bottom: 0pt;"><font face="Times New Roman,Times,Serif" size="3"><br></font></p><p class="MsoNormal" style="color: rgb(0, 0, 0); margin-bottom: 0pt;"><font face="Times New Roman,Times,Serif" size="3">Sincerely,</font><font face="Times New Roman,Times,Serif" size="3"><br></font></p><p class="MsoNormal" style="color: rgb(0, 0, 0); margin-bottom: 0pt; background-color: white;"><font face="Times New Roman,Times,Serif" size="3">EGMS Team</font></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

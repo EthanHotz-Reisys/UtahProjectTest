@@ -1,0 +1,8 @@
+<apex:page standardController="Event" >
+<apex:form >
+  <apex:inputfield value="{!Event.IsRecurrence}"/><br/>
+  <apex:commandButton value="Try" action="/servlet/servlet.OutlookEvent?rnd=1234567890123&id=00Uf4000000zJqr"/>
+
+
+  </apex:form>
+</apex:page>

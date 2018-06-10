@@ -1,0 +1,10 @@
+<!--
+ Landing Page for Reviewer
+ **********************************************************
+ Audit History
+ **********************************************************
+ 10/8/2014   Nakul Kadam Created
+ **********************************************************  
+-->
+<apex:page sidebar="false" standardStylesheets="false" showHeader="false" controller="ReviewerLoginCtrl" action="{!forwardToStartPage}" >
+</apex:page>

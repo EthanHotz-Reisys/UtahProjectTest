@@ -1,0 +1,66 @@
+<apex:page extensions="EventHandlerCtrl" standardStylesheets="false" showHeader="false" sidebar="false" standardController="Event" action="{!updateStatus}">
+    <!--RequirmentAJ: need to use remote action function-->
+    <c:ExternalLibrary />  
+    <style>
+    #InvitedUser div#flexTableDivId .col-md-12 .panel .col-xs-6 {
+        width: auto;
+    }
+    
+    #InvitedUser div#flexTableDivId .col-md-12 .col-xs-6.header-title a span:nth-child(2) {
+        max-width: 100px !important;
+    }
+    
+    #InvitedUser div#flexTableDivId .col-md-12 .panel .col-md-3 {
+        width: 200px;
+        margin-bottom: 15px;
+    }
+    </style>
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">    
+            <GNT:ModalFlexViewLayout templateName="{!templateName}" recordId="{!recordId}"  layoutType="View" flexTableParameters="{!keyValueMap}"  HideSidebar="true" 
+                  createDefaultValues="" saveURL="{!savePage}" cancelURL="" hideCancelBtn="true"/>   
+            <apex:form >
+            <apex:actionFunction name="sendNotification" action="{!sendNotification}" onComplete="alert('Notification has been sent successfully');hideLoadingPopUp();"/>                              
+            <apex:actionFunction name="setValue()" action="{!setValue}"/>                              
+         </apex:form>
+        </apex:define>
+    </apex:composition>
+    <script type="text/javascript">
+        jQuery.noConflict();
+        jQuery(document).ready(function() {
+            var IsUpdated = "{!IsUpdated}";
+            var updateNotification = "{!updateNotification}";
+             if((updateNotification == 'true') && (IsUpdated == 'true')){
+               updateNotificationBootBox();  
+            }else if((updateNotification == 'false') && (IsUpdated == 'true')){
+                //setValue();
+                //alert('Event has been updated successfully');
+            }
+        });
+        
+        function updateNotificationBootBox(){
+            bootbox.confirm({
+                 message: 'Do you want to send updated event to all invitees?',
+                 title:"Confirm",
+                 animate: true,
+                 buttons: {
+                    'cancel': {
+                        label: 'Cancel',
+                        className: "customBtn btn-ext",
+                    },
+                    'confirm': {
+                        label: 'Ok',
+                        className: "customBtn btn-ext",
+                    }
+                },
+                callback: function(result) {
+                            if (result) {
+                                showLoadingPopUp();
+                                sendNotification();
+                            }
+                }
+            });
+        }
+        
+     </script>  
+ </apex:page>

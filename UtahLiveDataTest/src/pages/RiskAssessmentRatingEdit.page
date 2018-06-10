@@ -1,0 +1,14 @@
+<apex:page standardController="RiskAssessment__c" extensions="RiskAssessmentRatingEditCtrl" 
+        sidebar="false" standardStylesheets="false" showHeader="false">
+    
+
+    <c:ExternalLibrary />
+    
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">
+            <GNT:FlexEditLayout templateName="Risk Assessment Rating" recordId="{!recordId}" layoutType="Edit" flexTableParameters="{!keyValueMap}" createDefaultValues="{!listDefaultValues}"   saveURL="{!savePage}"/>
+        </apex:define>
+    </apex:composition>
+    
+    
+</apex:page>

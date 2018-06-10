@@ -1,0 +1,25 @@
+<apex:page sidebar="false" standardStylesheets="false" showHeader="true" >
+
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+    <!--GNT:PageMessages /--> 
+
+            <apex:form >
+            <div class="bs container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" style="height: 50px;">
+                                <div class="col-xs-12"><b>Upload Photo</b></div>
+                            </div>
+                            <div class="panel-body panel-body-ext"> 
+                                Click on the image below to upload new Profile photo <br/>
+                                <chatter:userPhotoUpload showOriginalPhoto="true"></chatter:userPhotoUpload>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </apex:form>
+
+</apex:page>

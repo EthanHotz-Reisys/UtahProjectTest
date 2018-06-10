@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>[Business] This object is used for Budget Information forms.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Activity1__c</fullName>
+        <externalId>false</externalId>
+        <label>Activity1</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Activity2__c</fullName>
+        <externalId>false</externalId>
+        <label>Activity2</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Activity3__c</fullName>
+        <externalId>false</externalId>
+        <label>Activity3</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Amount1__c</fullName>
+        <externalId>false</externalId>
+        <label>Costs Not Allowable for Participation</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Applicant__c</fullName>
+        <externalId>false</externalId>
+        <label>Applicant</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Application__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Application</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipName>Application</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CategoryName__c</fullName>
+        <externalId>false</externalId>
+        <label>Category Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Currency1__c</fullName>
+        <description>This field is used in Budget Information for Construction form as Currency 1 , Budget Information for Non Construction form as : Currency 1 in Budget Summary section , Currency 1 in Budget Categories, Currency 1 in Non Federal Resources, Currency 1 in Forecasted Cash Needs, Currency 1 in Budget Estimates.</description>
+        <externalId>false</externalId>
+        <label>Currency1</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Currency2__c</fullName>
+        <description>This field is used in Budget Information for Construction form as Currency 2 , Budget Information for Non Construction form as : Currency 2 in Budget Summary section , Currency 2 in Budget Categories, Currency 2 in Non Federal Resources, Currency 2 in Forecasted Cash Needs, Currency 2 in Budget Estimates.</description>
+        <externalId>false</externalId>
+        <label>Currency2</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Currency3__c</fullName>
+        <description>This field is used in Budget Information for Non Construction form as : Currency 3 in Budget Summary section , Currency 3 in Budget Categories, Currency 3 in Non Federal Resources, Currency 3 in Forecasted Cash Needs, Currency 3 in Budget Estimates.</description>
+        <externalId>false</externalId>
+        <label>Currency 3</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Currency4__c</fullName>
+        <description>This field is used in Budget Information for Non Construction form as : Currency 4 in Budget Summary section , Currency 4 in Budget Categories,Currency 4 in Forecasted Cash Needs, Currency 4 in Budget Estimates.</description>
+        <externalId>false</externalId>
+        <label>Currency 4</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>This field is used in Budget Information for Construction form as Description, Budget Information for Non Construction form as Description under Forecasted Cash Needs.</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Administrative and legal expenses</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Land, structures, rights-of-way, appraisals, etc</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FDANumber__c</fullName>
+        <description>This field is used in Budget Information for Non Construction form as FDA Number in Budget Summary Section.</description>
+        <externalId>false</externalId>
+        <label>FDA Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FederalAssistanceRequested__c</fullName>
+        <externalId>false</externalId>
+        <label>Federal Assistance Requested</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Form__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Form</label>
+        <referenceTo>Form__c</referenceTo>
+        <relationshipName>Budget_Information</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>GrantProgramFunctionOrActivity__c</fullName>
+        <description>This field is used in Budget Information for Non Construction form as : Grant Program Function or Activity in Budget Summary section , Currency 1 in Non Federal Resources, Grant Program Function or Activity in Non Federal Resources, Grant Program Function or Activity in Budget Estimates.</description>
+        <externalId>false</externalId>
+        <label>Grant Program Function or Activity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>false</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ObjectClassCategories__c</fullName>
+        <description>This field is used in Budget Information for Non Construction Programs as Object Class Categories in Budget Categories Section.</description>
+        <externalId>false</externalId>
+        <label>Object Class Categories</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>a. Personnel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>b. Fringe Benefits</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>c. Travel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>d. Equipment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>e. Supplies</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>f. Contractual</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>g. Construction</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>h. Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>j. Indirect Charges</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>RowNumber1__c</fullName>
+        <description>This field is used in Budget Information for Construction form, Budget Information for Non Construction form</description>
+        <externalId>false</externalId>
+        <label>Row Number</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TotalAllowableCosts__c</fullName>
+        <externalId>false</externalId>
+        <formula>Amount__c -  Amount1__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Allowable Costs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total__c</fullName>
+        <externalId>false</externalId>
+        <formula>Currency1__c + Currency2__c +  Currency3__c + Currency4__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>Application Overflow Budget Information</label>
+    <nameField>
+        <displayFormat>BI-{00000}</displayFormat>
+        <label>Budget Information</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Application Overflow Budget Information</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

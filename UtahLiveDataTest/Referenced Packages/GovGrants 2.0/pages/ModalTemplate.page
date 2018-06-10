@@ -1,0 +1,84 @@
+<apex:page language="en" controller="GNT.MainPageCtrl"  sidebar="false" docType="html-5.0"  id="ModalTemplateId" showHeader="false" standardStylesheets="false">
+
+    <noscript>
+        <p class="noscript">
+            For full functionality of this site it is necessary to enable JavaScript.
+            Here are the <a href="http://www.enable-javascript.com/" target="_blank">
+            instructions</a> on how to enable JavaScript in your web browser.
+        </p>
+    </noscript> 
+    <script>
+        // This variable will store current open modal unique Id. This is needed for flickering issue.
+        var currentModalUniqueId = Math.random();
+        var modalUniqueId =  Math.random();           
+        var totalMethodCount = 40;
+        
+        var modalHandler = function(index){
+        console.log('index',index);
+            if(index < totalMethodCount) {
+                window.parent.resizeModalWithHeightOverride(j$('#modaltemp').height(), modalUniqueId);
+                setTimeout(function(){modalHandler(index+1);}, 500);
+            }
+        }
+    </script> 
+     
+    <apex:stylesheet value="{!themeDocURL}" />
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__GovGrants, '/Component/CSS/ModalTemplate.css')}" />
+    <div id="modaltemp">
+        <div id="LoadingPopUpDivModal">
+            <div class="popupBackground" style="-webkit-background-size: cover;">
+            </div> 
+            <div class="PopupPanel">
+                <table border="0" width="80%" height="80%">
+                    <tr>
+                      <td align="center"><b>Please Wait...</b></td>
+                    </tr>
+                    <tr>
+                      <td align="center"><b><div id="LoadingPopUpDivModalMessage"></div></b></td>
+                    </tr>
+                    <tr>  
+                      <td align="center"><img src="/img/loading.gif" alt="Loading gif"/></td>
+                    </tr>
+                </table>
+            </div>
+        </div>            
+        <div id="ModalDivID" class="sidebar" onkeyup="closeModal()">
+            <apex:insert name="ModalContent"></apex:insert> 
+        </div>
+    </div>
+    <script>
+        
+        j$(document).ready(function() {
+            console.log( "ready!" );
+            window.parent.currentModalUniqueId = modalUniqueId;
+            setTimeout(function(){if(modalHandler(1) != undefined){modalHandler(1);}},500);
+        });
+        
+        
+        var modalTemplate_hideSidebar = {!hideSidebar};
+        var modalTemplate_expandTextCharSize = '{!expandTextCharSize}';
+        
+        _RemotingModalTemplateActions = {};
+        _RemotingModalTemplateActions.hideUserSideBarPreference = '{!$RemoteAction.MainPageCtrl.hideUserSideBarPreference}'; 
+        _RemotingModalTemplateActions.showUserSideBarPreference = '{!$RemoteAction.MainPageCtrl.showUserSideBarPreference}';
+        
+         function resizeModalWithHeight(h){
+            resizeModalWithHeightOverride(h, currentModalUniqueId );
+        }
+        
+        function resizeModalWithHeightOverride(h, modalId){
+            console.log(modalId + ':modalId:' + currentModalUniqueId);
+            if(modalId == currentModalUniqueId) {
+                console.log('height====tabId=',h);
+                var windowheight = j$(window).height();
+                windowheight = windowheight * 0.75;
+                if(h>windowheight){
+                    h=windowheight;
+                }
+                j$('.modal-iframe').height(h+20 + 'px');
+            }
+        }
+        
+    </script>    
+    <script src="{!URLFOR($Resource.GovGrants)}/Component/JS/ModalTemplate.js"></script>     
+</apex:page>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email notifying owner that their application has been rejected</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Application Rejection notification to owner</name>
+    <style>freeForm</style>
+    <subject>Notification: Application #{!Application__c.Name} has been Rejectected.</subject>
+    <textOnly>Subject: Notification to review Decision Document for {!ReviewStepTemplate__c.StepNumber__c}
+
+
+
+The Decision Document associated with the following RFA has been approved by the Senior Deputy Director (SDD) and is now pending OGM certification and approval.
+
+
+
+Below are the details:
+
+RFA Number: {!ReviewStepTemplate__c.Announcement__c}
+
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

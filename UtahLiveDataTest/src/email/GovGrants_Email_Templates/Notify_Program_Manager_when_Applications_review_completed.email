@@ -1,0 +1,33 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<br>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<div><font face="Times New Roman,Times,Serif"><p style="margin: 0cm 0cm 12pt;">Hello {!Announcement__c.OwnerFullName},<o:p></o:p></p><p style="margin: 0cm 0cm 12pt;">This email is to notify you that, the Decision
+Document for the following opportunity is approved by Office of Director.<o:p></o:p></p><p style="margin: 0cm 0cm 0.0001pt;"><b>Funding
+Opportunity Number</b>: {!Announcement__c.Name}<o:p></o:p></p><p style="margin: 0cm 0cm 12pt;"><b>Funding Opportunity Title</b>: {!Announcement__c.AnnouncementName__c}<o:p></o:p></p><p style="margin: 0cm 0cm 12pt;">Kindly login to EGMS and start the task of type
+"Notify Applicants" which is available in Application Pending Tasks.<o:p></o:p></p><p style="margin: 0cm 0cm 12pt;">Please do not reply to this email. You may
+contact the GovGrants Support Team at&nbsp;<a href="mailto:govgrants@support.com"><span style="color: black; text-decoration-line: none;">govgrants@support.com</span></a>&nbsp;if you have any questions or need assistance with this
+task.<o:p></o:p></p><p style="margin: 0cm 0cm 0.0001pt;">Sincerely<o:p></o:p></p><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="line-height: 107%;">EGMS Team</span></p></font></div>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[<br>]]></td>
+</tr>
+</table>

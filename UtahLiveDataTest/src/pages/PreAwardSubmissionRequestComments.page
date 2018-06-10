@@ -1,0 +1,17 @@
+<apex:page standardController="ChangeRequest__c" extensions="PreAwardSubmissionRequestCommentsCtrl"  showHeader="false" standardStylesheets="false" sidebar="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+     
+               <apex:composition template="GNT__ModalTemplate">
+                <apex:define name="ModalContent">
+  
+  <!--   <GNT:FlexEditLayout HideSidebar="true" templateName="PreAwardSubmissionRequestComments" recordId="{!recordId}" layoutType="Edit" flexTableParameters="{!keyValueMap}"
+               saveURL="{!savePage}" cancelURL="{!cancelPage}"/>   -->
+               
+               <GNT:ModalFlexEditLayout HideSidebar="true" templateName="PreAwardSubmissionRequestComments" recordId="{!recordId}" layoutType="Edit" flexTableParameters="{!keyValueMap}"
+               saveURL="{!savePage}" cancelURL="{!cancelPage}"/>
+                </apex:define>
+                </apex:composition>
+
+</apex:page>

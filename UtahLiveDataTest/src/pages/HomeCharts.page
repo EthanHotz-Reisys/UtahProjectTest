@@ -1,0 +1,24 @@
+<apex:page id="chartPageId" standardStylesheets="false" showHeader="false" controller="HomeChartsCtrl" readonly="true">
+   
+    <div id="chart" class="row">
+        <div ng-controller="ChartCtrl" class="col-md-12">
+     <!--       <div class="panel-heading panel-heading-header">
+                <div class="panel-title"><h2>Applications received from states</h2></div>            
+            </div>
+            <div class="panel-body"  >
+                <apex:dynamicComponent componentValue="{!chartPanel}"></apex:dynamicComponent>
+            </div>     -->  
+            <apex:dynamicComponent componentValue="{!chartPanel}"></apex:dynamicComponent>
+        </div> 
+    </div> 
+    <script>
+        var row;   
+        var chartApp = angular.module('chart', []); 
+        chartApp.controller('ChartCtrl', function ($q,$scope) {
+          $scope.row= {!row};
+        });
+        angular.element(document).ready(function() {            
+            angular.bootstrap(document.getElementById("chart"),['chart']); 
+        });
+    </script>
+</apex:page>

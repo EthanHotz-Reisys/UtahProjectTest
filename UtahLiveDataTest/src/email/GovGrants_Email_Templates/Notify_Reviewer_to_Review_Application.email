@@ -1,0 +1,38 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<br>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">Hello&nbsp;{!Review__c.OwnerFullName},</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">This email is to notify you that, the
+Application {!Review__c.ApplicationID__c} is assigned to you for&nbsp; review. </span></font><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">The deadline to complete review is
+{!Review__c.ReviewDueDate__c}</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">Kindly login to the EGMS and click <a href="{!Review__c.ReviewURL__c}">here</a> to start
+with the assigned review application task.<br></span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">Please do not reply to this email.&nbsp;You may
+contact the GovGrants Support Team at&nbsp;<a href="mailto:govgrants@support.com"><span style="color:black;text-decoration:
+none;text-underline:none">govgra</span></a><a href="mailto:govgrants@support.com"><span style="color:black;text-decoration:
+none;text-underline:none">nts@support.com</span></a> if you have any questions
+or need assistance with this task. </span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">Sincerely,
+</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+<span style="font-size: 11pt; line-height: 107%; color: black;">EGMS Team</span><br></font>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

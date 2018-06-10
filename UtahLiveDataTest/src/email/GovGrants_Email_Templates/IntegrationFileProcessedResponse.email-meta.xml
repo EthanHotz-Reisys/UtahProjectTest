@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>IN USE Notify after received  file is processed</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Integration: File Processed Response</name>
+    <style>formalLetter</style>
+    <subject>Status of file {!IntegrationHeader__c.Filename__c} submitted on {!IntegrationHeader__c.CreatedDate}</subject>
+    <textOnly>Dear Integration User,
+
+Your file {!IntegrationHeader__c.Filename__c} submitted on {!IntegrationHeader__c.CreatedDate} is processed. Below is the status.
+
+Status: {!IntegrationHeader__c.Status__c}
+Total Records: {!IntegrationHeader__c.TotalChildRecords__c}
+Processed Records: {!IntegrationHeader__c.TotalCompetedChildRecords__c}
+Failed Records: {!IntegrationHeader__c.TotalFailedChildRecords__c}
+
+Please click on the link below to view the details of the status: {!IntegrationHeader__c.Link}
+
+Thank You</textOnly>
+    <type>html</type>
+</EmailTemplate>

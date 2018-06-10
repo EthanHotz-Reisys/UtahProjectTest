@@ -1,0 +1,2 @@
+<apex:page sidebar="false" standardStylesheets="false" showHeader="false" controller="InternalLoginRedirectCtrl" action="{!forwardToPage}">
+</apex:page>

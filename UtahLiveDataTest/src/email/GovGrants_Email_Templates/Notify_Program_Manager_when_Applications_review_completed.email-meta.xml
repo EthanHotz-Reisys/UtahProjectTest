@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Notify Program Manager when Applications review completed</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Notify Program Manager when Applications review completed</name>
+    <style>freeForm</style>
+    <subject>Funding Opportunity {!Announcement__c.Name}: Applications Review has been Completed</subject>
+    <textOnly>Hello {!Contact.FirstName},
+
+
+Your Case with Case Number {!Case.Case_Number__c} is now closed. Below are the Resolution Comments.
+{!Case.Detailed_Comments__c}
+
+--------------- Original Message ---------------
+Case Description : {!Case.Description}
+{!Case.Thread_Id}
+
+
+
+
+
+
+
+
+Sincerely,
+
+GovGrants Support,
+Phone  Number : (703)-480-7600
+Email:GovGrantsSupport@reisystems.com</textOnly>
+    <type>html</type>
+</EmailTemplate>

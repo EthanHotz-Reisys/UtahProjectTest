@@ -1,0 +1,21 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" standardController="ReviewStepTemplate__c" extensions="ReviewStepTemplateViewCtrl">
+<!-- Including JS and CSS Resources -->
+    <c:ExternalLibrary />
+  <!-- <apex:composition template="GNT__PageTemplate">
+        Dynamic Layout 
+        <apex:define name="content">-->
+         <!--<div id="modalDiv" class="bs container-fluid" style="clear:both; width:100%;height:100%; min-height : 500px !important;max-height:800 px!important;overflow:auto;">-->
+          <!--  <GNT:DynamicLayout rendered="{!recordType != null && recordType == 'pre-application'}" templateName="ReviewStepTemplate" recordId="{!recordId}" layoutType="View" flexTableParameters="{!keyValueMap}" />-->
+          <!--   <GNT:FlexViewLayout rendered="{!recordType != null && recordType == 'application'}" templateName="{!pageTemplateName}"  recordId="{!recordId}" HideSidebar="true" HideCancelBtn="true"  layoutType="View" flexTableParameters="{!keyValueMap}" />  -->
+           <apex:composition template="GNT__ModalTemplate">
+            <apex:define name="ModalContent">
+
+           <GNT:ModalFlexViewLayout rendered="{!recordType != null && recordType == 'application'}" templateName="{!pageTemplateName}"  recordId="{!recordId}" HideSidebar="true" HideCancelBtn="true"  layoutType="View" flexTableParameters="{!keyValueMap}" />
+            </apex:define>
+            </apex:composition>
+
+            <!--</div>-->
+        <!-- </apex:define>
+    </apex:composition>
+    -->
+</apex:page>

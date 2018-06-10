@@ -1,0 +1,46 @@
+<apex:page cache="false" standardController="Deliverable__c" extensions="DeliverableEditCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+    <style>
+        #PageTemplateApp{
+            min-height : 0px !important; 
+        }
+    </style>  
+    <!-- Including JS and CSS resources --> <!-- bodyDiv padding-left:30px; float:left;  -->
+<!--<GNT:ExternalLibrary />
+    <c:ExternalLibrary /> 
+          <div  class="bs container-fluid" style="clear:both; width:100%;height:100%;">
+      <!--      <GNT:FlexViewLayout templateName="{!pageTemplateName}" layoutType="View" recordId="{!recordId}" deleteURL="{!deleteURL}"  HideSidebar="true" 
+            flexTableParameters="{!keyValueMap}"/>   -->
+            
+           <!--  <GNT:ModalFlexViewLayout templateName="{!pageTemplateName}" layoutType="View" recordId="{!recordId}" deleteURL="{!deleteURL}"  HideSidebar="true" 
+            flexTableParameters="{!keyValueMap}"/> 
+          </div> -->
+
+
+            <!--<GNT:ExternalLibrary />-->
+            <c:ExternalLibrary /> 
+            <apex:composition template="GNT__ModalTemplate">
+            <apex:define name="ModalContent">    
+             <GNT:ModalFlexEditLayout templateName="{!pageTemplateName}" layoutType="Edit" recordId="{!recordId}" deleteURL="{!deleteURL}" 
+             saveURL="{!savePage}" cancelURL="{!cancelPage}" hideCancelBtn="true" createDefaultValues="{!listDefaultValues}"  HideSidebar="true" flexTableParameters="{!keyValueMap}"/> 
+            </apex:define>
+            </apex:composition>
+
+
+
+
+     <script>
+        var j$ = jQuery.noConflict();
+        j$(document).ready(function(){
+            //buildLookupIcon();
+        });
+
+        var buildLookupIcon = function(){
+            j$('.lookupIcon').each(function(){
+                var currentNode = j$(this);
+                currentNode.parent().append('<span class="glyphicon glyphicon-search"></span>');
+            });
+        }
+         
+    </script>
+ 
+</apex:page>

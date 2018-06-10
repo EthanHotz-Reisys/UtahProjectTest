@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Notify Applicant about their application rejection.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Review - Notify Applicant of Rejection</name>
+    <style>freeForm</style>
+    <subject>Notification - Your Application for the Opportunity #{!Application__c.Announcement__c} has beed Rejected.</subject>
+    <textOnly>Organization Address: &lt;Address&gt;
+
+Reference: RFA# {!Application__c.AnnouncementNumber__c}
+
+Thank you for your application in response to the {!Application__c.Agency__c},  for Applications (RFA) # {!Application__c.AnnouncementNumber__c} . Based on your application ranking, your application was not in a competitive range to be considered for funding. {!Application__c.Agency__c} will not consider funding for this submission.
+
+Results are as follows:
+Application: {!Application__c.AnnouncementNumber__c}
+Program Area: {!Application__c.ProgramName__c}
+Total Score: {!Application__c.TotalScore__c}
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

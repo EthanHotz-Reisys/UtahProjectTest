@@ -1,0 +1,11 @@
+<apex:page controller="AddPanelApplicationCtrl" showHeader="false" sidebar="false" standardStylesheets="false">
+    
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">
+            <GNT:FlexTable listParams="{!listParameters}" flexTableName="AddPanelApplication"
+            tableId="AddPanelApplication" flexTableParameters="{!keyValueMap}"/>
+    
+        </apex:define>
+    </apex:composition>
+</apex:page>

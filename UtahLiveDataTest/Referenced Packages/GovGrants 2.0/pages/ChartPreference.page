@@ -1,0 +1,8 @@
+<apex:page sidebar="false" standardStylesheets="false" showHeader="false" >
+<c:ExternalLibrary />
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">
+            <apex:include pageName="GNT__ChartPreferenceEdit" />    
+        </apex:define>
+    </apex:composition>
+</apex:page>

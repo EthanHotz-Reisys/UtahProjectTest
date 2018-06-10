@@ -1,0 +1,10 @@
+<apex:page standardController="FileBatch__c" showHeader="false" standardStylesheets="false" extensions="FileBatchEditCtrl" sidebar="false">
+    <c:ExternalLibrary />    
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">    
+            <GNT:ModalFlexEditLayout templateName="{!pageTemplateName}" recordId="{!recordId}"  layoutType="Edit" flexTableParameters="{!keyValueMap}"  HideSidebar="true" 
+             saveURL="{!savePage}" cancelURL="{!cancelPage}" hideCancelBtn="true" createDefaultValues="{!listDefaultValues}"/> 
+                                    
+        </apex:define>
+    </apex:composition> 
+</apex:page>

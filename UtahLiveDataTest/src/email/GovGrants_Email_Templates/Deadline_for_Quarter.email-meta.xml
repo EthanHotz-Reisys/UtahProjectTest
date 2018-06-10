@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email for sub recipients to remind them about filling the achieved goals and objectives quarters</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Deadline for Quarter</name>
+    <style>formalLetter</style>
+    <subject>Deadline for Achieved quarter</subject>
+    <textOnly>Dear {!Application__c.Form2ApplicantName__c},
+
+This email is to notify you that, tomorrow is the deadline for updating the achieved goals for this quarter.
+
+For more details kindly login to the UtahGrants System.
+
+Please do not reply to this email. You may contact the UtahGrants Support Team at utahgrants.support@reisystems.com if you have any questions or need assistance with this task.
+
+Sincerely,
+UtahGrants Support Team
+utahgrants.support@reisystems.com
+Ph. No. 703.480.9100</textOnly>
+    <type>html</type>
+</EmailTemplate>

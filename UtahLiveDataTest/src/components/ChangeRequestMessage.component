@@ -1,0 +1,39 @@
+<apex:component controller="ChangeRequestMessageCtrl" access="global">
+    <apex:attribute name="recordId" description="Current Record's Id" type="String" required="true" access="global"/>
+    <c:ExternalLibrary />   
+    <div class="bs alert alert-warning border-msg hidden" id="ChangeRequestMessage">
+        <div></div>
+	</div>
+    
+    <script>
+        var j$ = jQuery.noConflict();
+    
+        j$(document).ready(function() {
+             Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.ChangeRequestMessageCtrl.getMessage}',
+                '{!recordId}',
+                function(result, event){
+                    if(event.status){
+                        console.log('Change Request Method Result ----->' + result);
+                        if (result[0] != null) {
+                            j$('#ChangeRequestMessage').removeClass('hidden');
+                            var displayMessage = 'Change request assigned by  ' + result[0] + '.';
+                           /* if (result[1] != 'null') {
+                            	displayMessage += ', due by ' + result[1];    
+                            }*/
+                            if(result[1] != null){
+								displayMessage += '<br/>Change requested on sections : ' + result[1];                            	
+                            }
+                            if(result[2] != null){
+								displayMessage += '<br/>Change request description : ' + result[2];                            	
+                            }
+                        	j$('#ChangeRequestMessage > div').html(displayMessage);
+                        }
+                    }
+                },
+                {escape:false,buffer:false}
+            );
+        });
+	
+    </script>
+</apex:component>

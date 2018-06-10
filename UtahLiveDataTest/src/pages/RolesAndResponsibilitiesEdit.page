@@ -1,0 +1,13 @@
+<apex:page standardController="RolesAndResponsibilities__c" action="{!redirectToParentPage}" showHeader="false" standardStylesheets="false" extensions="RolesAndResponsibilitiesEditCtrl" sidebar="false">
+    
+    <!-- Including JS and CSS resources --> 
+    <c:ExternalLibrary />    
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">    
+            <GNT:ModalFlexEditLayout templateName="{!pageTemplateName}" recordId="{!recordId}"  layoutType="Edit" flexTableParameters="{!keyValueMap}"  HideSidebar="false" 
+                  createDefaultValues="{!listDefaultValues}" saveURL="{!savePage}" cancelURL="{!cancelPage}" hideCancelBtn="{!hideCancelButton}"/>                                   
+        </apex:define>
+    </apex:composition>  
+
+    
+</apex:page>

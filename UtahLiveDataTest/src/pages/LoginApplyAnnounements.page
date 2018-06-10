@@ -1,0 +1,11 @@
+<!--
+ Intermediate page for aplying the Announcement from 
+ Internal and External Login page
+ **********************************************************
+ Audit History
+ **********************************************************
+ 5/13/2014   Nakul Kadam Created
+ **********************************************************  
+-->
+<apex:page sidebar="false" standardStylesheets="false" showHeader="false" controller="LoginApplyAnnounementsCtrl" action="{!forwardToApplyPage}">
+</apex:page>

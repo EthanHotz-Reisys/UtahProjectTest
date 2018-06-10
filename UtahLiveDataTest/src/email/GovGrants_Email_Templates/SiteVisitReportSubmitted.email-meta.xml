@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email sent to Grant Monitor when Project Officer submits Site Visit for approval</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Site Visit Report Submitted</name>
+    <style>formalLetter</style>
+    <subject>Notification: Site Visit Report {!SiteVisit__c.Name} Submitted for Approval</subject>
+    <textOnly>This email is to notify you that Site Visit Report {!SiteVisit__c.Name} has been submitted and is ready for your review.
+
+Please contact the Point of contact personnel listed above in order to discuss the next step associated with your submitted application
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,14 @@
+<apex:page id="ApplicationReviewPage"  controller="ManageReviewViewCtrl" showHeader="false" sidebar="false"  standardStylesheets="false">
+    
+    <c:ExternalLibrary />
+
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">    
+            <GNT:FlexViewLayout templateName="{!templateName}" recordId="{!recordId}" layoutType="View" />
+        </apex:define>
+    </apex:composition> 
+    
+    <script>
+        setPageTitle('{!$CurrentPage.parameters.pageTitle}');
+    </script>
+</apex:page>

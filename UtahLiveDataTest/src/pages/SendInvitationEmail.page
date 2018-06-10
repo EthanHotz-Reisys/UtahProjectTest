@@ -1,0 +1,186 @@
+<apex:page id="emailPage" title="Inivite External Reviewers" docType="html-5.0" standardStylesheets="false" controller="SendInvitationEmailCtrl" showHeader="false" sidebar="false">
+  <c:ExternalLibrary />
+  <style>
+   	.popupBackground{
+    	position:fixed;
+    }
+  </style>
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">
+          <apex:form id="formId">
+            <div>
+                <apex:outputpanel id="errorPanel" styleClass="requiredMark">
+                    <GNT:PageMessages /> 
+                    <!-- <apex:pageMessages showDetail="false"/> --> 
+                    <span id="invalidEmail" style="display:none;" class="color-red">{!$Label.InvalidEMail}</span> 
+                </apex:outputpanel><br/>
+                    <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-default border-add">
+                                    <div class="panel-heading">
+                                           <div class="row">
+                                                 <div class="col-md-12">
+                                                 <!--<GNT:ShowCustomLabelSetupIcon labelName="InviteReviewers" rendered="{!$Setup.GNT__GlobalConfig__c.GNT__EnableAdminSetup__c}"/> -->
+                                                    <b><apex:outputText value="{!$Label.InviteReviewers}" escape="false"/></b>
+                                                    <apex:outputPanel rendered="{!NOT(invitationSent)}">
+                                                      <span class="pull-right">
+                                                      	<input type="button" value="Send" class="customBtn sendEmailButton" onclick="checkForEmptyTextArea();" />
+                                                      	<apex:actionfunction name="sendInvite" status="busyIcon" action="{!sendEmail}" rerender="formId" />
+                                                      	&nbsp;&nbsp;
+                                                      	<apex:commandButton value="Activate Reviwers" action="{!ActivateReviewers}" styleClass="customBtn" rendered="{!toActivate}" />
+                                                      </span>
+                                                    </apex:outputPanel>
+                                                  </div>
+                                            </div>
+                                    </div>
+                                    <div class="panel-body panel-body-ext">
+                                            <apex:outputPanel rendered="{!NOT(invitationSent)}">
+                                              <div class="row">
+                                                  <div class="col-md-12" style="padding-bottom:7px;">
+                                                  <!--<GNT:ShowCustomLabelSetupIcon labelName="SendReviewerInvitationHeader" rendered="{!$Setup.GNT__GlobalConfig__c.GNT__EnableAdminSetup__c}"/> -->
+                                                      {!$Label.SendReviewerInvitationHeader} 
+                                                  </div>
+                                              </div>
+                                             <div class="col-md-12">
+                                             	<a href="#" title="{!$Label.InviteReviewersEmailHelpText}">
+                                              		<span class="glyphicon glyphicon-question-sign helpIcon control-label pull-left spacer spacer"></span>
+                                               </a>
+                                               <label class="control-label pull-left spacer" for="To">
+
+                                               <!--<GNT:ShowCustomLabelSetupIcon labelName="RecipientsEmailLabel" rendered="{!$Setup.GNT__GlobalConfig__c.GNT__EnableAdminSetup__c}"/> -->{!$Label.RecipientsEmailLabel}</label>                                               
+                                             </div>
+                                             <div class="col-md-12">
+                                                      <apex:inputTextarea styleClass="inputEmails" rows="5" cols="70" value="{!toAddr}" onblur="validate(this.value);" html-emailId="textId" id="To" rendered="{!NOT(invitationSent)}"></apex:inputTextarea> 
+                                                      
+                                              </div>
+                                            </apex:outputPanel>
+                                            <apex:outputText value="{!successMsg}" rendered="{!invitationSent}" escape="false"/>
+                                      </div>
+                                 </div>
+                             </div>
+                        </div>
+                   </div>
+         </apex:form>
+         
+          <apex:actionStatus id="busyIcon" stopText="">
+               		<apex:facet name="start">
+	                   	<!--<div> -->
+	                         <div class="popupBackground" style="-webkit-background-size: cover;" /> 
+		                     <div class="PopupPanel">
+		                        <table border="0" width="100%" height="100%">
+		                            <tr>
+		                               <td align="center"><b>Please Wait</b></td>
+		                            </tr>
+		                            <tr>
+		                               <td align="center"><img src="/img/loading.gif" alt="Loading gif"/></td>
+		                            </tr>
+		                      	</table>
+		                     </div>
+		                   <!-- </div> -->
+	               </apex:facet>
+	           </apex:actionStatus>
+    </apex:define>
+  </apex:composition>
+  
+  <script>
+    setPageTitle('Invite External Reviewers');
+  	var j$ = jQuery.noConflict();
+  	var foundInvalidEmailFlag;
+  	var emailList = [];
+	var invalidEmailList = [];
+  	var validEmailList = [];
+  	var tempEmailStr;
+  	var tempEmailList = [];
+  	
+  	function validate(emails){ 
+  		console.log('emails--->>>',emails); 
+  		console.log('escape(emails)--->>>',escape(emails));
+  		console.log('emails.length--->>>',emails.length);
+  		emails = emails.trim();
+  		emails = escape(emails);
+  		if(emails.length != 0){
+  		 	invalidEmailList = [];
+  		 	validEmailList = [];
+  			foundInvalidEmailFlag = false;
+	  		emails = emails.toLowerCase();	  	
+	  		tempEmailList = emails.trim();	 	  		 	
+	  		console.log('tempEmailList------>>>',tempEmailList);
+	  		tempEmailStr = tempEmailList.replace(/%3b/g,','); /*SEMI COLON*/
+	  		console.log('tempEmailStr Semi-Colon ------>>>',tempEmailStr);
+	  		tempEmailStr = tempEmailStr.replace(/%2c/g,','); /*COMMA*/
+	  		console.log('tempEmailStr Comma ------>>>',tempEmailStr); 	  		
+	        tempEmailStr = tempEmailStr.replace(/%0a/g,','); /*NEW LINE*/
+	        console.log('tempEmailStr New Line ------>>>',tempEmailStr);
+	        tempEmailStr = tempEmailStr.replace(/%20/g,','); /*SPACE*/
+	        console.log('tempEmailStr Space ------>>>',tempEmailStr);
+	        console.log('tempEmailList------>>>',tempEmailList);
+	        console.log('tempEmailStr------>>>',tempEmailStr);  
+	        emailList = tempEmailStr.split(',');
+	        console.log('emailList------>>>',emailList);
+	        
+	        for(var i=0;i<emailList.length ;i++){
+	        	var email = emailList[i];
+	        	email = email.trim();
+	        	console.log('email----->>>',email);
+	        	console.log('email length----->>>',email.length);
+	        	var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+	        	if(email.legnth != 0){
+	        		if(re.test(email)){
+	    				console.log('valid mail----->>>');
+	    				validEmailList.push(email);
+    				}else{
+	    				console.log('error----->>>');
+	    				foundInvalidEmailFlag = true;
+	    				invalidEmailList.push(email);
+	    			}
+	        	}	    		
+	        }
+	        
+	        if(foundInvalidEmailFlag){	
+	  			disableSendMailButton();
+	            foundInvalidEmailFlag = false;
+	            console.log('invalidEmailList-->>',invalidEmailList);
+	  		}else{
+	  			enableSendMailButton();
+	  		}
+  		}else{  			
+			enableSendMailButton();
+            foundInvalidEmailFlag = false;
+  		}
+  		  				  		                  
+  	}
+  	
+  	function enableSendMailButton(){
+  		j$('#invalidEmail').css('display','none');
+		j$('.sendEmailButton').removeAttr('disabled','disabled');  			
+		j$(".sendEmailButton").addClass("customBtn");
+	    j$(".sendEmailButton").removeClass("customDisableBtn");
+  	}
+  	
+  	function disableSendMailButton(){
+  		j$('#invalidEmail').css('display','block');  		  		
+		j$('.sendEmailButton').attr('disabled','disabled');  			
+		j$(".sendEmailButton").removeClass("customBtn");
+	    j$(".sendEmailButton").addClass("customDisableBtn");
+  	}
+  	
+  	j$('.inputEmails').focus(function(){
+    	enableSendMailButton();
+	});
+  	
+  	function checkForEmptyTextArea(){
+  		var inputEmails = j$('.inputEmails').val();
+  		if(inputEmails.length === 0){
+  			console.log('empty email field');
+  			disableSendMailButton();
+  		}else{
+  			enableSendMailButton();
+  			if(foundInvalidEmailFlag === false){  				
+  				sendInvite();
+  			}  			
+  		}  	
+  	}
+  	  	
+  </script>
+
+</apex:page>

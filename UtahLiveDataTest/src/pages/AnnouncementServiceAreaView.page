@@ -1,0 +1,13 @@
+<apex:page standardController="AnnouncementServiceArea__c" extensions="AnnouncementServiceAreaViewCtrl" 
+        sidebar="false" standardStylesheets="false" showHeader="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">
+            <GNT:ModalFlexViewLayout templateName="{!pageTemplateName}" layoutType="View" recordId="{!recordId}" deleteURL="{!deleteURL}" 
+            flexTableParameters="{!keyValueMap}"/>
+        </apex:define>
+    </apex:composition>
+    
+</apex:page>

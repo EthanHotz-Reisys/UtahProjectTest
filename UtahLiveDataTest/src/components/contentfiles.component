@@ -1,0 +1,2668 @@
+<apex:component controller="ContentFilesCtrl" allowDML="true">
+    <apex:attribute name="isDialog"
+        description="Is this being used in a dialog or in a page" type="boolean"
+        required="true"/>
+    <apex:attribute name="attach"
+        description="Is this page being used to attach files" type="boolean" default="false" assignTo="{!publicFiles}"/>
+    <apex:attribute name="communityId"
+        description="The Network ID of the files to be displayed" type="String" default="" assignTo="{!networkId}"/>
+    <apex:attribute name="ownerId"
+        description="Sets the owner of the files to be shown, if none is entered this gets all files"
+        type="string" default="none" assignTo="{!fileOwnerId}"/>
+    <apex:attribute name="uniqueId"
+        description="Set this to prevent multiple instances of this file from interfering with one another"
+        type="string" default="0" assignTo="{!identifier}"/>
+    
+    <style>
+    
+        #bodyDivId.bodyDiv.container-fluid {
+            overflow: visible;
+            margin-bottom: 20px;
+        }
+       /* #FilesDataTable * {
+            font-size: 1em;
+        }
+        #FilesDataTable {
+            padding-bottom: 20px;
+        }*/
+         .whitebgcolor
+        {
+        background-color:#FFFFFF !important;
+        }
+        .tableBackground.collabFilesWrapper {
+            width: 100%;
+            min-width: 600px;
+            border-radius: 7px 7px 0px 0px !important;
+            margin-bottom: 20px;
+        }
+        .collabModal {
+            display: none;
+        }
+        .collabModal.active {
+            display: block;
+        }
+        div.ui-dialog-titlebar {
+            display: none;
+        }
+        
+        div.ui-dialog-content {
+            padding: 0px !important;
+        }
+        
+        div.ui-dialog.ui-widget-content {
+            padding: 0px;
+            border-radius: 6px 6px 0px 0px !important;
+            border: none;
+        }
+        
+        div.ui-widget-content a {
+            color: #428BCA;
+        }
+        .collabFilesWrapper.tableBackground .panel.panel-default > .collabPanelHeading.panel-heading {
+            border-radius: 6px 6px 0px 0px !important;
+        }
+        #UploadNewVersion > a {
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            height: 20px;
+            width: 20px;
+            z-index: 1;
+            background: transparent url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabXButtons.png')}) no-repeat 0px 0px;
+        }
+        .collabFilesWrapper .panel-heading,
+        .collabFilesWrapper .panel-heading-title{
+            padding-top:0px !important;
+            padding-bottom:0px !important; 
+            display:block; 
+            float:left; 
+            width:100%;
+        }
+        .collabFilesWrapper .panel-heading-title h2{
+            display:block;
+            float:left;
+        }
+        .collabFilesWrapper table.dataTable{
+            box-sizing: border-box;
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin-top:20px;
+        }
+
+       /* .collabFilesWrapper table.dataTable .headerRow{
+            background: #e1e1e1;
+            background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod?BoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+            background: -moz-linear-gradient(top, #e1e1e1 35%, #828282 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(35%,#e1e1e1), color-stop(100%,#828282));
+            background: -webkit-linear-gradient(top, #e1e1e1 35%,#828282 100%);
+            background: -o-linear-gradient(top, #e1e1e1 35%,#828282 100%);
+            background: -ms-linear-gradient(top, #e1e1e1 35%,#828282 100%);
+            background: linear-gradient(to bottom, #e1e1e1 35%,#828282 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1e1e1', endColorstr='#828282',GradientType=0 );
+        }
+        .collabFilesWrapper table.dataTable thead th{
+            border: 1px solid #ddd;
+            border-bottom: 2px solid #ddd;
+            padding:8px !important;
+        }*/
+        .collabFilesWrapper table.dataTable th.sorting_desc,
+        .collabFilesWrapper table.dataTable th.sorting_asc,
+        .collabFilesWrapper table.dataTable th.sorting{
+            background-image: none;
+        }
+        .collabFilesWrapper table.dataTable th.sorting_desc:before,
+        .collabFilesWrapper table.dataTable th.sorting_asc:before {
+            content: "\e094";
+            position: relative;
+            top: 1px;
+            display: block;
+            float:left;
+            font-family: 'Glyphicons Halflings';
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+        }
+        .collabFilesWrapper table.dataTable th.sorting_asc:before{
+            content: "\e093";
+        }
+        .collabFilesWrapper table.dataTable td a.pencil {
+            height: 12px;
+            width: 12px;
+            padding: 3px;
+            display: block;
+            position: absolute;
+            right: 0px;
+            top: 14px;
+            background: url({!urlfor($Resource.GovGrantsExternal, 'Feedback/css/icons.png')}) no-repeat -19px -96px;
+        }
+        .collabFilesWrapper table.dataTable + .bottom{padding-top:20px;}
+        .collabFilesWrapper table.dataTable + .bottom .dataTables_paginate{
+            float:left;
+            padding-right:28px;
+            position: relative;
+        }
+        .collabFilesWrapper table.dataTable + .bottom .dataTables_paginate a{
+            float:left;
+        }
+        .collabFilesWrapper table.dataTable + .bottom .dataTables_length{float:right;}
+
+        .collabFilesWrapper .pageOfPages,
+        .collabFilesWrapper table.dataTable + .bottom .dataTables_paginate .paginate_disabled_previous,
+        .collabFilesWrapper table.dataTable + .bottom .dataTables_paginate .paginate_disabled_next,
+        .collabFilesWrapper table.dataTable + .bottom .dataTables_paginate .paginate_enabled_previous,
+        .collabFilesWrapper table.dataTable + .bottom .dataTables_paginate .paginate_enabled_next{
+            float:left;
+            display: block;
+            width:auto;
+            padding:0px;
+            margin:0px;
+            background:none !important;
+        }
+        .collabFilesWrapper table.dataTable + .bottom .dataTables_paginate .paginate_disabled_previous,
+        .collabFilesWrapper table.dataTable + .bottom .dataTables_paginate .paginate_disabled_next,
+        .collabFilesWrapper table.dataTable + .bottom .dataTables_paginate .paginate_enabled_previous,
+        .collabFilesWrapper table.dataTable + .bottom .dataTables_paginate .paginate_enabled_next{
+            text-indent: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 18px;
+            margin-left:8px;
+        }
+
+
+
+        .collabFilesWrapper table.dataTable + .bottom .dataTables_paginate .paginate_disabled_previous:before,
+        .collabFilesWrapper table.dataTable + .bottom .dataTables_paginate .paginate_disabled_next:before,
+        .collabFilesWrapper table.dataTable + .bottom .dataTables_paginate .paginate_enabled_previous:before,
+        .collabFilesWrapper table.dataTable + .bottom .dataTables_paginate .paginate_enabled_next:before{
+            content: "\e071";
+            position: relative;
+            top: 1px;
+            display: block;
+            float:left;
+            font-family: 'Glyphicons Halflings';
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            text-indent: 0px;
+            color:#428bca;
+            background:none !important;
+        }
+        .collabFilesWrapper table.dataTable + .bottom .dataTables_paginate .paginate_disabled_previous:before,
+        .collabFilesWrapper table.dataTable + .bottom .dataTables_paginate .paginate_disabled_next:before{
+            color:#eee;
+        }
+        .collabFilesWrapper table.dataTable + .bottom .dataTables_paginate .paginate_disabled_next,
+        .collabFilesWrapper table.dataTable + .bottom .dataTables_paginate .paginate_enabled_next{
+            position: absolute;
+            right:0px;
+        }
+        .collabFilesWrapper table.dataTable + .bottom .dataTables_paginate .paginate_disabled_next:before,
+        .collabFilesWrapper table.dataTable + .bottom .dataTables_paginate .paginate_enabled_next:before{
+            content: "\e075";
+
+        }
+        .collabFilesWrapper table.dataTable .fileDescription {
+            word-break: break-word;
+        }
+        .collabFilesWrapper .pageOfPages{
+            float: left;
+        }
+
+        .collabFilesWrapper .dataTables_filter{
+            display:none;
+        }
+        .collabFilesWrapper .collabDialogHeading {
+            position: relative;
+            margin-bottom: 0px;
+        }
+        .collabFilesWrapper .collabPanelHeading {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .collabFilesWrapper > div:first-child .collabDialogHeading #FilesSearchCancelButton{!identifier} {
+            position: absolute;
+            top: 33px;
+            right: 15px;
+        }
+        .collabFilesWrapper > div:first-child .collabDialogHeading #FilesSearchButton{!identifier} {
+            position: absolute;
+            top: 33px;
+            right: 89px;
+        }
+        .collabFilesWrapper > div:first-child .collabDialogHeading #FilesSearchText{!identifier} {
+            position: absolute;
+            right: 174px;
+            top: 36px;
+            color:#ccc;
+        }
+        .collabFilesWrapper > div:first-child .collabPanelHeading #FilesSearchCancelButton{!identifier} {
+            position: absolute;
+            top: 5px;
+            right: 85px;
+        }
+        .collabFilesWrapper > div:first-child .collabPanelHeading #FilesSearchButton{!identifier} {
+            position: absolute;
+            top: 5px;
+            right: 159px;
+        }
+        .collabFilesWrapper > div:first-child .collabPanelHeading #FilesSearchText{!identifier} {
+            position: absolute;
+            right: 245px;
+            top: 8px;
+            color:#ccc;
+        }
+        .collabFilesWrapper > div:first-child #FilesSearchText{!identifier}.textFieldActive{
+            color:#000;
+        }
+        .collabFilesWrapper #UploadCollabFile{!identifier} {
+            position: absolute;
+            right: 15px;
+            top: 5px;
+        }
+        .collabFilesWrapper table.dataTable .actionList{
+            margin:0px auto;
+            width:63px;
+            position: relative;
+        }
+        .collabFilesWrapper a.actionClose {
+            float: right;
+            height: 20px;
+            width: 20px;
+            margin-top: 6px;
+            margin-left: 15px;
+            background: transparent url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabXButtons.png')}) no-repeat 0px 0px;
+        }
+        .collabFilesWrapper a.actionClose:hover,
+        .collabFilesWrapper a.actionClose:active,
+        .collabFilesWrapper a.actionClose:focus {
+            background-position: 0px -20px;
+        }
+        .collabFilesWrapper table.dataTable .actionPreview,
+        .collabFilesWrapper table.dataTable .actionFollow,
+        .collabFilesWrapper table.dataTable .actionDnld,
+        .collabFilesWrapper table.dataTable .actionDropdown,
+        .collabFilesWrapper table.dataTable .actionAttach,
+        .collabFilesWrapper table.dataTable .actionUnfollow {
+            display:block;
+            float:left;
+            height:18px;
+            width:16px;
+            margin-right:5px;
+            text-indent: -99999px;
+            font-size: 1px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .collabFilesWrapper table.dataTable .actionPreview {
+            background: transparent url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabFiles.png')}) no-repeat 0px -4px;
+        }
+        .collabFilesWrapper table.dataTable .actionFollow {
+            background: transparent url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabFollowSprite.png')}) no-repeat 0px 0px;
+        }
+        .collabFilesWrapper table.dataTable .actionDnld{
+            background: transparent url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabFiles.png')}) no-repeat 0px -22px;
+           // background: transparent url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabFollowSprite.png')}) no-repeat 0px 0px;
+        } 
+        .collabFilesWrapper table.dataTable .actionFollow.following {
+            background: transparent url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabFollowSprite.png')}) no-repeat 0px -26px;
+        }
+        .collabFilesWrapper table.dataTable div.actionDropdown {
+            background-color: #f8f8f8;
+            border: 1px solid #e2e2e2;
+            padding: 5px 4px 5px 4px;
+            border-radius: 3px !important;
+            width: 15px;
+            height: 15px;
+        }
+        .collabFilesWrapper table.dataTable a.actionDropdown {
+            height: 4px;
+            width: 5px;
+            background: #f8f8f8 url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabSprites.png')}) no-repeat 0px -1634px;
+        }
+        .collabFilesWrapper table.dataTable .actionAttach {
+            text-indent: 0px;
+            width: initial;
+            font-size: 1em;
+            background: #FFF;
+        }
+        .collabFilesWrapper table.dataTable .collabFileName > span:first-child {
+            width: 32px;
+            height: 32px;
+            vertical-align: middle;
+            float: left;
+            background-image: url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabExtensionImages.png')});
+        }
+        .collabFilesWrapper table.dataTable .collabFileName > div {
+            padding-top: 9px;
+            padding-left: 40px;
+        }
+        .collabFilesWrapper .collabFileName > span:first-child {
+            font-size: 1px;
+            text-indent: -99999px;
+            color: transparent;
+        }
+        .collabFilesDropdownDiv {
+            display: none;
+            background-color: white;
+            padding: 5px 5px 5px 5px;
+            border-radius: 5px !important;
+            position: absolute;
+            z-index: 5;
+            top: 20px;
+            right: -154px;
+            border: 1px solid #b6b6b6;
+            width: 175px;
+            box-shadow: rgb(160, 172, 171) 0px 2px 5px 0px;
+        }
+        .collabFilesDropdownDiv.active {
+            display: block;
+        }
+        .collabFilesDropdownDiv > div{
+            padding-top: 10px;
+            float: left;
+            width: 100%;
+            clear: both;
+            height: 32px;
+            border-radius: 9px 9px 9px 9px !important;
+        }
+        .collabFilesDropdownDiv div:hover,
+        .collabFilesDropdownDiv div:focus,
+        .collabFilesDropdownDiv div:active {
+            background-color: #cfeef8;
+        }
+        .collabFilesDropdownDiv a {
+            float: left;
+            padding-left: 15px;
+            width: 100%;
+            color: #222;
+        }
+        .collabFilesDropdownDiv a:hover,
+        .collabFilesDropdownDiv a:focus,
+        .collabFilesDropdownDiv a:active {
+            color: #222;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .collabFilesDropdownDiv .collabActionDownload {
+            background: transparent url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabFiles.png')}) no-repeat 0px -22px;
+        }
+        
+        .collabActionDownload123 {
+            
+            
+            top: 20px;
+            right: -154px;
+        
+            width: 175px;
+            background-image:url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabFiles.png')});
+            background-position:0px -22px;
+         }
+         
+         .icon {
+            clear: both;
+            height:18px;
+            width:18px;
+        
+        background-image:url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabFiles.png')});
+            
+            }
+            
+            .icon1 {
+            
+            height:18px;
+            width:18px;
+            padding: 5px 5px 5px 5px;
+            border-radius: 5px !important;
+        background-image:url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabFiles.png')});
+            
+            }
+            
+            .download {
+         background: transparent url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabFiles.png')}) no-repeat 0px -22px;
+            }
+            
+            .preview {
+         background: transparent url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabFiles.png')}) no-repeat 0px 0px;
+            }
+       
+        .collabFilesDropdownDiv .collabActionUpload {
+            background: transparent url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabFiles.png')}) no-repeat 0px -38px;
+        }
+        .collabFilesWrapper table.dataTable .modifiedDate > span {
+            float: right;
+        }
+        .collabModal > a {
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            height: 20px;
+            width: 20px;
+            z-index: 1;
+            background: transparent url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabXButtons.png')}) no-repeat 0px 0px;
+        }
+        #CollabLoadingModal > div,
+        #CollabDeleteModal > div {
+            height: 120px;
+            padding: 10px;
+        }
+        #CollabLoadingModal img {
+            margin-left: 124px;
+            margin-top: 34px;
+        }
+        #CollabDeleteModal > div > div:first-child + div {
+            margin-top: 30px;
+            float: right;
+        }
+        #CollabDeleteModal input + input {
+            margin-left: 20px;
+            margin-right: 50px;
+        }
+        #CollabFileSharingModal > div {
+            padding: 15px;
+            padding-top: 30px;
+            float: left;
+            width: 100%;
+        }
+        #CollabFileSharingModal > div > div:first-child + div {
+            float: left;
+            width: 100%;
+        }
+        #CollabFileSharingModal .shareWith,
+        #CollabFileSharingModal .fileSharingHeader,
+        #CollabFileSharingModal .fileSharingList {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        #CollabFileSharingModal .fileSharingList {
+            float: left;
+            width: 616px;
+            height: 200px;
+            overflow-y: scroll;
+        }
+        #CollabFileSharingModal .shareWith {
+            padding-bottom: 5px;
+            padding-left: 20px;
+            background: transparent url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabFiles.png')}) no-repeat 0px -56px;
+        }
+        #CollabFileSharingModal .shareWith + a {
+            position: absolute;
+            right: 60px;
+            top: 62px;
+            font-weight: bold;
+        }
+        #CollabFileSharingModal .sharingDiv,
+        #CollabFileSharingModal .makeFilePrivate {
+            display: none;
+        }
+        #CollabFileSharingModal .sharingDiv.active,
+        #CollabFileSharingModal .makeFilePrivate.active {
+            display: block;
+        }
+        #CollabFileSharingModal .fileSharingHeader {
+            float: left;
+            border-bottom: 0px;
+            width: 100%;
+        }
+        #CollabFileSharingModal .shareWith > li,
+        #CollabFileSharingModal .fileSharingHeader > li,
+        #CollabFileSharingModal .fileSharingList > li > div {
+            display: inline;
+            list-style: none;
+        }
+        #CollabFileSharingModal .fileSharingList > li:empty {
+            display: none;
+        }
+        #CollabFileSharingModal .fileSharingList > li > div:first-child + div > a {
+            font-weight: bold;
+        }
+        #CollabFileSharingModal .fileSharingList > li > div:first-child + div + div > a > span {
+            width: 16px;
+            height: 8px;
+            margin-top: 2px;
+            float: right;
+            background: transparent url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabFiles.png')}) no-repeat 0px -186px;
+        }
+        #CollabFileSharingModal .fileSharingList .sharingSettings {
+            display: none;
+            border: 1px solid #d4dadc;
+            position: absolute;
+            float: left;
+            right: 28px;
+            top: 102px;
+            background-color: white;
+            box-shadow: 0 2px 5px #acacac;
+            padding-top: 9px;
+            padding-bottom: 9px;
+            padding-right: 4px;
+            padding-left: 4px;
+            padding: 5px;
+            border-radius: 5px !important;
+        }
+        #CollabFileSharingModal .fileSharingList .sharingSettings.active {
+            display: block;
+        }
+        #CollabFileSharingModal .fileSharingList .sharingSettings > div {
+            display: block;
+            width: 104px;
+            border-radius: 7px !important;
+            clear: both;
+            padding: 4px 10px;
+        }
+        #CollabFileSharingModal .fileSharingHeader + div {
+            border: solid 1px gray;
+            float: left;
+            border-top: 0px;
+            width: 100%;
+        }
+        #CollabFileSharingModal .fileSharingHeader > li:first-child {
+            width: 80%;
+            border-right: 0px;
+            padding-left: 5px;
+        }
+        #CollabFileSharingModal .fileSharingHeader > li:first-child + li {
+            width: 20%;
+            padding-left: 5px;
+        }
+        #CollabFileSharingModal .fileSharingHeader > li {
+            float: left;
+            border-bottom: 0px;
+            border: solid 1px gray;
+            list-style: none;
+        }
+        #CollabFileSharingModal .fileSharingList > li:first-child {
+            border: 0px;
+        }
+        #CollabFileSharingModal .fileSharingList > li {
+            border-top: solid 1px gray;
+            display: block;
+            padding: 3px;
+            height: 37px;
+            width: 100%;
+            clear: both;
+            list-style: none;
+        }
+        #CollabFileSharingModal .fileSharingList > li > div:first-child {
+            margin-right: 5px;
+        }
+        #CollabFileSharingModal .fileSharingList > li > div:first-child + div {
+            padding-top: 7px;
+            width: 69%;
+        }
+        #CollabFileSharingModal .fileSharingList > li > div:first-child + div + div {
+            padding-left: 40px;
+            padding-top: 7px;
+            width: 25%;
+        }
+        #CollabFileSharingModal .fileSharingList * {
+            float: left;
+        }
+        #CollabFileSharingModal .fileSharingList > li > div.orgPhoto:first-child,
+        #CollabFileSharingModal .fileSharingList > li > div:first-child > a > img {
+            height: 30px;
+            width: 30px;
+        }
+        #CollabFileSharingModal .fileSharingList > li > div.orgPhoto {
+            padding-right: 15px;
+            padding-left: 15px;
+            padding-top: 5px;
+            padding-bottom: 10px;
+            background: transparent url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabCompanyShare.png')}) no-repeat 0px 0px;
+        }
+        #CollabFileSharingModal .fileSharingList > li > div > a.record {
+            padding-right: 15px;
+            padding-left: 15px;
+            padding-top: 5px;
+            padding-bottom: 10px;
+            height: 30px;
+            width: 30px;
+            background: transparent url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabRecordSprite.png')}) no-repeat 0px 0px;
+        }
+        #CollabFileSharingModal .fileSharingList > li .shareAnchor + a,
+        #CollabFileSharingModal .fileSharingList > li .sharingStatus + a {
+            display: block;
+            height: 16px;
+            width: 16px;
+            float: right;
+            background: transparent url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabFollowSprite.png')}) no-repeat 0px -54px;
+        }
+        #CollabFileSharingModal .fileSharingList > li .shareAnchor + a:hover,
+        #CollabFileSharingModal .fileSharingList > li .shareAnchor + a:focus,
+        #CollabFileSharingModal .fileSharingList > li .shareAnchor + a:active,
+        #CollabFileSharingModal .fileSharingList > li .sharingStatus + a:hover,
+        #CollabFileSharingModal .fileSharingList > li .sharingStatus + a:focus,
+        #CollabFileSharingModal .fileSharingList > li .sharingStatus + a:active {
+            background: transparent url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabFollowSprite.png')}) no-repeat 0px -75px;
+        }
+        #CollabFileUploadModal > div {
+            padding: 10px;
+        }
+        #CollabFileUploadModal > div > div > select {
+            margin-bottom: 10px;
+            margin-left: 78px;
+        }
+        #CollabFileUploadModal > div > div > div {
+            float: left;
+        }
+        #CollabFileUploadModal > div > div > div:first-child {
+            padding-top: 42px;
+            padding-right: 5px;
+        }
+        #CollabFileUploadModal > div > div > div > textarea {
+            resize: none;
+            width: 300px;
+            height: 100px;
+        }
+        #CollabFileUploadModal > div > form {
+            clear: both;
+            margin-top: 10px;
+        }
+        #CollabFileUploadModal #UploadCollabFileHidden{!identifier} {
+            display: none;
+        }
+        #NewUserLinkModal > div,
+        #NewGroupLinkModal > div {
+            float: left;
+            margin: 10px;
+            margin-top: 30px;
+        }
+        #NewUserLinkModal #UserSearchInput,
+        #NewGroupLinkModal #GroupSearchInput {
+            border-left: none;
+        }
+        #NewUserLinkModal .select2-container,
+        #NewGroupLinkModal .select2-container {
+            padding: 5px;
+            padding-left: 0px;
+        }
+        #NewUserLinkModal .hiddenDiv.select2-search,
+        #NewGroupLinkModal .hiddenDiv.select2-search {
+            display: none;
+            border-right: 1px solid #aaa;
+            border-left: 1px solid #aaa;
+            border-bottom: 1px solid #aaa;
+            padding-right: 0px;
+            margin-top: -6px;
+            padding-left: 0px;
+            background: #fff;
+        }
+        #NewUserLinkModal .hiddenDiv.select2-search > input,
+        #NewGroupLinkModal .hiddenDiv.select2-search > input {
+            border-right: 0px;
+            border-left: 0px;
+        }
+        #NewUserLinkModal .hiddenDiv.active,
+        #NewGroupLinkModal .hiddenDiv.active {
+            display: block;
+        }
+        #NewUserLinkModal > #NewUsers,
+        #NewGroupLinkModal > #NewGroups {
+            width: 600px;
+            padding: 10px;
+            float: left;
+        }
+        #NewUserLinkModal > #NewUsers > .newUser,
+        #NewGroupLinkModal > #NewGroups > .newGroup {
+            width: 100%;
+            border: 1px solid #e0e3e5;
+            border-top: none;
+            float: left;
+        }
+        #NewUserLinkModal > #NewUsers > .newUsersHeader,
+        #NewGroupLinkModal > #NewGroups > .newGroupsHeader {
+            background: #f2f3f3;
+            border: 1px solid #e0e3e5;
+            float: left;
+            width: 580px;
+        }
+        #NewUserLinkModal > #NewUsers > .newUsersFooter,
+        #NewGroupLinkModal > #NewGroups > .newGroupsFooter {
+            position: relative;
+            float: left;
+            width: 580px;
+        }
+        #NewUserLinkModal > #NewUsers > .newUsersFooter > div.select2-container,
+        #NewGroupLinkModal > #NewGroups > .newGroupsFooter > div.select2-container {
+            position:absolute;
+            top: 0px;
+            left: 0px;
+        }
+        #NewUserLinkModal > #NewUsers > .newUsersFooter > div.select2-container .select2-results,
+        #NewGroupLinkModal > #NewGroups > .newGroupsFooter > div.select2-container .select2-results {
+            max-height: 110px;
+            margin-right: 0px;
+            margin-top: 1px;
+        }
+        #NewUserLinkModal > #NewUsers > .newUser input,
+        #NewGroupLinkModal > #NewGroups > .newGroup input {
+            margin-left: 64px;
+            margin-top: 11px;
+        }
+        #NewUserLinkModal > #NewUsers > .newUser div.actorDiv,
+        #NewGroupLinkModal > #NewGroups > .newGroup div.actorDiv,
+        #NewUserLinkModal > #NewUsers > .newUser div.actorDiv > div,
+        #NewGroupLinkModal > #NewGroups > .newGroup div.actorDiv > div {
+            padding-top: 10px;
+            width: auto;
+        }
+        #NewUserLinkModal > #NewUsers > .newUser div,
+        #NewUserLinkModal > #NewUsers > .newUsersHeader div,
+        #NewGroupLinkModal > #NewGroups > .newGroup div,
+        #NewGroupLinkModal > #NewGroups > .newGroupsHeader div {
+            float: left;
+            width: 130px;
+        }
+        #NewUserLinkModal > #NewUsers > .newUsersHeader > div.viewer,
+        #NewGroupLinkModal > #NewGroups > .newGroupsHeader > div.viewer {
+            padding-left: 50px;
+        }
+        #NewUserLinkModal > #NewUsers > .newUsersHeader > div.collaborator,
+        #NewGroupLinkModal > #NewGroups > .newGroupsHeader > div.collaborator {
+            padding-left: 30px;
+        }
+        #NewUserLinkModal > #NewUsers > .newUser > div:first-child,
+        #NewGroupLinkModal > #NewGroups > .newGroup > div:first-child {
+            width: 100%;
+        }
+        #NewUserLinkModal > #NewUsers > .newUser > div.fullDiv:first-child,
+        #NewGroupLinkModal > #NewGroups > .newGroup > div.fullDiv:first-child {
+            width: 100%;
+        }
+        #NewUserLinkModal > #NewUsers > .newUsersHeader > div:first-child,
+        #NewGroupLinkModal > #NewGroups > .newGroupsHeader > div:first-child {
+            width: 300px;
+            padding-left: 5px;
+        }
+        #NewUserLinkModal > #NewUsers > .newUser > div > div.closeModal,
+        #NewGroupLinkModal > #NewGroups > .newGroup > div > div.closeModal {
+            float: right;
+            width: 16px;
+            height: 16px;
+            margin-top: 10px;
+            margin-right: 5px;
+        }
+        #NewUserLinkModal > #NewUsers > .newUser > div > div.closeModal > a,
+        #NewGroupLinkModal > #NewGroups > .newGroup > div > div.closeModal > a {
+            height: 16px;
+            display: block;
+            background: transparent url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabFollowSprite.png')}) no-repeat 0px -54px;
+        }
+        #NewUserLinkModal > #NewUsers > .newUser > div > div.closeModal > a:hover,
+        #NewUserLinkModal > #NewUsers > .newUser > div > div.closeModal > a:focus,
+        #NewUserLinkModal > #NewUsers > .newUser > div > div.closeModal > a:active,
+        #NewGroupLinkModal > #NewGroups > .newGroup > div > div.closeModal > a:hover,
+        #NewGroupLinkModal > #NewGroups > .newGroup > div > div.closeModal > a:focus,
+        #NewGroupLinkModal > #NewGroups > .newGroup > div > div.closeModal > a:active {
+            background: transparent url({!urlfor($Resource.GNT__CollabSprites, 'CollabSprites/collabFollowSprite.png')}) no-repeat 0px -75px;
+        }
+        #NewUserLinkModal > #NewUsers > .newUser > div > div > div > span,
+        #NewGroupLinkModal > #NewGroups > .newGroup > div > div > div > span {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        #NewUserLinkModal > #NewUsers > .newUser > div > div > img,
+        #NewGroupLinkModal > #NewGroups > .newGroup > div > div > img {
+            width: 30px;
+            height: 30px;
+            margin: 3px;
+            border: 1px solid #e0e3e5;
+            float: left;
+        }
+        #NewUserLinkModal .optionalMessage,
+        #NewGroupLinkModal .optionalMessage {
+            resize: none;
+            width: 580px;
+            overflow: hidden;
+            color: gray;
+        }
+        #NewUserLinkModal .optionalMessage.active,
+        #NewGroupLinkModal .optionalMessage.active {
+            color: black;
+        }
+        #UserSearchAnchor,
+        #GroupSearchAnchor {
+            margin-bottom: 5px;
+        }#CollabPreviewModal {
+        position: relative;
+        height: 511px !important;
+    }
+    #CollabFilesPreviewModal > div {
+        position: relative;
+        height: 480px;
+        width: 640px;
+        padding: 0px;
+    }
+    #CollabFilesPreviewModal > span,
+    #CollabFilesPreviewModal > span > p {
+        position: relative;
+        width: 641px !important;
+    }
+    #UploadNewVersion {
+        margin-bottom: 5px;
+    }
+    #UploadNewVersion > div {
+        padding: 5px;
+    }
+    #UploadNewVersion > div > div:first-child + div {
+        float: left;
+        width: 100%;
+        padding-top: 10px;
+    }
+    #UploadNewVersion > div > div:first-child + div > span {
+        float: left;
+    }
+    #UploadNewVersion > div > div:first-child + div > textarea {
+        resize: none;
+        display: block;
+        float: left;
+        height: 54px;
+        width: 100%;
+    }
+    #UploadNewVersion > div > input {
+        margin-top: 5px;    
+        float: right;
+    }
+    #UploadNewVersionButton{!identifier} {
+        float: right;
+        margin-bottom: 10px !important;
+    }
+    #EditFileDescriptionModal > div {
+        padding: 10px;
+        float: left;
+        width: 100%;
+    }
+    #EditFileDescriptionModal textarea {
+        resize: none;
+        width: 100%;
+        height: 100px;
+    }
+    #EditFileDescriptionModal input {
+        margin-top: 10px;
+        float: right;    
+    }
+    </style>
+
+    <apex:stylesheet value="{!URLFOR($Resource.GovGrantsExternal, 'AutoCompleteSelectList/CSS/select2.css')}"/>
+    
+    <apex:outputPanel rendered="{!NOT(isDialog)}">
+        <!-- Hidden field to store a new value of the variable -->
+        <apex:inputHidden value="{!filesHiddenFile}" id="filesHiddenFile"/>
+        <apex:inputHidden value="{!filesHiddenName}" id="filesHiddenName"/>
+        <apex:inputHidden value="{!filesHiddenId}" id="filesHiddenId"/>
+        <apex:inputHidden value="{!filesHiddenText}" id="filesHiddenText"/>
+        <apex:inputHidden value="{!filesHiddenType}" id="filesHiddenType"/>
+    </apex:outputPanel>
+    <div><!-- filterCriteria="UserOrGroupId = '{!UserId}'"  -->
+        <!--<c:AutoCompleteDropDown allowClear="true" fieldAPI="Name" SObject="User" valueField="Id" targetField="{!chosenUserId}" style="width:200px;"/>-->
+    </div> <!-- rerender="RerenderForNewRow"  -->
+    <apex:actionFunction name="uploadNewFile" action="{!uploadNewContentVersion}" onComplete="Success();"/>
+    <apex:actionFunction name="uploadNewInternalFile" action="{!uploadInternalContentVersion}" onComplete="Success();"/>
+    <apex:actionFunction name="uploadNewExternalFile" action="{!uploadExternalContentVersion}" onComplete="Success();"/>
+    <apex:actionFunction name="uploadNewVersion" action="{!uploadNewVersion}" onComplete="Success();"/><!--
+    <apex:outputPanel id="RerenderForNewRow">
+        <script type="text/javascript">
+            rowDate = "{!rowDate}";
+            rowName = "{!rowName}";
+            rowDesc = "{!rowDesc}";
+            rowOwner = "{!rowOwner}";
+            rowVisibility = "{!rowVisibility}";
+            rowId = "{!rowId}";
+            rowExtension = "{!rowExtension}";
+        </script>
+    </apex:outputPanel>-->
+    <div id="CollabFilesContainer{!identifier}" class="col-md-12 tableBackground ng-scope collabFilesWrapperPgn collabFilesWrapper" ng-if="!isLoading &amp;&amp; !errorCreatingTable" ng-init="isLoading=true">                       
+        <div class="panel">
+            <apex:outputPanel rendered="{!NOT(isDialog)}">
+                <div class="panel-heading whitebgcolor">
+                        <div class="panel-heading-header">
+                            <h2>Training Resources</h2>
+                         </div>
+                             <div class="input-group add-on" style="padding-top:10px;padding-left:10px;max-width:400px;"> 
+                            <input type="text" class="form-control quicksearch  ng-pristine ng-valid" id="FilesSearchText{!identifier}" name="FilesSearchText" value="Quick Search Text" />
+                            <div class="input-group-btn" >
+                            <input type="button" id="FilesSearchButton{!identifier}" class="customBtn" value="Search"/>
+                            <input type="button" id="FilesSearchCancelButton{!identifier}" class="customBtn" value="Clear"/>
+                             </div>
+                          
+                            <label class="sr-only" for="FilesSearchText{!identifier}">Type in search text</label>
+                            <label class="sr-only" for="FilesSearchButton{!identifier}">Filter based on search text</label>
+                            <label class="sr-only" for="FilesSearchCancelButton{!identifier}">Cancel search and show all results</label>
+                           
+                        </div>
+                   </div>
+            </apex:outputPanel>
+            
+         <!--   <apex:outputPanel rendered="{!isDialog}">
+                <div id="headerId" class="tabColor collabDialogHeading">
+                    <p class="headerCls ng-binding">Files</p>
+                    <input type="text" id="FilesSearchText{!identifier}" name="FilesSearchText" value="Quick Search Text" />
+                    <input type="button" id="FilesSearchButton{!identifier}" class="customBtn" value="Search"/>
+                    <input type="button" id="FilesSearchCancelButton{!identifier}" class="customBtn" value="Clear"/>
+                    <label class="sr-only" for="FilesSearchButton{!identifier}">Filter based on search text</label>
+                    <label class="sr-only" for="FilesSearchCancelButton{!identifier}">Cancel search and show all results</label>
+                    <label class="sr-only" for="FilesSearchText{!identifier}">Type in search text</label>
+                    <a href="#" class="actionClose" title="Close this dialog box"></a>
+                </div>
+            </apex:outputPanel>-->
+<!--            <div id="UploadFileDiv"> -->
+<!--                <apex:form > -->
+<!--                    <a href="#">Upload File</a> -->
+<!--                    <apex:inputFile value="{!fileToUpload}" filename="{!fileName}"></apex:inputFile> -->
+<!--                    <input class="customBtn" type="button" value="Upload"/> -->
+<!--                    <apex:actionFunction name="upload" action="{!upload}"/> -->
+<!--                </apex:form> -->
+<!--            </div> -->
+            <apex:outputPanel rendered="{!ownerId == 'none'}">
+                
+        
+                <div id="FilesDataTable" class="tableClass table table-striped table-hover">
+                    <apex:pageBlock >
+                        <apex:pageBlockTable value="{!contentVersions}" var="cv" styleClass="tableClass table table-striped table-hover">
+                         
+                            <apex:column styleClass="tablecell ng-scope" headervalue="Name" style="padding-left:10px;">
+                                <span>{!cv.fileType}</span>
+                                <div>{!cv.title}</div>
+    <!--                            <a href="/{!cv.id}">{!cv.title}</a> -->
+                            </apex:column>
+                            <apex:column styleClass="tablecell ng-scope" headervalue="Description">
+                                <div class="fileDescription fileDescription{!cv.ContentDocumentId}" data-ownerId="{!cv.Owner.Id}">{!cv.description}</div>
+                            </apex:column>
+                            <apex:column styleClass="tablecell ng-scope" headervalue="Resource Type">
+                              {!cv.Resource_Type__c}
+                            </apex:column>
+                            <apex:column styleClass="tablecell ng-scope" value="{!cv.ContentModifiedDate}"/>
+                               <apex:column styleClass="tablecell ng-scope" headervalue="Actions">
+                                <div class="actionList">
+                                    <apex:outputPanel rendered="{!NOT(attach)}">
+                                    
+                                    
+                                         <a href="#" class="actionPreview" title="View an image preview of this file" onClick="displayFilesPreview('{!cv.id}', '{!cv.title}', this);">
+                                        
+                                         {!cv.PathOnClient}
+                                         
+                                         </a> 
+                                                              
+                                       <a href="/sfc/servlet.shepherd/version/download/{!cv.id}?asPdf=false&operationContext=CHATTER" title="Download this file" class="actionDnld" >
+                                         
+                                          </a>
+                                        
+                                       
+                                       <!--   <div class="actionDropdown" data-version_id="{!cv.ContentDocumentId}" data-owner_id="{!cv.ownerId}" data-network_id="{!cv.networkId}">
+                                            <a href="#" class="actionDropdown" title="View additional options" data-version_id="{!cv.ContentDocumentId}">Dropdown</a>
+                                        </div> 
+                                      <div class="collabFilesDropdownDiv closeOnTab" > 
+                                            <div class="firstDropdownDiv">
+                                                <a href="/sfc/servlet.shepherd/version/download/{!cv.id}?asPdf=false&operationContext=CHATTER" title="Download this file" class="collabActionDownload">Download {!cv.FileExtension}</a>
+                                           </div>  
+                                       </div>-->
+                                        </apex:outputPanel>
+                                        <apex:outputPanel rendered="{!attach}">
+                                            <a href="#" title="Attach this file" class="actionAttach" data-name="{!cv.title}" data-docid="{!cv.contentDocumentId}">Attach</a>
+                                        </apex:outputPanel>
+                                </div>
+                            </apex:column>
+                        </apex:pageBlockTable>
+                    </apex:pageBlock>
+                </div>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!ownerId != 'none'}">
+                <div id="FilesDataTable" class="panel-body panel-body-ext">
+                    <apex:pageBlock >
+                        <apex:pageBlockTable styleClass="tableClass table table-striped table-hover" value="{!OwnerContentVersions}" var="cv">
+                            
+                            <apex:column styleClass="tablecell ng-scope" headervalue="Name">
+                                <span>{!cv.fileType}</span>
+                                <div>{!cv.title}</div>
+    <!--                            <a href="/{!cv.id}">{!cv.title}</a> -->
+                            </apex:column>
+                            <apex:column styleClass="tablecell ng-scope" headervalue="Description">
+                                <div class="fileDescription fileDescription{!cv.ContentDocumentId}">{!cv.Description}</div>
+                            </apex:column>
+                            <apex:column styleClass="tablecell ng-scope" headervalue="Owner">
+                                <a href="/{!cv.Owner.id}" title="View the profile of {!cv.Owner.Name}">{!cv.Owner.Name}</a>
+                            </apex:column>
+                            <apex:column styleClass="tablecell ng-scope" value="{!cv.ContentModifiedDate}"/>
+                            <apex:column styleClass="tablecell ng-scope" headervalue="Actions2">
+                                <div class="actionList">
+                                    <apex:outputPanel rendered="{!NOT(attach)}">
+                                        <a href="#" class="actionPreview" title="View a preview of this file" onClick="displayFilesPreview('{!cv.id}', {!cv.title}, this);">Preview</a>
+                                        <a href="#" id="Follow{!cv.ContentDocumentId}" onClick="follow('{!cv.ContentDocumentId}')" class="actionFollow" title="Follow this file" data-id="{!cv.ContentDocumentId}">Follow</a>
+                                        <div class="actionDropdown" data-owner_id="{!cv.ownerId}" data-version_id="{!cv.ContentDocumentId}" data-network_id="{!cv.networkId}">
+                                            <a href="#" class="actionDropdown" title="View additional options">Dropdown</a>
+                                        </div>
+                                     <!--  <div class="collabFilesDropdownDiv closeOnTab">
+                                            <div class="firstDropdownDiv">
+                                                <a href="/sfc/servlet.shepherd/version/download/{!cv.id}?asPdf=false&operationContext=CHATTER" title="Download this file" class="collabActionDownload">Download {!cv.FileExtension}</a>
+                                            </div>
+                     
+                                        </div> -->  
+                                    </apex:outputPanel>
+                                    <apex:outputPanel rendered="{!attach}">
+                                        <a href="#" class="actionAttach" data-name="{!cv.title}" data-docid="{!cv.contentDocumentId}" title="Attach this file">Attach</a>
+                                    </apex:outputPanel>
+                                </div>
+                            </apex:column>
+                        </apex:pageBlockTable>
+                    </apex:pageBlock>
+                </div>
+            </apex:outputPanel>
+            <div id="CollabLoadingModal" class="collabModal bs container-fluid">
+                <span id="headerId" class="tabColor">
+                    <p class="headerCls ng-binding"></p>
+                </span>
+                <div class="itemMainDivCls sidebarWidget">
+                    <apex:image alt="Loading Screen" url="{!urlfor($Resource.GovGrantsExternal, 'Feedback/css/ajax-loader.gif')}"></apex:image>
+                </div>
+            </div>
+            <div id="CollabDeleteModal" class="collabModal bs container-fluid">
+                <a href="#" title="Close this dialog box"></a>
+                <span id="headerId" class="tabColor">
+                    <p class="headerCls ng-binding"></p>
+                </span>
+                <div class="itemMainDivCls sidebarWidget">
+                    <div>Are you sure you want to permanantly delete this file?</div>
+                    <div>
+                        <input id="DeleteFile{!identifier}" type="button" value="Delete" class="customBtn deleteFile"/>
+                        <input id="CancelDelete{!identifier}" type="button" value="Cancel" class="customBtn cancelDelete"/>
+                        <label class="sr-only" for="DeleteFile{!identifier}">Permanently delete this file</label>
+                        <label class="sr-only" for="CancelDelete{!identifier}">Don't delete this file and close this dialog window</label>
+                    </div>
+                </div>
+            </div>
+            <div id="CollabPreviewModal" class="collabModal bs container-fluid">
+                <a href="#" title="Close this dialog box"></a>
+                <span id="headerId" class="tabColor">
+                    <p class="headerCls ng-binding"></p>
+                </span>
+                <div class="itemMainDivCls sidebarWidget">
+                    <apex:image alt="Preview Image" url=""></apex:image>
+                </div>
+            </div>
+            <form>
+                <div id="UploadNewVersion" class="collabModal bs container-fluid">
+                    <a href="#" title="Close this dialog box"></a>
+                    <span id="headerId" class="tabColor">
+                        <p class="headerCls ng-binding">Upload New Version</p>
+                    </span>
+                    <div>
+                        <div>
+                            <input id="NewContentVersion{!identifier}" type="file" name="NewVersionFile"/>
+                            <label class="sr-only" for="NewContentVersion{!identifier}">Upload a new version of this file</label>
+                            <span>Maximum file size is 2GB</span>
+                        </div>
+                        <div>
+                            <span>Description</span>
+                            <textarea id="FileDescription{!identifier}"/>
+                            <label class="sr-only" for="FileDescription{!identifier}">Description of this file</label>
+                        </div>
+                        <input id="UpdateContentVersion{!identifier}" type="button" class="customBtn" value="Update"/>
+                        <label class="sr-only" for="UpdateContentVersion{!identifier}">Update the file with the data provided above</label>
+    <!--                    <input type="button" class="customBtn" value="Cancel"/> -->
+                    </div>
+                </div>
+            </form>
+            <div id="NewGroupLinkModal" class="collabModal bs container-fluid">
+                <a href="#" title="Close this dialog box"></a>
+                <span id="headerId" class="tabColor">
+                    <p class="headerCls ng-binding">Share with a group</p>
+                </span>
+                <ul id="NewGroups">
+                    <li class="newGroupsHeader">
+                        <div><span>Groups</span></div>
+                        <div class="viewer"><span>Viewer</span></div>
+                        <div class="collaborator"><span>Collaborator</span></div>
+                    </li>
+                    <li class="newGroupsFooter">
+                        <div class="select2-container">
+                            <a class="select2-choice" id="GroupSearchAnchor" href="#GroupSearchInput{!identifier}" title="Press enter to search for a group">
+                                <span class="select2-chosen">Search...</span>
+                                <span class="select2-arrow"><b></b></span>
+                            </a>
+                            <div class="hiddenDiv select2-search">
+                                <input id="GroupSearchInput{!identifier}" type="text"/>
+                                <label class="sr-only" for="GroupSearchInput{!identifier}">Search based on this filter</label>
+                                <ul class="groupSearchResults select2-results">
+                                    
+                                </ul>
+                            </div>
+                        </div>                    
+                    </li>
+                </ul>
+                <div>
+                    <span>This file will be posted to the group(s) selected above.</span>
+                    <textarea id="GroupOptionalMessage{!identifier}" class="optionalMessage" rows="4">Add an optional message...</textarea>
+                    <label class="sr-only" for="GroupOptionalMessage{!identifier}">Optional message to post along with this file</label>
+                </div>
+                <div>
+                    <input id="GroupShareButton{!identifier}" type="button" value="Share" class="customBtn shareWithGroups"/>
+                    <label class="sr-only" for="GroupShareButton{!identifier}">Share this file with the selected groups</label>
+                </div>
+            </div>
+            <div id="NewUserLinkModal" class="collabModal bs container-fluid">
+                <a href="#" title="Close this dialog box"></a>
+                <span id="headerId" class="tabColor">
+                    <p class="headerCls ng-binding">Share with people</p>
+                </span>
+                <ul id="NewUsers">
+                    <li class="newUsersHeader">
+                        <div><span>People</span></div>
+                        <div class="viewer"><span>Viewer</span></div>
+                        <div class="collaborator"><span>Collaborator</span></div>
+                    </li>
+                    <li class="newUsersFooter">
+                        <div class="select2-container">
+                            <a class="select2-choice" id="UserSearchAnchor" href="#UserSearchInput" title="Press enter to begin searching for a user">
+                                <span class="select2-chosen">Search...</span>
+                                <span class="select2-arrow"><b></b></span>
+                            </a>
+                            <div class="hiddenDiv select2-search">
+                                <input id="UserSearchInput{!identifier}" type="text"/>
+                                <label class="sr-only" for="UserSearchInput{!identifier}">Search based on this filter</label>
+                                <ul class="userSearchResults select2-results">
+                                    
+                                </ul>
+                            </div>
+                        </div>                    
+                    </li>
+                </ul>
+                <div>
+                    <span>This file will be posted to the user(s) selected above.</span>
+                    <textarea id="UserOptionalMessage{!identifier}" class="optionalMessage" rows="4">Add an optional message...</textarea>
+                    <label class="sr-only" for="UserOptionalMessage{!identifier}">Optional message to post along with this file</label>
+                </div>
+                <div>
+                    <input id="UserShareButton{!identifier}" type="button" value="Share" class="customBtn shareWithUsers"/>
+                    <label class="sr-only" for="UserShareButton{!identifier}">Share this file with the selected groups</label>
+                </div>
+            </div>
+            <div id="CollabFileUploadModal" class="collabModal bs container-fluid">
+                <a href="#" title="Close this dialog box"></a>
+                <span id="headerId" class="tabColor">
+                    <p class="headerCls ng-binding">Upload a new file</p>
+                </span>
+                <div>
+                    <apex:outputPanel layout="block" rendered="{!userPrefs.GNT__IsInternal__c}">
+                        <select id="FileVisibilityPicklist{!identifier}" class="newFileVisibility">
+                            <option value="Internal">Internal</option>
+                            <option value="External">External</option>
+                            <option value="Private">Private</option>
+                        </select>
+                    </apex:outputPanel>
+                    <apex:outputPanel layout="block" rendered="{!NOT(userPrefs.GNT__IsInternal__c)}">
+                        <select id="FileVisibilityPicklist{!identifier}" class="newFileVisibility">
+                            <option value="External">Public</option>
+                            <option value="Private">Private</option>
+                        </select>
+                    </apex:outputPanel>
+                    <label class="sr-only" for="FileVisibilityPicklist{!identifier}">Select the visibility of this file</label>
+                    <div>
+                        <div>Description:</div>
+                        <div>
+                            <textarea id="NewFileDescription{!identifier}"></textarea>
+                            <label class="sr-only" for="NewFileDescription{!identifier}">Description of this file</label>
+                        </div>
+                    </div>
+                    <form>
+                        <input id="UploadNewVersionButton{!identifier}" type="button" class="customBtn openUploadModal" value="Upload"/>
+                        <label class="sr-only" for="UploadNewVersionButton{!identifier}">Open new file dialog</label>
+                        <input id="UploadCollabFileHidden{!identifier}" type="file" onChange="upload(this);"/>
+                        <label class="sr-only" for="UploadCollabFileHidden{!identifier}">Upload a file</label>
+                    </form>
+                </div>
+            </div>
+            <div id="CollabFilesPreviewModal" class="collabModal bs container-fluid">
+                <a href="#" title="Close this dialog box"></a>
+                <span id="headerId" class="tabColor">
+                    <p class="headerCls ng-binding"></p>
+                </span>
+                <div class="itemMainDivCls sidebarWidget">
+             
+                <embed src="/_swf/196002/sfc/flex/DocViewer.swf" width="100%" height="100%" align="middle" quality="high" bgcolor="#f3f3f3" name="renditionLarge" allowscriptaccess="sameDomain" allowfullscreen="true" pluginspage="http://www.adobe.com/go/getflashplayer" wmode="opaque" type="application/x-shockwave-flash"/>
+                  
+                  
+                  
+                    <!--<embed src="/_swf/192001/sfc/flex/DocViewer.swf" 
+                           width="100%" height="100%" align="middle" id="renditionLarge" quality="high" bgcolor="#f3f3f3" name="renditionLarge" 
+                           allowscriptaccess="sameDomain" allowfullscreen="true" pluginspage="http://www.adobe.com/go/getflashplayer" wmode="opaque" 
+                           type="application/x-shockwave-flash"/>-->
+                </div>
+            </div>
+            <div id="CollabFileSharingModal" class="collabModal bs container-fluid">
+                <a href="#" title="Close this dialog box"></a>
+                <span id="headerId" class="tabColor">
+                    <p class="headerCls ng-binding">Sharing Settings</p>
+                </span>
+                <div class="itemMainDivCls sidebarWidget">
+                    <div class="sharingDiv">
+                        <ul class="shareWith">
+                            <li><span>Share With: </span>
+                            </li>   
+                            <li><a href="#" title="Share this file with other users" onClick="displayUsers();">People</a><span>, </span>
+                            </li>
+                            <li><a href="#" title="Share this file with groups" onClick="displayGroups();">Groups</a>
+                            </li>   
+                        </ul>
+                        <a href="#" class="makeFilePrivate" title="Remove all public sharing for this file">Make private</a>
+                    </div>
+                    <div class="panel-default">
+                        <ul class="fileSharingHeader panel-heading">
+                            <li>Shared With</li>
+                            <li>Permissions<a></a></li>
+                        </ul>
+                        <div>
+                            <ul class="fileSharingList">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="EditFileDescriptionModal" class="collabModal bs container-fluid">
+                <a href="#" title="Close this dialog box"></a>
+                <span id="headerId" class="tabColor">
+                    <p class="headerCls ng-binding">File Description</p>
+                </span>
+                <div class="itemMainDivCls newDescription">
+                   <textarea id="NewDescTextarea{!identifier}"/>
+                   <label class="sr-only" for="NewDescTextarea{!identifier}">The new description for the file</label>
+                   <input id="UploadNewDesc{!identifier}" class="customBtn" type="button" value="Upload"/>
+                   <label class="sr-only" for="UploadNewDesc{!identifier}">Upload the new description</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <c:ExternalLibrary />
+    <apex:includeScript value="{!URLFOR($Resource.GovGrantsExternal, 'Datatables/JS/jquery.dataTables.min.js')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.GovGrantsExternal, 'Datatables/CSS/jquery.dataTables.css')}" />
+    <script src="/soap/ajax/29.0/connection.js" type="text/javascript"></script>
+    <script>
+    var filesFollowing;
+    var documentId;
+    var visibility;
+    var owner;
+    var groups;
+    var autoCompleteItems = [];
+    var canUpdate;
+    var dTable;
+    var rowDate;
+    var rowName;
+    var rowDesc;
+    var rowOwner;
+    var rowVisibility;
+    var rowId;
+    var rowExtension;
+    var allowExternal;
+    var accountId;
+    var networkId;
+    var returnToElement;
+    
+    var j$ = jQuery.noConflict();
+    j$(document).ready(function() {
+        // Reduces browser compatability issues
+        if (!Array.prototype.indexOf) {
+            Array.prototype.indexOf = function(val) {
+                return j$.inArray(val, this);
+            };
+        }
+        if ('{!accountId}') {
+            accountId = '{!accountId}';
+        } else {
+            accountId = 'None';
+        }
+        
+        // Dynamically resize text areas
+        j$('#NewGroupLinkModal textarea, #NewUserLinkModal textarea').on('keyup',function() {
+            j$(this).css('height','0px');
+            j$(this).css('height',Math.max(50,this.scrollHeight)+'px');
+        });
+        Visualforce.remoting.Manager.invokeAction(
+               '{!$RemoteAction.ContentFilesCtrl.following}',
+                   function(result, event){
+                           if(event.status){
+                            filesFollowing = result;
+                                checkFollowings();
+                            }
+                       },
+                   {escape:false,buffer:false}
+        );
+        j$('body').click(function(e) {
+            if(j$(e.target).closest('.sharingSettings').length < 1 && !(j$(e.target).hasClass('shareAnchor'))) {
+                j$('.sharingSettings').removeClass('active');
+            }
+            if(j$(e.target).closest('.collabFilesDropdownDiv').length < 1) {
+                if(j$(e.target).hasClass('actionDropdown')) {
+                    if(j$(e.target).next().hasClass('active') || j$(e.target).parent().next().hasClass('active') ) {
+                        j$('.collabFilesDropdownDiv > div.tmpDiv').remove();
+                        j$('.collabFilesDropdownDiv').removeClass('active');
+                    } else {
+                        canUpdate = false;
+                        var elementDiv;
+                        var dropdown;
+                        if(j$(e.target).prop('tagName') == 'DIV') {
+                            elementDiv = j$(e.target);
+                            dropdown = j$(e.target).next();
+                        } else {
+                            elementDiv = j$(e.target).parent();
+                            dropdown = j$(e.target).parent().next();
+                        }
+                        documentId = elementDiv.data('version_id');
+                        networkId = elementDiv.data('network_id');
+                        if (networkId) {
+                            allowExternal = true;
+                        } else {
+                            networkId = null;
+                            allowExternal = false;
+                        }
+                        j$('.collabFilesDropdownDiv').removeClass('active');
+                        dropdown.addClass('active');
+                        dropdown.find('div:first-child > a').focus();
+                        var html;                 
+                        console.log('{!settings}');
+                       /*else {
+                            Visualforce.remoting.Manager.invokeAction(
+                                '{!$RemoteAction.ContentFilesCtrl.canUploadNewVersion}',
+                                documentId,
+                                '{!UserId}',
+                                function(result, event){
+                                    if(event.status){
+                                        if(result) {
+                                            canUpdate = true;f
+                                            html = '<div class="tmpDiv"><a href="#" title="Upload a new version of this file" class="collabActionUpload" data-owner_id="';
+                                            html += elementDiv.data('ownerId');
+                                            html += '" data-version_id="';
+                                            html += elementDiv.data('version_id');
+                                            html += '">Upload New Version</a></div>';
+                                            html += '<div class="tmpDiv"><a href="#" title="Edit this description of this file" class="collabActionEditDesc" onClick="openDesc(this);">Edit Description</a></div>';
+                                            dropdown.find('.firstDropdownDiv').after(html);
+                                        }
+                                    }
+                                },
+                                {escape:false,buffer:false}
+                            );
+                        }*/
+                    }
+                    return false;
+                } else {
+                    j$('.collabFilesDropdownDiv > div.tmpDiv, .collabFilesDropdownDiv > div.tmpDiv').remove();
+                    j$('.collabFilesDropdownDiv').removeClass('active');
+                }
+                if (j$(e.target).closest('.select2-container').length < 1) {
+                    j$('#UserSearchInput{!identifier}').val('');
+                    j$('#GroupSearchInput{!identifier}').val('');
+                    j$('.userSearchResults').empty();
+                    j$('.groupSearchResults').empty();
+                    j$('.hiddenDiv').removeClass('active');
+                }
+            }
+        });
+        if(!{!attach}) {
+            
+            /*if (!{!settings.userSettings.canModifyAllData}) {
+                j$('.collabActionUpload').each(function() {
+                    if ('{!UserId}' != j$(this).data('owner_id')) {
+                        if (!(canUpdate.indexOf(j$(this).data('version_id')) > -1)) {
+                            j$(this).parent().css('display','none');
+                        }
+                        j$(this).parent().next().css('display','none');
+                    }
+                });
+            }*/
+            j$( '.collabModal' ).dialog({show: true, hide: true, modal: true, autoOpen: false, resizable: false});
+            j$( '#CollabPreviewModal').dialog({width: 641 });
+            j$( '#UploadNewVersion').dialog({width: 500 });
+            j$( '#CollabLoadingModal').dialog({width: 300, height: 150});
+            j$( '#CollabDeleteModal').dialog({width: 400, height: 150});
+            j$( '#CollabFileSharingModal').dialog({width: 650});
+            j$( '#CollabFileUploadModal').dialog({width: 500});
+            j$( '#NewUserLinkModal, #NewGroupLinkModal').dialog({width: 600});
+            j$( '#CollabFilesPreviewModal').dialog({width: 641 });
+            j$( '#EditFileDescriptionModal').dialog({width: 300});
+            
+            
+            j$('body').on('click', '.collabFilesDropdownDiv .collabActionUpload', function() {
+                returnToElement = j$(this);
+                documentId = j$(this).data('version_id');
+                j$('#UploadNewVersion #FileDecription{!identifier}').text(j$(this).parent().parent().parent().parent().parent().next().next().text());
+                j$( '#UploadNewVersion').dialog('open');
+                return false;
+            });
+            
+            j$( 'body').on('click', '.collabFilesDropdownDiv .collabActionDelete', function() {
+                returnToElement = j$(this);
+                documentId = j$(this).data('version_id');
+                j$(this).closest('tr').addClass('setToDelete');
+                j$( '#CollabDeleteModal').dialog('open');
+                return false;
+            });
+            
+            j$( '#CollabDeleteModal > div > div > input.cancelDelete' ).click(function() {
+                j$('tr').removeClass('setToDelete');
+                j$( '#CollabDeleteModal').dialog('close');
+                returnToElement.focus();
+                return false;
+            });
+            j$('body').on('click', '.collabFilesDropdownDiv .collabActionShare', function() {
+                returnToElement = j$(this);
+                j$('#CollabLoadingModal').dialog('open');
+                owner = j$(this).data('owner_id');
+                visibility = j$(this).data('visibility');
+                populateSharingModal();
+                return false;
+            });
+            
+            j$('#UploadNewDesc{!identifier}').click( function() {
+                editDesc();
+                return false;
+            });
+            j$( '#UploadNewVersion > a').click(function() {
+                j$( '#UploadNewVersion').dialog('close');
+                returnToElement.focus();
+                j$( '#UploadNewVersion').find('.collabFilesWrapper #FileDescription{!identifier}').val('');
+                return false;
+            });
+            j$( '#UpdateContentVersion').click(function(btnObject) {
+                var input = j$('#NewContentVersion{!identifier}')[0];
+                j$( '#UploadNewVersion').dialog('close');
+                j$( '#CollabLoadinModal').dialog('open');
+                var filesToUpload = input.files;
+            
+                for(var i = 0, f; f = filesToUpload[i]; i++)
+                {
+                    var reader = new FileReader();     
+            
+                    // Keep a reference to the File in the FileReader so it can be accessed in callbacks
+                    reader.file = f; 
+            
+                    reader.onerror = function(e) 
+                    {
+                        switch(e.target.error.code) 
+                        {
+                            case e.target.error.NOT_FOUND_ERR:
+                                alert('File Not Found!');
+                                break;
+                            case e.target.error.NOT_READABLE_ERR:
+                                alert('File is not readable');
+                                break;
+                            case e.target.error.ABORT_ERR:
+                                break; // noop
+                            default:
+                                alert('An error occurred reading this file.');
+                        };
+                    };     
+            
+                    reader.onabort = function(e) 
+                    {
+                        alert('File read cancelled');
+                    };
+            
+                    reader.onload = function(e) 
+                    {
+                        var FileDescription = j$('.collabFilesWrapper #FileDescription{!identifier}').text();
+                        
+                        j$('[id$=filesHiddenFile]').val((new sforce.Base64Binary(e.target.result)).toString());
+                        j$('[id$=filesHiddenName]').val(this.file.name);
+                        j$('[id$=filesHiddenId]').val(documentId);
+                        j$('[id$=filesHiddenText]').val(FileDescription);
+                        j$( '#CollabFileUploadModal').dialog('close');
+                        j$( '#CollabLoadingModal').dialog('open');
+                        uploadNewVersion();
+                    };
+                    reader.readAsBinaryString(f);
+                }
+                return false;
+            });
+            
+            j$( '.collabFilesWrapper #UploadCollabFile{!identifier}' ).click(function() {
+                returnToElement = j$(this);
+                j$( '#CollabFileUploadModal' ).dialog('open');
+                return false;
+            });
+            j$( '#CollabFileUploadModal .openUploadModal' ).click(function() {
+                j$( '#CollabFileUploadModal #UploadCollabFileHidden{!identifier}').click();
+                return false;
+            });
+        }
+        jQuery.fn.dataTableExt.oApi.fnPagingInfo = function ( oSettings )
+        {
+            return {
+                "iStart":         oSettings._iDisplayStart,
+                "iEnd":           oSettings.fnDisplayEnd(),
+                "iLength":        oSettings._iDisplayLength,
+                "iTotal":         oSettings.fnRecordsTotal(),
+                "iFilteredTotal": oSettings.fnRecordsDisplay(),
+                "iPage":          oSettings._iDisplayLength === -1 ?
+                    0 : Math.ceil( oSettings._iDisplayStart / oSettings._iDisplayLength ),
+                "iTotalPages":    oSettings._iDisplayLength === -1 ?
+                    0 : Math.ceil( oSettings.fnRecordsDisplay() / oSettings._iDisplayLength )
+            };
+        };
+
+        
+
+        dTable = j$('#CollabFilesContainer{!identifier}.collabFilesWrapper table.list').DataTable({
+            "sDom": '<"top"f>rt<"bottom"ipl>',
+            "oLanguage": {
+                  "sInfo": "Total records: _TOTAL_"
+            },
+            "bAutoWidth": false,
+            "aoColumns": [
+                { "sWidth": "100px", "bSortable": false },
+                { "sWidth": "auto" },
+                { "sWidth": "auto", "bSortable": false },
+                { "sWidth": "150px" },
+                { "sWidth": "180px", "sType": "date-salesforce"}
+            ],
+            "order": [[ 5, "desc" ]],
+            "fnDrawCallback": function () {
+                var pageCurrent = this.fnPagingInfo().iPage + 1;
+                var pageTotal = this.fnPagingInfo().iTotalPages;
+                j$('#CollabFilesContainer{!identifier} .pageOfPages').remove();
+                j$('#CollabFilesContainer{!identifier} .dataTables_paginate.paging_two_button').append('<div class="pageOfPages">Page '+pageCurrent+' of '+pageTotal+'</div>');
+            },
+            "bDestroy": true
+        });
+        
+        j$(".actionClose").click(function() {
+            dTable.fnPageChange(0);
+            return false;
+        });
+        j$(dTable.fnGetNodes()).each(function(){
+            var span = j$(this).find('.collabFileName > span:first-child');
+            var text = span.text();
+            var position = getPosition(text);
+            if (position != '9999') {
+                j$(this).find( '.actionAttach').data('location', position);
+                span.css('background-position', '0px ' + position + 'px');
+            }
+            
+            //Remove time
+            span = j$(this).find('.modifiedDate > span:first-child');
+            if (span.text().indexOf(':') >= 0) {
+                span.text(span.text().substring(0, span.text().indexOf(':') - 2));
+            }
+        });
+        j$( '#CollabDeleteModal > div > div > input.deleteFile' ).click(function() {
+            j$( '#CollabDeleteModal').dialog('close');
+            j$( '#CollabLoadingModal').dialog('open');
+            Visualforce.remoting.Manager.invokeAction(
+           '{!$RemoteAction.ContentFilesCtrl.deleteFile}',
+                documentId,
+               function(result, event){
+                       if(event.status){
+                            j$( '#CollabLoadingModal').dialog('close');
+                            var row = j$('tr.setToDelete').get(0);
+                            dTable.fnDeleteRow(dTable.fnGetPosition(row));
+                        } else {
+                            alert('Failed to delete row');   
+                        }
+                   },
+               {escape:false,buffer:false}
+            );
+            return false;
+        });
+        j$.extend( jQuery.fn.dataTableExt.oSort, {
+            "date-salesforce-pre": function ( a ) {
+                a = a.substring(a.indexOf('>'), a.lastIndexOf('<'));
+                // If there's no slash, then it's not an actual date, so return zero for sorting
+                if(a.indexOf('/') === -1) {
+                    return '0';
+                } else {
+                  // Set optional items to zero
+                  var hour = 0,
+                      min = 0,
+                      ap = 0;
+                  // Execute match. Requires month, day, year. Can be mm/dd or m/d. Can be yy or yyyy
+                  // Time is optional. am/pm is optional
+                  // TODO - remove extra time column from array
+                  var b = a.match(/(\d{1,2})\/(\d{1,2})\/(\d{2,4})( (\d{1,2}):(\d{1,2}))? ?(am|pm|AM|PM|Am|Pm)?/),
+                      month = b[1],
+                      day = b[2],
+                      year = b[3];
+                  // If time exists then output hours and minutes
+                  if (b[4] != undefined) {
+                    hour = b[5];
+                    min = b[6];
+                  }
+                  // if using am/pm then change the hour to 24 hour format for sorting
+                  if (b[7] != undefined) {
+                    ap = b[7];
+                    if(hour == '12') hour = '0';
+                    if(ap == 'pm') hour = parseInt(hour, 10)+12;
+                  }
+             
+                  // for 2 digit years, changes to 20__ if less than 70
+                  if(year.length == 2){
+                    if(parseInt(year, 10) < 70) year = '20'+year;
+                    else year = '19'+year;
+                  }
+                  // Converts single digits
+                  if(month.length == 1) month = '0'+month;
+                  if(day.length == 1) day = '0'+day;
+                  if(hour.length == 1) hour = '0'+hour;
+                  if(min.length == 1) min = '0'+min;
+                  var tt = year+month+day+hour+min;
+                  
+                  return tt;
+                }      
+              },
+              "date-salesforce-asc": function ( a, b ) {
+                return a - b;
+              },
+              "date-salesforce-desc": function ( a, b ) {
+                return b - a;
+              }
+            });
+        dTable.on( 'draw', function () {
+                checkFollowings();
+        } );
+        j$(".collabFilesWrapper #FilesSearchText{!identifier}").focus(function(){
+            if(j$(this).val() == 'Quick Search Text') {
+                j$(this).val('');
+            }
+            j$(this).addClass('textFieldActive');
+        });
+        j$(".collabFilesWrapper #FilesSearchText{!identifier}").blur(function(){
+            if(j$(this).val() == ""){
+                j$(this).val('Quick Search Text');
+                j$(this).removeClass('textFieldActive');
+            }
+        });
+        j$(".collabFilesWrapper #FilesSearchText{!identifier}").keyup(function(e){
+            if(e.keyCode == 13) {
+                dTable.fnFilter(this.value);
+            }
+        });
+        j$(".collabFilesWrapper #FilesSearchButton{!identifier}").click(function(){
+            if((j$(this).prev().hasClass('textFieldActive'))) {
+                dTable.fnFilter(j$(this).prev().val());
+            }
+            return false;
+        });
+        j$(".collabFilesWrapper #FilesSearchCancelButton{!identifier}").click(function(){
+            j$(this).prev().prev().val('Quick Search Text');
+            dTable.fnFilter('');
+            j$(this).prev().prev().removeClass('textFieldActive');
+            return false;
+        });
+        
+        j$('.collabModal > a:first-child').on('click', function() {
+            j$(this).parent().dialog('close');    
+            returnToElement.focus();
+            return false;
+        });
+        
+        j$('#NewGroupLinkModal > a:first-child, #NewUserLinkModal > a:first-child').click( function() {
+            j$('#CollabFileSharingModal').dialog('open');
+            j$('#NewGroups > li.newGroup').remove();
+            j$('#NewUsers > li.newUser').remove();
+            j$('#UserSearchInput{!identifier}').val('');
+            j$('#GroupSearchInput{!identifier}').val('');
+            j$('.userSearchResults').empty();
+            j$('.groupSearchResults').empty();
+            j$('.hiddenDiv').removeClass('active');
+            return false;
+        });
+        
+        j$('#GroupSearchAnchor, #UserSearchAnchor').click( function() {
+            j$(this).next().toggleClass('active');
+            return false;
+        });
+        
+        j$('#GroupSearchInput{!identifier}').keyup( function(e) {
+            if(j$(this).val().length > 1) {
+                getGroups();
+            } else {
+                j$('.groupSearchResults').empty();
+            }
+        });
+        j$('#UserSearchInput{!identifier}').keyup( function(e) {
+            if(j$(this).val().length > 1) {
+                getUsers();
+            } else {
+                j$('.userSearchResults').empty();
+            }
+        });
+        
+        j$('#NewGroupLinkModal .optionalMessage, #NewUserLinkModal .optionalMessage').focus( function(e) {
+            if (!(j$(this).hasClass('active'))) {
+                j$(this).val('');
+                j$(this).addClass('active');
+            }
+        });
+        j$('#NewGroupLinkModal .optionalMessage, #NewUserLinkModal .optionalMessage').blur( function(e) {
+            if (j$(this).val() == '') {
+                j$(this).val('Add an optional message...');
+                j$(this).removeClass('active');
+            }
+        });
+        console.log('Before share with');
+        j$('#NewGroupLinkModal .shareWithGroups, #NewUserLinkModal .shareWithUsers').click(function() {
+            j$('.collabModal').dialog('close');
+            j$('#CollabLoadingModal').dialog('open');
+            j$('#UserSearchInput{!identifier}').val('');
+            j$('#GroupSearchInput{!identifier}').val('');
+            j$('.userSearchResults').empty();
+            j$('.groupSearchResults').empty();
+            j$('.hiddenDiv').removeClass('active');
+            
+            var ids = [];
+            var shareTypes = [];
+            var shareType;
+            var message;
+            if (j$(this).hasClass('shareWithGroups')) {
+                if (j$('#NewGroupLinkModal .optionalMessage').hasClass('active')) {
+                    message = j$('#NewGroupLinkModal .optionalMessage').val();
+                } else {
+                    message = '';   
+                }
+                j$('#NewGroups .newGroup').each(function(group) {
+                    ids.push(j$(this).data('id'));
+                    shareType = j$("input[type='radio'][name='sharingType" + j$(this).data('id') + "']:checked");
+                    if (shareType.length > 0) {
+                        shareTypes.push(shareType.val());    
+                    } else {
+                        shareTypes.push('V');   
+                    }
+                });
+            } else {
+                if (j$('#NewUserLinkModal .optionalMessage').hasClass('active')) {
+                    message = j$('#NewUserLinkModal .optionalMessage').val();
+                } else {
+                    message = '';   
+                }     
+                j$('#NewUsers .newUser').each(function(group) {
+                    ids.push(j$(this).data('id'));
+                    shareType = j$("input[type='radio'][name='sharingType" + j$(this).data('id') + "']:checked");
+                    if (shareType.length > 0) {
+                        shareTypes.push(shareType.val());    
+                    } else {
+                        shareTypes.push('V');   
+                    }
+                });                               
+            }
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.ContentFilesCtrl.addEntityLinks}',
+                documentId,
+                ids.toString(),
+                shareTypes.toString(),
+                message,
+                function(result, event){
+                    if(event.status){
+                        if (result == 'success') {
+                            j$('#NewGroups > li.newGroup').remove();
+                            j$('#NewUsers > li.newUser').remove();
+                            j$('#NewGroupModal .optionalMessage, #NewUserModal .optionalMessage').val('Add an optional message...');
+                            j$('#NewGroupModal .optionalMessage, #NewUserModal .optionalMessage').removeClass('active');
+                            populateSharingModal()
+                        } else {
+                            j$('#CollabLoadingModal').dialog('close');
+                        }
+                        returnToElement.focus();
+                    } else {
+                        alert(event.message);
+                    }
+                },
+                {escape:false,buffer:false}
+            );
+            while(autoCompleteItems.length > 0) {
+                autoCompleteItems.pop();
+            }
+            return false;
+        });
+        j$('.collabModal').addClass('active');
+        j$('.closeOnTab > :first-child').on('keydown', function(e) {
+            if(e.which == 9 && e.shiftKey) {
+                j$(e.target).find('.tmpDiv').remove();
+                j$(e.target).closest('.closeOnTab').removeClass('active');
+            }
+        });
+        j$('.closeOnTab > .lastChild').on('keydown', function(e) {
+            if(e.which == 9 && !e.shiftKey) {
+                j$(e.target).find('.tmpDiv').remove();
+                j$(e.target).closest('.closeOnTab').removeClass('active');
+            }
+        });
+        j$('#NewGroupLinkModal > a:first-child, #NewUserLinkModal > a:first-child, #NewGroupLinkModal .optionalMessage, #NewUserLinkModal .optionalMessage').on('focus', function() {
+            j$('#UserSearchInput{!identifier}').val('');
+            j$('#GroupSearchInput{!identifier}').val('');
+            j$('.userSearchResults').empty();
+            j$('.groupSearchResults').empty();
+            j$('.hiddenDiv').removeClass('active');
+        });
+    });
+
+    var openDesc = function(text) {
+        returnToElement = j$(text);
+        j$('#NewDescTextarea{!identifier}').val(j$(text).parent().parent().parent().parent().parent().next().next().find('div').text());
+        j$('#EditFileDescriptionModal').dialog('open');
+        return false;
+    }
+    var editDesc = function() {
+        j$('.collabModal').dialog('close');
+        j$('#CollabLoadingModal').dialog('open');   
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.ContentFilesCtrl.editDesc}',
+            documentId,
+            j$('#NewDescTextarea{!identifier}').val(),
+            function(result,event) {
+                if (event.status) {
+                    var className = '.fileDescription' + documentId;
+                    j$(className).text(result);
+                    j$('#CollabLoadingModal').dialog('close');
+                    returnToElement.focus();
+                }
+            }, {escape:false,buffer:false}
+        );
+        return false;
+    }
+    
+    var getGroups = function() {
+        j$('.groupSearchResults').empty();
+        j$('.groupSearchResults').append('<li class="select2-result"><span>Loading Results</span></li>');
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.ContentFilesCtrl.getGroups}',
+            accountId,
+            j$('#GroupSearchInput{!identifier}').val(),
+            allowExternal,
+            networkId,
+            //'{!UserId}',
+            function(result,event) {
+                if (event.status) {
+                    if (result.length > 0) {
+                        var html = '';
+                        var lower = j$('#GroupSearchInput{!identifier}').val().toLowerCase();
+                        var upper = j$('#GroupSearchInput{!identifier}').val().toUpperCase();
+                        result.forEach( function(group) {
+                            if (autoCompleteItems.indexOf(group.Id) == -1) {
+                                html += '<li class="select2-result select2-result-selectable"><div class="select2-result-label"><a href="#GroupSearchInput" title="Share this file with ';
+                                html += group.Name;
+                                html += '" data-id="';
+                                html += group.Id;
+                                html += '" onclick="addGroup(\'';
+                                html += group.Name;
+                                html += '\',\'';
+                                html += group.Id;
+                                html += '\', \'';
+                                html += group.SmallPhotoUrl;
+                                html += '\', \'';
+                                html += group.MemberCount;
+                                html += '\');">';
+                                html += group.Name.replace(lower, '<span class="select2-match">' + lower + '</span>').replace(upper, '<span class="select2-match">' + upper + '</span>');
+                                html += '</a></div></li>'
+                            }
+                        });
+                        j$('.groupSearchResults').empty();
+                        j$('.groupSearchResults').append(html);
+                    } else {
+                        j$('.groupSearchResults').empty();
+                        j$('.groupSearchResults').append('<li class="select2-result"><span>No Results</span></li>');
+                    }
+                }
+            }, {escape: false,buffer:false}
+        );
+        return false;
+    }
+    var getUsers = function() {
+        j$('.userSearchResults').empty();
+        j$('.userSearchResults').append('<li class="select2-result"><span>Loading Results</span></li>');
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.ContentFilesCtrl.getUsers}',
+            accountId,
+            allowExternal,
+            j$('#UserSearchInput{!identifier}').val(),
+            '{!UserId}',
+            function(result,event) {
+                if (event.status) {
+                    if (result.length > 0) {
+                        var html = '';
+                        var lower = j$('#UserSearchInput{!identifier}').val().toLowerCase();
+                        var upper = j$('#UserSearchInput{!identifier}').val().toUpperCase();
+                        result.forEach( function(user) {
+                            if (autoCompleteItems.indexOf(user.Id) == -1) {
+                                html += '<li class="select2-result select2-result-selectable"><div class="select2-result-label"><a href="#UserSearchInput" title="Share this file with ';
+                                html += user.Name;
+                                html += '" data-id="';
+                                html += user.Id;
+                                html += '" onclick="addUser(\'';
+                                html += user.Name;
+                                html += '\',\'';
+                                html += user.Id;
+                                html += '\', \'';
+                                html += user.SmallPhotoUrl;
+                                html += '\');">';
+                                html += user.Name.replace(lower, '<span class="select2-match">' + lower + '</span>').replace(upper, '<span class="select2-match">' + upper + '</span>');
+                                html += '</a></div></li>'
+                            }
+                        });
+                        j$('.userSearchResults').empty();
+                        j$('.userSearchResults').append(html);
+                    } else {
+                        j$('.userSearchResults').empty();
+                        j$('.userSearchResults').append('<li class="select2-result"><span>No Results</span></li>');
+                    }
+                }
+            }, {escape: false,buffer:false}
+        );
+        return false;
+    }
+    
+    var displayGroups = function() {
+        //if (canUpdate) {
+            //j$('#NewGroupLinkModal .newGroupsHeader > .viewer > span').text('Viewer');
+            //j$('#NewGroupLinkModal .newGroupsHeader > .collaborator > span').text('Collaborator');
+        //} else {
+            j$('#NewGroupLinkModal .newGroupsHeader > .viewer > span').text('');
+            j$('#NewGroupLinkModal .newGroupsHeader > .collaborator > span').text('');
+        //}
+        j$('#CollabFileSharingModal').dialog('close');   
+        j$('#NewGroupLinkModal').dialog('open');   
+        return false;
+    }
+    var displayUsers = function() {
+        //if (canUpdate) {
+        //    j$('#NewUserLinkModal .newUsersHeader > .viewer > span').text('Viewer');
+        //    j$('#NewUserLinkModal .newUsersHeader > .collaborator > span').text('Collaborator');
+        //} else {
+            j$('#NewUserLinkModal .newUsersHeader > .viewer > span').text('');
+            j$('#NewUserLinkModal .newUsersHeader > .collaborator > span').text('');
+        //}
+        j$('#CollabFileSharingModal').dialog('close');   
+        j$('#NewUserLinkModal').dialog('open');   
+        return false;
+    }
+    
+    var addGroup = function(Name, id, photoUrl, memberCount) {
+        j$('#GroupSearchInput{!identifier}').val('');
+        j$('.groupSearchResults').empty();
+        j$('.hiddenDiv').removeClass('active');
+        var html = '<li class="newGroup" data-id="';
+        html += id;
+        html += '"><div';
+        /*if (canUpdate) {
+            html += ' class="fullDiv"';
+        }*/
+        html += '><div class="actorDiv"><img src="';
+        html += photoUrl;
+        html += '"/ alt="Photo of ';
+        html += Name;
+        html += '"><div><span>';
+        html += Name;
+        html += '</span><span>';
+        html += memberCount;
+        if (memberCount > 1) {
+            html += ' Members</span>';    
+        } else {
+            html += ' Member</span>';
+        }
+        html += '</div></div><div class="closeModal"><a href="#" title="Stop sharing this file with "';
+        html += Name;
+        html += '" onclick="removeEntity(\'';
+        html += id;
+        html += '\', this);"/></div></div>';
+        /*if (canUpdate) {
+            html += '<div><input type="radio" name="sharingType';
+            html += id;
+            html += '" class="sharingRadio" checked="checked" value="V"/></div><div><input type="radio" name="sharingType';
+            html += id;
+            html += '" class="sharingRadio" value="C"/></div></li>';
+        } else {*/
+            html += '</li>';   
+        //}
+        j$("#NewGroupLinkModal .newGroupsFooter").before(html);
+        autoCompleteItems.push(id);
+        return false;
+    }
+    var addUser = function(Name, id, photoUrl) {
+        j$('#UserSearchInput{!identifier}').val('');
+        j$('.userSearchResults').empty();
+        j$('.hiddenDiv').removeClass('active');
+        var html = '<li class="newUser" data-id="';
+        html += id;
+        html += '"><div';
+        /*if (canUpdate) {
+            html += ' class="fullDiv"';
+        }*/
+        html += '><div class="actorDiv"><img src="';
+        html += photoUrl;
+        html += '" alt="Photo of ';
+        html += Name;
+        html += '"/><div><span>';
+        html += Name;
+        html += '</span>';
+        html += '</div></div><div class="closeModal"><a href="#" title="Stop sharing this file" onclick="removeEntity(\'';
+        html += id;
+        html += '\', this);"/></div></div>';
+        /*if (canUpdate) {
+            html += '<div><input type="radio" name="sharingType';
+            html += id;
+            html += '" class="sharingRadio" checked="checked" value="V"/></div><div><input type="radio" name="sharingType';
+            html += id;
+            html += '" class="sharingRadio" value="C"/></div></li>';
+        } else {*/
+            html += '</li>';   
+        //}
+        j$("#NewUserLinkModal .newUsersFooter").before(html);
+        autoCompleteItems.push(id);
+        return false;
+    }
+    
+    var removeEntity = function(id, anchorObj) {
+        j$(anchorObj).parent().parent().parent().remove();
+        for(var i = autoCompleteItems.length - 1; i >= 0; i--) {
+            if(autoCompleteItems[i] === id) {
+               autoCompleteItems.splice(i, 1);
+            }
+        }
+        return false;
+    }
+    var makePrivate = function(id, anchorObj) {
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.ContentFilesCtrl.makePrivate}',
+            id,
+            function(result, event){
+                if(event.status){
+                    populateSharingModal();
+                    j$(anchorObj).parent().next().find('.organization').find('.shareRemove').click();
+                }
+            },
+            {escape:false,buffer:false}
+        );
+        return false;
+    }
+    var makeViewer = function(UserId, DocumentId, LinkedEntityId, anchorObj) {
+        j$(anchorObj).parent().parent().removeClass('active');
+        if(j$(anchorObj).parent().parent().prev().text() != 'viewer') {
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.ContentFilesCtrl.makeViewer}',
+                    UserId, 
+                    LinkedEntityId, 
+                    DocumentId,
+                    function(result, event){
+                            if(event.status){
+                                var reference = j$(anchorObj).parent();
+                                var parentReference = j$(anchorObj).parent().parent();
+                                j$(anchorObj).parent().parent().prev().find('a:first-child').html('viewer<span></span>');
+                                j$(anchorObj).parent().parent().prev().find('a:first-child').attr('title', 'Keep this entity as a viewer');
+                                j$(anchorObj).parent().parent().remove('div.shareViewer');
+                                parentReference.prepend(reference);
+                            }
+                        },
+                    {escape:false,buffer:false}
+            );
+        }
+        return false;
+    }
+    var removeAccess = function(UserId, DocumentId, LinkedEntityId, anchorObj) {
+        if(j$(anchorObj).parent().parent().prev().text() == 'No Access') {
+            j$(anchorObj).parent().parent().removeClass('active');
+        } else {
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.ContentFilesCtrl.removeAccess}',
+                    UserId, 
+                    LinkedEntityId, 
+                    DocumentId,
+                    function(result, event){
+                            if(event.status){
+                                if(LinkedEntityId == '{!settings.orgId}') {
+                                    var reference = j$(anchorObj).parent();
+                                    var parentReference = j$(anchorObj).parent().parent();
+                                    j$(anchorObj).parent().parent().prev().find('a:first-child').html('No Access<span></span>');
+                                    j$(anchorObj).parent().parent().prev().find('a:first-child').attr('title', 'Keep everyone in the organization without access');
+                                    j$(anchorObj).parent().next().removeClass('active');
+                                    j$(anchorObj).parent().parent().remove('div.shareCollab');
+                                    parentReference.prepend(reference);
+                                } else {
+                                    j$(anchorObj).parent().parent().empty();
+                                }
+                            }
+                        },
+                    {escape:false,buffer:false}
+            );
+        }
+        return false;
+    }
+    var makeCollab = function(UserId, DocumentId, LinkedEntityId, anchorObj) {
+        j$(anchorObj).parent().parent().removeClass('active');
+        if(j$(anchorObj).parent().parent().prev().text() != 'collaborator') {
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.ContentFilesCtrl.makeCollab}',
+                    UserId, 
+                    LinkedEntityId, 
+                    DocumentId,
+                    function(result, event){
+                            if(event.status){
+                                var reference = j$(anchorObj).parent();
+                                var parentReference = j$(anchorObj).parent().parent();
+                                j$(anchorObj).parent().parent().prev().find('a:first-child').html('collaborator<span></span>');
+                                j$(anchorObj).parent().parent().prev().find('a:first-child').attr('title', 'Keep this entity as a collaborator');
+                                j$(anchorObj).parent().next().removeClass('active');
+                                j$(anchorObj).parent().parent().remove('div.shareCollab');
+                                parentReference.prepend(reference);
+                            }
+                        },
+                    {escape:false,buffer:false}
+            );
+        }
+        return false;
+    }
+    var bindFileEvents = function() {
+        j$( '#CollabFileSharingModal .fileSharingList > li > div:first-child + div + div > a').click(function() {
+            j$(this).parent().next().addClass('active');
+            return false;
+        });
+    }
+    
+    var populateSharingModal = function() {
+        j$('.fileSharingList').empty();
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.ContentFilesCtrl.EntityLinks}',
+            documentId,
+            function(result, event){
+                if(event.status){
+                    //allowExternal = false;
+                    var entryList;
+                    var html;
+                    var top = 98;
+                    var counter = 1;
+                    if (visibility == 'R') {
+                        j$('.sharingDiv').removeClass('active');
+                    } else {
+                        j$('.sharingDiv').addClass('active');
+                        if ('{!userId}' == owner) {
+                            j$('.makeFilePrivate').addClass('active');
+                            j$('.makeFilePrivate').attr('onClick','makePrivate(\'' + documentId + '\', this)');
+                        } else {
+                            j$('.makeFilePrivate').removeClass('active');
+                        }
+                    }
+                    if (result.length > 0) {
+                        var label;
+                        var objectId;
+                        var photoUrl;
+                        var shareType;
+                        result.forEach( function(entry) {
+                            entryList = entry.split(';');
+                            console.log(entryList);
+                            shareType = entryList[0];
+                            objectId = entryList[1];
+                            photoUrl = entryList[2];
+                            label = entryList[3];
+                            if (counter == 1) {
+                                if (photoUrl == 'Organization') {
+                                    html = '<li class="organization"><div class="orgPhoto"></div>';
+                                    html += '<div>Any user in your company</div>';
+                                    if (visibility == 'R' || !canUpdate) {
+                                        html += '<div><span>';
+                                    } else {
+                                        html += '<div><a title="Change sharing settings for the organization from ';
+                                    }
+                                    if (shareType == 'V') {
+                                        if (visibility == 'R' || !canUpdate) {
+                                            html += 'viewer<span></span>';
+                                            html += '</span></div>';
+                                        } else {
+                                            html += 'viewers" class="shareAnchor">';
+                                            html += 'viewer<span></span>';
+                                            html += '</a></div>';
+                                            html += '<div class="sharingSettings" style="top: 98px">';
+                                            html += '<div class="shareViewer"><a href="#" title="Keep everyone in the organization as a viewer" onclick="makeViewer(\'{!UserId}\', \'';
+                                            html += documentId;
+                                            html += '\', \'';
+                                            html += objectId;
+                                            html += '\', this);">viewer<span></span></a></div>';
+                                            /*html += '<div class="shareCollab"><a href="#" title="Make everyone in the organization a collaborator" onclick="makeCollab(\'{!UserId}\', \'';
+                                            html += documentId;
+                                            html += '\', \'';
+                                            html += entryList[1];
+                                            html += '\', this);">collaborator<span></span></a></div>';*/
+                                            html += '<div class="shareRemove"><a href="#" title="Remove access to this file from the organization" onclick="removeAccess(\'{!UserId}\', \'';
+                                            html += documentId;
+                                            html += '\', \'';
+                                            html += objectId;
+                                            html += '\', this);">No Access<span></span></a></div></div></div>';
+                                        }
+                                    } else if (shareType == 'C') {
+                                        if (visibility == 'R' || !canUpdate) {
+                                            html += 'collaborator<span></span>';
+                                            html += '</span></div>';
+                                        } else {
+                                            html += 'collaborators" class="shareAnchor">';
+                                            html += 'collaborator<span></span>';
+                                            html += '</a></div>';
+                                            html += '<div class="sharingSettings" style="top: 98px">';
+                                            /*html += '<div class="shareCollab"><a href="#" title="Keep everyone in the organization as a collaborator" onclick="makeCollab(\'{!UserId}\', \'';
+                                            html += documentId;
+                                            html += '\', \'';
+                                            html += entryList[1];
+                                            html += '\', this);">collaborator<span></span></a></div>';*/
+                                            html += '<div class="shareViewer"><a href="#" title="Make everyone in the organization a viewer" onclick="makeViewer(\'{!UserId}\', \'';
+                                            html += documentId;
+                                            html += '\', \'';
+                                            html += objectId;
+                                            html += '\', this);">viewer<span></span></a></div>';
+                                            html += '<div class="shareRemove"><a href="#" title="Remove access to this file from the organization" onclick="removeAccess(\'{!UserId}\', \'';
+                                            html += documentId;
+                                            html += '\', \'';
+                                            html += objectId;
+                                            html += '\', this);">No Access<span></span></a></div></div></div>';
+                                        }
+                                    }
+                                    html += '</li>';
+                                } else {
+                                    html = '<li class="organization"><div class="orgPhoto"></div>';
+                                    html += '<div>Any user in your company</div>';
+                                    if (visibility == 'R') {
+                                        html += '<div><span>No Access<span></span></span></div>';
+                                    } else {
+                                        html += '<div><a href="#" title="Add access to the organziation" class="shareAnchor">No Access<span></span></a></div>';
+                                    }
+                                    html += '<div class="sharingSettings" style="top: 98px">';
+                                    html += '<div class="shareRemove"><a href="#" title="Keep the organization with no access" onclick="removeAccess(\'{!UserId}\', \'';
+                                    html += documentId;
+                                    html += '\', \'';
+                                    html += objectId;
+                                    html += '\', this);">No Access<span></span></a></div>';
+                                    html += '<div class="shareViewer"><a href="#" title="Make everyone in the organization a viewer" onclick="makeViewer(\'{!UserId}\', \'';
+                                    html += documentId;
+                                    html += '\', \'';
+                                    html += objectId;
+                                    html += '\', this);">viewer</a></div>';
+                                    /*if (canUpdate) {
+                                        html += '<div class="shareCollab"><a href="#" title="Make everyone in the organization a collaborator" onclick="makeCollab(\'{!UserId}\', \'';
+                                        html += documentId;
+                                        html += '\', \'';
+                                        html += entryList[1];
+                                        html += '\', this);">collaborator</a></div>';
+                                    }*/
+                                    html += '</div></li>';
+                                    top += 37;
+                                    counter = 2;
+                                    j$('.fileSharingList').append(html);
+                                }
+                            }
+                            if (counter != 1) {
+                                html = '<li class="';
+                                html += objectId;
+                                //if (label == 'User') {
+                                    //entityType = 'user';
+                                html += '">';;
+                                if (photoUrl != 'Record') {
+                                    html += '<div><a href="/';
+                                    html += objectId;
+                                    html += '" title="View the page for ';
+                                    html += label;
+                                    html += '"><img src="';
+                                    html += photoUrl;
+                                    html += '" alt="Photo of ';
+                                    html += label;
+                                    html += '"/></a></div>';
+                                    html += '<div><a href="/';
+                                    html += objectId;
+                                    html += '">';
+                                    html += label;
+                                    html += '</a></div>';
+                                } else {
+                                    html += '<div><a href="/';
+                                    html += objectId;
+                                    html += '" class="record" title="View the page for ';
+                                    html += label;
+                                    html += '"></a></div>';
+                                    html += '<div><a href="/';
+                                    html += objectId;
+                                    html += '">';
+                                    html += label;
+                                    html += '</a></div>';
+                                }
+                                /*else if (label == 'CollaborationGroup') {
+                                    entityType = 'group';
+                                    html += '"><div><a href="/apex/{!filesNamespace}groupView?id=';
+                                    html += objectId;
+                                    html += '" title="View the group page for ';
+                                    html += entryList[3];
+                                    html += '"><img src="';
+                                    html += photoUrl;
+                                    html += '" alt="Photo of ';
+                                    html += entryList[3];
+                                    html += '"/></a></div>';
+                                    html += '<div><a href="/apex/{!filesNamespace}groupView?id=';
+                                    html += objectId;
+                                    html += '">';
+                                    html += label;
+                                    html += '</a></div>';
+                                } else {
+                                    entityType = 'Network';
+                                    allowExternal = true;
+                                    html += '"><div class="orgPhoto"></div>';
+                                    html += '<div><span>';
+                                    html += label;
+                                    html += '</span></div>';
+                                    console.log('Network: ' + entryList);
+                                }*/
+                                html += '<div>'
+                                if (canUpdate || objectId == owner) {
+                                    if (objectId == owner) {
+                                        html += '<span>owner</span></div>';
+                                    }else if (shareType == 'V' || shareType == 'null') {
+                                        html += '<span class="sharingStatus">viewer</span>';
+                                        /*
+                                        html += '<a href="#" title="Change the sharing settings for ';
+                                        html += label;
+                                        html += '" class="shareAnchor">viewer<span></span></a>';
+                                        */
+                                        //May need to include this if this entity was made a viewer by a viewer
+                                        html += '<a href="#" title="Remove access to this file from ';
+                                        html += label;
+                                        html += '" onclick="removeAccess(\'{!UserId}\', \'';
+                                        html += documentId;
+                                        html += '\', \'';
+                                        html += objectId;
+                                        html += '\', this);"></a>';
+                                        /*
+                                        html += '</div>';
+                                        html += '<div class="sharingSettings" style="top: ';
+                                        html += top;
+                                        html += 'px"><div class="shareViewer"><a href="#" title="Make ';
+                                        html += label;
+                                        html += ' a viewer of this file" onclick="makeViewer(\'{!UserId}\', \'';
+                                        html += documentId;
+                                        html += '\', \'';
+                                        html += objectId;
+                                        html += '\', this);">viewer<span>';
+                                        html += '</span></a></div>';/*<div class="shareCollab"><a href="#" title="Make ';
+                                        html += label;
+                                        html += ' a collaborator to this file" onclick="makeCollab(\'{!UserId}\', \'';
+                                        html += documentId;
+                                        html += '\', \'';
+                                        html += entryList[1];
+                                        html += '\', this);">collaborator</a></div>*/ 
+                                        html += '</div>';
+                                    } else if (shareType == 'C') {
+                                        html += '<a href="#" title="Change ';
+                                        html += label;
+                                        html += ' from a collaborator" class="shareAnchor">collaborator<span></span></a>';
+                                        //if ('{!UserId}' == owner || {!settings.userSettings.canModifyAllData} || entryList[1] == '{!UserId}') {
+                                            html += '<a href="#" title="Remove access to this file from ';
+                                            html += label;
+                                            html += '" onclick="removeAccess(\'{!UserId}\', \'';
+                                            html += documentId;
+                                            html += '\', \'';
+                                            html += objectId;
+                                            html += '\', this);"></a>';
+                                        //}
+                                        html += '</div>';
+                                        html += '<div class="sharingSettings" style="top: ';
+                                        html += top;
+                                        html += 'px">';/*<div class="shareCollab"><a href="#" title="Make this ';
+                                        html += entityType;
+                                        html += ' a collaborator to this file" onclick="makeCollab(\'{!UserId}\', \'';
+                                        html += documentId;
+                                        html += '\', \'';
+                                        html += entryList[1];
+                                        html += '\', this);">collaborator<span>';
+                                        html += '</span></a></div>*/ 
+                                        html += '<div class="shareViewer"><a href="#" title="Make ';
+                                        html += label;
+                                        html += ' a viewer of this file" onclick="makeViewer(\'{!UserId}\', \'';
+                                        html += documentId;
+                                        html += '\', \'';
+                                        html += objectId;
+                                        html += '\', this);">viewer</a></div></div>';
+                                    } else {
+                                        // this is I, I don't know what to do for that
+                                        console.log('This unaccounted for');
+                                        console.log(entryList);
+                                        html += '<a class="shareAnchor">' + label + '</a></div>';
+                                    }
+                                } else {
+                                    html += '<span>';
+                                    if (shareType== 'V') {
+                                        html += 'viewer</span></div>';
+                                    } else if (shareType == 'C') {
+                                        html += 'collaborator</span></div>';
+                                    } else {
+                                        html += shareType + '</span></div>';
+                                    }
+                                }
+                            }
+                            html += '</li>';
+                            top += 37;
+                            counter = 2;
+                            j$('.fileSharingList').append(html);
+                        });
+                    }
+                    bindFileEvents();
+                    j$('#CollabLoadingModal').dialog('close');
+                    j$('#CollabFileSharingModal').dialog('open');
+                }
+            },
+            {escape:false,buffer:false}
+        );    
+    }
+    
+    var getPosition = function(text) {
+        var position;
+        if ( typeof text == 'undefined') {
+            position = '9999';
+            }else {
+            switch (text.toLowerCase()) {
+                case 'al':
+                    position = '-42';
+                    break;
+                case 'pdf':
+                    position = '-672';
+                    break;
+                case 'word':
+                case 'word_x':
+                    position = '-1132';
+                    break;
+                case 'zip':
+                    position = '-1217';
+                    break;
+                case 'gif':
+                case 'jpg':
+                case 'png':
+                    position = '-503';
+                    break;
+                case 'text':
+                case 'txt':
+                    position = '-925';
+                    break;
+                case 'xls':
+                    position = '-210';
+                    break;
+                case 'csv':
+                    position = '-125';
+                    break;
+                case 'eps':
+                    position = '-168';
+                    break;
+                case 'fla':
+                    position = '-294';
+                    break;
+                case 'html':
+                    position = '-462';
+                    break;
+                case 'ppt':
+                case 'ppt_x':
+                    position = '-712';
+                    break;
+                case 'psd':
+                    position = '-756';
+                    break;
+                case 'rtf':
+                    position = '-787';
+                    break;
+                case 'xml':
+                    position = '-1176';
+                    break;
+                case 'vis':
+                    position = '-1047';
+                    break;
+                default:
+                    position = '-968';
+            }
+        }
+        return position;
+    }
+    var checkFollowings = function() {
+        if(filesFollowing != null) {
+            j$( '.actionFollow' ).each(function( ) {
+                var id = j$(this).data('id');
+                if (id in filesFollowing) {
+                    j$(this).addClass('following');
+                }
+            });
+        }
+    }   
+    var follow = function(id) {
+        if (id in filesFollowing) {
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.ContentFilesCtrl.unFollow}',
+                    filesFollowing[id],
+                    function(result, event){
+                            if(event.status){
+                                 delete filesFollowing[id];
+                                 j$('#Follow' + id).removeClass('following');
+                             }
+                        },
+                    {escape:false,buffer:false}
+            );
+        } else {
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.ContentFilesCtrl.follow}',
+                    id,
+                    function(result, event){
+                            if(event.status){
+                                 filesFollowing[id] = result;
+                                 j$('#Follow' + id).addClass('following');
+                             }
+                        },
+                    {escape:false,buffer:false}
+            );
+        }
+        return false;
+    };
+    function resetFileField(e) {
+        e.wrap('<form>').parent('form').trigger('reset');
+        e.unwrap();
+    }
+    
+    function Success() {
+        location.reload();
+        /*var actionList = '<div class="actionList"><span><a class="actionFollow" data-id="';
+        actionList += rowId;
+        actionList += '" href="#" id="Follow';
+        actionList += rowId;
+        actionList += '" onclick="follow(\'';
+        actionList += rowId;
+        actionList += '\')" title="Follow this file">Follow</a><div class="actionDropdown" data-owner_id="';
+        actionList += '{!UserId}';
+        actionList += '" data-version_id="';
+        actionList += rowId;
+        actionList += '"><a class="actionDropdown" data-version_id="';
+        actionList += rowId;
+        actionList += '" href="#" title="View additional options">Dropdown</a></div><div class="collabFilesDropdownDiv"><div class="firstDropdownDiv"><a class="collabActionDownload" href="/sfc/servlet.shepherd/version/download/';
+        actionList += rowId;
+        actionList += '?asPdf=false&amp;operationContext=CHATTER" title="Download this file">Download jpg</a></div><div><a class="collabActionShare" data-owner_id="{!UserId}" data-version_id="';
+        actionList += rowId;
+        actionList += '" data-visibility="';
+        actionList += rowVisibility;
+        actionList += '" href="#" title="View sharing settings for this file">Sharing Settings</a></div></div></span></div>';*/
+        /*actionList = '<div></div>';
+
+        var newRowName = '<div class="collabFileName"><span style="background-position: 0px ';
+        newRowName += getPosition(rowExtension);
+        newRowName += 'px;">';
+        newRowName += rowExtension;
+        newRowName += '</span><div>';
+        newRowName += rowName;
+        newRowName += '</div></div>';
+
+        var newRowOwner = '<a href="#" title ="View the profile of ';
+        newRowOwner += rowOwner;
+        newRowOwner += '">';
+        newRowOwner += rowOwner;
+        newRowOwner += '</a>';
+
+        dTable.fnAddData( [
+            actionList,
+            newRowName,
+            '<div>' + rowDesc + '</div>',
+            newRowOwner,
+            '<span>' + rowDate + '</span>'
+        ]);
+        j$( '.collabModal').dialog('close');*/
+    }
+    
+    var upload = function(btnObject) {
+        var input = j$(btnObject)[0];
+    
+        var filesToUpload = input.files;
+        for(var i = 0, f; f = filesToUpload[i]; i++)
+        {
+            var reader = new FileReader();     
+    
+            // Keep a reference to the File in the FileReader so it can be accessed in callbacks
+            reader.file = f; 
+    
+            reader.onerror = function(e) 
+            {
+                switch(e.target.error.code) 
+                {
+                    case e.target.error.NOT_FOUND_ERR:
+                        alert('File Not Found!');
+                        break;
+                    case e.target.error.NOT_READABLE_ERR:
+                        alert('File is not readable');
+                        break;
+                    case e.target.error.ABORT_ERR:
+                        break; // noop
+                    default:
+                        alert('An error occurred reading this file.');
+                };
+            };     
+    
+            reader.onabort = function(e) 
+            {
+                alert('File read cancelled');
+            };
+    
+            reader.onload = function(e) 
+            {   
+                j$('[id$=filesHiddenFile]').val((new sforce.Base64Binary(e.target.result)).toString());
+                j$('[id$=filesHiddenName]').val(this.file.name);
+                j$('[id$=filesHiddenType]').val(this.file.type);
+                j$('[id$=filesHiddenText]').val(j$('#NewFileDescription{!identifier}').val());
+                j$( '#CollabFileUploadModal').dialog('close');
+                j$( '#CollabLoadingModal').dialog('open');
+                console.log('loading');
+                if (j$('.newFileVisibility').val() == 'Internal') {
+                    console.log('internal');
+                    uploadNewInternalFile();
+                } else if (j$('.newFileVisibility').val() == 'External') {
+                    console.log('external');
+                    uploadNewExternalFile();
+                } else {
+                    console.log('private');
+                    uploadNewFile();
+                }
+            };
+            reader.readAsBinaryString(f);
+        }
+    }
+    var displayFilesPreview = function(id, fileName, anchorObj) {
+        returnToElement = j$(anchorObj);
+     //   j$( '#CollabFilesPreviewModal > div > img' ).attr('src', '/sfc/servlet.shepherd/version/renditionDownload?rendition=THUMB720BY480&versionId=' + id + '&operationContext=CHATTER');
+         j$( '#CollabFilesPreviewModal > div > embed' ).attr('flashvars', 'shepherd_prefix=/sfc/servlet.shepherd&v=' + id + '&mode=chatterfilepreview&in_tests=false');
+        j$( '#CollabFilesPreviewModal > span > p' ).text(fileName);
+        j$( '#CollabFilesPreviewModal' ).dialog('open');   
+        return false; 
+    };   
+    
+    </script>
+</apex:component>

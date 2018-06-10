@@ -1,0 +1,404 @@
+<apex:component Controller="UserNotesCtrl">
+<style type="text/css">
+.usernotes{
+  margin:0;
+  padding:0;
+}
+.usernotes{
+  font-family:arial,sans-serif;
+  font-size:100%;
+  /*background:#666;*/
+ 
+}
+.stickyUsernotes .tittleClass,.descClass{
+  font-size:100%;
+  font-weight:normal;
+}
+.stickyUsernotes ul, .stickyUsernotes li{
+  list-style:none;
+}
+.stickyUsernotes ul{
+  /*overflow:hidden;*/
+  padding:3em;
+}
+.stickyUsernotes ul li a{
+  text-decoration:none;
+  padding: 5px;
+  display:block;
+  -moz-transition:-moz-transform .15s linear;
+  -o-transition:-o-transform .15s linear;
+  -webkit-transition:-webkit-transform .15s linear;
+}
+.stickyUsernotes ul li{
+  margin:1em;
+  float:left;
+}
+.stickyUsernotes ul li .tittleClass{
+  font-size:140%;
+  font-weight:bold;
+  padding-bottom:10px;
+}
+.stickyUsernotes ul li .descClass{
+  font-family:"Reenie Beanie",arial,sans-serif;
+}
+.stickyUsernotes ul li a{
+  -webkit-transform: rotate(-6deg);
+  -o-transform: rotate(-6deg);
+  -moz-transform:rotate(-6deg);
+}
+.stickyUsernotes ul li:nth-child(even) a{
+  -o-transform:rotate(4deg);
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+  position:relative;
+  top:5px;
+  
+}
+.stickyUsernotes ul li:nth-child(3n) a{
+  -o-transform:rotate(-3deg);
+  -webkit-transform:rotate(-3deg);
+  -moz-transform:rotate(-3deg);
+  position:relative;
+  top:-5px;
+  
+}
+.stickyUsernotes ul li:nth-child(5n) a{
+  -o-transform:rotate(5deg);
+  -webkit-transform:rotate(5deg);
+  -moz-transform:rotate(5deg);
+  position:relative;
+  top:-10px;
+}
+.stickyUsernotes ul li a:hover, .stickyUsernotes ul li a:focus{
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  position:relative;
+  z-index:1;
+}
+.stickyUsernotes ol{text-align:center;}
+.stickyUsernotes ol li{display:inline;padding-right:1em;}
+.stickyUsernotes .tittleClass {background:none;width:95%;border: none;} 
+.stickyUsernotes .tittleClassDetail{
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    background-image: none;
+    border-radius: 4px;
+    
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;}
+.stickyUsernotes .descClass {background:none;width:100%;border-bottom: none; border-left: none; border-right: none;}
+.stickyUsernotes .descClass2 {height: 150px;}
+
+.stickyUsernotes #close { float: right; display: inline-block; padding: 0; font-size: 18px; margin-right: 5px;  cursor: pointer;}
+
+.stickyUsernotes .modal-body { padding: 1px !important; }
+.listUsernotes {margin-top: 10px;}
+
+.listUsernotes ul li {
+    margin-top: 3px !important;
+    overflow: hidden;
+}
+
+.listUsernotes ul li div.tittleClassDetail {
+    border: 0;
+    padding: 8px !important;
+    cursor: pointer;
+    margin-right: 0px;
+    min-height: 33px;
+}
+
+
+.listUsernotes ul {
+    padding: 0;
+}
+
+.vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width: 100%;
+    pointer-events:none;
+}
+.vertical-align-center {
+    display: table-cell;
+    vertical-align: middle;
+    pointer-events:none;
+}
+.modal-content {  
+    width:inherit;
+    height:inherit;   
+    margin: 0 auto;
+    pointer-events: all;
+}
+
+div#userNote button {
+    border: 0;
+    margin: 0;
+    padding: 0;
+   
+}
+
+div#userNote button i {
+    padding: 5px;  
+     
+}
+
+
+div#userNote button:focus {
+    outline: 0;
+}
+div#userNote .new-notes i {
+    padding: 5px;
+    margin-right: 5px;
+   
+}
+div#userNote button {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    
+}
+div#userNote .grp > button:nth-child(2) {
+    border-left: 0;
+}
+div#userNote .grp > button:first-child {
+    float: left;
+    border-right: 0;
+}
+.new-notes{
+float:left;
+margin-right:5px;
+}
+div#userNote button#userModalDivCloseIcon {
+   
+    text-decoration: none;
+    cursor: pointer;
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+#userModalDiv form.form-horizontal {
+    padding: 10px;
+   
+}
+#userModalDiv form.form-horizontal .form-group:last-child {
+    margin-bottom: 0;
+}
+
+
+
+.tittleClassDetailHead{  
+    padding-top: 10px;
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: bottom;
+    padding: 3px 18px 3px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    }
+    
+.btnOutlineFocus:focus{
+    outline-offset: 0px !important;
+} 
+.   
+</style>
+    <div id="userNote" ng-controller="userNoteCtrl"  class="usernotes">
+        <button class="new-notes" type="button" ng-click="newNote();"><i class="fa fa-plus" aria-hidden="true"></i><span class="hidden508">Add New Notes</span></button>
+        <div class="grp">
+        <button class="" type="button" ng-click="isListView=true;"><i class="fa fa-list-ul" ng-class="isListView ? 'active' : ''" aria-hidden="true"></i><span class="hidden508">list View</span></button>        
+        <button class="" type="button" ng-click="isListView=false;"><i class="fa fa-th-large" ng-class="isListView ? '' : 'active'"  aria-hidden="true"></i><span class="hidden508">Box View</span></button>
+        </div>
+        
+          <div ng-if="!isListView" class="stickyUsernotes">
+              <ul>
+                <li ng-repeat="userNote in userNotes" ng-click="openModal(userNote);">
+                  <a href="#" class="btnOutlineFocus" aria-label="Press Enter to edit Note {{userNote.Tittle__c}}">
+                    <span id='close' ng-click="deleteNote(userNote.Id);" onClick="this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;">x</span>
+                    <input type="text" class="tittleClass" ng-model="userNote.Tittle__c" tabIndex="-1" aria-label="Title"></input><div class="" ng-bind="a= getDateTime({{userNote.LastModifiedDate}}) | date:'MM/dd/yyyy h:mm a'"></div>
+                    <textarea class="descClass" ng-model="userNote.Description__c" tabIndex="-1" aria-label="Description"></textarea>
+                  </a>
+                </li>
+              </ul>
+          </div>
+          <div ng-if="isListView" class="listUsernotes">
+              <ul>
+                <li style="margin-top:3px">
+                    <div class="tittleClassDetailHead col-md-4">Title</div>
+                    <div class="tittleClassDetailHead col-md-4">Description</div>
+                    <div class="tittleClassDetailHead col-md-4">Last Modified On</div>
+                </li>
+                <li ng-repeat="userNote in userNotes" style="margin-top:3px" ng-click="openModal(userNote);">
+                  
+                    <div class="tittleClassDetail col-md-4" > <a href="#" ng-bind="userNote.Tittle__c">  </a></div>
+                    <div class="tittleClassDetail col-md-4" ><a href="#" ng-bind="userNote.Description__c">  </a></div>
+                    <div class="tittleClassDetail col-md-4" ><a href="#" ng-bind="a= getDateTime({{userNote.LastModifiedDate}}) | date:'MM/dd/yyyy h:mm a'">  </a></div>
+                 
+                </li>
+              </ul>
+          </div>
+      <!--  Dialog changes -->
+        <div id="userModalDiv" class="modal fade" role="dialog" data-backdrop="static" style="background-color: rgba(0,0,0,0.5);" tabindex="0" onkeyup="closeModal()">
+        <div class="vertical-alignment-helper">
+           <div class="modal-dialog vertical-align-center">
+               <!-- Modal content --> 
+               <div class="modal-content stickyUsernotes" >
+                   <div class="modal-header modal-header-ext">
+                   <button type="button" id="userModalDivCloseIcon" ng-click="removeNote(selectedUserNote);" class="close" data-dismiss="modal" aria-label="Close Notes"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title"> <div ng-if="selectedUserNote.Id == null">Add New Note</div><div ng-if="selectedUserNote.Id != null">Edit Note</div></h4>                                       
+                   </div>
+                   <div class="modal-body">
+                   <form class="form-horizontal">
+                    <div class="form-group">                    
+                      <div class="col-sm-12">
+                            
+                          <input type="text" class="tittleClass form-control tittleClassDetail"  placeholder="Title" ng-model="selectedUserNote.Tittle__c" aria-label="Enter Notes "></input>
+                      </div>
+                    </div>
+                     <div class="form-group">                    
+                      <div class="col-sm-12">
+                       <textarea class="descClass2 tittleClassDetail form-control" placeholder="Description" ng-model="selectedUserNote.Description__c" aria-label="Enter Notes "></textarea>
+                      </div>
+                    </div>
+                  </form>
+                   </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default btnOutlineFocus" ng-click="deleteNote(selectedUserNote.Id);" data-dismiss="modal">Delete</button>&nbsp;
+                    <button type="button" class="btn btn-default btnOutlineFocus" ng-click="saveNote(selectedUserNote);" data-dismiss="modal" ng-disabled="selectedUserNote.Tittle__c == '' || selectedUserNote.Description__c ==''">Save and Close</button>
+                  </div>
+               </div>
+           </div>
+        </div>
+        </div>
+    </div>
+    <script>
+        _RemotingUserNoteActions = {};
+        _RemotingUserNoteActions.getUserNotes = '{!$RemoteAction.UserNotesCtrl.getUserNotes}';
+        _RemotingUserNoteActions.deleteNote = '{!$RemoteAction.UserNotesCtrl.deleteNote}';
+        _RemotingUserNoteActions.saveNote = '{!$RemoteAction.UserNotesCtrl.saveNote}';
+        
+        var lastFocus;
+        
+        var userNoteApp = angular.module('userNote', []);
+        userNoteApp.controller('userNoteCtrl', function ($q, $scope, $window, $sce, $parse) {
+            $scope.userNotes = {};
+            $scope.selectedUserNote = {};
+            $scope.isListView = false;
+            $scope.getNotes = function(){
+                var deferred = $q.defer();
+                Visualforce.remoting.Manager.invokeAction(
+                    _RemotingUserNoteActions.getUserNotes ,
+                    function(result, event){
+                        if (event.status) {
+                            $scope.$apply(function () {
+                                $scope.userNotes = result;
+                                deferred.resolve(result);
+                            });
+                        }
+                    },
+                    { buffer: false, escape: false, timeout: 30000 }
+                );
+            }
+            
+            $scope.saveNote = function(noteObj) {
+                var deferred = $q.defer();
+                var noteJSON = angular.toJson( noteObj );
+                console.log('noteJSON:' + noteJSON);
+                Visualforce.remoting.Manager.invokeAction(
+                    _RemotingUserNoteActions.saveNote, noteJSON, 
+                    function(result, event){
+                        if (event.status) {
+                            $scope.$apply(function () {
+                                $scope.userNotes = result;
+                                deferred.resolve(result);
+                            });
+                        }
+                        j$(lastFocus).focus();
+                    },
+                    { buffer: false, escape: false, timeout: 30000 }
+                );
+            }
+            
+            $scope.newNote = function() {
+                var userNote = {'Description__c' : '', 'Tittle__c' : '', 'Id': null};
+                $scope.selectedUserNote = userNote;
+                $scope.userNotes.push(userNote);
+                console.log('$scope.userNotes:', $scope.userNotes);
+                j$('#userModalDiv').modal();
+                lastFocus = document.activeElement; 
+                console.log('lastFocus --->>',lastFocus); 
+                console.log('Created new note.');
+                
+            }
+            
+            $scope.deleteNote = function(noteId){
+                var deferred = $q.defer();
+                Visualforce.remoting.Manager.invokeAction(
+                    _RemotingUserNoteActions.deleteNote, noteId,
+                    function(result, event){
+                        if (event.status) {
+                            $scope.$apply(function () {
+                                $scope.userNotes = result;
+                                deferred.resolve(result);
+                            });
+                        }
+                        j$(lastFocus).focus();
+                    },
+                    { buffer: false, escape: false, timeout: 30000 }
+                );
+            }
+            
+            $scope.removeNote = function(noteObj) {
+                if(noteObj.Id == null) {
+                    var index = $scope.userNotes.indexOf(noteObj);
+                    if(index>=0)
+                        $scope.userNotes.splice(index, 1);
+                }
+                console.log('lastFocus --called->>',lastFocus); 
+                j$(lastFocus).focus();
+            }
+            
+            $scope.toUTCDate = function(date){
+                var _utc = new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),  date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+                //alert(_utc);
+                return _utc;
+            };
+            
+            $scope.getDateTime = function(value){       
+                var time = undefined;
+                if(value != undefined){         
+                    return $scope.toUTCDate(new Date(value));
+                }
+                
+                return time;
+            };
+            
+            $scope.openModal = function(userNote) {
+                $scope.selectedUserNote = userNote;
+                console.log('$scope.selectedUserNote:', $scope.selectedUserNote);
+                j$('#userModalDiv').modal();
+                lastFocus = document.activeElement; 
+            }
+            
+            $scope.closeModal = function() {
+                if(event.keyCode==27)
+                {   
+                    j$('#userModalDiv').modal('hide');
+                    j$(lastFocus).focus();      
+                }   
+            }
+            
+            $scope.getNotes();
+            //$scope.openModal();
+            
+        });
+        
+        angular.element(document).ready(function() {
+            angular.bootstrap(document.getElementById("userNote"),['userNote']);
+        });
+        
+    </script>
+</apex:component>

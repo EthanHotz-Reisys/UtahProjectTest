@@ -1,0 +1,8 @@
+<apex:page showHeader="false" controller="ProgressReportListViewCtrl" sidebar="false" standardStylesheets="false">
+	 <c:ExternalLibrary />
+	 <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">
+	 		<GNT:FlexTable flexTableName="GrantSpecificProgressReports" tableId="GrantSpecificProgressReports" flexTableParameters="{!keyValueMap}"/>
+	 	</apex:define>
+	 </apex:composition>
+</apex:page>

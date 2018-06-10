@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>IN USE - TEST TEMPLATE</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TestEmailTemplate2</name>
+    <style>none</style>
+    <subject>Reviewer Invitation</subject>
+    <textOnly>Dear ,
+
+Congratulations on being selected as an External Reviewer for the District of Columbia(DC) - Department of Health(DOH).
+
+Thank you for agreeing to serve as an External Reviewer  District of Columbia(DC) - Department of Health(DOH). Please click on the url below to create your login account to register as an External Reviewer in the  Enterprise Management System (EGMS), which will be used to manage the entire application intake and evaluation process.
+
+You will be required to provide your contact details and area(s) of expertise in order to create the profile in the system. You will also be prompted to sign a Non-Disclosure Agreement and Conflict of Interest Agreement.
+
+Click here
+
+Sincerely,
+
+Enterprise Grants Management System(EGMS)</textOnly>
+    <type>custom</type>
+</EmailTemplate>

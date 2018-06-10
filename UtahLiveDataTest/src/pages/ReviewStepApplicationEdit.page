@@ -1,0 +1,16 @@
+<apex:page standardController="ReviewStepApplication__c" title="Review Step Application Edit" extensions="ReviewStepApplicationEditCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+
+     <!--<div id="modalDiv" class="bs container-fluid" style="clear:both; width:100%;height:100%; min-height : 400px !important;max-height:800 px!important;overflow:auto;"> --> 
+            <apex:composition template="GNT__ModalTemplate">
+            <apex:define name="ModalContent"> 
+
+           <!--  <GNT:FlexEditLayout templateName="ReviewStepApplication" recordId="{!recordId}" layoutType="Edit" HideSidebar="true" hideCancelBtn="true"  hideHeaderBtns="true"  flexTableParameters="{!keyValueMap}"/> -->
+           <GNT:ModalFlexEditLayout templateName="{!templateName}" recordId="{!recordId}" layoutType="Edit" HideSidebar="true" hideCancelBtn="true"  hideHeaderBtns="true"  flexTableParameters="{!keyValueMap}"/>
+           </apex:define>
+            </apex:composition>
+
+      <!--</div>-->
+</apex:page>

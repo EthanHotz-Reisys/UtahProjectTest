@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email sent when Change Request is approved.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Change Request Approved</name>
+    <style>formalLetter</style>
+    <subject>Notification: Change Request Approved for Application #{!Application__c.Name}</subject>
+    <textOnly>Subject: Notification of Change Request# {!ChangeRequest__c.Name} approval.
+
+
+This email is to notify you that Change Request# {!GO__AmendmentRequest__c.Name} for your Grant {!ChangeRequest__c.Award__c} has been approved.
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

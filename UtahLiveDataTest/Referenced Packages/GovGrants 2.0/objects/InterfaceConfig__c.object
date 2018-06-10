@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>List of all interfaces available for GG.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>API_Key__c</fullName>
+        <deprecated>false</deprecated>
+        <description>API Key</description>
+        <externalId>false</externalId>
+        <label>API Key</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Password__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Store password</description>
+        <externalId>false</externalId>
+        <label>Password</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Product Id</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Purpose__c</fullName>
+        <deprecated>false</deprecated>
+        <description>purpose of setting</description>
+        <externalId>false</externalId>
+        <label>Purpose</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Url__c</fullName>
+        <deprecated>false</deprecated>
+        <description>URL</description>
+        <externalId>false</externalId>
+        <label>Url</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Username__c</fullName>
+        <deprecated>false</deprecated>
+        <description>User Name</description>
+        <externalId>false</externalId>
+        <label>User Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Version__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Version</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>isEnabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>isEnabled</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Config: Interface</label>
+    <visibility>Public</visibility>
+</CustomObject>

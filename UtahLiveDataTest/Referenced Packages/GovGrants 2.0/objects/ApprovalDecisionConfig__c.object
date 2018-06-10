@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Stores the information related to the Approval ie; Comments field as well as other details</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ApprovalDecisionCommentLabel__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Approval Decision CommentLabel</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApprovalPDFCondition__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the API name which will decide whether the PDF needs to be captured</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the API name which will decide whether the PDF needs to be captured</inlineHelpText>
+        <label>Approval PDF Condition API Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApprovalSnapshotFileName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>File name for Approval PDF. It can also be given in form of a merge field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>File name for Approval PDF. It can also be given in form of a merge field.</inlineHelpText>
+        <label>Approval Snapshot File Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CaptureSnapshotonApproval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked snapshot of the record will get captured on Approval/Disapproval</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked snapshot of the record will get captured on Approval/Disapproval</inlineHelpText>
+        <label>Capture Snapshot on Approval?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CommentsFieldAPIName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Comments Field API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CommentsRequired__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Comments Required ?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ShowApproveOption__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Show Approve option?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ShowDisapproveOption__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Show Disapprove option?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ShowSendForFurtherReviewOption__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Show Send For Further Review Option?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ShowSendtoOwnerOption__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Show Send to Owner Option?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Config : Approval Decision</label>
+    <visibility>Public</visibility>
+</CustomObject>

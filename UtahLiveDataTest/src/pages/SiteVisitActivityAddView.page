@@ -1,0 +1,12 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" standardController="SiteVisitActivity__c" extensions="SiteVisitActivityAddViewCtrl">
+<!-- Including JS and CSS Resources -->
+    <c:ExternalLibrary />
+     <apex:composition template="GNT__ModalTemplate"> 
+        <apex:define name="ModalContent"> 
+            <GNT:ModalFlexViewLayout hideSidebar="true" templateName="SiteVisitActivityTemplate" recordId="{!recordId}" layoutType="View" saveURL="{!savePage}" cancelURL="{!cancelPage}" createDefaultValues="{!listDefaultValues}"/>
+         </apex:define>
+    </apex:composition> 
+   <script>
+    console.log("edit TMPL "+"{!templateName}");
+    </script>
+</apex:page>

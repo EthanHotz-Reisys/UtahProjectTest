@@ -1,0 +1,52 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p><span style='font-family: "Times New Roman", Times, serif; font-size: medium; background-color: rgb(255, 255, 255);'><br></span></p>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">Dear All,</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">This email is to notify you all that, a new announcement #{!Announcement__c.AnnouncementId__c}
+has been published in EGMS System. You are invited to visit the announcement as
+per the details:</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><b><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">Announcement
+Details:</span></font></b></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">Announcement
+Title: {!Announcement__c.AnnouncementName__c}</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">Awarding
+Agency:<span style="mso-spacerun:yes">&nbsp; </span>{!Announcement__c.AccountName__c}</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">Publication
+Date: {!Announcement__c.FOAPublicationDate__c}</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">Application Deadline: {!Announcement__c.ApplicationDeadlineWithDateTime__c}<br></span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">Link for More Details: {!Announcement__c.Link}<br></span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">Please do not reply to this email. You may contact
+the GovGrants Support Team at govgrants@support.com if you have any questions
+or need assistance with this task.</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">Sincerely,</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+<span style="font-size: 11pt; line-height: 107%; color: black;">EGMS Team</span></font>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

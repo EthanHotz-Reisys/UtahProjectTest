@@ -1,0 +1,23 @@
+<!--
+ ********************************************************** 
+ Audit History
+ **********************************************************
+ 11/3/2015   swati singh Created for the footer of the login pages
+
+ **********************************************************  
+-->
+  <apex:page language="en" controller="GNT.MainPageCtrl" sidebar="false" docType="html-5.0"  id="MainPageID" showHeader="false" standardStylesheets="false">
+    <link REL="SHORTCUT ICON" HREF="{!URLFOR($Resource.GNT__Favicon)}"/> 
+       <apex:outputPanel rendered="{!!isMaintenance}">
+               <div class="text-center content" > 
+                       <apex:repeat value="{!footerList}" var="entry">
+                            <span > 
+                                <a href="#" onclick="window.open('{!entry.targetURL}', '_blank','width=900, height=700')" class="footerlogin-text">{!entry.displayText}</a>
+                            </span>
+                            <apex:outputPanel rendered="{!entry.lastEntry==false}">
+                                <span>|</span>
+                            </apex:outputPanel>
+                        </apex:repeat> 
+                    </div>
+         </apex:outputPanel>
+</apex:page>

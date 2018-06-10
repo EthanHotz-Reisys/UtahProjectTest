@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>[Framework] This object will be used for displaying the help text for different pages.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Read</externalSharingModel>
+    <fields>
+        <fullName>DocumentName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This is document unique name of the help content stored in the Documents</inlineHelpText>
+        <label>Document Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ExternalId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>ExternalId</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Header__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Text that will be displayed as Header  on help page</inlineHelpText>
+        <label>Header</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HelpContent__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This field stores the URL/HTML help content to render Videos, External links or any other HTML code.</inlineHelpText>
+        <label>Help Content</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>HelpText__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The actual help text that will be displayed on the body without header and footer.</inlineHelpText>
+        <label>Help Text</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>IsFrameworkRelease__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If it is framework release</description>
+        <externalId>false</externalId>
+        <label>Is Framework Release?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ReleaseVersionNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Store release version number in case of production release information</description>
+        <externalId>false</externalId>
+        <label>Release version Number</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UniqueName__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Unique Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Config: Help</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>OBJECT_ID</columns>
+        <columns>NAME</columns>
+        <columns>DocumentName__c</columns>
+        <columns>Header__c</columns>
+        <columns>HelpContent__c</columns>
+        <columns>HelpText__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>Help-{0000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Help Config</pluralLabel>
+    <recordTypes>
+        <fullName>ExternalLink</fullName>
+        <active>true</active>
+        <description>External webpages</description>
+        <label>External Link</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>ExternalVideo</fullName>
+        <active>true</active>
+        <description>External Videos</description>
+        <label>External Video</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>InternalDocument</fullName>
+        <active>true</active>
+        <description>Help content stored in documents folder</description>
+        <label>Internal Document</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>InternalVideo</fullName>
+        <active>true</active>
+        <description>Internal Videos stored in Documents</description>
+        <label>Internal Video</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>NativeRichText</fullName>
+        <active>true</active>
+        <description>Rich Text help content</description>
+        <label>Native Rich Text</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>RawHTML</fullName>
+        <active>true</active>
+        <description>Render HTML code as help content</description>
+        <label>Raw HTML</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>ReleaseNote</fullName>
+        <active>true</active>
+        <description>Store product release notes</description>
+        <label>Release Note</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>SystemAlert</fullName>
+        <active>true</active>
+        <description>Show system alert</description>
+        <label>System Alert</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>Read</sharingModel>
+</CustomObject>

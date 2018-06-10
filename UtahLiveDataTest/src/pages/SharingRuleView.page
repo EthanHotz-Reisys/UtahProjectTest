@@ -1,0 +1,8 @@
+<apex:page standardStylesheets="false" showHeader="false" sidebar="false" standardController="GNT__SObjectSharingRule__c" >
+    <c:ExternalLibrary />  
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">    
+            <GNT:ModalFlexViewLayout templateName="SharingRule" recordId="{!GNT__SObjectSharingRule__c.Id}"  layoutType="View"/>                                            
+        </apex:define>
+    </apex:composition>
+</apex:page>

@@ -1,0 +1,16 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: medium; background-color: rgb(255, 255, 255);">Dear User,</span>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<font face="Times New Roman,Times,Serif" size="3" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">
+
+</font><p style="line-height: 1.5em; margin: 0cm 0cm 12pt; background-color: rgb(255, 255, 255);"><font face="Times New Roman, Times, serif" style="color: rgb(0, 0, 0);">This email is to inform you that your payment request for&nbsp;</font><font face="Times New Roman, Times, serif">{!PaymentRequest__c.ProgramName__c} has been sent back to you for revision&nbsp;</font><span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: 12pt;">for following reason(s):</span></p><p style="line-height: 1.5em; margin: 0cm 0cm 12pt; background-color: rgb(255, 255, 255);"><span style="font-family: &quot;Times New Roman&quot;, Times, serif;">{!ApprovalRequest.Comments}</span></p><p style="line-height: 1.5em; margin: 0cm 0cm 12pt; background-color: rgb(255, 255, 255);"><font face="Times New Roman, Times, serif">To see the transaction record and re-submit, please click the link below.</font></p><p style="line-height: 1.5em; margin: 0cm 0cm 12pt; background-color: rgb(255, 255, 255);"><font face="Times New Roman, Times, serif">Click <a href="{!PaymentRequest__c.Link}">here</a></font></p><p style="margin-bottom: 12pt; font-size: 12pt;"><font face="Times New Roman,Times,Serif" style="background-color: rgb(255, 255, 255);">Sincerely,</font></p><p style="margin-bottom: 12pt; font-size: 12pt;"><font face="Times New Roman,Times,Serif" style="background-color: rgb(255, 255, 255);">UtahGrants Support Team</font></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

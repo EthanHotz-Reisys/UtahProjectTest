@@ -1,0 +1,14 @@
+<apex:page id="accountInvitationPage" title="Invite External Reviewers" docType="html-5.0" standardStylesheets="false" controller="ReviewerInvitationCtrl" showHeader="false" sidebar="false">
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent"> 
+    <div class="tableBackground">
+        <div class="bs container-fluid">
+          <!--   <GNT:EmailTemplate emailTemplateName="TestEmailTemplate2" emailId="{!email}" target="{!targetId}" actionInterface="{!this}" enableAttachment="true" bulkMode="{!isBulkMode}" />  -->
+         <!-- <GNT:EmailTemplate emailTemplateName="Invite_Reviewers" emailId="{!email}" target="{!targetId}" actionInterface="{!this}" enableAttachment="true" userMode="false" closeOnSuccess="false"/> -->
+         <GNT:EmailTemplate emailTemplateName="Invite_Reviewers" closeOnSuccess="true" emailId="{!email}" target="{!targetId}" actionInterface="{!this}" enableAttachment="true" bulkMode="{!isBulkMode}" userMode="false" />  
+        </div>
+    </div>
+     </apex:define>
+        </apex:composition>
+</apex:page>

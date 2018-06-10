@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email is sent to Program Approver to create site visit report</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>GG Create Site Visit Report</name>
+    <style>formalLetter</style>
+    <subject>Please create site visit report</subject>
+    <textOnly>Hi {!SiteVisit__c.ProgramApprover__c}
+
+Create Site Visit Report</textOnly>
+    <type>html</type>
+</EmailTemplate>

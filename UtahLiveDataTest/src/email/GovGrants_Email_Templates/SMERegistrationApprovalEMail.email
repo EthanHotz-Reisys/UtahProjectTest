@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p class="MsoNormal" style="margin: 5pt 0in; font-size: 12pt;"><font face="Times New Roman, Times, serif">A request has been made to gain access to UtahGrants Management System (UGMS). Below are the details:<o:p></o:p></font></p><p class="MsoNormal" style="margin: 5pt 0in;"><font face="Times New Roman, Times, serif" style="font-size: 12pt;">Name of SME :&nbsp;</font><font face="Times New Roman, Times, serif">{!UserRegistration__c.ExternalReviewerFirstName__c}&nbsp;{!UserRegistration__c.ExternalReviewerLastName__c}</font></p><p class="MsoNormal" style="margin: 5pt 0in;"><font face="Times New Roman, Times, serif" style="font-size: 12pt;">Area of expertise:&nbsp;<o:p></o:p></font><font face="Times New Roman, Times, serif">{!UserRegistration__c.PrimaryAreaOfExpertise__c}</font></p><p class="MsoNormal" style="margin: 5pt 0in 12pt; font-size: 12pt;"><font face="Times New Roman, Times, serif">Please login to UGMS. Locate and click on "Pending Registrations” to either approve or reject SME registration. Once you have approved registration, an email with login credentials will be sent to the requesting applicants. The account however will not be activated until the requesting applicant has verified the receipt of the login credentials by resetting their password from Salesforce.<o:p></o:p></font></p><p style="margin-bottom: 12pt; font-size: 12pt;"><font face="Times New Roman,Times,Serif" style="background-color: rgb(255, 255, 255);">Sincerely,</font></p><p style="margin-bottom: 12pt; font-size: 12pt;"><font face="Times New Roman,Times,Serif" style="background-color: rgb(255, 255, 255);">UtahGrants Support Team</font></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

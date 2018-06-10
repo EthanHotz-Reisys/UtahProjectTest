@@ -1,0 +1,10 @@
+<apex:page standardController="SiteVisitSchedule__c" extensions="SiteVisitScheduleEditCtrl" standardStylesheets="false" showHeader="false" sidebar="false">
+  
+    <c:ExternalLibrary />  
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">    
+            <GNT:DynamicLayout templateName="SiteSchedule" recordId="{!recordId}" layoutType="Edit" flexTableParameters="{!keyValueMap}" saveURL="{!savePage}" />
+        </apex:define> 
+    </apex:composition>
+ 
+</apex:page>

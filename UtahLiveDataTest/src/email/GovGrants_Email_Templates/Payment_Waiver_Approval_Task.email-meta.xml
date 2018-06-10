@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Payment Waiver Approval Task</name>
+    <style>formalLetter</style>
+    <subject>Notification: Payment Waiver #{!PaymentRequest__c.Name} Approval Task Assigned to You.</subject>
+    <textOnly>Dear User,
+
+This email is to notify you that, the Payment Waiver #{!PaymentRequest__c.Name} has been submitted for the Grant #{!PaymentRequest__c.Grant__c} and is pending your approval.
+
+Payment Request Details:
+
+Award: #{!PaymentRequest__c.Award__c}
+
+Project Period: {!PaymentRequest__c.BillingStartDate__c} - {!PaymentRequest__c.BillingEndDate__c}
+
+Invoice Period: {!PaymentRequest__c.InvoicePeriod__c}
+
+
+Payment Method: {!PaymentRequest__c.PaymentMethod__c}
+
+
+
+Kindly login to the UtahGrants Systems and start reviewing the payment waiver.
+
+
+
+Sincerely,
+
+
+UtahGrants Support Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

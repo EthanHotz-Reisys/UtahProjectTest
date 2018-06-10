@@ -1,0 +1,39 @@
+<apex:page controller="ApplicantSRComments" sidebar="false" showHeader="false" standardStylesheets="false">
+
+<apex:includeScript value="{!URLFOR($Resource.GovGrantsExternal, 'jQuery/JS/jQuery.min.js')}" />
+<apex:includeScript value="{!URLFOR($Resource.GovGrantsExternal, 'jquery-ui/JS/jquery-ui.js')}" />
+<apex:includeScript value="{!URLFOR($Resource.GovGrantsExternal, 'AngularJS/JS/1.2.14/angular.min.js')}" />        
+<apex:includeScript value="{!URLFOR($Resource.GovGrantsExternal, 'AngularBootStrap/JS/0.10.0/ui-bootstrap-tpls-0.10.0.min.js')}" />
+<apex:includeScript value="{!URLFOR($Resource.GovGrantsExternal, 'BootStrap/JS/bootstrap.min.js')}" />
+<apex:includeScript value="{!URLFOR($Resource.GovGrantsExternal, 'jQueryCookies/JS/jQueryCookies.min.js')}" />
+<apex:includeScript value="{!URLFOR($Resource.GovGrantsExternal, 'carhartl-jquery-cookie-v1.4.1-0-g7f88a4e/carhartl-jquery-cookie-92b7715/jquery.cookie.js')}" />
+
+<apex:includeScript value="{!URLFOR($Resource.GovGrantsExternal, 'AngularJS/JS/1.2.14/angular.min.js')}" />  
+<apex:Stylesheet value="{!URLFOR($Resource.GovGrantsExternal, 'BootStrap/CSS/bootstrap.min.css')}" />
+
+<GNT:CustomCSS />
+
+<Style>
+  .floatContainer:after { 
+     content: " ";
+     display: block; 
+     height: 0; 
+     clear: both;
+  }
+</Style>
+<apex:form >
+  <div id="AssignmentTable" class="tableBackground" style="margin: 10px">                
+    <div class="bs container-fluid">
+    </div>
+  </div>        
+</apex:form>
+<script>
+  var j$ = jQuery.noConflict();
+  var tmpFunc = function(params) {
+    //j$(window.parent.document.getElementById('tmpId')).click(); 
+    //j$(window.parent.document.getElementsByClassName('dismissModal pageAction')).click(); 
+    window.top.location.href=params;
+  }
+</script>
+
+</apex:page>

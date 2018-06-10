@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<span style="font-family: &quot;Times New Roman&quot;, Times, serif;">Dear User</span><span style="font-family: &quot;Times New Roman&quot;, Times, serif;">,</span>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p style="color: rgb(34, 34, 34); font-size: 16px; margin: 0px 0px 16px; text-align: left; text-transform: none; line-height: 24px; text-indent: 0px; letter-spacing: normal; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; word-spacing: 0px; white-space: normal; orphans: 2; -webkit-text-stroke-width: 0px; background-color: transparent;"><font face="Times New Roman,Times,Serif" style="color: rgb(0, 0, 0);"><font size="3" style="line-height: 24px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;">This email is to notify you that, the Amendment made against the Grant&nbsp;&nbsp;</font></font><font face="Times New Roman, Times, serif" style="color: rgb(0, 0, 0); font-size: 12pt;">{!Award__c.GrantID__c} has been approved and new award is activated. Please proceed with payment reimbursement and other monitoring activities under the new award.</font></p><p style="margin: 0px 0px 16px; text-align: left; line-height: 24px; text-indent: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; orphans: 2; background-color: transparent;"><font face="Times New Roman, Times, serif">Sincerely,</font></p><p style="margin: 0px 0px 16px; text-align: left; line-height: 24px; text-indent: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; orphans: 2; background-color: transparent;"><font face="Times New Roman, Times, serif">UtahGrants Support Team</font></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

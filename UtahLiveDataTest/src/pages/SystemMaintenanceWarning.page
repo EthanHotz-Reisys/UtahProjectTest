@@ -1,0 +1,29 @@
+<apex:page id="SystemMaintenancePage" sidebar="false" standardStylesheets="false" showHeader="false" 
+            controller="CommunitiesLandingController">
+ <c:ExternalLibrary />
+ <style>
+ 	form {
+ 	 width: 500px;
+    margin: 50px auto;
+	}
+ </style>
+     <apex:form > 
+        <apex:outputPanel rendered="{!isWarning}"> 
+            <div class="panel panel-default border-add" align="center">          
+                <div class="panel-heading" style="padding-bottom:5px">
+                	<apex:outputText style="font-weight:700; font-size:22px" value="{!warningTitle}" escape="false" />
+                </div>
+                <div style="padding-top:10px; padding-bottom:10px">
+	                <apex:outputPanel >
+	                <apex:outputText style="font-weight:500; font-size:15px" value="{!warningMessage}" escape="false" />
+	                </apex:outputPanel>
+                </div>
+                <div style="padding-bottom:15px">
+	                <apex:outputPanel >
+	                    <apex:commandLink id="theLink" action="{!redirectToHomePage}" value="Continue" style="font-weight:500; font-size:15px"/>
+	                </apex:outputPanel>
+                </div>
+            </div>
+        </apex:outputPanel>
+    </apex:form>         
+</apex:page>

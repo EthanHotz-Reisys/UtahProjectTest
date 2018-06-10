@@ -1,0 +1,66 @@
+<!--
+/**
+* 
+* Responsible to display the sidebar components based on the currently selected tab
+* which is identified by browser cookie.
+*
+* CHANGE HISTORY
+*================================================================ 
+* Dated             Name                    Description  
+* 03/02/2014        Shah Kadirmohideen      Created
+*================================================================
+*/
+-->
+<apex:page sidebar="false" controller="GNT.PhaseTemplateCtrl" showHeader="false" standardStylesheets="false" >
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__GovGrants, '/Component/CSS/PhaseTemplate.css')}"/>
+    <!--js file for holdon popup-->
+    <apex:includeScript value="{!URLFOR($Resource.GNT__Holdon, 'HoldOn.min.js')}" />
+
+    <!--css file for holdon popup-->
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__Holdon, 'HoldOn.min.css')}" /> 
+       
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content"> 
+        
+             <div id="PageTemplateApp" class="container-fluid" ng-controller="PageTemplateAppCtrl">
+             	<div id="myTabbedContent">
+	                <div id="wrapper" class="wrapper">
+	                    <!-- Sidebar -->
+	                    <div id="sidebar-wrapper" class="sidebar-wrapper sidebar-wrapper-ext">  
+							<div id="sidebar-wrapper-logo">
+	                        <apex:dynamicComponent componentValue="{!dynamicSidebar}"/>
+							</div>		
+	<!-- 						<div id="sidebar-logo-wrapper">					 -->
+	<!-- 							<a href="#" class="logo-wrapper" title="GovGrants logo"> -->
+	<!-- 								<img class="footerLogo" id="govGrantsFooterImagePlaceHoldersId" src="{!govGrantFooterImageURL}" alt="GovGrants Logo"/> -->
+	<!-- 								<img class="footerLogo2 hidden" id="govGrantsFooterImagePlaceHolderHalfId" src="{!govGrantFooterCollapseImageURL}" alt="GovGrants Logo"/>                 -->
+	<!-- 							</a> -->
+	<!-- 						</div>								 -->
+						</div>
+	                                       
+	                    <!-- /.sidebar-wrapper -->
+	                    <div id="page-content-wrapper" class="page-content-wrapper">
+	                        <h1 id="Main_Content" class="hidden508">Main Content</h1>   
+	                        <div class="container-fluid">                                             
+	                        	<span id="Main_Content" class="hidden508 skipNavSectionItem skipNavSectionItem2" name="Main_Content : Main Content">Main Content</span>
+	                            <!-- For 508 SkipNavigation  -->                                             
+	                           <div class="row"><div class="col-md-12">
+	                            <apex:insert name="body"></apex:insert>
+	                            </div></div>
+	                        </div>
+	                    </div>
+	                </div>
+				</div>
+            </div>     
+        </apex:define> 
+    </apex:composition> 
+    
+    <script>
+        var phaseTemplate_hideSidebar = {!hideSidebar};
+        
+        _RemotingPhaseTemplateActions = {};
+        _RemotingPhaseTemplateActions.hideUserSideBarPreference = '{!$RemoteAction.PhaseTemplateCtrl.hideUserSideBarPreference}'; 
+        _RemotingPhaseTemplateActions.showUserSideBarPreference = '{!$RemoteAction.PhaseTemplateCtrl.showUserSideBarPreference}';     
+    </script>
+    <script src="{!URLFOR($Resource.GovGrants)}/Component/JS/PhaseTemplate.js"></script> 
+</apex:page>

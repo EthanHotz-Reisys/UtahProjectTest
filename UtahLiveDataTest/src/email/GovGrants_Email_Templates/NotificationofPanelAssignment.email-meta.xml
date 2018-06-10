@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email Template sent to Panel Head when assigned as panel head</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Panel Assignment: Notification of Panel Assignment</name>
+    <style>formalLetter</style>
+    <subject>{!ReviewPanel__c.ReviewStepName__c}: Panel Assigned</subject>
+    <textOnly>You have been assigned the following task in the Enterprise Grants Management System (EGMS).
+
+Internal Review Panelist
+
+Funding Opportunity:
+
+RFA #: {!Announcement__c.AnnouncementId__c}
+
+RFA Title: {!Announcement__c.AnnouncementName__c}
+
+
+Applications that have completed the external review process now require an internal review. You have been selected to complete the internal review of applications added to your PENDING TASKS list. Log-in to EGMS to locate your tasks under the APPLICATIONS TAB.
+
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

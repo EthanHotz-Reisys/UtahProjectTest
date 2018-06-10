@@ -1,0 +1,22 @@
+<apex:page applyBodyTag="false" renderAs="PDF" readOnly="true" sidebar="false" showHeader="false"   standardStylesheets="false" Controller="GNT.GenerateDocCtrl">
+	<apex:stylesheet value="{!themeDocURL}" />
+     <div class="topLeftHeader">
+	  	<apex:image url="{!topLeftImageURL}" rendered="{!topLeftImageURL != null}"> </apex:image>
+	  	<apex:outputText value="{!topLeftString}" rendered="{!topLeftString != null}" escape="false"/>
+     </div>
+     <div class="topRightHeader">
+	  	<apex:image url="{!topRightImageURL}" rendered="{!topRightImageURL != null}"> </apex:image>
+	  	<apex:outputText value="{!topRightString}" rendered="{!topRightString != null}"  escape="false"/>
+     </div>
+     <div class="bottomLeftHeader">
+	  	<apex:image url="{!bottomLeftImageURL}" rendered="{!bottomLeftImageURL != null}"> </apex:image>
+	  	<apex:outputText value="{!bottomLeftString}" rendered="{!bottomLeftString != null}" escape="false"/>
+     </div>
+     <div class="bottomRightHeader">
+	  	<apex:image url="{!bottomRightImageURL}" rendered="{!bottomRightImageURL != null}"> </apex:image>
+	  	<apex:outputText value="{!bottomRightString}" rendered="{!bottomRightString != null}" escape="false"/>
+     </div>
+    <div class="content">
+		<c:PDFExport mergeFields="{!KeyValueStr}"/>
+    </div>
+</apex:page>

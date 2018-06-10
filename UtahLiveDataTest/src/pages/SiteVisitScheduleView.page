@@ -1,0 +1,10 @@
+<apex:page standardController="SiteVisitSchedule__c" extensions="SiteVisitScheduleViewCtrl" standardStylesheets="false" showHeader="false" sidebar="false">
+  
+    <c:ExternalLibrary />  
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">    
+            <GNT:FlexViewLayout templateName="SiteSchedule" recordId="{!recordId}" layoutType="View" flexTableParameters="{!keyValueMap}" />
+        </apex:define> 
+    </apex:composition>
+ 
+</apex:page>

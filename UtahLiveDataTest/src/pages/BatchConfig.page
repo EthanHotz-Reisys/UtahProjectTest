@@ -1,0 +1,13 @@
+<apex:page sidebar="false" showHeader="false" controller="BatchConfigCtrl" standardStylesheets="false" >
+  <c:ExternalLibrary /> 
+    <apex:composition template="GNT__PhaseTemplate"> 
+        <apex:define name="body"> 
+			<GNT:FlexGrid tableId="ApexBatchConfig"/>
+			<apex:form >
+				<apex:pagemessages id="pagemsg"></apex:pagemessages>
+		       	<br> <a onClick="refreshCache()"><b>Refresh Approval Process Cache</b></a></br>
+		        <apex:actionFunction name="refreshCache" action="{!refreshCache}" />
+	        </apex:form>
+        </apex:define> 
+    </apex:composition>
+</apex:page>

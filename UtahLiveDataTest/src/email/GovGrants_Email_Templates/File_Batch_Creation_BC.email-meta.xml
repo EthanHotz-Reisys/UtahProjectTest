@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>File batch creation email for batch creator</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>File Batch Creation BC</name>
+    <style>freeForm</style>
+    <subject>Batch {!FileBatch__c.Name} created</subject>
+    <textOnly>Hello {!FileBatch__c.FirstApprover__c},
+
+This email is to notify you that Batch {!FileBatch__c.Name} for {!FileBatch__c.RecordType} pathway has been created.
+
+Please do not reply to this email. You may contact the Utah Grants Support Team at utahgrants.support@reisystems.com, if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+
+
+
+UtahGrants Support Team
+
+utahgrants.support@reisystems.com
+
+Ph. No. 703.480.9100</textOnly>
+    <type>html</type>
+</EmailTemplate>

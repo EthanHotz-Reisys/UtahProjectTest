@@ -1,0 +1,9 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false" >
+  <c:ExternalLibrary /> 
+    <apex:composition template="GNT__PhaseTemplate"> 
+        <apex:define name="body"> 
+			<GNT:FlexGrid tableId="OrgSpecificKeyValueconfiguration"/>
+			<GNT:FlexGrid tableId="CommmonKeyValueconfiguration"/>
+        </apex:define> 
+    </apex:composition>
+</apex:page>

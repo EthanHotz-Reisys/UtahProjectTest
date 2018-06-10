@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>ReviewPanelEdit</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>ReviewPanelView</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>[Business] Defines the Review Panel to review the Applications</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AnnoucementId__c</fullName>
+        <externalId>false</externalId>
+        <formula>ReviewStep__r.AnnouncementId__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Funding Opportunity ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AnnouncementName__c</fullName>
+        <externalId>false</externalId>
+        <formula>ReviewStep__r.AnnouncementName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Funding Opportunity Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AnnouncementNumber__c</fullName>
+        <externalId>false</externalId>
+        <formula>ReviewStep__r.AnnouncementNumber__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Funding Opportunity Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApplicationsCount__c</fullName>
+        <externalId>false</externalId>
+        <label>No. of Applications</label>
+        <summaryForeignKey>PanelApplication__c.ReviewPanel__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>AutoAssignSubmittedApplication__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Announcement deadline reaches, all the applications will automatically get added to the review panel</inlineHelpText>
+        <label>Auto Assign Submitted Application</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Chair__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Headed By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Review_Panels</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DaysLeft__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF((EndDate__c )&gt; TODAY() ,(EndDate__c) - TODAY(),0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days Left</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description  (Obsolete)</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DueDateOffset__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Offset is used to decide the due date when the Task Due Date is selected as Today + Offset</inlineHelpText>
+        <label>Due Date Offset</label>
+        <length>3</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EndDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Review Due Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ExcludeFromScoring__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field will decide whether the Panel should be used in Scoring matrix</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will decide whether the Panel should be used in Scoring matrix</inlineHelpText>
+        <label>Exclude From Scoring</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>GroupId__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>When Announcement deadline reaches all the applications will be assigned to the users under this group Id.</inlineHelpText>
+        <label>Group Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GroupName__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>When Announcement deadline reaches all the applications will be assigned to the users under this group.</inlineHelpText>
+        <label>Group Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HideAddBtn__c</fullName>
+        <externalId>false</externalId>
+        <formula>ISPICKVAL(ReviewStep__r.Status__c,&apos;Not Started&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideAddBtn</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideAddReviewer__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ReviewStep__r.ReviewGroup__r.Announcement__r.OrganizationName__c = &apos;USBE&apos;, ReviewStep__r.ReviewGroup__r.OwnerId != $User.Id, false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideAddReviewer</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideDeleteButton__c</fullName>
+        <externalId>false</externalId>
+        <formula>IsDefaultPanel__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide Delete Button</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HidePanelActions__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(ISPICKVAL(ReviewStep__r.Status__c,&apos;Not Started&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide Panel Actions</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideViewPanel__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(EndDate__c!= null,True,True)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideViewPanel</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>IsDefaultPanel__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Default Panel?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsExternalReviewStep__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ReviewStep__r.StepNumber__c == 2, true, false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is External Review Step?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsReviewScoreQuestionsAvailable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Review Score Questions(Obsolete)</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NotExternalReviewStep__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ReviewStep__r.StepNumber__c == 2, false, true)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Not External Review Step?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PanelLayout__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Which layout is used to render the review panel?</inlineHelpText>
+        <label>Panel Layout</label>
+        <referenceTo>GNT__PageTemplate__c</referenceTo>
+        <relationshipLabel>Review Panels</relationshipLabel>
+        <relationshipName>Review_Panels</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PanelName__c</fullName>
+        <externalId>false</externalId>
+        <label>Panel Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Purpose__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>256</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ReviewFormConfig__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Review Form Config</label>
+        <referenceTo>GNT__PageTemplate__c</referenceTo>
+        <relationshipLabel>Review Panels (Review Form Config)</relationshipLabel>
+        <relationshipName>Review_Panels1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ReviewPackage__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Review Form</label>
+        <referenceTo>GNT__Package__c</referenceTo>
+        <relationshipLabel>Review Panels</relationshipLabel>
+        <relationshipName>Review_Panels</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ReviewPanelForApplication__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( RecordType.Name == &apos;Application&apos;, true, false)</formula>
+        <label>Review Panel For Application</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ReviewPanelForPreApplication__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( RecordType.Name == &apos;Pre-Application&apos;, true, false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Review Panel For Pre-Application</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ReviewPanelTemplate__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Review Panel Template</label>
+        <referenceTo>ReviewPanelTemplate__c</referenceTo>
+        <relationshipLabel>Review Panels</relationshipLabel>
+        <relationshipName>Review_Panels</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ReviewStepName__c</fullName>
+        <externalId>false</externalId>
+        <formula>ReviewStep__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Review Step Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReviewStep__c</fullName>
+        <externalId>false</externalId>
+        <label>Review Step</label>
+        <referenceTo>ReviewStep__c</referenceTo>
+        <relationshipLabel>Review Panels</relationshipLabel>
+        <relationshipName>Review_Panels</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>ReviewerAssignNotificationTemplate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This email template is used to send email notification to the reviewer to review the Application or PreApplication</inlineHelpText>
+        <label>Reviewer Assign Notification Template</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReviewersCount__c</fullName>
+        <externalId>false</externalId>
+        <label>No. of Reviewers</label>
+        <summaryForeignKey>PanelUser__c.ReviewPanel__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Sequence__c</fullName>
+        <externalId>false</externalId>
+        <label>Sequence</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StartDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>TaskDueDate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Specify due date for the review tasks created under this review panel</inlineHelpText>
+        <label>Task Due Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Panel End Date</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Today + Offset Days</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UserType__c</fullName>
+        <externalId>false</externalId>
+        <label>User Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>External</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Internal</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <label>Review Panel</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>ReviewStep__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>all_with_all</fullName>
+        <columns>NAME</columns>
+        <columns>ReviewPackage__c</columns>
+        <columns>ReviewPanelForApplication__c</columns>
+        <columns>ReviewPanelForPreApplication__c</columns>
+        <columns>ReviewPanelTemplate__c</columns>
+        <columns>ReviewStep__c</columns>
+        <columns>Sequence__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>all with all</label>
+    </listViews>
+    <nameField>
+        <displayFormat>Panel-{000}</displayFormat>
+        <label>Review Panel ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Review Panels</pluralLabel>
+    <recordTypes>
+        <fullName>Application</fullName>
+        <active>true</active>
+        <label>Application</label>
+        <picklistValues>
+            <picklist>TaskDueDate__c</picklist>
+            <values>
+                <fullName>Panel End Date</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Today %2B Offset Days</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>UserType__c</picklist>
+            <values>
+                <fullName>External</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Pre_Application</fullName>
+        <active>true</active>
+        <label>Pre-Application</label>
+        <picklistValues>
+            <picklist>TaskDueDate__c</picklist>
+            <values>
+                <fullName>Panel End Date</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Today %2B Offset Days</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>UserType__c</picklist>
+            <values>
+                <fullName>External</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>PanelName__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Chair__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ReviewStep__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>UPDATEDBY_USER</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>PanelName__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Chair__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ReviewStep__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>RECORDTYPE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATEDBY_USER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATED_DATE</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>PanelName__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Chair__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ReviewStep__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>RECORDTYPE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATEDBY_USER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Review_Due_date_cant_be_less_than_today</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(EndDate__c &lt; TODAY(), TEXT(ReviewStep__r.Status__c) = &apos;Not Started&apos;)</errorConditionFormula>
+        <errorMessage>Review due date can not be less than today.</errorMessage>
+    </validationRules>
+</CustomObject>

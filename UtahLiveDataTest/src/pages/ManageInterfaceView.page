@@ -1,0 +1,84 @@
+<apex:page controller="ManageInterfaceViewCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+	<c:ExternalLibrary />
+	<style>
+		.list {
+        	border: 1px solid #aaaaaa !important;
+            border-collapse: collapse !important;
+        }
+        
+        th, td {
+        	padding: 10px !important;
+        }
+        
+        th {
+        	font-weight :bold;
+        }
+    	
+    	.bs .pbBody {
+      		padding: 15px !important;
+    	}
+		
+		.huge {
+    		font-size: 40px;
+		}
+	</style>
+	<apex:composition template="GNT__PhaseTemplate">
+		<apex:define name="body">
+	        <div class="bs container-fluid">			
+				<div class ="panel panel-default border-add">	
+					<div class="panel-heading"></div>
+			        <div class="panel-body panel-body-ext">  
+				        <div class="row">
+				        	<div class="col-lg-4 col-md-6">
+				            	<div class="panel-primary">
+				                	<div class="panel-heading">
+				                    	<div class="row">
+				                        	<div class="col-xs-3">
+				                            	<i class="glyphicon glyphicon-transfer fa-5x"></i>
+				                            </div>
+				                            <div class="col-xs-9 text-right">
+				                            	<div class="huge">{!totalAPICount}</div>
+				                                <div>Total Interface</div>
+				                            </div>
+				                        </div>
+				                    </div>
+				                </div>
+				            </div>
+				            <div class="col-lg-4 col-md-6">
+				                <div class="panel-green">
+				                    <div class="panel-heading">
+				                        <div class="row">
+				                            <div class="col-xs-3">
+				                                <i class="glyphicon glyphicon-ok fa-5x"></i>
+				                            </div>
+				                            <div class="col-xs-9 text-right">
+				                                <div class="huge">{!activeAPICount}</div>
+				                                <div>Active Interface</div>
+				                            </div>
+				                        </div>
+				                    </div>
+				                </div>
+				            </div>
+				            <div class="col-lg-4 col-md-6">
+				                <div class="panel-yellow">
+				                    <div class="panel-heading">
+				                        <div class="row">
+				                            <div class="col-xs-3">
+				                                <i class="glyphicon glyphicon-remove fa-5x"></i>
+				                            </div>
+				                            <div class="col-xs-9 text-right">
+				                                <div class="huge">{!inactiveAPICount}</div>
+				                                <div>Inactive Interface</div>
+				                            </div>
+				                        </div>
+				                    </div>
+				                </div>
+				            </div>
+				    	</div>
+		    		</div>
+	    		</div>
+	    		<GNT:FlexTable flexTableName="{!flexTableName}" tableId="{!flexTableName}" />
+	   		</div>
+		</apex:define>
+	</apex:composition>
+</apex:page>

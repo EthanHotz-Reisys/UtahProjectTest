@@ -1,0 +1,18 @@
+<apex:page standardStylesheets="false" showHeader="false" sidebar="false">
+<div class="container-fluid">
+        <div class="row">   
+            <div class="col-md-8" id="main-content-section">                                
+                <GNT:ChartPieBasic chartName="tmpCaseChart" chartHTMLId="10007"/>
+            </div>    
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12">
+                <GNT:FlexTable flexTableName="AllUsers" tableId="AllUsers" headerDescription="" />
+                <apex:outputPanel > User Notes
+                    <c:UserNotes />
+                </apex:outputPanel>
+            </div>
+        </div>  
+</div>      
+</apex:page>

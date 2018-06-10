@@ -1,0 +1,23 @@
+<apex:page title="Calendar" showHeader="false" standardStylesheets="false" sidebar="false">   
+        <!--  <GNT:ExternalLibrary />
+        <!-- style required for calendar component -->
+        <!--<apex:stylesheet value="{!URLFOR($Resource.GNT__Calendar, 'fullcalendar.min.css')}" />
+        <apex:stylesheet value="{!URLFOR($Resource.GNT__Tooltipster, 'css/themes/tooltipster-shadow.css')}" />
+        <apex:stylesheet value="{!URLFOR($Resource.GNT__Tooltipster, 'css/tooltipster.css')}" /> 
+        <!-- script for calendar component -->
+        <!--  <apex:includeScript value="{!URLFOR($Resource.GNT__Tooltipster, 'js/jquery.tooltipster.min.js')}"/>
+        <apex:includeScript value="{!URLFOR($Resource.GNT__Calendar, 'moment.min.js')}"/>
+        <apex:includeScript value="{!URLFOR($Resource.GNT__Calendar, 'fullcalendar.min.js')}"/>  -->
+    
+        <c:ExternalLibrary />   
+        <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">    
+        <GNT:Calendar configName="Grant__c" recordId="{!$CurrentPage.parameters.id}"/>  
+        </apex:define>
+        </apex:composition>
+         <script>
+    		j$(document).ready(function(){ 
+    		parent.showModalTitle('{!$CurrentPage.parameters.title}');
+    		});   
+    	</script>
+</apex:page>

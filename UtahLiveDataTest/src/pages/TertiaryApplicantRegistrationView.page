@@ -1,0 +1,20 @@
+<apex:page cache="false" standardController="UserRegistration__c" extensions="TertiaryApplicantRegistrationViewCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+  <style>
+    #sideBarDivId{
+        min-height: 0px !important;
+    }
+    #body{
+        width: 100% !important;
+    }
+    </style> 
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary /> 
+   
+     
+  <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content"> 
+          <GNT:FlexViewLayout templateName="{!pageTemplateName}" recordId="{!recordId}" layoutType="View"/> 
+          
+        </apex:define>
+  </apex:composition> 
+</apex:page>

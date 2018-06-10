@@ -1,0 +1,12 @@
+<apex:page sidebar="false" standardStylesheets="false" showHeader="false" standardController="UserRegistration__c" extensions="CommunityUserRegApproveCtrl" >
+  
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">
+            <GNT:FlexViewLayout templateName="{!templateName}" recordId="{!$CurrentPage.parameters.Id}" layoutType="View" saveURL="{!$Page.CommunityUserRegApprove}" cancelURL="{!$Page.CommunityUserRegApprove}"/>
+        </apex:define>
+    </apex:composition>
+    
+</apex:page>

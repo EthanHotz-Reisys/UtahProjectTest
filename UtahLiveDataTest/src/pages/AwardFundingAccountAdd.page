@@ -1,0 +1,80 @@
+<apex:page showHeader="false" standardStylesheets="false" controller="AwardFundingAccountAddCtrl" sidebar="false">
+	<!-- Including JS and CSS resources --><!--
+    <c:ExternalLibrary />
+    
+    <script>
+        var j$ = jQuery.noConflict();
+        
+        j$(document).ready(function(){
+            buildLookupIcon();
+            buildRequiredInput();
+        });
+        
+        var buildLookupIcon = function(){
+            j$('.lookupIcon').each(function(){
+                var currentNode = j$(this);
+                currentNode.parent().append('<span class="glyphicon glyphicon-search"></span>');
+            });
+        }
+        
+        var buildRequiredInput = function(){
+            j$('.requiredInput').each(function(){
+                j$(this).append('<i class="fa fa-minus fa-rotate-90 fa-lg"></i>');
+            });
+        }
+    </script>
+    
+    <apex:form >
+    	<GNT:PageMessages />
+    	<div class="bs container-fluid">
+   			<div class="panel panel-default">
+	           	<div class="panel-heading">
+  					<span class="bold-text">
+          				<h3 class="panel-title">Funding Account Add</h3>
+          			</span>
+          			<span class="button-string">
+       					<apex:commandButton action="{addFundingAccount}" value="Add" styleClass="customBtn"/>
+          			</span>
+	           	</div>
+	           	<div class="panel-body panel-body-ext">
+					<apex:outputPanel rendered="{lstAwardFundingAccountWrapper.size>0}">
+						<div class="row">
+							<div class="col-md-12">
+								<apex:dataTable value="{lstAwardFundingAccountWrapper}" var="fundAcc" styleClass="table" rendered="{lstAwardFundingAccountWrapper.size>0}">
+									<apex:column >
+										<label for="" class="508Label" style="display: none;">
+											inptCheckbox 
+										</label>
+										<apex:facet name="header">Select</apex:facet>
+										<apex:inputCheckbox id="chkbox"	value="{fundAcc.selected}" styleClass="508Input" />
+									</apex:column>
+									<apex:column >
+										<apex:facet name="header">Name</apex:facet>
+										<apex:outputText value="{fundAcc.fundAccYear.FundingAccount__r.Name}" />
+									</apex:column>
+									<apex:column >
+										<apex:facet name="header">Total Funds</apex:facet>
+										<apex:outputText value="{fundAcc.fundAccYear.TotalFunds__c}" />
+									</apex:column>
+									<apex:column >
+										<apex:facet name="header">Funds Available</apex:facet>
+										<apex:outputText value="{fundAcc.fundAccYear.FundsAvailable__c}" />
+									</apex:column>
+									<apex:column >
+										<apex:facet name="header">Financial Assistance Amount</apex:facet>
+										<apex:inputText value="{fundAcc.financialAmount}" />
+									</apex:column>
+								</apex:dataTable>
+							</div>
+						</div>
+					</apex:outputPanel>
+					<apex:outputpanel rendered="{lstAwardFundingAccountWrapper.size==0}">
+						<p class="text-center">
+							<apex:outputText value="There are no Funding Accounts available to be added." rendered="{lstAwardFundingAccountWrapper.size==0}" />
+						</p>
+					</apex:outputpanel>
+				</div>
+	        </div>   	
+		</div>	
+	</apex:form>-->
+</apex:page>

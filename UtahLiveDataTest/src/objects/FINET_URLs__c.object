@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Contains the production/dev URLs for FINET connections</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>GranteeDevURL__c</fullName>
+        <externalId>false</externalId>
+        <label>GranteeDevURL</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GranteeProdURL__c</fullName>
+        <externalId>false</externalId>
+        <label>GranteeProdURL</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GrantorDevURL__c</fullName>
+        <externalId>false</externalId>
+        <label>GrantorDevURL</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GrantorProdURL__c</fullName>
+        <externalId>false</externalId>
+        <label>GrantorProdURL</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>FINET URLs</label>
+    <visibility>Public</visibility>
+</CustomObject>

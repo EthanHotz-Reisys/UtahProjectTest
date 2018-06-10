@@ -1,0 +1,73 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<br>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<font size="3" face="Times New Roman,Times,Serif">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font size="3" face="Times New Roman,Times,Serif"><span style="color:black">Hello All, </span></font></p><font size="3" face="Times New Roman,Times,Serif">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font size="3" face="Times New Roman,Times,Serif"><span style="color:black">This email is to notify you that the Site
+Visit&nbsp;Report&nbsp;{!SiteVisit__c.SiteVisitName__c}&nbsp;for the
+Grant&nbsp;has been scheduled. You can to go through the site visit
+details.</span></font></p><font size="3" face="Times New Roman,Times,Serif">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font size="3" face="Times New Roman,Times,Serif"><u><b><span style="color:black">Site
+Visit Details:</span></b></u></font></p><font size="3" face="Times New Roman,Times,Serif">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font size="3" face="Times New Roman,Times,Serif"><span style="color:black">Grant
+Number:&nbsp;{!SiteVisit__c.Grant__c}</span></font></p><font size="3" face="Times New Roman,Times,Serif">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font size="3" face="Times New Roman,Times,Serif"><span style="color:black">Reporting
+Period Start Date:&nbsp;{!SiteVisit__c.ReportingPeriodStartDate__c}</span></font></p><font size="3" face="Times New Roman,Times,Serif">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font size="3" face="Times New Roman,Times,Serif">Reporting Period End Date:&nbsp;{!SiteVisit__c.ReportingPeriodEndDate__c}<span style="color:black"></span></font></p><font size="3" face="Times New Roman,Times,Serif">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font size="3" face="Times New Roman,Times,Serif"><u><b><span style="color:black">Location
+Details:</span></b></u></font></p><font size="3" face="Times New Roman,Times,Serif">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font size="3" face="Times New Roman,Times,Serif"><span style="color:black">Schedule
+Date:&nbsp;{!SiteVisit__c.SiteVisitPeriod__c}</span></font></p><font size="3" face="Times New Roman,Times,Serif">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font size="3" face="Times New Roman,Times,Serif"><span style="color:black">Location:
+&nbsp;{!SiteVisit__c.SiteLocationText__c}</span></font></p><font size="3" face="Times New Roman,Times,Serif">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font size="3" face="Times New Roman,Times,Serif"><span style="color:black">City:&nbsp;{!SiteVisit__c.City__c}</span></font></p><font size="3" face="Times New Roman,Times,Serif">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font size="3" face="Times New Roman,Times,Serif"><span style="color:black">State:&nbsp;{!SiteVisit__c.StatePicklist__c}</span></font></p><font size="3" face="Times New Roman,Times,Serif">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font size="3" face="Times New Roman,Times,Serif"><u><b><span style="color:black">Reason
+for Visit:</span></b></u></font></p><font size="3" face="Times New Roman,Times,Serif">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font size="3" face="Times New Roman,Times,Serif"><span style="color:black">Reason for
+visit:&nbsp;{!SiteVisit__c.ReasonforVisit__c}</span></font></p><font size="3" face="Times New Roman,Times,Serif">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font size="3" face="Times New Roman,Times,Serif"><u><b><span style="color:black">Attendees:</span></b></u></font></p><font size="3" face="Times New Roman,Times,Serif">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font size="3" face="Times New Roman,Times,Serif"><span style="color:black">{!SiteVisit__c.SiteVisitPersons__c}</span></font></p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font size="3" face="Times New Roman,Times,Serif"><span style="color:black">Kindly login to the EGMS System and follow the
+link for more details: {!SiteVisit__c.Link}</span></font></p><font size="3" face="Times New Roman,Times,Serif">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font size="3" face="Times New Roman,Times,Serif"><span style="color:black">Please do not reply to this email.&nbsp;You may
+contact the GovGrants Support Team at <a href="mailto:govgrants@support.com"><span style="color:black;text-decoration:none;text-underline:none">gov</span></a><a href="mailto:govgrants@support."><span style="color:black;text-decoration:none;
+text-underline:none">grants@support.</span></a>com if you have any questions or
+need assistance with this task.&nbsp;&nbsp;&nbsp;&nbsp;</span></font></p><font size="3" face="Times New Roman,Times,Serif">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font size="3" face="Times New Roman,Times,Serif"><span style="color:black">Sincerely,</span></font></p><font size="3" face="Times New Roman,Times,Serif">
+
+<span style="font-size: 11pt; line-height: 107%; color: black;">EGMS Team</span></font>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

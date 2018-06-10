@@ -1,0 +1,67 @@
+<apex:page controller="RecordShareCtrl" title="Record Share" standardStylesheets="false" showHeader="false" sidebar="false">
+    <c:ExternalLibrary />
+    <style>
+        table, th, tr, td {
+            border: 1px solid black !important;
+            border-collapse: collapse !important;
+        }
+        th, td {
+            padding: 10px !important;
+        }
+        th{
+            font-weight :bold;
+        }
+    </style>
+    <div class="bs" >        
+    <div id="bodyDivId" class="bodyDiv container-fluid" style="padding-left:30px; float:left; clear:both; width:100%;height:100%;">
+    <div class="row ">
+      <div class="col-md-12 ">
+          <div class="panel panel-default border-add">
+              <div class="panel-heading" style="padding-bottom:30px">
+                     <div class="row">
+                         <div class="col-md-12">
+                                User and Group Sharing
+                                <span class="pull-right">
+                                	<input type="button" value="{!$Label.RecordShareAddUsers}"  onclick="openShareEdit()" class="customBtn"/>
+                                	<input type="button" value="{!$Label.RecordShareBack}"  onclick="redirect()" class="customBtn"/>
+                                </span>
+                                
+                         </div> 
+                      </div>
+               </div>
+               <div class="panel-body panel-body-ext">
+                        <apex:messages />
+                        <apex:outputPanel rendered="{!records.size != 0}">
+                         <table width="100%" border="1">
+                           <tr class="flexTableHeader"  >
+                               <th>{!$Label.RecordShareType}</th>
+                               <th>{!$Label.RecordShareName}</th>
+                               <th>{!$Label.RecordShareAccessLevel}</th>
+                           </tr>
+                           <apex:repeat value="{!records}" var="records">
+                               <tr>
+                                   <apex:repeat value="{!fields}" var="f">
+                                   <td > {!records[f]} </td>
+                                   </apex:repeat>
+                               </tr>                                           
+                           </apex:repeat>
+                        </table>
+                        </apex:outputPanel>
+               </div>
+           </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <script>
+      	function openShareEdit(){
+      		var url = '/apex/RecordShareEdit?id={!$CurrentPage.parameters.id}';
+      		window.open(url,'_self');
+      	}
+      	
+      	function redirect(){
+      		var url = '/{!$CurrentPage.parameters.id}';
+      		window.open(url,'_self');
+      	}
+      </script>
+</apex:page>

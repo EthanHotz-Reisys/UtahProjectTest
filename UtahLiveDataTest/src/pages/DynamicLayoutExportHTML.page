@@ -1,0 +1,28 @@
+<apex:page applyBodyTag="false" controller="DynamicLayoutExportHTMLCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+        <apex:stylesheet value="{!themeDocURL}" />    
+      
+           <div class="topLeftHeader">
+                <apex:image url="{!topLeftImageURL}" rendered="{!topLeftImageURL != null}"> </apex:image>
+                <apex:outputText value="{!topLeftString}" rendered="{!topLeftString != null}"/>
+           </div>
+           <div class="topMiddleHeader">
+                <apex:image url="{!topMiddleImageURL}" rendered="{!topMiddleImageURL != null}"></apex:image>
+                <apex:outputText value="{!topMiddleString}" rendered="{!topMiddleString != null}"/>
+           </div>
+           <div class="topRightHeader">
+                <apex:image url="{!topRightImageURL}" rendered="{!topRightImageURL != null}"> </apex:image>
+                <apex:outputText value="{!topRightString}" rendered="{!topRightString != null}"/>
+           </div>
+      
+           <div class="bottomLeftHeader">
+                <apex:image url="{!bottomLeftImageURL}" rendered="{!bottomLeftImageURL != null}"> </apex:image>
+                <apex:outputText value="{!bottomLeftString}" rendered="{!bottomLeftString != null}"/>
+           </div>
+           <div class="bottomRightHeader">
+                <apex:image url="{!bottomRightImageURL}" rendered="{!bottomRightImageURL != null}"> </apex:image>
+                <apex:outputText value="{!bottomRightString}" rendered="{!bottomRightString != null}"/>
+           </div>
+          <div class="content">
+            <GNT:FlexPrintLayout templateName="{!printTemplateName}" recordId="{!recordId}" layoutType="Print" packageId="{!pkgId}" />
+          </div>
+</apex:page>

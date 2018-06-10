@@ -1,0 +1,15 @@
+<apex:page standardController="SiteVisitActivity__c" showHeader="false" standardStylesheets="false" extensions="SiteVisitActivityAddEditCtrl" sidebar="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+    
+       <apex:composition template="GNT__ModalTemplate">
+          <apex:define name="ModalContent"> 
+          
+            <GNT:ModalFlexEditLayout hideCancelBtn="true" hideSidebar="true" templateName="SiteVisitActivityTemplate" recordId="{!recordId}" layoutType="Edit" flexTableParameters="{!keyValueMap}"
+              createDefaultValues="{!listDefaultValues}" saveURL="{!savePage}" cancelURL="{!cancelPage}"/>
+              
+          </apex:define>
+        </apex:composition>
+        
+</apex:page>

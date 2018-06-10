@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE - Email is sent to the Applicant when the Applicantion is sent for Internal Review</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Application Submission for Review</name>
+    <style>formalLetter</style>
+    <subject>Application {!Application__c.Name} submitted for Internal Review</subject>
+    <textOnly>Subject: Notification of Application {!Application__c.Name} submitted for Internal Review
+
+
+
+Hello {!Application__c.OwnerFullName},
+
+
+
+This email is to inform you that the Application {!Application__c.Name} has been submitted for Internal Review.
+
+
+
+Application Details:
+
+
+
+Application Number: {!Application__c.Name}
+
+Application Title: {!Application__c.Title__c}
+
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely.
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

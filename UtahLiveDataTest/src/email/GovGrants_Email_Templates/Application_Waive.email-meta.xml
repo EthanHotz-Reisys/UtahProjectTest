@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>For when an application has been waived</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Application Waive</name>
+    <style>formalLetter</style>
+    <subject>Application waiver for {!Application__c.ProgramTitle__c} for {!Application__c.FiscalYear__c} successfully submitted to Grantor</subject>
+    <textOnly>Dear {!Application__c.LEAName__c},
+Your Application Waiver for {!Application__c.ProgramTitle__c} for {!Application__c.FiscalYear__c}  for {!Application__c.BudgetAllocation__c} amount has been waived.
+
+
+Sincerely,
+
+UtahGrants Support Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,40 @@
+<apex:page standardController="UserRegistration__c" showHeader="false" extensions="ApplicantRegistrationEditCtrl" standardStylesheets="false" sidebar="false">
+  
+  
+   <style>
+    #sideBarDivId{
+        min-height: 0px !important;
+    }
+    #body{
+    }    
+    /*
+    #page-content-wrapper .container-fluid .panel-body{
+        display:none;
+    }
+    
+    #editDiv .panel-body{
+        display:block !important;
+    }
+    */
+    .overviewHeader span.customLabelstyle {
+        font-size: 15px !important;
+        font-weight: bold !important;
+    }
+    </style>
+    
+    <!--<script>    
+        var j$ = jQuery.noConflict();
+    </script> -->
+    <!-- Including JS and CSS resources -->
+
+   <c:ExternalLibrary />
+   <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content"> 
+        
+                <GNT:FlexEditLayout templateName="{!pageTemplateName}" recordId="{!recordId}" layoutType="Edit" saveURL="{!savePage}" cancelURL="{!cancelPage}" HideSidebar="true" createDefaultValues="{!listDefaultValues}"  hideMenuBar="true"/>
+           
+          </apex:define>
+    </apex:composition> 
+   
+   
+</apex:page>

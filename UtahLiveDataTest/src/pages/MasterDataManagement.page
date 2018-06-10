@@ -1,0 +1,13 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false" >
+  <c:ExternalLibrary /> 
+    <apex:composition template="GNT__PhaseTemplate"> 
+        <apex:define name="body"> 
+            <GNT:FlexGrid tableId="MST_Agreement"/>
+            <GNT:FlexGrid tableId="MST_AmendmentType"/>
+            <GNT:FlexGrid tableId="MST_BudgetCategory"/>
+            <GNT:FlexGrid tableId="MST_Demographics"/>
+            <GNT:FlexGrid tableId="MST_TermCondition"/>
+            <GNT:FlexGrid tableId="MST_FiscalYear"/>
+        </apex:define> 
+    </apex:composition>
+</apex:page>

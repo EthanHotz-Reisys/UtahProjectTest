@@ -1,0 +1,65 @@
+<apex:page sidebar="false" standardStylesheets="false" showHeader="false" standardController="Contact" extensions="CommunityUserProfileEditCtrl">
+  
+    <style>
+    #sideBarDivId {
+        display: none !important;
+    }
+    .profileContainer {
+        width: 100%;
+        position: relative;
+    }
+    .profileContainer .layoutContainer {
+        float: left;
+        margin-left: 10px;
+    }
+    .profileContainer.active .layoutContainer {
+        min-width: 950px;
+        margin-left: 225px;
+    }
+    .profileContainer .profileSidebar {
+        position: absolute;
+        display: none;
+        top: 0px;
+        left: 0px;
+        width: 200px;
+        float: left;
+        margin-right: 15px;
+        margin-left: 10px;
+    }
+    .profileContainer.active .profileSidebar {
+        display: block;
+    }
+    .sideDiv {
+        padding-top: 95px;
+    }   
+    </style>
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+    <!--GNT:PageMessages /--> 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10">
+                <apex:composition template="GNT__PageTemplate">
+                    <apex:define name="content">
+                        <GNT:FlexViewLayout templateName="{!templateName}" recordId="{!recordId}" flexTableParameters="{!flexTableParameters}" layoutType="View" />           
+                    </apex:define>
+                </apex:composition>
+            </div>
+            <div class="col-md-2 sideDiv">
+                <apex:form >
+                    <c:CollabSideBarExternal contactIdExternal="{!recordId}"/> 
+                </apex:form>
+            </div>
+        </div>
+    </div>
+ 
+    <script>
+        var j$ = jQuery.noConflict(); 
+        j$(document).ready(function(){
+            /*j$('#sidebarToggleContainer').off('click');
+            j$('#sidebarToggleContainer').on('click', function() {
+                j$('.profileContainer').toggleClass('active');
+            });*/
+        });
+    </script>
+</apex:page>

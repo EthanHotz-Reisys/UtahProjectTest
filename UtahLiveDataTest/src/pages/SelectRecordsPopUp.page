@@ -1,0 +1,12 @@
+<apex:page controller="SelectRecordsPopUpCtrl" sidebar="false" standardStylesheets="false" showHeader="false">
+    
+    <!-- Including JS and CSS resources  -->
+    <c:ExternalLibrary />
+	<apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent"> 
+      <div class="container-fluid">
+         <GNT:FlexTable flexTableName="{!templateName}" tableId="popupflextable" flexTableParameters="{!keyValueMap}"  listParams="{!listParameters}"  isModalWindow="true"/>
+      </div>
+       </apex:define>
+    </apex:composition>      
+</apex:page>

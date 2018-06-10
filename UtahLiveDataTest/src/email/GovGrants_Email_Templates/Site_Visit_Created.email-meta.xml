@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sent to GA when site visit is created</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Site Visit Created</name>
+    <style>freeForm</style>
+    <subject>Site Visit {!SiteVisit__c.Name} has been created</subject>
+    <textOnly>Hello {!SiteVisit__c.GrantAdministratorName__c},
+
+This email is to notify you that the Site Visit &quot;{!SiteVisit__c.Name}&quot; has been created. You are requested to add the site visit details under pending task in the monitoring section in UGMS.
+
+Please do not reply to this email. You may contact the Utah Grants Support Team at utahgrants.support@reisystems.com, if you have any questions or need assistance with this task.
+
+Sincerely,
+
+UtahGrants Support Team
+utahgrants.support@reisystems.com
+Ph. No. 703.480.9100</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>[Business] Need more Details Maps Task Group Task to a schedule (Can be DOH specific)</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AssigedTo__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Assiged To</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Task_Schedule_Detail1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AssignedTo__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Assigned To</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Task_Schedule_Detail</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Descrption__c</fullName>
+        <externalId>false</externalId>
+        <label>Descrption</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EndDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>HideCloseBtn__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(AND( IsPublished__c = true , TaskScheduleGroup__r.AssignedTo__c =  $User.Id,text(Status__c) != &apos;Closed&apos; ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideCloseBtn</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideCompleteBtn__c</fullName>
+        <externalId>false</externalId>
+        <formula>not(AND(OR(TEXT(Status__c ) = &apos;In Progress&apos;,TEXT(Status__c ) = &apos;Not Started&apos;), AssignedTo__c =  $User.Id, IsPublished__c = true ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideCompleteBtn</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideEditButton__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(AND(TEXT(Status__c ) = &apos;Not Started&apos;,  TaskScheduleGroup__r.AssignedTo__c =  $User.Id ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide Edit Button</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideReopenBtn__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(AND(TEXT(Status__c ) = &apos;Completed&apos;, TaskScheduleGroup__r.AssignedTo__c =  $User.Id ))</formula>
+        <label>Hide Reopen Btn</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>IsPublished__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>IsPublished</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ParentID__c</fullName>
+        <externalId>false</externalId>
+        <formula>TaskScheduleGroup__r.TaskSchedule__r.ParentId__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Related Object ParentID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SendReminderBeforeEndDate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, reminder email will be sent to Assigned user 7 days before End Date.</inlineHelpText>
+        <label>Send Reminder Before End Date</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SendReminderBeforeStartDate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Send Reminder Before Start Date</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>StartDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Closed</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Subject__c</fullName>
+        <description>Purpose of the task - Subject can support merge fields {!Name}. These fields will be replaced with a value from the parent record</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Purpose of the task</inlineHelpText>
+        <label>Subject</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TaskScheduleGroup__c</fullName>
+        <externalId>false</externalId>
+        <label>Task Schedule Group</label>
+        <referenceTo>TaskScheduleGroup__c</referenceTo>
+        <relationshipLabel>Task Schedule Detail</relationshipLabel>
+        <relationshipName>TaskScheduleDetail</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Temp_Field__c</fullName>
+        <externalId>false</externalId>
+        <formula>True</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Temp Field</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>tempPercentField__c</fullName>
+        <externalId>false</externalId>
+        <label>Percent Completion</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <label>Task Schedule Detail</label>
+    <nameField>
+        <displayFormat>TDN-{0000}</displayFormat>
+        <label>Task Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Task Schedule Detail</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Assigned_To_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISBLANK(AssignedTo__c )</errorConditionFormula>
+        <errorMessage>Please fill Assigned To field.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Due_Date_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISBLANK( EndDate__c )</errorConditionFormula>
+        <errorMessage>Please fill a valid due date for sub task.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Due_date_validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(AND(or(ISCHANGED( EndDate__c ),isnew()), EndDate__c &lt; TODAY()), true, false)</errorConditionFormula>
+        <errorMessage>Due Date cannot be earlier than Today’s Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>End_Date_less_that_Start_date_validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>StartDate__c &gt;  EndDate__c</errorConditionFormula>
+        <errorMessage>Start date cannot be greater than Due  date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Past_End_Date_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(AND(ISCHANGED( StartDate__c ), StartDate__c &lt; TODAY()), true, false)</errorConditionFormula>
+        <errorDisplayField>StartDate__c</errorDisplayField>
+        <errorMessage>Start date should be greater than or equal to  today</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Past_Start_Date_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(AND(ISCHANGED( StartDate__c ), StartDate__c &lt; TODAY()), true, false)</errorConditionFormula>
+        <errorMessage>Start date should be greater than or equal to  today</errorMessage>
+    </validationRules>
+</CustomObject>

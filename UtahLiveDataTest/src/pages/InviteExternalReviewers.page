@@ -1,0 +1,11 @@
+<apex:page controller="InviteExternalReviewersCtrl" showHeader="false" sidebar="false" standardStylesheets="false" >
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">
+            <GNT:FlexTable flexTableName="InvitedExternalReviewers" tableId="InvitedExternalReviewersTable" flexTableParameters="{!keyValueMap}"/>
+        </apex:define>
+    </apex:composition>    
+    <script>
+        setPageTitle('{!flexTableHeader}');
+    </script>
+</apex:page>

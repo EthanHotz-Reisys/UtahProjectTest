@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email sent to Award owner when PO approves award</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Award approved by PO</name>
+    <style>formalLetter</style>
+    <subject>{!Award__c.Name} approved</subject>
+    <textOnly>Hello {!Award__c.CreatedBy},
+This email is to inform you that, the Award {!Award__c.Name} created for the Grant #{!Award__c.Grant__c} has been Approved by the FO and PO.
+
+Award Details:
+
+Award Title: {!Award__c.GrantAwardName__c}
+
+Award Type: {!Award__c.AwardType__c}
+
+Sub Award Number: {!Award__c.Name}
+
+Grant : {!Award__c.Grant__c}
+
+More Details: {!Award__c.Link}
+
+
+Sincerely,
+
+UtahGrants Support Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

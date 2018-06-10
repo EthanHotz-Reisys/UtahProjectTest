@@ -1,0 +1,17 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false" controller="RecipientOpportunityCtrl">
+   
+    <c:ExternalLibrary />
+    <c:WhatFixHelper />
+    <apex:outputPanel >
+        <apex:composition template="GNT__PhaseTemplate">
+            <apex:define name="body">    
+                
+                  <GNT:FlexTable flexTableName="QualifiedAnnouncementsExternal" tableId="qleads"  headerDescription="" flexTableParameters="{!keyValueMap}" />
+             
+                 <GNT:FlexTable flexTableName="QualifiedClosedAnnouncementsExternal" tableId="QualifiedClosedAnnouncementsExternal"  headerDescription="" flexTableParameters="{!keyValueMap}"  />
+              
+            </apex:define>
+        </apex:composition>
+    </apex:outputPanel>
+    
+</apex:page>

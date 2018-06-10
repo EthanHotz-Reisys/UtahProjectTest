@@ -1,0 +1,30 @@
+<apex:page >
+  <h1>   SF-424B Assurances - Non-Construction Programs Form (4040-0007) </h1>
+  <br/>
+  <br/>
+  <p style="font-size:24pt;color:blue;"><PRE> 
+     According to the Paperwork Reduction Act of 1995, an agency may not conduct or sponsor, and a person is not required to respond to a collection of information unless it displays a valid OMB control number.
+     The valid OMB control number for this information collection is 4040-0007. The time required to complete this information collection is estimated to average 49 minutes per response, including the time to
+     review instructions, search existing data resources, gather the data needed and complete and review the information collection. If you have comments concerning the accuracy of the time estimate(s) or
+     suggestions for improving this form, please write to: U.S. Department of Health &amp; Human Services, OS/OCIO/PRA, 200 Independence Ave., S.W., Suite 537-H, Washington D.C. 20201, Attention: PRA Reports
+     Clearance Officer.</PRE></p>
+     <br/>
+    
+     <PRE>
+           Agency        Total Responses        Average Burden per response in Hours        Total Burden
+           USDA          6202                   15/60                                       1551
+           NARA          145                    15/60                                       36
+           CNCS          10                     30/60                                       5
+           TREAS         191                    15/60                                       48
+           DOI           3848                   22/60                                       1404
+           VA            184                    15/60                                       46
+           DOC           5685                   15/60                                       1421
+           EPA           9098                   1.82                                        16585
+           DHS           150                    1                                           150
+           HHS           978                    15/60                                       245
+           Total         26491                                                              21491
+           
+           21491 total hrs.x60 min = 1289460 total minutes
+           1289460 minutes / 26491 total responses = 49 minutes per response </PRE>
+  
+</apex:page>

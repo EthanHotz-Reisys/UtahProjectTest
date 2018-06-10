@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE When External Registration Owner submits Applicant registration for approval then email is sent to User Registration Approver(Queue). Any assigned user in the queue can pick up the task</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>External Organization/Applicant - Request for Registration</name>
+    <style>formalLetter</style>
+    <subject>Organization {!UserRegistration__c.OrganizationName__c} has Requested to Register</subject>
+    <textOnly>A request has been made to gain access to UtahGrants Management System (UGMS). Below are the details:
+
+
+
+Organization Name : {!UserRegistration__c.OrganizationName__c}{!UserRegistration__c.OrganizationNameFromContact__c}
+
+
+
+Organization Type: {!UserRegistration__c.OrganizationTypeSInglePicklist__c}{!UserRegistration__c.OrganizationTypeFromContact__c}
+
+
+
+Please login to UGMS. Locate and click on &quot;Pending Registrations” to either approve or reject organization registration. Once you have approved registration, an email with login credentials will be sent to the requesting applicants. The account however will not be activated until the requesting applicant has verified the receipt of the login credentials by resetting their password from Salesforce.
+
+Sincerely,
+
+UtahGrants Support Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

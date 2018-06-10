@@ -1,0 +1,14 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false">
+   
+    <c:ExternalLibrary />
+
+    <apex:outputPanel >
+        <apex:composition template="GNT__PhaseTemplate">
+            <apex:define name="body">    
+                  <GNT:FlexTable flexTableName="InternalFundingSource" tableId="InternalFundingSource"  headerDescription="" />
+                  <GNT:FlexTable flexTableName="ExternalFundingSource" tableId="ExternalFundingSource"  headerDescription="" />
+            </apex:define>
+        </apex:composition>
+    </apex:outputPanel>
+    
+</apex:page>

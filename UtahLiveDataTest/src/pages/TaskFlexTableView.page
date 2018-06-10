@@ -1,0 +1,14 @@
+<apex:page id="taskTableViewPage"  controller="TaskDueDateFlexTableCtrl" showHeader="false" sidebar="false"  standardStylesheets="false">
+    
+    <c:ExternalLibrary />
+
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">
+            <GNT:FlexTable listParams="{!listParams}" flexTableName="{!$CurrentPage.parameters.flexTableName}" tableId="flexTableRandomID" />
+        </apex:define>
+    </apex:composition>
+    
+    <script>
+        setPageTitle('{!$CurrentPage.parameters.pageTitle}');
+    </script>
+</apex:page>

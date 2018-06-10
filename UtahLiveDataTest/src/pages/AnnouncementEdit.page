@@ -1,0 +1,14 @@
+<apex:page standardController="Announcement__c" extensions="AnnouncementEditCtrl" 
+        sidebar="false" standardStylesheets="false" showHeader="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+    
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content"> 
+          <GNT:FlexEditLayout templateName="{!pageTemplateName}" hideCancelBtn="false" recordId="{!recordId}" layoutType="Edit" flexTableParameters="{!keyValueMap}" cancelURL="{!cancelPage}"  createDefaultValues="{!listDefaultValues}" saveURL="{!savePage}"  /> 
+       <!-- <GNT:ModalFlexEditLayout templateName="{!pageTemplateName}" recordId="{!recordId}" layoutType="Edit" flexTableParameters="{!keyValueMap}" createDefaultValues="{!listDefaultValues}" saveURL="{!savePage}"  />-->
+     </apex:define>
+    </apex:composition>
+    
+</apex:page>

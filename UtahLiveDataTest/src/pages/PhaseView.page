@@ -1,0 +1,43 @@
+<apex:page id="thePage"  docType="html-5.0" controller="PhaseViewCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+     
+     <GNT:ExternalLibrary />   
+     <c:ExternalLibrary /> 
+     
+     <style>
+       
+     </style>
+     <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">
+            <div class="row">
+                <div class="col-md-12">
+                    <apex:include pageName="{!bodyPageIncludeTop}" rendered="{!NOT(displaySearchResult)}" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <GNT:FlexTable listParams="{!keyValueMap1}" flexTableName="{!flexTableName}" flexTableParameters="{!keyValueMap}" tableId="{!flexTableName}" rendered="{!displayFlexTable}"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <GNT:SearchResult searchObjects="{!searchObjects}" searchText="{!searchText}"  keyValueMap="{!searchKeyValueMap}" rendered="{!displaySearchResult}"/>             
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <apex:form > 
+                        <GNT:PageMessages /> 
+                    </apex:form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <apex:include pageName="{!bodyPageIncludeBottom}" />
+                </div>
+            </div>          
+        </apex:define> 
+    </apex:composition> 
+   
+   
+   
+</apex:page>

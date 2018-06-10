@@ -1,0 +1,2482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>GoalEdit</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>GoalView</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Goals and Objectives object for Performance management</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>AchievedQComments__c</fullName>
+        <externalId>false</externalId>
+        <label>AchievedQComments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AchievedQ__c</fullName>
+        <externalId>false</externalId>
+        <label>AchievedQ</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ActivitiesAndMethods__c</fullName>
+        <externalId>false</externalId>
+        <label>ACTIVITIES AND METHODS</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AllocatedAmount__c</fullName>
+        <description>Allocated Amount for Goal/Objective</description>
+        <externalId>false</externalId>
+        <label>Allocated Amount</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Allocated__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Allocated %</description>
+        <externalId>false</externalId>
+        <label>Allocated %</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Announcement__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Funding Opportunity</label>
+        <referenceTo>Announcement__c</referenceTo>
+        <relationshipLabel>Goals Objectives</relationshipLabel>
+        <relationshipName>Goals_Objectives</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ApplicationName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.ExternalOrganizationName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ApplicationName</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Application</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipLabel>Goals Objectives</relationshipLabel>
+        <relationshipName>Goals_Objectives</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AwardQ1Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>AwardQ1Comments</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AwardQ1__c</fullName>
+        <description>This is entered in award phase</description>
+        <externalId>false</externalId>
+        <label>AwardQ1</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AwardQ2Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>AwardQ2Comments</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AwardQ2__c</fullName>
+        <externalId>false</externalId>
+        <label>AwardQ2</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AwardQ3Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>AwardQ3Comments</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AwardQ3__c</fullName>
+        <externalId>false</externalId>
+        <label>AwardQ3</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AwardQ4Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>AwardQ4Comments</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AwardQ4__c</fullName>
+        <externalId>false</externalId>
+        <label>AwardQ4</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AwardTotalQuantitative__c</fullName>
+        <externalId>false</externalId>
+        <formula>AwardQ1__c+AwardQ2__c+AwardQ3__c+AwardQ4__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AwardTotalQuantitative</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Award__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Award to which the Goal is associated</description>
+        <externalId>false</externalId>
+        <label>Award</label>
+        <referenceTo>Award__c</referenceTo>
+        <relationshipName>Goals_and_Objectives</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CombineTextQuestions__c</fullName>
+        <externalId>false</externalId>
+        <label>CombineTextQuestions</label>
+        <length>131000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Description for Goals and Objectives</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DueDate__c</fullName>
+        <description>Due Date for Goal Completion</description>
+        <externalId>false</externalId>
+        <label>Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DueDates__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND(IsParent__c==false, ParentGoal__c!=null), 
+
+&quot;Due Date for Q1: &quot; + TEXT(Q1DueDate__c) &amp; BR() &amp; BR() &amp; 
+
+&quot;Due Date for Q2: &quot; + TEXT(Q2DueDate__c) &amp; BR() &amp; BR() &amp; 
+
+&quot;Due Date for Q3: &quot; + TEXT(Q3DueDate__c) &amp; BR() &amp; BR() &amp; 
+
+&quot;Due Date for Q4: &quot; + TEXT(Q4DueDate__c) &amp; BR() &amp; BR(),null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DueDates</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmailCheck__c</fullName>
+        <externalId>false</externalId>
+        <label>EmailCheck</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ExpenditureAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>Expenditure Amount</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Form__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Application Detail (FORMS)</label>
+        <referenceTo>Form__c</referenceTo>
+        <relationshipLabel>Goals Objectives</relationshipLabel>
+        <relationshipName>Goals_Objectives</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>GOAchievedQ__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND(IsParent__c==false, ParentGoal__c!=null), 
+
+&quot;Q1: &quot; + TEXT(AwardQ1__c) &amp; BR() &amp; BR() &amp; 
+
+&quot;Q2: &quot; + TEXT(AwardQ2__c) &amp; BR() &amp; BR() &amp; 
+
+&quot;Q3: &quot; + TEXT(AwardQ3__c) &amp; BR() &amp; BR() &amp; 
+
+&quot;Q4: &quot; + TEXT(AwardQ4__c) &amp; BR() &amp; BR() &amp; 
+
+&quot;Total Quantitative: &quot; + TEXT(AwardTotalQuantitative__c ) &amp; BR() &amp; BR(), 
+
+&quot;N/A&quot; )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>GOAchievedQ</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GoalAddress__c</fullName>
+        <externalId>false</externalId>
+        <label>This goal will address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Coordinated Community Response</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Policies</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Products</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Data Collection and Communication Systems</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Specialized Units</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>System Improvements</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Victim Services</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>GoalObjectiveCombineQuestions__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND(IsParent__c==false, ParentGoal__c!=null), 
+
+&quot;Q1: &quot; + TEXT(Q1__c) &amp; BR() &amp; BR() &amp; 
+
+&quot;Q2: &quot; + TEXT(Q2__c) &amp; BR() &amp; BR() &amp; 
+
+&quot;Q3: &quot; + TEXT(Q3__c) &amp; BR() &amp; BR() &amp; 
+
+&quot;Q4: &quot; + TEXT(Q4__c) &amp; BR() &amp; BR() &amp; 
+
+&quot;Total Quantitative: &quot; + TEXT(TotalQuantitative__c ) &amp; BR() &amp; BR(),
+ 
+&quot;N/A&quot; )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>GoalObjectiveCombineQuestions</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HideAnnouncementEditDelete__c</fullName>
+        <externalId>false</externalId>
+        <formula>Announcement__r.HideEditBtn__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideAnnouncementEditDelete</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideEditButton__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(ISPICKVAL(Award__r.Status__c , &apos;Activated&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideEdit</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideEdit__c</fullName>
+        <externalId>false</externalId>
+        <formula>OR(AND(Program__c!=null, NOT(ISPICKVAL(Program__r.Status__c,&apos;Created&apos;))),
+   AND(Award__c!=null, NOT(ISPICKVAL(Award__r.Status__c , &apos;Created&apos;))),
+   AND(Announcement__c!=null, Announcement__r.HideEditBtn__c)
+   )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide Edit</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideNewEditDelete__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(ISPICKVAL(Award__r.Status__c , &apos;Created&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideNewEditDelete</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideNewGoalBtn__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(IsParent__c != null &amp;&amp; Award__c != null, NOT(ISPICKVAL(Award__r.Status__c, &apos;Created&apos;)), false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideNewGoalBtn</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>IsParent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is this Goal a Parent ?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this Goal a Parent ?</inlineHelpText>
+        <label>Is Parent</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MeasureEffectiveness__c</fullName>
+        <externalId>false</externalId>
+        <label>Measure Effectiveness</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OldGoalYear__c</fullName>
+        <externalId>false</externalId>
+        <label>Year</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Last Year</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>The Year Before Last</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Other__c</fullName>
+        <externalId>false</externalId>
+        <label>Other</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ParentGoal__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to Goal and Objective Object. This acts as a self lookup.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Lookup to Goal and Objective Object. This acts as a self lookup.</inlineHelpText>
+        <label>Parent Goal</label>
+        <referenceTo>GoalObjective__c</referenceTo>
+        <relationshipLabel>Goals Objectives</relationshipLabel>
+        <relationshipName>Goals_and_Objectives2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ProgramPurposeAddressed__c</fullName>
+        <externalId>false</externalId>
+        <label>Program Purpose Addressed</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>11</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>12</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>13</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>14</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>15</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>16</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>17</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>18</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>19</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>20</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Program__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Program</label>
+        <referenceTo>Program__c</referenceTo>
+        <relationshipLabel>Goals Objectives</relationshipLabel>
+        <relationshipName>Goals_Objectives</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Q1DueDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Q1 DueDate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Q1__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <externalId>false</externalId>
+        <label>Q1</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Q2DueDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Q2 DueDate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Q2__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <externalId>false</externalId>
+        <label>Q2</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Q3DueDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Q3 DueDate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Q3__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <externalId>false</externalId>
+        <label>Q3</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Q4DueDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Q4 DueDate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Q4__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <externalId>false</externalId>
+        <label>Q4</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>QuantitativeNumberMeasures__c</fullName>
+        <externalId>false</externalId>
+        <label>Quantitative number measures</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Number of trainings provided</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Number of people trained</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Number of victims served</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Meetings</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Brochures</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Manuals</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Training curricula</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Training materials</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Evaluations</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Interpreters</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Safety audits</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Security personnel or equipment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Victim services provided</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Law enforcement services provided</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Prosecution victim services provided</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Court services provided</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Probation &amp; Parole (offender accountability) Services provided</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Batterer Intervention Services provided</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Met</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Partially Met</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Met</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Created</fullName>
+                    <default>true</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>TargetedQ__c</fullName>
+        <description>populated in goaltriggerhelper</description>
+        <externalId>false</externalId>
+        <label>TargetedQ</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <description>Title of Goal and Objective</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Title of Goal and Objective</inlineHelpText>
+        <label>Title</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TotalQuantitative__c</fullName>
+        <externalId>false</externalId>
+        <formula>Q1__c + Q2__c + Q3__c + Q4__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Quantitative</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(IsParent__c==false,&apos;Objective&apos;,&apos;Goal&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VocaGoalAddress__c</fullName>
+        <externalId>false</externalId>
+        <label>This goal will address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Victim Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Voca Goal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Housing</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VocaQuantitativeNumberMeasures__c</fullName>
+        <externalId>false</externalId>
+        <label>Quantitative number measures</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Number of trainings provided</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Number of people trained</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Number of victims served</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Meetings</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Brochures</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Manuals</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Training curricula</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Training materials</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Evaluations</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Interpreters</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Victim services provided</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Number of groups provided</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Number of total group attendance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Number of therapy hours</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Number of volunteers recruited</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Number of volunteers trained</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Number of volunteers maintained</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Year</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>testemail__c</fullName>
+        <externalId>false</externalId>
+        <label>testemail</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <label>Goal Objective</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Title__c</columns>
+        <columns>Description__c</columns>
+        <columns>IsParent__c</columns>
+        <columns>DueDate__c</columns>
+        <columns>Award__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>GOB-{0000}</displayFormat>
+        <label>Goals and Objectives Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Goals Objectives</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Announcement</fullName>
+        <active>true</active>
+        <description>Announcement RecordType for GoalObjective</description>
+        <label>Announcement</label>
+        <picklistValues>
+            <picklist>EmailCheck__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>GoalAddress__c</picklist>
+            <values>
+                <fullName>Coordinated Community Response</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Collection and Communication Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Specialized Units</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Improvements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victim Services</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>OldGoalYear__c</picklist>
+            <values>
+                <fullName>Last Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Year Before Last</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ProgramPurposeAddressed__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>17</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>19</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QuantitativeNumberMeasures__c</picklist>
+            <values>
+                <fullName>Batterer Intervention Services provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brochures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Court services provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evaluations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interpreters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Law enforcement services provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manuals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meetings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of people trained</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of trainings provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of victims served</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Probation %26 Parole %28offender accountability%29 Services provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prosecution victim services provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Safety audits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security personnel or equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training curricula</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training materials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victim services provided</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Created</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Met</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Met</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partially Met</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>VocaGoalAddress__c</picklist>
+            <values>
+                <fullName>Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victim Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voca Goal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>VocaQuantitativeNumberMeasures__c</picklist>
+            <values>
+                <fullName>Brochures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evaluations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interpreters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manuals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meetings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of groups provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of people trained</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of therapy hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of total group attendance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of trainings provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of victims served</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of volunteers maintained</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of volunteers recruited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of volunteers trained</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training curricula</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training materials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victim services provided</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Application</fullName>
+        <active>true</active>
+        <label>Application</label>
+        <picklistValues>
+            <picklist>EmailCheck__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>GoalAddress__c</picklist>
+            <values>
+                <fullName>Coordinated Community Response</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Collection and Communication Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Specialized Units</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Improvements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victim Services</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>OldGoalYear__c</picklist>
+            <values>
+                <fullName>Last Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Year Before Last</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ProgramPurposeAddressed__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>17</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>19</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QuantitativeNumberMeasures__c</picklist>
+            <values>
+                <fullName>Batterer Intervention Services provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brochures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Court services provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evaluations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interpreters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Law enforcement services provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manuals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meetings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of people trained</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of trainings provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of victims served</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Probation %26 Parole %28offender accountability%29 Services provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prosecution victim services provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Safety audits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security personnel or equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training curricula</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training materials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victim services provided</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Created</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Met</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Met</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partially Met</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>VocaGoalAddress__c</picklist>
+            <values>
+                <fullName>Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victim Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voca Goal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>VocaQuantitativeNumberMeasures__c</picklist>
+            <values>
+                <fullName>Brochures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evaluations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interpreters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manuals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meetings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of groups provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of people trained</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of therapy hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of total group attendance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of trainings provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of victims served</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of volunteers maintained</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of volunteers recruited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of volunteers trained</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training curricula</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training materials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victim services provided</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Award</fullName>
+        <active>true</active>
+        <description>Award RecordType for Goal and Objective</description>
+        <label>Award</label>
+        <picklistValues>
+            <picklist>EmailCheck__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>GoalAddress__c</picklist>
+            <values>
+                <fullName>Coordinated Community Response</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Collection and Communication Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Specialized Units</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Improvements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victim Services</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>OldGoalYear__c</picklist>
+            <values>
+                <fullName>Last Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Year Before Last</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ProgramPurposeAddressed__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>17</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>19</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QuantitativeNumberMeasures__c</picklist>
+            <values>
+                <fullName>Batterer Intervention Services provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brochures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Court services provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evaluations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interpreters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Law enforcement services provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manuals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meetings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of people trained</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of trainings provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of victims served</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Probation %26 Parole %28offender accountability%29 Services provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prosecution victim services provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Safety audits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security personnel or equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training curricula</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training materials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victim services provided</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Created</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Met</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Met</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partially Met</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>VocaGoalAddress__c</picklist>
+            <values>
+                <fullName>Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victim Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voca Goal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>VocaQuantitativeNumberMeasures__c</picklist>
+            <values>
+                <fullName>Brochures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evaluations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interpreters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manuals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meetings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of groups provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of people trained</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of therapy hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of total group attendance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of trainings provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of victims served</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of volunteers maintained</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of volunteers recruited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of volunteers trained</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training curricula</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training materials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victim services provided</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Program</fullName>
+        <active>true</active>
+        <description>Program RecordType for Goal and Objective</description>
+        <label>Program</label>
+        <picklistValues>
+            <picklist>EmailCheck__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>GoalAddress__c</picklist>
+            <values>
+                <fullName>Coordinated Community Response</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Collection and Communication Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Specialized Units</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Improvements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victim Services</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>OldGoalYear__c</picklist>
+            <values>
+                <fullName>Last Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Year Before Last</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ProgramPurposeAddressed__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>17</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>19</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QuantitativeNumberMeasures__c</picklist>
+            <values>
+                <fullName>Batterer Intervention Services provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brochures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Court services provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evaluations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interpreters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Law enforcement services provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manuals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meetings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of people trained</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of trainings provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of victims served</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Probation %26 Parole %28offender accountability%29 Services provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prosecution victim services provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Safety audits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security personnel or equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training curricula</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training materials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victim services provided</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Created</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Met</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Met</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partially Met</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>VocaGoalAddress__c</picklist>
+            <values>
+                <fullName>Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victim Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voca Goal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>VocaQuantitativeNumberMeasures__c</picklist>
+            <values>
+                <fullName>Brochures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evaluations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interpreters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manuals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meetings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of groups provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of people trained</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of therapy hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of total group attendance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of trainings provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of victims served</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of volunteers maintained</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of volunteers recruited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Number of volunteers trained</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training curricula</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training materials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victim services provided</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Allocated_Percentage_Check</fullName>
+        <active>true</active>
+        <description>Allocated_%_can_not_be_more_than_100%</description>
+        <errorConditionFormula>if(Allocated__c&gt;100 || Allocated__c &lt;0,true,false)</errorConditionFormula>
+        <errorMessage>Allocated Percentage should be between 0-100</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Application_Goal_Objective_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(Application__c != null,IF(Application__r.FormsValidated__c, true, false), false)</errorConditionFormula>
+        <errorMessage>Forms are not editable after validation</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Due_Date_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>DueDate__c&lt; TODAY()</errorConditionFormula>
+        <errorMessage>Due Date must be a future date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>EmailCheck</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL(EmailCheck__c,&apos;Yes&apos;),OR(ISNULL(Q1DueDate__c),ISNULL(Q2DueDate__c),ISNULL(Q3DueDate__c),ISNULL(Q4DueDate__c)))</errorConditionFormula>
+        <errorMessage>Please enter the duedates for respective quarters.</errorMessage>
+    </validationRules>
+</CustomObject>

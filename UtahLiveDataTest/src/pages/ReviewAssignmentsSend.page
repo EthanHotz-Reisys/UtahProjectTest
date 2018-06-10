@@ -1,0 +1,70 @@
+<apex:page controller="ReviewAssignmentsSendCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+    
+    <!-- Including JS and CSS resources 
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">
+            <apex:form >
+                <GNT:PageMessages />
+                <div class="bs container-fluid">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span class="bold-text">
+                                <h3 class="panel-title">Select Proposals to Send - Step {!reviewStep.StepNumber__c}</h3>
+                            </span>
+                            <span class="button-string">
+                                <apex:commandbutton action="{!sendProposals}" value="Send" styleClass="customBtn"
+                                    rendered="{!lstProposalWrapper.size>0}" />
+                                <apex:commandbutton action="{!Cancel}" value="Cancel" styleClass="customBtn"
+                                    rendered="{!lstProposalWrapper.size>0}" />
+                            </span>
+                        </div>
+                        <div class="panel-body panel-body-ext">
+                            <apex:outputPanel rendered="{!lstProposalWrapper.size>0}">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <apex:dataTable value="{!lstProposalWrapper}"
+                                            var="assignment" styleClass="table"
+                                            rendered="{! lstProposalWrapper.size>0}">
+                                            <apex:column >
+                                                <label for="" class="508Label" style="display: none;">
+                                                    inptCheckbox </label>
+                                                <apex:facet name="header">Select</apex:facet>
+                                                <apex:inputCheckbox id="chkbox"
+                                                    value="{!assignment.selected}" styleClass="508Input" />
+                                            </apex:column>
+                                            <apex:column >
+                                                <apex:facet name="header">Application ID</apex:facet>
+                                                <apex:outputText value="{!assignment.assgn.Application__r.Name}" />
+                                            </apex:column>
+                                            <apex:column >
+                                                <apex:facet name="header">Application Title</apex:facet>
+                                                <apex:outputText value="{!assignment.assgn.Application__r.Title__c}" />
+                                            </apex:column>
+                                            <apex:column >
+                                                <apex:facet name="header">Reviewer</apex:facet>
+                                                <apex:outputText value="{!assignment.assgn.Reviewer__r.Name}" />
+                                            </apex:column>
+                                            <apex:column >
+                                                <apex:facet name="header">Reviewer Organization</apex:facet>
+                                                <apex:outputText value="{!assignment.assgn.Reviewer__r.OrganizationAccountName__c}" />
+                                            </apex:column>
+                                        </apex:dataTable>
+                                    </div>
+                                </div>
+                            </apex:outputPanel>
+                            <apex:outputpanel rendered="{!lstProposalWrapper.size==0}">
+                                <p class="text-center">
+                                    <apex:outputText value="There are no proposals available to be sent." rendered="{!lstProposalWrapper.size==0}" />
+                                    <br />
+                                    <apex:commandbutton action="{!Cancel}" value="Click to go back to Review Step" rendered="{!lstProposalWrapper.size==0}"
+                                        styleClass="customBtn" />
+                                </p>
+                            </apex:outputpanel>
+                        </div>
+                    </div>
+                </div>
+            </apex:form>
+        </apex:define>
+    </apex:composition>-->
+</apex:page>

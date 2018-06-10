@@ -1,0 +1,1208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>CloseoutRequestEdit</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>CloseoutRequestView</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>[Business] All the close out information is stored on this object</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Acknowledgement__c</fullName>
+        <externalId>false</externalId>
+        <label>Acknowledegment</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ActiveAppName__c</fullName>
+        <externalId>false</externalId>
+        <formula>$Setup.GNT__UserPreferences__c.GNT__ActiveAppName__c</formula>
+        <label>ActiveAppName</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agreement1__c</fullName>
+        <description>This field is used in Grantor Closeout Checklist form</description>
+        <externalId>false</externalId>
+        <label>Agreement1</label>
+        <length>22768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Agreement2__c</fullName>
+        <description>This field is usde in Federal Grantee Closeout Checklist form</description>
+        <externalId>false</externalId>
+        <label>Agreement2</label>
+        <length>22768</length>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AssignedToEmail__c</fullName>
+        <externalId>false</externalId>
+        <formula>Grant__r.AssignedTo__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Assigned User Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AwardPM__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Award PM</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Closeouts2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AwardSubAwardee__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Award SubAwardee</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Closeouts3</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Award__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Award</label>
+        <referenceTo>Award__c</referenceTo>
+        <relationshipLabel>Closeouts</relationshipLabel>
+        <relationshipName>Closeouts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BudgetPeriodEndDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Budget Period End Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>BudgetPeriodStartDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Budget Period Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CloseoutCheckList__c</fullName>
+        <externalId>false</externalId>
+        <label>Closeout Check List</label>
+        <length>32768</length>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CloseoutTime__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( DueDate__c &gt;= TODAY(), &apos;Upcoming&apos;,&apos;Past&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Closeout Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CompletionDate__c</fullName>
+        <description>The Date when the Grants is marked to be done</description>
+        <externalId>false</externalId>
+        <label>Completion Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CompletionNotes__c</fullName>
+        <description>This field is used on the  Completion form of the Close out</description>
+        <externalId>false</externalId>
+        <label>Completion Notes</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DaysLeft__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(DueDate__c&gt;Today(),DueDate__c-Today(),0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days Left</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DueDate__c</fullName>
+        <description>This field stores the due date by which Sub-Awardee is required to Submit the closeout</description>
+        <externalId>false</externalId>
+        <label>Due Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EnsureReconciliation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check box used on Closeout Form</description>
+        <externalId>false</externalId>
+        <label>Ensure Reconciliation</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ExtensionDays__c</fullName>
+        <description>Extension in Number of Days requested by applicant</description>
+        <externalId>false</externalId>
+        <label>Extension in Days</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ExtensionJustification__c</fullName>
+        <description>Extension Justification</description>
+        <externalId>false</externalId>
+        <label>Extension Justification</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ExtensionStatus__c</fullName>
+        <description>Extension Status by applicant</description>
+        <externalId>false</externalId>
+        <label>Extension Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Requested</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Requested</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ExternalOrganization__c</fullName>
+        <externalId>false</externalId>
+        <formula>Grant__r.ExternalOrganization__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Recipient Organization</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FOApprover__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>FO Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Closeouts6</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FederalCloseoutReceived__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Federal Closeout Received</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FinalPerformance__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check box used on Closeout Form</description>
+        <externalId>false</externalId>
+        <label>Final Performance</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FinancialReports__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Financial Reports Reviewed and signed off</description>
+        <externalId>false</externalId>
+        <label>Financial Reports Reviewed</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FormsValidated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is used for validation of form depends upon percentage of form filled.</description>
+        <externalId>false</externalId>
+        <label>Forms Validated?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>GrantGM__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>GrantGM</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Closeouts4</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>GrantName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Grant__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Grant</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GrantPM__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>GrantPM</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Closeouts1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>GrantSubAwardee__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field holds the value of the Sub-qAwardee for which Closeout task will be created</description>
+        <externalId>false</externalId>
+        <label>Grant SubAwardee</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Grant_Closeouts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>GrantTerminationReason__c</fullName>
+        <description>Field to describe why you would like to get your Grants Terminated</description>
+        <externalId>false</externalId>
+        <label>Grant Termination Reason</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Grant__c</fullName>
+        <externalId>false</externalId>
+        <label>Grant</label>
+        <referenceTo>Grant__c</referenceTo>
+        <relationshipLabel>Closeouts</relationshipLabel>
+        <relationshipName>Closeouts</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>GranteeChecklist1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is used on Federal Grantee Closeout form.</description>
+        <externalId>false</externalId>
+        <label>Grantee Checklist 1</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>GranteeChecklist2__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is used on Federal Grantee Closeout form.</description>
+        <externalId>false</externalId>
+        <label>Grantee Checklist 2</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>GranteeChecklist3__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is used on Federal Grantee Closeout form.</description>
+        <externalId>false</externalId>
+        <label>Grantee Checklist 3</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>GranteeChecklist4__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is used on Federal Grantee Closeout form.</description>
+        <externalId>false</externalId>
+        <label>Grantee Checklist 4</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>GranteeChecklist5__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is used on Federal Grantee Closeout form.</description>
+        <externalId>false</externalId>
+        <label>Grantee Checklist 5</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>GranteeChecklist6__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is used on Federal Grantee Closeout form.</description>
+        <externalId>false</externalId>
+        <label>Grantee Checklist 6</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>GranteeChecklist7__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is used in Federal Grantee Closeout.</description>
+        <externalId>false</externalId>
+        <label>Grantee Checklist 7</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>GranteeChecklist8__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is used in Federal Grantee Closeout form.</description>
+        <externalId>false</externalId>
+        <label>Grantee Checklist 8</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>GranteePOC__c</fullName>
+        <externalId>false</externalId>
+        <formula>Grant__r.GranteePOC__r.FirstName &amp; &apos; &apos; &amp;  Grant__r.GranteePOC__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Grantee POC</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GrantorCheckList__c</fullName>
+        <externalId>false</externalId>
+        <label>GrantorCheckList</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>GrantsTerminationDate__c</fullName>
+        <description>This field is used on the Termination From to Specify the Effective date from when the Grant should be Terminated</description>
+        <externalId>false</externalId>
+        <label>Grants Termination Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>HideEditButton__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(OR(ISPICKVAL(Status__c,&apos;Created&apos;),ISPICKVAL(Status__c,&apos;Notified&apos;)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide Edit Button</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideFieldsByAnnualType__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Type__c,&apos;Annual&apos;),true,false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideFieldsByAnnualType</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideFieldsByType__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Type__c,&apos;Final&apos;),true,false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideFieldsByType</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideNotifyButton__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(ISPICKVAL(Status__c,&apos;Created&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide Notify Button</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideRecipientBtn__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(RecipientAccepted__c=true,true,false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide Recipient Btn</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideSubmitButton__c</fullName>
+        <description>This field is used to show/hide Closeout Submit button</description>
+        <externalId>false</externalId>
+        <formula>IF(  OR(ISPICKVAL( Status__c , &quot;Initiated by PM&quot;),ISPICKVAL( Status__c , &quot;Initiated by GM&quot;), ISPICKVAL( Status__c , &quot;On-hold Rejected&quot;), ISPICKVAL( Status__c , &quot;Rejected by PM&quot;), ISPICKVAL( Status__c , &quot;Rejected by GM&quot;)) &amp;&amp; ($Profile.Name == &apos;Project Admin&apos; || $Profile.Name == &apos;Project Staff&apos;), false, true)</formula>
+        <label>HideSubmitButton</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideSubmitforApproval__c</fullName>
+        <externalId>false</externalId>
+        <formula>OR(If(TEXT(Status__c )=&apos;Notification Accepted&apos;,false,true), $Setup.GNT__UserPreferences__c.GNT__ActiveAppName__c =&apos;StateasGrantee&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide Submit for Approval</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Issue_Closeout__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check box used on Closeout Form</description>
+        <externalId>false</externalId>
+        <label>Issue Closeout</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LiquidatedAssests__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is used in Grantor Closeout Checklist form.</description>
+        <externalId>false</externalId>
+        <label>Liquidated Assests</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Liquidateobligations__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check box used on Closeout Form</description>
+        <externalId>false</externalId>
+        <label>Liquidate obligations</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LockDate__c</fullName>
+        <description>This date identifies when the Grant record and related records should be locked-out.</description>
+        <externalId>false</externalId>
+        <label>Lock Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Make_Payment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check box used on Closeout Form</description>
+        <externalId>false</externalId>
+        <label>Make Payment</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NameTemplate__c</fullName>
+        <externalId>false</externalId>
+        <formula>&apos;CL-&apos;+Grant__r.GrantAbbreviation__c+&apos;-&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NameTemplate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PMComments__c</fullName>
+        <description>This field is used to store PM comments for Initiating Closeout</description>
+        <externalId>false</externalId>
+        <label>Program Manager Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>POApprover__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>PO Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Closeouts5</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PaymentRequestReportReviewed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Payment Request Report Reviewed?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ProfileName__c</fullName>
+        <externalId>false</externalId>
+        <formula>$Profile.Name</formula>
+        <label>ProfileName</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProgressReportReviewed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Progress Report Reviewed?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ProjectName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Grant__r.ProjectTitle__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProjectPeriodEndDate__c</fullName>
+        <externalId>false</externalId>
+        <formula>Grant__r.ProjectPeriodEndDate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Period End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ProjectPeriodStartDate__c</fullName>
+        <externalId>false</externalId>
+        <formula>Grant__r.ProjectPeriodStartDate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Period Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ProofOfLiquidation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is used in Grantor Closeout Checklist form.</description>
+        <externalId>false</externalId>
+        <label>Proof Of Liquidation</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Provide_Closeout_Guidance__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check box used on Closeout Form</description>
+        <externalId>false</externalId>
+        <label>Provide Closeout Guidance</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RealandPersonalProperty__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check box used on Closeout Form</description>
+        <externalId>false</externalId>
+        <label>Real and Personal Property</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>RecieveandEvaluate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check box used on Closeout Form</description>
+        <externalId>false</externalId>
+        <label>Recieve and Evaluate</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RecipientAccepted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Recipient Accepted?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ReconcileFinancial__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check box used on Closeout Form</description>
+        <externalId>false</externalId>
+        <label>Reconcile Financial</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RecordType__c</fullName>
+        <externalId>false</externalId>
+        <formula>Grant__r.RecordType.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Record Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Retainrecords__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check box used on Closeout Form</description>
+        <externalId>false</externalId>
+        <label>Retain records</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ReturnFunds__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check box used on Closeout Form</description>
+        <externalId>false</externalId>
+        <label>Return Funds</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Reviewer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Reviewer (Obsolete)</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Closeouts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>RiskAssesmentReportReviewed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Field to specify that the Risk Assessment Report has been reviewed</description>
+        <externalId>false</externalId>
+        <label>Risk Assesment Report Reviewed</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SiteVisitReportReviewed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Site Visit Report Reviewed?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Created</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Notified</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submitted for Approval</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Notification Accepted</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SubmitFinancialReport__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check box used on Closeout Form</description>
+        <externalId>false</externalId>
+        <label>Submit Financial Report</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SubmitQuarterlyReport__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check box used on Closeout Form</description>
+        <externalId>false</externalId>
+        <label>Submit Quarterly Report</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TotalAwardedBudget__c</fullName>
+        <description>This field stores the Total Awarded Budget on the Grant</description>
+        <externalId>false</externalId>
+        <label>Total Awarded Budget</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TotalExpense__c</fullName>
+        <description>This field stores the Total Expense on the Grant</description>
+        <externalId>false</externalId>
+        <label>Total Expense</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TotalRemainingBudget__c</fullName>
+        <description>This field stores the Total Remaining Budget</description>
+        <externalId>false</externalId>
+        <label>Total Remaining Budget</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TotalYTDSpent__c</fullName>
+        <description>This field stores the total year to date spent on the Grant</description>
+        <externalId>false</externalId>
+        <label>Total YTD Spent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Termination</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Annual Closeout</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Grant Closeout</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>isApproved__c</fullName>
+        <description>This field is used to check if a Closeout has been Approved</description>
+        <externalId>false</externalId>
+        <formula>IF( AND(OR( ISPICKVAL(Status__c,&apos;Not Started&apos;), ISPICKVAL(Status__c,&apos;Under PM Review&apos;), ISPICKVAL(Status__c,&apos;Under GM Review&apos;)), OR( $Profile.Name == &apos;Program Manager&apos;, $Profile.Name == &apos;Program User&apos;)), false, IF( AND( $Profile.Name == &apos;Project Admin&apos;, OR( ISPICKVAL(Status__c,&apos;Initiated by PM&apos;), ISPICKVAL(Status__c,&apos;Initiated by GM&apos;), ISPICKVAL(Status__c,&apos;On-hold Approved&apos;), ISPICKVAL(Status__c,&apos;On-hold Rejected&apos;) )) , false, true))</formula>
+        <label>isApproved</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>isSubmitted__c</fullName>
+        <description>This field is used to display Submit success message</description>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL( Status__c , &quot;Under PM Review&quot;) , true, false)</formula>
+        <label>isSubmitted</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>isTermination__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>isTermination</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Closeout</label>
+    <listViews>
+        <fullName>Closeout_Program_Manager_Closeout</fullName>
+        <filterScope>Everything</filterScope>
+        <label>Closeout Program Manager</label>
+        <language>en_US</language>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>CL-{0000}</displayFormat>
+        <label>ID</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Closeouts</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Due_Date_Greater_Than_Lock_Date</fullName>
+        <active>false</active>
+        <errorConditionFormula>IF( NOT( ISNULL(LockDate__c) ), IF(  DueDate__c &gt; LockDate__c , true, false) , false)</errorConditionFormula>
+        <errorDisplayField>DueDate__c</errorDisplayField>
+        <errorMessage>Due Date cannot be greater than Lock Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Due_Date_Less_Than_Today</fullName>
+        <active>true</active>
+        <errorConditionFormula>DueDate__c &lt; TODAY()</errorConditionFormula>
+        <errorDisplayField>DueDate__c</errorDisplayField>
+        <errorMessage>Due Date cannot be less than Today.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Lock_Date_Less_Than_Today</fullName>
+        <active>true</active>
+        <errorConditionFormula>LockDate__c &lt; Today()</errorConditionFormula>
+        <errorDisplayField>LockDate__c</errorDisplayField>
+        <errorMessage>Lock Date cannot be less than Today</errorMessage>
+    </validationRules>
+</CustomObject>

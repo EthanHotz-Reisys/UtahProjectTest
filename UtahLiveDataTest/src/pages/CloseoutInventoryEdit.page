@@ -1,0 +1,25 @@
+<apex:page standardController="CloseoutInventory__c" showHeader="false" standardStylesheets="false" extensions="CloseoutInventoryEditCtrl" sidebar="false">
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__ModalTemplate">
+    <apex:define name="ModalContent">    
+    
+    <GNT:ModalFlexEditLayout templateName="{!pageTemplateName}" recordId="{!recordId}" layoutType="Edit" flexTableParameters="{!keyValueMap}" HideSidebar="true" 
+      createDefaultValues="{!listDefaultValues}" saveURL="{!savePage}" cancelURL="{!cancelPage}"/>
+      </apex:define>
+      </apex:composition>
+
+      <script>
+        var j$ = jQuery.noConflict();
+        j$(document).ready(function(){
+            //buildLookupIcon();
+        });
+
+        var buildLookupIcon = function(){
+            j$('.lookupIcon').each(function(){
+                var currentNode = j$(this);
+                currentNode.parent().append('<span class="glyphicon glyphicon-search"></span>');
+            });
+        }
+    </script>
+</apex:page>

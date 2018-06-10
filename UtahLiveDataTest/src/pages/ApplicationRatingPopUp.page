@@ -1,0 +1,16 @@
+<apex:page controller="ApplicationRatingPopUpCtrl" sidebar="false" standardStylesheets="false" showHeader="false">
+    <GNT:ExternalLibrary />
+    <!-- Including JS and CSS resources  -->
+    <c:ExternalLibrary />
+
+	  Application : {!applicationName}
+      <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent"> 
+	      <div class="container-fluid">
+	         <GNT:FlexTable flexTableName="{!templateName}" tableId="ratingpopupflextable" flexTableParameters="{!keyValueMap}"  listParams="{!listParameters}"  isModalWindow="true"/>
+	      </div>
+       </apex:define>
+    </apex:composition>
+
+
+</apex:page>

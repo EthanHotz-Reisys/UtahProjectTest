@@ -1,0 +1,14 @@
+<apex:page standardController="PreApplication__c" showHeader="false" standardStylesheets="false" extensions="FundingAllocationEditCtrl" sidebar="false">
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />    
+   <!--  <GNT:FlexEditLayout templateName="{!pageTemplateName}" recordId="{!recordId}" layoutType="Edit" flexTableParameters="{!keyValueMap}"  hideSidebar="true"
+      createDefaultValues="{!listDefaultValues}" saveURL="{!savePage}" cancelURL="{!cancelPage}"/> -->
+      <apex:composition template="GNT__ModalTemplate">
+      <apex:define name="ModalContent"> 
+
+      <GNT:ModalFlexEditLayout templateName="{!pageTemplateName}" recordId="{!recordId}" layoutType="Edit" flexTableParameters="{!keyValueMap}"  hideCancelBtn="true" hideSidebar="true"
+      createDefaultValues="{!listDefaultValues}" saveURL="{!savePage}" cancelURL="{!cancelPage}"/>
+      </apex:define>
+      </apex:composition>
+ 
+</apex:page>

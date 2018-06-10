@@ -1,0 +1,11 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" controller="ExpenseReportScheduleViewCtrl">
+	<c:ExternalLibrary />
+    <apex:composition template="GNT__MasterTemplate">
+        <apex:define name="body">
+            <GNT:FlexTable flexTableHeader="{!flexTableHeader}"  flexTableName="TermConditionExpenseReportSchedule" tableId="TermConditionExpenseReportSchedule" flexTableParameters="{!keyValueMap}"/>
+        </apex:define>
+    </apex:composition>    
+    <script>
+        setPageTitle('{!flexTableHeader}');
+    </script>
+</apex:page>

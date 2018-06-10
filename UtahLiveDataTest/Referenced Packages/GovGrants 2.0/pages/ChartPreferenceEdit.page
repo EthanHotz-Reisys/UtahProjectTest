@@ -1,0 +1,93 @@
+<apex:page sidebar="false" standardStylesheets="false" showHeader="false" controller="GNT.ChartPreferenceEditCtrl">
+    <c:ExternalLibrary />
+	<apex:stylesheet value="{!URLFOR($Resource.GNT__GovGrants, '/Component/CSS/ChartPreferenceEdit.css')}"/>
+    <apex:form >
+    	
+      <!--   <apex:composition template="PhaseTemplate">
+            <apex:define name="body"> -->
+                <div id="ChartPreferenceApp" class="bs" >
+                    <div class="container-fluid">
+                        <div class="panel panel-default">
+                            <div class="panel-heading"><b>CONFIGURE CHARTS</b></div>
+                            <div class="panel-body" style="{!IF($CurrentPage.parameters.nonAdminCall == 'true', 'padding-bottom:320px !important;', '')}">
+                                <apex:outputPanel id="messagePanel">
+                                    <c:PageMessages /> 
+                                </apex:outputPanel>
+                                
+                                <div class="row">
+                                    <div style="text-align: left;display: block;float: left; padding: 0 0 20px  15px;">
+                                        <a class="customBtn pull-right" onclick="fetchPhasesJS();">GO</a>
+                                        <apex:selectList styleClass="pull-right" size="1" id="appList" onChange="" value="{!activeApp}">
+    										<apex:selectOptions value="{!apps}"/>
+    									</apex:selectList>
+                                        <!-- <select id="appId" class="pull-right">
+                                            <apex:repeat value="{!appWrapper}" var="app">
+                                                <option value="{!app.appName}">{!app.appLabel}</option>
+                                            </apex:repeat>
+                                        </select>-->
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <apex:outputPanel id="phasePanel">
+                                        <apex:outputPanel >
+                                        <ul id="chartPhaseTabId" class="nav nav-tabs">
+                                            <apex:repeat value="{!phaseWrapper}" var="phase">
+                                                <li class="listyle">
+                                                    <a href="#" id="{!phase.phaseName}-id" onclick="fetchChartsJS('{!phase.phaseName}');">{!phase.phaseLabel}</a>
+                                                </li>
+                                            </apex:repeat>
+                                        </ul>
+                                        </apex:outputPanel>
+                                        </apex:outputPanel>
+                                    </div>
+                                </div>
+                                
+                                <div class="row container-fluid " >
+                                <div class="col-lg-12" style="border: 1px solid #B5D34A; border-top: 0px;">
+                                    <div class="row container-fluid" style="padding-top:10px; border-top: 1px solid #B5D34A;">
+                                        <apex:outputPanel id="multiSelectPanel">
+                                            <apex:outputPanel >
+                                                <c:MultiselectPicklist leftLabel="Available Charts" rightLabel="Selected Charts" size="10" width="250px" 
+                                                    leftOptionsAttr="{!leftOption}" rightOptionsAttr="{!rightOption}" disableAddRemove="{!IF(selectedPhase == 'Dashboard', true, false)}"/>
+                                            </apex:outputPanel>
+                                        </apex:outputPanel>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-lg-12" style="padding-bottom:10px; padding-right:30px">
+                                            <div class="pull-right">
+                                                <apex:outputPanel id="buttonPanel">
+                                                    <apex:commandbutton disabled="{!isError}" tabIndex="0"  action="{!save}" value="Save" rerender="messagePanel" oncomplete="setDefaultTab('{!currentPhaseName}');"  styleClass="{!IF(isError, 'chartsPreferance-btnClr', 'chartsPreferance-btnMargin')} customBtn"/>
+                                                    <apex:commandbutton rendered="{!IF($CurrentPage.parameters.nonAdminCall == 'true', true, false)}" tabIndex="0" styleclass="customBtn" value="Close" onclick="window.close();"/>
+                                                    <apex:commandbutton rendered="{!IF($CurrentPage.parameters.nonAdminCall == 'false', true, false)}" tabIndex="0" styleclass="customBtn" value="Cancel" action="{!cancel}"/>
+                                                    <!--  <apex:commandbutton tabIndex="0" styleclass="customBtn" value="Cancel" action="{!cancel}"/> -->
+                                                </apex:outputPanel>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>   
+                         </div>    
+                    </div>
+                </div>
+                
+           <!--   </apex:define>
+        </apex:composition>-->
+        
+        <apex:actionFunction name="fetchChartNamesJS" action="{!fetchCharts}" reRender="multiSelectPanel, messagePanel, buttonPanel" oncomplete="">
+              <apex:param value="" name="selectedPhase"/>
+          </apex:actionFunction>
+          
+          <apex:actionFunction name="fetchPhases" action="{!fetchPhases}" reRender="phasePanel, multiSelectPanel, messagePanel, buttonPanel" oncomplete="setDefaultTab('{!JSENCODE(defaultPhase)}');">
+              <!-- <apex:param value="" name="selectedApp"/> -->
+          </apex:actionFunction>
+    </apex:form>
+    
+    <script>
+      var chartPreferenceEdit_phaseName = '{!JSENCODE(defaultPhase)}';
+    </script>
+	<script src="{!URLFOR($Resource.GovGrants)}/Component/JS/ChartPreferenceEdit.js"></script>
+</apex:page>

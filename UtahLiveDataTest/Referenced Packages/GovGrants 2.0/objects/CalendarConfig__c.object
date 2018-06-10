@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>[Framework] This object is used to store the details for a Calendar</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This will indicate whether record is active or not</description>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ColorCodeCriteriaField__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Color Code Criteria Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ColorCode__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Color code for the cobject.This can be JSON in case of multiple color</inlineHelpText>
+        <label>Color Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CustomApp__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Custom App of User which is currently active.</inlineHelpText>
+        <label>Custom App</label>
+        <referenceTo>CustomApp__c</referenceTo>
+        <relationshipLabel>CalendarConfig</relationshipLabel>
+        <relationshipName>CustomApp</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DateFields__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field will accept JSON, comma separated objects of API names and Labels :  e.g.  ,[{&quot;field&quot;:&quot;createddate&quot;,&quot;label&quot;:&quot;Created On&quot;}]</description>
+        <externalId>false</externalId>
+        <label>Date Fields</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FieldName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Field Name</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FilterClause__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Filter Clause</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>IsParent__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Boolean field to check whether Parent or Child</description>
+        <externalId>false</externalId>
+        <formula>IF( ParentSobject__c  == RelatedSobj__c, true, false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Parent</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ParentSobject__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will include parent object this is lookup field on sObject config</inlineHelpText>
+        <label>Parent Sobject</label>
+        <referenceTo>SobjectConfig__c</referenceTo>
+        <relationshipLabel>CalendarConfig</relationshipLabel>
+        <relationshipName>ParentSobject</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>RecordLimit__c</fullName>
+        <defaultValue>1000</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Number of records to be displayed on Calendar</description>
+        <externalId>false</externalId>
+        <label>Record Limit</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RelatedSobj__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Child object API name which is related with Parent SObject. This has lookup on sObject Config Object</inlineHelpText>
+        <label>Related Sobject(Obsolete)</label>
+        <referenceTo>SobjectConfig__c</referenceTo>
+        <relationshipLabel>CalendarConfig (Related Sobject)</relationshipLabel>
+        <relationshipName>RelatedSobjects</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>RelatedSobject__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Name of the object for which the dates are  fetched</description>
+        <externalId>false</externalId>
+        <label>Related Sobject(Obsolete)</label>
+        <length>110</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RelationshipField__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Lookup or master detail for the related sobject - use it for records where IsParent =false</description>
+        <externalId>false</externalId>
+        <label>Relationship Field</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Config: Calendar</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Calendar Config</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>CalendarConfig</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Data_Field_Required</fullName>
+        <active>true</active>
+        <description>Data Field Required</description>
+        <errorConditionFormula>IF((ISBLANK(DateFields__c )),true,false)</errorConditionFormula>
+        <errorDisplayField>DateFields__c</errorDisplayField>
+        <errorMessage>Data Field is Required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Relationship_Field_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF((IsParent__c = false)&amp;&amp;(  ISBLANK(RelationshipField__c)),true,false)</errorConditionFormula>
+        <errorDisplayField>RelationshipField__c</errorDisplayField>
+        <errorMessage>Relationship Field is Required</errorMessage>
+    </validationRules>
+</CustomObject>

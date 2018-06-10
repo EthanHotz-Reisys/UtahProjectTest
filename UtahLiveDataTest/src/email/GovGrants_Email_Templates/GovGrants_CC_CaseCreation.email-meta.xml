@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Case Creation Email Communication</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>GovGrants_CC_Email_CaseCreation</name>
+    <style>freeForm</style>
+    <subject>Case Update - Case # {!Case__c.CaseNumber__c}: {!Case__c.Subject__c}</subject>
+    <textOnly>Hello {!Case__c.ReportedByName__c},
+
+
+The GovGrants Technical Support Staff is in receipt of your inquiry/case. We will follow-up with you in the order the issue was received.
+
+
+Below is the Case Number for your issue.
+
+Case Number:{!Case__c.CaseNumber__c}
+
+Please include this Case Number in all your future communication on this issue.
+
+Case Description : {!Case__c.Description__c}
+
+
+ref:[{!Case__c.Id}]:ref
+
+
+
+
+
+
+
+Sincerely,
+
+GovGrants Support,
+Phone  Number : (703)-480-7600
+Email:GovGrantsSupport@reisystems.com</textOnly>
+    <type>html</type>
+</EmailTemplate>

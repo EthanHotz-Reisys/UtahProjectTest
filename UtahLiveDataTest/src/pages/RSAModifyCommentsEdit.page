@@ -1,0 +1,12 @@
+<apex:page standardController="ReviewStepApplication__c" extensions="RSAModifyCommentsEditCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary /> 
+       
+     <apex:composition template="GNT__MasterTemplate">
+        <apex:define name="body">   
+            <GNT:FlexEditLayout HideSidebar="true" hideCancelBtn="true" templateName="ReviewStepAppModifyCommentsTemplate" 
+            layoutType="Edit" recordId="{!$CurrentPage.parameters.id}" saveURL="{!saveURL}"/>    
+        </apex:define>
+    </apex:composition> 
+</apex:page>

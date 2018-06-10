@@ -1,0 +1,14 @@
+<apex:page controller="AnnouncementsRecordsActiveCtrl" showHeader="false" sidebar="false" standardStylesheets="false">
+    <c:ExternalLibrary />
+     <c:WhatFixHelper />
+        <apex:outputPanel >
+        <apex:composition template="GNT__PhaseTemplate">
+            <apex:define name="body">    
+                
+                 <GNT:FlexTable flexTableName="{!templateName}" flexTableParameters="{!keyValueMap}" 
+            tableId="popupflextable" listParams="{!listParameters}"/>
+            </apex:define>
+        </apex:composition>
+    </apex:outputPanel>
+    
+</apex:page>

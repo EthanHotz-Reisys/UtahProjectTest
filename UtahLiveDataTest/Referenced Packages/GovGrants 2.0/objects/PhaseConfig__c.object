@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>[Framework] Defines the Phases of the GovGrants Lifecycle</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Read</externalSharingModel>
+    <fields>
+        <fullName>Abbreviation__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <inlineHelpText>Since the Name field has more characters, this provides a shorter version of the Name field which acts as unique key.</inlineHelpText>
+        <label>Abbreviation</label>
+        <length>3</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>AccordionHeader__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the title for the entire accordion block?</inlineHelpText>
+        <label>Sidebar Activity Menu Label</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Should this tab be visible on the user interface?</inlineHelpText>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AvailableforProfiles__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This multi-picklist will decide whether the header is visible for the currently logged in user.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This multi-picklist will decide whether the header is visible for the currently logged in user.</inlineHelpText>
+        <label>Available for Profiles</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ADT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CON</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CTR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DEV</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>EBZ</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>EXE</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GMO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SME</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SPA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SPI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>System Administrator</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>TR1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TR2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TR3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VND</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IND</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Readonly Admin</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BodyBottomPageURL__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>When the tab is clicked, should it display any custom content apart from the flex table? This URL can be a visual force page which will be included below the flex table contents on the body area.</inlineHelpText>
+        <label>Body Bottom Page URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BodyPageIncludeURL__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>When the tab is clicked, should it display any custom content apart from the flex table? This URL can be a visual force page which will be included above the flex table contents on the body area.</inlineHelpText>
+        <label>Body Top Page URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BodyTable__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Which flex table to display on the body when the tab is clicked?</inlineHelpText>
+        <label>Body Flex Table</label>
+        <referenceTo>DataTableConfig__c</referenceTo>
+        <relationshipLabel>Phases Config</relationshipLabel>
+        <relationshipName>PhasesConfig</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CustomAppConfig__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Config: Custom App</label>
+        <referenceTo>CustomApp__c</referenceTo>
+        <relationshipLabel>Phases Config</relationshipLabel>
+        <relationshipName>PhasesConfig</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CustomAppName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of the custom application (Custom App Config Custom Setting) to which this phase/tab belongs to</inlineHelpText>
+        <label>Custom App Name</label>
+        <length>50</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EnableBIAnalytics__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This is for BI &amp; Analytics accordion/section</description>
+        <externalId>false</externalId>
+        <label>Enable BI&amp;Analytics</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EnableCollab__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Enable the collab component of the sidebar.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check to enable the collab component for this phase config.</inlineHelpText>
+        <label>Enable Sidebar Collab Menu</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EnableExternalLinks__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Display external links component on the sidebar?</inlineHelpText>
+        <label>Enable External Links</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EnableMenu__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Display menu component on the sidebar?</inlineHelpText>
+        <label>Enable Sidebar Activity Menu</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EnableRecentlyViewed__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Display recently viewed component on the sidebar?</inlineHelpText>
+        <label>Enable Recently Viewed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EnableSearch__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Display search component on the sidebar?</inlineHelpText>
+        <label>Enable Sidebar Search</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EnableSidebarTaskMenu__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Show the Tasks menu on the sidebar?</inlineHelpText>
+        <label>Enable Sidebar Task Menu</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Enable_Technical_Support__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Enable Technical Support</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FlexTableParameters__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Key value pair (eg: orgtype=division,task=assigned)</inlineHelpText>
+        <label>Flex Table Parameters</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>GroupName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If a set of tabs are part of the same group, then they all have the same group name. It is used for rendering the tabs for the grouping behavior.</inlineHelpText>
+        <label>Group Name</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>IsPhase__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>IsPhase</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PhaseType__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Phase Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Home</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Phase</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dashboard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Report</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ReportFolderName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>this is a field to store the folder names for the reports .</description>
+        <externalId>false</externalId>
+        <label>Report Folder Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SObject__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>What are the sobjects used to drive the contents for this particular phase tab?</inlineHelpText>
+        <label>SObject Names</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>GNT__Package__c</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Grant__c</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RiskAssessment__c</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ProgressReports__c</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SiteVisit__c</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Award__c</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AmendmentRequest__c</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Review__c</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Announcement__c</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Program__c</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PreApplication__c</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Closeout__c</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Application__c</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UserRegistration__c</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RolesAndResponsibilities__c</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Account</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contact</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SearchResultPage__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the URL for the search result page?</inlineHelpText>
+        <label>Search Result Page</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SelectedByDefault__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this tab selected by default when the user access the application?</inlineHelpText>
+        <label>Default Landing Tab?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sequence__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the display sequence for the tabs at the top?</inlineHelpText>
+        <label>Sequence</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SidebarBIAnalyticsMenuLabel__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Sidebar BI &amp; Analytics Menu Label</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SidebarCollabMenuLabel__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the collab component of the sidebar.</description>
+        <externalId>false</externalId>
+        <label>Sidebar Collab Menu Label</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SidebarComponentSequence__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>On left sidebar, what should be the sequence of various components? Use comma to separate component names. 
+
+Possible values: 
+ActivityMenu,TaskMenu, RecentlyViewed, Search, Links</inlineHelpText>
+        <label>Sidebar Component Sequence</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SidebarExternalLinksLabel__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the display title for external links component?</inlineHelpText>
+        <label>Sidebar External Links Label</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SidebarMenuURL__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>URL to be used from the Sidebar Navigation menu which will be used to render the current tab</inlineHelpText>
+        <label>Sidebar Menu (Obsolete)</label>
+        <referenceTo>AccordionContent__c</referenceTo>
+        <relationshipName>PhasesConfig</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SidebarRecentlyViewedLabel__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the display title for recently viewed component?</inlineHelpText>
+        <label>Sidebar Recently Viewed Label</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SidebarSearchLabel__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the display title for search component?</inlineHelpText>
+        <label>Sidebar Search Label</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SidebarTaskMenuLabel__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Sidebar Task Menu Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SidebarTechnicalSupportLabel__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SidebarTechnicalSupportLabel</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TabIconCSS__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Field defines HTML which replaces the text on Tab Title say to an image</inlineHelpText>
+        <label>Tab Icon CSS</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TabName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the display label for tab?</inlineHelpText>
+        <label>Tab Display Label</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TotalChartsAllowedPerRow__c</fullName>
+        <defaultValue>2</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>How many charts can be displayed in each row?</inlineHelpText>
+        <label>Total Charts Allowed Per Row</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TotalChartsAllowed__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>How many maximum charts can be displayed on this phase (across all rows)?</inlineHelpText>
+        <label>Total Charts Allowed</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>URL__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>When the tab is clicked what action to take place?</inlineHelpText>
+        <label>Action URL</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Config: Phase</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Active__c</columns>
+        <columns>CustomAppName__c</columns>
+        <columns>PhaseType__c</columns>
+        <columns>AvailableforProfiles__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Phase Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Phases Config</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>TabName__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Active__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CustomAppName__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PhaseType__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>Phase_Type_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>If(TEXT(PhaseType__c) == &apos;&apos;,true,false)</errorConditionFormula>
+        <errorDisplayField>PhaseType__c</errorDisplayField>
+        <errorMessage>Phase Type is required.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>AssignProfiles</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Assign Profiles</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/AssignProfiles?id={!PhaseConfig__c.Id}&amp;profiles={!PhaseConfig__c.AvailableforProfiles__c}&amp;sObject=PhaseConfig__c&amp;field=Availableforprofiles__c</url>
+    </webLinks>
+</CustomObject>

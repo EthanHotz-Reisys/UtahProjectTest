@@ -1,0 +1,35 @@
+<!--
+    Include scripts need for WhatFix helper. This is a self helper widget, for details go to:
+    https://whatfix.freshdesk.com/support/solutions/articles/1000015477-explanation-of-self-help-widget-script
+    Set global values with whatfix account, under admin-integration
+    ***********************************************************
+    Audit History
+    ***********************************************************
+    10/7/2015       Xiang       Created
+    *********************************************************** 
+ -->
+<apex:component controller="WhatFixHelperCtrl">
+<!--<style>
+    .WFEMGL table tr:nth-of-type(odd),
+    .WFEMEL table tr:nth-of-type(odd) {
+        background-color: #ED9121 !important;
+    }
+</style>-->
+    <apex:outputPanel rendered="{!EnableWhatFix}">
+        <!-- window._wfx_widget can be configured in WhatFix account for global control. -->
+        
+        <!-- Below scripts are required on all pages showing WhatFix widget. -->
+        <script language='javascript'>
+            /* Setting dynamic flow URL address. In flow url can be https://{Whatever}/apex/Launch, in _wfx_settings attribute name should always be "dynamic" */
+            window._wfx_settings={
+                "dynamic":window.location.host, 
+                "ent_id":"{!WhatFixEntId}", 
+                "orgName":"{!OrgName}", 
+                "packName":"{!PackageName}", 
+                "profileName": "{!ProfileName}"
+            };
+        </script>
+        <!--<script language='javascript' async='true' type='text/javascript' src='https://whatfix.com/embed/embed.nocache.js'></script> -->
+        <script language='javascript' async='true' type='text/javascript' src='//cdn.whatfix.com/prod/e023dd90-995b-11e7-a98e-04013d24cd02/embed/embed.nocache.js'></script>
+    </apex:outputPanel>
+</apex:component>

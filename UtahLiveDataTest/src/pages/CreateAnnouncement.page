@@ -1,0 +1,8 @@
+<apex:page controller="CreateAnnouncementCtrl" showheader="false" sidebar="false" standardStylesheets="false" title="Announcement Profile">
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">  
+           <GNT:ModalFlexEditLayout templateName="{!pageTemplate}" hideCancelBtn="true" HideSidebar="false" recordId="{!recordId}" layoutType="Edit" flexTableParameters="{!KeyValue}" />
+        </apex:define>
+    </apex:composition> 
+</apex:page>

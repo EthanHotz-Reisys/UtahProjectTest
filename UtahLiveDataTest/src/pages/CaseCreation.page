@@ -1,0 +1,125 @@
+<apex:page id="thePage"  controller="PhaseViewCtrl" sidebar="false" showHeader="false" standardStylesheets="false" applyHtmlTag="false">
+  <html>
+    <head>
+            <link rel="shortcut icon" href="{!URLFOR($Resource.GNT__Favicon)}" />
+            <link rel="icon" type="/image/ico"  href="{!URLFOR($Resource.GNT__Favicon)}" />
+            <link rel="shortcut icon" type="image/x-icon" href="{!URLFOR($Resource.GNT__Favicon)}"/>
+          
+  
+   
+    </head>
+    <body>
+      <c:ExternalLibrary />
+      <apex:composition template="GNT__PhaseTemplate"> 
+
+          <apex:define name="body"> 
+          
+          
+               <div class="panel panel-default">                    
+                    <div class="panel-heading" style="padding-top:0px; padding-bottom:0px; display:block; float:left; width:100%;">
+               
+    <div class="panel-heading-title"> 
+                                <h2  >                
+                                    <span >Create New Case</span>
+                                   
+                                    
+                                </h2>  
+                    </div>
+                    
+                     </div>             
+                                    
+                     <div class="panel-body panel-body-ext">                                 
+                          
+    
+    
+               
+                                  
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8" />
+
+ 
+    <form style="display: table"  action="https://www.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+    
+    
+<input type="hidden" name="orgid" value="00Df4000000DzbF" />
+<input type="hidden" name="retURL" value="https://doh2.na24.visual.force.com/apex/doh2__FlexTableNewView?ft1=CaseDetails" />
+
+        <p style="display: table-row">
+          <label style="display: table-cell" for="name">Contact Name</label>
+          
+               <input style="display: table-cell"  id="name" maxlength="80" name="name" size="20" type="text" />
+         
+        </p>
+        <p style="display: table-row">
+           <label style="display: table-cell" for="email">Email</label>
+          
+                <input  style="display: table-cell" id="email" maxlength="80" name="email" size="20" type="text" />
+          
+        </p>
+        
+        <p style="display: table-row">
+          <label style="display: table-cell"  for="phone">Phone</label>
+         
+                <input style="display: table-cell"   id="phone" maxlength="40" name="phone" size="20" type="text" />
+          
+        </p>
+        <p style="display: table-row">
+           <label style="display: table-cell"  for="subject">Subject</label>
+         
+                <input style="display: table-cell"   id="subject" maxlength="80" name="subject" size="20" type="text" />
+            
+        </p>
+        
+        <p style="display: table-row">
+           <label style="display: table-cell"  for="description">Description</label>
+           
+               <textarea style="display: table-cell"  name="description"></textarea><br/>
+            
+        </p>
+        
+        <p style="display: table-row">
+          <label style="display: table-cell"  for="priority">Priority</label>
+       
+               <select style="display: table-cell"   id="priority" name="priority"><option value="">--None--</option><option value="Low">Low</option>
+<option value="Medium">Medium</option>
+<option value="High">High</option>
+</select>
+           
+        </p>
+        
+        
+        <input type="hidden"  id="external" name="external" value="1" />
+        
+        
+        <p style="display: table-row">
+         
+                <button style="display: table-cell"  type="submit" class="btn btn-primary">Submit</button>
+          
+        </p>
+    </form>
+
+        
+         
+ 
+  
+  </div>
+      </div>
+       
+
+          </apex:define> 
+      </apex:composition> 
+       
+     <script>
+         //Remove cookie related to Sidebar accorion menu last clicked
+           var j$ = jQuery.noConflict();
+           var cookieName = '{!JSENCODE($User.Id)}'+'{!JSENCODE(previousTabName)}';
+           var lastCookieName = '{!$User.Id}{!previousTabName}';
+            j$(document).ready(function() {
+                console.log('lastCookieName------>>>>>>',lastCookieName);
+                lastCookieName = 'apex__'+ lastCookieName;
+                console.log('cookieName------>>>>>>',cookieName);                  
+            j$.cookie('apex__{!$User.Id}{!previousTabName}', null, { expires: null ,path : '/' });                                                                           
+           });
+     </script>  
+    </body>
+  </html>
+</apex:page>

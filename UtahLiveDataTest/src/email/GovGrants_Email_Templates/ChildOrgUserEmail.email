@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p><font face="Times New Roman,Times,Serif"><strong>Subject:</strong> Invite Primary Users for Child Organizations</font></p><font face="Times New Roman,Times,Serif"><p><br></p><p>Hello {!Contact.FirstName} {!Contact.LastName},</p><p><br></p><p>You are invited to become an user.</p><p><br></p><p> Please click on the url below to create your login account to register as an External User in the  Enterprise Management System (EGMS), which will be used to manage the entire application intake and evaluation process.</p><p><br></p><p>You will be prompted to sign a Non-Disclosure Agreement and Conflict of Interest Agreement.</p><p>Click <a href="https://grateeportal-ggpdev5-developer-edition.na30.force.com/apex/UserRegistrationRedirect?t={!Contact.SecurityToken__c}&amp;RecordType=Applicant">here&nbsp;</a><br></p></font><p><font face="Times New Roman,Times,Serif"><br></font></p><p><font face="Times New Roman,Times,Serif">Please do not reply to this email. You may contact the GovGrants Support Team at </font><a href="mailto:govgrants@support.com"><u><font color="#0000ff" face="Times New Roman,Times,Serif">govgrants@support.com</font></u></a><font face="Times New Roman,Times,Serif"> if you have any questions or need assistance with this task.</font></p><p><font face="Times New Roman,Times,Serif"><br></font></p><p><font face="Times New Roman,Times,Serif">Sincerely,</font></p><p><font face="Times New Roman,Times,Serif">EGMS Team</font></p><p><br></p><p><img align="left" alt="" src="https://ggpdev1-dev-ed--c.na30.content.force.com/servlet/servlet.ImageServer?id=015f40000004yJ4&amp;oid=00Df4000000Dzb9" border="0"><br></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

@@ -1,0 +1,80 @@
+<apex:page controller="GNT.NotesEditCtrl" standardStylesheets="false" showHeader="false" sidebar="false">
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__GovGrantsExternal, 'BootStrap/CSS/bootstrap.min.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__GovGrantsExternal, 'BootStrap/CSS/bootstrap-theme.min.css')}" />
+    <c:CustomCSS />
+    <c:ExternalLibrary />
+    <style>
+        table{
+            
+        }
+        td { 
+            padding: 0 20px 15px 15px !important;
+        }
+        table tr:nth-of-type(even), table tr:nth-of-type(even):hover, 
+		table tr:nth-of-type(odd):hover, div#addAtt table tr:hover, div#addAtt table tr:nth-of-type(odd):hover  {
+		background-color: #fff !important;
+		}
+    </style>
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">
+    <apex:form >
+        <c:PageMessages id="editForm"/>
+        <div  id="notesedit" class="bs container-fluid">            
+            <table style="width:100%;border-collapse: collapse;" align="center" cellspacing="10">                
+                <!--<tr>
+                    <td >
+                        <label for="name" class="col-lg-2 control-label pull-left spacer">Name</label>
+                    </td>
+                    <td>
+                        <apex:inputField styleClass="spacer form-control" value="{!editAttachmentWrapper.attachment.name}"/>
+                    </td>
+                </tr>-->
+                <!--<tr>
+                    <td >
+                        <label for="classification" class="col-lg-2 control-label pull-left spacer">Classification</label>
+                    </td>
+                    <td>
+                        <apex:selectList styleClass="form-control spacer" id="classification" size="1" value="{!editAttachmentWrapper.classification}" title="Classification">
+                            <apex:selectOptions value="{!classificationsList}"></apex:selectOptions>
+                        </apex:selectList>
+                    </td>
+                </tr>-->
+                <tr>
+                    <td >
+                        <label for="description" class="col-lg-2 control-label spacer pull-left">Title</label>
+                        <!--style="margin-bottom:75px;"-->
+                    </td>
+                    <td>
+                        <apex:inputField styleClass="form-control spacer textAreaDesc" value="{!editAttachmentWrapper.note.Title}"/>
+                    </td> <!--styleClass="form-control spacer textAreaDesc"-->
+                </tr>
+                <tr>
+                    <td >
+                        <label for="description" class="col-lg-2 control-label spacer pull-left" >Body</label>
+                        <!--style="margin-bottom:75px;"-->
+                    </td>
+                    <td>
+                        <apex:inputField styleClass="form-control spacer textAreaDesc"  value="{!editAttachmentWrapper.note.Body}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        <apex:commandbutton action="{!updateNote}" value="Save" styleClass="customBtn" oncomplete="closeEditNoteModal();" onclick="showLoadingPopUp();" onComplete="hideLoadingPopUp();"/>                           
+                    </td>                    
+                </tr>
+            </table>
+        </div> 
+        <script>
+      
+            var j$ = jQuery.noConflict();               
+            function closeEditNoteModal(){
+                console.log('called modal close');
+                parent.closeNoteModal();
+            }
+        </script>        
+    </apex:form> 
+     </apex:define> 
+    </apex:composition>    
+</apex:page>

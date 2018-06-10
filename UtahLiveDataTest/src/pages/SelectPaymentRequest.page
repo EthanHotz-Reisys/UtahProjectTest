@@ -1,0 +1,9 @@
+<apex:page controller="SelectPaymentRequestsCtrl" sidebar="false" standardStylesheets="false" showHeader="false">
+    
+    <!-- Including JS and CSS resources  -->
+    <c:ExternalLibrary />
+
+      <div class="container-fluid">
+         <GNT:FlexTable flexTableName="SelectPaymentRequests" tableId="popupflextable" flexTableParameters="{!keyValueMap}"  listParams="{!listParameters}"  isModalWindow="true"/>
+      </div>      
+</apex:page>

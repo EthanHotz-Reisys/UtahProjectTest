@@ -1,0 +1,13 @@
+<apex:page extensions="CampaignCtrl" standardStylesheets="false" showHeader="false" sidebar="false" standardController="Campaign__c">
+    <c:ExternalLibrary />  
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">    
+            <GNT:ModalFlexViewLayout templateName="Campaign" recordId="{!recordId}"  layoutType="View" HideSidebar="true" flexTableParameters="{!keyValueMap}"
+                  createDefaultValues="" saveURL="{!savePage}" cancelURL="" hideCancelBtn="true"/>   
+            <apex:form >
+        </apex:form>
+        </apex:define>
+    </apex:composition>
+    <script type="text/javascript">
+    </script>
+</apex:page>

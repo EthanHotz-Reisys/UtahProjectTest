@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email sent to PM when GM Approves Site Visit Report</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Site Visit Report GM Approved</name>
+    <style>formalLetter</style>
+    <subject>Notification: Site Visit {!SiteVisit__c.Name} has been Approved by {!SiteVisit__c.GrantMonitor__c}</subject>
+    <textOnly>Hello {!SiteVisit__c.ProgramManager__c},
+
+This email is to notify you that the Grant Monitor has Approved the Site Visit Report {!SiteVisit__c.Name} and is read for your review.
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

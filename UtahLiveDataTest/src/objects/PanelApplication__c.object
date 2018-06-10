@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>[Business] Defines a review Panel for an Application /Pre-Application</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Application__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Application</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipLabel>Panel Applications</relationshipLabel>
+        <relationshipName>Panel_Applications</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ExternalOrgName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.ExternalOrganization__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ExternalOrgName</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>NoOfReviewersAssigned__c</fullName>
+        <externalId>false</externalId>
+        <label>No Of Reviewers Assigned</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NumberOfReviews__c</fullName>
+        <description>This and TotalScore__c are copied from RSA to PanelApplication In AddApplicationsToPanelHelper.</description>
+        <externalId>false</externalId>
+        <label>Number of Reviews</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PanelApplicationName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PanelApplicationName</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PreApplication__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Pre-Application</label>
+        <referenceTo>PreApplication__c</referenceTo>
+        <relationshipLabel>Panel Applications</relationshipLabel>
+        <relationshipName>Panel_Applications</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ReviewPanel__c</fullName>
+        <externalId>false</externalId>
+        <label>Review Panel</label>
+        <referenceTo>ReviewPanel__c</referenceTo>
+        <relationshipLabel>Panel Applications</relationshipLabel>
+        <relationshipName>Panel_Applications</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>ReviewStepCompleted__c</fullName>
+        <description>Only the System Admin can do action on it once completed (used for HideDecisionField on button)</description>
+        <externalId>false</externalId>
+        <formula>NOT($Profile.Name = &quot;System Administrator&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ReviewStepCompleted</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Added to Step</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Reviewers Assigned</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Review In Progress</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reviews Complete</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Promoted</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>TotalScore__c</fullName>
+        <description>This field is copied from RSA to Panel Application in AddApplicationsToPanelHelper.</description>
+        <externalId>false</externalId>
+        <label>TotalScore</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Panel Application</label>
+    <nameField>
+        <displayFormat>PA-{00000}</displayFormat>
+        <label>Panel Application Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Panel Applications</pluralLabel>
+    <recordTypes>
+        <fullName>Application</fullName>
+        <active>true</active>
+        <label>Application</label>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Added to Step</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promoted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviewers Assigned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviews Complete</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Pre_Application</fullName>
+        <active>true</active>
+        <label>Pre-Application</label>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Added to Step</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promoted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviewers Assigned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviews Complete</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

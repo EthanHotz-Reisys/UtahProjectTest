@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<font face="Times New Roman, Times, serif">Dear User,</font>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p style="line-height: 1.5em; margin: 0cm 0cm 12pt; background-color: rgb(255, 255, 255);"><span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: 12pt;">This email is to notify you that Amendment Request for the&nbsp;Award&nbsp;{!AmendmentRequest__c.AwardName__c}&nbsp;has been Rejected.</span></p><p class="MsoNormal" style="line-height: 1.5em; margin-right: 0px; margin-bottom: 12pt; margin-left: 0px; background: rgb(255, 255, 255);"><span style="font-family: &quot;Times New Roman&quot;, Times, serif;">Comments:&nbsp;</span><span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: 12pt;">{!ApprovalRequest.Comments}</span></p><p style="line-height: 18pt; margin-right: 0px; margin-left: 0px; background: rgb(255, 255, 255); font-family: &quot;Times New Roman&quot;, Times, serif;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">Sincerely,</span></p><p style="line-height: 18pt; margin-right: 0px; margin-left: 0px; background: rgb(255, 255, 255); font-family: &quot;Times New Roman&quot;, Times, serif;"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">UtahGrants Support Team</span></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

@@ -1,0 +1,306 @@
+<!--
+ Login Page for Users
+ ********************************************************** 
+ Audit History
+ **********************************************************
+ 10/7/2014    Nakul Kadam Created
+ 10/10/2015   swati singh updated
+ **********************************************************  
+-->
+
+<apex:page controller="CommunityLoginCtrl" standardstylesheets="false" showHeader="false" sidebar="false" > 
+<style>
+#loginExternal .inputText{
+    height: 44px;
+    border-width: 1px;
+    width: 90%;
+    margin-left: 20px;
+    border-radius: 0px;
+   }
+   
+
+.dropbtn {   
+    padding: 0px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+ 
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;   
+    min-width: 160px;    
+}
+
+.dropdown-content a {   
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+</style>
+    <apex:form styleClass="form-signin" >
+        <div id="loginExternal" class="">
+            <div class="">
+                <div class="row">
+                    <div class="col-md-12 ">
+                         <div id="panel1" class="panel border-add">
+                               <!-- <div class="panel-heading">
+                                   <div class="panel-title">
+                                          Login
+                            </div> 
+                                 <div class="row" >
+                                    <div class="col-md-12">
+                                        <p style="font-size:16px !important;color:#428bca;padding-top: 22px;padding-left: 14px;">Existing Users</p>
+                                    </div>
+                                            
+                                </div>                                                              
+                            </div> -->
+                            <div class="panel-body panel-body-ext" >  <!--  style="min-height:230px !important;background-color:#f5f5f5;"  --> 
+                              <div style="text-align: center;">
+                               <apex:image url="{!URLFOR($Resource.stategovlogowhite)}" style="width:50%"/>  
+                               </div> 
+                                <div class="form-group" style="margin-top: 32px;margin-bottom: 32px;">
+                                 <!--  <label class="control-label">Username:&nbsp;</label> -->
+                                    <apex:inputText html-autofocus="autofocus"  html-type="email" value="{!username}" id="username" html-placeholder="Username" styleClass="form-control inputText" /><!-- style="width:280px;" -->
+                                </div>
+                                <div class="form-group">
+                                <!--  <label class="control-label">Password:&nbsp;</label> -->
+                                   <apex:inputSecret id="password" value="{!password}" html-placeholder="Password" styleClass="form-control inputText"/> <!--style="width:280px;"  -->
+                                </div> 
+                                <div class="clearfix">
+                                  <apex:outputPanel rendered="{!displayTerms}">  
+                                
+                                     <div class="row"> 
+                                       <div class="col-md-12" style="margin-left:4px">
+                                       
+                                         <!--    <div class="col-md-4"> input-group 
+                                                <input type="checkbox" id="accpeptTerms" onclick="setAcceptTermsCookie();"/>
+                                                <a onclick="window.open('{!acceptTermsURL}', '_blank','width=900, height=700,scrollbars=yes')" class="loginLabelColor link loginSubLabelProperty">Accept Terms</a>
+                                            </div> -->
+                                            <div class="input-group col-md-4">
+                                                <input type="checkbox" id="remember" />
+                                               <span  class="loginLabelColor link loginSubLabelProperty">Remember Me</span>
+                                              
+                                            </div> 
+                                           
+                                        </div>
+                                   </div> 
+                                 </apex:outputPanel>  
+                                    <div class="col-md-12" style="padding-top: 26px;">
+                                         
+                                            <div class="col-md-6" >
+                                            <!-- <span class="loginLabelColor link loginSubLabelProperty pull-left" style="color:#3788D6;    margin-left: -33px;" onclick="window.open('/'+ns+'CommunityForgotPasswordPage')">Forgot Password?</span> -->
+                                             <a href="#" onclick="window.open('/apex/'+ns+'CommunityForgotPasswordPage')" style="margin-left: -12px;" >Forgot Password?</a> <!-- class="pull-right"  -->
+                                            </div>
+                                            <div class="col-md-6">
+                                             <apex:commandButton action="{!login}" onclick="rememberUsername()" styleClass=" btn btn-lg btn-primary btn-block customBtn" style="border-radius: 0px;" value="{!$Label.LoginLabelForExternalUser}" />&nbsp;&nbsp;  
+                                            
+                                            </div> 
+                                         
+                                    </div>
+                                    <div class="dropdown">
+										  <button class="dropbtn">Click here to register as </button>
+										  <div class="dropdown-content">
+										    <a id="newUserBtn" href="#" onclick="newUserRedirect();">Organization</a>
+										    <a  id="newUserBtn" href="#" onclick="reviewerRedirect();" >SME reviewer</a>
+										    <a id="newUserBtn" href="#" onclick="indApplicantRedirect();">Individual Applicant</a>
+										  </div>
+								    </div>
+<!--                                   <div class="row">
+                                        <div class="col-md-12" style="padding-top: 15px;" >                                 
+                                    <apex:outputPanel layout="block" rendered="{!AND(isNewUserRegWindowOpen,NOT(isReviewer))}" > 
+                                                    <table>
+                                                        <tr>
+                                                            <td style="padding-right: 10px;">
+                                                            <a id="newUserBtn" href="#" onclick="newUserRedirect();"  >click here to Register</a> 
+                                                            as an organization to apply/manage grants.
+                                                            <apex:outputText styleClass="requiredField" value=" *"/>
+                                                            </td>
+                                                            <td style="padding-right: 10px;">
+                                                            <a id="newUserBtn" href="#" onclick="indApplicantRedirect();"  >click here to Register</a> 
+                                                            as an individual applicant to apply/manage grants.
+                                                            <apex:outputText styleClass="requiredField" value=" *"/>
+                                                            </td>
+                                                    
+                                                        
+                                                        <td>
+                                                             <input id="newUserBtn" type="button" onclick="newUserRedirect();" class="customBtn "  value="{!$Label.NewUserLabelForExternalUser}"  /> 
+                                                            <a id="newUserBtn" href="#" onclick="newUserRedirect();"  >Register</a>  
+                                                        </td>       
+                                                        </tr>
+
+                                                        <tr>
+                                                          <td style="padding-right: 10px;"> 
+                                                            <a id="newUserBtn" href="#" onclick="reviewerRedirect();"  >click here to Register</a> 
+                                                            as a SME reviewer.
+                                                            <apex:outputText styleClass="requiredField" value=" *"/>
+                                                            </td>
+                                                        </tr>
+                                                    </table>                                                                                                                                                                                                                                                                                                
+                                         </apex:outputPanel> 
+                                    </div>  
+                                      
+                                </div>  -->
+                     <!--                <apex:outputPanel rendered="{!!isReviewer}">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <span class="loginLabelColor loginSubLabelProperty">
+                                                <apex:outputText styleClass="requiredField" value="*"/>
+                                                Applicants should have an active account two weeks prior to Application Deadline
+                                            </span>
+                                        </div>
+                                    </div>
+                                    </apex:outputPanel> --> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </apex:form> 
+    <script>
+        j$ = jQuery.noConflict();
+        var isReviewer = '{!isReviewer}';
+        var ns = '{!namespace}';
+        var acceptTermsChecked = j$.cookie('apex__CommunityAcceptTermChecked');
+        if(acceptTermsChecked == true || acceptTermsChecked == 'true'){
+            if(document.getElementById('accpeptTerms') != undefined){
+                document.getElementById('accpeptTerms').checked = true;
+            }
+        }
+        if(isReviewer == 'true'){
+            document.getElementById('newUserBtn').style.visibility ='hidden';
+        }
+        function setAcceptTermsCookie(){
+            console.log('-----------!!!---',document.getElementById('accpeptTerms'));
+            if(document.getElementById('accpeptTerms') != undefined){
+                var isChecked = document.getElementById('accpeptTerms').checked;
+                if(isChecked){
+                    j$.cookie('apex__CommunityAcceptTermChecked', 'true');
+                }
+            }
+        }
+        
+        function newUserRedirect(){
+            var NDAPageRequired = '{!NDAPageRequired}';
+            var registrationPageUrl='{!registrationPageUrl}';
+            console.log('NDAPageRequired --',NDAPageRequired);
+            if(NDAPageRequired=='true'){
+            // commented by swati
+                //var nextPage = '/'+ns+'NonDisclosureAgreement?isReviewer='+isReviewer;
+                 var nextPage = '/'+ns+'UserRegistrationRedirect?RecordType=Applicant';
+                //window.open(nextPage); 
+                console.log('nextPage0---->',nextPage);
+                window.location.replace(nextPage);
+            }else{
+           
+                window.open(registrationPageUrl);
+              
+                
+            }
+        }
+
+        function reviewerRedirect(){
+            var NDAPageRequired = '{!NDAPageRequired}';
+            var registrationPageUrl='{!registrationPageUrl}';
+            console.log('NDAPageRequired --',NDAPageRequired);
+            if(NDAPageRequired=='true'){
+            // commented by swati
+                //var nextPage = '/'+ns+'NonDisclosureAgreement?isReviewer='+isReviewer;
+                 //var nextPage = '/'+ns+'ReviewerRegistrationView';
+                 var nextPage = '/'+ns+'UserRegistrationRedirect?RecordType=Reviewer';
+                //window.open(nextPage); 
+                console.log('nextPage0---->',nextPage);
+                window.location.replace(nextPage);
+            }else{
+           
+                //window.open(registrationPageUrl);
+              
+                
+            }
+        }
+        
+         function indApplicantRedirect(){
+            var NDAPageRequired = '{!NDAPageRequired}';
+            var registrationPageUrl='{!registrationPageUrl}';
+            console.log('NDAPageRequired --',NDAPageRequired);
+            if(NDAPageRequired=='true'){
+            // commented by swati
+                //var nextPage = '/'+ns+'NonDisclosureAgreement?isReviewer='+isReviewer;
+                 var nextPage = '/'+ns+'UserRegistrationRedirect?RecordType=IndApplicant';
+                //window.open(nextPage); 
+                console.log('nextPage0---->',nextPage);
+                window.location.replace(nextPage);
+            }else{
+           
+                //window.open(registrationPageUrl);
+              
+                
+            }
+        }
+        
+        
+            
+        function checkAcceptTerms(){
+            if(document.getElementById('accpeptTerms') != undefined){
+             var isChecked = document.getElementById('accpeptTerms').checked;
+             if(!isChecked){
+                 alert('Please accept the terms before login!');
+                 return false;
+             }                  
+            }
+            return true;
+        }
+         j$.removeCookie('apex__govgrants_tabname');
+         ///////////////////////////////
+         function rememberUsername(){
+             if (j$('#remember').is(':checked')) {
+                    var username = j$('#username').val();
+                    
+                    
+                    // set cookies to expire in 14 days
+                    j$.cookie('username', username, { expires: 14 });
+                    j$.cookie('remember', true, { expires: 14 });
+                    }
+             else {
+                  // reset cookies
+                  if (j$('#username').val() != null){
+                      j$.cookie('username', username, { expires: 14 });
+                      j$.cookie('remember', true, { expires: 14 });
+                  }
+                  else {
+                    j$.cookie('username', null);
+                    j$.cookie('remember', null);
+                  }
+                 
+
+             }
+        }
+        /////////////////////
+  
+        j$(document).ready(function($){
+        //Read from cookies
+        var remember = j$.cookie('remember');
+        if ( remember == 'true' ) {
+        var username = j$.cookie('username');
+
+        // autofill the fields
+        j$('#username').val(username);
+        }
+        });
+        
+    </script>
+    
+</apex:page>

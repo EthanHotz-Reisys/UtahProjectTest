@@ -1,0 +1,11 @@
+<apex:page standardController="UserRegistration__c" showHeader="false" extensions="UserRegistrationEditCtrl" standardStylesheets="false" sidebar="false">
+    <script>    
+        var j$ = jQuery.noConflict();
+    </script> 
+    <!-- Including JS and CSS resources -->
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">          
+            <GNT:FlexEditLayout templateName="{!pageTemplateName}" recordId="{!recordId}" layoutType="Edit" saveURL="{!savePage}" HideSidebar="true" />
+        </apex:define>
+    </apex:composition> 
+</apex:page>

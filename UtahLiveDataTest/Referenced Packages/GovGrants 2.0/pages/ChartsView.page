@@ -1,0 +1,16 @@
+<apex:page id="chartPageId" standardStylesheets="false" showHeader="false" controller="GNT.ChartsViewCtrl" readonly="true">
+    <style>
+        /*Move all css to color contrast and Govgrant Theme*/
+    </style>
+    <div id="charts" class="row" style="overflow: visible;">
+     <span id="charts" class="hidden508 skipNavSectionItem skipNavSectionItem2" name="charts:Charts">Charts</span> <!-- For 508 SkipNavigation  -->
+        <div ng-controller="ChartCtrl">
+            <div class="panel-default" >
+                <apex:dynamicComponent componentValue="{!chartPanel}"/>
+            </div>
+        </div>
+    </div>
+    <script>
+        
+    </script>
+</apex:page>

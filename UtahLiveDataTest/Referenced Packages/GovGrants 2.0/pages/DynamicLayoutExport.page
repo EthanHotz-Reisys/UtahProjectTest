@@ -1,0 +1,38 @@
+<apex:page action="{!redirect}" applyBodyTag="false" renderAs="PDF" controller="GNT.DynamicLayoutExportCtrl" readOnly="true" sidebar="false" showHeader="false"   standardStylesheets="false">
+        <apex:stylesheet value="{!themeDocURL}" />
+        <apex:stylesheet value="{!themeDocURL1}" />
+           <div class="topLeftHeader">
+                <apex:image url="{!topLeftImageURL}" rendered="{!topLeftImageURL != null}"> </apex:image>
+                <apex:outputText value="{!topLeftString}" rendered="{!topLeftString != null}"/>
+           </div>
+           <div class="topMiddleHeader">
+                <apex:image url="{!topMiddleImageURL}" rendered="{!topMiddleImageURL != null}"> </apex:image>
+                <apex:outputText value="{!topMiddleString}" rendered="{!topMiddleString != null}"/>
+           </div>
+           <div class="topRightHeader">
+                <apex:image url="{!topRightImageURL}" rendered="{!topRightImageURL != null}"> </apex:image>
+                <apex:outputText value="{!topRightString}" rendered="{!topRightString != null}"/>
+                <apex:outputText value="Date : {!currentDateTime}" rendered="{!showTimeStamp}"/>
+           </div>
+           <div class="bottomLeftHeader">
+                <apex:image url="{!bottomLeftImageURL}" rendered="{!bottomLeftImageURL != null}"> </apex:image>
+                <apex:outputText value="{!bottomLeftString}" rendered="{!bottomLeftString != null}"/>
+           </div>
+           <!-- <apex:outputpanel rendered="{!bottomMiddleString != null}">
+               <div class="bottomMiddleHeader">
+                    <apex:image url="{!bottomMiddleImageURL}" rendered="{!bottomMiddleImageURL != null}"> </apex:image>
+                    <apex:outputText value="{!bottomMiddleString}" />
+               </div> 
+           </apex:outputpanel> -->
+           <div class="bottomMiddleHeader">
+                <apex:image url="{!bottomMiddleImageURL}" rendered="{!bottomMiddleImageURL != null}"> </apex:image>
+                <apex:outputText value="{!bottomMiddleString}" rendered="{!bottomMiddleString != null}"/>
+           </div>
+           <div class="bottomRightHeader">
+                <apex:image url="{!bottomRightImageURL}" rendered="{!bottomRightImageURL != null}"> </apex:image>
+                <apex:outputText value="{!bottomRightString}" rendered="{!bottomRightString != null}"/>
+           </div>
+          <div class="content">
+            <c:FlexPrintLayout templateName="{!printTemplateName}" recordId="{!recordId}" layoutType="Print" packageId="{!pkgId}" formTypes="{!formTypes}" />
+          </div>
+</apex:page>

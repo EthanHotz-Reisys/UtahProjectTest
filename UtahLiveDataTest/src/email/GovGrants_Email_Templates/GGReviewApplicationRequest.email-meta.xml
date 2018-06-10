@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE This email is sent to Primary applicant to Review Application Request</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>GG Review Application Request</name>
+    <style>formalLetter</style>
+    <subject>Notification: Review Application Request</subject>
+    <textOnly>Subject: Application {!ApplicationReview__c.ApplicationId__c} for the Funding Opportunity# {!ApplicationReview__c.FundingOpportunity__c} is ready for your review.
+
+
+
+Hello {!Application__c.PrimaryApplicant__c},
+
+
+
+The Application {!ApplicationReview__c.ApplicationId__c} has been assigned to you for your review. Please login to EGMS System to complete the review.
+
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

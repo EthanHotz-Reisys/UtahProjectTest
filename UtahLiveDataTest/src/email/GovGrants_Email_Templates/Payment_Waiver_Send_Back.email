@@ -1,0 +1,23 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: medium;">Dear&nbsp;</span><span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: medium;">{!PaymentRequest__c.Applicant__c},</span>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: medium;">This email is to notify you that, the Payment
+Waiver #{!PaymentRequest__c.Name} for the Grant
+#{!PaymentRequest__c.Grant__c} has been Sent Back.</span></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin: 0cm 0cm 0.0001pt;"><font face="Times New Roman,Times,Serif" size="3"><u><b>Payment Request Details:&nbsp;</b></u></font></p><p style="margin: 0cm 0cm 0.0001pt;"><font face="Times New Roman,Times,Serif" size="3"><b>Award</b>: #{!PaymentRequest__c.Award__c}</font></p><p style="margin: 0cm 0cm 0.0001pt;"><font face="Times New Roman,Times,Serif" size="3"><b>Project Period</b>: {!PaymentRequest__c.BillingStartDate__c} - {!PaymentRequest__c.BillingEndDate__c}</font></p><p style="margin: 0cm 0cm 0.0001pt;"><font face="Times New Roman,Times,Serif" size="3"><b>Invoice Period</b>: {!PaymentRequest__c.InvoicePeriod__c}</font></p><p style="margin: 0cm 0cm 0.0001pt; background-color: rgb(255, 255, 255); line-height: 1.5em;"><font face="Times New Roman,Times,Serif"></font><font face="Times New Roman,Times,Serif"></font><font face="Times New Roman,Times,Serif"></font><font face="Times New Roman,Times,Serif"></font><font face="Times New Roman,Times,Serif"></font></p><p style="margin: 0cm 0cm 12pt;"><font face="Times New Roman,Times,Serif" size="3"><b>Payment Method</b>: {!PaymentRequest__c.PaymentMethod__c}</font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">Sincerely,</span></font></p><font face="Times New Roman,Times,Serif" style="background-color: rgb(255, 255, 255);">UtahGrants Support Team</font><span style="font-size: medium; background-color: rgb(255, 255, 255); font-family: &quot;Times New Roman&quot;, Times, serif;"></span>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

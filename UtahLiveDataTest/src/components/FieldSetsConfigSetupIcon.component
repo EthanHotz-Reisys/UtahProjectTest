@@ -1,0 +1,58 @@
+<apex:component controller="FieldSetsConfigSetupIconCtrl" access="global">
+    <apex:includeScript value="{!URLFOR($Resource.GovGrantsExternal, 'carhartl-jquery-cookie-v1.4.1-0-g7f88a4e/carhartl-jquery-cookie-92b7715/jquery.cookie.js')}" />
+    <apex:attribute name="objectName" description="It is the fullName of the FieldSet" type="String" />
+    <apex:attribute name="fieldSetApiName" description="It is the apiName of the FieldSet" type="String" />
+    
+    <span id="FieldSetSetupIconSpan{!fieldSetApiName}"></span>
+    
+    <script>
+    var j$ = jQuery.noConflict();
+    var setupCookiePresent = (j$.cookie('setup') == 'present');
+    if(setupCookiePresent == true) {
+    	var spanElement = document.createElement("span");
+        spanElement.setAttribute("class","glyphicon glyphicon-cog cursorpointer pull-right fieldSetConfigSetup{!fieldSetApiName}");
+        spanElement.setAttribute("title","Configure {!fieldSetApiName} FieldSet");
+        spanElement.setAttribute("objectName","{!objectName}");
+        spanElement.setAttribute("fieldSetApiName","{!fieldSetApiName}");
+        document.getElementById("FieldSetSetupIconSpan{!fieldSetApiName}").appendChild(spanElement);
+    }
+    
+    j$(".fieldSetConfigSetup{!fieldSetApiName}").click(function(){
+    	//document.body.style.cursor='wait';
+        //document.getElementById('FieldSetSetupIconSpan{!fieldSetApiName}').style.cursor='wait';
+    	var fsApiName = j$(this).attr("fieldSetApiName");
+    	readFieldSetProperties(fsApiName);
+    });
+
+    function openFieldSetEditor(result) {
+    	var params = result.split(',');
+    	var customObjId = params[0];
+    	var fieldSetId = params[1];
+    	window.open("/setup/FieldSetEditor.apexp?tableEnumOrId="+customObjId+"&id="+fieldSetId+"&isdtp=vw&retURL=/apex/CommunitySelfRegistration?flg=true","_blank","toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+
+    }
+   
+    function readFieldSetProperties(fsApiName) {
+		var objName =  "{!objectName}";
+    	Visualforce.remoting.Manager.invokeAction(
+          '{!$RemoteAction.FieldSetsConfigSetupIconCtrl.readFieldSetSync}',
+          objName,fsApiName,
+            function(result, event) {
+              if(event.type === 'exception') {
+                console.log("exception");
+                console.log(event);
+              } else if (event.status) {
+                console.log(result);
+                openFieldSetEditor(result);
+				if(result == 'Success') {
+				} else {
+                }
+              } else {
+                console.log(event.message);
+              }
+            }
+        );
+    }
+   </script>
+</apex:component>
+<!--window.open("/apex/tmpSetupCustomLabelPage?label={!labelName}","_blank","toolbar=no, scrollbars=yes, resizable=yes, top=300, width=600 ,  left=650, right=500, height=350");-->

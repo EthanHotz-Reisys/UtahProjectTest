@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>email to sub recip notifying rejection of payment request</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>payment request reject</name>
+    <style>formalLetter</style>
+    <subject>Payment Request rejected</subject>
+    <textOnly>Dear {!PaymentRequest__c.OwnerFirstName} {!PaymentRequest__c.OwnerLastName},
+
+This email is to notify you that, the Payment Request #{!PaymentRequest__c.Name} for the Grant #{!PaymentRequest__c.Grant__c} has been Rejected.
+
+Payment Request Details:
+
+Award: #{!PaymentRequest__c.Award__c}
+
+Project Period: {!PaymentRequest__c.ProjectStartDate__c} - {!PaymentRequest__c.ProjectEndDate__c}
+
+
+
+Kindly login to UGMS System and create new Payment Request.
+
+Sincerely,
+
+
+UtahGrants Support Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

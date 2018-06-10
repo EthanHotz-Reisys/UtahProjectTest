@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE When Fiscal Approver Approves Progress Report then email sent to Progress report Owner</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Fiscal Approver Progress Report Approval</name>
+    <style>formalLetter</style>
+    <subject>Notification: {!ProgressReports__c.Name}, Progress Report has been Approved</subject>
+    <textOnly>Dear User,
+This email is sent to notify you that the {!ProgressReports__c.ReportType__c} has been approved.
+
+Progress Report Details:
+
+Grant Number: {!ProgressReports__c.Grant__c}
+
+{!ProgressReports__c.ReportType__c} Start Date: {!ProgressReports__c.ReportingPeriodStartDate__c}
+
+{!ProgressReports__c.ReportType__c} End Date: {!ProgressReports__c.ReportingPeriodEndDate__c}
+
+Kindly login to the UtahGrants Systems to review the progress report.
+
+
+
+Sincerely,
+
+UtahGrants Support Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

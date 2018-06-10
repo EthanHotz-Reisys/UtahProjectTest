@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email alert notifying owner of Award rejection</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Award rejected by FO/PO</name>
+    <style>formalLetter</style>
+    <subject>Notification: Award {!Award__c.Name} has been Rejected by FO/PO</subject>
+    <textOnly>Dear {!Award__c.CreatedBy},
+This email is to notify you that, the Award # {!Award__c.AwardNumber__c}, {!Award__c.Name} has been sent back for {!Award__c.GranteeOrganization__c} with the following comments:
+
+&quot;{!ApprovalRequest.Comments}&quot;
+
+Sincerely,
+
+
+UtahGrants Support Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

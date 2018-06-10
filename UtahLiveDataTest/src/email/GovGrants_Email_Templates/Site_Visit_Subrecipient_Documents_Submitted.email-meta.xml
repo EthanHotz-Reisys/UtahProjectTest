@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sent to Grant Administrator once Subrecipient submits required documents</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Site Visit Subrecipient Documents Submitted</name>
+    <style>freeForm</style>
+    <subject>Documents Submitted for Site Visit {!SiteVisit__c.SiteVisitName__c}</subject>
+    <textOnly>Dear {!SiteVisit__c.GrantAdministrator__c},
+
+Documents have been submitted for Site Visit {!SiteVisit__c.SiteVisitName__c}; you are requested to review and approve the submissions.
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

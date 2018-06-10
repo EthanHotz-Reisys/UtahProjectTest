@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Stores user preference informations</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ActiveAppName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the currently active custom app name?</inlineHelpText>
+        <label>Active App Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CollapsedArray__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Sidebar Menu Collapsed Array</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ContactId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Contact associated with user if any</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Contact associated with user if any</inlineHelpText>
+        <label>Contact Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DashBoardCharts__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the selected chart Ids from ChartConfig__c.ChartID__c as comma separated values 
+Eg: 11,12,13. 
+This charts will be displayed on Dashboard Tab for Grantor,Grantee,Recipient application.</inlineHelpText>
+        <label>Dash Board Charts</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ExpandedArray__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Sidebar Menu Expanded Array</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ExternalLinksCollapsed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If it is checked, left side External link component becomes collapsed for the user</inlineHelpText>
+        <label>External Links Collapsed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FirstLoginDone__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>First Login Done</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>GranteeDashboardCharts__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Use By Old Client</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the selected chart Ids from ChartConfig__c.ChartID__c as comma separated values
+Eg: 11,12,13.
+This charts will be displayed on Dashboard Tab for State as Grantee application.</inlineHelpText>
+        <label>Grantee Dashboard Charts (Obsolete)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>GranteePhaseCharts__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Its being use by old clients</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the selected chart Ids from ChartConfig__c.ChartID__c as below format
+Eg: 1,12,13
+These charts will be displayed on various phase tabs of State as Grantee application</inlineHelpText>
+        <label>Grantee Phase Charts(Obsolete)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>GrantorDashboardCharts__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Its being use by old clients</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the selected chart Ids from ChartConfig__c.ChartID__c as comma separated values
+Eg: 11,12,13. 
+This charts will be displayed on Dashboard Tab for State as Grantor application.</inlineHelpText>
+        <label>Grantor Dashboard Charts(Obsolete)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>GrantorPhaseCharts__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Its being use by old clients</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the selected chart Ids from ChartConfig__c.ChartID__c as below format
+Eg: 11,12,13
+These charts will be displayed on various phase tabs of State as Grantor application</inlineHelpText>
+        <label>Grantor Phase Charts(Obsolete)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>HideHeader__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Hide Header</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideSidebar__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If this is checked, sidebar components are hidden for the user</inlineHelpText>
+        <label>Hide Sidebar</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsApplicant__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Is Applicant</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsInternal__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Is Internal</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsReviewer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Is Reviewer</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrganizationAccountId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Organization Account Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrganizationAccountName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Account name of the user</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Account name of the user</inlineHelpText>
+        <label>Organization Account Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PhaseLevelCharts__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the selected chart Ids from ChartConfig__c.ChartID__c as comma separated values 
+Eg: 11,12,13. 
+This charts will be displayed on Phase Tab for Grantor,Grantee,Recipient application.</inlineHelpText>
+        <label>Phase Level Charts</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ProfileName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Profile Name</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RecentlyViewedCollapsed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If it is checked, left side Recently Viewed component becomes collapsed for the user</inlineHelpText>
+        <label>Recently Viewed Collapsed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RecipientDashboardCharts__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Its being use by old clients</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the selected chart Ids from ChartConfig__c.ChartID__c as comma separated values
+Eg: 11,12,13. 
+This charts will be displayed on Dashboard Tab for Recipient application.</inlineHelpText>
+        <label>Recipient Dashboard Charts(Obsolete)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>RecipientPhaseCharts__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Its being use by old clients</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the selected chart Ids from ChartConfig__c.ChartID__c as below format
+Eg: 11,12,13
+These charts will be displayed on various phase tabs of Recipient application</inlineHelpText>
+        <label>Recipient Phase Charts(Obsolete)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ReportsFolderName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This setting will hold the folder names from which reports are to be fetched for specific profile.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This setting will hold the folder names from which reports are to be fetched for specific profile.</inlineHelpText>
+        <label>Reports Folder Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReviewLevelAcceptance__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is used as one time setting for user to state the Conflict of Interest for reviewing the Applications/Preapplications. If checked, user has to explicitly state his COI at individual level.</inlineHelpText>
+        <label>Review Level Acceptance (Obsolete)</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RoleName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Role Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ShowProgressbarLegend__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field is used to toggle display of the Progressbar legend</description>
+        <externalId>false</externalId>
+        <label>Show Progressbar Legend</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SidebarCollabMenuCollapsed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Sidebar Collab Menu Collapsed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SidebarMenuCollapsed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If it is checked, sidebar menu component becomes collapsed for the user</inlineHelpText>
+        <label>Sidebar Menu Collapsed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SidebarSearchCollapsed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If it is checked, left side search component becomes collapsed for the user</inlineHelpText>
+        <label>Sidebar Search Collapsed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SmallPhotoURL__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Small Photo URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TechnicalSupportCollapsed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>TechnicalSupportCollapsed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ThemeDocumentID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Document ID of the CSS theme document. It is exclusively for Internal users. For external users, refer Theme Config Custom Setting</inlineHelpText>
+        <label>Theme Document ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>User Preference Config</label>
+    <visibility>Public</visibility>
+</CustomObject>

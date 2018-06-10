@@ -1,0 +1,12 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false" >
+  <c:ExternalLibrary /> 
+    <apex:composition template="GNT__PhaseTemplate"> 
+        <apex:define name="body"> 
+            <GNT:FlexTable flexTableName="UserLicenseList" tableId="UserLicenseList"
+                                            flexTableParameters="" headerDescription=""/>
+             <GNT:FlexTable flexTableName="AllUsersGGType" tableId="AllUsersGGType"
+                                            flexTableParameters="" headerDescription=""/>                               
+             <c:PassiveUserList />                           
+        </apex:define> 
+    </apex:composition>
+</apex:page>

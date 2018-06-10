@@ -1,0 +1,14 @@
+<apex:page showHeader="false" sidebar="true" standardController="GNT__PageBlockConfig__c" extensions="GNT.PageBlockEditPageCtrl" 
+        standardStylesheets="false">
+    
+    <!-- Including JS and CSS Resources  -->
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">                       
+            <c:ModalFlexEditLayout templateName="{!templateName}" 
+                    recordId="{!recordId}" saveURL="{!savePage}" layoutType="Edit" flexTableParameters="{!keyValueMap}"
+                        cancelURL="{!cancelPage}" createDefaultValues="{!listDefaultValues}"
+                        hideSideBar="true" />                        
+        </apex:define> 
+    </apex:composition>
+</apex:page>

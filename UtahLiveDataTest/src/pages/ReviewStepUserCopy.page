@@ -1,0 +1,29 @@
+<apex:page controller="ReviewStepUserCopyCtrl" showHeader="false" sidebar="false" standardStylesheets="false" >
+	<!--  <c:ExternalLibrary />
+	<GNT:PageMessages />
+	<apex:composition template="GNT__PhaseTemplate">
+		<apex:define name="body">
+			<div class="bs container-fluid">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-md-12">
+								<h3 class="panel-title">Copy Reviewers To - Step {!reviewStep.StepNumber__c}</h3>
+							</div>
+						</div>
+					</div>
+					<div class="panel-body panel-body-ext">
+						<apex:form >
+							<h4>Are you sure you want to copy reviewers from previous step?</h4>
+							<br/>
+							<div class="button-margin">
+								<apex:commandButton action="{!copyUsersToNextStep}" value="Yes" styleClass="customBtn"/>
+								<apex:commandButton action="{!Cancel}" value="No" styleClass="customBtn"/>
+							</div>
+						</apex:form>
+					</div>
+				</div>
+			</div>
+   		</apex:define>
+	</apex:composition> -->
+</apex:page>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Payment Request Internally Send Back USBE</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Payment Request Internally Send Back USBE</name>
+    <style>formalLetter</style>
+    <subject>Your Payment Request for {!PaymentRequest__c.ProgramName__c} has been sent back for revision</subject>
+    <textOnly>Dear User,
+This email is to inform you that your payment request for {!PaymentRequest__c.ProgramName__c} has been sent back to you for revision for following reason(s):
+
+{!ApprovalRequest.Comments}
+
+To see the transaction record and re-submit, please click the link below.
+
+Click here
+
+Sincerely,
+
+UtahGrants Support Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

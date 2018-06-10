@@ -1,0 +1,10 @@
+<!--
+ Landing Page for Communities
+ **********************************************************
+ Audit History
+ **********************************************************
+ 4/27/2014   Manasi Gangal Created
+ **********************************************************  
+-->
+<apex:page id="communitiesLandingPage" sidebar="false" standardStylesheets="false" showHeader="false" controller="CommunitiesLandingController" action="{!forwardToStartPage}"  title="{!$Label.site.site_login}">
+</apex:page>

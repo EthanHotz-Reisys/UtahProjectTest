@@ -1,0 +1,18 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p style="margin: 0cm 0cm 12pt; font-size: 12pt;"><font face="Times New Roman, Times, serif">Hello {!ProgressReports__c.OwnerFullName},</font></p>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p style="color: rgb(0, 0, 0); font-size: 12pt; margin: 0cm 0cm 12pt;"><font style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: 12pt;">This
+email is sent to notify you that the&nbsp;{!ProgressReports__c.ReportType__c}</font><font style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: 12pt;">&nbsp;requires changes to be made according to the reviewer comments below:</font></p><p style="margin: 0cm 0cm 12pt;"><font style="" face="Times New Roman, Times, serif">{!ApprovalRequest.Comments}</font></p><p style="color: rgb(0, 0, 0); font-size: 12pt; margin: 0cm 0cm 0.0001pt;"><font face="Times New Roman, Times, serif"><b><u>Progress Report Details:</u></b><o:p></o:p></font></p><p class="MsoNoSpacing" style="color: rgb(0, 0, 0); font-size: 12pt; margin: 0cm 0cm 0.0001pt;"><font face="Times New Roman, Times, serif">Grant
+Number:&nbsp;{!ProgressReports__c.Grant__c}<o:p></o:p></font></p><p class="MsoNoSpacing" style="color: rgb(0, 0, 0); font-size: 12pt; margin: 0cm 0cm 0.0001pt;"><font face="Times New Roman, Times, serif">{!ProgressReports__c.ReportType__c} Start Date:
+{!ProgressReports__c.ReportingPeriodStartDate__c}<o:p></o:p></font></p><p class="MsoNoSpacing" style="color: rgb(0, 0, 0); font-size: 12pt; margin: 0cm 0cm 0.0001pt;"><font face="Times New Roman, Times, serif"><span class="field-value">{!ProgressReports__c.ReportType__c} End
+Date:&nbsp;{!ProgressReports__c.ReportingPeriodEndDate__c}</span></font></p><p class="MsoNoSpacing" style="color: rgb(0, 0, 0); font-size: 12pt; margin: 0cm 0cm 0.0001pt;"><br></p><p style="color: rgb(0, 0, 0); margin: 0cm 0cm 0.0001pt; font-size: 12pt; background-color: rgb(255, 255, 255); line-height: 1.5em;"><font face="Times New Roman,Times,Serif" size="3">Sincerely,</font></p><p class="MsoNoSpacing" style="color: rgb(0, 0, 0); font-size: 12pt; margin: 0cm 0cm 0.0001pt;"><span style="font-size: 12pt; background-color: rgb(255, 255, 255); color: rgb(34, 34, 34);"><font face="Times New Roman,Times,Serif" size="3" color="#000000"></font></span></p><p style="color: rgb(0, 0, 0); margin: 0cm 0cm 12pt; font-size: 12pt; background-color: rgb(255, 255, 255); line-height: 1.5em;"><font face="Times New Roman, Times, serif"><font size="3" style="">UtahGrants Support Team</font></font></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

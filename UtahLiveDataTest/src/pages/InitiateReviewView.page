@@ -1,0 +1,18 @@
+<apex:page id="flexTableViewPage"  controller="ApplicationPhaseListViewCtrl" showHeader="false" sidebar="false"  standardStylesheets="false">
+          
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">
+            <apex:outputPanel rendered="{!currentAccount = 'USBE' || currentAccount = 'SYSTEM'}">   
+                <GNT:FlexTable flexTableName="AnnouncementListUSBE" tableId="AnnouncementListUSBE" flexTableParameters="{!keyValueMap}"/>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!currentAccount != 'USBE' && currentAccount != 'SYSTEM'}">   
+                <GNT:FlexTable flexTableName="AnnouncementList" tableId="flexTableRandomID1" flexTableParameters="{!keyValueMap}"/>
+            </apex:outputPanel>
+        </apex:define>
+    </apex:composition>
+    
+    <script>
+        setPageTitle('View Initiate Review');
+    </script>
+</apex:page>

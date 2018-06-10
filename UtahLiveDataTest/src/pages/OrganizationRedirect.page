@@ -1,0 +1,10 @@
+<!--
+ Intemediate page for Organization view page or Theme Selection page
+ **********************************************************
+ Audit History
+ **********************************************************
+ 6/18/2014   Nakul Kadam     Created
+ **********************************************************  
+-->
+<apex:page standardController="Account" id="OrgPageId" sidebar="false" standardStylesheets="false" showHeader="false" extensions="AccountRedirectCtrl" action="{!forwardToPage}">
+</apex:page>

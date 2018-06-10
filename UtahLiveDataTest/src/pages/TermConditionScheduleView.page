@@ -1,0 +1,13 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" standardController="TermConditionSchedule__c" extensions="TermConditionScheduleViewCtrl">
+<!-- Including JS and CSS Resources -->
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__ModalTemplate">
+        <!-- Dynamic Layout -->
+        <apex:define name="ModalContent">
+           <GNT:ModalFlexViewLayout hideSidebar="true" templateName="{!templateName}"  recordId="{!recordId}" layoutType="View" />
+        </apex:define>
+    </apex:composition>
+    <script>
+        console.log("tmplVIEW: "+"{!templateName}");
+    </script>
+</apex:page>

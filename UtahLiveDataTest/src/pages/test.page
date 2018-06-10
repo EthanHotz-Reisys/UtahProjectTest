@@ -1,0 +1,10 @@
+<apex:page controller="Sample" cache="true" showHeader="false" sidebar="false"  standardStyleSheets="false"  renderAs="PDF">
+ <!--
+  <apex:stylesheet value="{!themeDocURL}" />
+           <div class="pdfHeader">
+                <apex:image url="{!imageURL}" alt="{!$Label.DC_logo}"> </apex:image>
+           </div> -->
+           <div class="content">
+            <GNT:GridExport FlexGridName="ExternalOrganizationHierarchy" />
+          </div>
+</apex:page>

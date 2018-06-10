@@ -1,0 +1,23 @@
+<apex:page controller="ManageSharingRulesCtrl" sidebar="false" showHeader="false" standardStylesheets="false" >
+  <c:ExternalLibrary /> 
+    <apex:composition template="GNT__PhaseTemplate"> 
+        <apex:define name="body"> 
+            <apex:outputPanel rendered="{!IF(isRecalculationInProgress,true,false)}">
+                Sharing recalculation is in progress. At this time, no changes can be made to sharing rules.
+            </apex:outputPanel>   
+            <apex:outputPanel rendered="{!IF(isRecalculationInProgress,false,true)}">
+                <apex:outputPanel rendered="{!IF(isBizShareConfigured,false,true)}">
+                    <p>No entries found in Business share config. Click <a href="/apex/BusinessShareConfig">here</a> to create.</p>
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!IF(isBizShareConfigured,true,false)}">
+                    <p>Click <a href="/apex/BusinessShareConfig">here</a> to create a new entry in Business Share config.</p>                
+                    <apex:form >
+                    <p>Click <apex:commandLink action="{!recalculateShare}" value="here"/> to recalculate sharing rules for all business object.</p>
+                    </apex:form> 
+                    <GNT:FlexTable tableId="MutualSharingRules" FlexTableName="MutualSharingRules"/>  
+                    <GNT:FlexTable tableId="OneWaySharingRules" FlexTableName="OneWaySharingRules"/>
+                </apex:outputPanel> 
+            </apex:outputPanel>                     
+        </apex:define> 
+    </apex:composition>
+</apex:page>

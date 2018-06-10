@@ -1,0 +1,146 @@
+<apex:component controller="GrantTaskSummaryCtrl">
+     <!-- Including JS and CSS resources -->
+    <!--<c:ExternalLibrary />-->
+    <!-- <style>
+    #taskSummaryDiv .list-group-item1 {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #EEF1F6;
+    border: 1px solid #ddd;
+    }
+  
+   #taskSummaryDiv .list-group li:nth-child(even) {
+        background-color: #EEF1F6;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-top-left-radius: 0px;
+    }
+   #taskSummaryDiv .list-group-item:last-child{
+       border-top-right-radius: 0px;
+       border-top-left-radius: 0px;
+   }
+   #taskSummaryDiv .list-group-item:first-child{
+   border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+   }
+   #taskSummaryDiv .list-group-item:last-child{
+   border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+   }
+    #taskSummaryDiv .panel-body .panel-body-ext{
+    padding: 0px !important;
+    }
+    #taskSummaryDiv .panel{
+      border: 0px !important;
+    }
+   #taskSummaryDiv .col-md-4 {
+      padding-top:15px
+   }
+    
+ 
+
+</style> -->
+
+    <apex:form >
+        <GNT:PageMessages />
+    </apex:form>
+    <apex:outputPanel id="taskSummaryPanel">
+        <div id ="taskSummaryDiv" class="row">
+                    <!--swati singh 9/30/2015 : changed col-md-6 to 4
+                    <div class="col-md-4" >
+                        <div class="panel border-add">
+                            <div class="panel-heading">
+                                <h2 class="panel-title">Tasks Summary by Phase</h2>
+                            </div>
+                            <div class="panel-body panel-body-ext">
+                                <apex:repeat value="{!assignedTaskSummaryWrapperList}" var="wrapper">
+                                    <div class="">
+                                        <div class="">
+                                            <a href="{!wrapper.actionUrl}">{!wrapper.taskLabel}</a><span class=" pull-right">
+                                                    {!wrapper.taskCount}</span> <!-- {!TotalAssignedTaskCount} -->
+                                           <!--  <div class="taskHorizontaline"></div>
+                                        </div>
+                                    </div>
+                                 </apex:repeat>
+                                
+                            </div>
+                        </div> 
+                    </div>
+                swati singh 9/30/2015 : an extra table added for testing> -->
+                    <div class="col-md-6">
+                        <div class="panel border-add">
+                            <div class="panel-heading">
+                             <h2 class="panel-title">Tasks Summary by Phase</h2>
+                            </div>
+                            <div class="panel-body panel-body-ext">
+                            <ul class="list-group">
+                                <apex:repeat value="{!assignedTaskSummaryWrapperList}" var="wrapper">
+                                   <li class="list-group-item">
+                                            <a href="{!wrapper.actionUrl}">{!wrapper.taskLabel}</a><span class=" pull-right">
+                                                    {!wrapper.taskCount}</span> 
+                                        
+                                  </li>
+                                 </apex:repeat>
+                               </ul> 
+                            </div>
+                        </div> 
+                    </div>
+                   <!-- end -->
+                    
+                            
+                    <div class="col-md-6" >
+                        <div class="panel border-add">
+                            <div class="panel-heading">
+                                <h2 class="panel-title">Tasks Summary by Due Date</h2>
+                            </div>
+                            
+                            <div class="panel-body panel-body-ext">
+                                 <ul class = "noBullets list-group">
+                                    <div class="list2" id="latePanelId">
+                                        <li class="taskLabelHeadings list-group-item" >
+                                            <a href="{!taskSummaryByDueDate.lateTaskUrl}">Late</a>
+                                            <div class="pull-right">{!taskSummaryByDueDate.lateTaskCount}</div>
+                                            <div class="taskHorizontaline"></div>
+                                        </li>
+                                    </div>
+                                    <div id="lateSevenDaysPanelId">
+                                        <li class="taskLabelHeadings list-group-item1">
+                                            <a href="{!taskSummaryByDueDate.dueSevenDaysUrl}">Due within 7 Days</a>
+                                            <div class="pull-right">{!taskSummaryByDueDate.dueSevenDaysTaskCount}</div>
+                                            <div class="taskHorizontaline"></div>
+                                        </li>
+                                    </div>
+                                    <div id="lateThirtyDaysPanelId" >
+                                        <li class="taskLabelHeadings list-group-item">
+                                            <a href="{!taskSummaryByDueDate.dueThirtyDaysUrl}">Due within 30 Days</a>
+                                            <div class="pull-right">{!taskSummaryByDueDate.dueThirtyDaysTaskCount}</div>
+                                            <div class="taskHorizontaline"></div>
+                                        </li>
+                                    </div>
+                                    <div id="lateAllOthersPanelId">
+                                        <li class="taskLabelHeadings list-group-item1">
+                                            <a href="{!taskSummaryByDueDate.OtherUrl}">Due in more than 30 Days</a>
+                                            <div class="pull-right">{!taskSummaryByDueDate.OtherTaskCount}</div>
+                                            <div class="taskHorizontaline"></div> 
+                                        </li>
+                                    </div>
+                                </ul>
+                            </div> 
+                        </div>
+                    </div>
+                   <!-- <div class="col-md-4">
+                       <div class="panel border-add">
+                            <c:ChatterFeed />
+                       </div>     
+                    </div> -->
+                    <div class="clearfix"></div>
+
+                   </div>
+   </apex:outputPanel>
+    
+  
+    
+</apex:component>

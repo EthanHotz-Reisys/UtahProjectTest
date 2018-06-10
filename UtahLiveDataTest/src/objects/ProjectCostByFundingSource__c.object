@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Project Cost By Funding Source : Details of Funding Sources</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Application__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Application</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipLabel>Project Cost By Funding Sources</relationshipLabel>
+        <relationshipName>AppProjectCostByFundingSources</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BudgetPeriod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Budget Period</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Budget Period</inlineHelpText>
+        <label>Budget Period</label>
+        <referenceTo>BudgetPeriod__c</referenceTo>
+        <relationshipLabel>Project Cost By Funding Sources</relationshipLabel>
+        <relationshipName>ProjectCostByFundingSources</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>HideApplicationEditDelete__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(OR(ISPICKVAL(Application__r.Status__c, &apos;Created&apos;), ISPICKVAL(Application__r.Status__c, &apos;Internally Reviewed&apos;)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideApplicationEditDelete</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideEditBtn__c</fullName>
+        <description>Logic for Hiding Edit Button</description>
+        <externalId>false</externalId>
+        <formula>OR(
+  AND(Program__c!=null,NOT(ISPICKVAL(Program__r.Status__c,&apos;Created&apos;))),
+  AND(Application__c!=null,NOT(OR(ISPICKVAL(Application__r.Status__c, &apos;Created&apos;), 
+   ISPICKVAL(Application__r.Status__c, &apos;Internally Reviewed&apos;))))
+  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Logic for Hiding Edit Button</inlineHelpText>
+        <label>Hide Edit Btn</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideProgramEdit__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(ISPICKVAL(Program__r.Status__c,&apos;Created&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide Program Edit</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Narration__c</fullName>
+        <description>Comments, Description for the entry</description>
+        <externalId>false</externalId>
+        <label>Narration</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProgramServiceArea__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Program Service Area</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>ProgramServiceArea__c.Program__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Program__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>ProgramServiceArea__c</referenceTo>
+        <relationshipLabel>Project Cost By Funding Sources</relationshipLabel>
+        <relationshipName>PSAProjectCostByFundingSources</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Program__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Program</label>
+        <referenceTo>Program__c</referenceTo>
+        <relationshipLabel>Project Cost By Funding Sources</relationshipLabel>
+        <relationshipName>ProjectCostByFundingSources</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SecuredAmount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Secured Amount</description>
+        <externalId>false</externalId>
+        <label>Secured Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Sequence__c</fullName>
+        <externalId>false</externalId>
+        <label>Sequence</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SourceType__c</fullName>
+        <description>Source Type</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Source Type</inlineHelpText>
+        <label>Source Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>State</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Federal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Private/NGO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Program Income</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Others</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>TotalAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(SourceType__c, &quot;State&quot;) , 0 + UnsecuredAmount__c , SecuredAmount__c + UnsecuredAmount__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>UnsecuredAmount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Unsecured Amount</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Unsecured Amount</inlineHelpText>
+        <label>Unsecured Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>Project Cost By Funding Source</label>
+    <nameField>
+        <label>Project Cost Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Project Cost By Funding Sources</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Program_Income_Validation</fullName>
+        <active>true</active>
+        <description>Program Income Validation for Program</description>
+        <errorConditionFormula>AND(Program__c!=null,
+ UnsecuredAmount__c&gt;0,
+ Text(SourceType__c)==&apos;Program Income&apos; )</errorConditionFormula>
+        <errorMessage>Requested/Unsecured Amount must be 0 when Financial Source is of type Program Income</errorMessage>
+    </validationRules>
+</CustomObject>

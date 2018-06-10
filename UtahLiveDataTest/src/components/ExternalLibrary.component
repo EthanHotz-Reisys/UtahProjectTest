@@ -1,0 +1,150 @@
+<apex:component controller="ExternalLibCtrl" access="global" layout="none">
+    <script src="{!URLFOR($Resource.GNT__Tooltipster)}/js/jquery.tooltipster.min.js"></script>
+    <c:WhatFixHelper />
+    <!--  <apex:stylesheet value="{!URLFOR($Resource.GNT__ExternalLibNew, 'BootStrap/CSS/bootstrap.min.css')}" /> -->
+    <!--<apex:stylesheet value="{!URLFOR($Resource.GNT__ExternalLibNew, 'bootstrap-3.3.6-dist/CSS/bootstrap.min.css')}" />-->
+    <apex:stylesheet value="{!URLFOR($Resource.Bootstrap, 'css/bootstrap.min.css')}" /> 
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__ExternalLibNew, 'BootStrapDatePicker2/CSS/bootstrap-datetimepicker.css')}" /> 
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__ExternalLibNew, 'DatePicker/datepicker/css/datepicker3.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__ExternalLibNew, 'DatePicker/datepicker/less/datepicker3.less')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__ExternalLibNew, 'ckeditor/plugins/wordcount/css/wordcount.css')}" />  
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__ExternalLibNew, 'jqueryDateTimePicker/jquery.datetimepicker.css')}" /> 
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__ExternalLibNew, 'gridster/jquery.gridster.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__ExternalLibNew, 'jquery-ui/CSS/jquery-ui.css')}" /> 
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__ExternalLibNew, 'font-awesome-4.2.0/css/font-awesome.min.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__ExternalLibNew, 'font-awesome-4.3.0/css/font-awesome.min.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__ExternalLibNew, 'AutoCompleteSelectList/CSS/select2.css')}"/> 
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__ExternalLibNew, 'bootstrap-treeview-master/src/css/bootstrap-treeview.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__ExternalLibNew, 'jQueryMagicSuggest/magicsuggest.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.GovGrantsExternal, 'font-awesome-4.3.0/css/font-awesome.min.css')}" />
+
+    <link  href="{!themeDocURL}" rel="stylesheet" type="text/css" />
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__Calendar, 'fullcalendar.min.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__Tooltipster, 'css/themes/tooltipster-shadow.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__Tooltipster, 'css/tooltipster.css')}" />
+    <!-- c:CustomCSS /> -->
+    <!-- <c:DynamicCSS / > -->  <!-- UI-Shrawan-10312015    Added for new UI -->
+         
+         <!-- <apex:stylesheet value="{!URLFOR($Resource.GNT__ExternalLibNew, 'BootStrap/CSS/bootstrap-theme.min.css')}" />  -->
+    <apex:includeScript value="{!URLFOR($Resource.GNT__ExternalLibNew, 'jQuery/JS/jQuery.min.js')}" /> 
+    <apex:includeScript value="{!URLFOR($Resource.GNT__ExternalLibNew, 'jquery-ui/JS/jquery-ui.js')}" /> 
+    <apex:includeScript value="{!URLFOR($Resource.GNT__ExternalLibNew, 'AngularJS/JS/1.2.14/angular.min.js')}" /> 
+    <!-- <apex:includeScript value = "https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"/> -->        
+    <apex:includeScript value="{!URLFOR($Resource.GNT__ExternalLibNew, 'AngularBootStrap/JS/0.10.0/ui-bootstrap-tpls-0.10.0.min.js')}" />
+  <!--  <apex:includeScript value="{!URLFOR($Resource.GNT__ExternalLibNew, 'BootStrap/JS/bootstrap.min.js')}" /> -->
+    <apex:includeScript value="{!URLFOR($Resource.GNT__ExternalLibNew, 'bootstrap-3.3.6-dist/JS/bootstrap.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.GNT__ExternalLibNew, 'ReCaptcha/Captcha.js')}" />   
+    <apex:includeScript value="{!URLFOR($Resource.GNT__ExternalLibNew, 'UtilLibraries/JS/Underscore.min.js')}" /> 
+    <apex:includeScript value="{!URLFOR($Resource.GNT__ExternalLibNew, 'UtilLibraries/JS/moment.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.GNT__ExternalLibNew, 'jQueryCookies/JS/jQueryCookies.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.GNT__ExternalLibNew, 'BootStrapDatePicker2/JS/bootstrap-datePicker.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.GNT__ExternalLibNew, 'jqueryDateTimePicker/jquery.datetimepicker.js')}" />
+
+    <apex:includeScript value="{!URLFOR($Resource.GNT__ExternalLibNew, 'DatePicker/datepicker/js/bootstrap-datepicker.js')}" /> 
+    <apex:includeScript value="{!URLFOR($Resource.GNT__ExternalLibNew, 'jquery-mentions/jquery.mentions.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.GNT__ExternalLibNew, 'gridster/jquery.gridster.js')}" />     
+    <apex:includeScript value="{!URLFOR($Resource.GNT__ExternalLibNew, 'AutoCompleteSelectList/JS/select2.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.GNT__ExternalLibNew, 'bootstrap-treeview-master/src/js/bootstrap-treeview.js')}"/>
+    
+    
+    <apex:includeScript value="https://cdnjs.cloudflare.com/ajax/libs/angular-strap/2.2.4/angular-strap.js"/>
+    <apex:includeScript value="https://cdnjs.cloudflare.com/ajax/libs/angular-strap/2.2.4/angular-strap.tpl.js"/>             
+    <!-- <apex:includeScript value="{!URLFOR($Resource.GNT__ExternalLibNew, 'HighCharts/JS/HighChartsNew.js')}"/> -->
+    <apex:includeScript value="https://code.highcharts.com/highcharts.js" /> 
+    <apex:includeScript value="{!URLFOR($Resource.GNT__ExternalLibNew, 'HighCharts/JS/exporting.js')}"/>    
+<!--     <apex:includeScript value="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js" /> -->
+    <!-- <apex:includeScript value="https://code.highcharts.com/modules/exporting.js" /> -->
+    <!-- <apex:includescript value="{!URLFOR($Resource.HighCharts, 'Highcharts/js/themes/sand-signika.js')}" /> -->
+    <apex:includeScript value="{!URLFOR($Resource.GNT__ExternalLibNew, 'carhartl-jquery-cookie-v1.4.1-0-g7f88a4e/carhartl-jquery-cookie-92b7715/jquery.cookie.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.GNT__ExternalLibNew, 'HighCharts/JS/drilldown.js')}"/> 
+    <apex:includeScript value="{!URLFOR($Resource.GNT__ExternalLibNew, 'HighCharts/JS/nodatatodisplay.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.GNT__ExternalLibNew, 'jQueryMagicSuggest/magicsuggest.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.GNT__Tooltipster, 'js/jquery.tooltipster.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.GNT__Calendar, 'moment.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.GNT__Calendar, 'fullcalendar.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.GNT__Holdon, 'HoldOn.min.js')}" />
+
+    <!--css file for holdon popup-->
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__Holdon, 'HoldOn.min.css')}" /> 
+    
+     <GNT:ExternalLibrary />
+     <apex:stylesheet value="{!themeDocURL}" />
+    <script>
+    var j$ = jQuery.noConflict();
+           
+    
+        
+      function showLoadingPopUp() {
+            console.log('This showloading popup called from page template 123!');  
+            $ = jQuery.noConflict();
+            HoldOn.open({
+                message:"",
+                textColor:"black",
+                theme:"custom",
+                content:'<img class="nav-logo" style="position: relative; right:60px; height:87px !important;" id="govGrantsPleaseWaitHolderId" src="{!govGrantPleaseWaitIconURL}" alt="GovGrants Logo "/>',
+                // backgroundColor:"#D3D3D3"
+                backgroundColor:"#888888"
+
+            });
+        }
+        function showLoadingPopUp( message ) {
+           console.log('This showloading popup called from page template 1!');   
+            $ = jQuery.noConflict();
+            HoldOn.open({
+                message:"",
+                textColor:"black",
+                theme:"custom",
+                content:'<img class="nav-logo"style="position: relative; right:60px;height:87px !important;" id="govGrantsPleaseWaitHolderId" src="{!govGrantPleaseWaitIconURL}" alt="GovGrants Logo "/>',
+               
+                // backgroundColor:"#D3D3D3"
+                backgroundColor:"#888888"
+
+            });
+        }
+        function hideLoadingPopUp() {
+            console.log('This hiding popup called from page template!');  
+            $ = jQuery.noConflict();
+            HoldOn.close();            
+        }
+        
+        j$(document).ready(function(){ 
+            sideBarHeightUI1();  
+              
+           setTimeout(function() { close508WaveErrors(); }, 3500);
+          
+        });
+        
+        function sideBarHeightUI1() { 
+             var headerDivHeight = j$(window).height();
+             var screenHeight = window.innerHeight;
+             var navBarHeight = j$('.navbar.navbar-default.navbar-fixed-top').height(); 
+             var sidebarHeight = screenHeight-navBarHeight; 
+             j$('#sidebar-wrapper').css('height',sidebarHeight+'px');
+        }
+        
+        function close508WaveErrors(){ 
+                 console.log('In close508WaveError function------');            
+                
+                if('.select2-focusser' != "undefined"){             
+                    j$('.select2-focusser').attr('aria-label', 'Enter Text');                    
+                }
+                
+                 if('.pbTitle>.mainTitle' != "undefined"){             
+                   j$(".pbTitle>.mainTitle").append("<span class='hidden508'>title</span>");          
+                }
+                if('.select2-choice' != "undefined"){               
+                    j$('.select2-choice').attr('aria-label', 'Enter Text');
+                }
+                if('.select2-input' != "undefined"){                
+                    j$('.select2-input').attr('aria-label', 'Enter Text');
+                }
+                if('.ckeditor' != "undefined"){             
+                    j$('.ckeditor').attr('aria-label', 'Enter textArea');
+                }
+                 if('.pkg-form-formList' != "undefined"){             
+                    j$('.pkg-form-formList').attr('aria-label', 'Select Form ');
+                } 
+                   
+            }   
+        </script>
+</apex:component>

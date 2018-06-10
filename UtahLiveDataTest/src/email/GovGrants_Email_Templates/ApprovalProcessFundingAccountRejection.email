@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<br>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<font face="Times New Roman, Times, serif"><br>Hello&nbsp;Applicant,</font><div><font face="Times New Roman, Times, serif"><br></font></div><div><font face="Times New Roman, Times, serif">The Following Funding Account has been Rejected -&nbsp;</font></div><div><font face="Times New Roman, Times, serif"><br></font></div><div><font face="Times New Roman, Times, serif">{!FundingAccount__c.Name}</font></div><div><font face="Times New Roman, Times, serif"><br><font>Sincerely,<br>EGMS Team</font></font></div><div><font face="Times New Roman"><br></font></div><div><font face="Times New Roman"><img align="left" alt="" src="https://ggpdev1-dev-ed--c.na30.content.force.com/servlet/servlet.ImageServer?id=015f40000004yJ4&amp;oid=00Df4000000Dzb9" border="0"><br></font></div><div style='font-family: "Times New Roman"; font-size: medium;'><font face="Times New Roman, Times, serif"><br></font></div><div style='font-family: "Times New Roman"; font-size: medium;'><font face="Times New Roman, Times, serif"><br></font></div>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

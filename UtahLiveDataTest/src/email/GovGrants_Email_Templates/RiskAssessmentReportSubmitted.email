@@ -1,0 +1,46 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<div><br></div>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:RelyOnVML/>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font size="3" face="Times New Roman,Times,Serif"><span style="color:black">Hello,<br>
+<br>
+This email is to notify you that, the Risk Assessment&nbsp;Report
+{!RiskAssessment__c.Name} has been submitted and is ready for your review.<br>
+<br>
+<u><b>Risk Assessment Details:</b></u><br>
+Title: {!RiskAssessment__c.Title__c}<br>
+Area: {!RiskAssessment__c.Area__c}<br>
+Type: {!RiskAssessment__c.Type__c}<br>
+Latest Award Name: {!RiskAssessment__c.<span style="font-variant-ligatures: normal;
+font-variant-caps: normal;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;float:none;
+word-spacing:0px">Grant__r.LatestAwardName__c</span>}<br>
+Assessment Date: {!RiskAssessment__c.AssessmentDate__c}<br>
+<br>
+Kindly login to the EGMS System and follow the link for more details:
+{!RiskAssessment__c.Link}. </span></font></p><font size="3" face="Times New Roman,Times,Serif">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font size="3" face="Times New Roman,Times,Serif"><span style="color:black">Please do not reply to this email. You may
+contact the GovGrants Support Team at <a href="mailto:govgrants@support.com"><span style="color:black;text-decoration:none;text-underline:none">govgrants@support.com</span></a>
+if you have any questions or need assistance with this task.</span></font></p><font size="3" face="Times New Roman,Times,Serif">
+
+<span style="font-size: 11pt; line-height: 107%; color: black;">Sincerely,&nbsp;<br>
+EGMS Team</span></font>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

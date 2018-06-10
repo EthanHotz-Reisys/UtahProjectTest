@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE This template is used to send an email to Program Manager to let him know that all task are closed.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Email to Inform Completed Tasks</name>
+    <style>freeForm</style>
+    <subject>Notification: Sub Tasks are Completed for an Announcement {!Announcement__c.AnnouncementId__c}</subject>
+    <textOnly>Subject: Notification of sub task completed {!Announcement__c.AnnouncementId__c}
+
+
+
+Hello{!TaskScheduleGroup__c.AssignedTo__c},
+
+All related tasks associated with Funding Opportunity({!Announcement__c.AnnouncementId__c}) have been completed. Please take further actions by clicking on the following link.
+
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

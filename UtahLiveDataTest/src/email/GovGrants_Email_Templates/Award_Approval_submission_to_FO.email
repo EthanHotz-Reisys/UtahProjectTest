@@ -1,0 +1,21 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p><span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: 12pt; background-color: rgb(255, 255, 255); color: rgb(34, 34, 34);">Dear&nbsp;</span><span style="font-family: &quot;Times New Roman&quot;, Times, serif; background-color: rgb(255, 255, 255);">{!Award__c.FOUser__c}</span><font color="#222222" style="font-family: &quot;Times New Roman&quot;, Times, serif; background-color: rgb(255, 255, 255);"><span style="font-size: 12pt;">,</span></font></p>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="Times New Roman,Times,Serif" size="3"><strong></strong></font></div><!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:RelyOnVML/>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]--><font face="Times New Roman,Times,Serif" size="3" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">
+
+</font><p style="line-height: 1.5em; margin: 0cm 0cm 12pt; background-color: rgb(255, 255, 255);"><font face="Times New Roman, Times, serif" style="font-size: 12pt; color: rgb(34, 34, 34);"><font size="3"><font color="#000000"><span style="font-size: 12pt;">This email is to notify you that, the Award # {!Award__c.AwardNumber__c}, {!Award__c.Name} has been created for&nbsp;</span></font></font></font><font face="Times New Roman, Times, serif" style="font-size: 12pt;">{!Award__c.GranteeOrganization__c}&nbsp;<span style="font-size: 12pt;">and is waiting for your approval.</span></font></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 1.5em; margin: 0cm 0cm 0.0001pt; background-color: rgb(255, 255, 255);"><font face="Times New Roman,Times,Serif" size="3">Sincerely,</font></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0cm 0cm 12pt;"><span style="color: rgb(34, 34, 34); font-size: 12pt; background-color: rgb(255, 255, 255);"><font face="Times New Roman,Times,Serif" size="3" color="#000000"></font></span><span style="color: rgb(34, 34, 34); font-size: 12pt; background-color: rgb(255, 255, 255);"><font face="Times New Roman,Times,Serif" size="3" color="#000000"></font></span><span style="color: rgb(34, 34, 34); font-size: 12pt; background-color: rgb(255, 255, 255);"><font face="Times New Roman,Times,Serif" size="3" color="#000000"></font></span><span style="color: rgb(34, 34, 34); font-size: 12pt; background-color: rgb(255, 255, 255);"><font face="Times New Roman,Times,Serif" size="3" color="#000000"></font></span><span style="color: rgb(34, 34, 34); font-size: 12pt; background-color: rgb(255, 255, 255);"><font face="Times New Roman,Times,Serif" size="3" color="#000000"></font></span></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; line-height: 1.5em; margin: 0cm 0cm 12pt; background-color: rgb(255, 255, 255);"><font face="Times New Roman,Times,Serif" size="3">UtahGrants Support Team</font></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

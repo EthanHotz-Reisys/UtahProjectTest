@@ -1,0 +1,13 @@
+<apex:page sidebar="false" standardStylesheets="false" showHeader="false" controller="CommunityRegisteredExtUsersListCtrl">
+  <!--  standardController="User" extensions="CommunityRegisteredExtUsersListCtrl"  -->
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+    <!--GNT:PageMessages /--> 
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">
+            <GNT:FlexTable flexTableName="RegisteredUsersTest" tableId="RegisteredUsersTest" flexTableParameters="{!flexTableParameters}" /> 
+            <!-- extensions="CommunityUserProfileEditCtrl" saveURL="{!savePage}" cancelURL="{!cancelPage}" -->
+        </apex:define>
+    </apex:composition>
+    
+</apex:page>

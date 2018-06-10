@@ -1,0 +1,701 @@
+<apex:page controller="SelectPackageCtrl1" standardStylesheets="false" showHeader="false" sidebar="false">
+    <c:ExternalLibrary /> 
+    <style>
+       .panel-header-height {
+            height: 35px !important;
+        }
+        .panel-heading {
+        padding: 5px 15px;
+        }
+        .panel-heading-title h2 {       
+            margin: 5px;
+        }
+        .column-lists-left, .column-lists-right { 
+            width: 50%;
+            display: inline-block;
+            float: left; 
+        }   
+    </style>  
+    <script>
+        var j$ = jQuery.noConflict();
+    </script>
+    <div id="modalDiv" class="bs container-fluid select-pkg-modal" style="">
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">
+            <apex:form >
+                <div class="TOP_DOWN select-pkg-main-div" id="selectPackageDiv" style="display:none">
+                    <div id="SelectPackageComponent" ng-controller="SelectPackageCtrl">
+                        <div> <!-- class="container-fluid" -->
+                            <div ng-if="selectPackageObj.isLoading" class="container-fluid tableBackground">
+                                <div class="flexLoadingBar">
+                                    <progressbar class="progress-striped active" value="100" type="info">Loading...</progressbar>
+                                </div>
+                            </div>
+                            <div ng-if="!selectPackageObj.isLoading">
+                                <div class="row select-pkg-msg">
+                                    <div class="col-md-12">
+                                        <div class="bs alert alert-warning border-msg" ng-repeat="message in messages" id="success-alert">
+                                            <a href="#" class="glyphicon glyphicon-remove close" ng-click="messages.splice($index, 1);"  aria-hidden="true"></a><!-- data-dismiss="alert" -->
+                                            <span >{{message.msg}}</span>
+                                            <script>
+                                                j$("#success-alert").fadeTo(45000, 1).slideUp("slow", function(){
+                                                    j$("#success-alert").alert('close');
+                                                });
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row select-pkg-data-radio" id="selectGroupRadioBtn" ng-if="IsEditPackage">
+                                    <div class="col-md-12">
+                                        <div class="panel">                            
+                                            <div class="panel-heading panel-heading-header panel-header-height"><div class="panel-heading-title"><h2>Package selection</h2></div></div>                           
+                                            <div class="panel-body  panel-body-padding">
+                                                <div class="form-group">
+                                                    <label class="customLabelstyle select-pkg--label" style=""> <span class="requiredField ">*</span>Package Type
+                                                    <select id="selectPackageType"  ng-options="size as size.name for size in selectPackageObj.packageTypes" ng-model="selectPackageObj.selectedPackageType" ng-change="getAvailablePackageNameList();" style="margin-left: 8px;" ></select>
+                                                    </label>
+                                                    <label class="radio-inline select-pkg-radiogroup" ng-if="selectPackageObj.showRadioBtn" style=""><input name="radioGroup" class="radioBtnMargin" id="radio1" value="Existing" ng-model="selectPackageObj.selectedRadioBtn" ng-click="showFlexTable();" type="radio" >Choose Exisiting Package</input></label>
+                                                    <label class="radio-inline customLabelstyle" ng-if="selectPackageObj.showRadioBtn" ><input name="radioGroup" class="radioBtnMargin" id="radio2" value="New" ng-model="selectPackageObj.selectedRadioBtn" ng-click="hideFlexTable();" type="radio" >Create New Package</input></label>
+                                                </div>
+                                            </div>                            
+                                        </div>
+                                    </div>                        
+                                </div><!-- row -->
+                            </div>
+                        </div>
+                        <div class="container-fluid-top select-pkg-data-text" ng-if="selectPackageObj.selectedRadioBtn=='New' && !selectPackageObj.isLoading"> <!-- container-fluid -->
+                              <div class="row">
+                                  <div class="col-md-12">
+                                      <div class="panel">
+                                          <div class="panel-heading panel-heading-header panel-header-height"><div class="panel-heading-title"><h2>Package information</h2></div></div>
+                                          <div class="panel-body panel-body-padding">
+                                              <div class="form-group">
+                                                  <div class="col-md-4 textFloat">
+                                                      <div for="ex1" class="customLabelstyle"><span class="requiredField ">*</span>Package Name</div>
+                                                        <label for="NameInput" class="508Label" style="display:none;"> Package Name </label>   
+                                                      <input id="NameInput" class="form-control" type="text" maxlength="45" ng-model="selectPackageObj.packageName" />
+                                                  </div>                                                  
+                                                  <div class="col-md-2 textFloat1" ng-if="selectPackageObj.showSource">
+                                                      <div for="packageSource" class="customLabelstyle"><span class="requiredField">*</span>Source</div>
+                                                      <label for="packageSource" class="508Label" style="display:none;"> Source </label>   
+                                                      <select id="packageSource" ng-options="size as size.name for size in selectPackageObj.sourceValues" class="form-control" ng-model="selectPackageObj.source" ></select>
+                                                  </div>
+                                                  <div class="col-md-2 textFloat" style="width:15%" ng-if="selectPackageObj.showRequiredCheckBox">
+                                                      <div for="Requiredpackage" class="customLabelstyle">Required?</div>
+                                                      <label for="Requiredpackage" class="508Label" style="display:none;"> Required? </label>  
+                                                      <input id="Requiredpackage" class="form-control select-pkg-data-checkbox" style="" type="checkBox" ng-model="selectPackageObj.requiredPackage" />
+                                                  </div>
+                                                  <div class="col-md-4 textFloat">
+                                                      <div for="descriptionInput" class="customLabelstyle"><span class="requiredField">*</span>Description</div>
+                                                       <label for="descriptionInput" class="508Label" style="display:none;"> Description </label>  
+                                                      <textArea Id="descriptionInput" rows="5" cols="30" class="form-control select-pkg-data-description" style="height:66px"  ng-model="selectPackageObj.packageDescription"></textArea>
+                                                  </div>
+                                                  <apex:outputPanel rendered="{!$Setup.GNT__UserPreferences__c.GNT__ActiveAppName__c == 'StateasGrantor'}">
+                                                    <div class="col-md-2" style="width:30%;     clear: both;">
+                                                      <div for="HideForExternal" class="customLabelstyle">Hide For External User? </div>                                                     
+                                                      <input id="HideForExternal" class="select-pkg-data-checkbox" style="" type="checkBox" ng-model="selectPackageObj.hideForExternalUser"/>
+                                                    </div>
+                                                  </apex:outputPanel>
+                                              </div>
+                                          </div>                            
+                                      </div>
+                                  </div><!-- col-md-12 -->
+                              </div>
+                              <div class="row select-pkg-data-multiselect">   
+                                  <div class="col-md-12">
+                                      <div class="panel">
+                                          <div class="panel-heading panel-heading-header panel-header-height"><div class="panel-heading-title"><h2>Forms Selection</h2></div></div>
+                                          <div class="panel-body panel-body-padding" style="margin-left: 13px;">
+                                              <div class="column-lists-left">                                                                                        
+                                                  <div class="selList-1">
+                                                      <div class="selectTitle width100">
+                                                          <label value="Select Options" for="LeftList">Available Forms</label>
+                                                           <label for="selectPackage" class="508Label" style="display:none;"> Available Forms </label>
+                                                          <select id="selectPackage" class="select-pkg-select-package" style="" ng-options="size as size.name for size in selectPackageObj.availablePackages" ng-model="selectPackageObj.selectedPackageForForms" ng-change="getAvailableFormList()" ></select>
+                                                      </div>
+                                                      <div class="width100"> 
+                                                          <select id="LeftList" ng-options="size as size.name for size in selectPackageObj.availableForms"  ng-model="selectPackageObj.selectedAvailableForms"  class="multilist width100" multiple="multiple" size="8">
+                                                          </select>
+                                                      </div>
+                                                  </div>
+                                                  <div class="selList-2">                                                                                           
+                                                      <div class="rArrow select-pkg-narrow" style="">
+                                                          <span class="selectTitle">
+                                                              <label value="Select Options" for="LeftList"></label>
+                                                          </span>                                                       
+                                                          <a id="btnRight" ng-click="moveFormsToRight()" href="#" title="Move forms to right"> 
+                                                              <i class="fa fa-arrow-circle-right fa-2x"></i>
+                                                          </a>  
+                                                          <a id="btnleft" ng-click="moveFormsToLeft1()" ng-if="selectPackageObj.showOrderingPanel" style="display:table" href="#" title="Move forms to left"> 
+                                                              <i class="fa fa-arrow-circle-left fa-2x"></i>
+                                                          </a>                                                          
+                                                      </div>                                              
+                                                  </div>                                                                                          
+                                              </div>                                                                                
+                                              <div class="column-lists-right select-pkg-multiselect-right">
+                                                  <div class="selList-1">
+                                                      <div class="selectTitle">
+                                                          <label value="Added" for="RightList"><span class="requiredField select-pkg-selected-form">*</span>Selected Forms</label>
+                                                          <button type="button" ng-if="!selectPackageObj.showOrderingPanel" style="float: right;" class="customBtn button1" ng-click="selectPackageObj.showOrderingPanel=true">Reorder</button>
+                                                          <button type="button" ng-if="selectPackageObj.showOrderingPanel" style="float: right;" class="customBtn button2" ng-click="selectPackageObj.showOrderingPanel=false">Apply Changes</button> 
+                                                      </div>
+                                                      <div class="width100 select-pkg-multisel-panel" id="multiselectPanel" ng-init="selectPackageObj.showOrderingPanel=false" ng-if="!selectPackageObj.showOrderingPanel">
+                                                          <table class="table table-striped" >
+                                                              <thead id="heading">
+                                                                  <th class="headerCell">Form Name</th>
+                                                                  <th class="headerCell">Required?</th>
+                                                                  <th class="headerCell">Action</th>
+                                                              </thead>
+                                                              <tbody>
+                                                                  <tr ng-repeat="selectForm in selectPackageObj.selectedFormList">
+                                                                      <td class="tdclass">{{ selectForm.name }}</td>
+                                                                      <td class="tdclass" align="Center"><input type="checkbox" ng-disabled="selectForm.disableMandatory" ng-model="selectForm.selected"/></td>
+<!--                                                                       <td class="tdclass" align="Center"><a ng-if="!selectForm.disableMandatory" ng-click="moveFormToLeft(selectForm);" tittle="Remove" href="#"><span class="fa fa-times"></span></a></td> -->
+                                                                      <td class="tdclass" align="Center"><button class="close"  ng-if="!selectForm.disableMandatory" ng-click="moveFormToLeft(selectForm);" tabindex="0" type="button">×</button></td>
+                                                                  </tr>
+                                                              </tbody>
+                                                          </table>
+                                                      </div>
+                                                      <div class="width100" id="ReorderFormDiv" ng-if="selectPackageObj.showOrderingPanel">                                                
+                                                              <select id="RightList" ng-options="size as size.name for size in selectPackageObj.selectedFormList"  ng-model="selectPackageObj.selectedRightForms" class="multilist width100" multiple="multiple" size="8"> </select> 
+                                                      </div>
+                                                      
+                                                  </div>
+                                                  <div class="selList-2" ng-if="selectPackageObj.showOrderingPanel">
+                                                        <div class="rArrow select-pkg-narrow" style="">
+                                                          <div>
+                                                              <a id="btnup" ng-click="moveFormsToUp()" href="#" title="Move forms to up"> 
+                                                                  <i class="fa fa-arrow-circle-up fa-2x"></i>
+                                                              </a>
+                                                          </div>
+                                                          <div>
+                                                              <a id="btndown" ng-click="moveFormsToDown()" href="#" title="Move forms to down"> 
+                                                                  <i class="fa fa-arrow-circle-down fa-2x"></i>
+                                                              </a>
+                                                          </div>
+                                                        </div>
+                                                    </div>                                              
+                                              </div>
+                                          </div>                            
+                                      </div>
+                                  </div><!-- col-md-12 -->                                            
+                              </div>
+                              <div class="row">   
+                                  <div class="col-md-12">
+                                      <div class="panel panel-body-padding">
+                                            <div class="panel-footer">
+                                                <div class="editfooterBtnCls">
+                                                   <input data-dismiss="modal"  id="PackageSave" type="button" class="customBtn" value="Save" ng-click="createPackage(false)" />                                                
+                                                   <input id="PackageCancel" type="button" class="customBtn" ng-click="closeModalWindow();" value="Cancel" />                                                
+                                                </div>
+                                              </div>   
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>  
+                     </div>        
+                     <div class=" container-fluid-top ng-scope" id="selectPackageFormId" style="display:none"> <!-- container-fluid -->
+                        <div class="panel panel-body-padding" style="">                                
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div>
+                                            <GNT:FlexTable flexTableName="ApplicationPackage" tableId="ApplicationPackage"
+                                            flexTableParameters="{!keyValueMap}" headerDescription=""
+                                            SingleRecordSelection="true" />                                                     
+<!--                                             <div class="col-md-12 pull-right"> -->
+<!--                                                 <label for="Requiredpackage"><span class="requiredField">*</span>Required?</label> -->
+<!--                                                 <input id="RequiredpackageCheckBox" style="height:19px;margin-right: 20px;" type="checkBox"/> -->
+<!--                                                 <input data-dismiss="modal"  id="PackageSave" type="button" class="customBtn" value="Save" onClick="selectPackage(true, null, null, null)" /> -->
+<!--                                                 <input id="PackageCancel" type="button" class="customBtn" onClick="closeModalWindow();" value="Cancel" /> -->
+<!--                                             </div>                                               -->
+<!--                                            <div class="col-md-12 pull-left"> -->
+<!--                                                <label for="HideForExternalUser">Hide For External User?</label> -->
+<!--                                                <input id="HideForExternalUser" class="form-control select-pkg-data-checkbox" style="" type="checkBox" ng-model="selectPackageObj.hideForExternalUser"/> -->
+<!--                                            </div>   -->
+                                        </div>
+                                    </div> 
+                                </div> <!-- row -->
+                                 <div class="row">   
+                                  <div class="col-md-12">
+                                      <div class="panel">
+                                            <div class="row" id="SelectCheckBoxDiv">   
+                                              <div class="col-md-12">
+                                                  <div class="panel">
+                                                        <div class="row-fluid">
+                                                            <div class="span12">
+                                                               <div class="customLabelstyle" style="float: left;">Is it a required package?</div>
+                                                                <input id="RequiredpackageCheckBox" class="std-pkg-requ-checkbox" style="" type="checkBox"/>                                               
+                                                            </div>
+                                                        </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                            <div class="panel-footer">
+                                                <div class="editfooterBtnCls">
+<!--                                                     <label for="Requiredpackage">Required?</label> -->
+<!--                                                     <input id="RequiredpackageCheckBox" style="height:19px;margin-right: 20px;" type="checkBox"/> -->                              <apex:outputPanel rendered="{!$Setup.GNT__UserPreferences__c.GNT__ActiveAppName__c == 
+                                                    'StateasGrantor'}">
+                                                    <div class="col-md-12 pull-left">
+                                                        <label for="HideForExternal">Hide For External User?</label> 
+                                                        <input id="HideForExternalCheckBox" style="height:19px;margin-right: 20px;" type="checkBox"/>
+                                                    </div>
+                                                    </apex:outputPanel>
+                                                    <input data-dismiss="modal"  id="PackageSave" type="button" class="customBtn" value="Save" onClick="selectPackage(true, null, null, null)" />
+                                                    <input id="PackageCancel" type="button" class="customBtn" onClick="closeModalWindow();" value="Cancel" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        </div>                                                                                              
+                            </div>                            
+                        </div>                           
+                    </div>
+                </div> 
+                <script>
+                    _RemotingPackageActions = {};
+                    _RemotingPackageActions.getPackageNames = '{!$RemoteAction.SelectPackageCtrl1.getPackageNames}';
+                    _RemotingPackageActions.getFormList = '{!$RemoteAction.SelectPackageCtrl1.getFormList1}';
+                    _RemotingPackageActions.upsertAndSelectPackage = '{!$RemoteAction.SelectPackageCtrl1.upsertAndSelectPackage}';
+                    _RemotingPackageActions.getPackageTypes = '{!$RemoteAction.SelectPackageCtrl1.getPackageTypes}';
+                    
+                    var parendFlexTableName = '{!$CurrentPage.parameters.parentTableName}';
+                    
+                    var selectPackageApp = angular.module('SelectPackageComponent', []);
+            
+                    selectPackageApp.controller('SelectPackageCtrl', function ($q,$scope,$sce) {
+                        $scope.selectPackageObj = {};
+                        $scope.selectPackageObj.isLoading = true;
+                        $scope.recordType = '';
+                        $scope.IsEditPackage = false;
+                        $scope.messages = [];
+                        $scope.disableMandatory = false;
+                        // Need to read from parameter
+                        $scope.pkgType = '';
+                        $scope.parendId = '{!$CurrentPage.parameters.parentid}';
+                        $scope.parendFlexTableId = '{!$CurrentPage.parameters.parentTableName}';
+                        $scope.packageId = '';
+                        $scope.businessFormid = '{!$CurrentPage.parameters.id}';
+                        
+                        if($scope.businessFormid != null && $scope.businessFormid != undefined && $scope.businessFormid != '' ) {
+                            $scope.selectPackageObj.selectedRadioBtn = 'New';
+                            j$("#selectGroupRadioBtn").hide();
+                            //parent.SetTittle('Create Package');
+                        } else {
+                            //parent.SetTittle('Edit Package');
+                        }
+                        $scope.paintPackageInfoSection = function( dataResult ){
+                            $scope.selectPackageObj.selectedFormList = [];
+                            $scope.selectPackageObj.isLoading = false;
+                            $scope.selectPackageObj.showRequiredCheckBox = dataResult.showRequiredCheckBox;
+                            $scope.selectPackageObj.availablePackages = dataResult.packageList;
+                            $scope.selectPackageObj.showSource = dataResult.showSource;
+                            console.log('$scope.s====', dataResult);
+                            console.log('$scope.selectPackageObj.showSource========', $scope.selectPackageObj.showSource);
+                            if($scope.selectPackageObj.showSource){
+                                $scope.selectPackageObj.sourceValues = dataResult.sourceValues;
+                                $scope.selectPackageObj.source = $scope.selectPackageObj.sourceValues[0];
+                            }
+                            $scope.selectPackageObj.selectedPackageForForms = $scope.selectPackageObj.availablePackages[0];
+                            $scope.pkgType = dataResult.submissionType;
+                            $scope.packageId = dataResult.packageId;
+                            //$scope.filterCriteria = angular.element(document.getElementById('ApplicationPackage')).parent().scope().newFilterClause;
+                            $scope.filterCriteria = angular.element(document.getElementById('ApplicationPackage')).scope().$$childTail.$$childTail.newFilterClause;
+                            $scope.filterCriteriaArray = $scope.filterCriteria.split(' and ');
+                            $scope.filterCriteria = '';
+                            for(var i = 0; i < $scope.filterCriteriaArray.length; i++) {
+                                if($scope.filterCriteriaArray[i].indexOf('SubmissionType__c')>-1){
+                                    $scope.submissionTypeArray = $scope.filterCriteriaArray[i].split('=');
+                                    $scope.filterCriteriaArray[i] = $scope.submissionTypeArray[0] + ' = ' + '\''+$scope.pkgType+'\'';
+                                }
+                                if( i < $scope.filterCriteriaArray.length-1){
+                                    $scope.filterCriteria = $scope.filterCriteria + $scope.filterCriteriaArray[i] + ' and ' ;
+                                } else {
+                                    $scope.filterCriteria = $scope.filterCriteria + $scope.filterCriteriaArray[i] + ' ' ;
+                                }
+                            }
+                            angular.element(document.getElementById('ApplicationPackage')).scope().$$childTail.newFilterClause = $scope.filterCriteria;
+                            angular.element(document.getElementById('ApplicationPackage')).scope().$$childTail.getPageRecords();
+                            $scope.getAvailableFormList();
+                            if( dataResult.packageName != undefined ) {
+                                if(dataResult.source != undefined && dataResult.source != '' && $scope.selectPackageObj.showSource){
+                                    for(var i=0; i<$scope.selectPackageObj.sourceValues.length; i++){
+                                        if($scope.selectPackageObj.sourceValues[i].id == dataResult.source){
+                                            $scope.selectPackageObj.source = $scope.selectPackageObj.sourceValues[i];
+                                        }
+                                    }
+                                    console.log('$scope.selectPackageObj.sourceValues=========' , $scope.selectPackageObj.sourceValues);
+                                    console.log('dataResult.source' , dataResult.source);
+                                }
+                                $scope.selectPackageObj.packageName = dataResult.packageName;
+                                $scope.selectPackageObj.packageDescription = dataResult.packageDescription;
+                                $scope.selectPackageObj.hideForExternalUser = dataResult.hideForExternalUser;
+                                $scope.selectPackageObj.requiredPackage = dataResult.isMandatory
+                                $scope.recordType = dataResult.recordType;                                
+                                $scope.selectPackageObj.selectedFormList = dataResult.PackageForms;
+                                $scope.disableMandatory = dataResult.disableMandAction;
+                                
+                            }
+                            console.log('Forms in paint section--->',$scope.selectPackageObj.selectedFormList);
+                        };
+                        
+                        $scope.paintAvalaibleFormList = function( dataResult ){
+                            var formIdListStr = '';
+                            if($scope.selectPackageObj.selectedFormList != undefined) {
+                                for(var i=0; i < $scope.selectPackageObj.selectedFormList.length;i++) {
+                                    formIdListStr = formIdListStr +',' + $scope.selectPackageObj.selectedFormList[i].id;
+                                }
+                            } 
+                            console.log('formIdListStr--->',formIdListStr);
+                            console.log('formIdListStr--->',formIdListStr.length);    
+                            console.log('dataResult.length-->',dataResult.length); 
+                            var dataResultLen = dataResult.length;                      
+                            for(var i=0; i < dataResult.length;i++) {
+                                console.log('i--->',i);
+                                var idStr = dataResult[i].id;
+                                console.log('formIdListStr.indexOf(idStr)====>',formIdListStr.indexOf(idStr));
+                                if (formIdListStr.indexOf(idStr) > -1) {
+                                    console.log('data resuult before splice --->',dataResult.length);
+                                    dataResult.splice(i, 1);   
+                                    i--;                               
+                                    console.log('dateResuult adter splice --->',dataResult.length); 
+                                    //dataResultLen--;
+                                    console.log('dataResultLen---->',dataResultLen);
+                                }
+                            }
+                            console.log('dataResulta available forms--->',dataResult);
+                            $scope.selectPackageObj.availableForms = dataResult;
+                            console.log('forms in paintAvailableFormList---->',$scope.selectPackageObj.availableForms);
+                        };
+                        
+                        $scope.showFlexTable = function(){
+                        setTimeout(function(){if(modalHandler(1) != undefined){modalHandler(1);}},200);
+                            showFlexTable();
+                        };
+                        $scope.hideFlexTable = function(){
+                            hideFlexTable();
+                        };
+                        
+                        $scope.moveFormsToRight = function() {                    
+                          console.log('moveFormsToRight ---- availableForms---->',$scope.selectPackageObj.availableForms);
+                          console.log('moveFormsToRight ---- availableForms length---->',$scope.selectPackageObj.availableForms.length);
+                          for(var i=0; i < $scope.selectPackageObj.selectedAvailableForms.length;i++) {
+                              if($scope.selectPackageObj.availableForms.length > 0 && $scope.selectPackageObj.selectedAvailableForms[i] != ''){
+                                  var index = $scope.selectPackageObj.availableForms.indexOf($scope.selectPackageObj.selectedAvailableForms[i]);
+                                  $scope.selectPackageObj.availableForms.splice(index, 1);
+                                  if($scope.selectPackageObj.selectedFormList == undefined){
+                                      $scope.selectPackageObj.selectedFormList = [];
+                                  }
+                                  $scope.selectPackageObj.selectedFormList.push( $scope.selectPackageObj.selectedAvailableForms[i] );
+                                  $scope.selectPackageObj.selectedAvailableForms[i] = '';
+                              }
+                          }
+                        }
+                        $scope.moveFormsToLeft1 = function() {
+                          for(var i=0; i < $scope.selectPackageObj.selectedRightForms.length;i++) {                   
+                              if($scope.selectPackageObj.selectedFormList.length > 0 && $scope.selectPackageObj.selectedRightForms[i] != ''){
+                                  var index = $scope.selectPackageObj.selectedFormList.indexOf($scope.selectPackageObj.selectedRightForms[i]);                       
+                                  $scope.selectPackageObj.selectedFormList.splice(index, 1); 
+                                  if($scope.selectPackageObj.availableForms == undefined){
+                                      $scope.selectPackageObj.availableForms = [];
+                                  }                                              
+                                      $scope.selectPackageObj.availableForms.push( $scope.selectPackageObj.selectedRightForms[i]);                        
+                                  $scope.selectPackageObj.selectedRightForms[i] = '';
+                                  
+                              }                  
+                          }
+                        }                         
+                        
+                        $scope.moveFormToLeft = function( selectedRightForm ) {
+                                var index = $scope.selectPackageObj.selectedFormList.indexOf(selectedRightForm);
+                                $scope.selectPackageObj.selectedFormList.splice(index, 1); 
+                                $scope.selectPackageObj.availableForms.push( selectedRightForm );
+                        }
+                        
+                        /*$scope.moveFormsToLeft = function() {
+                            for(var i=0; i < $scope.selectPackageObj.selectedRightForms.length;i++) {
+                                var index = $scope.selectPackageObj.selectedFormList.indexOf($scope.selectPackageObj.selectedRightForms[i]);
+                                $scope.selectPackageObj.selectedFormList.splice(index, 1); 
+                                $scope.selectPackageObj.availableForms.push( $scope.selectPackageObj.selectedRightForms[i] );
+                            }
+                        }*/
+                        
+                        $scope.moveFormsToDown = function() {               
+                          $scope.maxIndexForMoveDown = $scope.selectPackageObj.selectedFormList.length;                                                        
+                          for(var i=$scope.selectPackageObj.selectedRightForms.length; i > 0;i--) {                                                                                         
+                              var index = $scope.selectPackageObj.selectedFormList.indexOf($scope.selectPackageObj.selectedRightForms[i-1]); 
+                              console.log('Index down---',index);                                                                                              
+                              if( index+1 < $scope.maxIndexForMoveDown){           
+                                  console.log('enter into down logic');                   
+                                  $scope.selectedFormToMoveDown = $scope.selectPackageObj.selectedFormList[index];
+                                  $scope.selectPackageObj.selectedFormList[index] = $scope.selectPackageObj.selectedFormList[index+1];
+                                  $scope.selectPackageObj.selectedFormList[index+1] = $scope.selectedFormToMoveDown;
+                              } else {
+                                  console.log('Maximun index reached!');
+                              }                      
+                          }
+                        }
+                                    
+                        $scope.moveFormsToUp = function() {
+                          $scope.maxIndexForMoveUp = $scope.selectPackageObj.selectedFormList.length;                                    
+                          for(var i=0; i < $scope.selectPackageObj.selectedRightForms.length;i++) {                                                   
+                              var index = $scope.selectPackageObj.selectedFormList.indexOf($scope.selectPackageObj.selectedRightForms[i]);
+                              console.log('index up----',index);                                                                               
+                              if( index < $scope.maxIndexForMoveUp && index!=0){                       
+                                  $scope.selectedFormToMoveDown = $scope.selectPackageObj.selectedFormList[index];
+                                  $scope.selectPackageObj.selectedFormList[index] = $scope.selectPackageObj.selectedFormList[index-1];
+                                  $scope.selectPackageObj.selectedFormList[index-1] = $scope.selectedFormToMoveDown;
+                              } else {       
+                                  console.log('Can not move up hit index 0');                     
+                              }
+                          }
+                        }
+                        
+                        $scope.closeModalWindow = function(){
+                            parent.angular.element(parent.document.getElementById(parendFlexTableName)).scope().$$childTail.closeFlexModal();
+                        }
+                         
+                        
+                        $scope.createPackage = function(SelectExisting){
+                            showLoadingPopUp();
+                            var count = 0;
+                            var paramMap = {};
+                            $scope.selectedExtPackage = '';
+                            $scope.messages = [];
+                            if( SelectExisting ) {
+                                $scope.selectedExtPackage = angular.element(document.getElementById('ApplicationPackage')).scope().$$childTail.selectedRecords;
+                                console.log(' $scope.selectedExtPackage', $scope.selectedExtPackage);
+                                for(rec in $scope.selectedExtPackage){
+                                    count++;
+                                 }
+                                 if(count == 0) {
+                                    console.log(' ==> $scope 2==> ',$scope);
+                                   // $scope.messages.push({type: 'danger',msg: 'Please select one package:'});
+                                     alert('Please select at least one package.');
+
+                                    hideLoadingPopUp();
+                                    throw new Error('Please select one package:');
+                                }
+                                paramMap.packageId = $scope.selectedExtPackage;
+                                console.log('paramMap.packageId',paramMap.packageId.length);
+                                paramMap.pkgType = $scope.pkgType;
+                               // paramMap.requiredPackage = document.getElementById('RequiredpackageCheckBox').checked;
+                               // paramMap.hideForExternalUser = document.getElementById('HideForExternalCheckBox').checked;
+                                for(var key in $scope.selectedExtPackage){
+                                    paramMap.packageId = key;
+                                }
+                            } else {
+                                if($scope.selectPackageObj.packageName == '' || $scope.selectPackageObj.packageName == undefined){
+                                    $scope.messages.push({type: 'danger',msg: 'Please enter package Name.'});
+                                    hideLoadingPopUp();
+                                    return ;
+                                }
+                                if($scope.selectPackageObj.packageDescription == '' || $scope.selectPackageObj.packageDescription == undefined){
+                                    $scope.messages.push({type: 'danger',msg: 'Please enter package Description.'});
+                                    hideLoadingPopUp();
+                                    return ;
+                                }
+                                if( ( $scope.selectPackageObj.source == undefined || $scope.selectPackageObj.source.id == '' || $scope.selectPackageObj.source.id == undefined ) && $scope.selectPackageObj.showSource ){
+                                    $scope.messages.push({type: 'danger',msg: 'Please select package source.'});
+                                    hideLoadingPopUp();
+                                    return ;
+                                }
+                                
+                                if( $scope.selectPackageObj.selectedFormList == undefined || $scope.selectPackageObj.selectedFormList.length == 0 ){
+                                    $scope.messages.push({type: 'danger',msg: 'Please add atleast one form.'});
+                                    hideLoadingPopUp();
+                                    return ;
+                                }
+                                $scope.formidlst = [];
+                                for(var i=0; i < $scope.selectPackageObj.selectedFormList.length;i++) {
+                                    $scope.form = {};
+                                    $scope.form.id = $scope.selectPackageObj.selectedFormList[i].id;
+                                    $scope.form.selected = $scope.selectPackageObj.selectedFormList[i].selected;
+                                    $scope.formidlst.push( $scope.form );                                    
+                                }
+                                console.log('@save selected--->',$scope.selectPackageObj.selectedFormList.length);                                
+                                console.log('@save available--->',$scope.selectPackageObj.availableForms.length);
+                                paramMap.packageId = $scope.packageId;
+                                console.log('$scope.packageId---',$scope.packageId);
+                                paramMap.formids = angular.toJson($scope.formidlst);
+                                paramMap.pkgType = $scope.pkgType;
+                                paramMap.packageName = $scope.selectPackageObj.packageName;
+                                paramMap.packageDescription = $scope.selectPackageObj.packageDescription;
+                                
+                                
+                                
+                                
+                                paramMap.parendId = $scope.parendId;
+                                
+                                if( $scope.selectPackageObj.showSource ){
+                                    paramMap.source = $scope.selectPackageObj.source.id;
+                                }
+                                paramMap.recordType = $scope.recordType;
+                                paramMap.requiredPackage = $scope.selectPackageObj.requiredPackage;
+                                paramMap.hideForExternalUser = $scope.selectPackageObj.hideForExternalUser
+                                paramMap.businessFormid = $scope.businessFormid;
+                            }
+                            var deferred = $q.defer();
+                            Visualforce.remoting.Manager.invokeAction(
+                                _RemotingPackageActions.upsertAndSelectPackage,
+                                SelectExisting, $scope.parendId, paramMap,
+                                function(dataResult, event){
+                                console.log('event',event);
+                                    if (event.status) {
+                                       console.log('event1',event);
+
+                                        $scope.$apply(function () {
+                                            deferred.resolve(dataResult);
+                                            //$window.open(dataResult,'_self');
+                                        });
+                                        //closeAndRefreshParentTable();
+                                        hideLoadingPopUp();
+                                        console.log('event11',event);
+                                        parent.angular.element(parent.document.getElementById($scope.parendFlexTableId)).scope().$$childTail.closeFlexModal();
+                                        //parent.angular.element(parent.document.getElementById($scope.parendFlexTableId)).scope().closeFlexModal();
+                                        //parent.closeandrefreshPackageModal();
+                                    } else{
+                                        //parent.closePackageModal();
+                                        console.log('event12',event);
+                                        console.log('event.status',event.status);
+                                        $scope.$apply(function () {
+                                           //render error msg
+                                           hideLoadingPopUp();
+                                           $scope.messages.push({type: 'danger',msg: 'Please select one package:' + event.message});
+                                        });
+                                    } 
+                                },{ buffer: false, escape: false}
+                            );
+                        };
+                        
+                        $scope.getAvailableFormList = function(packageId){
+                            var deferred = $q.defer();
+                            Visualforce.remoting.Manager.invokeAction(
+                                _RemotingPackageActions.getFormList,
+                                $scope.selectPackageObj.selectedPackageForForms.id, $scope.pkgType,$scope.disableMandatory,
+                                function(dataResult, event){
+                                    if (event.status) {
+                                        $scope.$apply(function () {
+                                            deferred.resolve(dataResult);
+                                            console.log('In remote action--->',dataResult);
+                                            $scope.paintAvalaibleFormList(dataResult);
+                                            
+                                        });
+                                    } else{
+                                        $scope.$apply(function () {
+                                            $scope.messages.push({type: 'danger',msg: 'get Package List:' + event.message});
+                                           //render error msg
+                                        });
+                                    } 
+                                },{ buffer: false, escape: false}
+                            );
+                        };
+                        
+                        $scope.getAvailablePackageNameList = function(){
+                            var deferred = $q.defer();
+                            if($scope.selectPackageObj.selectedPackageType == undefined){
+                                $scope.selectPackageObj.selectedPackageType = {};
+                                $scope.selectPackageObj.selectedPackageType.id='';
+                            }
+                            
+                            Visualforce.remoting.Manager.invokeAction(
+                                _RemotingPackageActions.getPackageNames,
+                                $scope.businessFormid,$scope.parendId,$scope.selectPackageObj.selectedPackageType.id,
+                                function(dataResult, event){
+                                    if (event.status) {
+                                        $scope.$apply(function () {
+                                            deferred.resolve(dataResult);
+                                            $scope.paintPackageInfoSection(dataResult);
+                                            $scope.selectPackageObj.showRadioBtn = true;
+                                            
+                                        });
+                                    } else{
+                                        $scope.$apply(function () {
+                                            $scope.messages.push({type: 'danger',msg: 'Get Package:' + event.message});
+                                        //render error msg
+                                        });
+                                    } 
+                                },{ buffer: false, escape: false}
+                            );
+                        }
+                        
+                        $scope.getAvailablePackageTypes = function(){
+                            var deferred = $q.defer();
+                            
+                            Visualforce.remoting.Manager.invokeAction(
+                                _RemotingPackageActions.getPackageTypes,
+                                $scope.parendId,
+                                function(dataResult, event){
+                                    $scope.selectPackageObj.isLoading = false;
+                                    if (event.status) {
+                                        $scope.$apply(function () {
+                                            deferred.resolve(dataResult);
+                                            $scope.selectPackageObj = {};
+                                            $scope.selectPackageObj.packageTypes = dataResult;
+                                            
+                                            $scope.selectPackageObj.selectedPackageType = $scope.selectPackageObj.packageTypes[0];
+                                            //$scope.paintPackageInfoSection(dataResult);
+                                            
+                                            
+                                        });
+                                    } else{
+                                        $scope.$apply(function () {
+                                            $scope.messages.push({type: 'danger',msg: 'Get package types:' + event.message});
+                                        //render error msg
+                                        });
+                                    } 
+                                },{ buffer: false, escape: false}
+                            );
+                        }
+                        j$('#selectPackageDiv').show();
+                        if($scope.businessFormid == null || $scope.businessFormid == '' ) {
+                             $scope.getAvailablePackageTypes();
+                             $scope.IsEditPackage = true;
+                        } else {
+                            $scope.getAvailablePackageNameList('');
+                            $scope.IsEditPackage = false;
+                        }
+                    });
+                    
+                    
+                    angular.element(document).ready(function() {
+                        j$('.select-pkg-main-div').bind('DOMSubtreeModified', function() {
+                            console.log('change in DOM');
+                            //alert('change in DOM');
+                            setTimeout(function(){if(modalHandler(19) != undefined){modalHandler(19);}},200);
+                        });
+                        angular.bootstrap(document.getElementById("SelectPackageComponent"),['SelectPackageComponent']);
+                    });
+                    
+                    function showFlexTable(){
+                        var showCheckBox = angular.element(document.getElementById('SelectPackageComponent')).scope().selectPackageObj.showRequiredCheckBox;
+                        console.log('showCheckBox==========' , showCheckBox);
+                        if(!showCheckBox){
+                            j$("#SelectCheckBoxDiv").hide();
+                        }
+                        j$("#selectPackageFormId").show();
+                    }
+                    
+                    function hideFlexTable(){
+                        j$("#selectPackageFormId").hide();
+                    }
+                    
+                    function closeModalWindow(){
+                         angular.element(document.getElementById('SelectPackageComponent')).scope().closeModalWindow();
+                    }
+                    
+                    function selectPackage() {
+
+                        var isMandatoryPackage = j$('#RequiredpackageCheckBox').val();                      
+                        console.log('isMandatoryPackage---',isMandatoryPackage);
+                        
+                        angular.element(document.getElementById('SelectPackageComponent')).scope().createPackage(true, null, null, null );
+                      
+                    }
+                </script>
+            </apex:form>    
+        </apex:define>
+    </apex:composition>
+    </div>
+</apex:page>

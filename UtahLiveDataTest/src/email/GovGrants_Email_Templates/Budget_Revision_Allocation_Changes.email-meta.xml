@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Budget Revision Allocation Changes</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Budget Revision Allocation Changes</name>
+    <style>formalLetter</style>
+    <subject>USBE requested budget revision</subject>
+    <textOnly>Dear {!Award__c.GranteeOrganization__c},
+A budget revision is required for {!Award__c.ProgramName__c} due to a change in the allocation amount.
+
+Please click the link below to submit a revised budget.
+
+Click here
+
+Sincerely,
+
+UtahGrants Support Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

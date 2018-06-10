@@ -1,0 +1,6 @@
+<apex:page cache="false" standardController="BudgetCategory__c" extensions="BudgetCategoryViewCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary /> 
+          <GNT:FlexViewLayout templateName="{!pageTemplateName}" layoutType="View" recordId="{!recordId}" deleteURL="{!deleteURL}" hideSidebar="true"  
+            flexTableParameters="{!keyValueMap}"/>
+</apex:page>

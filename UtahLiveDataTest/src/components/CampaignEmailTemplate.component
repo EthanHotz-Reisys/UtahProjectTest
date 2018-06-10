@@ -1,0 +1,4 @@
+<apex:component controller="CampaignCtrl" access="global">
+    <apex:attribute name="CampId" type="Id" description="Id of the Campaign" assignTo="{!recordId}"/>
+    <apex:outputText value="{!Body}" style="display:block;" escape="false"/>
+</apex:component>

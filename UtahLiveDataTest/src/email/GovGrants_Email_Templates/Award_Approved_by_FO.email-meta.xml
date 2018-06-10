@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Award approved by FO</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Award Approved by FO</name>
+    <style>formalLetter</style>
+    <subject>Award {!Award__c.Name} approved</subject>
+    <textOnly>Dear {!Award__c.POUser__c},
+This email is to notify you that, the Award # {!Award__c.AwardNumber__c}, {!Award__c.Name} has been created for {!Award__c.GranteeOrganization__c} and is waiting for your approval.
+
+Kindly login to the UtahGrants Systems and start reviewing the Award details.
+
+Sincerely,
+
+UtahGrants Support Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,70 @@
+<apex:page controller="ReviewAssignmentAddCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+	
+	<!-- Including JS and CSS resources 
+	<c:ExternalLibrary />
+	<apex:composition template="GNT__PhaseTemplate">
+		<apex:define name="body">
+			<apex:form >
+				<GNT:PageMessages />
+				<div class="bs container-fluid">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<span class="bold-text">
+								<h3 class="panel-title">Select Reviewers - {!reviewStepApplication.Application__r.Name}</h3>
+							</span>
+							<span class="button-string">
+								<apex:commandbutton action="{!addToReviewStepApplication}"	value="Assign" styleClass="customBtn"
+									rendered="{!lstReviewStepAssignmentUsersWrapper.size>0}" />
+								<apex:commandbutton action="{!Cancel}" value="Cancel" styleClass="customBtn"
+									rendered="{!lstReviewStepAssignmentUsersWrapper.size>0}" />
+							</span>
+						</div>
+						<div class="panel-body panel-body-ext">
+							<apex:outputPanel rendered="{!lstReviewStepAssignmentUsersWrapper.size>0}">
+								<div class="row">
+									<div class="col-md-12">
+										<apex:dataTable value="{!lstReviewStepAssignmentUsersWrapper}"
+											var="assignment" styleClass="table"
+											rendered="{! lstReviewStepAssignmentUsersWrapper.size>0}">
+											<apex:column >
+												<label for="" class="508Label" style="display: none;">
+													inptCheckbox </label>
+												<apex:facet name="header">Select</apex:facet>
+												<apex:inputCheckbox id="chkbox"
+													value="{!assignment.selected}" styleClass="508Input" />
+											</apex:column>
+											<apex:column >
+												<apex:facet name="header">Name</apex:facet>
+												<apex:outputText value="{!assignment.user.Reviewer__r.Name}" />
+											</apex:column>
+											<apex:column >
+												<apex:facet name="header">Organization</apex:facet>
+												<apex:outputText value="{!assignment.user.Reviewer__r.OrganizationAccountName__c}" />
+											</apex:column>
+											<apex:column >
+												<apex:facet name="header">Email</apex:facet>
+												<apex:outputText value="{!assignment.user.Reviewer__r.Email}" />
+											</apex:column>
+											<apex:column >
+												<apex:facet name="header">Phone</apex:facet>
+												<apex:outputText value="{!assignment.user.Reviewer__r.Phone}" />
+											</apex:column>
+										</apex:dataTable>
+									</div>
+								</div>
+							</apex:outputPanel>
+							<apex:outputpanel rendered="{!lstReviewStepAssignmentUsersWrapper.size==0}">
+								<p class="text-center">
+									<apex:outputText value="There are no Reviewers available to be added." rendered="{!lstReviewStepAssignmentUsersWrapper.size==0}" />
+									<br />
+									<apex:commandbutton action="{!Cancel}" value="Click to go back to Review Step" rendered="{! lstReviewStepAssignmentUsersWrapper.size==0}"
+										styleClass="customBtn" />
+								</p>
+							</apex:outputpanel>
+						</div>
+					</div>
+				</div>
+			</apex:form>
+		</apex:define>
+	</apex:composition>-->
+</apex:page>

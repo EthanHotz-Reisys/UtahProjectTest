@@ -1,0 +1,52 @@
+<apex:page sidebar="false" standardStylesheets="false" showHeader="false" standardController="UserRegistration__c" extensions="CommunityApprovalDetailsCtrl">
+  
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+    <!--GNT:PageMessages /--> 
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">
+            <apex:form >
+            <div class="bs container-fluid">
+            	<apex:outputPanel id="mainPanel" >
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" style="height: 50px;">
+                                <div class="col-lg-9"><b>Approval Record Details</b></div>
+                                    <div class="col-lg-3">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <apex:commandbutton styleclass="customBtn pull-right" action="{!cancelPage}" value="Back" />
+                                                <apex:commandbutton rendered="{!NOT(processCompleted)}" styleclass="customBtn pull-right" action="{!rejectRecord}" value="Reject" rerender="mainPanel" style="margin-right: 15px !important;"/>
+                                                <apex:commandbutton rendered="{!NOT(processCompleted)}" styleclass="customBtn pull-right" action="{!approveRecord}" value="Approve" rerender="mainPanel" style="margin-right: 15px !important;"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-body panel-body-ext"> 
+                                    <apex:repeat value="{!$ObjectType.UserRegistration__c.FieldSets.ExtUserReg_Approval_Details}" var="approvalFlds" rendered="{!NOT(processCompleted)}">
+                                        <div class="row" style="padding-bottom: 5px;">
+                                            <apex:outputpanel > 
+                                                <div class="col-lg-6"> 
+                                                    <apex:outputText styleClass="customLabelstyle" value="{!approvalFlds.Label}"/>
+                                                </div>
+                                                <div class="col-lg-6"> 
+                                                    <apex:outputText value="{!UserRegistration__c[approvalFlds]}" />
+                                                </div>
+                                            </apex:outputpanel> 
+                                        </div>
+                                    </apex:repeat>
+                                    <apex:outputPanel id="messagePanel" rendered="{!processCompleted}" >
+                        				{!messageString}
+                    				</apex:outputPanel>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </apex:outputPanel>
+                </div>
+            </apex:form> 
+        </apex:define>
+    </apex:composition>
+    
+</apex:page>

@@ -1,0 +1,17 @@
+<apex:page showHeader="false" sidebar="false" standardController="account" extensions="OrganizationViewCtrl" standardStylesheets="false">
+    
+    <!-- Including JS and CSS Resources -->
+    <c:ExternalLibrary />
+
+    <apex:composition template="GNT__PageTemplate">
+        <!-- Dynamic Layout -->
+        <apex:define name="content">
+        <!-- 
+            <GNT:DynamicLayout templateName="{!templateName}" recordId="{!recordId}" layoutType="View" flexTableParameters="{!keyValueMap}"/>
+            -->
+            <GNT:FlexViewLayout templateName="{!templateName}"  recordId="{!recordId}" layoutType="View" 
+                flexTableParameters="{!keyValueMap}" /> 
+                
+        </apex:define>
+    </apex:composition>
+</apex:page>

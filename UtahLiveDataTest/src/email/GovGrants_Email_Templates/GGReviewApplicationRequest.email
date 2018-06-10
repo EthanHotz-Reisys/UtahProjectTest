@@ -1,0 +1,26 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p style="margin: 0cm 0cm 12pt;"><font face="Times New Roman, Times, serif">Hello {!Application__c.PrimaryApplicant__c},<o:p></o:p></font></p><p style="margin: 0cm 0cm 12pt;"><font face="Times New Roman, Times, serif">The Application
+{!ApplicationReview__c.ApplicationId__c}&nbsp;has been assigned to you for your
+review. Please login to EGMS System to complete the review.<o:p></o:p></font></p><p style="margin: 0cm 0cm 12pt;"><font face="Times New Roman, Times, serif">Please
+do not reply to this email. You may contact the GovGrants Support Team at<span class="apple-converted-space">&nbsp;</span><a href="mailto:govgrants@support.com">govgrants@support.com</a><span class="apple-converted-space">&nbsp;</span>if you have any questions or need
+assistance with this task.<o:p></o:p></font></p><p style="margin: 0cm 0cm 0.0001pt;"><font face="Times New Roman, Times, serif">Sincerely,<o:p></o:p></font></p><p>
+
+
+
+
+
+
+
+<span style="line-height: 107%;"><font face="Times New Roman, Times, serif">EGMS Team</font></span></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

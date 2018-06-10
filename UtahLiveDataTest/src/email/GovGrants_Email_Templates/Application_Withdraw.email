@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<font face="Times New Roman, Times, serif" style="">Dear {!Application__c.ApproverName__c},</font>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p style="margin-bottom: 12pt;"><font face="Times New Roman, Times, serif" style="">A Withdrawal of Funding for the {!Application__c.ProgramTitle__c} program for {!Application__c.FiscalYear__c} has been submitted for your approval.</font></p><p style="margin-bottom: 12pt;"><font face="Times New Roman, Times, serif">Please be advised that by waiving this allocation, your school or district is permanently declining these funds and that no application can be submitted during this funding round. The allocation will be redistributed to other eligible organizations, and your school or district will not be able to apply for funds from this program again until the next funding cycle.</font></p><p style="margin-bottom: 12pt;"><font face="Times New Roman, Times, serif">To review and reject or approve the withdrawal, please click the link below.</font></p><p style="margin-bottom: 12pt;"><font face="Times New Roman, Times, serif">Click <a href="{!Application__c.ApplicationHtmlLink__c}">here</a></font></p><p style="margin: 0cm 0cm 0.0001pt;"><font face="Times New Roman,Times,Serif" size="3">Sincerely,</font></p><p style="margin-bottom: 12pt;"><font face="Times New Roman, Times, serif"></font></p><p style="margin-bottom: 12pt;"><font face="Times New Roman,Times,Serif" style="background-color: rgb(255, 255, 255);">UtahGrants Support Team</font></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[<br>]]></td>
+</tr>
+</table>

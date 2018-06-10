@@ -1,0 +1,23 @@
+<apex:page controller="GNT.DynamicPageCtrl" standardStylesheets="false" showHeader="false" sidebar="false" action="{!initiate}">
+    <style>
+    .bs .nav-tabs > li {
+        margin-bottom: -1px;
+        display: inline-block;
+        float: none;
+    }
+    .bs .panel-footer {
+        height : 60px;
+    }
+/*     .requiredFieldMessage{ */
+/*         padding-top: 29px !important; */
+/*     } */
+    
+    </style>
+    <c:ExternalLibrary />    
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content"> 
+            <c:FlexEditLayout createDefaultValues="{!listDefaultValues}"  flexTableParameters="{!keyValueMap}" templateName="{!templateName}" recordId="{!recordId}" layoutType="Edit" hideCancelBtn="true" hideSidebar="false" saveUrl="{!savePage}" parentLayoutId="{!parentLayoutId}" packageId="{!packageId}" formTypes="{!formTypes}"/>
+        </apex:define>
+    </apex:composition>        
+
+</apex:page>

@@ -1,0 +1,29 @@
+<apex:page sidebar="false" standardStylesheets="false" showHeader="false" >
+<c:ExternalLibrary />
+ <apex:composition template="GNT__PageTemplate">
+  <apex:define name="content">
+  <h1> SF-424D Assurances-Construction Programs Form (4040-0009) </h1>
+  <br/>
+  <br/>
+  <p><PRE> 
+     According to the Paperwork Reduction Act of 1995, an agency may not conduct or sponsor, and a person is not required to respond to a collection of information unless it displays a valid OMB control number.
+     The valid OMB control number for this information collection is 4040-0009. The time required to complete this information collection is estimated to average 30 minutes per response, including the time to
+     review instructions, search existing data resources, gather the data needed and complete and review the information collection. If you have comments concerning the accuracy of the time estimate(s) or
+     suggestions for improving this form, please write to: U.S. Department of Health and Human Services, OS/OCIO/PRA, 200 Independence Ave., S.W., Suite 537-H, Washington D.C. 20201, Attention: PRA Reports
+     Clearance Officer.</PRE></p>
+     <br/>
+    
+     <PRE>
+           Agency        Total Responses        Average Burden per response in Hours        Total Burden
+           USDA          916                    15/60                                       229
+           DOI           1334                   48/60                                       1076
+           VA            141                    15/60                                       35
+           DOC           567                    15/60                                       142
+           DHS           73                     30/60                                       37
+           Total         3031                                                               1519
+           
+           1519hrs.x60 = 91140 total minutes
+           91140 minutes / 3031 total responses = 30 minutes per response </PRE>
+   </apex:define>        
+ </apex:composition>
+</apex:page>

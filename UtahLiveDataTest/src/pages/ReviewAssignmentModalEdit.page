@@ -1,0 +1,13 @@
+<apex:page standardController="Review__c" title="Review Assignment Edit" extensions="ReviewAssignmentEditCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+    
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent"> 
+            <GNT:ModalFlexEditLayout templateName="{!pageTemplateName}"  HideSidebar="true" HideCancelbtn="true" recordId="{!recordId}" layoutType="Edit" flexTableParameters="{!keyValueMap}"
+        saveURL="{!savePage}" cancelURL="{!cancelPage}" />
+        </apex:define>
+    </apex:composition>
+    
+</apex:page>

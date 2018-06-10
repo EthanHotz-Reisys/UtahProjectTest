@@ -1,0 +1,19 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<div><br></div>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="Times New Roman"><font face="Times New Roman, Times, serif">Hello,</font><strong><font face="Times New Roman, Times, serif"><br><br></font></strong><font face="Times New Roman, Times, serif">This </font></font><font face="Times New Roman"><font face="Times New Roman, Times, serif"><font face="Times New Roman, Times, serif">email is to notify you that, the Program Approver has approved the Progress Report</font></font> #{!ProgressReports__c.Name} been approved by {!ProgressReports__c.ProgramApprover__c}.<br></font><br><p style="margin:0cm;margin-bottom:.0001pt"><font size="3" face="Times New Roman,Times,Serif"><span style="color:black"><u><b>Report
+Details:</b></u> <br>
+Award ID: {!ProgressReports__c.Award__c}</span></font></p><p style="margin:0cm;margin-bottom:.0001pt"><font size="3" face="Times New Roman,Times,Serif"><span style="color:black">Grantee Organization: {!ProgressReports__c.OrganizationName__c}</span></font></p><p style="margin:0cm;margin-bottom:.0001pt"><font size="3" face="Times New Roman,Times,Serif"><span style="color:black">
+Report Type: </span></font><font size="3" face="Times New Roman,Times,Serif"><span style="color:black">{!ProgressReports__c.ReportType__c}</span></font></p><p style="margin:0cm;margin-bottom:.0001pt"><font size="3" face="Times New Roman,Times,Serif"><span style="color:black">Reporting Period Start Date: {!ProgressReports__c.ReportingPeriodStartDate__c}</span></font></p><p style="margin:0cm;margin-bottom:.0001pt"><font size="3" face="Times New Roman,Times,Serif"><span style="color:black">Reporting Period End Date: {!ProgressReports__c.ReportingPeriodEndDate__c}<br></span></font></p><p style="margin:0cm;margin-bottom:.0001pt"><font size="3" face="Times New Roman,Times,Serif"><span style="color:black">Frequency: {!ProgressReports__c.Frequency__c}<br>
+<br>
+Kindly login to the EGMS System and follow the link for more details: {!ProgressReports__c.Link}</span></font></p></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><div><font face="Times New Roman, Times, serif"><span style="color: rgb(0, 0, 0); font-family: Times New Roman; font-style: normal; font-weight: normal; text-decoration: none;"><br></span></font></div><div><font face="Times New Roman, Times, serif"><span style="color: rgb(0, 0, 0); font-family: Times New Roman; font-style: normal; font-weight: normal; text-decoration: none;"><p>Please do not reply to this email. You may contact the GovGrants Support Team at <a href="mailto:govgrants@support.com"><u><font color="#0000ff">govgrants@support.com</font></u></a> if you have any questions or need assistance with this task.</p><br></span></font></div><div><font face="Times New Roman, Times, serif"><span style="background-color: rgb(255, 255, 255);">Sincerely,&nbsp;</span><br style="background-color: rgb(255, 255, 255);">EGMS Team</font></div></div>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

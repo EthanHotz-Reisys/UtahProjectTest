@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE This Email Template will notify the Owner of the Application that Application has approved</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Grantee Notify Application Owner that Application in Approved internally</name>
+    <style>freeForm</style>
+    <subject>This is to inform you that your Application {!Application__c.Title__c} has been approved</subject>
+    <textOnly>Subject: Application  {!Application__c.Title__c}  has been Approved.
+
+This is to inform you that Application  {!Application__c.Title__c} has been approved by the Program and Fiscal officials. Please submit the Application for further consideration to the Grantor.
+
+Sincerely,
+Enterprise Grants Management System(EGMS)</textOnly>
+    <type>html</type>
+</EmailTemplate>

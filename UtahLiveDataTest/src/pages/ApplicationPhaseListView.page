@@ -1,0 +1,18 @@
+<apex:page cache="false" controller="ApplicationPhaseListViewCtrl" standardStylesheets="false" sidebar="false" showHeader="false">
+	
+    <c:ExternalLibrary />
+
+    <apex:outputPanel >
+        <apex:composition template="GNT__ModalTemplate">
+            <apex:define name="ModalContent">
+	            <apex:outputPanel rendered="{!currentAccount = 'USBE' || currentAccount = 'SYSTEM'}">   
+	                <GNT:FlexTable flexTableName="AppReviewListWithPromote" tableId="AppReviewListWithPromote" flexTableParameters="{!keyValueMap}"/>
+	            </apex:outputPanel>
+	            <apex:outputPanel rendered="{!currentAccount != 'USBE' && currentAccount != 'SYSTEM'}">   
+	                <GNT:FlexTable flexTableName="AppReviewList" tableId="AppReviewList" flexTableParameters="{!keyValueMap}"/>
+	            </apex:outputPanel>
+            </apex:define>
+        </apex:composition>
+    </apex:outputPanel>
+
+</apex:page>

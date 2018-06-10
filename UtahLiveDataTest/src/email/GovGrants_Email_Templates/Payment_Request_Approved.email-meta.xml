@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE When Manager Approves Payment request then email sent to Payment Request Owner</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Payment Request Approved</name>
+    <style>formalLetter</style>
+    <subject>Notification: Payment Request #{!PaymentRequest__c.Name} has been Approved</subject>
+    <textOnly>Dear {!PaymentRequest__c.OwnerFirstName} {!PaymentRequest__c.OwnerLastName},
+This email is to notify you that, the Payment Request #{!PaymentRequest__c.Name} for the Grant #{!PaymentRequest__c.Grant__c} for {!PaymentRequest__c.LEAName__c} for ${!PaymentRequest__c.TotalRequestedAmountthisAction__c}has been Approved and will be processed soon.
+
+Payment Request Details:
+
+Award: #{!PaymentRequest__c.Award__c}
+
+
+
+Sincerely,
+
+UtahGrants Support Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

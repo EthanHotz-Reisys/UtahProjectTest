@@ -1,0 +1,2411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>TermConditionEdit</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>TermConditionView</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>[Business] Terms and Conditions for Grants ,Awards (The lookup to Package may not be required in this case )</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Read</externalSharingModel>
+    <fields>
+        <fullName>Acknowledgement__c</fullName>
+        <externalId>false</externalId>
+        <label>Acknowledgement</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Agreement1__c</fullName>
+        <description>This field is used in Grantor: Terms and Conditions form.</description>
+        <externalId>false</externalId>
+        <label>Agreement1</label>
+        <length>22768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AmountWithheld__c</fullName>
+        <externalId>false</externalId>
+        <label>Percentage of Award Amount Withheld</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Announcement__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Announcement</label>
+        <referenceTo>Announcement__c</referenceTo>
+        <relationshipLabel>Terms and Conditions</relationshipLabel>
+        <relationshipName>Terms_and_Conditions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ApprovalRequireNewAward__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If this is marked as Yes, system shall ask the reviewer upon approval, if a new award needs to be created.</description>
+        <externalId>false</externalId>
+        <label>Approval Require a New Award?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AutoAddToAward__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the Term/Condition will be automatically added to the Award</inlineHelpText>
+        <label>Auto Add to Award</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AvailabilityDate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Date on which the Post-Award submission will be available to the external user</inlineHelpText>
+        <label>Availability Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AwardName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Award__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Award Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Award__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Award</label>
+        <referenceTo>Award__c</referenceTo>
+        <relationshipName>Terms_and_Conditions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CalReportingEndDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Reporting End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CalReportingStartDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Reporting Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Desk Review</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Progress Report</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Program Report</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CopiedFrom__c</fullName>
+        <description>ID value of field from where Term &amp;  Condition Record is created</description>
+        <externalId>false</externalId>
+        <label>Copied From</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DateSigned__c</fullName>
+        <externalId>false</externalId>
+        <label>DateSigned</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>20</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DueDateDays__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>How many days after the end of the reporting period?</inlineHelpText>
+        <label>Due Date Days</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EffectiveFrom__c</fullName>
+        <description>Allow user to enter a date. Prepopulated current date by default. This date cannot be in the past. Has to be current or future. The term can be added to grants/awards starting from the effective date. Required.</description>
+        <externalId>false</externalId>
+        <label>Effective From</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EffectiveTill__c</fullName>
+        <description>Date till when Term and Conditions are valid</description>
+        <externalId>false</externalId>
+        <label>Effective Till</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FixedEndDate__c</fullName>
+        <description>The date starting when the term becomes inactive.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date starting when the term becomes inactive. This field gets populated only if &apos;Report End Date&apos; is &apos;Fixed&apos;</inlineHelpText>
+        <label>Fixed End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FixedStartDate__c</fullName>
+        <description>The date starting when the term becomes active.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date starting when the term becomes active. This field gets populated only if &apos;Report Start Date&apos; is &apos;Fixed&apos;.</inlineHelpText>
+        <label>Fixed Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Frequency__c</fullName>
+        <externalId>false</externalId>
+        <label>Frequency</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Fixed</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Monthly</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Quarterly</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Semi-Annually</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Annually</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>GrantTitle__c</fullName>
+        <externalId>false</externalId>
+        <formula>Award__r.Grant__r.ProjectTitle__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Grant Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Grant__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Grant</label>
+        <referenceTo>Grant__c</referenceTo>
+        <relationshipName>Terms_and_Conditions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>GranteePOC__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>External user who will receive the task alerts for post award submission.</inlineHelpText>
+        <label>Grantee POC</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Terms_and_Conditions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>HideAutoAdd__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(Award__c==null,false,true)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide Auto Add</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideDeleteBtn__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(ISPICKVAL(Status__c,&apos;Draft&apos;), false, true)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide Delete Button</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideEditBtn__c</fullName>
+        <description>Logic for Hiding Edit Button</description>
+        <externalId>false</externalId>
+        <formula>OR(AND(Program__c=null,Award__c=null,Text(Status__c)=&apos;Active&apos;),
+   AND(Award__c!=null,Award__r.HideNewBtn__c),
+   AND(Program__c!=null,NOT(ISPICKVAL(Program__r.Status__c,&apos;Created&apos;)))
+   )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Logic for Hiding Edit Button</inlineHelpText>
+        <label>Hide Edit Btn</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideNewBtn__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Award__c!=null,Award__r.HideNewBtn__c,Award__r.HideNewBtn__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide New Buttons</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideProgramEdit__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(ISPICKVAL(Program__r.Status__c,&apos;Created&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide Program Edit</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>InactiveOn__c</fullName>
+        <description>Allow user to enter a date. The date has to be in the future. The term will no longer be available to be added to awards/grants starting this date. This field is optional.</description>
+        <externalId>false</externalId>
+        <label>Inactive On</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>InstructionsToGrantee__c</fullName>
+        <externalId>false</externalId>
+        <label>Instructions to Grantee</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>IsFixed__c</fullName>
+        <externalId>false</externalId>
+        <formula>ISPICKVAL( ReportingFrequency__c ,&apos;Fixed&apos;)</formula>
+        <label>IsFixed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsPaymentRequest__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>IsPaymentRequest</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsRecurring__c</fullName>
+        <externalId>false</externalId>
+        <formula>ISPICKVAL( ReportingFrequency__c , &apos;Recurring&apos;)</formula>
+        <label>IsRecurring</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LegislativeMgmtReference__c</fullName>
+        <description>Legislative/Managament Reference</description>
+        <externalId>false</externalId>
+        <label>Legislative/Managament Reference</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PaymentRequestPackage__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Payment Request Package</label>
+        <referenceTo>GNT__Package__c</referenceTo>
+        <relationshipName>Terms_and_Conditions1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Program__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Program</label>
+        <referenceTo>Program__c</referenceTo>
+        <relationshipName>Terms_and_Conditions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ReportEndDate__c</fullName>
+        <description>Date on which the report&apos;s frequency should end</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Budget Period Start Date - The reporting cycle should end on current Budget Period End Date 
+Fixed Date - end on a fixed date</inlineHelpText>
+        <label>Ending Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Budget Period End Date</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Fixed</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ReportName__c</fullName>
+        <externalId>false</externalId>
+        <label>Report Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReportStartDate__c</fullName>
+        <description>Used for Post Award Submission Report creation</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Budget Period Start Date - The reporting cycle should start from current Budget Period Start Date
+Fixed Date - start from a fixed date</inlineHelpText>
+        <label>Beginning Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Budget Period Start Date</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Fixed</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ReportingFrequency__c</fullName>
+        <externalId>false</externalId>
+        <label>Reporting Frequency</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Fixed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Recurring</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ReportingPeriod__c</fullName>
+        <externalId>false</externalId>
+        <label>Reporting Period</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Calendar Year</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Federal Fiscal Year</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>State Fiscal Year</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Academic Year</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Award Year</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SecondaryLocation__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Location</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>SequenceNo__c</fullName>
+        <description>Sequence Number of how Terms&amp;Conditions are listed</description>
+        <externalId>false</externalId>
+        <label>Print Sequence No.</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Signature__c</fullName>
+        <description>Signature of the User who signed the terms and conditions</description>
+        <externalId>false</externalId>
+        <label>Signature</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SiteVisitDateTime__c</fullName>
+        <externalId>false</externalId>
+        <label>Site Visit Date/Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SiteVisitLocationText__c</fullName>
+        <externalId>false</externalId>
+        <formula>Award__r.Grant__r.InternalOrganization__r.BillingStreet +&apos;  &apos;+ Award__r.Addressline2__c+&apos;,&apos;+ Award__r.Grant__r.InternalOrganization__r.BillingCity +&apos; , &apos;+ Award__r.Grant__r.InternalOrganization__r.BillingState +&apos; , &apos;+ Award__r.Grant__r.InternalOrganization__r.BillingPostalCode	 +&apos; , &apos;+ Award__r.Grant__r.InternalOrganization__r.BillingCountry</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Site Visit Location</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SiteVisitLocation__c</fullName>
+        <externalId>false</externalId>
+        <label>Site Visit Location</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Primary Place of Performance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other Location</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SiteVisitPeriod__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND(NOT(ISBLANK(DateValue(VisitEndDateTime__c))),NOT(ISBLANK(DateValue(SiteVisitDateTime__c)))),TEXT(MONTH(DateValue(SiteVisitDateTime__c)))+&quot;/&quot; +TEXT(DAY(DateValue(SiteVisitDateTime__c)))+&quot;/&quot; +TEXT(YEAR(DateValue(SiteVisitDateTime__c)))+&quot;--&quot;+ TEXT(MONTH(DateValue(VisitEndDateTime__c)))+&quot;/&quot; +TEXT(DAY(DateValue(VisitEndDateTime__c)))+&quot;/&quot; +TEXT(YEAR(DateValue(VisitEndDateTime__c))) , &apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Site Visit Period</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Source</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Standard</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Federal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Grant</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Program</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Active, Inactive. If the Effective Date is current or in the past and if the Inactive On date is in the future, the Term is Active. If the Inactive Date is in the past, the term is Inactive. Prepopulated. Read Only.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Inactive</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Fulfilled</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Draft</fullName>
+                    <default>true</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SubmissionPackageType__c</fullName>
+        <externalId>false</externalId>
+        <label>Submission Package Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Submission Package</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Attachment</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SubmissionPackage__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Submission Package</label>
+        <referenceTo>GNT__Package__c</referenceTo>
+        <relationshipName>Terms_and_Conditions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SubmissionRequired__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Whether a submission (task) is to be created for the external user?</description>
+        <externalId>false</externalId>
+        <label>Submission Required</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SubmissionTaskCreated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Submission Task Created</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SubmissionTitle__c</fullName>
+        <externalId>false</externalId>
+        <label>Submission Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SubmissionType__c</fullName>
+        <externalId>false</externalId>
+        <label>Submission Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Progress Report</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Financial Report</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Payment Request</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>TaskAvailability__c</fullName>
+        <description>The task will be made available to the grantee &apos;X&apos; number of days before the due date, based on the number entered here.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter number of days prior to Due Date</inlineHelpText>
+        <label>Task Availability</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TermType__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Term</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Condition</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <description>Title of the term</description>
+        <externalId>false</externalId>
+        <label>Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>State</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Program</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Grant</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Award</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UpcomingReportSubmissionDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Upcoming Report Submission Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>VisitEndDateTime__c</fullName>
+        <description>Site Visit End Date and Time</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Site Visit End Date and Time</inlineHelpText>
+        <label>Site Visit End Date/Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>WillAgencywithholdFundsifnotSubmit__c</fullName>
+        <externalId>false</externalId>
+        <label>Funds withheld if report isn’t submitted</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>MST:Term and Condition</label>
+    <nameField>
+        <displayFormat>TC-{0000}</displayFormat>
+        <label>ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Terms and Conditions</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Condition</fullName>
+        <active>true</active>
+        <label>Condition</label>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Desk Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Progress Report</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Frequency__c</picklist>
+            <values>
+                <fullName>Annually</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Semi-Annually</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReportEndDate__c</picklist>
+            <values>
+                <fullName>Budget Period End Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReportStartDate__c</picklist>
+            <values>
+                <fullName>Budget Period Start Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReportingFrequency__c</picklist>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recurring</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReportingPeriod__c</picklist>
+            <values>
+                <fullName>Academic Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Calendar Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Federal Fiscal Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State Fiscal Year</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SiteVisitLocation__c</picklist>
+            <values>
+                <fullName>Other Location</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primary Place of Performance</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Source__c</picklist>
+            <values>
+                <fullName>Federal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fulfilled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SubmissionPackageType__c</picklist>
+            <values>
+                <fullName>Attachment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submission Package</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SubmissionType__c</picklist>
+            <values>
+                <fullName>Financial Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Progress Report</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TermType__c</picklist>
+            <values>
+                <fullName>Condition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Term</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>WillAgencywithholdFundsifnotSubmit__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PaymentRequest</fullName>
+        <active>true</active>
+        <label>Payment Request</label>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Desk Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Progress Report</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Frequency__c</picklist>
+            <values>
+                <fullName>Annually</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Semi-Annually</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReportEndDate__c</picklist>
+            <values>
+                <fullName>Budget Period End Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReportStartDate__c</picklist>
+            <values>
+                <fullName>Budget Period Start Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReportingFrequency__c</picklist>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recurring</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReportingPeriod__c</picklist>
+            <values>
+                <fullName>Academic Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Calendar Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Federal Fiscal Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State Fiscal Year</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SiteVisitLocation__c</picklist>
+            <values>
+                <fullName>Other Location</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primary Place of Performance</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Source__c</picklist>
+            <values>
+                <fullName>Federal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fulfilled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SubmissionPackageType__c</picklist>
+            <values>
+                <fullName>Attachment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submission Package</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SubmissionType__c</picklist>
+            <values>
+                <fullName>Financial Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Progress Report</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TermType__c</picklist>
+            <values>
+                <fullName>Condition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Term</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>WillAgencywithholdFundsifnotSubmit__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>ProgressReport</fullName>
+        <active>true</active>
+        <label>Progress Report</label>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Desk Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Progress Report</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Frequency__c</picklist>
+            <values>
+                <fullName>Annually</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Semi-Annually</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReportEndDate__c</picklist>
+            <values>
+                <fullName>Budget Period End Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReportStartDate__c</picklist>
+            <values>
+                <fullName>Budget Period Start Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReportingFrequency__c</picklist>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recurring</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReportingPeriod__c</picklist>
+            <values>
+                <fullName>Academic Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Calendar Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Federal Fiscal Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State Fiscal Year</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SiteVisitLocation__c</picklist>
+            <values>
+                <fullName>Other Location</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primary Place of Performance</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Source__c</picklist>
+            <values>
+                <fullName>Federal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fulfilled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SubmissionPackageType__c</picklist>
+            <values>
+                <fullName>Attachment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submission Package</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SubmissionType__c</picklist>
+            <values>
+                <fullName>Financial Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Progress Report</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TermType__c</picklist>
+            <values>
+                <fullName>Condition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Term</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>WillAgencywithholdFundsifnotSubmit__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>ReportingRequirement</fullName>
+        <active>true</active>
+        <label>Reporting Requirement</label>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Desk Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Progress Report</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Frequency__c</picklist>
+            <values>
+                <fullName>Annually</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Semi-Annually</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReportEndDate__c</picklist>
+            <values>
+                <fullName>Budget Period End Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReportStartDate__c</picklist>
+            <values>
+                <fullName>Budget Period Start Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReportingFrequency__c</picklist>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recurring</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReportingPeriod__c</picklist>
+            <values>
+                <fullName>Academic Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Calendar Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Federal Fiscal Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State Fiscal Year</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SiteVisitLocation__c</picklist>
+            <values>
+                <fullName>Other Location</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primary Place of Performance</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Source__c</picklist>
+            <values>
+                <fullName>Federal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fulfilled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SubmissionPackageType__c</picklist>
+            <values>
+                <fullName>Attachment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submission Package</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SubmissionType__c</picklist>
+            <values>
+                <fullName>Financial Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Progress Report</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TermType__c</picklist>
+            <values>
+                <fullName>Condition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Term</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>WillAgencywithholdFundsifnotSubmit__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>SiteVisit</fullName>
+        <active>true</active>
+        <label>Site Visit</label>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Desk Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Progress Report</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Frequency__c</picklist>
+            <values>
+                <fullName>Annually</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Semi-Annually</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReportEndDate__c</picklist>
+            <values>
+                <fullName>Budget Period End Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReportStartDate__c</picklist>
+            <values>
+                <fullName>Budget Period Start Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReportingFrequency__c</picklist>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recurring</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReportingPeriod__c</picklist>
+            <values>
+                <fullName>Academic Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Calendar Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Federal Fiscal Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State Fiscal Year</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SiteVisitLocation__c</picklist>
+            <values>
+                <fullName>Other Location</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primary Place of Performance</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Source__c</picklist>
+            <values>
+                <fullName>Federal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fulfilled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SubmissionPackageType__c</picklist>
+            <values>
+                <fullName>Attachment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submission Package</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SubmissionType__c</picklist>
+            <values>
+                <fullName>Financial Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Progress Report</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TermType__c</picklist>
+            <values>
+                <fullName>Condition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Term</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>WillAgencywithholdFundsifnotSubmit__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Term</fullName>
+        <active>true</active>
+        <description>Related to Awards ( Ramu to rename this object appropriately)</description>
+        <label>Term</label>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Desk Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Progress Report</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Frequency__c</picklist>
+            <values>
+                <fullName>Annually</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Semi-Annually</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReportEndDate__c</picklist>
+            <values>
+                <fullName>Budget Period End Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReportStartDate__c</picklist>
+            <values>
+                <fullName>Budget Period Start Date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReportingFrequency__c</picklist>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recurring</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReportingPeriod__c</picklist>
+            <values>
+                <fullName>Academic Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Calendar Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Federal Fiscal Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State Fiscal Year</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SiteVisitLocation__c</picklist>
+            <values>
+                <fullName>Other Location</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Primary Place of Performance</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Source__c</picklist>
+            <values>
+                <fullName>Federal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SubmissionPackageType__c</picklist>
+            <values>
+                <fullName>Attachment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submission Package</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SubmissionType__c</picklist>
+            <values>
+                <fullName>Financial Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Progress Report</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TermType__c</picklist>
+            <values>
+                <fullName>Condition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Term</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>WillAgencywithholdFundsifnotSubmit__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>BeginningEndingDate</fullName>
+        <active>false</active>
+        <errorConditionFormula>IF(ISPICKVAL(ReportStartDate__c,&apos;Project Period Start Date&apos;) &amp;&amp; ISPICKVAL (ReportEndDate__c,&apos;Project Period End Date&apos;),false,true)</errorConditionFormula>
+        <errorMessage>Beginning Date and Ending Date should both be From Project Period , Budget Period OR Fixed Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BudgetPeriodStartAndEndDate_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(  ISPICKVAL(ReportStartDate__c,&apos;Budget Period Start Date&apos;) &amp;&amp; ISPICKVAL(ReportEndDate__c,&apos;Budget Period End Date&apos;) &amp;&amp; (Award__r.BudgetPeriodStartDate__c == null || Award__r.BudgetPeriodEndDate__c == null),true,false)</errorConditionFormula>
+        <errorMessage>Budget Period Start/End Date needs to be filled out on the award</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_Availability_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF( ISCHANGED( AvailabilityDate__c ) ,AvailabilityDate__c &lt; TODAY(),false)</errorConditionFormula>
+        <errorDisplayField>AvailabilityDate__c</errorDisplayField>
+        <errorMessage>Past date cannot be entered.Please enter a valid date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_Effective_Till_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>EffectiveTill__c &lt; EffectiveFrom__c</errorConditionFormula>
+        <errorDisplayField>EffectiveTill__c</errorDisplayField>
+        <errorMessage>Effective Till Date can not be before Effective From Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_Fixed_End_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF( ISCHANGED( FixedEndDate__c ) ,FixedEndDate__c &lt; TODAY(),false)</errorConditionFormula>
+        <errorDisplayField>FixedEndDate__c</errorDisplayField>
+        <errorMessage>Past date cannot be entered.Please enter a valid date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_Fixed_Start_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF( ISCHANGED( FixedStartDate__c) ,FixedStartDate__c &lt; TODAY(),false)</errorConditionFormula>
+        <errorDisplayField>FixedStartDate__c</errorDisplayField>
+        <errorMessage>Past date cannot be entered.Please enter a valid date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_Inactive_on_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF( ISCHANGED( InactiveOn__c) ,InactiveOn__c &lt; TODAY(),false)</errorConditionFormula>
+        <errorDisplayField>InactiveOn__c</errorDisplayField>
+        <errorMessage>Past date cannot be entered.Please enter a valid date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_Report_Submission_Date</fullName>
+        <active>false</active>
+        <errorConditionFormula>IF( ISCHANGED( UpcomingReportSubmissionDate__c) ,UpcomingReportSubmissionDate__c &lt; TODAY(),false)</errorConditionFormula>
+        <errorDisplayField>UpcomingReportSubmissionDate__c</errorDisplayField>
+        <errorMessage>Past date cannot be entered.Please enter a valid date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Date_Validation_in_Site_Visit_Dates</fullName>
+        <active>false</active>
+        <description>Date Validation in Site Visit Dates</description>
+        <errorConditionFormula>IF((RecordType.Name ==&apos;Site Visit&apos; ) &amp;&amp; OR(VisitEndDateTime__c &lt; SiteVisitDateTime__c,DateValue(VisitEndDateTime__c) &lt;  Award__r.BudgetPeriod__r.BudgetStartDate__c ,DateValue(VisitEndDateTime__c) &gt;  Award__r.BudgetPeriod__r.BudgetEndDate__c ),true,false)</errorConditionFormula>
+        <errorMessage>Site Visit End Date can not be before Site Visit Start Date and it should be in between Budget Period Start Date and Budget Period End Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Due_Date_Days_Cannot_be_Negative</fullName>
+        <active>true</active>
+        <description>Due Date Days Cannot be Negative</description>
+        <errorConditionFormula>DueDateDays__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>DueDateDays__c</errorDisplayField>
+        <errorMessage>Due Date Days cannot be negative</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FixedDateCantbenullifFixedChosen</fullName>
+        <active>true</active>
+        <description>Fixed Date Cant be null if Fixed Chosen</description>
+        <errorConditionFormula>IF(ISPICKVAL(ReportStartDate__c,&apos;Fixed&apos;) &amp;&amp; ISPICKVAL(ReportEndDate__c,&apos;Budget Period End Date&apos;) || ISPICKVAL(ReportStartDate__c,&apos;Budget Period Start Date&apos;) &amp;&amp; ISPICKVAL(ReportEndDate__c,&apos;Fixed&apos;),true,false)</errorConditionFormula>
+        <errorMessage>Please enter the fixed Start and End Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FixedDateValidation</fullName>
+        <active>true</active>
+        <errorConditionFormula>FixedStartDate__c &gt; FixedEndDate__c</errorConditionFormula>
+        <errorMessage>Start date cannot be after end date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FixedDatesCantBeNullIfBothFixedChosen</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF((ISPICKVAL(ReportStartDate__c,&apos;Fixed&apos;) &amp;&amp; ISPICKVAL(ReportEndDate__c,&apos;Fixed&apos;) )&amp;&amp; (ISBLANK(FixedStartDate__c) || ISBLANK(FixedEndDate__c)),true,false)</errorConditionFormula>
+        <errorMessage>Please enter respective dates</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FixedDatesShouldbeWithinBudgetPeriod</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF((ISPICKVAL(ReportStartDate__c,&apos;Fixed&apos;) &amp;&amp; ISPICKVAL(ReportEndDate__c,&apos;Fixed&apos;)) &amp;&amp; ((FixedStartDate__c &lt; Award__r.BudgetPeriodStartDate__c || FixedStartDate__c &gt; Award__r.BudgetPeriodEndDate__c) || (FixedEndDate__c &lt; Award__r.BudgetPeriodStartDate__c || FixedEndDate__c &gt; Award__r.BudgetPeriodEndDate__c )),true,false)</errorConditionFormula>
+        <errorMessage>Fixed Dates have to be within Budget Period Start and End Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PreventUpdationatGrantLevel</fullName>
+        <active>false</active>
+        <description>Prem - De activated this validation rule because we need to update T&amp;C in the batch job.
+Let&apos;s chalk out some other way to handle this validation.</description>
+        <errorConditionFormula>IF(AND(
+NOT(ISNEW()),NOT(ISBLANK(PRIORVALUE(Grant__c))),ISBLANK( Award__c )
+	), 
+    TRUE, 
+    AND(
+		ISCHANGED(Grant__c), NOT(ISBLANK(PRIORVALUE(Grant__c)) )
+	)
+)</errorConditionFormula>
+        <errorMessage>You cannot update a record associated with a grant.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ReportingRequirementEndDateValidation</fullName>
+        <active>false</active>
+        <description>Reporting Requirement End Date should be in between Budget Period Start Date and Budget Period End date and also greater than Reporting Requirement Start Date.</description>
+        <errorConditionFormula>IF(OR(RecordType.Name ==&apos;Reporting Requirement&apos;,RecordType.Name ==&apos;Payment Request&apos;) &amp;&amp; OR(CalReportingEndDate__c &lt; CalReportingStartDate__c ,	CalReportingEndDate__c &lt; Award__r.BudgetPeriod__r.BudgetStartDate__c ,	CalReportingEndDate__c &gt;  Award__r.BudgetPeriod__r.BudgetEndDate__c) ,true,false)</errorConditionFormula>
+        <errorMessage>Reporting End Date Should be in between Budget Period Start date and Budget Period End Date  and also greater than Reporting Requirement Start Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ReportingRequirementStartDateValidation</fullName>
+        <active>false</active>
+        <description>Reporting Requirement Start Date should be in between Budget Period Start Date and Budget Period End date.</description>
+        <errorConditionFormula>IF(OR(RecordType.Name ==&apos;Reporting Requirement&apos;,RecordType.Name ==&apos;Payment Request&apos; ) &amp;&amp; OR(	CalReportingStartDate__c &lt; Award__r.BudgetPeriod__r.BudgetStartDate__c ,	CalReportingStartDate__c &gt;  Award__r.BudgetPeriod__r.BudgetEndDate__c) ,true,false)</errorConditionFormula>
+        <errorMessage>Reporting Start Date Should be in between Budget Period Start date and Budget Period End Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Select_either_Program_or_Award_or_Grant</fullName>
+        <active>false</active>
+        <errorConditionFormula>IF( (Award__c == NULL &amp;&amp;  Grant__c == NULL &amp;&amp;  Program__c == NULL) ||  
+(Award__c != NULL &amp;&amp;  Grant__c == NULL &amp;&amp;  Program__c == NULL) || 
+(Award__c == NULL &amp;&amp;  Grant__c != NULL &amp;&amp;  Program__c == NULL) ||
+(Award__c == NULL &amp;&amp;  Grant__c == NULL &amp;&amp;  Program__c != NULL), false, true)</errorConditionFormula>
+        <errorMessage>At a time only one of these fields can be populated: Award, Grant or Program.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>StartDate_Validation_in_Site_Visit_Dates</fullName>
+        <active>false</active>
+        <description>Start Date Validation in Site Visit Dates</description>
+        <errorConditionFormula>IF((RecordType.Name ==&apos;Site Visit&apos; &amp;&amp; Award__c != null &amp;&amp; TEXT(Award__r.AwardType__c) == &apos;New&apos;) &amp;&amp; OR(DateValue(SiteVisitDateTime__c) &lt; TODAY(),DateValue(SiteVisitDateTime__c) &lt; Award__r.BudgetPeriod__r.BudgetStartDate__c ,DateValue(SiteVisitDateTime__c) &gt; Award__r.BudgetPeriod__r.BudgetEndDate__c) ,true,false)</errorConditionFormula>
+        <errorMessage>Site Visit Start Date can not be before today and should be in between Budget Period Start Date and Budget Period End Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>WithheldMoney</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL(WillAgencywithholdFundsifnotSubmit__c,&apos;Yes&apos;) &amp;&amp; ISBLANK(AmountWithheld__c)</errorConditionFormula>
+        <errorMessage>Please provide the percentage of amount withheld.</errorMessage>
+    </validationRules>
+</CustomObject>

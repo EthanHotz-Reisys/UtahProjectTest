@@ -1,0 +1,22 @@
+<apex:page controller="PublicAnnouncementsCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+    
+    <!-- <apex:composition template="GNT__PageTemplate">
+       <apex:define name="content"> -->
+         <apex:composition template="GNT__PhaseTemplate">
+           <apex:define name="body">
+            
+                 <GNT:FlexTable rendered="{!NOT(isInternal)}" flexTableName="PublicAnnouncements" tableId="PublicAnnouncements"/>
+                 <GNT:FlexTable rendered="{!isInternal}" flexTableName="PublicAnnouncementsForInternal" tableId="PublicAnnouncementsForInternal"/>
+            
+                    
+         </apex:define>     
+    </apex:composition>   
+    
+    <script>
+        setPageTitle('Announcements - List');
+    </script>
+    
+</apex:page>

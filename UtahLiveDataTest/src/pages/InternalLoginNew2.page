@@ -1,0 +1,124 @@
+<!--
+ ********************************************************** 
+ Audit History
+ **********************************************************
+
+ 10/9/2015   swati singh created
+ **********************************************************  
+-->
+<apex:page title="Login" standardstylesheets="false" showHeader="false" sidebar="false" controller="AnalyticsCtrl" >
+<html lang="en" >
+    <c:ExternalLibrary />  
+    <style>
+   #externalLoginPage #mainTabsId{
+        height: 85px;
+    }
+
+    #externalLoginPage .bs .form-control{
+     border-radius: 0px;
+    }
+   #externalLoginPage .loginInsertpadding{
+     padding-top:55px;
+    } 
+     body { height: 100%;
+      margin: 0px 0px 0px 0px;
+      
+        }
+
+
+
+</style> 
+    
+ <!--    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">
+            <apex:form >
+                <GNT:PageMessages />
+            </apex:form> 
+                <br/><br/><br/>  -->
+                <div class="bs">
+                  <!--  <div class="container" id="externalLoginPage" style="margin-left: initial;"> -->
+                    <div class="col-md-12" id="externalLoginPage">
+                       <!--  <div class="row"> -->
+                          <!-- <div class="col-md-1 loginInsertpadding" > </div>    height:612px; -->
+                          <div id="leftcolumn" class="col-md-6" >
+                          <div class="col-md-2 loginInsertpadding" > </div> 
+                            <div id="loginpanel" class="col-md-8 loginInsertpadding" >
+                               <!--  <div class="banner"> -->
+                                    <apex:include pageName="InternalLoginNew3"/> 
+                               <!-- </div> -->
+                                </div>
+                              <div class="col-md-2 loginInsertpadding" > </div>
+                               <div class="col-md-12" style="bottom: 0px;position: absolute;text-align: center;">
+                              <apex:image url="{!URLFOR($Resource.GovGrantsfooterNew)}" alt="Official logo for the GovGrants product powered by REI Systems" style="width:20%" />
+                              </div>
+                            </div>
+                            <div id="rightcolumn" class="col-md-6">
+                            <div id="rightPanel" class="col-md-12 loginInsertpadding" style="text-align: center;">
+                             <apex:image url="{!URLFOR($Resource.GovGrantslogoInternal)}" alt="Enterprise Grants Management System image with the GovGrants insignia" style="width:55%"/>
+                             <!--  <img class="flex" src="https://secure.sfdcstatic.com/login-messages/assets/images/login_cloud_lockup.jpg" alt="" style="width:60%"/> -->
+                              <div class="col-md-6" style="margin-top:40px;padding-left: 65px;">
+                              <apex:include pageName="LoginWhatsNew"/>
+                              
+                              </div>
+                               <div class="col-md-6" style="margin-top:40px;padding-left: 65px;">
+                               <apex:include pageName="LoginHighlights"/>
+                              </div>
+                             </div>
+                         <!--  <div class="col-md-1 loginInsertpadding" ></div>   -->
+                          <div class="col-md-12" style="bottom: 0px;position: absolute;text-align: center;">
+                            <!-- <span><a href="{}" style="color:#A3A7A7">Privacy |</a></span>
+                             <span><a href="{}" style="color:#A3A7A7">508 Compliance |</a></span>
+                             <span><a href="{}" style="color:#A3A7A7">Terms and Conditions</a></span> -->
+                             <apex:include pageName="FooterLoginPages"/>
+                          </div>
+                            </div>
+                       </div>
+                    </div>
+              <!--  </div>  -->
+                            
+ <!--        </apex:define>
+    </apex:composition>   --> 
+    <script>
+    
+         var j$ = jQuery.noConflict();
+         j$(document).ready(function(){
+         adjustToggleBarHeightUI();
+            j$(window).on('resize', function() {
+                adjustToggleBarHeightUI();
+            });
+            
+            var analyticsId = "{!analyticsId}";
+            var enableAnalytics = "{!enableAnalytics}";
+            if(enableAnalytics == 'true'){
+                  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        
+                   ga('create', analyticsId, 'auto');
+                   ga('send', 'pageview');
+             }
+        });
+         // setPageTitle('Login');
+          function adjustToggleBarHeightUI(){
+            var finalHeight = 0;
+            var paddingtop = 0;
+            var paddingtop1 = 0;
+            var windowHeight = j$(window).height();
+            var loginpanelHeight = j$('#loginpanel').height();
+            var rightpanelHeight = j$('#rightPanel').height();
+            var rightColumnHeight = j$('#rightcolumn').height();
+            //finalHeight =  rightColumnHeight;
+            finalHeight = Math.max( windowHeight, rightColumnHeight); 
+            paddingtop = (windowHeight-loginpanelHeight)/2;
+            paddingtop1 = (windowHeight-rightpanelHeight)/2;
+            j$('#leftcolumn').css('min-height', finalHeight);
+            j$('#rightcolumn').css('min-height', finalHeight);
+            j$('#loginpanel').css('padding-top', paddingtop);
+            j$('#rightPanel').css('padding-top', paddingtop1);
+            }
+            
+            
+    </script> 
+    </html>
+</apex:page>

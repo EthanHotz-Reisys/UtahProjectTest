@@ -1,0 +1,14 @@
+<apex:page standardController="GNT__SobjectConfig__c" sidebar="false" showHeader="false"
+    standardStylesheets="false" extensions="SobjectViewCtrl">
+    
+    
+    <c:ExternalLibrary />   
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content"> 
+             <GNT:FlexEditLayout templateName="SObjectConfig" recordId="{!$CurrentPage.parameters.id}" layoutType="edit"  flexTableParameters="{!keyValueMap}" />
+                
+               
+        </apex:define> 
+    </apex:composition>
+
+</apex:page>

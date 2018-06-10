@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>[Business]  All the Opportunities migrated from the Grant.gov are stored in this staging table</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>AdditionalEligibilityInformation__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Eligibility Information</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AdditionalInformationURLText__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Information URL Text</label>
+        <length>10000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AgencyContact__c</fullName>
+        <externalId>false</externalId>
+        <label>Agency Contact</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AgencyEmailAddress__c</fullName>
+        <externalId>false</externalId>
+        <label>Agency Email Address</label>
+        <length>150</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AgencyEmailDescriptor__c</fullName>
+        <externalId>false</externalId>
+        <label>Agency Email Descriptor</label>
+        <length>250</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AgencyMailingAddress__c</fullName>
+        <externalId>false</externalId>
+        <label>Agency Mailing Address</label>
+        <length>250</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApplicationsDueDateExplanation__c</fullName>
+        <externalId>false</externalId>
+        <label>Applications Due Date Explanation</label>
+        <length>500</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ApplicationsDueDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Applications due date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ArchiveDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Archive Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AwardCeiling__c</fullName>
+        <externalId>false</externalId>
+        <label>Award Ceiling</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AwardFloor__c</fullName>
+        <externalId>false</externalId>
+        <label>Award Floor</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CFDANumber__c</fullName>
+        <externalId>false</externalId>
+        <label>CFDA Number</label>
+        <length>500</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CategoryExplanation__c</fullName>
+        <externalId>false</externalId>
+        <label>Category Explanation</label>
+        <length>5000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CategoryOfFundingActivity__c</fullName>
+        <externalId>false</externalId>
+        <label>Category Of Funding Activity</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AG: Agriculture</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AR: Arts</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>BC: Business and Commerce</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CD: Community Development</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CP: Consumer Protection</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DPR: Disaster Prevention and Relief</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ED: Education</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ELT: Employment, Labor and Training</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>EN: Energy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ENV: Environment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FN: Food and Nutrition</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>HL: Health</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>HO: Housing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>HU: Humanities</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ISS:  Income Security and Social Service</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IS: Information and Statistics</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LJL: Law, Justice and Legal Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NR: Natural Resources</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RD: Regional Development</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ST: Science and Technology</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>T: Transportation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>O: Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CostSharing__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost Sharing</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EligibilityCategory__c</fullName>
+        <externalId>false</externalId>
+        <label>Eligibility Category</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>99: Unrestricted</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>00: State governments</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>01: County governments</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>02: City or township governments</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>04: Special district governments</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>05: Independent school districts</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>06: Public and State higher education</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>07: Native American tribal governments</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>08: Public housing authorities</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>11: Native American tribal organizations</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>12: Nonprofits with 501(c)(3) status</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>13: Nonprofits without 501(c)(3) status</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>20: Private institution higher education</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>21: Individuals</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>22: For-profit organizations</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>23: Small businesses</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>25: Others</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EstimatedTotalProgramFunding__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Total Program Funding</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ExpectedNumberofAwards__c</fullName>
+        <externalId>false</externalId>
+        <label>Expected Number of Awards</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FederalAgency__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Agency that offered grant</description>
+        <externalId>false</externalId>
+        <label>Federal Agency</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>STGFOALeads</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FundingInstrumentType__c</fullName>
+        <externalId>false</externalId>
+        <label>Funding Instrument Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>G: Grant</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CA: Cooperative Agreement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>O: Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PC: Procurement Contract</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FundingOppURL__c</fullName>
+        <externalId>false</externalId>
+        <label>Link to Additional Information</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>FundingOpportunityDescription__c</fullName>
+        <externalId>false</externalId>
+        <label>Funding Opportunity Description</label>
+        <length>20000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FundingOpportunityNumber__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Funding Opportunity Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>FundingOpportunityTitle__c</fullName>
+        <externalId>false</externalId>
+        <label>Funding Opportunity Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Location</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ModificationNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>ModificationNumber</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Office__c</fullName>
+        <externalId>false</externalId>
+        <label>Office</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PostedDate__c</fullName>
+        <description>Opportunity Posted Date</description>
+        <externalId>false</externalId>
+        <label>Posted Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SourceStatus__c</fullName>
+        <externalId>false</externalId>
+        <label>Source Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Closed</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Source</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Grants.gov</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Internal</fullName>
+                    <default>true</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>STG: FOA Lead</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>FundingOpportunityNumber__c</columns>
+        <columns>AgencyEmailAddress__c</columns>
+        <columns>ArchiveDate__c</columns>
+        <columns>FederalAgency__c</columns>
+        <columns>AwardCeiling__c</columns>
+        <columns>AwardFloor__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>STGLEAD-{0}</displayFormat>
+        <label>Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>STG FOA Leads</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>FundingOpportunityTitle__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>FundingOpportunityNumber__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

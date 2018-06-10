@@ -1,0 +1,80 @@
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+    
+    <style>
+    
+        th, td {
+                    padding: 5px;
+                }
+    </style>
+    <h3> SF-424D Assurances - Construction Program (4040-0009) </h3>
+    
+    <p> According to the Paperwork Reduction Act of 1995. an agency may not conduct 
+        or sponsor, and a person is not required to respond to a collection of 
+        information unless it displays a valid OMB control number. The valid OMB
+        control number for this information collection is 4040-0009. The time required
+        to complete this information collection is estimated to average 30 minutes per
+        response, including the time to review instructions, search existing data 
+        resources, gather the data needed and complete and review the information
+        collection. If you have comments concerning the accuracy of the time
+        estimate(s) or suggestions for improving this form, please write to: U.S.
+        Department of Health &amp; Human Services, OS/OCIO/PRA, 200 Independence
+        Ave., S.W., Suite 537-H, Washington D.C.20201, Attention: PRA Reports 
+        Clearance Officer. </p>
+        
+        <table border="0">
+        <tr>
+            <th> Agency </th>
+            <th> Total Responses per response in Hours</th>
+            <th> Average burden Hours </th>
+            <th> Total Burden </th>
+        </tr>
+        <tr>
+            <td> USDA </td>
+            <td> 916 </td>
+            <td> 15/60 </td>
+            <td> 229 </td>
+        </tr>
+        <tr>
+            <td> DOI </td>
+            <td> 1334 </td>
+            <td> 48/60 </td>
+            <td> 1076 </td>
+        </tr>
+        <tr>
+            <td> VA </td>
+            <td> 141 </td>
+            <td> 15/60 </td>
+            <td> 35 </td>
+        </tr>
+        <tr>
+            <td> DOC </td>
+            <td> 567 </td>
+            <td> 15/60 </td>
+            <td> 142 </td>
+       </tr>
+       <tr>
+           <td> DHS </td>
+           <td> 73 </td>
+           <td> 30/60 </td>
+           <td> 37 </td>
+       </tr>
+       <tr>
+           <td> Total </td>
+           <td> 3031</td>
+           <td> </td>
+           <td> 1519 </td>
+       </tr>
+       </table>
+       <br/>
+       <br/>
+        <p> 1519 hrs. x 60 = 91140 total minutes <br/>
+            91140 minutes / 3031 total responses = 30 minutes per response </p>
+      
+        
+        
+
+    
+</apex:page>

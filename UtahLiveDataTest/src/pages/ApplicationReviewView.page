@@ -1,0 +1,21 @@
+<apex:page standardController="ApplicationReview__c"  showHeader="false"  standardStylesheets="false" extensions="ApplicationReviewViewCtrl" sidebar="false" >
+    <style>
+        #PageTemplateApp{
+            min-height : 0px !important;
+        }
+    </style> 
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary /> 
+         <!--<div  class="bs container-fluid" style="clear:both; width:100%;height:100%;">-->
+                  
+       <!--   <GNT:FlexViewLayout templateName="{!pageTemplateName}"  HideSidebar="true" HideCancelbtn="true" recordId="{!recordId}" layoutType="View" flexTableParameters="{!keyValueMap}"
+            saveURL="{!savePage}" cancelURL="{!cancelPage}" />  -->
+            <apex:composition template="GNT__ModalTemplate">
+            <apex:define name="ModalContent">  
+
+            <GNT:ModalFlexViewLayout templateName="{!pageTemplateName}"  HideSidebar="true" HideCancelbtn="true" recordId="{!recordId}" layoutType="View" flexTableParameters="{!keyValueMap}"
+            saveURL="{!savePage}" cancelURL="{!cancelPage}" />
+            </apex:define>
+            </apex:composition>
+         <!--</div>   -->
+</apex:page>

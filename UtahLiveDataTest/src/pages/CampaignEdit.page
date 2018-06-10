@@ -1,0 +1,10 @@
+<apex:page extensions="CampaignCtrl" standardStylesheets="false" showHeader="false" sidebar="false" standardController="Campaign__c" >
+    <c:ExternalLibrary />  
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">    
+            <GNT:ModalFlexEditLayout templateName="Campaign" recordId="{!recordId}"  layoutType="Edit" flexTableParameters=""  HideSidebar="true" 
+                  createDefaultValues="{!listDefaultValues}" saveURL="{!savePage}" cancelURL="" hideCancelBtn="true"/>  
+                                 
+        </apex:define>
+    </apex:composition>
+   </apex:page>

@@ -1,0 +1,9 @@
+<apex:page standardStylesheets="false" showHeader="false" >
+<c:ExternalLibrary />
+<GNT:ExternalLibrary /> 
+    <apex:composition template="GNT__PhaseTemplate"> 
+        <apex:define name="body">   
+        <GNT:FlexGrid tableId="AdminOrganizationHierarchy"/> 
+   </apex:define> 
+    </apex:composition>     
+</apex:page>

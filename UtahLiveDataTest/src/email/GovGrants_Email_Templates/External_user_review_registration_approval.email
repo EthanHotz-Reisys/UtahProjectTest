@@ -1,0 +1,21 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:RelyOnVML/>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]--><font face="Times New Roman,Times,Serif" size="3" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">
+
+</font><p style="color: rgb(0, 0, 0); font-size: 12pt; margin: 0cm 0cm 12pt;"><font face="Times New Roman, Times, serif" style="">A request has been made to gain access to UtahGrants Management System (UGMS). Below are the details:</font></p><p style="color: rgb(0, 0, 0); font-size: 12pt; margin: 0cm 0cm 12pt;"><font face="Times New Roman, Times, serif"><br></font></p><p style="color: rgb(0, 0, 0); font-size: 12pt; margin: 0cm 0cm 12pt;"><font face="Times New Roman, Times, serif">Organization Name : {!UserRegistration__c.OrganizationName__c}{!UserRegistration__c.OrganizationNameFromContact__c}</font></p><p style="margin: 0cm 0cm 12pt;"><font face="Times New Roman, Times, serif" style="color: rgb(0, 0, 0); font-size: 12pt;">Related Sponsoring Agency:&nbsp;</font><font face="Times New Roman, Times, serif">{!UserRegistration__c.PrimaryRepSponsoringAgency__c}</font></p><p style="color: rgb(0, 0, 0); font-size: 12pt; margin: 0cm 0cm 12pt;"><font face="Times New Roman, Times, serif">Organization Type: {!UserRegistration__c.OrganizationTypeSInglePicklist__c}{!UserRegistration__c.OrganizationTypeFromContact__c}</font></p><p style="color: rgb(0, 0, 0); font-size: 12pt; margin: 0cm 0cm 12pt;"><font face="Times New Roman, Times, serif"><br></font></p><p style="color: rgb(0, 0, 0); font-size: 12pt; margin: 0cm 0cm 12pt;"><font face="Times New Roman, Times, serif">Please login to UGMS. Locate and click on "Pending Registrations” to either approve or reject organization registration. Once you have approved registration, an email with login credentials will be sent to the requesting applicants. The account however will not be activated until the requesting applicant has verified the receipt of the login credentials by resetting their password from Salesforce.</font></p><p style="color: rgb(0, 0, 0); font-size: 12pt; margin-bottom: 12pt;"><font face="Times New Roman,Times,Serif" style="background-color: rgb(255, 255, 255);">Sincerely,</font></p><p style="color: rgb(0, 0, 0); font-size: 12pt; margin-bottom: 12pt;"><font face="Times New Roman,Times,Serif" style="background-color: rgb(255, 255, 255);">UtahGrants Support Team</font></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

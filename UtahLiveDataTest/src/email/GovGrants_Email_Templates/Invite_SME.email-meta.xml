@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>IN USE Invitation email for SME for registering into GovGrants</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Invite SME</name>
+    <style>formalLetter</style>
+    <subject>Invitation to Register in Enterprise Grants Management System (EGMS)</subject>
+    <textOnly>Subject: Invitation to register in Enterprise Grants Management System (EGMS)
+
+
+
+Dear Reviewer,
+
+
+
+Congratulations on being selected as an External Reviewer for the Agency Name.
+
+
+
+Thank you for agreeing to serve as an External Reviewer for Agency Name. Please click on the url below to create your login account to register as an External Reviewer in the  Enterprise Management System (EGMS), which will be used to manage the entire application intake and evaluation process.
+
+
+
+You will be required to provide your contact details and area(s) of expertise in order to create the profile in the system. You will also be prompted to sign a Non-Disclosure Agreement and Conflict of Interest Agreement.
+
+
+
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,16 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<div align="left"><img align="left" alt="" src="https://c.na24.content.force.com/servlet/servlet.ImageServer?id=015f40000004yJ5&amp;oid=00Df4000000DzbA" border="0"><br></div>]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<div style="font-size: 12pt; font-family: arial;"><span style="font-family: 'Times New Roman', Times, serif; font-size: 12pt;">This
+ email is to notify that Office of Grants Management(OGM) has approved the 
+Decision Document associated with the following Funding Opportunity.</span></div><div><div><font face="Times New Roman, Times, serif"><br></font></div><div><font face="Times New Roman, Times, serif">Funding Opportunity Number:{!ReviewStep__c.AnnouncementNumber__c}</font></div><div><font face="Times New Roman, Times, serif">Funding Opportunity Title: {!ReviewStep__c.AnnouncementName__c}.&nbsp;</font></div><div><font face="Times New Roman, Times, serif">Administration: {!ReviewStep__c.DepartmentName__c}</font></div><div style="font-size: 12pt; font-family: arial;"><br></div></div><font face="Times New Roman, Times, serif">Please login to EGMS and start the task of type "Decision Document" which is available in Application Pending Tasks in order to provide your Decision.</font><br><div style="color: rgb(0, 0, 0);"><font face="Times New Roman, Times, serif"><br></font></div><div style="background-color: rgb(255, 255, 255);"><font face="Times New Roman, Times, serif">Sincerely,<br>District of Columbia(DC) - Department of Health(DOH)<br></font></div><div style="background-color: rgb(255, 255, 255);"><font face="Times New Roman, Times, serif">Enterprise Grants Management System(EGMS)</font></div><div style="font-size: 12pt; font-family: arial;"><font face="Times New Roman, Times, serif"><font style="font-size: 16px;" face="arial"><br></font></font></div><div style="font-size: 12pt; font-family: arial;"><font face="Times New Roman, Times, serif"><font style="font-size: 16px;" face="arial"><img alt="" src="https://c.na17.content.force.com/servlet/servlet.ImageServer?id=015f40000004yJK&amp;oid=00Df4000000DzbE" align="left" border="0"><br></font></font></div><font style="font-size: 12pt; font-family: arial; color: rgb(0, 0, 0);" face="Times New Roman,Times,Serif"><span style="line-height: 107%; font-size: 12pt;"><br></span></font>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[]]></td>
+</tr>
+</table>

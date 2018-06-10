@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This Config is used to specify the drop down values of Profile (Custom Salesforce Header ) in Salesforce.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Is this Dropdown value Active?</description>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>External_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>External URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Label__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Label of DropDown list</description>
+        <externalId>false</externalId>
+        <label>Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sequence__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Order of the dropdown</description>
+        <externalId>false</externalId>
+        <label>Sequence</label>
+        <precision>2</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>url__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Internal URL</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Config: Profile Dropdown</label>
+    <visibility>Public</visibility>
+</CustomObject>

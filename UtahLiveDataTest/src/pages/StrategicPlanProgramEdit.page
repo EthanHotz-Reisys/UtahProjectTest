@@ -1,0 +1,12 @@
+<apex:page standardController="StrategicPlanPrograms__c" showHeader="false" standardStylesheets="false" extensions="StrategicPlanProgramEditCtrl" sidebar="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />   
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">          
+            <GNT:FlexEditLayout templateName="{!pageTemplateName}" recordId="{!recordId}" layoutType="Edit" flexTableParameters="{!keyValueMap}"
+              createDefaultValues="{!listDefaultValues}" saveURL="{!savePage}" cancelURL="{!cancelPage}"/>
+        </apex:define>
+    </apex:composition> 
+    
+</apex:page>

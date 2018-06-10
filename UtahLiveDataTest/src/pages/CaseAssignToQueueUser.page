@@ -1,0 +1,11 @@
+<apex:page Controller="CaseAssignToQueueUserCtrl" sidebar="false" showHeader="false" applyHtmlTag="false" standardStylesheets="false">
+<c:ExternalLibrary />
+<GNT:ExternalLibrary />
+<apex:composition template="GNT__ModalTemplate">
+	<apex:define name="ModalContent">
+		<GNT:FlexTable flexTableName="UserListForQueue" tableId="UserListForQueue"
+                                            flexTableParameters="{!keyValueMap}" headerDescription=""
+                                            SingleRecordSelection="true" />  
+	</apex:define>
+</apex:composition>
+</apex:page>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email sent to GovGrants Internal to review the Grantee Application</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Applications ready for review</name>
+    <style>formalLetter</style>
+    <subject>Notification: Applications are Ready for Pre-Screen Review of Announcement #{!Announcement__c.AnnouncementId__c}</subject>
+    <textOnly>Subject: Application {!Application__c.Name} for the Funding Opportunity # {!Application__c.Announcement__c} is ready for your review.
+
+
+
+The Application {!Application__c.Name} has been submitted for internal review.
+
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+Sincerely,
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

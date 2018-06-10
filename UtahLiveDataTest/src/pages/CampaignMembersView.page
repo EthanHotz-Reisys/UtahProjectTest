@@ -1,0 +1,13 @@
+<apex:page controller="CampaignCtrl" standardStylesheets="false" showHeader="false" sidebar="false">
+<c:ExternalLibrary />
+<apex:composition template="GNT__ModalTemplate">
+    <apex:define name="ModalContent">    
+   <!-- <div class="bs container-fluid">
+    <GNT:FlexTable flexTableHeader="Campaign Sent User List" flexTableName="CampaignSentUserList" tableId="CampaignSentUserList" listparams="{!keyValueMap}"/>
+    <GNT:FlexTable flexTableHeader="Campaign Sent Contact List" flexTableName="CampaignSentContactList" tableId="CampaignSentContactList" listparams="{!keyValueMap}"/>
+    </div> -->
+    <GNT:ModalFlexViewLayout templateName="CampaignMembers" recordId="{!recordId}"  layoutType="View" HideSidebar="true" flexTableParameters="{!keyValueMap}"
+                  createDefaultValues="" saveURL="{!savePage}" cancelURL="" hideCancelBtn="true"/>   
+    </apex:define>
+</apex:composition>
+</apex:page>

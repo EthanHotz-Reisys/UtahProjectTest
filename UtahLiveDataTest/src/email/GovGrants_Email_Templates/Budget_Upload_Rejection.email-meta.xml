@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Budget Upload Rejection</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Budget Upload Rejection</name>
+    <style>formalLetter</style>
+    <subject>Budget Upload has been rejected</subject>
+    <textOnly>Dear {!FileBatch__c.FirstApprover__c},
+The budget upload for {!FileBatch__c.ExternalFileName__c}, {!FileBatch__c.RecordTypeName__c}, {!FileBatch__c.FiscalYear__c} has been rejected. Please review the batch rejection comments.
+
+UtahGrants
+
+Sincerely,
+
+UtahGrants Support Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

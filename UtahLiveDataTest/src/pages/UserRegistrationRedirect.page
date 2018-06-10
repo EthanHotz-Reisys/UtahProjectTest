@@ -1,0 +1,10 @@
+<!--
+* Redirect page for Reviewer Email Registration
+* CHANGE HISTORY
+* =============================================================================
+* Date          Name            Description
+* 08/19/2015    Shrawan Raina   Created for reviewer registration via Email
+* =============================================================================
+-->
+<apex:page controller="UserRegistrationRedirectCtrl" action="{!redirect}">
+</apex:page>

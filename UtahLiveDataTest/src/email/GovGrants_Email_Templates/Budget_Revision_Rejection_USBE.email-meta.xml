@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Budget Revision Rejection USBE</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Budget Revision Rejection USBE</name>
+    <style>formalLetter</style>
+    <subject>Requested budget revision declined</subject>
+    <textOnly>Dear {!AmendmentRequest__c.LEAName__c},
+The budget revision request for {!AmendmentRequest__c.ProgramName__c} has been declined by USBE for the following reason(s):
+
+{!ApprovalRequest.Comments}
+
+Sincerely,
+
+UtahGrants Support Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

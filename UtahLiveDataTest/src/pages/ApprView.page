@@ -1,0 +1,15 @@
+<apex:page standardController="r_appr__c" title="ApprView" extensions="ApprViewCtrl" sidebar="false" showHeader="false" standardStylesheets="false" >
+  
+    <!-- Including JS and CSS resources <c:ExternalLibrary /> -->
+    <GNT:ExternalLibrary />   
+    <c:ExternalLibrary /> 
+    <c:WhatFixHelper />
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">    
+            <GNT:FlexViewLayout templateName="{!pageTemplateName}" recordId="{!recordId}" layoutType="View" flexTableParameters="{!keyValueMap}"   />
+                       
+        </apex:define>
+    </apex:composition> 
+   
+    
+</apex:page>

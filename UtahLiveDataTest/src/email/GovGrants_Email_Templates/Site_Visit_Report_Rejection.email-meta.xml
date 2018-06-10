@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE When Program Approver rejects site visit Then email is sent to Site Visit Owner</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Site Visit Report Rejection</name>
+    <style>formalLetter</style>
+    <subject>Notification: Site Visit Report for the Grant# {!SiteVisit__c.Grant__c} has been rejected.</subject>
+    <textOnly>Subject: Notification of Site Visit Report for the Grant# {!GO__SiteVisit__c.GO__Grant__c} has been rejected.
+
+
+
+Hello {!GO__SiteVisit__c.GO__SubAwardee__c},
+
+
+
+This email is sent to notify you that the Site Visit Report {!SiteVisit__c.Name} has been rejected.
+
+
+
+Please login to the EGMS for further details, revise the report, and then re-submit for approval. Below are the details:
+
+
+
+
+Progress Report Details:
+
+Grant Number: {!SiteVisit__c.GrantNumber__c}
+
+Reporting Period Start Date: {!SiteVisit__c.ReportingPeriodStartDate__c}
+
+Reporting Period End Date: {!SiteVisit__c.ReportingPeriodEndDate__c}
+
+
+
+Comments provided by Approving Personnel are as follows :
+
+{!SiteVisit__c.Comments__c}
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

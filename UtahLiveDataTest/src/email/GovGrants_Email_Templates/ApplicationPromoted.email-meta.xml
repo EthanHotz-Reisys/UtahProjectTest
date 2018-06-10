@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email Template sent to Recipients when their Application for Announcement is Promoted</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Application Promoted</name>
+    <style>freeForm</style>
+    <subject>Application {!Application__c.Name} has been Promoted</subject>
+    <textOnly>Hello {!Application__c.OwnerFirstName} {!Application__c.OwnerLastName},
+
+Congratulations, your  application in Enterprise Grants Management System (EGMS) for your Organization {!Application__c.ExternalOrganization__c} has been Promoted.
+
+Application Submission Details:
+
+Funding Opportunity ID:  {!Application__c.Announcement__c}
+Application ID: {!Application__c.Name}
+Project Title: {!Application__c.Title__c}
+Submitted By: {!Application__c.SubmittedBy__c}
+Submitted On: {!Application__c.SubmittedOn__c}
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

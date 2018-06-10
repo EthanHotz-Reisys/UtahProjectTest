@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>PerformanceMeasureEdit</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>PerformanceMeasureView</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Performance Measure as part of Performance Management</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>CategoryType__c</fullName>
+        <externalId>false</externalId>
+        <label>CategoryType</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Performance Measure</fullName>
+                    <default>true</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Deliverable__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Deliverable</label>
+        <referenceTo>Deliverable__c</referenceTo>
+        <relationshipLabel>Performance Measures</relationshipLabel>
+        <relationshipName>Performance_Measures</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(Type__c,&quot;KPI&quot;,KPI__r.KeyPerformanceSubIndicator__r.Name,&quot;WBS Task&quot;,WBSTask__r.Name,&quot;Deliverable&quot;,Deliverable__r.Title__c,&quot;Reporting Requirement&quot;,ReportingRequirement__r.ReportName__c,&quot;Title&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>KPI__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>KPI</label>
+        <referenceTo>KeyOutcome__c</referenceTo>
+        <relationshipLabel>Performance Measures</relationshipLabel>
+        <relationshipName>Performance_Measures</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Objective__c</fullName>
+        <externalId>false</externalId>
+        <label>Goal and Objective</label>
+        <referenceTo>GoalObjective__c</referenceTo>
+        <relationshipLabel>Performance Measures</relationshipLabel>
+        <relationshipName>Performance_Measures</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>ReportingRequirement__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>MST:Term and Condition</label>
+        <referenceTo>TermCondition__c</referenceTo>
+        <relationshipLabel>Performance Measures</relationshipLabel>
+        <relationshipName>Performance_Measures</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(Type__c,&quot;KPI&quot;,KPI__r.KeyPerformanceSubIndicator__r.Name,&quot;WBS Task&quot;,WBSTask__r.Name,&quot;Deliverable&quot;,Deliverable__r.Title__c,&quot;Reporting Requirement&quot;,ReportingRequirement__r.ReportName__c,&quot;Title&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Title</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>KPI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Deliverable</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WBS Task</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reporting Requirement</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>WBSTask__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>WBS Task</label>
+        <referenceTo>WBSTaskSchedule__c</referenceTo>
+        <relationshipLabel>Performance Measures</relationshipLabel>
+        <relationshipName>Performance_Measures</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Weightage__c</fullName>
+        <description>Weightage of Performance Measure</description>
+        <externalId>false</externalId>
+        <label>Weightage</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Performance Measure</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Type__c</columns>
+        <columns>Objective__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PMM-{0000}</displayFormat>
+        <label>Performance Measure Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Performance Measures</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Weightage_Check</fullName>
+        <active>true</active>
+        <description>Weightage_%_can_not_be_more_than_100%</description>
+        <errorConditionFormula>if(Weightage__c&gt;100 || Weightage__c &lt;0,true,false)</errorConditionFormula>
+        <errorMessage>Weightage should be between 0-100</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email sent to Fiscal Approver when PO approves the Amendment Request.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Amendment Request Approved by PO</name>
+    <style>formalLetter</style>
+    <subject>Notification: Amendment Request {!AmendmentRequest__c.Id} has been Approved</subject>
+    <textOnly>Subject: Notification of {!AmendmentRequest__c.Id} has been approved
+
+
+
+This email is to notify you that Amendment Request for the Award {!AmendmentRequest__c.AwardName__c} has been Approved.
+
+
+
+Below are the details:
+
+
+
+Amendment Request Summary:
+
+Amendment Request Number #: {!AmendmentRequest__c.Name}
+
+Amendment Request Type: {!AmendmentRequest__c.Type__c}
+
+Comments: {!AmendmentRequest__c.Comments__c}
+
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

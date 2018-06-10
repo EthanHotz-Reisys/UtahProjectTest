@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Program  Amendment Approval email to Program Approver</name>
+    <style>formalLetter</style>
+    <subject>Notification: Program #{!Program__c.Name} has Amended and Waiting for Your Approval</subject>
+    <textOnly>Dear {!Program__c.ProgramApprover__c},
+
+This email is to notify you that, the amendment has been created for the Program {!Program__c.Name} and is waiting for your approval.
+
+Below are the Program Details:
+Program ID: {!Program__c.Name}
+Program Name: {!Program__c.ProgramNameText__c}
+Program Type: {!Program__c.ProgramType__c}
+Program Key Elements: {!Program__c.ProjectKeyElements__c}
+Program Start Date: {!Program__c.StartDate__c}
+Program End Date: {!Program__c.EndDate__c}
+
+Kindly login to the EGMS Systems and click here to start reviewing the Program Amendment details.
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com, if you have any questions or need assistance with this task.
+
+Sincerely
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

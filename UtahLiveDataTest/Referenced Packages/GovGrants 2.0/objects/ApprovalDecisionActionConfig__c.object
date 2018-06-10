@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>[Framework]This object is used to configure Approval Actions and its configuration relating to Comments,Snapshot</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>ActionLabelOverride__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Action Label Override</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Action__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Action</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approve</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Disapprove</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Send to Owner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reassign</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CommentsFieldsAPIName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Field API name of the parent record to which comments are to be saved.</inlineHelpText>
+        <label>Comments Field API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CommentsRequired__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Comments Required ?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ConfirmationMessage__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Confirmation message to show. It should be populated to enable confirmation box.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Confirmation message to show. It should be populated to enable confirmation box.</inlineHelpText>
+        <label>Confirmation Message</label>
+        <length>2000</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>15</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ConfirmationTitle__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Title for confirmation box. It should have value to show confirmation box.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Title for confirmation box. It should have value to show confirmation box.</inlineHelpText>
+        <label>Confirmation Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CustomAppConfig__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Custom App Config</label>
+        <referenceTo>CustomApp__c</referenceTo>
+        <relationshipLabel>Approval Decision Action Config</relationshipLabel>
+        <relationshipName>Approval_Decision_Action_Config</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FilterCriteriaforUserReassign__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field specifies the filter criteria to be used to fetch users for Reassign action</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field specifies the filter criteria to be used to fetch users for Reassign action</inlineHelpText>
+        <label>Filter Criteria for User Reassign</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>HideAction__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked action will be hidden from the decision component</description>
+        <externalId>false</externalId>
+        <label>Hide Action</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Internal Unique Id</description>
+        <externalId>false</externalId>
+        <label>InternalUniqueID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Sequence__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Sequence</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SobjectConfig__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SObject Config</label>
+        <referenceTo>SobjectConfig__c</referenceTo>
+        <relationshipLabel>Approval Decision Action Config</relationshipLabel>
+        <relationshipName>Approval_Decision_Action_Config</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <label>Config: Approval Decision Action</label>
+    <nameField>
+        <displayFormat>ADAC-{0000}</displayFormat>
+        <label>Approval Decision Action Config Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Approval Decision Action Config</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

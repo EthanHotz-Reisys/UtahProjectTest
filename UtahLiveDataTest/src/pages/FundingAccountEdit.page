@@ -1,0 +1,16 @@
+<apex:page standardController="FundingAccount__c" title="Funding Account Edit" extensions="FundingAccountEditCtrl" showHeader="false" 
+        sidebar="false" standardStylesheets="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />   
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">              
+            <GNT:FlexEditLayout templateName="FundingAccount" recordId="{!recordId}" layoutType="Edit" createDefaultValues="{!listDefaultValues}"
+                saveURL="{!savePage}" cancelURL="{!cancelPage}" flexTableParameters="{!keyValueMap}" />
+        </apex:define>
+    </apex:composition>   
+    
+    <script>
+        setPageTitle('Funding Account - Edit');
+    </script> 
+</apex:page>

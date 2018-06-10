@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE When Manager rejects Payment request then email sent to Payment Request Owne</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Payment Request Rejection</name>
+    <style>formalLetter</style>
+    <subject>Notification: Payment Request #{!PaymentRequest__c.Name} has been Rejected.</subject>
+    <textOnly>Subject: Payment Request {!PaymentRequest__c.Name}been approved.
+
+
+
+
+This email is to notify you that Payment Request {!GO__PaymentRequest__c.Name}for the Grant # {!PaymentRequest__c.GrantId__c} has been approved.
+
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

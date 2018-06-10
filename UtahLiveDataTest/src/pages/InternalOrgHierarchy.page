@@ -1,0 +1,25 @@
+<apex:page standardStylesheets="false" showHeader="false" sidebar="false">
+    <c:ExternalLibrary />    
+     <GNT:ExternalLibrary />   
+      <apex:stylesheet value="{!URLFOR($Resource.GNT__GovGrantsExternal, 'AngularJS/CSS/angular-motion.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__GovGrantsExternal, 'AngularJS/CSS/bootstrap-additions.css')}" />
+        
+   <!--     List of scripts -->
+    <apex:includeScript value="{!URLFOR($Resource.GNT__GovGrantsExternal, 'AngularJS/JS/1.2.14/angular-animate.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.GNT__GovGrantsExternal, 'AngularJS/JS/1.2.14/angular-sanitize.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.GNT__GovGrantsExternal, 'AngularJS/JS/1.2.14/angular-strap.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.GNT__GovGrantsExternal, 'AngularJS/JS/1.2.14/angular-strap.tpl.js')}" />
+    
+    <script src="{!URLFOR($Resource.GNT__Tooltipster)}/js/jquery.tooltipster.min.js"></script>
+    <apex:includeScript value="{!URLFOR($Resource.GNT__GovGrantsExternal, 'jQueryBlockUI/JS/jquery.blockUI.js')}" />    
+    <apex:composition template="GNT__PhaseTemplate">
+       
+        <apex:define name="body">
+           <div style="margin-top:100px"> 
+            <GNT:FlexGrid tableId="InternalOrganizationHierarchy"/> 
+             <div style="display: none;"><GNT:FlexTable tableId="InternalOrganizationHierarchy" /></div>
+            </div>
+        </apex:define>
+       
+        </apex:composition>
+</apex:page>

@@ -1,0 +1,12 @@
+<apex:page standardstylesheets="false" showHeader="false" sidebar="false">
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">
+			<apex:form >
+            <GNT:PageMessages />
+			</apex:form>
+            <GNT:FlexTable flexTableName="ActiveAnnouncements" tableId="ActiveAnnouncements"/> 
+        </apex:define>
+    </apex:composition>
+
+</apex:page>

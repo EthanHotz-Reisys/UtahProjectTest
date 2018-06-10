@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>[Business] Mapping Object for Funding Sources and Budget Categories</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AmountAllocated__c</fullName>
+        <description>Amount Allocated from Funding Source for each line item of category</description>
+        <externalId>false</externalId>
+        <label>Allocated Amount(Obsolete)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Encumbered Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AvailableAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>FundingSourceBudgetCategory__r.AllocatedAmount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Available Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CategoryName__c</fullName>
+        <externalId>false</externalId>
+        <formula>FundingSourceBudgetCategory__r.Name</formula>
+        <label>Category Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ExternalBudgetCategory__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>These are External Budget Categories.</description>
+        <externalId>false</externalId>
+        <label>External Budget Category</label>
+        <referenceTo>BudgetCategory__c</referenceTo>
+        <relationshipLabel>Funding Account Budget Category</relationshipLabel>
+        <relationshipName>Funding_Account_Budget_Category</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FundingAccount__c</fullName>
+        <externalId>false</externalId>
+        <label>Funding Account</label>
+        <referenceTo>FundingAccount__c</referenceTo>
+        <relationshipLabel>Funding Account Budget Category</relationshipLabel>
+        <relationshipName>Funding_Account_Budget_Category</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>FundingSourceBudgetCategory__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Funding Source Budget Category</label>
+        <referenceTo>FundingSourceBudgetCategory__c</referenceTo>
+        <relationshipLabel>Funding Account Budget Category</relationshipLabel>
+        <relationshipName>Funding_Account_Budget_Category</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>HideEditDelete__c</fullName>
+        <externalId>false</externalId>
+        <formula>OR(Text( FundingAccount__r.FundingSource__r.Status__c ) = &apos;Active&apos;,Text( FundingAccount__r.FundingSource__r.Status__c ) = &apos;Approved&apos;)</formula>
+        <label>HideEditDelete</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>InternalBudgetCategory__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This Shows Internal Budget Categories from Pool of Budget Categories.</description>
+        <externalId>false</externalId>
+        <label>Object Code</label>
+        <referenceTo>BudgetCategory__c</referenceTo>
+        <relationshipLabel>Funding Account Budget Category (Internal Budget Category)</relationshipLabel>
+        <relationshipName>Funding_Account_Budget_Category1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ObjectClass__c</fullName>
+        <externalId>false</externalId>
+        <formula>InternalBudgetCategory__r.CategoryCode__c</formula>
+        <label>Object Class</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RemainingAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( FundingSourceBudgetCategory__r.RemainingAmount__c  == null,0,FundingSourceBudgetCategory__r.RemainingAmount__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Remaining Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>Funding Account Budget Category</label>
+    <nameField>
+        <displayFormat>FABC-{0000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Funding Account Budget Category</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>AmountCannotbeGreaterThanAllocatedAmount</fullName>
+        <active>true</active>
+        <description>Amount entered cannot be Greater than Allocated Amount</description>
+        <errorConditionFormula>Amount__c  &gt;  AmountAllocated__c</errorConditionFormula>
+        <errorMessage>Please Enter Encumbered Amount less than Allocated Amount</errorMessage>
+    </validationRules>
+</CustomObject>

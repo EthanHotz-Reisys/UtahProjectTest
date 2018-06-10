@@ -1,0 +1,22 @@
+<apex:page showHeader="false" sidebar="true" standardController="account" extensions="OrganizationEditCtrl" 
+        standardStylesheets="false">
+    
+    <!-- Including JS and CSS Resources  -->
+     <c:ExternalLibrary />
+    <apex:composition template="GNT__PageTemplate">
+        <!-- Dynamic Layout rendered="{!recordType != null && recordType == 'Internal'}"  -->
+        <apex:define name="content">                      
+        <!--    <c:tmpDynamicLayout templateName="Organization" 
+                    recordId="{!recordId}" saveURL="{!savePage}" layoutType="Edit" flexTableParameters="{!keyValueMap}"
+                        cancelURL="{!cancelPage}" createDefaultValues="{!listDefaultValues}"/> -->
+         <!--  <GNT:DynamicLayout rendered="{!recordType != null && recordType == 'External'}"  templateName="OrganizationExternal" 
+                    recordId="{!recordId}" saveURL="{!savePage}" layoutType="Edit" flexTableParameters="{!keyValueMap}"
+                        cancelURL="{!cancelPage}" createDefaultValues="{!listDefaultValues}"/>  -->
+                        
+           
+          <GNT:FlexEditLayout templateName="{!templateName}" 
+                    recordId="{!recordId}" saveURL="{!savePage}" layoutType="Edit" flexTableParameters="{!keyValueMap}"
+                        cancelURL="{!cancelPage}" createDefaultValues="{!listDefaultValues}"/>                        
+        </apex:define> 
+    </apex:composition>
+</apex:page>

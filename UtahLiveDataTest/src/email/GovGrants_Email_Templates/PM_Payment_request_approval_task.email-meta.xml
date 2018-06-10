@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>PM Payment request approval task</name>
+    <style>formalLetter</style>
+    <subject>Payment Request submitted</subject>
+    <textOnly>Dear {!PaymentRequest__c.ProgramManager__c} ,
+
+This email is to notify you that, the Payment Request #{!PaymentRequest__c.Name} has been submitted for the Grant #{!PaymentRequest__c.Grant__c} and is pending your approval .
+
+Payment Request Details:
+
+Award: #{!PaymentRequest__c.Award__c}
+
+Project Period: {!PaymentRequest__c.ProjectStartDate__c} - {!PaymentRequest__c.ProjectEndDate__c}
+
+
+
+Kindly login to the UtahGrants Systems and start reviewing the payment request
+
+
+
+Please do not reply to this email. You may contact the Utah Grants Support Team at utahgrants.support@reisystems.com, if you have any questions or need assistance with this task.
+
+Sincerely,
+
+
+UtahGrants Support Team
+utahgrants.support@reisystems.com
+Ph. No. 703.480.9100</textOnly>
+    <type>html</type>
+</EmailTemplate>

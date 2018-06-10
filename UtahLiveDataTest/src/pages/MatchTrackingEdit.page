@@ -1,0 +1,16 @@
+<apex:page standardController="MatchTracker__c" showHeader="false" standardStylesheets="false" extensions="MatchTrackingEditCtrl" sidebar="false">
+    
+    <!-- <script>    
+        var j$ = jQuery.noConflict();
+    </script> -->
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />   
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">          
+            <GNT:FlexEditLayout templateName="{!pageTemplateName}" recordId="{!recordId}" layoutType="Edit" flexTableParameters="{!keyValueMap}"
+              createDefaultValues="{!listDefaultValues}" saveURL="{!savePage}" cancelURL="{!cancelPage}" pageBlockConfigIds="{!pbdIds}"/>
+        </apex:define>
+    </apex:composition> 
+    
+</apex:page>

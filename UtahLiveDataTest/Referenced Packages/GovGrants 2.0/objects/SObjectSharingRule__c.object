@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Sharing model</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AccessLevel__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Access Level</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Read Only</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Read/Write</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CriteriaRoleCodes__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Auto populated by trigger based on the data user enters in &quot;Criteria Role Names&quot; field. Use comma to separate multiple values.</inlineHelpText>
+        <label>Criteria Role Codes</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>CriteriaRoleNames__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Use comma to separate multiple role names</inlineHelpText>
+        <label>Criteria Role Names</label>
+        <length>5000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Direction__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Direction</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>RuleType__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>One Way</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Mutual</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Sibling</controllingFieldValue>
+                <controllingFieldValue>Guest</controllingFieldValue>
+                <valueName>One Way</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sibling</controllingFieldValue>
+                <controllingFieldValue>Guest</controllingFieldValue>
+                <valueName>Mutual</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FamilyRootRoleName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Applicable only if the rule type is &apos;Family&apos;</inlineHelpText>
+        <label>Family Root Role Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>MD5Hash__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Calculated based on CriteriaRoleCodes__c,ShareWithRoleCodes__c,RuleType__c,SObject__c</description>
+        <externalId>false</externalId>
+        <label>MD5 Hash</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RoleLevel__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Auto calculated by trigger for the following rule types: Home, Cousin &amp; Family. For Guest rule type, this field must be empty.</inlineHelpText>
+        <label>Role Level</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>L1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>L2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>L3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>L4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>L5</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>RuleType__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Rule Type</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Home</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sibling</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Family</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Guest</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SObject__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SObject</label>
+        <referenceTo>SobjectConfig__c</referenceTo>
+        <relationshipLabel>SObject Sharing Rules</relationshipLabel>
+        <relationshipName>Config_SObject_Sharing_Rule</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>ShareWithGroupIds__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Trigger auto populates this field using the data from the &apos;Share with Role Names&apos; and &apos;Share with Public Group Names&apos;. Multiple ids are stored with comma separator. This field references Group.Id.</inlineHelpText>
+        <label>Share with Group Ids</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ShareWithPublicGroupNames__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Public Group Developer Name or Label. Use comma to separate multiple values.</inlineHelpText>
+        <label>Share with Public Group Names</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ShareWithRoleCodes__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Auto populated by trigger based on the data user enters in &quot;Share with Role Names&quot; field. Use comma to separate multiple values.</inlineHelpText>
+        <label>Share with Role Codes</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ShareWithRoleNames__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>To which roles the data should be shared with? Use comma to separate multiple role names.</inlineHelpText>
+        <label>Share with Role Names</label>
+        <length>5000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SobjectName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>SObject__r.Name</formula>
+        <label>Sobject Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Config: SObject Sharing Rule</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>Rule{000}</displayFormat>
+        <label>Rule</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Config: SObject Sharing Rule</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

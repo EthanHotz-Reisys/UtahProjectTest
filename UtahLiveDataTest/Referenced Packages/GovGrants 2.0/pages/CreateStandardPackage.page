@@ -1,0 +1,230 @@
+<apex:page controller="GNT.CreateStandardPackage" standardStylesheets="false" showHeader="false" sidebar="false" >
+    <c:ExternalLibrary />
+    <!-- List of style sheets-->
+   <!--  <apex:stylesheet value="{!URLFOR($Resource.GovGrantsExternal, 'AngularJS/CSS/angular-motion.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.GovGrantsExternal, 'AngularJS/CSS/bootstrap-additions.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.GovGrantsExternal, 'jQueryMagicSuggest/magicsuggest.css')}" />
+
+   
+    <apex:includeScript value="{!URLFOR($Resource.GovGrantsExternal, 'AngularJS/JS/1.2.14/angular-animate.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.GovGrantsExternal, 'AngularJS/JS/1.2.14/angular-sanitize.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.GovGrantsExternal, 'AngularJS/JS/1.2.14/angular-strap.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.GovGrantsExternal, 'AngularJS/JS/1.2.14/angular-strap.tpl.js')}" />
+        <apex:includeScript value="{!URLFOR($Resource.GovGrantsExternal, 'AngularJS/JS/1.2.14/angular-strap.tpl.js')}" />
+    
+    <apex:includeScript value="{!URLFOR($Resource.GovGrantsExternal, 'AngularJS/JS/1.2.14/colResizable-1.3.min.js')}" />
+    
+    <apex:includeScript value="{!URLFOR($Resource.GovGrantsExternal, 'jQueryBlockUI/JS/jquery.blockUI.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.GovGrantsExternal, 'jquery-ui/JS/jquery-ui.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.GovGrantsExternal, 'jQueryMagicSuggest/magicsuggest.js')}" />
+    -->
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__GovGrants, '/Component/CSS/CreateStandardPackage.css')}"/>      
+     <div id="modalDiv" class="bs container-fluid stdpkg-modaldiv" style="">
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">
+            <apex:form >
+                <div class="TOP_DOWN std-pkg-outer-div" id="createStdPkgDiv" style="display:none">
+                    <div id="SelectPackageComponent" ng-controller="SelectPackageCtrl">
+                          <div> <!-- class="container-fluid" -->
+                            <div ng-if="selectPackageObj.isLoading" class="container-fluid tableBackground">
+                                <div class="flexLoadingBar">
+                                    <progressbar class="progress-striped active" value="100" type="info">Loading...</progressbar>
+                                </div>
+                            </div>
+                            <div ng-if="!selectPackageObj.isLoading">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="bs alert alert-warning border-msg" ng-repeat="message in messages" id="success-alert">
+                                            <button type="button" class="fa fa-times close" ng-click="messages.splice($index, 1);"  aria-hidden="true"></button><!-- data-dismiss="alert" -->
+<!--                                              <span class="fa fa-times close" ng-click="messages.splice($index, 1);"  aria-hidden="true"></span> -->
+                                            <span >{{message.msg}}</span>
+                                            <script>
+                                                j$("#success-alert").fadeTo(45000, 1).slideUp("slow", function(){
+                                                    j$("#success-alert").alert('close');
+                                                });
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row" id="selectGroupRadioBtn" ng-if="!IsEditPackage">
+                                    <div class="col-md-12">
+                                        <div class="panel">                            
+                                            <div class="panel-heading panel-heading-header panel-header-height"><div class="panel-heading-title"><h2>{!$Label.Packageselection}</h2></div></div>                           
+                                            <div class="panel-body">
+                                                <div class="form-group">
+                                                    <label class="customLabelstyle std-pkg-label " style=""><span class="requiredField ">*</span> {!$Label.AppType}
+                                                    <select id="selectPackageType"  ng-options="size as size.name for size in selectAppObj.AppTypes" ng-model="selectAppObj.selectedAppType" ng-change="getAvailablePackageTypes();" style="margin-left: 8px;" ></select>
+                                                    </label>
+                                                    <label class="customLabelstyle std-pkg-label " style=""><span class="requiredField ">*</span> {!$Label.PackageType}
+                                                    <select id="selectPackageType"  ng-options="size as size.name for size in selectPackageObj.packageTypes" ng-model="selectPackageObj.selectedPackageType" ng-change="getAvailableFormList();" style="margin-left: 8px;" ></select>
+                                                    </label>
+                                                </div>
+                                            </div>                            
+                                        </div>
+                                    </div>                        
+                                </div><!-- row -->
+                            </div>
+                        </div>
+                        <div class="std-pkg-data" ng-if="!selectPackageObj.isLoading"> <!-- container-fluid  -->
+                              <div class="row">
+                                  <div class="col-md-12">
+                                      <div class="panel">
+                                          <div class="panel-heading panel-heading-header panel-header-height"><div class="panel-heading-title"><h2>{!$Label.PackageInformation}</h2></div></div>
+                                          <div class="panel-body leftPadding">
+                                              <div class="form-group std-pkg-text-section">
+                                                  <div class="col-md-4 "> <!--textFloat stdpkg-div1  -->
+                                                      <div for="ex1" class="customLabelstyle"><span class="requiredField ">*</span>{!$Label.PackageName}</div>
+                                                      <input id="NameInput" class="form-control" aria-label="Package Name" type="text" maxlength="45" ng-model="selectPackageObj.packageName" />
+                                                      <div for="ex1" class="customLabelstyle"><span class="requiredField "></span>{!$Label.OrganizationName}</div>
+                                                      <div class="stdpkg-ilinrflx">
+                                                          <input id="AgencyInput" class="form-control" aria-label="Search {!$Label.OrganizationName}" type="text" maxlength="45" ng-model="selectPackageObj.agency" style=""/>
+                                                          <a class="fa fa-search" href="#" onclick="openWindow();" style=""><span class="hidden508">Search</span></a>
+                                                      </div>
+                                                  </div>
+                                                  <div class="col-md-4 " style=""><!-- textFloat stdpkg-div2 -->
+                                                      <div for="descriptionInput" class="customLabelstyle"><span class="requiredField">*</span>{!$Label.PackageDescription}</div>
+                                                      <textArea Id="descriptionInput" rows="5" cols="30" aria-label="Description" class="form-control" style="height:66px"  ng-model="selectPackageObj.packageDescription"></textArea>
+                                                  </div>
+                                                  
+                                                  <div class="col-md-2" style="width:30%;     clear: both;">
+                                                    <div for="HideForExternal" class="customLabelstyle">{!$Label.HideForExternal}</div>
+                                                    <input id="HideForExternal" class="select-pkg-data-checkbox" style="" type="checkBox" ng-model="selectPackageObj.hideForExternalUser" aria-label="{!$Label.HideForExternal}"/>
+                                                  </div>
+                                                  
+                                              </div>
+                                          </div>                            
+                                      </div>
+                                  </div><!-- col-md-12 -->
+                              </div>
+                              <div class="row">   
+                                 <div class="col-md-12">
+                                      <div class="panel">
+                                          <div class="panel-heading panel-heading-header panel-header-height"><div class="panel-heading-title"><h2>{!$Label.FormsSelection}</h2></div></div>
+                                          <div class="panel-body panel-body-padding stdpkg-picklist-section" style="">
+                                              <div class="column-lists-left">                                                                                        
+                                                  <div class="selList-1">
+                                                      <div class="selectTitle width100">
+                                                          <label value="Select Options" for="LeftList">{!$Label.AvailableForms}</label>
+                                                      </div>
+                                                      <div class="width100"> 
+                                                          <select id="LeftList" ng-options="size as size.name for size in selectPackageObj.availableForms"  ng-model="selectPackageObj.selectedAvailableForms"  class="multilist width100" multiple="multiple" size="8">
+                                                          </select>
+                                                      </div>
+                                                  </div>
+                                                  <div class="selList-2">                                                                                           
+                                                      <div class="rArrow stdpkg-rArrow" style="">
+                                                          <span class="selectTitle">
+                                                              <label value="Select Options" for="LeftList"></label>
+                                                          </span>                                                       
+                                                          <a id="btnRight" ng-click="moveFormsToRight()" href="#"> 
+                                                              <i class="fa fa-arrow-circle-right fa-2x"></i>
+                                                              <span class="hidden508">Select</span>
+                                                          </a>  
+                                                          <a id="btnleft" ng-click="moveFormsToLeft1()" ng-if="selectPackageObj.showOrderingPanel" style="display:table" href="#"> 
+                                                              <i class="fa fa-arrow-circle-left fa-2x"></i>
+                                                              <span class="hidden508">Remove</span>
+                                                          </a>  
+                                                      </div>                                              
+                                                  </div>                                                                                          
+                                              </div>                                                                                
+                                              <div class="column-lists-right stdpkg-picklist-section-2">
+                                                  <div class="selList-1">
+                                                      <div class="selectTitle">
+                                                          <label value="Added" for="RightList"><span class="requiredField">*</span>{!$Label.SelectedForms}</label>
+                                                          <button type="button" ng-if="!selectPackageObj.showOrderingPanel" style="float: right;" class="customBtn" ng-click="selectPackageObj.showOrderingPanel=true">Reorder</button>
+                                                          <button type="button" ng-if="selectPackageObj.showOrderingPanel" style="float: right;" class="customBtn applychng" ng-click="selectPackageObj.showOrderingPanel=false">Apply Changes</button> 
+                                                      </div>
+                                                      <div class="width100" id="multiselectPanel" ng-init="selectPackageObj.showOrderingPanel=false" ng-if="!selectPackageObj.showOrderingPanel">
+                                                          <table class="table table-striped" >
+                                                              <thead id="heading">
+                                                                  <th class="headerCell">{!$Label.FormName}</th>
+                                                                  <th class="headerCell">{!$Label.FormRequired}</th>
+                                                                  <th class="headerCell">{!$Label.FormAction}</th>
+                                                              </thead>
+                                                              <tbody>
+                                                                  <tr ng-repeat="selectForm in selectPackageObj.selectedFormList">
+                                                                      <td class="tdclass">{{ selectForm.name }}</td>
+                                                                      <td class="tdclass" align="Center"><input type="checkbox"   ng-model="selectForm.selected"><span class="hidden508">Select {{ selectForm.name }}</span></input></td>
+                                                                      <td class="tdclass" align="Center"><a  ng-click="moveFormToLeft(selectForm);" title="Remove" href="#"><span class="fa fa-times"></span><span class="hidden508">Remove</span></a></td>
+                                                                  </tr>
+                                                              </tbody>
+                                                          </table>
+                                                      </div>
+                                                      <div class="width100" id="ReorderFormDiv" ng-if="selectPackageObj.showOrderingPanel">                                                
+                                                              <select id="RightList" ng-options="size as size.name for size in selectPackageObj.selectedFormList"  ng-model="selectPackageObj.selectedRightForms" class="multilist width100" multiple="multiple" size="8"> </select> 
+                                                      </div>
+                                                      
+                                                  </div>
+                                                  <div class="selList-2  stdpkg-picklist-top-down" ng-if="selectPackageObj.showOrderingPanel">
+                                                        <div class="rArrow" style="">
+                                                          <div>
+                                                              <a id="btnup" ng-click="moveFormsToUp()" href="#"> 
+                                                                  <i class="fa fa-arrow-circle-up fa-2x"></i>
+                                                                  <span class="hidden508">Move form up</span>
+                                                              </a>
+                                                          </div>
+                                                          <div>
+                                                              <a id="btndown" ng-click="moveFormsToDown()" href="#"> 
+                                                                  <i class="fa fa-arrow-circle-down fa-2x"></i>
+                                                                  <span class="hidden508">Move form down</span>
+                                                              </a>
+                                                          </div>
+                                                        </div>
+                                                    </div>                                              
+                                              </div>
+                                          </div>                            
+                                      </div>
+                                  </div><!-- col-md-12 -->                                          
+                              </div>
+                              <div class="row">   
+                                  <div class="col-md-12">
+                                      <div class="panel">
+                                            <div class="panel-footer panel-footer-margin">
+                                                <div class="editfooterBtnCls">
+                                                   <input data-dismiss="modal"  id="PackageSave" type="button" class="customBtn" value="Save" ng-click="createPackage(false);" />                                                
+<!--                                                    <input id="PackageCancel" type="button" class="customBtn" ng-click="closeModalWindow();" value="Cancel" />                                                 --> 
+                                                </div>
+                                              </div>   
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                    </div>        
+                </div> 
+            </apex:form>    
+        </apex:define>
+    </apex:composition>
+    </div>
+    
+    <div  id="addAttModalField" class="modal fade bgColor-black" role="dialog" data-backdrop="static" tabIndex="0">
+        <div class="modal-dialog" ng-style="{'width':300px}">
+        <!-- Modal content  -->
+            <div class="modal-content"  >                        
+                <div class="modal-header modal-header-ext">
+                    <a  ng-click="j$('#iframeAddAttContentIdField').attr('src','');showLoadingPopUp();" class="close close-ext" data-dismiss="modal" href="#">&times;<span class="hidden508">Close</span><span class="hidden508">{!$Label.FormOragnizations} window</span></a>
+                    <p class="modal-title">{!$Label.FormOragnizations}</p>
+                </div>    
+                <div class="modal-body" style="height:550px;" >
+                    <iframe id="iframeAddAttContentIdField" src="" frameborder="0" height="100%" width="100%" marginheight="0" marginwidth="0"  scrolling="yes" />
+                </div>               
+            </div>
+        </div>
+    </div>
+    <script>
+    var createStdPkg_parentTableName = '{!JSENCODE($CurrentPage.parameters.parentTableName)}';
+    var createStdPkg_isClone = '{!JSENCODE($CurrentPage.parameters.isClone)}';
+    var createStdPkg_id = '{!JSENCODE($CurrentPage.parameters.id)}';
+    _RemotingCreateStandardPackageActions = {};
+    _RemotingCreateStandardPackageActions.getFormList = '{!$RemoteAction.CreateStandardPackage.getFormList1}';
+    _RemotingCreateStandardPackageActions.getPackageDetails = '{!$RemoteAction.CreateStandardPackage.getPackageDetails}';
+    _RemotingCreateStandardPackageActions.upsertStandardPackage = '{!$RemoteAction.CreateStandardPackage.upsertStandardPackage}';
+    _RemotingCreateStandardPackageActions.getPackageTypes = '{!$RemoteAction.CreateStandardPackage.getPackageTypes}';
+    _RemotingCreateStandardPackageActions.getAppTypes = '{!$RemoteAction.CreateStandardPackage.getAppTypes}';
+
+    angular.element(document).ready(function() {
+      angular.bootstrap(document.getElementById("SelectPackageComponent"),['SelectPackageComponent']);
+    });
+    </script>
+  <script src="{!URLFOR($Resource.GovGrants)}/Component/JS/CreateStandardPackage.js"></script>
+</apex:page>

@@ -1,0 +1,16 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<font face="Times New Roman, Times, serif">Dear&nbsp;{!PaymentRequest__c.Applicant__c},</font>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<font face="Times New Roman,Times,Serif" size="3" style="font-size: 12pt; font-family: arial;">
+
+</font><p style="margin: 0cm 0cm 12pt;"><font face="Times New Roman, Times, serif" style="">This email is to inform you that your payment request for {!PaymentRequest__c.ProgramName__c} has been declined by your organizational approver for the following reason(s):</font></p><p style="margin: 0cm 0cm 12pt;"><span style="font-family: &quot;Times New Roman&quot;, Times, serif; background-color: rgb(255, 255, 255);">{!ApprovalRequest.Comments}</span></p><p style="margin: 0cm 0cm 12pt;"><font face="Times New Roman, Times, serif">To see the transaction record, please follow the link below:</font></p><p style="margin: 0cm 0cm 12pt;"><font face="Times New Roman, Times, serif">Click <a href="{!PaymentRequest__c.Link}">here</a></font></p><p style="margin-bottom: 12pt;"><font face="Times New Roman,Times,Serif" style="background-color: rgb(255, 255, 255);">Sincerely,</font></p><p style="margin-bottom: 12pt;"><font face="Times New Roman,Times,Serif" style="background-color: rgb(255, 255, 255);">UtahGrants Support Team</font></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

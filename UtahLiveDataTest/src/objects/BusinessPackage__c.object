@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>[Business]  This object associates the Package with the Program or Opportunity</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Agency__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Populate this field to identify default packages for a given agency</inlineHelpText>
+        <label>Agency</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Business Packages</relationshipLabel>
+        <relationshipName>Business_Packages</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ApplicationName__c</fullName>
+        <description>Formula field to find the Application ie; Grantee/ Grantor to which this Business package belongs</description>
+        <externalId>false</externalId>
+        <formula>PackageConfig__r.GNT__CustomAppConfig__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Application Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Award__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Award</label>
+        <referenceTo>Award__c</referenceTo>
+        <relationshipLabel>Business Packages</relationshipLabel>
+        <relationshipName>BusinessPackages</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FundingOpportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Funding Opportunity</label>
+        <referenceTo>Announcement__c</referenceTo>
+        <relationshipLabel>Business Packages</relationshipLabel>
+        <relationshipName>Business_Packages</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Grant__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to Grants</description>
+        <externalId>false</externalId>
+        <label>Grant</label>
+        <referenceTo>Grant__c</referenceTo>
+        <relationshipLabel>Business Packages</relationshipLabel>
+        <relationshipName>Business_Packages</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>GrantorOrgWideDefault__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Org wide package for grantor which is used upon program creation to auto populate the business package for a given program.</inlineHelpText>
+        <label>Grantor Org Wide Default</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideAnnouncementEdit__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(OR(ISPICKVAL(FundingOpportunity__r.Status__c,&apos;Created&apos;), 
+ISPICKVAL(FundingOpportunity__r.Status__c,&apos;Reviewed&apos;)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide Announcement Edit</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideEditBtn__c</fullName>
+        <description>Logic for Hiding Edit Button</description>
+        <externalId>false</externalId>
+        <formula>OR(AND(Program__c!=null,NOT(ISPICKVAL(Program__r.Status__c,&apos;Created&apos;))),
+  AND(FundingOpportunity__c!=null,FundingOpportunity__r.HideEditBtn__c),
+  AND(Grant__c!=null, HidePackageDelete__c)
+  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Logic for Hiding Edit Button</inlineHelpText>
+        <label>Hide Edit Btn</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideForExternalUser__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field decide which package will be available for portal users.</description>
+        <externalId>false</externalId>
+        <label>Hide For External User</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HidePackageDelete__c</fullName>
+        <description>This field is created to hide delete on packages when the grant is activated.</description>
+        <externalId>false</externalId>
+        <formula>If(ISPICKVAL(Grant__r.Status__c,&apos;Active&apos;)|| $User.ContactId !=null , true,false)</formula>
+        <label>HidePackageDelete</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideProgramEdit__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(ISPICKVAL(Program__r.Status__c,&apos;Created&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide Program Edit</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>IsMandatory__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Mandatory?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PackageConfig__c</fullName>
+        <externalId>false</externalId>
+        <label>Package Config</label>
+        <referenceTo>GNT__Package__c</referenceTo>
+        <relationshipLabel>Business Packages</relationshipLabel>
+        <relationshipName>Business_Packages</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>PackageName__c</fullName>
+        <externalId>false</externalId>
+        <formula>PackageConfig__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Package Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PackageType__c</fullName>
+        <externalId>false</externalId>
+        <label>Package Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Application</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pre-Application</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>App-Review</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Award</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Amendment Request</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Progress Report</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Site Visit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Payment Request</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Closeout</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Risk Assessment</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ProgramName__c</fullName>
+        <description>This formula field is used in Grantee Package 2 flex table</description>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK(FundingOpportunity__c) , 
+      IF( ISBLANK(Grant__c) , 
+          &quot;&quot;, 
+           IF( ISBLANK(Grant__r.FederalProgram__c) , 
+				&quot;&quot;, 
+                HYPERLINK((&apos;/&apos; + Grant__r.FederalProgram__c), Grant__r.FederalProgram__r.FederalProgramTitle__c ,&apos;_self&apos;) 
+			)
+		),
+      IF( ISBLANK(FundingOpportunity__r.Program__c) , 
+           IF( ISBLANK(Grant__c) , 
+				&quot;&quot;, 
+				IF( ISBLANK(Grant__r.FederalProgram__c) , 
+						&quot;&quot;, 
+						HYPERLINK((&apos;/&apos; + Grant__r.FederalProgram__c), Grant__r.FederalProgram__r.FederalProgramTitle__c ,&apos;_self&apos;) 
+				)
+            ) ,
+           FundingOpportunity__r.FederalProgram__c
+		) 
+)</formula>
+        <label>Program Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Program</label>
+        <referenceTo>Program__c</referenceTo>
+        <relationshipLabel>Business Packages</relationshipLabel>
+        <relationshipName>Business_Packages</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UniquePackageName__c</fullName>
+        <description>This field is used to display Unique Package Name</description>
+        <externalId>false</externalId>
+        <label>Unique Package Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VersionNumber__c</fullName>
+        <externalId>false</externalId>
+        <formula>PackageConfig__r.GNT__VersionNumber__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Version Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Business Package</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>PackageType__c</columns>
+        <columns>ApplicationName__c</columns>
+        <columns>PackageConfig__c</columns>
+        <columns>PackageName__c</columns>
+        <columns>GrantorOrgWideDefault__c</columns>
+        <columns>IsMandatory__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>GrantorOrgWideDefault__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>OWD Filtered</label>
+    </listViews>
+    <nameField>
+        <displayFormat>BP-{0000}</displayFormat>
+        <label>Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Business Packages</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>AnnouncementAndProgramVal</fullName>
+        <active>true</active>
+        <errorConditionFormula>Program__c  &lt;&gt; null &amp;&amp;  FundingOpportunity__c  &lt;&gt; null</errorConditionFormula>
+        <errorMessage>Program and Announcement value can not present at a time.</errorMessage>
+    </validationRules>
+</CustomObject>

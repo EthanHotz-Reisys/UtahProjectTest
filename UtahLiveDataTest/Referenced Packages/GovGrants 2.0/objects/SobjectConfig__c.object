@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>[Framework] This object is used to store Sobject specific configurations.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>ApprovalDecisionCommentLabel__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The label to be showed for Comment box</description>
+        <externalId>false</externalId>
+        <label>Approval Decision Comment Label</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApprovalPDFConditionAPIName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the API name which will decide whether the PDF needs to be captured</description>
+        <externalId>false</externalId>
+        <label>Approval PDF Condition API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApprovalReCallCommentFieldAPIName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field API name to store comment when sent to owner is enabled.</description>
+        <externalId>false</externalId>
+        <label>Approval ReCall Comment Field API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApprovalReCallEnable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Enable or Disable Approval Recall - Standard salesforce functionality implemented in custom way.</description>
+        <externalId>false</externalId>
+        <label>Enable Recall?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ApprovalReCallFieldAPIName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field API Name for Recall functionality.</description>
+        <externalId>false</externalId>
+        <label>ReCall Field API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApprovalSnapshotFileName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>File name for Approval PDF. It can also be given in form of a merge field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>File name for Approval PDF. It can also be given in form of a merge field.</inlineHelpText>
+        <label>Approval Snapshot File Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApproverFieldAPIName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Approver Field API Name</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AttachmentClassifications__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field will store semi-colon separated Attachment classification types applicable for the specific object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will store  semi-colon separated Attachment classification types applicable for the specific object</inlineHelpText>
+        <label>Attachment Classifications</label>
+        <length>6000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AttachmentName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>What should be the name of the attachment? It supports any combination of static text and merge fields in the form of {!FieldAPIName}
+
+Eg: Attachment for Application {!Name}</description>
+        <externalId>false</externalId>
+        <label>Attachment Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CaptureSnapshotonApproval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Capture Snapshot on Approval?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CriteriaField__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Define criteria field API Name for page layout selection.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Define criteria field API Name for page layout selection.</inlineHelpText>
+        <label>Criteria field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CurrentAppField__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Store field API Name where we will store current app name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Store field API Name where we will store current app name</inlineHelpText>
+        <label>Current App Field API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DisplayFieldsAPIName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Comma separated Field API Names to be displayed on the Object Lookup</inlineHelpText>
+        <label>Lookup Display Field Names</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EnableTimeBaseApproval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>EnableTimeBaseApproval</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HistoryObjects__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field will contain comma separated related object API name to be shown in history table for a given Sobject</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will contain comma separated related objects API name to be shown in history table for a given Sobject</inlineHelpText>
+        <label>History Objects</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>LookupFilterCriteria__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Default lookup filter criteria for the sobject lookup</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Default lookup filter criteria for the sobject lookup</inlineHelpText>
+        <label>Lookup Filter Criteria</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LookupHeaderText__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Modal header for custom lookup window</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Modal header for custom lookup window</inlineHelpText>
+        <label>Lookup Header Text</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ModuleTags__c</fullName>
+        <deprecated>false</deprecated>
+        <description>It will help for migration.</description>
+        <externalId>false</externalId>
+        <label>Module Tags</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>ModuleTags</valueSetName>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ObjectLabel__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Object Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReminderDays__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Reminder Days</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>SkipInternalUniqueId__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Skip Internal Unique Id generation</description>
+        <externalId>false</externalId>
+        <label>Skip Internal Unique Id</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>TaskScheduleAssigntoGroupName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Task Schedule Assign to Group Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TaskScheduleReminderOffset__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Task Schedule Reminder Offset</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TaskScheduleType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Comma separated task type values</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Comma separated task type values</inlineHelpText>
+        <label>Task Schedule Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UserFriendlyNameField__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contain API Name of the field which will be used as unique identifier for History Related list</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contain API Name of the field which will be used as unique identifier for History Related list</inlineHelpText>
+        <label>User Friendly Name Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>isAutoCreated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>is AutoCreated</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Config: SObject</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>AttachmentClassifications__c</columns>
+        <columns>AttachmentName__c</columns>
+        <columns>isAutoCreated__c</columns>
+        <columns>HistoryObjects__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>SObject Config</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

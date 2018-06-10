@@ -1,0 +1,2808 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>[Framework] Stores all the fields/field sets that belong to a given page block.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AddressFieldJSON__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Example: { 
+&quot;StreetField&quot;:&quot;Field-APIName&quot;, 
+&quot;CityField&quot;:&quot;Field-APIName&quot;, 
+&quot;StateField&quot;:&quot;Field-APIName&quot;, 
+&quot;ZipCodeField&quot;:&quot;Field-APIName&quot;, 
+&quot;CountryField&quot;:&quot;Field-APIName&quot; 
+}</inlineHelpText>
+        <label>Address Field JSON</label>
+        <length>5000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AddressFields__c</fullName>
+        <deprecated>false</deprecated>
+        <description>address field for google map</description>
+        <externalId>false</externalId>
+        <label>AddressField(obsolete)</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AllowedWordsForRichTextArea__c</fullName>
+        <defaultValue>200</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Specify the number of words that are required in order to submit the record. Default is 200 words.</inlineHelpText>
+        <label>Allowed Words For Rich Text Area</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AltRenderingConfig__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This is a name which points to a DplAlternativeRendering__c record. That record specifies if this field should be shown using different UI controls than the standard Salesforce ones.</inlineHelpText>
+        <label>Alternative Rendering Config</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AttachmentClassifications__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Classification associated with the Page Block detail</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter comma separated classification associated with the Page Block detail</inlineHelpText>
+        <label>Attachment Classifications</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ClassificationFieldAPIName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field API Name to get classification&apos;s in case of attachment component</description>
+        <externalId>false</externalId>
+        <label>Classification Field API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ClonedFrom__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Parent Record from which this record is cloned</inlineHelpText>
+        <label>Cloned From</label>
+        <referenceTo>PageBlockDetailConfig__c</referenceTo>
+        <relationshipLabel>Page Block Details Config</relationshipLabel>
+        <relationshipName>PageBlockDetailsConfig</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CustomLookupModalHeader__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Lookup Header Text</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DateTimeFormat__c</fullName>
+        <deprecated>false</deprecated>
+        <description>To Format the the DateTime field  in specific format (View and Print Layout)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>To Format the the DateTime field  in specific format (View and Print Layout)</inlineHelpText>
+        <label>Date Time Format</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DefaultValue__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field is to show the default select option for alternate rendering field, which will not be stored in the custom object. It is just for display purpose.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is to show the default select option for alternate rendering field, which will not be stored in the custom object. It is just for display purpose.</inlineHelpText>
+        <label>Default Value</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DisableDecisionExpression__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>When this expression returns true, this field is rendered in disabled mode.</inlineHelpText>
+        <label>Disable Decision Expression</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>DisplayLookupFieldNames__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter the fields you want to see as columns in lookup table. Enter comma separated values.</inlineHelpText>
+        <label>Lookup Display Field Names</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FieldAPIName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the API name (with namespace) for the field? Don&apos;t include the object name in this field? Leave it empty if the field type is &apos;Blank Space&apos;</inlineHelpText>
+        <label>Field API Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FieldAlignment__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the alignment for label &amp; value? Default is Horizontal (means, label and value are in the same line)</inlineHelpText>
+        <label>Alignment Between Label &amp; Value(Obs)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Horizontal</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Vertical</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FieldLabelOverrideRichText__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field label override using rich text area.</description>
+        <externalId>false</externalId>
+        <label>Field Label Override (Rich Text)</label>
+        <length>20000</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FieldLabelOverride__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If the field type is &apos;Field&apos;, then you can override the field label here. Not applicable for FieldSet.</inlineHelpText>
+        <label>Field Label Override</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FilterCriteria__c</fullName>
+        <deprecated>false</deprecated>
+        <description>If a field is a lookup field, you can add a filter criteria to it in the form of e.g : namespace__Status__c = &apos;Active&apos; or  or also in form of {!FieldAPIName} namespace__status__c = &apos;{!namespace__AnnouncementStatus__c}&apos;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If a field is a lookup field, you can add a filter criteria to it in the form of e.g : namespace__Status__c = &apos;Active&apos; or  or also in form of {!FieldAPIName} namespace__status__c = &apos;{!namespace__AnnouncementStatus__c}&apos;</inlineHelpText>
+        <label>Lookup Filter Criteria</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>HelpTextLong__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Help Text Long</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>HelpTextPost__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This text shows after the field label as regular text. No help icon gets rendered for this text.</inlineHelpText>
+        <label>Help Text (Post)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HelpText__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Help Text (Obsolete)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>HideDecisionExpression__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>When this expression returns true, this field is NOT rendered on the layout</inlineHelpText>
+        <label>Hide Decision Expression</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>HideDecisionField__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This field decides if the field should be hidden or not .This data type for this field can be either checkbox or Formula (Checkbox) . Should include namespace for the field API name</inlineHelpText>
+        <label>Hide Decision Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HideExpressionFields__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Fields to use in Expression Builder</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Fields to use in Expression Builder</inlineHelpText>
+        <label>Hide Expression Fields</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>HideExpressionJSON__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This fields contains JSON value for hide expression</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This fields contains JSON value for hide expression</inlineHelpText>
+        <label>Hide Expression JSON</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>HideFieldsJSON__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Example- [{&quot;FieldToHide&quot;:&quot;FieldToHide1__c&quot;,&quot;FieldValue&quot;:&quot;sampleVal&quot;,&quot;Operator&quot;:&quot;==&quot;},{&quot;FieldToHide&quot;:&quot;FieldToNumberHide2__c&quot;,&quot;FieldValue&quot;:&quot;200&quot;,&quot;Operator&quot;:&quot;&lt;&quot;}]</inlineHelpText>
+        <label>Hide Fields JSON</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>HideForContext__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>For which context(s), the field should be hidden on the layout?</inlineHelpText>
+        <label>Hide for Context</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Create</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Edit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>View</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>HideForProfile__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Hide For Profile</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ADT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CON</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CTR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DEV</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>EPOC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>EXE</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GMO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Public Profile</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SME</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SPA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SPI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>System Administrator</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TR1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TR2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TR3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VND</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>HideForRole__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Hide For Role</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>CHA Project Officer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CEO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CHA Grant Monitor</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>HideForUser__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>For which type of users, this field should be hidden on the layout?</inlineHelpText>
+        <label>Hide for User</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Internal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Applicant</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reviewer</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>HideLabel__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This functionality will help us to hide label of text field.</description>
+        <externalId>false</externalId>
+        <label>Hide Label</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideOperator__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Hide Operator(Obsolete)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AND</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>OR</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>HideforQueue__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains semi-colon separated developer names of the Queue, for which button needs to be hidden</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains semi-colon separated developer names of the Queue, for which button needs to be hidden</inlineHelpText>
+        <label>Hide for Queue</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>IsActive__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Display this element on the layout?</inlineHelpText>
+        <label>Is Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsCustomLookup__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Is Custom Lookup</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsHiddenField__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If the field is going to be used as a hidden field (not exposed on the page) - used for developers to post form data</inlineHelpText>
+        <label>Is Hidden Field</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsRichTextArea__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Should this field display a rich text area editor on edit layout?</inlineHelpText>
+        <label>Enable Rich Text Area Editor</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsScoringQuestion__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Is Review Question?(Obsolete)</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LabelValuePixelRatio__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This field specifies the percent ratio of the pixels used to render the field label and its value when the Field Alignment is set to Horizontal. The default ratio is 35-60</inlineHelpText>
+        <label>Label &amp; Value Pixel Ratio</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>FieldAlignment__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>35-60</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>50-45</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Horizontal</controllingFieldValue>
+                <valueName>35-60</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Horizontal</controllingFieldValue>
+                <valueName>50-45</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LatitudeAndLongitude__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Latitude And Longitude to display google map</description>
+        <externalId>false</externalId>
+        <label>Latitude and Longitudes</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>LookupObjectAPIName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Object API Name for Custom Lookup field.</description>
+        <externalId>false</externalId>
+        <label>Lookup Object API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ObjectAPIName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>PageBlockConfig__r.TabLayoutConfig__r.PageLayoutConfig__r.ObjectAPIName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Object API Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Operator__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Operator</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AND</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>OR</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PDFFieldName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field is used to store the XML field names as specified in PDF schema.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the name of this field in the XML schema of the corresponding PDF?</inlineHelpText>
+        <label>PDF Field Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PageBlockConfig__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Page Block Config</label>
+        <referenceTo>PageBlockConfig__c</referenceTo>
+        <relationshipLabel>Page Block Details Config</relationshipLabel>
+        <relationshipName>PageBlockFieldConfig</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>PageLayoutId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(PageBlockConfig__r.TabLayoutConfig__r.PageLayoutConfig__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Page Layout Id</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReadDecisionField__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Read Decision Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReadOnlyExpressionFields__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Fields to use in Read only Expression Builder</description>
+        <externalId>false</externalId>
+        <label>Read Only Expression Fields</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ReadOnlyExpressionJSON__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This fields contains JSON value for read only expression</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This fields contains JSON value for read only expression</inlineHelpText>
+        <label>Read Only Expression JSON</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ReadOnlyForContext__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Read Only For Context</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Create</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Edit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>View</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ReadOnlyForProfile__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Read Only For Profile</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>System Administrator</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Project Officer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Project Admin</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Program User</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Executive User</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Fiscal User</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Program Manager</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Grant Monitor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Project Staff</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SPA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SPI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SME</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IND</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ReadOnlyForRole__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Read Only For Role</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>CHA Project Officer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ADMIN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CHA Grant Monitor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>HAHSTA Project Officer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>HAHSTA Grant Monitor</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ReadOnlyForUser__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Read Only For User</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Internal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Applicant</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reviewer</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ReadOnly__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If this field is checked, the field will be displayed as read only on edit layout.</inlineHelpText>
+        <label>Read Only</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RenderCondition__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Render Condition</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Render_Condition_Property__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Render Condition Property</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Enable/Disable</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hide/Show</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>RequiredBehavior__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Required for Save = the field will be marked as required on the layout. Save is prevented until the required fields.
+Required for Submit = This field denotes whether the configured field must be filled out in order for the parent item to be submitted</inlineHelpText>
+        <label>Required Behavior</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Required for Save</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Required for Submit</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>RequiredByRole__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Semi Colon separated role names to be added to define the required action for a particular role.</description>
+        <externalId>false</externalId>
+        <label>Required By Role</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RequiredForSubmitByRole__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Required For Submit By Role</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RequiredForSubmit__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field denotes whether the configured field must be filled out in order for the parent item to be submitted</description>
+        <externalId>false</externalId>
+        <label>Required for Submit (Obsolete)</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Applicable only for simple fields (Field Type=Field). If it is enabled, the field will be marked as required on the layout. Save is prevented until the required fields are filled in.</inlineHelpText>
+        <label>Required (Obsolete)</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RichTextAreaAlignment__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the alignment for label &amp; value? Default is Horizontal (means, label and value are in the same line)</inlineHelpText>
+        <label>Label and Value Alignment(obsolete)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Horizontal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Vertical</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ScoringFactorFieldName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the API name of the field from application or pre-application object that provides the weightage factor (which is a number) for this review question?</inlineHelpText>
+        <label>Scoring Factor Field Name(Obsolete)</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SkipForExport__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Skip For Export</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SortOrder__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the sequence between all the fields that show up on the page block?</inlineHelpText>
+        <label>Sort Order</label>
+        <precision>3</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StaticText__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Provision to add a static text on the  Dynamic Layout.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Provision to add a static text on the  Dynamic Layout.</inlineHelpText>
+        <label>Static Text</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Style__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>You can use this field to assign any css class to this element</inlineHelpText>
+        <label>Style</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TextAreaColumns__c</fullName>
+        <defaultValue>55</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>How many columns should the current field occupy? This is applicable only if the current field is Text Area data type.</inlineHelpText>
+        <label>Text Area Columns</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TextAreaRows__c</fullName>
+        <defaultValue>3</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>How many rows should the text area field occupy? This is applicable only if the current field is Text Area data type.</inlineHelpText>
+        <label>Text Area Rows</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Config: Page Block Detail</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>FieldAPIName__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>PBD-{000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Page Block Details Config</pluralLabel>
+    <recordTypes>
+        <fullName>BlankSpace</fullName>
+        <active>true</active>
+        <description>Blank space as a filler (not a real database field)</description>
+        <label>Blank Space</label>
+        <picklistValues>
+            <picklist>FieldAlignment__c</picklist>
+            <values>
+                <fullName>Horizontal</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Vertical</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForContext__c</picklist>
+            <values>
+                <fullName>Create</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>View</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForProfile__c</picklist>
+            <values>
+                <fullName>System Administrator</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForRole__c</picklist>
+            <values>
+                <fullName>CEO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Project Officer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForUser__c</picklist>
+            <values>
+                <fullName>Applicant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviewer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideOperator__c</picklist>
+            <values>
+                <fullName>AND</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LabelValuePixelRatio__c</picklist>
+            <values>
+                <fullName>35-60</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50-45</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operator__c</picklist>
+            <values>
+                <fullName>AND</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForContext__c</picklist>
+            <values>
+                <fullName>Create</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>View</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForProfile__c</picklist>
+            <values>
+                <fullName>Executive User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Admin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Staff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Administrator</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForRole__c</picklist>
+            <values>
+                <fullName>ADMIN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Project Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HAHSTA Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HAHSTA Project Officer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForUser__c</picklist>
+            <values>
+                <fullName>Applicant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviewer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Render_Condition_Property__c</picklist>
+            <values>
+                <fullName>Enable%2FDisable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hide%2FShow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RequiredBehavior__c</picklist>
+            <values>
+                <fullName>Required for Save</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Required for Submit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RichTextAreaAlignment__c</picklist>
+            <values>
+                <fullName>Horizontal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vertical</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>DigitalSignatureTag</fullName>
+        <active>true</active>
+        <description>Enable embedded smart tags for digital signature</description>
+        <label>Digital Signature Tag</label>
+        <picklistValues>
+            <picklist>FieldAlignment__c</picklist>
+            <values>
+                <fullName>Horizontal</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Vertical</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForContext__c</picklist>
+            <values>
+                <fullName>Create</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>View</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForProfile__c</picklist>
+            <values>
+                <fullName>System Administrator</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForRole__c</picklist>
+            <values>
+                <fullName>CEO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Project Officer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForUser__c</picklist>
+            <values>
+                <fullName>Applicant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviewer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideOperator__c</picklist>
+            <values>
+                <fullName>AND</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LabelValuePixelRatio__c</picklist>
+            <values>
+                <fullName>35-60</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50-45</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operator__c</picklist>
+            <values>
+                <fullName>AND</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForContext__c</picklist>
+            <values>
+                <fullName>Create</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>View</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForProfile__c</picklist>
+            <values>
+                <fullName>Executive User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Admin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Staff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Administrator</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForRole__c</picklist>
+            <values>
+                <fullName>ADMIN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Project Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HAHSTA Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HAHSTA Project Officer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForUser__c</picklist>
+            <values>
+                <fullName>Applicant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviewer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Render_Condition_Property__c</picklist>
+            <values>
+                <fullName>Enable%2FDisable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hide%2FShow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RequiredBehavior__c</picklist>
+            <values>
+                <fullName>Required for Save</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Required for Submit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RichTextAreaAlignment__c</picklist>
+            <values>
+                <fullName>Horizontal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vertical</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Field</fullName>
+        <active>true</active>
+        <description>Single Field</description>
+        <label>Field</label>
+        <picklistValues>
+            <picklist>FieldAlignment__c</picklist>
+            <values>
+                <fullName>Horizontal</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Vertical</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForContext__c</picklist>
+            <values>
+                <fullName>Create</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>View</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForProfile__c</picklist>
+            <values>
+                <fullName>System Administrator</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForRole__c</picklist>
+            <values>
+                <fullName>CEO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Project Officer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForUser__c</picklist>
+            <values>
+                <fullName>Applicant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviewer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideOperator__c</picklist>
+            <values>
+                <fullName>AND</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LabelValuePixelRatio__c</picklist>
+            <values>
+                <fullName>35-60</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50-45</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operator__c</picklist>
+            <values>
+                <fullName>AND</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForContext__c</picklist>
+            <values>
+                <fullName>Create</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>View</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForProfile__c</picklist>
+            <values>
+                <fullName>Executive User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Admin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Staff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Administrator</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForRole__c</picklist>
+            <values>
+                <fullName>ADMIN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Project Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HAHSTA Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HAHSTA Project Officer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForUser__c</picklist>
+            <values>
+                <fullName>Applicant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviewer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Render_Condition_Property__c</picklist>
+            <values>
+                <fullName>Enable%2FDisable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hide%2FShow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RequiredBehavior__c</picklist>
+            <values>
+                <fullName>Required for Save</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Required for Submit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RichTextAreaAlignment__c</picklist>
+            <values>
+                <fullName>Horizontal</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Vertical</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>FieldLevelAttachment</fullName>
+        <active>true</active>
+        <description>This record type supports Inline Package</description>
+        <label>Field Level Attachment</label>
+        <picklistValues>
+            <picklist>FieldAlignment__c</picklist>
+            <values>
+                <fullName>Horizontal</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Vertical</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForContext__c</picklist>
+            <values>
+                <fullName>Create</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>View</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForProfile__c</picklist>
+            <values>
+                <fullName>System Administrator</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForRole__c</picklist>
+            <values>
+                <fullName>CEO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Project Officer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForUser__c</picklist>
+            <values>
+                <fullName>Applicant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviewer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideOperator__c</picklist>
+            <values>
+                <fullName>AND</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LabelValuePixelRatio__c</picklist>
+            <values>
+                <fullName>35-60</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50-45</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operator__c</picklist>
+            <values>
+                <fullName>AND</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForContext__c</picklist>
+            <values>
+                <fullName>Create</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>View</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForProfile__c</picklist>
+            <values>
+                <fullName>Executive User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Admin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Staff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Administrator</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForRole__c</picklist>
+            <values>
+                <fullName>ADMIN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Project Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HAHSTA Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HAHSTA Project Officer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForUser__c</picklist>
+            <values>
+                <fullName>Applicant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviewer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Render_Condition_Property__c</picklist>
+            <values>
+                <fullName>Enable%2FDisable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hide%2FShow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RequiredBehavior__c</picklist>
+            <values>
+                <fullName>Required for Save</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Required for Submit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RichTextAreaAlignment__c</picklist>
+            <values>
+                <fullName>Horizontal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vertical</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>FieldSet</fullName>
+        <active>true</active>
+        <description>Collection of fields represented by FieldSet</description>
+        <label>Field Set</label>
+        <picklistValues>
+            <picklist>FieldAlignment__c</picklist>
+            <values>
+                <fullName>Horizontal</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Vertical</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForContext__c</picklist>
+            <values>
+                <fullName>Create</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>View</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForProfile__c</picklist>
+            <values>
+                <fullName>System Administrator</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForRole__c</picklist>
+            <values>
+                <fullName>CEO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Project Officer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForUser__c</picklist>
+            <values>
+                <fullName>Applicant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviewer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideOperator__c</picklist>
+            <values>
+                <fullName>AND</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LabelValuePixelRatio__c</picklist>
+            <values>
+                <fullName>35-60</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50-45</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operator__c</picklist>
+            <values>
+                <fullName>AND</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForContext__c</picklist>
+            <values>
+                <fullName>Create</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>View</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForProfile__c</picklist>
+            <values>
+                <fullName>Executive User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Admin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Staff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Administrator</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForRole__c</picklist>
+            <values>
+                <fullName>ADMIN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Project Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HAHSTA Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HAHSTA Project Officer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForUser__c</picklist>
+            <values>
+                <fullName>Applicant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviewer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Render_Condition_Property__c</picklist>
+            <values>
+                <fullName>Enable%2FDisable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hide%2FShow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RequiredBehavior__c</picklist>
+            <values>
+                <fullName>Required for Save</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Required for Submit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RichTextAreaAlignment__c</picklist>
+            <values>
+                <fullName>Horizontal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vertical</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Google_Map_Location</fullName>
+        <active>true</active>
+        <label>Google Map Location</label>
+        <picklistValues>
+            <picklist>FieldAlignment__c</picklist>
+            <values>
+                <fullName>Horizontal</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Vertical</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForContext__c</picklist>
+            <values>
+                <fullName>Create</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>View</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForProfile__c</picklist>
+            <values>
+                <fullName>System Administrator</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForRole__c</picklist>
+            <values>
+                <fullName>CEO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Project Officer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForUser__c</picklist>
+            <values>
+                <fullName>Applicant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviewer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideOperator__c</picklist>
+            <values>
+                <fullName>AND</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LabelValuePixelRatio__c</picklist>
+            <values>
+                <fullName>35-60</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50-45</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operator__c</picklist>
+            <values>
+                <fullName>AND</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForContext__c</picklist>
+            <values>
+                <fullName>Create</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>View</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForProfile__c</picklist>
+            <values>
+                <fullName>Executive User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Admin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Staff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Administrator</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForRole__c</picklist>
+            <values>
+                <fullName>ADMIN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Project Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HAHSTA Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HAHSTA Project Officer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForUser__c</picklist>
+            <values>
+                <fullName>Applicant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviewer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Render_Condition_Property__c</picklist>
+            <values>
+                <fullName>Enable%2FDisable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hide%2FShow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RequiredBehavior__c</picklist>
+            <values>
+                <fullName>Required for Save</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Required for Submit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RichTextAreaAlignment__c</picklist>
+            <values>
+                <fullName>Horizontal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vertical</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>StaticText</fullName>
+        <active>true</active>
+        <label>Static Text</label>
+        <picklistValues>
+            <picklist>FieldAlignment__c</picklist>
+            <values>
+                <fullName>Horizontal</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Vertical</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForContext__c</picklist>
+            <values>
+                <fullName>Create</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>View</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForProfile__c</picklist>
+            <values>
+                <fullName>System Administrator</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForRole__c</picklist>
+            <values>
+                <fullName>CEO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Project Officer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideForUser__c</picklist>
+            <values>
+                <fullName>Applicant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviewer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HideOperator__c</picklist>
+            <values>
+                <fullName>AND</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LabelValuePixelRatio__c</picklist>
+            <values>
+                <fullName>35-60</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50-45</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operator__c</picklist>
+            <values>
+                <fullName>AND</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForContext__c</picklist>
+            <values>
+                <fullName>Create</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Edit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>View</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForProfile__c</picklist>
+            <values>
+                <fullName>Executive User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Admin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Staff</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Administrator</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForRole__c</picklist>
+            <values>
+                <fullName>ADMIN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHA Project Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HAHSTA Grant Monitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HAHSTA Project Officer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ReadOnlyForUser__c</picklist>
+            <values>
+                <fullName>Applicant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviewer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Render_Condition_Property__c</picklist>
+            <values>
+                <fullName>Enable%2FDisable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hide%2FShow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RequiredBehavior__c</picklist>
+            <values>
+                <fullName>Required for Save</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Required for Submit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RichTextAreaAlignment__c</picklist>
+            <values>
+                <fullName>Horizontal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vertical</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>Dynamic_Layout_Builder</fullName>
+        <availability>online</availability>
+        <description>Create Page Block Detail Config records in Bulk</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Dynamic Layout Builder</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/DynamicLayoutBuilder?id={!PageBlockConfig__c.Id}</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email sent to Program Owner when Program Approver approves the Amendment</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Program Amendment Approved Email Template</name>
+    <style>formalLetter</style>
+    <subject>Notification: Program #{!Program__c.Name} Amendment has been Approved</subject>
+    <textOnly>Dear {!Program__c.OwnerFirstName},
+
+This email is to notify you that the Amendment has been approved for the Program # {!Program__c.Name}.
+To view the program details, Kindly login to the EGMS Systems and click here to open record.
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+Sincerely,
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

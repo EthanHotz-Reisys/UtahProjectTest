@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>For when an application has been sent back</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Application Send Back</name>
+    <style>formalLetter</style>
+    <subject>Re-submit Application for #{!Application__c.ProgramTitle__c} for {!Application__c.FiscalYear__c}</subject>
+    <textOnly>Dear {!Application__c.OwnerFullName},
+Please re-submit application for {!Application__c.ProgramTitle__c} for {!Application__c.FiscalYear__c} which has been sent back with the following comments:
+
+{!ApprovalRequest.Comments}
+
+To review the application, please click here.
+
+
+Sincerely,
+
+UtahGrants Support Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

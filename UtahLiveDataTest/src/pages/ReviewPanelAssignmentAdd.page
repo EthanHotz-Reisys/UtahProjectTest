@@ -1,0 +1,14 @@
+<apex:page controller="ReviewPanelAssignmentAddCtrl" showHeader="false" sidebar="false" standardStylesheets="false">
+    
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">
+            <GNT:FlexTable listParams="{!listParameters}" flexTableName="AssignPanelApplications" 
+            tableId="AssignPanelApplicationsTable" flexTableParameters="{!keyValueMap}" flexTableHeader="{!flexTableHeader}"/>
+            
+        </apex:define>
+    </apex:composition>    
+    <script>
+        setPageTitle('{!flexTableHeader}');
+    </script>
+</apex:page>

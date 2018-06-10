@@ -1,0 +1,73 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="true" Title="Gov Grants" applyHTMLTag="false" >
+<html lang="en">  
+	<noscript>
+        <p class="noscript">
+            For full functionality of this site it is necessary to enable JavaScript.
+            Here are the <a href="http://www.enable-javascript.com/" target="_blank">
+            instructions</a> on how to enable JavaScript in your web browser.
+        </p>
+    </noscript>
+   <!-- <div id="PageTemplateApp">
+                <div class="bs" ng-controller="PageTemplateAppCtrl" >
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div id="body" class="col-lg-10"  style="padding-left:30px; float:left; clear:both; width:100%;">
+                               <apex:insert name="body"></apex:insert>
+                            </div>
+                        </div>
+                    </div> 
+               	</div> 
+    </div> -->
+    <!--<div id="bodyDivId" class="bodyDiv container-fluid" style="padding-left:30px; float:left; clear:both; width:100%;">
+          <apex:insert name="content"></apex:insert> 
+    </div>-->
+    <div id="PageTemplateApp">
+              <!-- <div class="bs" ng-controller="PageTemplateAppCtrl" > -->  
+              <div  ng-controller="PageTemplateAppCtrl" >
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div id="body" class="col-lg-10"  style="padding-left:30px; float:left; clear:both; width:100%;">
+                               <apex:insert name="body"></apex:insert>
+                            </div>
+                        </div>
+                    </div> 
+                </div> 
+    </div>
+    <script>
+    	var j$ = jQuery.noConflict();
+        j$(document).ready(function(){
+            buildLookupIcon();
+            buildRequiredInput();
+            handleDatePicker();
+            handleDateTimePicker();
+        });
+        
+        var buildLookupIcon = function(){
+            j$('.lookupIcon').each(function(){
+                var currentNode = j$(this);
+                currentNode.parent().append('<span class="fa fa-search"></span>');
+            });
+        }
+        var buildRequiredInput = function(){
+            j$('.requiredInput').each(function(){
+                j$(this).append('<i class="fa fa-minus fa-rotate-90 fa-lg"></i>');
+            });
+        }
+         //Date Picker
+        var handleDatePicker = function(){
+            var input = j$("[class$='datepicker']");
+            input.datepicker().on('changeDate', function(ev){
+               j$(this).datepicker("hide");
+            });  
+          
+            j$('.dateFormat').hide();
+            
+        }  
+        var handleDateTimePicker = function(){
+            j$("[class$='datetimepicker']").datetimepicker({
+                format:'m/d/Y h:i A'               
+           }); 
+        }    
+	</script>
+</html>
+</apex:page>

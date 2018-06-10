@@ -1,0 +1,10 @@
+<apex:page standardController="FundingSource__c" title="Funding FAIN Edit" extensions="FundingSourceEditCtrl" showHeader="false" 
+        sidebar="false" standardStylesheets="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />   
+    
+    <script>
+        setPageTitle('Funding Source - Edit');
+    </script> 
+</apex:page>

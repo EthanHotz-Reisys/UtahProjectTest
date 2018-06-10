@@ -1,0 +1,13 @@
+<apex:page sidebar="false" standardStylesheets="false" showHeader="false" controller="CommunityApprovalCtrl">
+  
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+    <!--GNT:PageMessages /--> 
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">
+            <GNT:FlexViewLayout templateName="CommunityApprovalTemplate" recordId="{!recordId}" flexTableParameters="{!flexTableParameters}" layoutType="View"/>
+            <!--GNT:FlexTable flexTableName="UserApproval" tableId="UserApproval" flexTableParameters="{!flexTableParameters}"/-->
+        </apex:define>
+    </apex:composition>
+    
+</apex:page>

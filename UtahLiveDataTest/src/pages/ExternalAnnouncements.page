@@ -1,0 +1,8 @@
+<apex:page controller="AnnouncementsRecordsCtrl" showHeader="false" sidebar="false" standardStylesheets="false">
+    <c:ExternalLibrary />
+      <div class="bs container-fluid row">
+            <GNT:FlexTable flexTableName="{!templateName}" flexTableParameters="{!keyValueMap}" 
+            tableId="popupflextable" listParams="{!listParameters}"/>
+       </div>
+    
+</apex:page>

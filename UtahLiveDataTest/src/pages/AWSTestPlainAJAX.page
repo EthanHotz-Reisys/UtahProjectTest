@@ -1,0 +1,187 @@
+<apex:page showHeader="false" sidebar="false" cache="false" controller="AWS_Upload" standardStylesheets="false">
+
+    <style>
+        form {
+          padding: 20px;
+          border: 1px solid #cccccc;
+          border-radius: 10px;
+          -moz-border-radius: 10px;
+          -webkit-box-shadow: 0 0 10px #ccc;
+          -moz-box-shadow: 0 0 10px #ccc;
+          box-shadow: 0 0 10px #ccc;
+          background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
+          background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f2f2f2));
+        }
+        #mainContent {
+          width: 99%;
+          float: left;
+          margin-left: 0px;
+          overflow: hidden;
+          padding-top: 0px;
+        }
+        h4.fileToUpload {
+          margin-top: 0.0em;
+          font-size: 16pt;
+        }
+        h1, h2, h3, h4, h5, h6 {
+          color: #7F3300;
+          margin-top: 1.5em;
+          margin-bottom: 0.3em;
+          font-family: DaxCompact-RegularRegular, Georgia, Helvetica, Times, 'Times New Roman' , serif;
+        }
+        .row {
+          padding-bottom: 5px;
+        }
+        input {
+          border: 1px solid #ccc;
+          font-size: 16px;
+          padding: 5px 10px 5px 10px;
+          border-radius: 10px;
+          -moz-border-radius: 10px;
+          -webkit-transition: all 0.5s ease-in-out;
+          -moz-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out;
+        }
+        input[type=submit]{
+          opacity: 1.0;
+          background-image: -moz-linear-gradient(top, #ffffff, #dfdfdf);
+          background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#dfdfdf));
+          cursor: pointer;
+        }
+    </style>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.138.0.min.js"></script>
+    <div id="mainContent">
+        <form action="https://s3.amazonaws.com/{!awsKeySet.Name}" method="post" enctype="multipart/form-data" id="uploadForm">
+            <input type="hidden" name="key" id="key" />
+            <input type="hidden" name="AWSAccessKeyId" value="{!awsKeySet.AWS_AccessKey_Id__c}" />
+            <input type="hidden" name="policy" value="{!policy}" />
+            <input type="hidden" name="signature" value="{!signedPolicy}" />
+            <input type="hidden" name="acl" value="{!acessType}" />
+            <input type="hidden" name="Content-Type" value="{!Content_Type}" />
+            <!--<input type="hidden" name="success_action_redirect" value="{!ForRedirect}" /> -->
+            <h4 class="fileToUpload">Select a File to Upload in AWS</h4><br/>
+            <div class="row">
+                <input type="file" size="50" name="file" id="file" />
+            </div>
+            <div class="row">
+                <input type="submit" value="Upload" id="btn_submit" />
+            </div>
+        </form>
+    </div>
+    
+    <script>
+
+    $(document).ready(function() {
+
+        /*    var s3 = new AWS.S3({
+                accessKeyId: '{!awsKeySet.AWS_AccessKey_Id__c}',
+                secretAccessKey: '{!awsKeySet.AWS_AccessKey_Id__c}'
+            });
+
+            /*var downloadPreSignedUrl = s3.getSignedUrl('getObject', {
+                Bucket: '<THE_BUCKET_NAME>',
+                Key: '<THE_UPLOADED_FILENAME>',*/
+                /* set a fixed type, or calculate your mime type from the file extension */
+                //ResponseContentType: 'image/jpeg'
+                /* and all the rest of your parameters to AWS getObect here */
+            //});
+
+        /*$(function() {
+                $('#uploadForm').on('submit', sendFile);
+            });
+
+            function sendFile(e) {
+                e.preventDefault();
+
+                // get the reference to the actual file in the input
+                var theFormFile = $('#file').get()[0].files[0];
+
+                var _file;
+                _file = $("#file").val().replace(/.+[\\\/]/, "");
+                guid = (S4() + S4() + "-" + S4() + "-4" + S4().substr(0, 3) + "-" + S4() + "-" + S4() + S4() + S4()).toLowerCase();
+                var ext = _file.substring(_file.indexOf("."));
+                var newFileName = guid + ext;
+
+                var uploadPreSignedUrl = s3.getSignedUrl('putObject', {
+                    Bucket: '{!awsKeySet.Name}',
+                    Key: newFileName,
+                    ACL: 'private',
+                    // This must match with your ajax contentType parameter
+                    ContentType: 'multipart/form-data'
+
+                    /* then add all the rest of your parameters to AWS puttObect here */
+        /*});
+
+                $.ajax({
+                    type: 'PUT',
+                    url: uploadPreSignedUrl,
+                        // Content type must much with the parameter you signed your URL with
+                    contentType: 'multipart/form-data',
+                        // this flag is important, if not set, it will try to send data as a form
+                    processData: false,
+                        // the actual file is sent raw
+                    data: theFormFile,
+                    success: function() {
+                        alert('File uploaded');
+                    },
+                    error: function() {
+                        alert('File NOT uploaded');
+                        console.log(arguments);
+                    }
+
+                });
+
+            }*/
+
+        //var _requestBucket;
+            $("#btn_submit").click(function(event) {
+                //event.preventDefault();
+                var _file;
+                _file = $("#file").val().replace(/.+[\\\/]/, "");
+                guid = (S4() + S4() + "-" + S4() + "-4" + S4().substr(0, 3) + "-" + S4() + "-" + S4() + S4() + S4()).toLowerCase();
+                var ext = _file.substring(_file.indexOf("."));
+                var newFileName = guid + ext;
+                $("#key").val(newFileName);
+                $("#uploadForm").submit();
+            });
+    		
+       
+        });
+        function S4() {
+            return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+        }
+
+		
+       $('#uploadForm').on('submit', function(event) {
+           alert('submitted');
+           console.log('submitted result', event);
+           event.preventDefault(); // or return false, your choice
+           $.ajax({
+               url: $(this).attr('action'),
+               type: 'post',
+               data: $(this).serialize(),
+               success: function(data, textStatus, jqXHR) {
+                   console.log('result', data, textStatus, jqXHR);
+                   // if success, HTML response is expected, so replace current
+                   if (textStatus === 'success') {
+                       // https://stackoverflow.com/a/1236378/4946681
+                       var newDoc = document.open('text/html', 'replace');
+                       newDoc.write(data);
+                       newDoc.close();
+                   }
+               }
+           }).fail(function(jqXHR, textStatus, errorThrown) {
+              console.log('error result', errorThrown, textStatus, jqXHR);
+                   
+               if (jqXHR.status == 0 || jqXHR == 302) {
+                   alert('Your session has ended due to inactivity after 10 minutes.\nPlease refresh this page, or close this window and log back in to system.');
+               } else {
+                   alert('Unknown error returned while saving' + (typeof errorThrown == 'string' && errorThrown.trim().length > 0 ? ':\n' + errorThrown : ''));
+               }
+           });
+       });
+    </script>
+     
+</apex:page>

@@ -1,0 +1,17 @@
+<apex:page standardController="GNT__Package__c" extensions="GNT.SubmissionPackageViewCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+    
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">              
+            <c:FlexViewLayout templateName="Package" recordId="{!recordId}" layoutType="View"
+                flexTableParameters="{!keyValueMap}" />
+        </apex:define>
+    </apex:composition>  
+    
+    <script>
+        setPageTitle('Package View');
+    </script>
+    
+</apex:page>

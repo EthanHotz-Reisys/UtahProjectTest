@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<span style="font-family: &quot;Times New Roman&quot;, Times, serif;">Dear {!Award__c.GranteePOC__c},</span>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<div style="font-family: arial;"><span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: 12pt;">This email is to notify you that, the application {!Award__c.ApplicationTitle__c} has been approved by Utah Grants officials.</span></div><div style="font-family: arial;"><font face="Times New Roman, Times, serif"><br></font></div><div style="font-family: arial;"><font face="Times New Roman, Times, serif"><b><u>Application Details:</u></b></font></div><div style="font-family: arial;"><font face="Times New Roman, Times, serif">Funding Opportunity Number: {!Award__c.AnnouncementNumber__c}</font></div><div style="font-family: arial;"><font face="Times New Roman, Times, serif"><br></font></div><div style="font-family: arial;"><font face="Times New Roman, Times, serif">Federal Program: {!Award__c.ProgramNumber__c}</font></div><div style="font-family: arial;"><font face="Times New Roman, Times, serif"><br></font></div><div style="font-family: arial;"><font face="Times New Roman, Times, serif">Project Period Start Date: {!Award__c.ProjectPeriodStartDate__c}</font></div><div style="font-family: arial;"><font face="Times New Roman, Times, serif"><br></font></div><div style="font-family: arial;"><font face="Times New Roman, Times, serif">Project Period End Date: {!Award__c.ProjectPeriodEndDate__c}</font></div><div style="font-family: arial;"><font face="Times New Roman, Times, serif"><br></font></div><div style="font-family: arial;"><font face="Times New Roman, Times, serif">Kindly login to the UtahGrants Systems and start reviewing the award details.</font></div><div style="font-family: arial;"><font face="Times New Roman, Times, serif"><br></font></div><div style="font-family: arial;"><font face="Times New Roman, Times, serif">Sincerely,</font></div><div style="font-family: arial;"><font face="Times New Roman, Times, serif"><br></font></div><div style="font-family: arial;"><font face="Times New Roman, Times, serif">UtahGrants Support Team</font></div>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email sent to PM when OGM promotes rejected Applications</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Notify PM On OGM Promotion Of Rejected Apps</name>
+    <style>formalLetter</style>
+    <subject>Notification: OGM Promoted Rejected Application {!ReviewStepApplication__c.ApplicationName__c}</subject>
+    <textOnly>Subject: Notification of Rejected Applications {!ReviewStepApplication__c.ApplicationName__c} promoted by OGM
+
+Dear {!GDH__ReviewStepApplication__c.GDH__FOOwnerName__c},
+
+This is to notify that, OGM user has promoted the previously rejected application  {!ReviewStepApplication__c.ApplicationName__c}.
+
+
+
+Please do not reply to this email. You may contact the GovGrants support team at govgrants@support.com if you have any questions or need assistance with this task.
+
+Sincerely,
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,4 @@
+<apex:page standardController="Contact" extensions="ReviewerContactCtrl" sidebar="false" showHeader="false" standardStylesheets="false">     
+    <c:ExternalLibrary />    
+        <GNT:DynamicLayout templateName="{!pageTemplateName }" recordId="{!recordId}" layoutType="View" flexTableParameters="{!keyValueMap}" HideSidebar="true" createDefaultValues="{!listDefaultValues}" />
+</apex:page>

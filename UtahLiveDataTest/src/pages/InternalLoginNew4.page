@@ -1,0 +1,147 @@
+<!--
+ ********************************************************** 
+ Audit History
+ **********************************************************
+
+ 10/9/2015   swati singh created
+ **********************************************************  
+-->
+<apex:page title="Login" standardstylesheets="false" showHeader="false" sidebar="false" controller="AnalyticsCtrl" >
+<html lang="en" >
+    <c:ExternalLibrary />  
+    <style>
+   #externalLoginPage #mainTabsId{
+        height: 85px;
+    }
+
+    #externalLoginPage .bs .form-control{
+     border-radius: 0px;
+    }
+   #externalLoginPage .loginInsertpadding{
+     padding-top:55px;
+    } 
+     body { height: 100%;
+      margin: 0px 0px 0px 0px;
+      
+        }
+body .bs.internal-login-page #internalLoginPage .form-control {
+    height: 40px;
+    padding-bottom: 0 !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    padding-top: 0 !important;
+}
+
+
+</style> 
+    
+ <!--    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">
+            <apex:form >
+                <GNT:PageMessages />
+            </apex:form> 
+                <br/><br/><br/>  -->
+               
+<link href='//fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'></link>
+<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700' rel='stylesheet' type='text/css'>  </link>
+
+<div class="bs internal-login-page col-lg-12">
+    <div class="header-internal-login col-lg-12">
+
+        <div class="col-lg-6 pull-left internal-egms-logo">
+            <apex:image url="{!URLFOR($Resource.stategovlogotransparent)}" alt="Enterprise Grants Management System Image" />
+        </div> 
+
+        <div class="col-lg-6 pull-right internal-egms-govgrantsinsignia-logo">
+            <apex:image url="{!URLFOR($Resource.GovGrantslogoInternal)}" alt="Enterprise Grants Management System image with the GovGrants insignia" />
+        </div> 
+
+    </div>
+
+    <div class="content-internal-login col-lg-12">
+    <!--<div class="col-lg-4"> 
+         <div class="internal-login-highlights-fo"> 
+            <apex:include pageName="LoginHighlights"/>
+            <apex:include pageName="LoginWhatsNew"/>
+          </div>   
+        </div>  
+        <div class="col-lg-4">
+            <div class="iternal-trends">
+                 <apex:include pageName="LoginTrends"/>
+            </div>
+        </div> -->
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <div class="internal-login-page">
+                <apex:include pageName="InternalLoginNew3"/> 
+            </div> 
+        </div> 
+    </div>
+
+</div>
+
+<div class="col-lg-12 footer internal-footer">
+        <div class="col-lg-3 pull-left internal-egms-govgrants-footer-logo">
+             <apex:image url="{!URLFOR($Resource.GovGrantsInternalFooterLogo)}" alt="Official logo for the GovGrants product powered by REI Systems" />
+        </div>  
+        <div class="col-lg-9 pull-right internal-footer-links">
+            <apex:include pageName="FooterLoginPages"/>
+        </div> 
+</div> 
+
+
+
+
+
+
+
+
+
+              <!--  </div>  -->
+                            
+ <!--        </apex:define>
+    </apex:composition>   --> 
+    <script>
+    
+         var j$ = jQuery.noConflict();
+         j$(document).ready(function(){
+         adjustToggleBarHeightUI();
+            j$(window).on('resize', function() {
+                adjustToggleBarHeightUI();
+            });
+            
+            var analyticsId = "{!analyticsId}";
+            var enableAnalytics = "{!enableAnalytics}";
+            if(enableAnalytics == 'true'){
+                  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        
+                   ga('create', analyticsId, 'auto');
+                   ga('send', 'pageview');
+             }
+        });
+         // setPageTitle('Login');
+          function adjustToggleBarHeightUI(){
+            var finalHeight = 0;
+            var paddingtop = 0;
+            var paddingtop1 = 0;
+            var windowHeight = j$(window).height();
+            var loginpanelHeight = j$('#loginpanel').height();
+            var rightpanelHeight = j$('#rightPanel').height();
+            var rightColumnHeight = j$('#rightcolumn').height();
+            //finalHeight =  rightColumnHeight;
+            finalHeight = Math.max( windowHeight, rightColumnHeight); 
+            paddingtop = (windowHeight-loginpanelHeight)/2;
+            paddingtop1 = (windowHeight-rightpanelHeight)/2;
+            j$('#leftcolumn').css('min-height', finalHeight);
+            j$('#rightcolumn').css('min-height', finalHeight);
+            j$('#loginpanel').css('padding-top', paddingtop);
+            j$('#rightPanel').css('padding-top', paddingtop1);
+            }
+            
+            
+    </script> 
+    </html>
+</apex:page>

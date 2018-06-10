@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AccountLevel1Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountLevel1Name</shortDescription>
+        <value>Division</value>
+    </labels>
+    <labels>
+        <fullName>AccountLookupActionName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountLookupActionName</shortDescription>
+        <value>Select</value>
+    </labels>
+    <labels>
+        <fullName>Action</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Action</shortDescription>
+        <value>Action</value>
+    </labels>
+    <labels>
+        <fullName>ActionDelete</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ActionDelete</shortDescription>
+        <value>Delete</value>
+    </labels>
+    <labels>
+        <fullName>ActionDownload</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ActionDownload</shortDescription>
+        <value>Download</value>
+    </labels>
+    <labels>
+        <fullName>ActionEdit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ActionEdit</shortDescription>
+        <value>Edit</value>
+    </labels>
+    <labels>
+        <fullName>ActionView</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ActionView</shortDescription>
+        <value>View</value>
+    </labels>
+    <labels>
+        <fullName>AddAttachments</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AddAttachments</shortDescription>
+        <value>Add</value>
+    </labels>
+    <labels>
+        <fullName>AddAttachmentsfromComputer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AddAttachmentsfromComputer</shortDescription>
+        <value>Upload file from Computer</value>
+    </labels>
+    <labels>
+        <fullName>AddAttachmentsfromSalesforce</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AddAttachmentsfromSalesforce</shortDescription>
+        <value>Upload file from Workspace</value>
+    </labels>
+    <labels>
+        <fullName>AddDocuments</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AddDocuments</shortDescription>
+        <value>Add Document</value>
+    </labels>
+    <labels>
+        <fullName>AddNotes</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AddNotes</shortDescription>
+        <value>Add</value>
+    </labels>
+    <labels>
+        <fullName>AlertHeaderLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AlertHeaderLabel</shortDescription>
+        <value>Alert</value>
+    </labels>
+    <labels>
+        <fullName>AppType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AppType</shortDescription>
+        <value>AppType</value>
+    </labels>
+    <labels>
+        <fullName>ApprovalCommentsTooLargeError</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ApprovalCommentsTooLargeError</shortDescription>
+        <value>Comments cannot exceed 4000 characters</value>
+    </labels>
+    <labels>
+        <fullName>ApprovalComponentDecisionHeader</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ApprovalComponentDecisionHeader</shortDescription>
+        <value>Approval Decision</value>
+    </labels>
+    <labels>
+        <fullName>ApprovalExceptionLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ApprovalExceptionLabel</shortDescription>
+        <value>Record already processed by other user.</value>
+    </labels>
+    <labels>
+        <fullName>ApprovalHistoryRecallOverallLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ApprovalHistoryRecallOverallLabel</shortDescription>
+        <value>Recalled</value>
+    </labels>
+    <labels>
+        <fullName>ApprovalHistoryRecallStepLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ApprovalHistoryRecallStepLabel</shortDescription>
+        <value>Recalled</value>
+    </labels>
+    <labels>
+        <fullName>ApprovalRequest</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ApprovalRequest</shortDescription>
+        <value>Successfully Approved</value>
+    </labels>
+    <labels>
+        <fullName>AssignedTo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Assigned To</shortDescription>
+        <value>Assigned To</value>
+    </labels>
+    <labels>
+        <fullName>AttachmentAction</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Attachment Action</shortDescription>
+        <value>Action</value>
+    </labels>
+    <labels>
+        <fullName>AttachmentAdd</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AttachmentAdd</shortDescription>
+        <value>Add Attachments</value>
+    </labels>
+    <labels>
+        <fullName>AttachmentAddSuccessMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AttachmentAddSuccessMsg</shortDescription>
+        <value>Attachment added Successfully.</value>
+    </labels>
+    <labels>
+        <fullName>AttachmentAdditionalField</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AttachmentAdditionalField</shortDescription>
+        <value>Please fill {0} required field .</value>
+    </labels>
+    <labels>
+        <fullName>AttachmentClassification</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Attachment Classification</shortDescription>
+        <value>Type</value>
+    </labels>
+    <labels>
+        <fullName>AttachmentDateTaken</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AttachmentDateTaken</shortDescription>
+        <value>Date Taken</value>
+    </labels>
+    <labels>
+        <fullName>AttachmentDescription</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Attachment Description Label</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>AttachmentDescriptionRequiredLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AttachmentDescriptionRequiredLabel</shortDescription>
+        <value>Please provide Attachment Description.</value>
+    </labels>
+    <labels>
+        <fullName>AttachmentEdit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AttachmentEdit</shortDescription>
+        <value>Edit Attachment</value>
+    </labels>
+    <labels>
+        <fullName>AttachmentEditSuccessMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AttachmentEditSuccessMsg</shortDescription>
+        <value>Attachment edited Successfully.</value>
+    </labels>
+    <labels>
+        <fullName>AttachmentFileName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AttachmentFileName</shortDescription>
+        <value>File Name</value>
+    </labels>
+    <labels>
+        <fullName>AttachmentLimitReached</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AttachmentLimitReached</shortDescription>
+        <value>You have already added required number of attachments for the classification type</value>
+    </labels>
+    <labels>
+        <fullName>AttachmentName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AttachmentName</shortDescription>
+        <value>Attachment Name</value>
+    </labels>
+    <labels>
+        <fullName>AttachmentOwner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Attachment Owner Label</shortDescription>
+        <value>Owner</value>
+    </labels>
+    <labels>
+        <fullName>AttachmentTakenBy</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AttachmentTakenBy</shortDescription>
+        <value>Taken By</value>
+    </labels>
+    <labels>
+        <fullName>AutoApprovalMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AutoApprovalMsg</shortDescription>
+        <value>Auto-Approved by System</value>
+    </labels>
+    <labels>
+        <fullName>AutoIndexColumnHeader</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AutoIndexColumnHeaderLabel</shortDescription>
+        <value>#</value>
+    </labels>
+    <labels>
+        <fullName>AvailableForms</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Available Forms</shortDescription>
+        <value>Available Forms</value>
+    </labels>
+    <labels>
+        <fullName>ChangedBy</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Changed By</shortDescription>
+        <value>Changed By</value>
+    </labels>
+    <labels>
+        <fullName>ChangedOn</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Changed On</shortDescription>
+        <value>Changed On</value>
+    </labels>
+    <labels>
+        <fullName>ChartsShowAllData</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ChartsShowAllData</shortDescription>
+        <value>Show All Data</value>
+    </labels>
+    <labels>
+        <fullName>ClassficationDoesNotExist</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ClassficationDoesNotExist</shortDescription>
+        <value>Classification not found. Please check page block config or Sobject config.</value>
+    </labels>
+    <labels>
+        <fullName>CloseModal</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CloseModal</shortDescription>
+        <value>Click on save and close this window to view the uploaded attachments.</value>
+    </labels>
+    <labels>
+        <fullName>Contact</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact</shortDescription>
+        <value>Contact</value>
+    </labels>
+    <labels>
+        <fullName>CreatedBy</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Created By</shortDescription>
+        <value>Created By</value>
+    </labels>
+    <labels>
+        <fullName>CreatedDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CreatedDate</shortDescription>
+        <value>Created Date</value>
+    </labels>
+    <labels>
+        <fullName>DelagtedApprovalComponentDecisionHeader</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DelagtedApprovalComponentDecisionHeader</shortDescription>
+        <value>(DelagatedApprover)</value>
+    </labels>
+    <labels>
+        <fullName>DeleteConfirmLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DeleteConfirmLabel</shortDescription>
+        <value>Do you want to delete? Once it is deleted it cannot be restored.</value>
+    </labels>
+    <labels>
+        <fullName>DeleteFeedElement</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DeleteFeedElement</shortDescription>
+        <value>FeedElement deleted sucessfully!</value>
+    </labels>
+    <labels>
+        <fullName>Description</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Description</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>DialogLogOutNowButton</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DialogLogOutNowButton</shortDescription>
+        <value>Log Out Now</value>
+    </labels>
+    <labels>
+        <fullName>DialogStayLoggedInButton</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DialogStayLoggedInButton</shortDescription>
+        <value>Stay Logged In</value>
+    </labels>
+    <labels>
+        <fullName>DialogText</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DialogText</shortDescription>
+        <value>Because you have been inactive, your session is about to expire.</value>
+    </labels>
+    <labels>
+        <fullName>DialogTimeRemaining</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DialogTimeRemaining</shortDescription>
+        <value>Time remaining</value>
+    </labels>
+    <labels>
+        <fullName>DialogTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DialogTitle</shortDescription>
+        <value>Session Expiration Warning</value>
+    </labels>
+    <labels>
+        <fullName>DisapproveRequest</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DisapproveRequest</shortDescription>
+        <value>Successfully disapproved</value>
+    </labels>
+    <labels>
+        <fullName>Doc_signed_date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Doc_signed_date</shortDescription>
+        <value>Signed Date</value>
+    </labels>
+    <labels>
+        <fullName>DocumentRequiredLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DocumentRequiredLabel</shortDescription>
+        <value>Please choose a Document for upload.</value>
+    </labels>
+    <labels>
+        <fullName>DocumentTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DocumentTitle</shortDescription>
+        <value>Document Name</value>
+    </labels>
+    <labels>
+        <fullName>Download</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Download</shortDescription>
+        <value>Download</value>
+    </labels>
+    <labels>
+        <fullName>DownloadAsPDF</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DownloadAsPDF</shortDescription>
+        <value>Download As PDF</value>
+    </labels>
+    <labels>
+        <fullName>DueDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Due Date</shortDescription>
+        <value>Due Date</value>
+    </labels>
+    <labels>
+        <fullName>DuplicateForm</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DuplicateForm</shortDescription>
+        <value>More than one forms entry found for {0}</value>
+    </labels>
+    <labels>
+        <fullName>ElectronicSignature</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Electronic Signature</shortDescription>
+        <value>Electronic Signature</value>
+    </labels>
+    <labels>
+        <fullName>EmailSent</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Sent</shortDescription>
+        <value>Email Sent successfully.</value>
+    </labels>
+    <labels>
+        <fullName>ErrorMessageForApprovalDecisionForSubmit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ErrorMessageForApprovalDecisionForSubmit</shortDescription>
+        <value>Comments are Required</value>
+    </labels>
+    <labels>
+        <fullName>FieldsMarkedRequired</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FieldsMarkedRequired</shortDescription>
+        <value>Fields marked as * are required</value>
+    </labels>
+    <labels>
+        <fullName>FlexTableListViewMenu</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FlexTable List View Menu</shortDescription>
+        <value>Click to change the current view.</value>
+    </labels>
+    <labels>
+        <fullName>FormAction</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FormAction</shortDescription>
+        <value>Action</value>
+    </labels>
+    <labels>
+        <fullName>FormEntryLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FormEntryLabel</shortDescription>
+        <value>No form entry found for  {0}</value>
+    </labels>
+    <labels>
+        <fullName>FormName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Form Name</shortDescription>
+        <value>Form Name</value>
+    </labels>
+    <labels>
+        <fullName>FormNumberLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Form Number Label</shortDescription>
+        <value>Form Number</value>
+    </labels>
+    <labels>
+        <fullName>FormOragnizations</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Form Oragnizations</shortDescription>
+        <value>Organization</value>
+    </labels>
+    <labels>
+        <fullName>FormRequired</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Form Required</shortDescription>
+        <value>Required?</value>
+    </labels>
+    <labels>
+        <fullName>FormSavedSuccessfully</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Form saved success</shortDescription>
+        <value>Form saved successfully.</value>
+    </labels>
+    <labels>
+        <fullName>FormValidateError</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FormValidateError</shortDescription>
+        <value>All the forms should be 100% completed, entering required data, to proceed to the next step.</value>
+    </labels>
+    <labels>
+        <fullName>FormValidateSuccess</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Form Validate success</shortDescription>
+        <value>Forms have been validated. You can procced to next step.</value>
+    </labels>
+    <labels>
+        <fullName>FormVersionLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Form Version Label</shortDescription>
+        <value>Form Version</value>
+    </labels>
+    <labels>
+        <fullName>FormsSelection</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Forms Selection</shortDescription>
+        <value>Forms Selection</value>
+    </labels>
+    <labels>
+        <fullName>GovgrantsAppName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Govgrants App Name that comes next to logo on top left side.</shortDescription>
+        <value>Enterprise Grants Management System</value>
+    </labels>
+    <labels>
+        <fullName>GridSuccessMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GridSuccessMsg</shortDescription>
+        <value>Record Saved Successfully.</value>
+    </labels>
+    <labels>
+        <fullName>HelpForEmailCc</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HelpForEmailCc</shortDescription>
+        <value>Use semicolon(;) to separate multiple Cc email addresses</value>
+    </labels>
+    <labels>
+        <fullName>HelpForEmailTo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HelpForEmailTo</shortDescription>
+        <value>Use semicolon(;) to separate multiple To email addresses</value>
+    </labels>
+    <labels>
+        <fullName>HideForExternal</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HideForExternal</shortDescription>
+        <value>Hide For External User?</value>
+    </labels>
+    <labels>
+        <fullName>LastModified</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Last Modified</shortDescription>
+        <value>Last Modified</value>
+    </labels>
+    <labels>
+        <fullName>LastModifiedBy</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Last Modified By</shortDescription>
+        <value>LastModifiedBy</value>
+    </labels>
+    <labels>
+        <fullName>MyWorkSpaceActions</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MyWorkSpaceActions</shortDescription>
+        <value>Actions</value>
+    </labels>
+    <labels>
+        <fullName>MyWorkSpaceAttachment</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MyWorkSpaceAttachment</shortDescription>
+        <value>Attached To</value>
+    </labels>
+    <labels>
+        <fullName>MyWorkSpaceDescription</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MyWorkSpaceDescription</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>MyWorkSpaceFileName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MyWorkSpaceFileName</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>MyWorkSpaceLastModifiedDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MyWorkSpaceLastModifiedDate</shortDescription>
+        <value>Last Modified Date</value>
+    </labels>
+    <labels>
+        <fullName>MyWorkSpaceOwner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MyWorkSpaceOwner</shortDescription>
+        <value>Owner</value>
+    </labels>
+    <labels>
+        <fullName>NextButton</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NextButton</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>NoRecordFound</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NoRecordFound</shortDescription>
+        <value>No Records Found</value>
+    </labels>
+    <labels>
+        <fullName>NoteAddSuccessMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NoteAddSuccessMsg</shortDescription>
+        <value>Note saved Successfully.</value>
+    </labels>
+    <labels>
+        <fullName>NoteRequiredFields</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NoteRequiredFields</shortDescription>
+        <value>Please enter Required fields</value>
+    </labels>
+    <labels>
+        <fullName>NotesAdd</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NotesAdd</shortDescription>
+        <value>Add Notes</value>
+    </labels>
+    <labels>
+        <fullName>NotesDescription</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NotesDescription</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>NotesEdit</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NotesEdit</shortDescription>
+        <value>Edit Notes</value>
+    </labels>
+    <labels>
+        <fullName>NotesTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Notes Title</shortDescription>
+        <value>Title</value>
+    </labels>
+    <labels>
+        <fullName>NotesView</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NotesView</shortDescription>
+        <value>View Notes</value>
+    </labels>
+    <labels>
+        <fullName>ObjectDoesNotExist</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ObjectDoesNotExist</shortDescription>
+        <value>Objectname {0} does not exist. Please contact Administartor.</value>
+    </labels>
+    <labels>
+        <fullName>OrganizationName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Organization Name</shortDescription>
+        <value>Organization Name</value>
+    </labels>
+    <labels>
+        <fullName>PackageDescription</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Description</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>PackageInformation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package information</shortDescription>
+        <value>Package information</value>
+    </labels>
+    <labels>
+        <fullName>PackageName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package Name</shortDescription>
+        <value>Package Name</value>
+    </labels>
+    <labels>
+        <fullName>PackageType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package Type</shortDescription>
+        <value>Package Type</value>
+    </labels>
+    <labels>
+        <fullName>Packageselection</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package selection</shortDescription>
+        <value>Package selection</value>
+    </labels>
+    <labels>
+        <fullName>PreviousButton</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PreviousButton</shortDescription>
+        <value>Previous</value>
+    </labels>
+    <labels>
+        <fullName>ReassignRequest</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReassignRequest</shortDescription>
+        <value>Successfully Re-Assigned</value>
+    </labels>
+    <labels>
+        <fullName>RecallComments</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RecallComments</shortDescription>
+        <value>Recalled By Owner</value>
+    </labels>
+    <labels>
+        <fullName>RecordAlreadyApproved</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RecordAlreadyApproved</shortDescription>
+        <value>Record is already Approved.</value>
+    </labels>
+    <labels>
+        <fullName>RecordSendToOwner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RecordSendToOwner</shortDescription>
+        <value>It is being calculated and You will get notification once it is completed.</value>
+    </labels>
+    <labels>
+        <fullName>RecordType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RecordType</shortDescription>
+        <value>Record Type</value>
+    </labels>
+    <labels>
+        <fullName>RecordTypeDescription</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Record Type Description</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>RecordTypeName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Record Type Name</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>RecordpermissionLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RecordpermissionLabel</shortDescription>
+        <value>You dont have acccess to this record please contact administrator.</value>
+    </labels>
+    <labels>
+        <fullName>RequiredFields</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RequiredFields</shortDescription>
+        <value>Please Fill The Required Fields.</value>
+    </labels>
+    <labels>
+        <fullName>SelectAttachmentMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SelectAttachmentMsg</shortDescription>
+        <value>Please select at least one attachment.</value>
+    </labels>
+    <labels>
+        <fullName>SelectedForms</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Selected Forms</shortDescription>
+        <value>Selected Forms</value>
+    </labels>
+    <labels>
+        <fullName>SendToOwnerRequest</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SendToOwnerRequest</shortDescription>
+        <value>Successfully sent to Owner. It may take few minutes to process record.&apos;</value>
+    </labels>
+    <labels>
+        <fullName>TaskReassignmentNotification</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TaskReassignmentNotification</shortDescription>
+        <value>Task Reassignment is initiated. Concerned users will be notified after the reassignment is completed.</value>
+    </labels>
+    <labels>
+        <fullName>TaskReminderFutureDueHeader</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TaskReminderFutureDueHeader</shortDescription>
+        <value>Future Due Date Task(s)</value>
+    </labels>
+    <labels>
+        <fullName>TaskReminderPastDue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TaskReminderPastDue</shortDescription>
+        <value>Past Due By {0} days : {1}</value>
+    </labels>
+    <labels>
+        <fullName>TaskReminderPastDueHeader</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TaskReminderPastDueHeader</shortDescription>
+        <value>Past Due Date Task(s)</value>
+    </labels>
+    <labels>
+        <fullName>TaskReminderfutureDue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TaskReminderfutureDue</shortDescription>
+        <value>Future Due By {0} Days: {1}</value>
+    </labels>
+    <labels>
+        <fullName>TaskSummaryByPastDue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TaskSummaryByPastDue</shortDescription>
+        <value>Task Summary By Due Date</value>
+    </labels>
+    <labels>
+        <fullName>TaskSummaryByPhase</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TaskSummaryByPhase</shortDescription>
+        <value>Task Summary By Phase</value>
+    </labels>
+    <labels>
+        <fullName>TaskTriggerAdditionalFieldsError</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TaskTriggerAdditionalFieldsError</shortDescription>
+        <value>Additional Field Error:The field {0} is Already in display Field Names for Flextable Name: {1} with id : {1} and InternalUniqueID : {2}</value>
+    </labels>
+    <labels>
+        <fullName>TwoCharMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>twoCharMsg</shortDescription>
+        <value>Please enter atleast 2 characters to search</value>
+    </labels>
+    <labels>
+        <fullName>UniqueErrorCodeMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UniqueErrorCodeMessage</shortDescription>
+        <value>Error code already exists. Please add an unique code.</value>
+    </labels>
+    <labels>
+        <fullName>UserPrefrenceLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UserPrefrenceLabel</shortDescription>
+        <value>User Preference record Or Profile Name  or active app name on User Preference record is missing for User Id , {0}, Please contact administrator.</value>
+    </labels>
+    <labels>
+        <fullName>WBSAssignedTo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WBSAssignedTo</shortDescription>
+        <value>Assigned To</value>
+    </labels>
+    <labels>
+        <fullName>WBSEndDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WBSEndDate</shortDescription>
+        <value>End Date</value>
+    </labels>
+    <labels>
+        <fullName>WBSMilestone</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WBSMilestone</shortDescription>
+        <value>Milestone?</value>
+    </labels>
+    <labels>
+        <fullName>WBSNo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WBSNo</shortDescription>
+        <value>WBS#</value>
+    </labels>
+    <labels>
+        <fullName>WBSProgress</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WBSProgress(%)</shortDescription>
+        <value>Progress(%)</value>
+    </labels>
+    <labels>
+        <fullName>WBSStartDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WBSStartDate</shortDescription>
+        <value>Start Date</value>
+    </labels>
+    <labels>
+        <fullName>WBSStatus</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WBSStatus</shortDescription>
+        <value>Status</value>
+    </labels>
+    <labels>
+        <fullName>WBSTask</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WBSTask</shortDescription>
+        <value>Task</value>
+    </labels>
+</CustomLabels>

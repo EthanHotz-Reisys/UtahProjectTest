@@ -1,0 +1,17 @@
+<apex:page id="flexTableViewPage"  controller="FlexTableViewCtrl" showHeader="false" sidebar="false">
+    <title>My Task Page</title>
+    <c:ExternalLibrary />
+
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">
+            <GNT:FlexTable listParams="{!parameterMap1}" flexTableName="{!ft1}" tableId="flexTableRandomID" flexTableParameters="{!parameterMap}"/>
+            <GNT:FlexTable listParams="{!parameterMap1}" flexTableName="{!ft2}" tableId="flexTableRandomIDs" flexTableParameters="{!parameterMap}"/>
+        </apex:define>
+    </apex:composition>
+    
+    <script>
+        //setPageTitle('{!$CurrentPage.parameters.pageTitle}');
+          setPageTitle('My Task Page');
+    </script>
+</apex:page>
+<!--GGD__PhaseConfig__c= '{!phaseConfigLayoutId}'-->

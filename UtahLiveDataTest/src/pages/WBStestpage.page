@@ -1,0 +1,5 @@
+<apex:page standardStylesheets="false" sidebar="false" showHeader="false">
+    <GNT:ExternalLibrary />
+    <GNT:WBS wbsGridName="WBSTaskSchedule" />
+    <!-- Sarat testing -->
+</apex:page>

@@ -1,0 +1,18 @@
+<apex:page controller="GrantListCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+   
+    <c:ExternalLibrary />
+
+    <apex:outputPanel >
+        <apex:composition template="GNT__PhaseTemplate">
+            <apex:define name="body">
+
+                    <GNT:FlexTable flexTableName="ActiveGrants" tableId="ActiveGrants" flexTableParameters="{!keyValueMap}"/>
+
+                <!--<apex:outputPanel rendered="{!currentAccount != 'UOVC'}">    
+                    <GNT:FlexTable flexTableName="MSPGrants" tableId="MSPGrants" flexTableParameters="{!keyValueMap}"/>
+                 </apex:outputPanel> -->
+            </apex:define>
+        </apex:composition>
+    </apex:outputPanel>
+    
+</apex:page>

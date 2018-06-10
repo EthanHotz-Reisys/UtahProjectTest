@@ -1,0 +1,503 @@
+<apex:component controller="CollabSideBarExternalCtrl" access="global" allowDML="true">
+    <apex:attribute name="contactIdExternal" description="Id of user" type="string" required="false" assignTo="{!userContactId}" access="global"/>
+    <script src="/soap/ajax/24.0/connection.js" type="text/javascript"></script>
+    <script src="/soap/ajax/24.0/apex.js" type="text/javascript"></script>
+    <style>
+        .collabHidden {
+            position: absolute !important;
+            top: -99999px !important;
+            left: -99999px !important;
+        }
+        .profileSidebar > div {
+            margin-bottom: 10px;    
+        }
+        .profileSidebar + div {
+            float: left;    
+        }
+        .profileSidebar > div:first-child {       
+            padding: 0px;
+            position: relative;
+            overflow:hidden;
+        }
+        .profileSidebar .customerSticker {
+            position: absolute;
+            height: 20px !important;
+            background: transparent url({!urlfor($Resource.CollabSprites, 'CollabSprites/collabAvatarSprite.png')}) 0px 0px no-repeat;
+        }
+        .profileSidebar > div:first-child > .profilePicture > img {
+            width: 200px;
+            height: 200px;
+        }
+        #UploadPhotoHidden {
+            display: none;    
+        }
+        .profileSidebar > div > .profilePicture > .photoOptions {
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            width: 200px;
+            z-index: 3;
+            text-align: center;
+            height: 18px;
+            margin-bottom: -1px;
+            line-height: 18px;
+        }   
+        .profileSidebar > div > .profilePicture > .photoOptions .background {       
+            height: 18px;
+            width: 200px;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            z-index: -1;
+        }
+        .profileSidebar > div > .profilePicture > .moderatorBadge {
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            width: 200px;
+            background: transparent url({!urlfor($Resource.CollabSprites, 'CollabSprites/collabModeratorBG.png')}) repeat 0px 1px;
+            font-weight: 600;
+            height: 18px;
+            z-index: 2;
+            margin-bottom: -1px;
+            line-height: 18px;        
+            text-align: center;
+        }
+        .profileSidebar .profileUserName {
+            font-weight: bold;   
+        }
+        .profileSidebar .profileSubheader {       
+            margin-bottom: 2px;
+            font-weight: bold;
+        }
+        .profileSidebar .managerDiv { 
+            padding-top: 5px;
+            text-overflow: ellipsis;
+            height: 35px;
+            display: block;
+        }
+        .profileSidebar .managerDiv > a > img {
+            height: 16px;
+            width: 16px;
+        }
+       
+        .profileSidebar .managerDiv > a.userName {
+            max-width: 170px;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        .profileSidebar .managerDiv > span,
+        .profileSidebar .managerDiv > a {
+            float: left;
+            text-overflow: ellipsis;
+            display: block;
+            overflow: hidden;
+            line-height: 18px;
+        }
+        .postInfo {
+            padding-top: 4px;
+            position: relative;   
+            float: left;
+        }
+        .postInfo > div {
+            width: 33%;
+            float: left;
+            display: block;
+            padding-left: 5px;       
+        }
+        .postInfo > div:first-child {
+            border: none;   
+        }
+        .postInfo > div > span {
+            float: left;
+            display: block;    
+        }
+        .postInfo > div > span:first-child {
+            font-weight: bold;   
+        }
+        .postInfo > div > span:first-child + span {
+            font-size: 10px;    
+        }
+        #ProfileLoadingModal > div {
+            height: 120px;
+            padding: 10px;
+        }
+        #ProfileLoadingModal img {
+            margin-left: 124px;
+            margin-top: 34px;
+        }
+        #VerifyModal > span + div {
+            padding: 5px;
+        }
+        #VerifyModal > div > input {
+            float: left;
+            margin-left: 5px;
+        } #UserSettingsModal {
+            overflow: visible;
+        }
+        
+        #UserSettingsModal > div {
+            float:left;
+            width: 500;
+            clear: both;
+            margin: 10px;
+        }
+        #UserSettingsModal > div > ul {
+            float: left;
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 0px;
+            padding-bottom: 0px;       
+        }
+        #UserSettingsModal > div > ul > li {
+            float: left;
+            list-style: none;
+            margin-bottom: -1px;
+        }
+        #UserSettingsModal .settingsWrapper {
+            padding-top: 5px;
+            float: left;        
+        }
+        #UserSettingsModal .editUserTab {
+            display: none;   
+            float: left;
+        }
+        #UserSettingsModal .editUserTab.active {
+            display: block;   
+        }
+        #UserSettingsModal .infoContainer {
+            width: 100%;
+            float: left;
+            position: relative;
+        }
+        #UserSettingsModal .infoContainer:first-child {
+            clear: left;   
+        }
+        #UserSettingsModal .infoContainer.half {
+            width: 50%;
+        }
+        #UserSettingsModal .infoContainer > div:first-child {
+            float: left;  
+            clear: left;
+            margin-left: 10px;
+        }
+        
+        #UserSettingsModal .infoContainer > div.userInput,
+        #UserSettingsModal .infoContainer > div.userInput > input,
+        #UserSettingsModal .infoContainer > div.userInput > textarea {
+            width: 100%;   
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-bottom: 10px;
+        }
+        #UserSettingsModal .infoContainer > div.userInput > textarea {
+            resize: none;   
+        }
+        #UserSettingsModal .infoContainer > span {
+            float: right;  
+            clear: right;
+            margin-right: 10px;
+        }
+        #UserSettingsModal .infoContainer > span.alwaysVisible {
+            font-style: italic;
+        }
+        #UserSettingsModal .infoContainer .viewPreferences:hover,
+        #UserSettingsModal .infoContainer .viewPreferences:active,
+        #UserSettingsModal .infoContainer .viewPreferences:focus {
+            text-decoration: none;
+        }
+        #UserSettingsModal .infoContainer .viewOptions {
+            display: none;          
+            position: absolute;
+            padding: 0px;
+            margin: 0px;
+            right: -10px;
+            top: 16px;
+            z-index: 1;
+        }
+        #UserSettingsModal .infoContainer .viewOptions.active {
+            display: block;   
+        }
+        #UserSettingsModal .infoContainer .viewOptions > li {
+            display: block;
+            clear: both;
+            list-style: none;
+        }
+        #UserSettingsModal .infoContainer .viewOptions > li > a {
+            padding: 3px;           
+            display: block;
+        }
+        #UserSettingsModal .infoContainer .viewOptions > li.active > a {
+            padding-bottom: 1px;   
+        }
+        #UserSettingsModal .infoContainer .viewOptions > li > a:hover,
+        #UserSettingsModal .infoContainer .viewOptions > li > a:focus,
+        #UserSettingsModal .infoContainer .viewOptions > li > a:active {       
+            text-decoration: none;
+        }
+        #UserSettingsModal .saveSettings {
+            margin-bottom: 10px !important;
+            margin-right: 10px;
+            float: right;
+        }
+        #UserSettingsModal #ManagerSearchInput {
+            border-left: none;
+        }
+        #UserSettingsModal .hiddenDiv.select2-search {
+            display: none;
+            border-right: 1px solid #aaa;
+            border-left: 1px solid #aaa;
+            border-bottom: 1px solid #aaa;
+            padding-right: 17px;
+            margin-top: -6px;
+            padding-left: 0px;
+            background: #fff;
+        }
+        #UserSettingsModal .hiddenDiv.active {
+            display: block;
+        }
+        #ManagerSearchAnchor {
+            height: 20px;
+            margin-bottom: 5px;
+        }
+        #UserSettingsModal .select2-container .select2-choice .select2-arrow b {
+            background-position: 0px -4px;    
+        }
+        #UserSettingsModal .select2-container .select2-choice > .select2-chosen {
+            line-height: 18px;    
+        }
+    </style>
+    <div class="profileSidebar active">
+        <div>
+            <div class="profilePicture" href="/apex/{!profileNamespace}ProfileRedirect?id={!userId}" >
+                <apex:image styleClass="customerSticker" rendered="{!userContactId != null && isInternal }"
+                            url="/s.gif" alt="This user is a community user" title="This is a community user"></apex:image>
+                <img alt="Profile of {!externalUser.FirstName} {!externalUser.LastName}" src="{!externalUser.fullPhotoUrl}"/>
+                <apex:outputPanel styleClass="photoOptions collabHidden" rendered="{!profile.capabilities.canEdit && externalUser.fullPhotoUrl != 'https://c.na11.content.force.com/profilephoto/005/F'}">
+                    <a href="#!" class="editPhoto uploadPhoto" title="Upload a new profile picture">Upload</a><span>&nbsp;|&nbsp;</span><a href="#!" class="deletePhoto editPhoto" title="Delete your profile picture">Delete</a>                    
+                    <div class="background"></div>
+                </apex:outputPanel>
+                <apex:outputPanel styleClass="photoOptions collabHidden" rendered="{!profile.capabilities.canEdit && externalUser.fullPhotoUrl == 'https://c.na11.content.force.com/profilephoto/005/F'}">
+                    <a title="Upload a profile picture" href="#!" class="editPhoto uploadPhoto">Upload Photo</a>
+                    <div class="background"></div>
+                </apex:outputPanel>
+                <apex:outputPanel styleClass="moderatorBadge collabBadge" rendered="{!profile.capabilities.isModerator}">Moderator</apex:outputPanel>
+                <input id="UploadPhotoHidden" type="file" accept=".png,.jpg" onChange="uploadPhoto(this);"/>
+                <label class="collabHidden" for="UploadPhotoHidden">Upload a new profile picture</label>
+            </div>
+        </div>
+        <div class="profileUserName">
+            <a title="Go to the profile of {!externalUser.name}">{!externalUser.FirstName} {!externalUser.LastName}</a>
+        </div>
+        <div>
+            <div class="profileSubheader">Contact</div>
+            <a href="mailto:{!externalUser.email}" title="Send an email to {!externalUser.name}">{!externalUser.email}</a>
+            <apex:outputPanel styleClass="managerDiv" rendered="{!externalUser.manager != null}">
+                <a href="/apex/{!profileNamespace}profileview?id={!externalUser.manager.id}" title="Go to the profile of {!externalUser.manager.name}">
+                    <img src="{!externalUser.manager.smallPhotoUrl}" alt="{!externalUser.manager.Name}'s profile picture"/>
+                </a>
+                <a href="/apex/{!profileNamespace}profileview?id={!externalUser.manager.id}" title="Go to the profile of {!externalUser.manager.name}" class="userName">{!externalUser.manager.name}</a>
+                <span>(Manager)</span>
+            </apex:outputPanel>
+        </div> 
+        <div>
+            <div class="profileSubheader">Contribution</div>
+            <div class="postInfo">
+                <div>
+                    <apex:outputPanel rendered="{!(profile.UserDetail.ChatterActivity.postCount !=null && profile.UserDetail.ChatterActivity.commentCount != null) && profile.UserDetail.ChatterActivity.postCount + profile.UserDetail.ChatterActivity.commentCount > 0}">
+                        {!subjectProfile.UserDetail.ChatterActivity.postCount + subjectProfile.UserDetail.ChatterActivity.commentCount}
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!(profile.UserDetail.ChatterActivity.postCount !=null && profile.UserDetail.ChatterActivity.commentCount != null) && profile.UserDetail.ChatterActivity.postCount + profile.UserDetail.ChatterActivity.commentCount <= 0}">0</apex:outputPanel>
+                    <span>Posts &amp; Comments</span>
+                </div>
+                <div>
+                    <apex:outputPanel rendered="{!profile.UserDetail.ChatterActivity.commentReceivedCount!= null && profile.UserDetail.ChatterActivity.commentReceivedCount > 0}">
+                        {!subjectProfile.UserDetail.ChatterActivity.commentReceivedCount}
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!profile.UserDetail.ChatterActivity.commentReceivedCount!= null && profile.UserDetail.ChatterActivity.commentReceivedCount <= 0}">0</apex:outputPanel>
+                    <apex:outputPanel rendered="{!profile.UserDetail.ChatterActivity.commentReceivedCount!= null && profile.UserDetail.ChatterActivity.commentReceivedCount == 1}">Comment Recieved</apex:outputPanel>
+                    <apex:outputPanel rendered="{!profile.UserDetail.ChatterActivity.commentReceivedCount!= null && profile.UserDetail.ChatterActivity.commentReceivedCount != 1}">Comments Recieved</apex:outputPanel>
+                </div>
+                <div>
+                    <apex:outputPanel rendered="{!profile.UserDetail.ChatterActivity.likeReceivedCount != null && profile.UserDetail.ChatterActivity.likeReceivedCount > 0}">
+                        {!subjectProfile.UserDetail.ChatterActivity.likeReceivedCount}
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!profile.UserDetail.ChatterActivity.likeReceivedCount != null && profile.UserDetail.ChatterActivity.likeReceivedCount <= 0}">0</apex:outputPanel>
+                    <apex:outputPanel rendered="{!profile.UserDetail.ChatterActivity.likeReceivedCount != null && profile.UserDetail.ChatterActivity.likeReceivedCount == 1}">Like Received</apex:outputPanel>
+                    <apex:outputPanel rendered="{!profile.UserDetail.ChatterActivity.likeReceivedCount != null && profile.UserDetail.ChatterActivity.likeReceivedCount != 1}">Likes Received</apex:outputPanel>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <div id="VerifyModal" class="collabModal bs container-fluid">
+        <span id="headerId" class="tabColor">
+            <p class="headerCls ng-binding profileModalHeader"></p>
+        </span> 
+        <div>Are you sure you want to delete this photo?</div>
+        <div>
+            <label class="collabHidden" for="DeletePhoto">Delete this photo</label>
+            <input type="button" class="customBtn delete" value="Yes" id="DeletePhoto"/>
+            <label class="collabHidden" for="CloseModal">Don't delete this photo</label>
+            <input type="button" class="customBtn closeModal" value="No" id="CloseModal"/>
+        </div>
+    </div>
+    <!-- <div id="ProfileLoadingModal" class="collabModal bs container-fluid">
+        <span id="headerId" class="tabColor">
+            <p class="headerCls ng-binding"></p>
+        </span>
+        <div class="itemMainDivCls sidebarWidget">
+            <apex:image alt="Loading Screen" url="{!urlfor($Resource.CollabSprites, 'CollabSprites/collabLoadingGif.gif')}"></apex:image>
+        </div>
+    </div>-->
+    <script>
+        var j$ = jQuery.noConflict(); 
+        var filesSize;
+        var uploadCount = 0;
+        var positionIndex = 0;
+        var doneUploading = false;
+        var uploadedFileIndex = 0;
+        var ParseFile;
+        var maxStringSize = 6000000;    //Maximum String size is 6,000,000 characters
+        var maxFileSize = 4350000;      //After Base64 Encoding, this is the max file size
+        var chunkSize = 950000;         //Maximum Javascript Remoting message size is 1,000,000 characters
+        
+        j$(document).ready(function(){
+            j$( '.collabModal' ).dialog({show: true, hide: true, modal: true, autoOpen: false, resizable: false});
+            j$( '#VerifyModal').dialog({width: 300 });
+           j$('.editPhoto').on('focus', function() {
+                j$('.collabBadge').addClass('hidden');
+                j$(this).parent().removeClass('collabHidden');  
+            });
+            j$('.editPhoto').on('blur', function() {
+                j$('.collabBadge').removeClass('hidden');
+                j$(this).parent().addClass('collabHidden');  
+            });
+            j$('.deletePhoto').on('click',function() {
+                showLoadingPopUp();
+                deletePhoto();
+            });
+            
+            j$('.profileSidebar .profilePicture > img').on('mouseover', function() {
+                j$('.collabBadge').addClass('hidden');
+                j$('.editPhoto').parent().removeClass('collabHidden');
+            });
+            j$('.profileSidebar .profilePicture > img').on('mouseout', function() {
+                j$('.collabBadge').removeClass('hidden');
+                j$('.editPhoto').parent().addClass('collabHidden');
+            });
+            j$('.profileSidebar .photoOptions').on('mouseover', function() {
+                j$('.collabBadge').addClass('hidden');
+                j$('.editPhoto').parent().removeClass('collabHidden');
+            });
+            j$('.profileSidebar .photoOptions').on('mouseout', function() {
+                j$('.collabBadge').removeClass('hidden');
+                j$('.editPhoto').parent().addClass('collabHidden');
+            });
+            j$('.profileSidebar .collabBadge').on('mouseover', function() {
+                j$('.collabBadge').addClass('hidden');
+                j$('.editPhoto').parent().removeClass('collabHidden');
+            });
+            j$('#VerifyModal .delete').on('click', function() {
+                deletePhoto();
+            });
+            j$('#VerifyModal .closeModal').on('click', function() {
+                j$('#VerifyModal').dialog('close');
+            });
+            j$('.profileSidebar .uploadPhoto').on('click', function() {
+                j$('#UploadPhotoHidden').click();
+            });
+        });
+        
+        var uploadPhoto = function(btnObject) {
+            var input = j$(btnObject)[0];
+            console.log('btnObject0000',btnObject);
+            console.log('input---',input);
+            var filesToUpload = input.files;
+            var isIE11 = !!navigator.userAgent.match(/Trident.*rv\:11\./);
+            console.log('filestouploa--d',filesToUpload );
+            readFile(filesToUpload[0]);
+        }
+        
+        function readFile(file){
+            console.log('file----',file);
+            showLoadingPopUp();
+            var attachmentName = file.name;
+            console.log(attachmentName);
+            var reader = new FileReader();
+            var fileType = file.type;
+            reader.onload = function(event) {
+                var contents = event.target.result;
+                var fileSize = contents.length;
+                positionIndex = 0;
+                if(fileSize < maxStringSize) {
+                   uploadFiles(attachmentName,contents,positionIndex, true, fileType);
+                } else {
+                    console.log("File is too large.  Maximum size is " + maxStringSize + " your file is " + fileSize + ".");
+                    alert("File " + attachmentName + " exceeds maximum allowed size of 4.3 MB. This file will not be uploaded.");
+                    uploadedFileIndex++;
+                    if(uploadedFileIndex >= filesSize){
+                    } else {
+                    }
+                }
+                                                                                          
+            };
+
+            reader.onerror = function(event) {
+                console.error("File could not be read! Code " + event.target.error.code);
+            };
+            reader.readAsDataURL(file)
+        }
+        
+        function uploadFiles(attachmentName,contents,positionIndex, isFirst, fileType){
+             var attachmentBody = "";
+             var fileSize = contents.length;
+             var testV = positionIndex + chunkSize;
+             doneUploading = false;
+             if(fileSize <= positionIndex + chunkSize) {
+                 attachmentBody = contents.substring(positionIndex);
+                 doneUploading = true;
+             } else {
+                 attachmentBody = contents.substring(positionIndex, positionIndex + chunkSize);
+             }
+             console.log('attachmentName---',attachmentName);
+             var uploadRemoteAction = '{!$RemoteAction.CollabSideBarExternalCtrl.uploadUserPhoto}';
+             Visualforce.remoting.Manager.invokeAction(
+                 uploadRemoteAction,
+                 attachmentBody, fileType, attachmentName, doneUploading, isFirst,                
+                 function(result, event){                         
+                     if (event.status) {  
+                         if( doneUploading ){
+                             uploadedFileIndex++;
+                             reload();
+                            
+                             
+                         } else {
+                             positionIndex += chunkSize;
+                             uploadFiles(attachmentName,contents,positionIndex, false, fileType);
+                         }
+                                                                                                                                     
+                     }                        
+                 },
+                 { buffer: false, escape: false}
+             );   
+         }
+         var reload = function() {
+            location.reload();   
+        }
+        var deletePhoto = function(userId) {
+            j$('#VerifyModal').dialog('close');
+            j$('#ProfileLoadingModal').dialog('open');
+             Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CollabSideBarExternalCtrl.deleteUserPhoto}',
+                '{!externalUser.Id}',
+                function(result,event) {
+                    if (event.status) {
+                        location.reload();
+                    }
+                }, {escape: false,buffer:false}
+            );
+        }
+    </script>
+</apex:component>

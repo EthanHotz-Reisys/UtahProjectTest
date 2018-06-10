@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE When Program Manager rejects Funding opportunity email is sent to Funding Opportunity Owner</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Sole Source - Program Manager rejects Funding opportunity email to FO Owner</name>
+    <style>formalLetter</style>
+    <subject>Notification: Funding Opportunity #{!Announcement__c.Id} has been Rejected</subject>
+    <textOnly>Subject: Notification of the Sole Source # {!Announcement__c.AnnouncementId__c} Rejection
+
+
+
+
+
+Hello {!Announcement__c.OwnerFirstName},
+
+
+
+This email is to notify that the Sole Source Funding Opportunity {!Announcement__c.Id} has been rejected.
+
+
+
+Sole Source Details:
+
+Opportunity Title: {!Announcement__c.AnnouncementName__c}
+
+Program Number: {!Announcement__c.Program__c}
+
+Comments: {!Announcement__c.ApprovalComments__c}
+
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

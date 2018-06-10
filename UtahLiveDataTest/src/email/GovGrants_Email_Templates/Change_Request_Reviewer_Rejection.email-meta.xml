@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE This email is sent to Applicant when Change Request has been rejected</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Change Request Reviewer Rejection</name>
+    <style>formalLetter</style>
+    <subject>Notification: Change Request Rejected for Application  {!Application__c.Name}</subject>
+    <textOnly>Subject: Notification of Change Request reject for Application # {!Application__c.Name}
+
+
+
+Hello {!Approval_Requesting_User.FirstName {!Approval_Requesting_User.LastName}
+
+Your Changes done in Application {!Application__c.Name} has been rejected for reasons: {!ApprovalRequest.Comments}. We will initiate another change request for you to resubmit the application.
+
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

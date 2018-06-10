@@ -1,0 +1,16 @@
+<apex:page id="flexTableViewPage" controller="GrantListCtrl"  title="Monitoring"  showHeader="false" sidebar="false"  standardStylesheets="false">
+
+    <c:ExternalLibrary />
+
+    <GNT:FlexGrid tableId="MonitoringGridView" />
+
+    <apex:outputPanel rendered="{!currentAccount = 'USBE' || currentAccount = 'SYSTEM'}">
+        <GNT:FlexTable flexTableName="MSPPaymentSchedule" tableId="MSPPaymentSchedule" flexTableParameters="{!keyValueMap}"/>
+    </apex:outputPanel>
+    
+    <div style="display: none;">
+        <GNT:FlexTable tableId="ExternalOrganizationHierarchghy" />
+    </div>
+
+
+</apex:page>

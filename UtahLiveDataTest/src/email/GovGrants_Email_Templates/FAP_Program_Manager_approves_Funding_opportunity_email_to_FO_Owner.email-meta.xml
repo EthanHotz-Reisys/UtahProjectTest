@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE When Program Manager approves Funding opportunity, email is sent to Funding Opportunity Owner</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>FAP - Program Manager approves Funding opportunity email to FO Owner</name>
+    <style>formalLetter</style>
+    <subject>Notification: {!Announcement__c.AnnouncementId__c} has been Approved.</subject>
+    <textOnly>Dear {!Announcement__c.OwnerFirstName},
+This email is to notify you that, the Announcement # {!Announcement__c.AnnouncementId__c} has been Approved for the Program # {!Announcement__c.Program__c}.
+Kindly login to the EGMS Systems and click here to see Announcement details.
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+Sincerely,
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

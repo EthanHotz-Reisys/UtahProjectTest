@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Used to send Task Reminder to the Asignee (Can be used VINAYAK)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Task Reminder Template Before Start date</name>
+    <style>formalLetter</style>
+    <subject>Task Reminder - Complete {!TaskScheduleDetail__c.Subject__c}</subject>
+    <textOnly>Dear {!TaskScheduleDetail__c.AssignedTo__c},
+
+Please complete the {!TaskScheduleDetail__c.Subject__c} task before {!TaskScheduleDetail__c.StartDate__c}.
+
+Sincerely,
+District of Columbia(DC) - Department of Health(DOH)
+
+Enterprise Grants Management System(EGMS)</textOnly>
+    <type>html</type>
+</EmailTemplate>

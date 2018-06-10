@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<font style="font-family: &quot;Times New Roman&quot;, Times, serif; background-color: rgb(255, 255, 255);">Dear&nbsp;</font><font style="font-family: &quot;Times New Roman&quot;, Times, serif; background-color: rgb(255, 255, 255);">User</font><span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: 12pt; background-color: rgb(255, 255, 255);">,</span>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p style="margin: 0cm 0cm 12pt; line-height: 1.5em; background-color: rgb(255, 255, 255);"><font face="Times New Roman, Times, serif">A payment request for {!PaymentRequest__c.ProgramName__c} for {!PaymentRequest__c.LEAName__c} for ${!PaymentRequest__c.TotalRequestedAmountthisAction__c} has been submitted for your approval. Please follow the link below to review and submit it.</font></p><p style="margin: 0cm 0cm 12pt; line-height: 1.5em; background-color: rgb(255, 255, 255);"><font face="Times New Roman, Times, serif">Click <a href="{!PaymentRequest__c.Link}">here</a></font></p><span style="font-size: 12pt;"><font face="arial" style="background-color: rgb(255, 255, 255);"></font></span><p style="font-family: arial; font-size: 12pt; margin-bottom: 12pt;"><font face="Times New Roman,Times,Serif" style="background-color: rgb(255, 255, 255);">Sincerely,</font></p><p style="font-family: arial; font-size: 12pt; margin-bottom: 12pt;"><font face="Times New Roman,Times,Serif" style="background-color: rgb(255, 255, 255);">UtahGrants Support Team</font></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

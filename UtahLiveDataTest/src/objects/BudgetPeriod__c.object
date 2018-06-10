@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>BudgetPeriodEdit</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>BudgetPeriodView</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>[Business] This object stores all Budget Period Details.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Application__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Application</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipLabel>Budget Periods</relationshipLabel>
+        <relationshipName>Budget_Periods</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Award__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Award</label>
+        <referenceTo>Award__c</referenceTo>
+        <relationshipLabel>Budget Periods</relationshipLabel>
+        <relationshipName>Budget_Periods</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BudgetEndDate__c</fullName>
+        <description>This stores Budget End date</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>BudgetPeriodTitle__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;Fiscal Year(&quot; + TEXT(YEAR(BudgetStartDate__c)) + &quot;-&quot; + TEXT(YEAR( BudgetEndDate__c)) + &quot;)&quot;</formula>
+        <label>Budget Period Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BudgetPeriod__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND(NOT(ISBLANK(BudgetStartDate__c )),NOT(ISBLANK(BudgetEndDate__c))),TEXT(MONTH( BudgetStartDate__c ))+&quot;/&quot; +TEXT(DAY(BudgetStartDate__c))+&quot;/&quot; +TEXT(YEAR(BudgetStartDate__c))+&quot;--&quot;+ TEXT(MONTH( BudgetEndDate__c ))+&quot;/&quot; +TEXT(DAY(BudgetEndDate__c))+&quot;/&quot; +TEXT(YEAR(BudgetEndDate__c)),&apos;&apos;)</formula>
+        <label>Budget Period</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BudgetStartDate__c</fullName>
+        <description>This stores Budget Start Date</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ChangeRequired__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Change Required</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CodeAndDate__c</fullName>
+        <externalId>false</externalId>
+        <formula>SupportYear__c &amp;&quot;&quot;&amp;&quot;&quot;+&apos;(&apos;+ BudgetPeriod__c +&apos;)&apos;</formula>
+        <label>CodeAndDate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FundingOpportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Funding Opportunity</label>
+        <referenceTo>Announcement__c</referenceTo>
+        <relationshipLabel>Budget Periods</relationshipLabel>
+        <relationshipName>Budget_Periods</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Grant__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Grant</label>
+        <referenceTo>Grant__c</referenceTo>
+        <relationshipLabel>Budget Periods</relationshipLabel>
+        <relationshipName>Budget_Periods</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>HideEditBtn__c</fullName>
+        <description>Logic for Hiding The Edit Button</description>
+        <externalId>false</externalId>
+        <formula>OR(AND(Grant__c!=null, NOT(ISPICKVAL(Grant__r.Status__c, &apos;Draft&apos;))),
+   AND(Program__c!=null, NOT(ISPICKVAL(Program__r.Status__c,&apos;Created&apos;))),
+   AND(FundingOpportunity__c!=null, FundingOpportunity__r.HideEditBtn__c)   
+   )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Logic for Hiding The Edit Button</inlineHelpText>
+        <label>Hide Edit Btn</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideGrantEditDelete__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(ISPICKVAL(Grant__r.Status__c, &apos;Draft&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HideGrantEditDelete</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HideProgramEdit__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOT(ISPICKVAL(Program__r.Status__c,&apos;Created&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hide Program Edit</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Modified__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field will determine if the award has been amended.</description>
+        <externalId>false</externalId>
+        <label>Modified</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <description>Stores Budget details in brief.</description>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PaymentRequest__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>this lookup is created to get the budget periods on the payment request budget grid.</description>
+        <externalId>false</externalId>
+        <label>Payment Request</label>
+        <referenceTo>PaymentRequest__c</referenceTo>
+        <relationshipLabel>Budget Periods</relationshipLabel>
+        <relationshipName>Budget_Periods</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PreApplication__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to PreApplication</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Lookup to PreApplication</inlineHelpText>
+        <label>PreApplication</label>
+        <referenceTo>PreApplication__c</referenceTo>
+        <relationshipLabel>Budget Periods</relationshipLabel>
+        <relationshipName>Budget_Periods</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Program__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Program</label>
+        <referenceTo>Program__c</referenceTo>
+        <relationshipLabel>Budget Periods</relationshipLabel>
+        <relationshipName>Budget_Periods</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SequenceNumber__c</fullName>
+        <description>Sequence Number used for identifying the next budget period in Periodic Amendment.</description>
+        <externalId>false</externalId>
+        <label>Sequence Number</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Closed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Passive</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SupportYear__c</fullName>
+        <description>This defines the code of Budget</description>
+        <externalId>false</externalId>
+        <label>Support Year</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Year__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(YEAR(BudgetStartDate__c))</formula>
+        <label>Year</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Budget Period</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>BP-{0000}</displayFormat>
+        <label>Budget Period Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Budget Periods</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>SupportYear__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>BudgetStartDate__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>BudgetEndDate__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>GrantBudgetPeriodEndDate</fullName>
+        <active>false</active>
+        <errorConditionFormula>IF(AND(Grant__c !=null,OR(BudgetEndDate__c &lt; Grant__r.ProjectPeriodStartDate__c ,  BudgetEndDate__c &gt;
+Grant__r.ProjectPeriodEndDate__c )) ,true,false)</errorConditionFormula>
+        <errorMessage>Budget Period End Date should be in between Estimated Project Period Start Date and End date of Grant</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>GrantBudgetPeriodStartDate</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(AND( Grant__c  !=null,OR(BudgetStartDate__c  &lt;  Grant__r.ProjectPeriodStartDate__c ,BudgetStartDate__c &gt; Grant__r.ProjectPeriodEndDate__c )) ,true,false)</errorConditionFormula>
+        <errorMessage>Budget Period Start Date should be in between Estimated Project Period Start Date and End date of Grant</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>OpportunityBudgetPeriodEndDate</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(AND(  $Setup.GNT__UserPreferences__c.GNT__ActiveAppName__c =&apos;StateasGrantee&apos;,FundingOpportunity__c  !=null,OR(BudgetEndDate__c &lt;  FundingOpportunity__r.EstimatedProjectPeriodStartDate__c  ,  BudgetEndDate__c &gt;
+ FundingOpportunity__r.EstimatedProjectPeriodEndDate__c )) ,true,false)</errorConditionFormula>
+        <errorMessage>Budget Period End Date should be in between Estimated Project Period Start Date and End date of Opportunity</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>OpportunityBudgetPeriodStartDate</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(AND($Setup.GNT__UserPreferences__c.GNT__ActiveAppName__c =&apos;StateasGrantee&apos;,FundingOpportunity__c !=null,OR(BudgetStartDate__c &lt;   FundingOpportunity__r.EstimatedProjectPeriodStartDate__c  ,BudgetStartDate__c &gt;  FundingOpportunity__r.EstimatedProjectPeriodEndDate__c  )) ,true,false)</errorConditionFormula>
+        <errorMessage>Budget Period Start Date should be in between Estimated Project Period Start Date and End date of Opportunity</errorMessage>
+    </validationRules>
+</CustomObject>

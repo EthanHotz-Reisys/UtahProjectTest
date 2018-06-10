@@ -1,0 +1,31 @@
+<apex:page cache="false" standardController="KeyContacts__c" extensions="KeyContactViewCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />   
+           <!--<div  class="bodyDiv bs container-fluid" style="padding-left:30px; float:left; clear:both; width:100%;height:100%;">-->
+         <!--    <GNT:FlexViewLayout templateName="{!pageTemplateName}" layoutType="View" recordId="{!recordId}" deleteURL="{!deleteURL}" HideSidebar="true"
+            flexTableParameters="{!keyValueMap}"/>  -->
+            <apex:composition template="GNT__ModalTemplate">
+            <apex:define name="ModalContent">
+
+            <GNT:ModalFlexViewLayout templateName="{!pageTemplateName}" layoutType="View" recordId="{!recordId}" deleteURL="{!deleteURL}" HideSidebar="true"
+            flexTableParameters="{!keyValueMap}"/>
+            </apex:define>
+            </apex:composition>
+
+           <!--</div>-->
+           <script>
+        var j$ = jQuery.noConflict();
+        j$(document).ready(function(){
+            //buildLookupIcon();
+        });
+
+        var buildLookupIcon = function(){
+            j$('.lookupIcon').each(function(){
+                var currentNode = j$(this);
+                currentNode.parent().append('<span class="glyphicon glyphicon-search"></span>');
+            });
+        }
+        
+    </script>
+</apex:page>

@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Action__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Holds the Actions that need to be taken on the Task for Assigned and Unassigned Tasks</inlineHelpText>
+        <label>Description of Task</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Review Announcement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Review Program</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Review Funding Account</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Review Funding Source</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Review Submission Package</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Review User</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Review Application</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Review Pre-Application</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Create Award</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Review Organization</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Review Award</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Review Applications</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Review Pre-Applications</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Review Progress Report</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Review Financial Report</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Review Close Out Report</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submit Close Out Report</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submit Progress Report</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submit Financial Report</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submit Site Visit Report</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Review Site Visit Report</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Review Amendment Request</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ActivityDuplicateDate__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Field contains the same value as Due Date of the Task. Before Insert and before Update Trigger on Task populates the value</inlineHelpText>
+        <label>Activity Duplicate Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AssignedToEmailAddress__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>Owner:User.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Assigned To Email Address</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AssignedToLoggedInUserId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( GroupId__c == null &amp;&amp; $User.Id ==  OwnerId, TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Assigned To Logged In User Id?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AssignedToLoggedInUserProfile__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF($Profile.Name ==  GroupName__c, TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Assigned To Logged In User Profile?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AssignedToQueue__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF (GroupId__c == null, FALSE, TRUE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Assigned to Queue</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AssignedToUserType__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Assigned To User Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Internal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>External</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Attachment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Attachment</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CCAddress__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>CC Address</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CreatedBy__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CreatedBy.FirstName &amp; &quot; &quot; &amp; CreatedBy.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Created By</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CustomAppName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Comma separated list of App Names associated with the Task Action</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Comma separated list of App Names associated with the Task Action</inlineHelpText>
+        <label>Custom App Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DocumentType__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of the Object Type used in Assigned and Un-assigned Task like Announcement, Program Organization etc</inlineHelpText>
+        <label>Document</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Announcement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Program</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Funding Account</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Funding Source</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submission Package</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Application</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pre-Application</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Create Award</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Organization</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>User</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Applications</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pre-Applications</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Progress Report</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Review Award</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DomainURL__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>$Api.Enterprise_Server_URL_300</formula>
+        <label>Domain URL</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DueComingMonthsTasks__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( (TODAY() &lt; ActivityDuplicateDate__c - 30)&amp;&amp; (ISPICKVAL(Status, &apos;Completed&apos;) &lt;&gt; TRUE ) , TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Due Coming Months Tasks</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DueInSevenDaysTasks__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( (TODAY() &gt; ActivityDuplicateDate__c - 7) &amp;&amp; (TODAY() &lt;= ActivityDuplicateDate__c ) &amp;&amp; (ISPICKVAL(Status, &apos;Completed&apos;) &lt;&gt; TRUE ) , TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Due In Seven Days Tasks</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DueInThirtyDaysTasks__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( ((TODAY() + 7) &gt;=  ActivityDuplicateDate__c - 30) &amp;&amp; (TODAY() + 7 &lt;= ActivityDuplicateDate__c ) &amp;&amp; (ISPICKVAL(Status, &apos;Completed&apos;) &lt;&gt; TRUE ) , TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Due In Thirty Days Tasks</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EmailSubject__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Email Subject</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmailType__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Email Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Outbound</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Inbound</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>FromAddress__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>From Address</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>GroupId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the Id the of the Group when a Task is assigned to a Group</description>
+        <externalId>true</externalId>
+        <inlineHelpText>Stores the Id the of the Group when a Task is assigned to a Group</inlineHelpText>
+        <label>Assigned To Group Id</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GroupName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Every Profile has a corresponding Group that has the same name. When a Task is created and if the Task is assigned to a Group, then this field should be populated with the Group Name that is similar to the Profile  Name</inlineHelpText>
+        <label>Assigned To Group Name</label>
+        <length>200</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</inlineHelpText>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsBatchProcessed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is used in back end for cleanup purpose</inlineHelpText>
+        <label>Is Batch Processed</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsRead__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Weather the email is read or not.</description>
+        <externalId>false</externalId>
+        <label>Is Read</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsReassignmentInitiated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This flag is set when the reassignment is initiated such that same tasks wont be send for Reassignment until the reassignment is not completed</description>
+        <externalId>false</externalId>
+        <label>Is Reassignment Initiated</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LateTasks__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( (TODAY() &gt; ActivityDate) &amp;&amp; (ISPICKVAL(Status, &apos;Completed&apos;)&lt;&gt; TRUE ) , TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Late Tasks</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ObjectRelationName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Name of the record used in Assigned and Un-assigned Tasks</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of the record used in Assigned and Un-assigned Tasks</inlineHelpText>
+        <label>Task Description</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrganizationName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The External Organization (Account) of the Application or Pre-Application associated with the Task</inlineHelpText>
+        <label>Organization Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ParentOwnerID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This is used for Task Reassignment functionality</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is used for Task Reassignment functionality</inlineHelpText>
+        <label>Parent Owner ID</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ParentRecordId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>WhatId</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent Record Id</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ParentTask__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Parent Task Id</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PhaseName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the phase config associated with this task.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the phase config associated with this task.</inlineHelpText>
+        <label>Phase Name</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReassignedFrom__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This field contains the old owner of the Task</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the old owner of the Task</inlineHelpText>
+        <label>Reassigned From</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Activities</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ReceivedDate__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Application or Pre-Application Received Date</inlineHelpText>
+        <label>Received Date</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ScheduleTitle__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This will store the Site Visit Title</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This will store the Site Visit Title</inlineHelpText>
+        <label>Schedule Title</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SentDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Email date</description>
+        <externalId>false</externalId>
+        <label>Sent Date</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>StartDate__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SubmissionTitle__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Submission Title</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TaskAction__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Hold the Action Type of the Task like &apos;Approve Announcement&apos;</inlineHelpText>
+        <label>Task Type</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TaskConfigId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Task Config Id</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TaskConfig__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Config: Task</label>
+        <referenceTo>TaskConfig__c</referenceTo>
+        <relationshipLabel>Activities</relationshipLabel>
+        <relationshipName>Activities</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>TaskScheduleDetailId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field will contain Task Schedule Detail record Id</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will contain Task Schedule Detail record Id</inlineHelpText>
+        <label>Task Schedule Detail Id</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ToAddress__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>To Address</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approval</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Email</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Review</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>On-Demand</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Viewed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates if the assigned user viewed this task from the flex table list view. This is applicable only for &quot;my tasks&quot; and not for &quot;group tasks&quot;</inlineHelpText>
+        <label>Viewed?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>WorkitemId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to store the WorkItemId of the Approval Process that created the Task.</inlineHelpText>
+        <label>Workitem Id</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

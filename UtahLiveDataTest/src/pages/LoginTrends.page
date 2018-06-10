@@ -1,0 +1,70 @@
+<apex:page controller="LoginTrendsCtrl" standardstylesheets="false" showHeader="false" sidebar="false" title="Login">
+  <!---  <style>
+        .loginTrendCircle {
+            border-radius: 50% !important;
+            width: 80px;
+            height: 80px;
+            background: #E5F3FF;
+            margin-top: 10px;
+            /* width and height can be anything, as long as they're equal */
+        }
+        
+        .loginTrendTopLabel{
+            font-size: 20pt;
+            margin-top: 30px;
+            text-align: right;            
+        }
+        
+        .loginTrendBottomLabel{
+            font-size: 19pt;
+            font-weight: 700;            
+            text-align: right;
+        }
+        
+        .loginTrendCountStyle{
+            font-size: 19pt;
+            font-weight: 700;            
+            padding-top:25px;
+            text-align: center;
+        }
+        
+    </style> --->
+    <div class="bs">
+        <div class="panel">
+        <div class="panel-heading" >
+            <div class="panel-title">
+               Trends
+            </div>
+            </div>
+            <div class="panel-body panel-body-ext" style="min-height:230px !important;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="loginTrendTopLabel">How Many</div>
+                        <div class="loginTrendBottomLabel">Opportunities</div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="loginTrendCircle">
+                            <div class="loginTrendCountStyle">{!announcementCount}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="loginTrendTopLabel">How Many</div>
+                        <div class="loginTrendBottomLabel">Programs</div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="loginTrendCircle">
+                            <div class="loginTrendCountStyle">{!programCount}</div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+            
+                
+            </div>
+        </div>
+    </div>    
+</apex:page>

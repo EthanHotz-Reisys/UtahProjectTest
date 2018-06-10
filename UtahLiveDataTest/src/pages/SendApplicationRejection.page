@@ -1,0 +1,8 @@
+<apex:page id="SendApplicationRejectionPage" title="Send Application Rejection" standardStylesheets="false" controller="SendApplicationRejectionCtrl" showHeader="false" sidebar="false">
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">   
+           <GNT:EmailTemplate emailTemplateName="SendApplicationRejection" emailId="{!email}" target="{!targetId}" actionInterface="{!this}" enableAttachment="true" userMode="false" closeOnSuccess="true" what="{!appId}"/> 
+        </apex:define>
+    </apex:composition>	
+</apex:page>

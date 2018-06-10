@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>[Framework]  This object contains all the details for the chart configuration.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AllDataTableHeader__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>All Data Table Header</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AllowDecimalNumberXaxis__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Allow Decimal Number X axis</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AllowDecimalNumberYaxis__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Allow Decimal Number Y axis</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AllowDecimalNumberZaxis__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Allow Decimal Number Z axis</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ChartConfig__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Chart Config</label>
+        <referenceTo>ChartConfig__c</referenceTo>
+        <relationshipLabel>Chart Detail Config</relationshipLabel>
+        <relationshipName>Chart_Detail_Config</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>DataTableHeader__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Data Table Header</description>
+        <externalId>false</externalId>
+        <label>Data Table Header</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DataTableQueryForSelData__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Data Table Query(For Selected Data)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Data Table Query(For Selected Data)</inlineHelpText>
+        <label>Data Table Query(For Selected Data)</label>
+        <length>2000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DataTableQuery__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This query is used see the list of records on click of chart</inlineHelpText>
+        <label>Data Table Query(For All Data)</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DisableLegend__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Disable Legend</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DisplayDataType__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>What are we showing to the user? Is it a count or currency value?</inlineHelpText>
+        <label>Display Data Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Count</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Currency</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DrillDownParameter__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Drill Down Parameter(Obsolete)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FilterCriteria__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field will store the filter to be applied to chart query .</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will store the filter to be applied to chart query .</inlineHelpText>
+        <label>Filter Criteria</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>GlobalFilterApplicable__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If set to false , global filter will be bypassed  for corresponding chart.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If set to false , global filter will be bypassed  for corresponding chart.</inlineHelpText>
+        <label>Global Filter Applicable</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Location__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Inside a box, where to display the chart?</inlineHelpText>
+        <label>Location</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Top</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Top Left</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Top Right</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Bottom</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Bottom Left</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Bottom Right</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Left</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Right</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Query2__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for Progress Bar chart to capture the second data point.</inlineHelpText>
+        <label>Query2</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Query__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Provide the aggregated SOQL along with where clause to filter the data</inlineHelpText>
+        <label>Query</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Sequence__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>For Funnel Charts maximum of 5 and No. of chart detail configs are to be used. This field will be used to sort these records in ascending order.</inlineHelpText>
+        <label>Sequence</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SeriesForDrilldownMap__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field will store the JSON value for drill down on high map</description>
+        <externalId>false</externalId>
+        <label>Series For Drilldown Map(Obsolete)</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Style__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Style(Obsolete)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <length>150</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>XAxisLabel__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field give label when there is aggregate query</description>
+        <externalId>false</externalId>
+        <label>X-Axis Label</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>XAxisPrefix__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>X Axis Prefix</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>XAxisSuffix__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>X Axis Suffix</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>XAxis__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Enter API names of the field to be plotted on X- Axis.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter API names of the field to be plotted on X- Axis.</inlineHelpText>
+        <label>X-Axis</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>XFormattedNumber__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>X Formatted Number</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>YAxisLabel__c</fullName>
+        <deprecated>false</deprecated>
+        <description>It is used to store label of y axis in case of aggregate query</description>
+        <externalId>false</externalId>
+        <label>Y-Axis Label</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>YAxisPrefix__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Y Axis Prefix</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>YAxisSuffix__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Y Axis Suffix</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>YAxis__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Enter API names of the field to be plotted on Y- Axis.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter API names of the field to be plotted on Y- Axis.</inlineHelpText>
+        <label>Y-Axis</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>YFormattedNumber__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Y Formatted Number</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ZAxisLabel__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains zaxis label</description>
+        <externalId>false</externalId>
+        <label>Z-Axis Label</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ZAxisPrefix__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Z-Axis Prefix</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ZAxisSuffix__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Z-Axis Suffix</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ZAxis__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Z-Axis</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ZFormattedNumber__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Z Formatted Number</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Config: Chart Detail</label>
+    <nameField>
+        <displayFormat>CD-{0000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Chart Detail Config</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

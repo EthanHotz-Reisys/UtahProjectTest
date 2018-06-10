@@ -1,0 +1,50 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false" controller="ProfileVisibilityCtrl">
+    <style>
+    .sideDiv{
+        padding-top: 95px;
+        position: absolute;
+        right: 0;
+        max-height: 550px;
+        overflow: auto;
+        z-index: 99;
+    }
+    .row.my-profile-view-page > .col-md-12 {
+        padding-right: 0;
+    }
+   
+    </style>
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />   
+    <div class="container-fluid">
+        <div class="row my-profile-view-page">
+            <div class="col-md-12">
+                <apex:composition template="GNT__PageTemplate">
+                    <apex:define name="content">    
+                        <div class="col-md-2 sideDiv">
+                            <apex:form >
+                                <GNT:CollabSidebar /> 
+                            </apex:form>
+                             
+                        </div>
+                       <GNT:FlexViewLayout templateName="User" recordId="{!JSENCODE($CurrentPage.parameters.id)}" HideSidebar="false" layoutType="View"/>
+                        <apex:outputPanel rendered="{!showLoginCount}" styleClass="profile-ex-data-text">
+                            <div class="list-first list"><apex:outputLabel value="Current Month Login Count:"></apex:outputLabel><apex:outputText value="{!currentMonthCount}" styleClass="output-text-data"></apex:outputText></div>
+                             <div class="list-sec list"><apex:outputLabel value="Last Month Login Count:"></apex:outputLabel><apex:outputText value="{!lastMonthCount}" styleClass="output-text-data"></apex:outputText></div>
+                            <div class="list-third list"> <apex:outputLabel value="Allowed Login Count:"></apex:outputLabel><apex:outputText value="{!allowedCount}" styleClass="output-text-data"></apex:outputText></div>
+                        </apex:outputPanel>
+                    </apex:define>
+                </apex:composition>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        var j$ = jQuery.noConflict(); 
+        j$(document).ready(function(){
+            j$('#sidebarToggleContainer').off('click');
+            j$('#sidebarToggleContainer').on('click', function() {
+                j$('.profileContainer').toggleClass('active');
+            });
+        });
+    </script>
+</apex:page>

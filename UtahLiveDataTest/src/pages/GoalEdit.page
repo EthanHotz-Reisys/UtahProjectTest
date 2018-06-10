@@ -1,0 +1,11 @@
+<apex:page cache="false" standardController="GoalObjective__c" extensions="GoalEditCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+        
+            <c:ExternalLibrary /> 
+            <apex:composition template="GNT__ModalTemplate">
+            <apex:define name="ModalContent">    
+             <GNT:ModalFlexEditLayout templateName="{!pageTemplateName}" layoutType="Edit" recordId="{!recordId}" deleteURL="{!deleteURL}" 
+             saveURL="{!savePage}" cancelURL="{!cancelPage}" hideCancelBtn="true" createDefaultValues="{!listDefaultValues}"  HideSidebar="true" flexTableParameters="{!keyValueMap}"/> 
+            </apex:define>
+            </apex:composition>
+ 
+</apex:page>

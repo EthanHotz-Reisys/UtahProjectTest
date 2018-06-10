@@ -1,0 +1,9 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" standardController="TermCondition__c" extensions="TermConditionEditCtrl">
+    <c:ExternalLibrary />   
+    <apex:composition template="GNT__ModalTemplate">
+    <apex:define name="ModalContent">    
+    <GNT:ModalFlexEditLayout templateName="{!templateName}"  recordId="{!recordId}" layoutType="Edit" hideSidebar="true" 
+                            createDefaultValues="{!listDefaultValues}" saveURL="{!savePage}" cancelURL="{!cancelPage}" hideCancelBtn="true"/>  
+    </apex:define>
+    </apex:composition>
+</apex:page>

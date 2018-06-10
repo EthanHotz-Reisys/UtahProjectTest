@@ -1,0 +1,10 @@
+<apex:page standardController="ApplicationServiceArea__c" extensions="ApplicationServiceAreaViewCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />   
+    <apex:composition template="GNT__PageTemplate">
+         <apex:define name="content">          
+            <GNT:FlexViewLayout templateName="ApplicationServiceArea" layoutType="View" recordId="{!recordId}" flexTableParameters="{!keyValueMap}"/>
+        </apex:define>
+    </apex:composition> 
+</apex:page>

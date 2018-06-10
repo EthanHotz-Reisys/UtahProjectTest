@@ -1,0 +1,98 @@
+<apex:page controller="LoginHighlightsCtrl" standardstylesheets="false" showHeader="false" sidebar="false">
+    <style>
+    .loginListItemsStyle{
+        font-size: 10pt;
+        font-weight: 700;       
+        margin-bottom: 5px;
+    }
+    .loginListItemDateStyle{
+        font-weight: 100;
+        font-size: 10pt;
+       font-style: italic;
+       width: 25px;
+       font-size: 7pt;
+    }
+   .loginListItemsSpacing{
+        margin-top: 5px;
+    margin-bottom: 15px;
+    } 
+    .loginHighLightsExtendedLine{       
+    width: 25px;
+    font-size: 7pt;
+    }
+    </style>
+    <div class="bs">
+        <div class="panel">
+           <!--  <div class="panel-heading" > -->
+            <div class="panel-title color-Cyan-Blue" style="text-align:left;font-weight:600;padding-left: 15px;">
+                Highlights
+             </div>
+            <!-- </div> -->
+            <div class="panel-body panel-body-ext" style="text-align:left;"> <!--min-height:230px !important; background-color:#f5f5f5;  -->
+            <div class="loginHighLightsExtendedLine"></div>
+             <div class="loginListItemsSpacing">
+              <div class="color-Cyan-Bluish-gray"> <!-- class="loginListItemsStyle" -->
+                <p>
+                   DC Department of Health Reports 2011 HIV/AIDS Accomplishments on World AIDS Day.
+               </p>
+             </div>
+                <span class="loginListItemDateStyle">Friday, May 1, 2015</span>
+           </div>
+           <div class="loginListItemsSpacing">
+              <div class="color-Cyan-Bluish-gray" > <!-- class="loginListItemsStyle" -->
+                <p>
+                   DC Department of Health Announces $2 Million in Grant Funds
+               </p>
+             </div>
+                <span class="loginListItemDateStyle">Wednesday, April 1, 2015</span>
+           </div>
+             
+                
+                <div id="extendedHighlightList">
+                    <apex:repeat value="{!extendedHighlightsList}" var="highlight">
+                        <div class="loginHighLightsExtendedLine"></div>
+                        <div class="loginListItemsSpacing">
+                            <div class="loginListItemsStyle">
+                                <apex:outputText value="{!highlight.GNT__Summary__c}" escape="false"></apex:outputText>
+                            </div>
+                            <!--
+                            <apex:outputText value="{0,date,full}" styleClass="loginListItemDateStyle">
+                                <apex:param value="{!highlight.StartDate__c}" />
+                            </apex:outputText>
+                            -->
+                        </div>
+                    </apex:repeat>
+                    <div id="viewLessHighlights">
+                        <apex:outputPanel rendered="{!actualItemCount > minItemsCount}">
+                            <a href="#" onclick="collapseHighlights();" class="pull-right color-Luminos-Vivid-orange" style="font-size: 15px !important; font-weight: 700 !important;">View Less</a>
+                        </apex:outputPanel>
+                    </div>
+                </div>
+                
+                <div id="viewAllHighlights">
+                    <apex:outputPanel rendered="{!actualItemCount > minItemsCount}">
+                        <a href="#" onclick="expandHighlights();" class="pull-right color-Luminos-Vivid-orange" style="font-size: 15px !important; font-weight: 700 !important;">View More</a>
+                    </apex:outputPanel>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        j$ = jQuery.noConflict();
+        j$( document ).ready(function() {
+            j$('#extendedHighlightList').hide();
+        });
+        
+        function expandHighlights(){
+            j$('#viewAllHighlights').hide();
+            j$('#extendedHighlightList').show('slow');
+        }
+        
+        function collapseHighlights(){
+            j$('#extendedHighlightList').hide();
+            j$('#viewAllHighlights').show();
+        }
+    
+    </script>
+</apex:page>

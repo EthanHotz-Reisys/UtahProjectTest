@@ -1,0 +1,18 @@
+<apex:page id="flexTableViewPage"  controller="FlexTableViewCtrl" showHeader="false" sidebar="false"  standardStylesheets="false">
+    
+    <c:ExternalLibrary />
+     <style> 
+   .panel-flexgrid-header { padding-left: 5px; padding-top:0px !important; padding-bottom:0px !important; 
+            display:block !important; float:left !important; width:100%;border-radius: 0px 0px 0 0 !important; 
+            }
+      </style> 
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">
+              <GNT:FlexGrid tableId="AppReviewGridView" />
+        </apex:define>
+    </apex:composition>
+    
+    <script>
+        setPageTitle('{!$CurrentPage.parameters.pageTitle}');
+    </script>
+</apex:page>

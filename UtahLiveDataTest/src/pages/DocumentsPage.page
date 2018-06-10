@@ -1,0 +1,4 @@
+<apex:page controller="DocumentsCtrl" standardStylesheets="false" showHeader="false" sidebar="false" action="{!viewReleaseNotes}" >
+
+
+</apex:page>

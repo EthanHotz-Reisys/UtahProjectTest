@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This is for the funding block in USBE</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>CodeFromFINET__c</fullName>
+        <externalId>false</externalId>
+        <label>Code From FINET</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DeletedInFINET__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Deleted In FINET</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FiscalYearName__c</fullName>
+        <externalId>false</externalId>
+        <formula>FiscalYear__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FY</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FiscalYear__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>MST: Fiscal Year</label>
+        <referenceTo>FiscalYear__c</referenceTo>
+        <relationshipLabel>Appropriations</relationshipLabel>
+        <relationshipName>Appropriations</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>PED Business Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PED District Computer Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PED Math Teacher Training</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Teacher Salary Supplement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Comprehensive Health Insurance Pool</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PSC Alternative Fuel Vehicles</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FIN 04 GO Refunding Bonds Series A</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DAG needed for deprec</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DHS Homebound Transportation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DHS USDC Miscellaneous Donation Fund</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DHS USDC Workshop Fund</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DHS State Hospital Gift Fund</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DHS State Hospital Unit Fund</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DHS State Developmental Center Land Fund</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DOH Medicaid Expansion Fund</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DOT Wire Estate Memorial</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DWS Child Care Fund</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DWS Refugee Services Fund</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DNR Water Commissioner Fund</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DNR Reclamation Fund</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DAS Waste Tire Recycling</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GED Utah Stem Foundation Fund</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DBS Instruction</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DBS Support Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DBS Instruction-2009</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DBS Appropriation Transfer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DBS Institutional Council</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DBS needed for deprec</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PED Charter School Finance Authority</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT Board of Regents Administration</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT Campus Compact</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT Concurrent Enrollment Coordination</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT Federal Programs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT Engineering Initiative</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT Student Financial Aid</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT WICHE Waivers</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT TH Bell Scholarships</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT Veterans Tuition Gap Program</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT Articulation Support</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT College Access Challenge Grant</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT PS Officer Career Advancement Reimb</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT Services for Hearing Impaired Students</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT New Century Scholarships</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT Math Competency Initiative</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT Higher Ed Success Stipend Program</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT Student Prosperity Savings</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT Technology Initiative</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT Engineering Loan Repayment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT Minority Scholarships</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT Education Excellence</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT Performance Funding</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT Scholarship Program</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT Academic Library Consortium</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT Economic Development</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RGT Cluster Acceleration Partnership</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UOU Education &amp; General</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UOU Educationally Disadvantaged</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UOU School of Medicine</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UOU University Hospital</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UOU School of Dentistry</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UOU Tele Health Network</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UOU Admin of the Mobile Home Park Helpline</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UOU Public Broadcasting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UOU Operations &amp; Maintenance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UOU Cancer Research &amp; Treatment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UOU Occupational &amp; Environmental Health</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UOU Miner&apos;s Hospital</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UOU Poison Control Center</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UOU Center on Aging</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FIN Teacher Salary Supplements</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PED Charter School Revolving Account</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PED School Building Revolving Account</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ValueFromFINET__c</fullName>
+        <externalId>false</externalId>
+        <label>APPR_NM</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Appropriation</label>
+    <nameField>
+        <label>APPR_CD</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Appropriations</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

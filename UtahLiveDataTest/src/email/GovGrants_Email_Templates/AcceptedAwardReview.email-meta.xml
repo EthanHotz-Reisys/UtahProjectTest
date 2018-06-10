@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>In USE This email is sent to Award Owner to review an accepted award</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Accepted Award Review</name>
+    <style>formalLetter</style>
+    <subject>{!Award__c.Name} is accepted.</subject>
+    <textOnly>Dear {!Award__c.CreatedBy},
+This email is to notify you that, the Award # {!Award__c.AwardNumber__c}, {!Award__c.Name}, has been accepted by {!Award__c.GranteeOrganization__c} and can be activated.
+
+Kindly login to the UtahGrants Systems and start reviewing the Award details.
+
+Sincerely,
+
+
+UtahGrants Support Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

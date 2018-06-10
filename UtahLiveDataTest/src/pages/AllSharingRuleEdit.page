@@ -1,0 +1,406 @@
+<apex:page extensions="SharingRuleCtrl" standardStylesheets="false" showHeader="false" sidebar="false" standardController="GNT__SObjectSharingRule__c" >
+    <c:ExternalLibrary />  
+    <apex:stylesheet value="{!URLFOR($Resource.GNT__GovGrants, '/Component/CSS/ModalFlexEditLayout.css')}" />
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">    
+            <!--<GNT:ModalFlexViewLayout templateName="SharingRule" recordId="{!recordId}"  layoutType="View" flexTableParameters=""  HideSidebar="true" 
+                  cancelURL="" hideCancelBtn="true"/>-->
+            <apex:outputPanel id="errorBlock" layout="none">
+                <GNT:PageMessages />                
+            </apex:outputPanel>
+            <apex:form styleClass="page-content-wrapper" id="componentForm" html-novalidate="true">                                                           
+                <apex:outPutPanel layout="none"  id="layoutPanel">
+                    <apex:outputpanel layout="none" >
+                        <apex:outputPanel id="editPageErrors" layout="none">
+                            <!--<GNT:PageMessages />-->
+                        </apex:outputPanel>
+                        <div class="tab-content">
+                            <div class="panel panel-default">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">                                             
+                                        <span class="hidden508">Create Campaign</span>
+                                        <span>
+                                            <div>
+                                                <div>                
+                                                    <h3 class="panel-title"><a>New Sharing Rule - {!selectedDirection}</a></h3>                
+                                                </div>            
+                                            </div>
+                                        </span>
+                                    </div>                                    
+                                    <div class="panel-body"> 
+                                        <apex:outputPanel id="blocks">
+                                            <apex:outputPanel id="firstBlock" rendered="{!IF(activeBlock == 'first',true,false)}">
+                                                <div class="row">
+                                                    <div class="col-md-12">                                                                                        
+                                                        <dl>
+                                                            <dt>
+                                                                <span class="bold-text">
+                                                                    <apex:outputpanel >
+                                                                        <apex:outputText styleClass="requiredField" value="*"/>
+                                                                        <apex:outputText value="Select business objects" styleClass="customLabelstyle" escape="false"/>                                   
+                                                                    </apex:outputpanel>                               
+                                                                </span>
+                                                            </dt>
+                                                        </dl>
+                                                        <dd>
+                                                            <div class="field-value" style="">
+                                                                <apex:selectList value="{!selectedObjects}"
+                                                                    multiselect="true"  
+                                                                    required="true" 
+                                                                    label="Select business objects"                                       
+                                                                    size="8">                                
+                                                                        <apex:selectOptions value="{!availableObjects}" />
+                                                                </apex:selectList>                            
+                                                            </div>
+                                                        </dd>                                                                                                                                   
+                                                    </div>
+                                                </div>                                                                                            
+                                            </apex:outputPanel> 
+                                            <apex:outputPanel id="oneway" rendered="{!IF(activeBlock == 'oneway',true,false)}">
+                                                <div class="row">
+                                                    <div class="col-md-12">                                                                                        
+                                                        <dl>
+                                                            <dt>
+                                                                <span class="bold-text">
+                                                                    <apex:outputpanel >
+                                                                        <apex:outputText styleClass="requiredField" value="*"/>
+                                                                        <apex:outputText value="Selected business objects" styleClass="customLabelstyle" escape="false"/>                                   
+                                                                    </apex:outputpanel>                               
+                                                                </span>
+                                                            </dt>
+                                                        </dl>
+                                                        <dd>
+                                                            <div class="field-value" style="">
+                                                                <apex:dataTable styleClass="table tableClass table-bordered" value="{!selectedObjects}" var="selobject">
+                                                                    <apex:column >
+                                                                        <apex:facet name="header">Label</apex:facet>
+                                                                        {!sobjidToNameMap[selobject][0]}
+                                                                    </apex:column>
+                                                                    <apex:column >
+                                                                        <apex:facet name="header">Api Name</apex:facet>
+                                                                        {!sobjidToNameMap[selobject][1]}
+                                                                    </apex:column>
+                                                                </apex:dataTable>                  
+                                                            </div>
+                                                        </dd>                                                                                                                                   
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">                                                                                        
+                                                        <dl>
+                                                            <dt>
+                                                                <span class="bold-text">
+                                                                    <apex:outputpanel >
+                                                                        <apex:outputText styleClass="requiredField" value="*"/>
+                                                                        <apex:outputText value="Business data created for" styleClass="customLabelstyle" escape="false"/>                                   
+                                                                    </apex:outputpanel>                               
+                                                                </span>
+                                                            </dt>
+                                                        </dl>
+                                                        <dd>
+                                                            <div class="field-value" style="">
+                                                                <apex:selectList value="{!createdForRoles}"
+                                                                    multiselect="true"  
+                                                                    label="Business data created for" 
+                                                                    required="true"                                       
+                                                                    size="8">                                
+                                                                        <apex:selectOptions value="{!availableRoles}" />
+                                                                </apex:selectList>                            
+                                                            </div>
+                                                        </dd>                                                                                                                                   
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">                                                                                        
+                                                        <dl>
+                                                            <dt>
+                                                                <span class="bold-text">
+                                                                    <apex:outputpanel >
+                                                                        <apex:outputText styleClass="requiredField" value="*"/>
+                                                                        <apex:outputText value="Shared data with" styleClass="customLabelstyle" escape="false"/>                                   
+                                                                    </apex:outputpanel>                               
+                                                                </span>
+                                                                <span>
+                                                                    <apex:actionRegion >
+                                                                        <apex:selectList value="{!shareWith}"
+                                                                            multiselect="false"  
+                                                                            label="Shared data with"  
+                                                                            required="true"                                      
+                                                                            size="1">                                
+                                                                                <apex:selectOptions value="{!availableShareWithOptions}" />
+                                                                                <apex:actionSupport event="onchange" rerender="shareWithPanel"/>
+                                                                        </apex:selectList>
+                                                                    </apex:actionRegion>
+                                                                </span>
+                                                            </dt>
+                                                        </dl>
+                                                        <dd>
+                                                            <div class="field-value" style="">
+                                                                <apex:outputPanel id="shareWithPanel">
+                                                                    <apex:outputPanel rendered="{!IF(shareWith == 'UserRole',true,false)}">                                                                    
+                                                                        <apex:selectList value="{!sharedWithRoles}"
+                                                                            multiselect="true"  
+                                                                            label="Shared data with"  
+                                                                            required="true"                                      
+                                                                            size="8">                                
+                                                                                <apex:selectOptions value="{!availableRoles}" />                                                                                
+                                                                        </apex:selectList>                                                                    
+                                                                    </apex:outputPanel> 
+                                                                    <apex:outputPanel rendered="{!IF(shareWith == 'Group',true,false)}">
+                                                                        <apex:selectList value="{!sharedWithGroups}"
+                                                                            multiselect="true"  
+                                                                            label="Shared data with"  
+                                                                            required="true"                                      
+                                                                            size="8">                                
+                                                                                <apex:selectOptions value="{!availablePublicGroups}" />
+                                                                        </apex:selectList>    
+                                                                    </apex:outputPanel> 
+                                                                </apex:outputPanel>
+                                                            </div>
+                                                        </dd>                                                                                                                                   
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">                                                                                            
+                                                        <dl>
+                                                            <dt>
+                                                                <span class="bold-text">
+                                                                    <apex:outputpanel >
+                                                                        <apex:outputText styleClass="requiredField" value="*"/>
+                                                                        <apex:outputText value="Access Level" styleClass="customLabelstyle" escape="false"/>                                   
+                                                                    </apex:outputpanel>                               
+                                                                </span>
+                                                            </dt>
+                                                        </dl>
+                                                        <dd>
+                                                            <div class="field-value" style="">
+                                                                <apex:selectRadio value="{!selectedAccessLevel}">                                
+                                                                    <apex:selectOptions value="{!accessLevels}" />
+                                                                </apex:selectRadio>                            
+                                                            </div>
+                                                        </dd>                                                                                                                                       
+                                                    </div>
+                                                </div>
+                                            </apex:outputPanel>
+                                            <apex:outputPanel id="mutual" rendered="{!IF(activeBlock == 'mutual',true,false)}">
+                                                <div class="row">
+                                                    <div class="col-md-12">                                                                                        
+                                                        <dl>
+                                                            <dt>
+                                                                <span class="bold-text">
+                                                                    <apex:outputpanel >
+                                                                        <apex:outputText styleClass="requiredField" value="*"/>
+                                                                        <apex:outputText value="Selected business objects" styleClass="customLabelstyle" escape="false"/>                                   
+                                                                    </apex:outputpanel>                               
+                                                                </span>
+                                                            </dt>
+                                                        </dl>
+                                                        <dd>
+                                                            <div class="field-value" style="">
+                                                                <apex:dataTable styleClass="table tableClass table-bordered" value="{!selectedObjects}" var="selobject">
+                                                                    <apex:column >
+                                                                        <apex:facet name="header">Label</apex:facet>
+                                                                        {!sobjidToNameMap[selobject][0]}
+                                                                    </apex:column>
+                                                                    <apex:column >
+                                                                        <apex:facet name="header">Api Name</apex:facet>
+                                                                        {!sobjidToNameMap[selobject][1]}
+                                                                    </apex:column>
+                                                                </apex:dataTable>
+                                                                               
+                                                            </div>
+                                                        </dd>                                                                                                                                   
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">                                                                                            
+                                                        <dl>
+                                                            <dt>
+                                                                <span class="bold-text">
+                                                                    <apex:outputpanel >
+                                                                        <apex:outputText styleClass="requiredField" value="*"/>
+                                                                        <apex:outputText value="Rule Type" styleClass="customLabelstyle" escape="false"/>                                   
+                                                                    </apex:outputpanel>                               
+                                                                </span>
+                                                            </dt>
+                                                        </dl>
+                                                        <dd>
+                                                            <div class="field-value" style="">
+                                                                <apex:actionRegion >
+                                                                    <apex:selectRadio value="{!selectedRuleType}">                                
+                                                                        <apex:selectOptions value="{!ruleTypes}" />
+                                                                        <apex:actionSupport event="onchange" rerender="selectBox"/>
+                                                                    </apex:selectRadio> 
+                                                                </apex:actionRegion>                                                                                          
+                                                            </div>
+                                                        </dd>                                                                                                                                       
+                                                    </div>
+                                                </div>
+                                                <apex:outputPanel id="selectBox">                                                   
+                                                    <apex:outputPanel rendered="{!IF(selectedRuleType == 'Guest',true,false)}">
+                                                        <div class="row">
+                                                            <div class="col-md-12">                                                                                        
+                                                                <dl>
+                                                                    <dt>
+                                                                        <span class="bold-text">
+                                                                            <apex:outputpanel >
+                                                                                <apex:outputText styleClass="requiredField" value="*"/>
+                                                                                <apex:outputText value="Participating Roles" styleClass="customLabelstyle" escape="false"/>                                   
+                                                                            </apex:outputpanel>                               
+                                                                        </span>
+                                                                    </dt>
+                                                                </dl>
+                                                                <dd>
+                                                                    <div class="field-value" style="">
+                                                                        <apex:selectList value="{!participatingRoles}"
+                                                                            multiselect="true" 
+                                                                            required="true"                                         
+                                                                            size="8">                                
+                                                                                <apex:selectOptions value="{!availableRoles}" />
+                                                                        </apex:selectList>                            
+                                                                    </div>
+                                                                </dd>                                                                                                                                   
+                                                            </div>
+                                                        </div>
+                                                    </apex:outputPanel>
+                                                    <apex:outputPanel rendered="{!IF(selectedRuleType == 'Family' || selectedRuleType == 'Home' || selectedRuleType == 'Sibling',true,false)}">
+                                                        <div class="row">
+                                                            <div class="col-md-12">                                                                                        
+                                                                <dl>
+                                                                    <dt>
+                                                                        <span class="bold-text">
+                                                                            <apex:outputpanel >
+                                                                                <apex:outputText styleClass="requiredField" value="*"/>
+                                                                                <apex:outputText rendered="{!IF(selectedRuleType == 'Family',true,false)}" value="Family Parent Role" styleClass="customLabelstyle" escape="false"/>       
+                                                                                <apex:outputText rendered="{!IF(selectedRuleType == 'Sibling',true,false)}" value="Select a Role" styleClass="customLabelstyle" escape="false"/>                                                                                                            
+                                                                            </apex:outputpanel>                               
+                                                                        </span>
+                                                                    </dt>
+                                                                </dl>
+                                                                <dd>
+                                                                    <div class="field-value" style="">
+                                                                        <apex:selectList value="{!selectedFamilyRole}"
+                                                                            multiselect="false" 
+                                                                            required="true"                                         
+                                                                            size="1">                                
+                                                                                <apex:selectOptions value="{!availableRoles}" />
+                                                                        </apex:selectList>                            
+                                                                    </div>
+                                                                </dd>                                                                                                                                   
+                                                            </div>
+                                                        </div>
+                                                    </apex:outputPanel>
+                                                </apex:outputPanel>
+                                                <div class="row">
+                                                    <div class="col-md-12">                                                                                            
+                                                        <dl>
+                                                            <dt>
+                                                                <span class="bold-text">
+                                                                    <apex:outputpanel >
+                                                                        <apex:outputText styleClass="requiredField" value="*"/>
+                                                                        <apex:outputText value="Access Level" styleClass="customLabelstyle" escape="false"/>                                   
+                                                                    </apex:outputpanel>                               
+                                                                </span>
+                                                            </dt>
+                                                        </dl>
+                                                        <dd>
+                                                            <div class="field-value" style="">
+                                                                <apex:selectRadio value="{!selectedAccessLevel}">                                
+                                                                    <apex:selectOptions value="{!accessLevels}" />
+                                                                </apex:selectRadio>                            
+                                                            </div>
+                                                        </dd>                                                                                                                                       
+                                                    </div>
+                                                </div>
+                                            </apex:outputPanel>
+                                            <apex:outputPanel id="final" rendered="{!IF(activeBlock == 'final',true,false)}">
+                                                <apex:dataTable styleClass="table tableClass table-bordered" value="{!indexList}" var="index">
+                                                    <apex:column >
+                                                        <apex:facet name="header">Access Level</apex:facet>
+                                                        {!indexSharingRuleMap[index].GNT__AccessLevel__c}
+                                                    </apex:column>
+                                                    <apex:column >
+                                                        <apex:facet name="header">Rule Type</apex:facet>
+                                                        {!indexSharingRuleMap[index].GNT__RuleType__c}
+                                                    </apex:column>
+                                                    <apex:column >
+                                                        <apex:facet name="header">Criteria Roles</apex:facet>
+                                                        {!indexSharingRuleMap[index].GNT__CriteriaRoleNames__c}
+                                                    </apex:column>
+                                                    <apex:column >
+                                                        <apex:facet name="header">Shared with Roles</apex:facet>
+                                                        {!indexSharingRuleMap[index].GNT__ShareWithRoleNames__c}
+                                                    </apex:column>
+                                                    <apex:column >
+                                                        <apex:facet name="header">Result</apex:facet>
+                                                        
+                                                      
+                                                        <apex:outputText rendered="true" style="font-style:italic" value="{!indexSuccessMap[index]}" escape="false">
+                                                           <apex:param value="here" />
+                                                         </apex:outputText>
+                                                         
+                                                    </apex:column>
+                                                </apex:dataTable>
+                                            </apex:outputPanel>
+                                        </apex:outputPanel>           
+                                    </div>                                          
+                                    <!-- FOOTER BUTTONS  -->
+                                    <div class="panel-footer"> 
+                                        <apex:outputPanel id="buttons">
+                                            <apex:commandButton styleClass="btn" value="Continue" action="{!showSecondBlock}"
+                                                rerender="blocks,buttons,errorBlock" rendered="{!IF(activeBlock == 'first',true,false)}"
+                                                onclick="showLoadingPopUp();" onComplete="hideLoadingPopUp();"/>
+                                            <apex:commandButton styleClass="btn" value="Back" action="{!showPreviousBlock}"
+                                                rerender="blocks,buttons,errorBlock" rendered="{!IF(activeBlock == 'oneway' || activeBlock == 'mutual',true,false)}"
+                                                onclick="showLoadingPopUp();" onComplete="hideLoadingPopUp();"/>
+                                            <apex:commandButton styleClass="btn" value="Save" action="{!saveSharingRule}"
+                                                rerender="blocks,buttons" rendered="{!IF(activeBlock == 'oneway' || activeBlock == 'mutual',true,false)}"
+                                                onclick="showLoadingPopUp();" onComplete="hideLoadingPopUp();"/>
+                                            <apex:commandButton styleClass="btn" value="Cancel" action="{!cancel}" onclick="closeModalOnCancel();" immediate="true" status="busyIcon" /> 
+                                            <apex:actionFunction name="invokeDummyFunc" action="{!dummyFunc}" reRender="selectBox"/>                                   
+                                            <apex:actionStatus id="busyIcon" stopText="">
+                                                <apex:facet name="start">
+                                                    <div class="popupBackground" />
+                                                    <div class="PopupPanel">
+                                                        <table border="0" width="100%" height="100%">
+                                                            <tr>
+                                                                <td align="center"><b>Please Wait</b></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="center"><img src="/img/loading.gif" alt="Loading gif"/></td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </apex:facet>
+                                            </apex:actionStatus>
+                                        </apex:outputPanel>                                                                                      
+                                    </div> 
+                                    <!-- modal View --> 
+                                    <div id="myModal" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header  modal-header-ext">
+                                                    <h4 class="modal-title">Modal Header</h4>
+                                                </div>
+                                                <div class="modal-body modalFlexBody">
+                                                    <p>Some text in the modal.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                     
+                                </div>
+                            </div>
+                        </div>
+                    </apex:outputpanel>
+                </apex:outPutPanel>                                
+            </apex:form>                      
+        </apex:define>
+    </apex:composition>
+    <script>
+        function closeModalOnCancel(){               
+            window.parent.closeModalFromModalTemplate();        
+        }
+        
+    </script>    
+</apex:page>

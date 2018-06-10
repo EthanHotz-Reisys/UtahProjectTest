@@ -1,0 +1,125 @@
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+    
+    <style>
+    
+        th, td {
+                    padding: 3px;
+                }
+    </style>
+    <h4>SF-424 Form (4040-0004)</h4>
+    
+    <p> According to the Paperwork Reduction Act of 1995. an agency may not conduct 
+        or sponsor, and a person is not required to respond to a collection of 
+        information unless it displays a valid OMB control number. The valid OMB
+        control number for this information collection is 4040-0004. The time required
+        to complete this information collection is estimated to average 1.1 hours per
+        response, including the time to review instructions, search existing data 
+        resources, gather the data needed and complete and review the information
+        collection. If you have comments concerning the accuracy of the time
+        estimate(s) or suggestions for improving this form, please write to: U.S.
+        Department of Health &amp; Human Services, OS/OCIO/PRA, 200 Independence
+        Ave., S.W., Suite 537-H, Washington D.C.20201, Attention: PRA Reports 
+        Clearance Officer. </p>
+        
+        <table border="0">
+        <tr>
+            <th> Agency </th>
+            <th> Total Responses per response in Hours</th>
+            <th> Average burden Hours </th>
+            <th> Total Burden </th>
+        </tr>
+        <tr>
+            <td> DOC </td>
+            <td> 17327 </td>
+            <td> 30/60 </td>
+            <td> 8664 </td>
+       </tr>
+        <tr>
+            <td> DOE </td>
+            <td> 9850 </td>
+            <td> 60/60 </td>
+            <td> 9850 </td>
+       </tr>
+       <tr>
+            <td> ED </td>
+            <td> 10235 </td>
+            <td> 60/60 </td>
+            <td> 10235 </td>
+       </tr>
+        <tr>
+            <td> EPA </td>
+            <td> 9098 </td>
+            <td> 4 </td>
+            <td> 36392 </td>
+       </tr>
+       <tr>
+            <td> HHS </td>
+            <td> 11690 </td>
+            <td> 4.386 </td>
+            <td> 51275 </td>
+       </tr>
+       <tr>
+            <td> SSA </td>
+            <td> 2000 </td>
+            <td> 20/60 </td>
+            <td> 667 </td>
+       </tr>
+        <tr>
+            <td> USAID </td>
+            <td> 400 </td>
+            <td> 15/60 </td>
+            <td> 100 </td>
+        </tr>
+        <tr>
+            <td> USDA </td>
+            <td> 253563 </td>
+            <td> 60/60 </td>
+            <td> 253563 </td>
+        </tr>
+         <tr>
+            <td> DOI </td>
+            <td> 22012 </td>
+            <td> 27/60 </td>
+            <td> 10010</td>
+        </tr>
+         <tr>
+            <td> DOD </td>
+            <td> 206 </td>
+            <td> 60/60 </td>
+            <td> 206 </td>
+         </tr>
+         <tr>
+            <td> DOL </td>
+            <td> 2620 </td>
+            <td> 30/60 </td>
+            <td> 1310 </td>
+         </tr>
+        <tr>
+            <td> DOJ </td>
+            <td> 17900 </td>
+            <td> 30/60 </td>
+            <td> 8950 </td>
+        </tr>
+        <tr>
+           <td> DHS </td>
+           <td> 223 </td>
+           <td> 60/60 </td>
+           <td> 223 </td>
+       </tr>
+       <tr>
+           <td> Total </td>
+           <td> 357124</td>
+           <td> </td>
+           <td> 391445 </td>
+       </tr>
+       </table>
+       <br/>
+        <p> 391445 total hrs./357124 = 1.1 hours per response. </p>
+        
+        
+
+    
+</apex:page>

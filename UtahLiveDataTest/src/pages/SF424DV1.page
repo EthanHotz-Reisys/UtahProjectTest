@@ -1,0 +1,297 @@
+<apex:page showHeader="false" sidebar="false" docType="html-5.0" controller="SF424DV1Controller">      
+
+<HTML>
+<HEAD>
+<TITLE>SF424D-V1</TITLE>
+<STYLE type="text/css">
+
+body {margin-top: 0px;size:50%;}
+textarea {
+    resize: none;
+}
+#page_1 {position:relative; overflow: hidden;margin: 53px 0px 90px 35px;padding: 0px;border: none;width: 781px;}
+#page_1 #id_1 {border:none;margin: 0px 0px 0px 186px;padding: 0px;border:none;width: 595px;overflow: hidden;}
+#page_1 #id_1 #id_1_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 427px;overflow: hidden;}
+#page_1 #id_1 #id_1_2 {float:left;border:none;margin: 1px 0px 0px 0px;padding: 0px;border:none;width: 168px;overflow: hidden;}
+#page_1 #id_2 {border:none;margin: 9px 0px 0px 12px;padding: 0px;border:none;width: 769px;overflow: hidden;}
+#page_1 #id_3 {border:none;margin: 12px 0px 0px 3px;padding: 0px;border:none;width: 727px;overflow: hidden;}
+#page_1 #id_3 #id_3_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 346px;overflow: hidden;}
+#page_1 #id_3 #id_3_2 {float:left;border:none;margin: 1px 0px 0px 57px;padding: 0px;border:none;width: 324px;overflow: hidden;}
+#page_1 #id_4 {border:none;margin: 30px 0px 0px 7px;padding: 0px;border:none;width: 725px;overflow: hidden;}
+
+
+#page_2 {position:relative; overflow: hidden;margin: 58px 0px 266px 38px;padding: 0px;border: none;width: 778px;}
+#page_2 #id_1 {border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 738px;overflow: hidden;}
+#page_2 #id_1 #id_1_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 404px;overflow: hidden;}
+#page_2 #id_1 #id_1_2 {float:left;border:none;margin: 2px 0px 0px 0px;padding: 0px;border:none;width: 334px;overflow: hidden;}
+#page_2 #id_2 {border:none;margin: 27px 0px 0px 6px;padding: 0px;border:none;width: 772px;overflow: hidden;}
+
+
+.ft0{font: 15px 'Arial';line-height: 17px;}
+.ft1{font: 11px 'Arial';line-height: 14px;}
+.ft2{font: 11px 'Arial';line-height: 15px;}
+.ft3{font: 16px 'Arial';line-height: 18px;}
+.ft4{font: 14px 'Arial';line-height: 16px;position: relative; bottom: -1px;}
+.ft5{font: 12px 'Arial';line-height: 15px;}
+.ft6{font: 12px 'Arial';margin-left: 14px;line-height: 15px;}
+.ft7{font: 11px 'Arial';margin-left: 14px;line-height: 15px;}
+.ft8{font: 11px 'Arial';margin-left: 16px;line-height: 14px;}
+.ft9{font: 12px 'Arial';margin-left: 17px;line-height: 15px;}
+.ft10{font: 12px 'Arial';line-height: 14px;}
+.ft11{font: 12px 'Arial';margin-left: 12px;line-height: 14px;}
+.ft12{font: 1px 'Arial';line-height: 1px;}
+.ft13{font: 10px 'Arial';line-height: 13px;}
+.ft14{font: 12px 'Arial';margin-left: 12px;line-height: 15px;}
+.ft15{font: 11px 'Arial';margin-left: 13px;line-height: 14px;}
+.ft16{font: 11px 'Arial';margin-left: 12px;line-height: 14px;}
+.ft17{font: 12px 'Arial';margin-left: 3px;line-height: 15px;}
+.ft18{font: 12px 'Arial';margin-left: 13px;line-height: 15px;}
+.ft19{font: 12px 'Arial';margin-left: 13px;line-height: 14px;}
+.ft20{font: 1px 'Arial';line-height: 6px;}
+.ft21{font: 1px 'Arial';line-height: 7px;}
+.ft22{font: 1px 'Arial';line-height: 5px;}
+.ft23{font: 1px 'Arial';line-height: 4px;}
+
+.p0{text-align: left;margin-top: 0px;margin-bottom: 0px;}
+.p1{text-align: left;padding-left: 10px;margin-top: 0px;margin-bottom: 0px;}
+.p2{text-align: left;padding-right: 39px;margin-top: 0px;margin-bottom: 0px;}
+.p3{text-align: left;margin-top: 12px;margin-bottom: 0px;}
+.p4{text-align: left;margin-top: 3px;margin-bottom: 0px;}
+.p5{text-align: left;padding-left: 54px;padding-right: 75px;padding-top: 1px;margin-top: 35px;margin-bottom: 0px;text-indent: -54px;}
+.p6{text-align: left;padding-left: 54px;margin-top: 1px;margin-bottom: 0px;}
+.p7{text-align: left;margin-top: 4px;margin-bottom: 0px;}
+.p8{text-align: left;padding-left: 24px;padding-right: 29px;margin-top: 0px;margin-bottom: 0px;text-indent: -24px;}
+.p9{text-align: justify;padding-left: 24px;padding-right: 24px;margin-top: 3px;margin-bottom: 0px;text-indent: -24px;}
+.p10{text-align: left;padding-left: 24px;padding-right: 33px;margin-top: 0px;margin-bottom: 0px;}
+.p11{text-align: left;padding-left: 24px;padding-right: 26px;margin-top: 5px;margin-bottom: 0px;text-indent: -24px;}
+.p12{text-align: left;padding-left: 24px;padding-right: 27px;margin-top: 2px;margin-bottom: 0px;text-indent: -24px;}
+.p13{text-align: left;padding-left: 24px;padding-right: 15px;margin-top: 10px;margin-bottom: 0px;text-indent: -24px;}
+.p14{text-align: left;padding-left: 24px;margin-top: 5px;margin-bottom: 0px;text-indent: -24px;}
+.p15{text-align: left;padding-left: 24px;padding-right: 30px;margin-top: 11px;margin-bottom: 0px;text-indent: -24px;}
+.p16{text-align: left;padding-left: 26px;margin-top: 0px;margin-bottom: 0px;text-indent: -26px;}
+.p17{text-align: justify;padding-left: 26px;padding-right: 4px;margin-top: 1px;margin-bottom: 0px;}
+.p18{text-align: left;padding-left: 27px;padding-right: 9px;margin-top: 5px;margin-bottom: 0px;text-indent: -27px;}
+.p19{text-align: left;padding-left: 29px;padding-right: 3px;margin-top: 3px;margin-bottom: 0px;text-indent: -29px;}
+.p20{text-align: left;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p21{text-align: left;padding-left: 29px;padding-right: 65px;margin-top: 0px;margin-bottom: 0px;text-indent: -29px;}
+.p22{text-align: left;padding-left: 30px;padding-right: 60px;margin-top: 1px;margin-bottom: 0px;text-indent: -30px;}
+.p23{text-align: left;padding-left: 29px;padding-right: 56px;margin-top: 9px;margin-bottom: 0px;text-indent: -29px;}
+.p24{text-align: justify;padding-left: 29px;padding-right: 97px;margin-top: 3px;margin-bottom: 0px;}
+.p25{text-align: left;padding-left: 30px;padding-right: 61px;margin-top: 8px;margin-bottom: 0px;text-indent: -30px;}
+.p26{text-align: left;padding-left: 30px;padding-right: 64px;margin-top: 2px;margin-bottom: 0px;text-indent: -30px;}
+.p27{text-align: justify;padding-left: 30px;margin-top: 3px;margin-bottom: 0px;}
+.p28{text-align: left;padding-left: 30px;padding-right: 75px;margin-top: 1px;margin-bottom: 0px;}
+.p29{text-align: left;padding-left: 30px;padding-right: 22px;margin-top: 0px;margin-bottom: 0px;}
+.p30{text-align: left;padding-left: 30px;padding-right: 22px;margin-top: 5px;margin-bottom: 0px;text-indent: -30px;}
+.p31{text-align: left;padding-left: 30px;padding-right: 6px;margin-top: 8px;margin-bottom: 0px;text-indent: -30px;}
+.p32{text-align: left;padding-left: 29px;padding-right: 11px;margin-top: 10px;margin-bottom: 0px;text-indent: -29px;}
+.p33{text-align: left;padding-left: 29px;padding-right: 7px;margin-top: 7px;margin-bottom: 0px;text-indent: -29px;}
+.p34{text-align: left;padding-left: 29px;margin-top: 10px;margin-bottom: 0px;text-indent: -29px;}
+.p35{text-align: left;padding-left: 1px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
+.p36{text-align: left;padding-left: 585px;margin-top: 5px;margin-bottom: 0px;}
+
+.td0{padding: 0px;margin: 0px;width: 317px;vertical-align: bottom;}
+.td1{padding: 0px;margin: 0px;width: 245px;vertical-align: bottom;}
+.td2{padding: 0px;margin: 0px;width: 163px;vertical-align: bottom;}
+.td3{padding: 0px;margin: 0px;width: 406px;vertical-align: bottom;}
+.td4{padding: 0px;margin: 0px;width: 307px;vertical-align: bottom;}
+.td5{border-bottom: #000000 1px solid;padding: 0px;margin: 0px;width: 392px;vertical-align: bottom;}
+.td6{padding: 0px;margin: 0px;width: 14px;vertical-align: bottom;}
+.td7{border-bottom: #000000 1px solid;padding: 0px;margin: 0px;width: 307px;vertical-align: bottom;}
+.td8{border-left: #000000 1px solid;border-right: #000000 1px solid;border-bottom: #ffff00 1px solid;padding: 0px;margin: 0px;width: 390px;vertical-align: bottom;background: #ffff00;}
+.td9{border-right: #000000 1px solid;padding: 0px;margin: 0px;width: 13px;vertical-align: bottom;}
+.td10{border-right: #000000 1px solid;border-bottom: #000000 1px solid;padding: 0px;margin: 0px;width: 306px;vertical-align: bottom;background: #ffff00;}
+.td11{border-left: #000000 1px solid;border-right: #000000 1px solid;border-bottom: #000000 1px solid;padding: 0px;margin: 0px;width: 390px;vertical-align: bottom;background: #ffff00;}
+.td12{padding: 0px;margin: 0px;width: 6px;vertical-align: bottom;}
+.td13{padding: 0px;margin: 0px;width: 391px;vertical-align: bottom;}
+.td14{padding: 0px;margin: 0px;width: 13px;vertical-align: bottom;}
+.td15{padding: 0px;margin: 0px;width: 308px;vertical-align: bottom;}
+.td16{padding: 0px;margin: 0px;width: 4px;vertical-align: bottom;}
+.td17{border-bottom: #000000 1px solid;padding: 0px;margin: 0px;width: 391px;vertical-align: bottom;}
+.td18{border-bottom: #000000 1px solid;padding: 0px;margin: 0px;width: 308px;vertical-align: bottom;}
+.td19{border-right: #000000 1px solid;padding: 0px;margin: 0px;width: 5px;vertical-align: bottom;}
+.td20{border-right: #000000 1px solid;border-bottom: #000000 1px solid;padding: 0px;margin: 0px;width: 390px;vertical-align: bottom;background: #ffff00;}
+.td21{border-right: #000000 1px solid;padding: 0px;margin: 0px;width: 12px;vertical-align: bottom;}
+.td22{border-right: #000000 1px solid;border-bottom: #000000 1px solid;padding: 0px;margin: 0px;width: 307px;vertical-align: bottom;background: #ffff00;}
+.td23{border-bottom: #000000 1px solid;padding: 0px;margin: 0px;width: 6px;vertical-align: bottom;}
+.td24{border-bottom: #000000 1px solid;padding: 0px;margin: 0px;width: 13px;vertical-align: bottom;}
+.td25{border-bottom: #000000 1px solid;padding: 0px;margin: 0px;width: 4px;vertical-align: bottom;}
+
+.tr0{height: 17px;}
+.tr1{height: 14px;}
+.tr2{height: 20px;}
+.tr3{height: 6px;}
+.tr4{height: 7px;}
+.tr5{height: 18px;}
+.tr6{height: 25px;}
+.tr7{height: 26px;}
+.tr8{height: 5px;}
+.tr9{height: 4px;}
+
+.t0{width: 725px;font: 11px 'Arial';}
+.t1{width: 713px;margin-left: 4px;font: 12px 'Arial';}
+.t2{width: 722px;margin-top: 2px;font: 12px 'Arial';}
+
+.borderlining{
+    border-style: solid;
+    border-width: 1px;
+    padding: 12px;
+    float: right;
+}    
+.formTable{
+    border: 1px solid black;
+    border-collapse: collapse;
+  
+}
+</STYLE>
+</HEAD>
+
+<BODY>
+<DIV id="page_1">
+
+<DIV id="id_1">
+<DIV id="id_1_1">
+<P class="p0 ft0">ASSURANCES - CONSTRUCTION PROGRAMS</P>
+</DIV>
+<DIV id="id_1_2">
+<P class="p1 ft1">OMB Number: <NOBR>4040-0009</NOBR></P>
+<P class="p0 ft1">Expiration Date: 06/30/2014</P>
+</DIV>
+</DIV>
+
+
+<DIV class="borderlining">
+<P class="p2 ft2">Public reporting burden for this collection of information is estimated to average 15 minutes per response, including 
+time for reviewing instructions, searching existing data sources, gathering and maintaining the data needed, and completing and reviewing
+the collection of information. Send comments regarding the burden estimate or any other aspect of this collection of information, including
+suggestions for reducing this burden, to the Office of Management and Budget, Paperwork Reduction Project <NOBR>(0348-0042),</NOBR> 
+Washington, DC 20503.</P>
+<P class="p3 ft3">PLEASE DO NOT RETURN YOUR COMPLETED FORM TO THE OFFICE OF MANAGEMENT</P>
+<P class="p4 ft3">AND BUDGET. SEND IT TO THE ADDRESS PROVIDED BY THE SPONSORING AGENCY.</P>
+</DIV>
+
+<DIV id="id_2">
+<P class="p5 ft1"><SPAN class="ft4">NOTE: </SPAN>Certain of these assurances may not be applicable to your project or program. If you have questions,
+please contact the Awarding Agency. Further, certain Federal assistance awarding agencies may require applicants to certify to additional</P>
+<P class="p6 ft5">assurances. If such is the case, you will be notified.</P>
+<P class="p7 ft5">As the duly authorized representative of the applicant:, I certify that the applicant:</P>
+</DIV>
+<DIV id="id_3">
+<DIV id="id_3_1">
+<P class="p8 ft5"><SPAN class="ft5">1.</SPAN><SPAN class="ft6">Has the legal authority to apply for Federal assistance, and the institutional, managerial 
+and financial capability (including funds sufficient to pay the </SPAN><NOBR>non-Federal</NOBR> share of project costs) to ensure proper planning, management 
+and completion of project described in this application.</P>
+<P class="p9 ft2"><SPAN class="ft5">2.</SPAN><SPAN class="ft7">Will give the awarding agency, the Comptroller General of the United States and, if appropriate, 
+the State,</SPAN></P>
+<P class="p10 ft5">the right to examine all records, books, papers, or documents related to the assistance; and will establish a proper accounting system in 
+accordance with generally accepted accounting standards or agency directives.</P>
+<P class="p11 ft5"><SPAN class="ft5">3.</SPAN><SPAN class="ft6">Will not dispose of, modify the use of, or change the terms of the real property title or other 
+interest in the site and facilities without permission and instructions from the awarding agency. Will record the Federal awarding agency directives and will 
+include a covenant in the title of real property acquired in whole or in part with Federal assistance funds to assure non- discrimination during the useful life 
+of the project.</SPAN></P>
+<P class="p12 ft5"><SPAN class="ft5">4.</SPAN><SPAN class="ft6">Will comply with the requirements of the assistance awarding agency with regard to the drafting, 
+review and approval of construction plans and specifications.</SPAN></P>
+<P class="p13 ft5"><SPAN class="ft5">5.</SPAN><SPAN class="ft6">Will provide and maintain competent and adequate engineering supervision at the construction 
+site to ensure that the complete work conforms with the approved plans and specifications and will furnish progressive reports and such other information as may 
+be required by the assistance awarding agency or State.</SPAN></P>
+<P class="p14 ft5"><SPAN class="ft5">6.</SPAN><SPAN class="ft6">Will initiate and complete the work within the applicable time frame after receipt of approval 
+of the awarding agency.</SPAN></P>
+<P class="p15 ft5"><SPAN class="ft5">7.</SPAN><SPAN class="ft6">Will establish safeguards to prohibit employees from using their positions for a purpose that 
+constitutes or presents the appearance of personal or organizational conflict of interest, or personal gain.</SPAN></P>
+</DIV>
+<DIV id="id_3_2">
+<P class="p16 ft1"><SPAN class="ft5">8.</SPAN><SPAN class="ft8">Will comply with the Intergovernmental Personnel Act of 1970 (42 U.S.C. </SPAN><NOBR>§§4728-4763)</NOBR> 
+relating to prescribed standards of merit systems for programs funded</P>
+<P class="p17 ft5">under one of the 19 statutes or regulations specified in Appendix A of OPMs Standards for a Merit System of Personnel Administration (5 C.F.R. 900, Subpart F).</P>
+<P class="p18 ft5"><SPAN class="ft5">9.</SPAN><SPAN class="ft9">Will comply with the </SPAN><NOBR>Lead-Based</NOBR> Paint Poisoning Prevention Act (42 U.S.C. §§4801 et seq.) which 
+prohibits the use of <NOBR>lead-based</NOBR> paint in construction or rehabilitation of residence structures.</P>
+<P class="p19 ft10"><SPAN class="ft10">10.</SPAN><SPAN class="ft11">Will comply with all Federal statutes relating to non- discrimination. These include but are not limited to: 
+(a) Title VI of the Civil Rights Act of 1964 (P.L. </SPAN><NOBR>88-352)</NOBR> which prohibits discrimination on the basis of race, color or national origin; (b) Title IX of the Education 
+Amendments of 1972, as amended (20 U.S.C. §§1681 1683, and <NOBR>1685-1686),</NOBR> which prohibits discrimination on the basis of sex; (c) Section 504 of the Rehabilitation Act of 1973, 
+as amended (29) U.S.C. §794), which prohibits discrimination on the basis of handicaps; (d) the Age Discrimination Act of 1975, as amended (42 U.S.C. <NOBR>§§6101-6107),</NOBR> which 
+prohibits discrimination on the basis of age; (e) the Drug Abuse Office and Treatment Act of 1972 (P.L. <NOBR>92-255),</NOBR> as amended relating to nondiscrimination on the basis of drug abuse; 
+(f) the Comprehensive Alcohol Abuse and Alcoholism Prevention, Treatment and Rehabilitation Act of 1970 (P.L. <NOBR>91-616),</NOBR> as amended, relating to nondiscrimination on the basis of alcohol 
+abuse or alcoholism; (g) §§523 and 527 of the Public Health Service Act of 1912 (42 U.S.C. §§290 <NOBR>dd-3</NOBR> and 290 ee 3), as amended, relating to confidentiality of alcohol and drug abuse patient records; 
+(h) Title VIII of the Civil Rights Act of 1968 (42 U.S.C. §§3601 et seq.), as amended, relating to nondiscrimination in the sale, rental or financing of housing; (i) any other nondiscrimination provisions in the 
+specific statue(s) under which application for Federal assistance is being made; and (j) the requirements of any other nondiscrimination statue(s) which may apply to the application.</P>
+</DIV>
+</DIV>
+<DIV id="id_4">
+<TABLE cellpadding="0" cellspacing="0" class="t0">
+<TR>
+    <TD class="tr0 td0"><P class="p20 ft1">Previous Edition Usable</P></TD>
+    <TD class="tr0 td1"><P class="p20 ft1">Authorized for Local Reproduction</P></TD>
+    <TD class="tr0 td2"><P class="p20 ft1">Standard Form 424D (Rev. <NOBR>7-97)</NOBR></P></TD>
+</TR>
+<TR>
+    <TD class="tr1 td0"><P class="p20 ft12">&nbsp;</P></TD>
+    <TD class="tr1 td1"><P class="p20 ft12">&nbsp;</P></TD>
+    <TD class="tr1 td2"><P class="p20 ft13">Prescribed by OMB Circular <NOBR>A-102</NOBR></P></TD>
+</TR>
+</TABLE>
+</DIV>
+</DIV>
+<DIV id="page_2">
+
+<DIV id="id_1">
+<DIV id="id_1_1">
+<P class="p21 ft5"><SPAN class="ft5">11.</SPAN><SPAN class="ft14">Will comply, or has already complied, with the requirements of Titles II and III of the Uniform Relocation Assistance and Real Property Acquisition Policies Act of 1970 (P.L. </SPAN><NOBR>91-646)</NOBR> which provide for fair and equitable treatment of persons displaced or whose property is acquired as a result of Federal and <NOBR>federally-assisted</NOBR> programs. These requirements apply to all interests in real property acquired for project purposes regardless of Federal participation in purchases.</P>
+<P class="p22 ft1"><SPAN class="ft5">12.</SPAN><SPAN class="ft15">Will comply with the provisions of the Hatch Act (5 U.S.C. </SPAN><NOBR>§§1501-1508</NOBR> and <NOBR>7324-7328)</NOBR> which limit the political activities of employees whose principal employment activities are funded in whole or in part with Federal funds.</P>
+<P class="p23 ft1"><SPAN class="ft5">13.</SPAN><SPAN class="ft16">Will comply, as applicable, with the provisions of the Davis- Bacon Act (40 U.S.C. §§276a to </SPAN><NOBR>276a-7),</NOBR> the Copeland Act (40 U.S.C. §276c and 18 U.S.C. §874), and the Contract Work Hours and Safety Standards Act (40 U.S.C. §§327-</P>
+<P class="p24 ft5"><SPAN class="ft1">333)</SPAN><SPAN class="ft17">regarding labor standards for </SPAN><NOBR>federally-assisted</NOBR> construction subagreements.</P>
+<P class="p25 ft5"><SPAN class="ft5">14.</SPAN><SPAN class="ft18">Will comply with flood insurance purchase requirements of Section 102(a) of the Flood Disaster Protection Act of 1973 (P.L. </SPAN><NOBR>93-234)</NOBR> which requires recipients in a special flood hazard area to participate in the program and to purchase flood insurance if the total cost of insurable construction and acquisition is $10,000 or more.</P>
+<P class="p26 ft10"><SPAN class="ft10">15.</SPAN><SPAN class="ft19">Will comply with environmental standards which may be prescribed pursuant to the following: (a) institution of environmental quality control measures under the National Environmental Policy Act of 1969 (P.L. 91-</SPAN></P>
+<P class="p27 ft5"><SPAN class="ft1">190)</SPAN><SPAN class="ft17">and Executive Order (EO) 11514; (b) notification</SPAN></P>
+<P class="p28 ft1">of violating facilities pursuant to EO 11738; (c) protection of wetlands pursuant to EO 11990; (d) evaluation of flood hazards in floodplains in accordance with EO 11988; (e) assurance of project consistency with the approved State management program developed under the Coastal Zone Management Act of 1972 (16 U.S.C. §§1451 et seq.); (f) conformity of</P>
+</DIV>
+<DIV id="id_1_2">
+<P class="p29 ft5">Federal actions to State (Clean Air) implementation Plans under Section 176(c) of the Clean Air Act of 1955, as amended (42 U.S.C. §§7401 et seq.); (g) protection of underground sources of drinking water under the Safe Drinking Water Act of 1974, as amended (P.L. <NOBR>93-523);</NOBR> and, (h) protection of endangered species under the Endangered Species Act of 1973, as amended (P.L. <NOBR>93-205).</NOBR></P>
+<P class="p30 ft5"><SPAN class="ft5">16.</SPAN><SPAN class="ft18">Will comply with the Wild and Scenic Rivers Act of 1968 (16 U.S.C. §§1271 et seq.) related to protecting components or potential components of the national wild and scenic rivers system.</SPAN></P>
+<P class="p31 ft1"><SPAN class="ft5">17.</SPAN><SPAN class="ft15">Will assist the awarding agency in assuring compliance with Section 106 of the National Historic Preservation Act of 1966, as amended (16 U.S.C. §470), EO 11593 (identification and protection of historic properties), and the Archaeological and Historic Preservation Act of 1974 (16 U.S.C. </SPAN><NOBR>§§469a-1</NOBR> et seq).</P>
+<P class="p32 ft5"><SPAN class="ft5">18.</SPAN><SPAN class="ft14">Will cause to be performed the required financial and compliance audits in accordance with the Single Audit Act Amendments of 1996 and OMB Circular No. </SPAN><NOBR>A-133,</NOBR> "Audits of States, Local Governments, and <NOBR>Non-Profit</NOBR> Organizations."</P>
+<P class="p33 ft5"><SPAN class="ft5">19.</SPAN><SPAN class="ft14">Will comply with all applicable requirements of all other Federal laws, executive orders, regulations, and policies governing this program.</SPAN></P>
+<P class="p34 ft1"><SPAN class="ft5">20.</SPAN><SPAN class="ft16">Will comply with the requirements of Section 106(g) of the Trafficking Victims Protection Act (TVPA) of 2000, as amended (22 U.S.C. 7104) which prohibits grant award recipients or a </SPAN><NOBR>sub-recipient</NOBR> from (1) Engaging in severe forms of trafficking in persons during the period of time that the award is in effect (2) Procuring a commercial sex act during the period of time that the award is in effect or (3) Using forced labor in the performance of the award or subawards under the award.</P>
+</DIV>
+</DIV>
+<DIV id="id_2">
+
+<apex:form id="sf424dv1">
+
+<TABLE cellpadding="4" cellspacing="0" class="formTable">
+<TR>
+    <TD>SIGNATURE OF AUTHORIZED CERTIFYING OFFICIAL</TD>
+    <TD>&nbsp; &nbsp;&nbsp; &nbsp;</TD>
+    <TD>TITLE</TD>
+</TR>
+<TR>
+    <TD><textarea id="signature" cols="60" rows="3" resizable="false" class="yellow" value="{!sign}"></textarea></TD>
+    <TD>&nbsp; &nbsp;&nbsp; &nbsp;</TD>
+    <TD valign="top"><apex:inputText size="45" id="title" styleClass="yellow" value="{!title}"/></TD>
+</TR>
+<TR>
+    <TD>APPLICANT ORGANIZATION</TD>
+    <TD>&nbsp; &nbsp;&nbsp; &nbsp;</TD>
+    <TD>DATE SUBMITTED</TD>
+</TR>
+<TR>
+    <TD><apex:inputText id="AppOrg" size="50" styleClass="yellow" value="{!apporg}"/></TD>
+    <TD>&nbsp; &nbsp;&nbsp; &nbsp;</TD>
+    <TD valign="top"><apex:inputText value="{!subdate}" styleClass="yellow" onfocus="DatePicker.pickDate(false,this,false);" size="45" id="submitDate"/></TD>
+</TR>
+
+
+
+</TABLE>
+
+<P class="p36 ft1"><NOBR>SF-424D</NOBR> (Rev. <NOBR>7-97)</NOBR> Back</P>
+
+<apex:commandButton value="Submit" action="{!submitForm}" />
+Result:<apex:outputtext value="{!returnString}" ></apex:outputtext>
+</apex:form>
+</DIV>
+</DIV>
+
+</BODY>
+</HTML>
+
+</apex:page>

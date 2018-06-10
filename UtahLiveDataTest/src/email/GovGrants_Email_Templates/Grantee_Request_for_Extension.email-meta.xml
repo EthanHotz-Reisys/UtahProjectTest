@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>In USE This email is sent to Internal Users(PM) when Grantee requests for Extension</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Grantee Request for Closeout Extension</name>
+    <style>formalLetter</style>
+    <subject>Notification: Grantee Request for Closeout {!Closeout__c.Name} Extension</subject>
+    <textOnly>Subject: Request for Closeout {!Closeout__c.Name} Extension
+
+
+
+This email is to notify you that the Grantee has requested Closeout {!Closeout__c.Name} Extension.
+
+
+
+Closeout Details:
+
+
+
+Project Name : {!Closeout__c.ProjectName__c}
+
+Grant Name : {!Closeout__c.GrantName__c}
+
+Project Period Start Date : {!Closeout__c.ProjectPeriodStartDate__c}
+Project Period Start Date : {!Closeout__c.ProjectPeriodEndDate__c}
+
+Closeout Type : {!Closeout__c.Type__c}
+
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

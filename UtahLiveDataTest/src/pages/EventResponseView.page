@@ -1,0 +1,14 @@
+<apex:page id="pageId" showHeader="false" standardStylesheets="false" controller="EventResponseCtrl" sidebar="false" action="{!eventResponse}" >
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__PageTemplate">
+    <apex:define name="content"> 
+    <apex:Messages />
+    <apex:form id="formId">
+    
+    <div style="color:red;padding-left: 15px;padding-top: 40px;">
+    <GNT:PageMessages />
+    </div>    
+    </apex:form>
+    </apex:define>
+    </apex:composition>
+</apex:page>

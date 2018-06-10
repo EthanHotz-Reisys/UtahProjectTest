@@ -1,0 +1,19 @@
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+    
+    
+    <p> According to the Paperwork Reduction Act, as amended, no persons are
+        required to respond to a collection of information unless it displays a valid OMB 
+        Control Number. The valid OMB control number for this information collection 
+        is OMB No.4040-0013. Public reporting burden for this collection of
+        information is estimated to average 10 minutes per response, including time for
+        reviewing instructions, searching existing data sources, gathering and
+        maintaining the data needed, and completing and reviewing the collection of
+        information. Send comments regarding the burden estimate or any other
+        aspect of this collection of information, including suggestions for reducing this
+        burden, to the Office of Management and Budget, Paperwork Reduction Project
+        (4040-0013), Washington,DC 20503.</p>
+        
+</apex:page>

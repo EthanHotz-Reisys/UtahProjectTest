@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email sent to by Primary Applicant to invite additional users within the organization</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>AdditionalUserEmail</name>
+    <style>formalLetter</style>
+    <subject>Invite Additional Users Within The Organization</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+You are invited to become a user.
+
+
+
+Please click on the url below to create your login account to register as an External User in the  UtahGrants system, which will be used to manage the entire application intake and evaluation process.
+
+
+
+
+
+You will be prompted to sign a Non-Disclosure Agreement and Conflict of Interest Agreement.
+
+
+
+Click here
+
+
+
+Sincerely,
+
+UtahGrants Support Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

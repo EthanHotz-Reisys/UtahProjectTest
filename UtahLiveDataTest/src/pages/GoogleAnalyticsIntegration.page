@@ -1,0 +1,8 @@
+<apex:page controller="AnalyticsCtrl" id="gauth">
+
+<apex:form id="gForm">
+ <apex:pageBlock title="Google Analytics Login" >
+     <apex:commandButton value="Connect To Google" action="{!connect}"/>
+ </apex:pageBlock>
+ </apex:form>
+</apex:page>

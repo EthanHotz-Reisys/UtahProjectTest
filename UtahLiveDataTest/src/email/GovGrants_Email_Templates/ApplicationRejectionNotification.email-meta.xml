@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email sent to Applicant when Applicantion for the Grant has been rejected.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Application Rejection Notification</name>
+    <style>formalLetter</style>
+    <subject>Notification: Application #{!Application__c.Name} has been Rejected</subject>
+    <textOnly>Subject: Application {!Application__c.Name} has been Rejected for the Grant # {!Application__c.Grant__c}
+
+
+
+Dear {!Application__c.Form2ApplicantName__c},
+
+
+
+Your Application {!GO__Application__c.GO__Title__c} has been Rejected.
+
+
+Sincerely,
+Enterprise Grants Management System(EGMS)</textOnly>
+    <type>html</type>
+</EmailTemplate>

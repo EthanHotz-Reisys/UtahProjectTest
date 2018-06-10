@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>IN USE Email template sent to the reviewers upon rejection</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Reviewer Rejection Email</name>
+    <style>formalLetter</style>
+    <subject>Reviewer Registration Rejection Notification</subject>
+    <textOnly>Subject: Notification that the Reviewer registration has been rejected.
+
+
+
+This email is to notify you that registration has been rejected.
+
+
+
+Reviewer  Registration Details:
+
+
+
+Reviewer Name: {!UserRegistration__c.ExternalReviewerFirstName__c},{!UserRegistration__c.ExternalReviewerLastName__c}
+
+Reason of Rejection: {!UserRegistration__c.Comments__c}
+
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+Sincerely
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

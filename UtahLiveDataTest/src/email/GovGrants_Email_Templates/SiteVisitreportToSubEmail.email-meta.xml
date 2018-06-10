@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>SiteVisitreportToSubEmail</name>
+    <style>formalLetter</style>
+    <subject>SiteVisit report ready for review.</subject>
+    <textOnly>Dear user,
+Findings for Site Visit are shared with you for your review.
+
+kindly log into the system in pending task to do the same.
+
+
+
+Sincerely,
+
+UtahGrants Support Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

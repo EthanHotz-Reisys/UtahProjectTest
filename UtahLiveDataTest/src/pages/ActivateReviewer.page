@@ -1,0 +1,10 @@
+<apex:page docType="html-5.0" standardStylesheets="false" controller="SendInvitationEmailCtrl" showHeader="false" sidebar="false">
+  
+    <c:ExternalLibrary /> 
+
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">
+            <GNT:FlexTable flexTableHeader="Inactive Reviewers" listParams="{!keyValueMap}" flexTableName="InactiveReviewers" tableId="InactiveReviewers" />
+        </apex:define>
+    </apex:composition> 
+</apex:page>

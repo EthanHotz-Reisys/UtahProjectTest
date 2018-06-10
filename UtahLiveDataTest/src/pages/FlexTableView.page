@@ -1,0 +1,19 @@
+<apex:page id="flexTableViewPage"  controller="FlexTableViewCtrl" showHeader="false" sidebar="false"  standardStylesheets="false">
+    <GNT:ExternalLibrary />
+    <c:ExternalLibrary />
+    
+    
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">
+            <GNT:FlexTable flexTableHeader="{!$CurrentPage.parameters.flexTableHeader}" listParams="{!parameterMap1}" flexTableName="{!flexTableName}" tableId="flexTableRandomID" flexTableParameters="{!parameterMap}"/>
+        </apex:define>
+    </apex:composition>
+    
+    <script>
+        //setPageTitle('{!$CurrentPage.parameters.pageTitle}');
+        setPageTitle('View page');
+        function showModalTitle(title) {
+        }
+    </script>
+</apex:page>
+<!--ggsInt__PhaseConfig__c= '{!phaseConfigLayoutId}'-->

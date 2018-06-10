@@ -1,0 +1,13 @@
+<apex:component controller="EventResponseCtrl" access="global">
+<c:ExternalLibrary />
+<apex:attribute name="templateEventId" assignTo="{!eventId}" description="Variable for eventId" type="String" access="global"/>
+<apex:attribute name="templateUsrId" assignTo="{!usrId}" description="Variable for usrId" type="String" access="global"/>
+<apex:attribute name="templateStatusId" assignTo="{!status}" description="Variable for status" type="String" access="global"/>
+    <!--<apex:outputlink value="{!dummy}/EventResponseView?eventId={!eventId}&usrId={!usrId}&status={!status}" >Accept</apex:outputlink>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    <apex:outputlink value="{!dummy}/EventResponseView?eventId={!eventId}&usrId={!usrId}&status={!status}">Decline</apex:outputlink>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+    <apex:outputlink value="/apex/EventAddToOutLookView" >Add to Outlook</apex:outputlink>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -->
+    <apex:outputlink value="{!siteFullUrl}/EventResponseView?eventId={!eventId}&usrId={!usrId}&status=Accepted" >Accept</apex:outputlink>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+    <apex:outputlink value="{!siteFullUrl}/EventResponseView?eventId={!eventId}&usrId={!usrId}&status=Declined">Decline</apex:outputlink>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+    <apex:outputlink value="{!siteFullUrl}/EventAddToOutLookView?eventId={!eventId}" >Add to Outlook</apex:outputlink>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+
+</apex:component>

@@ -1,0 +1,227 @@
+<apex:page controller="LineItemCtrl" standardStylesheets="false" sidebar="false" showHeader="false">
+
+<c:ExternalLibrary />
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">            
+            <!--    <b>Budget Category:</b>&nbsp;{!category} <b>;</b>&nbsp;<b>Type:</b> &nbsp;{!categorytype} <b>;</b>&nbsp;<apex:outputText escape="false" value="<b>Grantor Share Amount:</b> {!grantorshareamount};" rendered = "{!type == 'Payment'}"/> &nbsp;<apex:outputText escape="false" value="<b>Requested Amount:</b> {!requestedamount};" rendered = "{!type == 'Payment'}"/>
+                <br></br>
+            -->
+                <apex:outputPanel rendered="{!gridName == 'PersonnelBuildUpGrid'}">
+                  (1) List each Grant funded employee by name; put "NEW" if employee has not yet been hired
+                  <br></br>                
+                  (2) List the total number of hours this employee works at your agency 
+                  <br></br>  
+                  (3) Identify the Grant funded employee's position/title
+                  <br></br>  
+                  (4) Indicate the number of Grant funded hours the employee will spend on the project(These are the number of hours you are requesting Grant to pay)
+                  <br></br>  
+                  (5) Indicate the hourly rate of reimbursement
+                  <br></br>
+                  <div style="text-align:center;">
+                    <apex:outputText value="Include only those employees assigned to the program and whose salaries are paid with STOP Grant Formula grant monies" /> 
+                  </div>
+                  <div style="text-align:center;">
+                    <apex:outputText value="NOTE:   Each agency will be required to keep detailed documentation of Grant Personnel & Fringe Benefit expenditures(e. g. time-sheets, check stubs, activity log, etc.)" /> 
+                  </div>
+                  
+                </apex:outputPanel>
+
+                <apex:outputPanel rendered="{!gridName == 'FringeBenefitsBuildUpGrid'}">
+                  Fringe benefits should be based on actual known costs or an established formula. Only personnel listed on the "Budget Detail 
+                  Worksheet" are eligible for benefits. Additionally, personnel are only eligble for benefits equivalent to the Grant percentage of time devoted to the project:
+                  <br></br>                
+                  (1) List Grant funded personnel by name
+                  <br></br>  
+                  (2)  Include all applicable benefit categories that Grant will fund. Abbreviate each category     (FIC=FICA  /  MED=Medicate / INS=Insurance / UNE=Unemployment / RIT=Retirement / OTH=all other)
+                  <br></br>  
+                  (3)  List the total salary as shown in 'Budget Detail Worksheet A'
+                  <br></br>  
+                  (4)  Indicate the total fringe benefit percentage
+                  <br></br>
+                  
+                  <div style="text-align:center;">
+                    <apex:outputText escape="false" value="<b>PLEASE BE SURE NOT TO ADD PERCENTAGE SIGN (%) ON BENEFIT (example:  30)</b>"/>
+                  </div>
+
+                  <div style="text-align:center;">
+                    <apex:outputText escape="false" value="<b>NOTE:  This table will calculate and sum the total benefit for each position listed.</b>"/>
+                  </div>
+                  
+                </apex:outputPanel>
+
+                <apex:outputPanel rendered="{!gridName == 'ContractedFeesBuildUpGrid'}">
+                  (1) Specify the type of consultant services or contracts needed
+                  <br></br>                
+                  (2) List the total amount of hours dedicated to the project
+                  <br></br>  
+                  (3) Indicate the rate of reimbursement
+                  
+                  <div style="text-align:center;">
+                    <apex:outputText escape="false" value="<b>The maximum reimbursement amount for contract fees is $650/work day.  All consultant services or contracts must be pre-authorized by UOVC and must be bid through proper channels.</b>"/>
+                  </div>
+                  
+                </apex:outputPanel>
+
+                <apex:outputPanel rendered="{!gridName == 'EquipmentBuildUpGrid'}">
+                  List nonexpendable items that are to be purchased.  Nonexpendable equipment is tangible property having a useful life of more than one (1) year and/or acquisition cost of $1,000 or more per unit.
+                  
+                  <div style="text-align:center;">
+                    <apex:outputText escape="false" value="<b>ALL APPLICANTS are required to fill out and sign the 'Equipment Summary Section'</b>"/>
+                  </div>
+
+                  <div style="text-align:center;">
+                    <apex:outputText escape="false" value="<b>If equipment is used for other programs, cost must be shared with those programs.</b>"/>
+                  </div>
+
+                  <div style="text-align:center;">
+                    <apex:outputText escape="false" value="<b>(Example:  Acquisition cost x 60% Grant usage)</b>"/>
+                  </div>
+                  (1) List the equipment to be purchased
+                  <br></br>
+                  (2) Indicate the quantity
+
+                  <div style="text-align:center;">
+                    <apex:outputText escape="false" value="<b>PLEASE BE SURE NOT TO ADD PERCENTAGE SIGN (%) ON Grant Use (example:  30)</b>"/>
+                  </div>
+                  
+                </apex:outputPanel>
+
+                <apex:outputPanel rendered="{!gridName == 'TravelBuildUpGrid'}">
+                  Include:
+                  <br></br>
+                  (1)  The travel destination and purpose
+                  <br></br>
+                  (2) The anticipated miles to be traveled
+                  <br></br>
+                  (3) The per-mile reimbursement rate (not to exceed $0.54 for a private car or $0.38 for an agency vehicle)
+                  <div style="text-align:center;">
+                    <apex:outputText escape="false" value="<b>Each agency will be required to keep a current travel log with number of miles traveled, odometer reading, travel purpose, driver and signature</b>"/>
+                  </div>
+                  
+                </apex:outputPanel>
+
+                <apex:outputPanel rendered="{!gridName == 'TrainingBuildUpGrid'}">
+                  To complete this section, enter information into each box, working across the line, as requested.  If more than one training is requested, complete the line below. 
+                  <br></br>
+                  The State per diem rate for meals: Breakfast - $10, Lunch - $14, Dinner - $16.  (Supplemental Materials)
+                  <br></br>
+                  Hotel rates vary by city.  Check for rates.  (Supplemental Materials)  Totals will calculate as the data is entered
+                  
+                  <div style="text-align:center;">
+                    <apex:outputText escape="false" value="<b>All applicant's are required to keep accurate documentation (receipts, agendas, etc.)</b>"/>
+                  </div>
+                  
+                </apex:outputPanel>
+
+                <apex:outputPanel rendered="{!gridName == 'SuppliesBuildUpGrid'}">
+                  Generally, supplies include materials that are expendable or consumed during the course of the project. 
+                  <br></br>
+                  (1) List items within this category by major type (e.g. office supplies, telephones, utilities, postage, etc)
+                  <br></br>
+                  (2)  List the quantity of the item (if quantity of item is unknown or difficult to determine, give best estimate.) 
+                  <br></br>
+                  (3) List the unit price.
+                  <br></br>
+                  Large items must be listed separately and clearly identified.
+
+                  <div style="text-align:center;">
+                    <apex:outputText escape="false" value="<b>NOTE: Subgrantees must maintain detailed documentation of expenditures (receipts w/date, cost, etc.)</b>"/>
+                  </div>
+                  
+                </apex:outputPanel>
+
+                <apex:outputPanel rendered="{!gridName == 'OtherBuildUpGrid'}">
+                  Other funds, are monies that are allocated to assist victims of crime for emergency purposes (petty cash) and miscellaneous items.
+                  <br></br>
+                  Each agency may only receive emergency monies through one grant funding source.  If you are requesting emergency monies, please check the box indicating that the only program that you receive this funding through is the STOP Grant Formula Grant.
+                  <br></br>
+                  (1) List the item and a brief description
+                  <br></br>
+                  (2) List the quantity of the item
+                  <br></br>
+                  (3) List the unit price
+                
+                </apex:outputPanel>
+                
+                <apex:outputPanel rendered="{!gridName == 'FundedChangesRequestedBuildUpGrid'}">
+                  <div style="text-align:center;">
+                    <apex:outputText value="Justify all funded changes requested from your current 16  grant to your new 17 request, as it pertains to your agency staff:" /> 
+                  </div>
+                  A) Salary and/or fringe benefit increase / decrease
+                  <br></br>                
+                  B) Increase/Decrease in number of requested Grant funded hours
+                  <br></br>  
+                  C) Change in funded staff and/or position adjustments
+                  <br></br>  
+                  D) New funded personnel
+                  
+                  <div style="text-align:center;">
+                    <apex:outputText value="When indicating personnel changes, identify the change by specifying (A, B, C, D - as listed)" /> 
+                  </div>
+                  
+                </apex:outputPanel>
+                
+                
+                <apex:outputPanel rendered="{!gridName == 'PropertyIncludingEquipmentBuildUpGrid'}">
+                  Describe all property and equipemnt purchases below. Complete all entries for each line item. Each property or equipment purchase must be listed on a separate line.
+                  <br></br>
+                  (1) List the property (including equipment) purchased
+                  <br></br>
+                  (2) List the quantity
+                  <br></br>
+                  (3) List the unit price
+                  <br></br>
+                  (4) List the property (including equipment) cost
+                  <br></br>
+                  <div style="text-align:center;">
+                    <apex:outputText escape="false" value="<b>PLEASE LIST EACH PROPERTY AND EQUIPMENT ON SEPARATE LINES. ATTACH ESTIMATES, PRICING, OR OTHER SUPPORTING DOCUMENTATION TO THE 'ATTACHMENT' TAB OF YOUR APPLICATION. </b>"/>
+                  </div>
+                </apex:outputPanel>
+                
+                
+                <apex:outputPanel rendered="{!gridName == 'PropertyIncludingEquipmentBuildUpAwardGrid'}">
+                  For this budget revision, describe all property and equipemnt purchases below. Complete all entries for each line item. Each property or equipment purchase must be listed on a separate line.
+                  <br></br>
+                  (1) List the property (including equipment) purchased
+                  <br></br>
+                  (2) List the quantity
+                  <br></br>
+                  (3) List the unit price
+                  <br></br>
+                  (4) List the property (including equipment) cost
+                  <br></br>
+                  <div style="text-align:center;">
+                    <apex:outputText escape="false" value="<b>PLEASE LIST EACH PROPERTY AND EQUIPMENT ON SEPARATE LINES. ATTACH ESTIMATES, PRICING, OR OTHER SUPPORTING DOCUMENTATION TO THE 'ATTACHMENT' TAB OF YOUR APPLICATION. </b>"/>
+                  </div>
+                </apex:outputPanel>
+                
+                <apex:outputPanel rendered="{!gridName == 'PropertyIncludingEquipmentBuildUpAmendmentGrid'}">
+                  For this budget revision, describe all property and equipemnt purchases below. Complete all entries for each line item. Each property or equipment purchase must be listed on a separate line.
+                  <br></br>
+                  (1) List the property (including equipment) purchased
+                  <br></br>
+                  (2) List the quantity
+                  <br></br>
+                  (3) List the unit price
+                  <br></br>
+                  (4) List the property (including equipment) cost
+                  <br></br>
+                  <div style="text-align:center;">
+                    <apex:outputText escape="false" value="<b>PLEASE LIST EACH PROPERTY AND EQUIPMENT ON SEPARATE LINES. ATTACH ESTIMATES, PRICING, OR OTHER SUPPORTING DOCUMENTATION TO THE 'ATTACHMENT' TAB OF YOUR APPLICATION. </b>"/>
+                  </div>
+                </apex:outputPanel>
+                
+
+                <div  class="bs container-fluid row">
+                        <GNT:FlexGrid tableId="{!gridName}" flexTableParameters="{!keyValueMap}"/>
+                </div>
+                  
+
+<!--
+            <GNT:ModalFlexViewLayout recordId="{!recordId}"  templateName="ApplicationLineItems" layoutType="View"   HideSidebar="true" flexTableParameters="{!keyValueMap}" 
+                  hideCancelBtn="true"/>  
+               -->  
+ 
+        </apex:define>
+    </apex:composition>      
+</apex:page>

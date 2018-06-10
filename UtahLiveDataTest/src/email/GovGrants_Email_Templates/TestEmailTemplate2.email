@@ -1,0 +1,9 @@
+<br/>
+<img id="j_id0:emailTemplate:j_id3:j_id4:banner" src="https://c.na31.content.force.com/servlet/servlet.ImageServer?id=015f40000004yJ6&amp;oid=00Df4000000DzbB" style="width: 41%">
+<p>Dear {!Contact.FirstName} {!Contact.LastName} ,</p>
+<p>Congratulations on being selected as an External Reviewer for the EGMS.</p>
+<p>Thank you for agreeing to serve as an External Reviewer  EGMS. Please click on the url below to create your login account to register as an External Reviewer in the  Enterprise Management System (EGMS), which will be used to manage the entire application intake and evaluation process.</p>
+<p>You will be required to provide your contact details and area(s) of expertise in order to create the profile in the system. You will also be prompted to sign a Non-Disclosure Agreement and Conflict of Interest Agreement.</p>
+<p>Click <a href="https://ggexternlaframeowrk1-developer-edition.na30.force.com/apex/UserRegistrationRedirect?t={!Contact.SecurityToken__c}">here</a></p>
+<p>Sincerely,</p>
+<p>Enterprise Grants Management System(EGMS)</p>

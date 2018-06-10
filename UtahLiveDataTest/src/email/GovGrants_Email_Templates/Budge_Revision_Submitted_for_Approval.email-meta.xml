@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email sent to Fiscal Officer when Program Officer approves the Amendment Request. When Program officer approves the Amendment, then email is triggered to Fiscal Approver</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Budget Revision Submitted for Approval</name>
+    <style>formalLetter</style>
+    <subject>Notification: Amendment Request # {!AmendmentRequest__c.Id} Approval Task</subject>
+    <textOnly>Subject: Notification of {!AmendmentRequest__c.Id} approval.
+
+
+
+This email is to notify you that Amendment Request for the Award {!AmendmentRequest__c.AwardName__c} has been approved by Program Officer and is now waiting for your review.
+
+
+
+Below are the details:
+
+
+
+Amendment Request Summary:
+
+Amendment Request Number #: {!AmendmentRequest__c.Name}
+
+Amendment Request Type: {!AmendmentRequest__c.Type__c}
+
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

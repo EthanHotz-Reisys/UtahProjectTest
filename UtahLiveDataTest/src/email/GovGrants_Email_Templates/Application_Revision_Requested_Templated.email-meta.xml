@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Application Revision Requested Template</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Application Revision Requested Templated</name>
+    <style>formalLetter</style>
+    <subject>Notification: Application #{!Application__c.Name} Revision Requested</subject>
+    <textOnly>Subject: Notification to revise the Application {!Application__c.Name} submitted for the Grant # {!Application__c.Grant__c}
+
+
+
+Hello {!Application__c.Form2ApplicantName__c},
+
+
+
+Please revise your Application {!Application__c.Name} for the Grant # {!Application__c.Grant__c}.
+
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,11 @@
+<apex:page standardController="LEAPrivateSchool__c" showHeader="false" standardStylesheets="false" extensions="LEAPrivateSchoolEditCtrl" sidebar="false">
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />    
+    <apex:composition template="GNT__ModalTemplate">
+    <apex:define name="ModalContent">    
+    <GNT:ModalFlexEditLayout templateName="{!pageTemplateName}" recordId="{!recordId}"  layoutType="Edit" flexTableParameters="{!keyValueMap}"  HideSidebar="true" 
+              hideCancelBtn="true" createDefaultValues="{!listDefaultValues}" saveURL="{!savePage}" cancelURL="{!cancelPage}" />     
+    </apex:define>
+    </apex:composition>
+     
+</apex:page>

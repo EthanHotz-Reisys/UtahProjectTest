@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE - Email Template sent to Internal Review Notification of Approval for Applications</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Internal Review: Notification of Approval for Applications</name>
+    <style>formalLetter</style>
+    <subject>Notification: Review has been Complete for Funding Opportunity #{!ReviewStep__c.AnnouncementNumber__c}</subject>
+    <textOnly>Subject: Notification of review complete for Funding Opportunity # {!ReviewStep__c.AnnouncementNumber__c}
+
+This email is to notify that the Internal Review is completed for the applications associated with the following Funding Opportunity:
+
+Funding Opportunity Number:{!ReviewStep__c.AnnouncementNumber__c}
+Funding Opportunity Title: {!ReviewStep__c.AnnouncementName__c}.
+Administration: {!ReviewStep__c.DepartmentName__c}
+
+Program Approver is seeking approval for the Decision Document which has been drafted for this Funding Opportunity.
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

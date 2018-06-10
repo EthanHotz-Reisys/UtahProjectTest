@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>[Framework]  Stores the information related to the Flex Grids Configuration</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Child1DefaultSize__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>How many Child1 records should be displayed when page loads?</inlineHelpText>
+        <label>Child 1 Default Size</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Child1FlexTable__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This is a lookup field to configure child flex table.
+This is used for N2G and mass editable grid.</description>
+        <externalId>false</externalId>
+        <label>Child 1 Flex Table</label>
+        <referenceTo>DataTableConfig__c</referenceTo>
+        <relationshipLabel>Flex Grid Configs (Child 1 Flex Table)</relationshipLabel>
+        <relationshipName>Flex_Grid_Configs1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Child1RelationshipLabel__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Child 1 Relationship Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Child1RelationshipName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Child 1 Relationship Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Child2DefaultSize__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>How many Child2 records should be displayed when page loads?</inlineHelpText>
+        <label>Child 2 Default Size</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Child2FlexTable__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Child 2 Flex Table</label>
+        <referenceTo>DataTableConfig__c</referenceTo>
+        <relationshipLabel>Flex Grid Configs (Child 2 Flex Table)</relationshipLabel>
+        <relationshipName>Flex_Grid_Configs2</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Child2RelationshipLabel__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Child 2 Relationship Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Child2RelationshipName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Child 2 Relationship Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Child3DefaultSize__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>How many Child3 records should be displayed when page loads?</inlineHelpText>
+        <label>Child 3 Default Size</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Child3FlexTable__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Child 3 Flex Table</label>
+        <referenceTo>DataTableConfig__c</referenceTo>
+        <relationshipLabel>Flex Grid Configs (Child 3 Flex Table)</relationshipLabel>
+        <relationshipName>Flex_Grid_Configs3</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Child3RelationshipLabel__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Child 3 Relationship Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Child3RelationshipName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Child 3 Relationship Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Child4DefaultSize__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>How many Child4 records should be displayed when page loads?</inlineHelpText>
+        <label>Child 4 Default Size</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Child4FlexTable__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Child 4 Flex Table</label>
+        <referenceTo>DataTableConfig__c</referenceTo>
+        <relationshipLabel>Flex Grid Configs (Child 4 Flex Table)</relationshipLabel>
+        <relationshipName>Flex_Grid_Configs4</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Child4RelationshipLabel__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Child 4 Relationship Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Child4RelationshipName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Child 4 Relationship Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EnablePagination__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Enable Pagination</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>GrandChild1FlexTable__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Flex Table Config</label>
+        <referenceTo>DataTableConfig__c</referenceTo>
+        <relationshipLabel>Flex Grid Configs (Flex Table Config)</relationshipLabel>
+        <relationshipName>Flex_Grid_Configs5</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>HeaderInstruction__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Header Instruction</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>InternalUniqueID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Uniquely identifies each record for data migration purpose only. It is auto populated by trigger in before insert context.</description>
+        <externalId>true</externalId>
+        <label>Internal Unique ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Module_Tags__c</fullName>
+        <deprecated>false</deprecated>
+        <description>It will help for migration</description>
+        <externalId>false</externalId>
+        <label>Module Tags</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>ModuleTags</valueSetName>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ParentFlexTable__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Parent Flex Table</label>
+        <referenceTo>DataTableConfig__c</referenceTo>
+        <relationshipLabel>Flex Grid Configs</relationshipLabel>
+        <relationshipName>Flex_Grid_Configs</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ParentRelationshipField__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Parent Relationship Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ShowHideMassFunctionality__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Show/Hide Mass functionality.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Show/Hide Mass functionality.</inlineHelpText>
+        <label>Show/Hide Mass Functionality</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Show</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hide</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Config: Flex Grid</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Flex Grid Config Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Flex Grid Configs</pluralLabel>
+    <recordTypes>
+        <fullName>BudgetGrid</fullName>
+        <active>true</active>
+        <label>Budget Grid</label>
+        <picklistValues>
+            <picklist>ModuleTags</picklist>
+            <values>
+                <fullName>Admin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AsGrantee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grantee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grantor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ShowHideMassFunctionality__c</picklist>
+            <values>
+                <fullName>Hide</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Show</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>MassEditableGrid</fullName>
+        <active>true</active>
+        <label>Mass Editable Grid</label>
+        <picklistValues>
+            <picklist>ModuleTags</picklist>
+            <values>
+                <fullName>Admin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AsGrantee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grantee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grantor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ShowHideMassFunctionality__c</picklist>
+            <values>
+                <fullName>Hide</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Show</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>NestedNavigationGrid</fullName>
+        <active>true</active>
+        <label>Nested Navigation Grid</label>
+        <picklistValues>
+            <picklist>ModuleTags</picklist>
+            <values>
+                <fullName>Admin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AsGrantee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grantee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grantor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ShowHideMassFunctionality__c</picklist>
+            <values>
+                <fullName>Hide</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Show</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

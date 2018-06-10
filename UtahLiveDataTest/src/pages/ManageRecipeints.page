@@ -1,0 +1,18 @@
+<apex:page id="flexTableViewPage"  controller="FlexTableViewCtrl" showHeader="false" sidebar="false" standardStylesheets="false" >
+    <title>My Task Page</title>
+    <c:ExternalLibrary />
+    
+   
+    
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">
+           <GNT:Map chartName="Map-Subrecipent" chartHTMLId="122"  /> 
+            <GNT:FlexTable listParams="{!parameterMap1}" flexTableName="{!ft1}" tableId="flexTableRandomID" flexTableParameters="{!parameterMap}"/>
+            <GNT:FlexTable listParams="{!parameterMap1}" flexTableName="{!ft2}" tableId="flexTableRandomIDs" flexTableParameters="{!parameterMap}"/>
+        </apex:define>
+    </apex:composition>
+    
+    <script>
+       setPageTitle('My Task Page');
+    </script>
+</apex:page>

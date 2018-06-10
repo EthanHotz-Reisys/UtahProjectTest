@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email Template sent to Reviewers when Application or Preapplication is assigned to them for review</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Notify Reviewer to Review Application</name>
+    <style>formalLetter</style>
+    <subject>Notification: Application {!Review__c.ApplicationID__c} is Assigned to you for Review</subject>
+    <textOnly>Hello {!Review__c.OwnerFullName},
+
+
+
+Application {!Review__c.ApplicationID__c} is ready for your review. Please click here {!Review__c.ReviewURL__c} to review the application assigned to you.
+
+The deadline to complete review is {!Review__c.ReviewDueDate__c}
+
+
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

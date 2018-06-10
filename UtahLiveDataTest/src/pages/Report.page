@@ -1,0 +1,4 @@
+<apex:page standardStylesheets="false" sidebar="false" showHeader="false">
+<c:ExternalLibrary />
+  <apex:include pageName="GNT__Report"/>
+</apex:page>

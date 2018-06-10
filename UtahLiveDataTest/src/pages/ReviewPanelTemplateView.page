@@ -1,0 +1,20 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" standardController="ReviewPanelTemplate__c" extensions="ReviewPanelTemplateViewCtrl">
+<!-- Including JS and CSS Resources -->
+    <c:ExternalLibrary />
+
+  <!--  <apex:composition template="GNT__PageTemplate">
+    
+        <apex:define name="content">-->
+       
+
+        <apex:composition template="GNT__ModalTemplate">
+                <apex:define name="ModalContent">
+
+            <GNT:ModalFlexViewLayout rendered="{!recordType != null && recordType == 'application'}"  HideSidebar="true"  hideHeaderBtns="true" templateName="ReviewPanelTemplate" recordId="{!recordId}" layoutType="View" 
+                flexTableParameters="{!keyValueMap}" />
+                </apex:define>
+                </apex:composition>
+            
+     <!--   </apex:define>
+    </apex:composition>-->
+</apex:page>

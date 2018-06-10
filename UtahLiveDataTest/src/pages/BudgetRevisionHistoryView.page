@@ -1,0 +1,18 @@
+<apex:page standardController="AmendmentRequest__c" title="BudgetRevisionHistoryView" extensions="BudgetRevisionHistoryViewCtrl" showHeader="false" standardStylesheets="false" sidebar="false">
+    <style>
+        #PageTemplateApp{
+            min-height : 0px !important;
+        }
+    </style>      
+    
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />  
+     
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">    
+            <GNT:ModalFlexViewLayout templateName="{!pageTemplateName}" recordId="{!recordId}"  layoutType="View" flexTableParameters="{!keyValueMap}"  HideSidebar="true"/>                                   
+        </apex:define>
+    </apex:composition>
+    
+</apex:page>

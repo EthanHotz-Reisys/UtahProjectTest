@@ -1,0 +1,61 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:RelyOnVML/>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:RelyOnVML/>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]--><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">Dear&nbsp;{"Announcement__c":"AnnouncementReviewer__c","Program__c":"Name"},</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm;widows: 1;font-stretch: normal"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">This email is to
+notify that, you are requested to Review the&nbsp;<span style="widows: 2">{OBJECT_LABEL}</span>&nbsp;#&nbsp;{!Announcement__c.Name}
+which has been created for the program&nbsp;{!Announcement__c.ProgramName__c}.</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt;widows: 1;font-stretch: normal"><font face="Times New Roman,Times,Serif"><b><font size="3"><span style="color:black">{OBJECT_LABEL}&nbsp;Details:</span></font></b></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt;widows: 1;font-stretch: normal"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">{OBJECT_LABEL}&nbsp;Title: {!Announcement__c.AnnouncementName__c}</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt;widows: 1;font-stretch: normal"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">{OBJECT_LABEL}&nbsp;Type:&nbsp;{!Announcement__c.AnnouncementType__c}</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt;widows: 1;font-stretch: normal"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">Associated Program Name: &nbsp;{!Announcement__c.ProgramName__c}</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm;widows: 1;font-stretch: normal"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">FOA Release
+Date: {!Announcement__c.FOAPublicationDate__c}</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">Kindly login to
+the EGMS Systems and click </span><span style="color:black"><a href="{!$Setup.GNT__GlobalConfig__c.GNT__InternalURLDomain__c}/{!Announcement__c.Id}">here</a></span><span style="color:black"> to start reviewing the&nbsp;{OBJECT_LABEL}&nbsp;details.</span></font></p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm;widows: 1;font-stretch: normal">
+
+</p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">Please do not reply to this email. You may
+contact the GovGrants Support Team at <a href="mailto:govgrants@support.com"><span style="color:black;text-decoration:none;text-underline:none">govgrants@support.com</span></a>
+if you have any questions or need assistance with this task.</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt;font-variant-ligatures: normal;
+font-variant-caps: normal;widows: 1;font-stretch: normal;-webkit-text-stroke-width: 0px;
+word-spacing:0px"><font face="Times New Roman,Times,Serif" size="3"><span style="color:black">Sincerely,</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+<span style="font-size: 12pt; line-height: 107%; color: black;">EGMS
+Team</span><font style="color: rgb(0, 0, 0); font-size: 12pt;"><span style="font-size: 11pt; line-height: 107%; color: black;"></span></font><font style="color: rgb(0, 0, 0); font-size: 12pt;"><span style="font-size: 11pt; line-height: 107%; color: black;"></span></font><font style="color: rgb(0, 0, 0); font-size: 12pt;"><span style="font-size: 11pt; line-height: 107%; color: black;"></span></font></font><p></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[<br>]]></td>
+</tr>
+</table>

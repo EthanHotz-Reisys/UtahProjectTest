@@ -1,0 +1,38 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p style="margin: 0cm 0cm 12pt;"><font face="Times New Roman, Times, serif">Hello,<o:p></o:p></font></p><p class="MsoNormal" style="margin-bottom: 12pt; background: white;"><font face="Times New Roman, Times, serif">This email is to notify you that Amendment
+Request for the&nbsp;Award&nbsp;{!AmendmentRequest__c.AwardName__c}&nbsp;has
+been Rejected.<o:p></o:p></font></p><p class="MsoNormal" style="margin-bottom: 0.0001pt; background: white;"><font face="Times New Roman, Times, serif"><b><u>Amendment&nbsp;Request&nbsp;Summary:</u></b><o:p></o:p></font></p><p class="MsoNoSpacing" style="margin: 0cm 0cm 0.0001pt; background: white;"><font face="Times New Roman, Times, serif">Amendment&nbsp;Request
+Number&nbsp;#:&nbsp;{!AmendmentRequest__c.Name}<o:p></o:p></font></p><p style="margin: 0cm 0cm 0.0001pt;"><font face="Times New Roman, Times, serif"><span style="background: white;">Amendment Request
+Type:&nbsp;{!AmendmentRequest__c.Type__c}</span><o:p></o:p></font></p><p class="MsoNoSpacing" style="margin: 0cm 0cm 12pt; background: white;"><font face="Times New Roman, Times, serif">Comments: {!AmendmentRequest__c.Comments__c}<o:p></o:p></font></p><p class="MsoNoSpacing" style="margin: 0cm 0cm 12pt; background: white;"><font face="Times New Roman, Times, serif"><span style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">Kindly login to the EGM System, and click <a href="{!AmendmentRequest__c.Link}">here</a> to access the record.</span><o:p></o:p></font></p><p style="margin: 0cm 0cm 12pt;"><font face="Times New Roman, Times, serif">Please do not reply to this email. You may
+contact the GovGrants Support Team at<span class="apple-converted-space">&nbsp;</span><a href="mailto:govgrants@support.com">govgrants@support.com</a><span class="apple-converted-space">&nbsp;</span>if you have any questions or need assistance with this
+task.<o:p></o:p></font></p><p style="margin: 0cm 0cm 0.0001pt;"><font face="Times New Roman, Times, serif">Sincerely,<o:p></o:p></font></p><p style="margin: 0cm 0cm 12pt;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="line-height: 107%;"><font face="Times New Roman, Times, serif">EGMS Team</font></span></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

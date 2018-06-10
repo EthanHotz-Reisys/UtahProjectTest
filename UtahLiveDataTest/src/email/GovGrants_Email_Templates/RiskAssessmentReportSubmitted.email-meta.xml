@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email sent when Risk Assessment Report is Submitted</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Risk Assessment Report Submitted</name>
+    <style>formalLetter</style>
+    <subject>Notification: Risk Assessment Report &apos;{!RiskAssessment__c.Name}&apos; Submitted for Approval</subject>
+    <textOnly>This email is to notify you that Risk Assessment Report {!RiskAssessment__c.Name} has been submitted and is ready for your review.
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+Sincerely,
+
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

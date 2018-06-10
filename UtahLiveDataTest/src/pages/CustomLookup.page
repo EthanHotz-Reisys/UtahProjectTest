@@ -1,0 +1,36 @@
+<apex:page standardStylesheets="false" sidebar="false" showHeader="false" controller="CustomLookupCtrl">
+    <style>
+        html {
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        .list-group-item:hover{
+            text-decoration: underline;
+            cursor: pointer;            
+        }
+        
+        .search-result{
+            font-weight:900;           
+        }
+        
+        .search-result:hover{
+            font-weight:900;           
+        }
+       
+        ::-ms-clear {
+            display: none !important; //for removing x icon from IE browser
+        }
+    </style>
+    <c:ExternalLibrary />
+    <div class="select-custom-lookup-div">
+    <Apex:include pageName="GNT__CustomLookup"/>
+    </div>
+    <script>
+           angular.element(document).ready(function() {
+                        j$('.select-custom-lookup-div').bind('DOMSubtreeModified', function() {
+                            console.log('change in DOM');
+                            setTimeout(function(){if(modalHandler(19) != undefined){modalHandler(19);}},200);
+                        });
+                    });      
+    </script>
+</apex:page>

@@ -1,0 +1,23 @@
+<apex:page standardController="PanelUser__c" extensions="AddReviewersCtrl" showHeader="false" sidebar="false" standardStylesheets="false">
+    
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent"> 
+<apex:outputPanel rendered="{!SMEReview=false}">
+     
+
+     <GNT:ModalFlexEditLayout templateName="{!pageTemplateName}" recordId="{!recordId}"  layoutType="Edit" flexTableParameters="{!keyValueMap}"  HideSidebar="true" 
+      createDefaultValues="{!listDefaultValues}" saveURL="{!savePage}" cancelURL="{!cancelPage}" hideCancelBtn="true"/> 
+      
+ </apex:outputPanel>     
+ <apex:outputPanel rendered="{!SMEReview=true}"> 
+  
+    <div class="container-fluid">
+         <GNT:FlexTable flexTableName="SelectSMEReviewer" listParams="{!listParameters}"  tableId="popupflextable" flexTableParameters="{!keyValueMap}"/>
+    </div> 
+     </apex:outputPanel>  
+      </apex:define>
+     </apex:composition>
+ 
+   
+</apex:page>

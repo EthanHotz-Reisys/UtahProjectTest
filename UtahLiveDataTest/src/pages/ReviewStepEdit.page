@@ -1,0 +1,12 @@
+<apex:page standardController="ReviewStep__c" title="Review Step Edit" extensions="ReviewStepEditCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">    
+            <GNT:FlexEditLayout templateName="{!templateName}" recordId="{!recordId}" layoutType="Edit" createDefaultValues="{!listDefaultValues}"
+                flexTableParameters="{!keyValueMap}" saveURL="{!savePage}" cancelURL="{!cancelPage}"/>   
+        </apex:define>
+    </apex:composition> 
+</apex:page>

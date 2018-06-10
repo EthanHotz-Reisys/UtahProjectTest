@@ -1,0 +1,6 @@
+<apex:page standardStylesheets="false" sidebar="false" showHeader="false">
+  <!-- Begin Default Content REMOVE THIS -->
+  <c:ExternalLibrary />
+  <apex:include pageName="GNT__TaskReassignment"/>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

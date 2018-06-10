@@ -1,0 +1,18 @@
+<apex:page standardController="GNT__Package__c" extensions="PreviewPackageCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+    
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">              
+         <!--    <GNT:FlexViewLayout templateName="PackagePreviewTemplate" recordId="{!recordId}" layoutType="View"
+                flexTableParameters="{!keyValueMap}"  HideSidebar="true"/>  -->
+                
+                <GNT:ModalFlexViewLayout templateName="PackagePreviewTemplate" recordId="{!recordId}" layoutType="View"
+                flexTableParameters="{!keyValueMap}"  HideSidebar="true"/>
+                
+        </apex:define>
+    </apex:composition>  
+    
+   
+</apex:page>

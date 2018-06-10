@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Amendment Approved</name>
+    <style>formalLetter</style>
+    <subject>Amendment Request Approved</subject>
+    <textOnly>Dear User,
+This email is to inform you that, the amendment request #{!AmendmentRequest__c.Name} has been created for the award #{!AmendmentRequest__c.Award__c} has been approved by the executive. Please login to the system and amend the award. {!AmendmentRequest__c.Link}
+
+
+
+Amendment Details:
+
+Award : {!AmendmentRequest__c.Award__c}
+
+Grant : {!AmendmentRequest__c.GrndParentGrant__c}
+
+
+Sincerely,
+
+UtahGrants Support Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

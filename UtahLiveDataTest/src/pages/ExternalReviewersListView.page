@@ -1,0 +1,12 @@
+<apex:page controller="ExternalReviewersListViewCtrl" showHeader="false" standardStyleSheets="false">
+ <c:ExternalLibrary />              
+    <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">    
+             <GNT:FlexTable FlexTableName="{!pageFlexTableName}" TableId="RandomNumber" />
+        </apex:define>
+    </apex:composition>
+    
+     <script>
+        setPageTitle('{!pageTitle}');          
+     </script>
+</apex:page>

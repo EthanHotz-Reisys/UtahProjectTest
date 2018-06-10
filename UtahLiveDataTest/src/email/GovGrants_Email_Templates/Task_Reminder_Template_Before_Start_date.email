@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p><img align="left" alt="" src="https://c.na31.content.force.com/servlet/servlet.ImageServer?id=015f4000000GKIy&amp;oid=00Df40000002V1I" border="0"></p>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<font face="Times New Roman, Times, serif">Dear {!TaskScheduleDetail__c.AssignedTo__c},<br><br>Please complete the {!TaskScheduleDetail__c.Subject__c} task before {!TaskScheduleDetail__c.StartDate__c}.<br><br></font><p style="margin: 0in 0in 0pt;"><font face="Times New Roman,Times,Serif">Sincerely,<br>District of Columbia(DC) - Department of Health(DOH)<br></font></p><div><font face="Times New Roman,Times,Serif">Enterprise Grants Management System(EGMS)</font></div><div><font face="Times New Roman,Times,Serif"><br></font></div><div><font face="Times New Roman,Times,Serif"><br></font></div><div><img align="left" alt="" src="https://c.na31.content.force.com/servlet/servlet.ImageServer?id=015f40000004yJM&amp;oid=00Df40000002V1I" border="0"></div>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

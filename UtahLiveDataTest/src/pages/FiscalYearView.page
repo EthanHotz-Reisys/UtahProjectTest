@@ -1,0 +1,14 @@
+<apex:page showHeader="false" sidebar="false" standardController="FiscalYear__c" extensions="FiscalYearViewCtrl" standardStylesheets="false">
+    
+    <!-- Including JS and CSS Resources -->
+    <c:ExternalLibrary />
+
+    <apex:composition template="GNT__PageTemplate">
+       <apex:define name="content">
+       
+            <GNT:FlexViewLayout templateName="{!templateName}"  recordId="{!recordId}" layoutType="View" 
+                flexTableParameters="{!keyValueMap}" cancelURL="{!cancelPage}" /> 
+                
+        </apex:define>
+    </apex:composition>
+</apex:page>

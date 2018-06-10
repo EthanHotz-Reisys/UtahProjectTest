@@ -1,0 +1,5 @@
+<apex:page standardStylesheets="false" sidebar="false" showHeader="false" >
+    
+    <c:ExternalLibrary />
+    <Apex:include pageName="GNT__AttachmentEdit"/>
+</apex:page>

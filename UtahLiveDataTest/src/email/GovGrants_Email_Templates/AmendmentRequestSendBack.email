@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<font face="Times New Roman, Times, serif">Dear User,</font>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p class="MsoNormal" style="margin: 2pt 0in; line-height: 13.8pt; font-size: 12pt; background: white;"><font face="Times New Roman, Times, serif" style="font-size: 12pt;"><span style="font-size: 12pt;">This email is to notify you that Amendment Request for the&nbsp;Award&nbsp;</span>{!AmendmentRequest__c.Award__c}<span style="font-size: 12pt;">&nbsp;has been sent back with the following Comments:&nbsp;</span></font><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, Times, serif;">{!ApprovalRequest.Comments}</span></p><div><font face="Times New Roman, Times, serif"><br></font></div><span style="font-size: 12pt;"><span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: 12pt;">Kindly log into the system under grants tab &gt; pending task and do the needful</span></span><p></p><p style="margin-bottom: 12pt; font-size: 12pt;"><font face="Times New Roman,Times,Serif" style="background-color: rgb(255, 255, 255);"><br></font></p><p style="margin-bottom: 12pt; font-size: 12pt;"><font face="Times New Roman,Times,Serif" style="background-color: rgb(255, 255, 255);">Sincerely,</font></p><p style="margin-bottom: 12pt; font-size: 12pt;"><font face="Times New Roman,Times,Serif" style="background-color: rgb(255, 255, 255);">UtahGrants Support Team</font></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

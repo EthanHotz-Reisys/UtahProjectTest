@@ -1,0 +1,26 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<br>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p style="margin: 0cm 0cm 12pt;"><font face="Times New Roman, Times, serif"><span class="apple-converted-space">Hello,</span><o:p></o:p></font></p><p class="MsoNormal" style="margin-bottom: 12pt;"><font face="Times New Roman, Times, serif"><span style="background: white;">This email is to notify you
+that the Closeout<span class="apple-converted-space">&nbsp;</span></span><span class="apple-converted-space">{!Closeout__c.Name}
+extension has been approved.</span><o:p></o:p></font></p><p style="margin: 0cm 0cm 12pt;"><font face="Times New Roman, Times, serif">Please
+do not reply to this email. You may contact the GovGrants Support Team at<span class="apple-converted-space">&nbsp;</span><a href="mailto:govgrants@support.com">govgrants@support.com</a><span class="apple-converted-space">&nbsp;</span>if you have any questions or need
+assistance with this task.<o:p></o:p></font></p><p style="margin: 0cm 0cm 0.0001pt;"><font face="Times New Roman, Times, serif">Sincerely,<o:p></o:p></font></p><p>
+
+
+
+
+
+
+
+</p><p style="margin: 0cm 0cm 0.0001pt;"><font face="Times New Roman, Times, serif">EGMS Team</font><span style="font-size: 12pt; font-family: Arial, sans-serif;"><o:p></o:p></span></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

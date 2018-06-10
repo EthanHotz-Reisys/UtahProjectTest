@@ -1,0 +1,44 @@
+<apex:page standardController="CaseComment" extensions="AddCaseCommentCtrl" title="Case Comment" sidebar="false" showHeader="false" standardStylesheets="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+  <apex:form >
+        <div id="addAtt" class="bs container-fluid"> 
+            <table style="width:100%;border-collapse: collapse;" align="center" cellspacing="10">                
+                <tr>
+                    <td>
+                        <b class="col-lg-12 control-label pull-left spacer">Please click on close icon to exit after adding comment.</b> 
+                    </td>
+                </tr>
+            </table>  
+                                  
+            <GNT:PageMessages id="addForm"/>
+            <table style="width:100%;border-collapse: collapse;" align="center" cellspacing="10">                
+                <tr>
+                    <td colspan="2">
+                        <b><apex:outputText id="display" value=" " styleClass="control-label col-lg-12 pull-left spacer" /></b>
+                    </td>
+                </tr>
+              
+              
+             
+                 <tr>
+                    <td >
+                        <label for="description" class="col-lg-2 control-label spacer pull-left">Comments</label>
+                    </td>
+                    <td>                         
+                        <apex:inputField styleClass="form-control spacer textAreaDesc" value="{!caseCommentObj.commentBody}"/>
+                    </td>
+                </tr>                 
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        <apex:commandbutton action="{!addCase}"  value="Save"  styleClass="customBtn pull-right"/> 
+                    </td>                    
+                </tr>
+            </table>
+        </div>
+    </apex:form>               
+  
+</apex:page>

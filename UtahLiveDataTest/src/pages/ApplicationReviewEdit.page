@@ -1,0 +1,38 @@
+<apex:page standardController="ApplicationReview__c"  showHeader="false" standardStylesheets="false" extensions="ApplicationReviewEditCtrl" sidebar="false" >
+      <style>
+        #PageTemplateApp{
+            min-height : 0px !important;
+        }
+    </style>  
+     
+     
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />  
+          <!--<div  class="bs container-fluid" style="clear:both; width:100%;height:100%;">  -->
+     <!--    <GNT:FlexEditLayout templateName="{!pageTemplateName}" recordId="{!recordId}" layoutType="Edit" flexTableParameters="{!keyValueMap}"
+              createDefaultValues="{!listDefaultValues}" saveURL="{!savePage}" cancelURL="{!cancelPage}" HideSidebar="true" HideCancelbtn="true" />  -->
+              <apex:composition template="GNT__ModalTemplate">
+              <apex:define name="ModalContent"> 
+
+              <GNT:ModalFlexEditLayout templateName="{!pageTemplateName}" recordId="{!recordId}" layoutType="Edit" flexTableParameters="{!keyValueMap}"
+              createDefaultValues="{!listDefaultValues}" saveURL="{!savePage}" cancelURL="{!cancelPage}" HideSidebar="true" HideCancelbtn="true" />
+              </apex:define>
+              </apex:composition>
+
+           <!-- </div>  -->
+    <script>  
+        var j$ = jQuery.noConflict(); 
+        j$(document).ready(function(){
+            //buildLookupIcon();
+        });
+
+        var buildLookupIcon = function(){
+            j$('.lookupIcon').each(function(){
+                var currentNode = j$(this);
+                currentNode.parent().append('<span class="glyphicon glyphicon-search"></span>');
+            });
+        }
+        
+    </script>
+              
+</apex:page>

@@ -1,0 +1,21 @@
+<apex:page standardController="Program__c" extensions="PublicProgramDetailsCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+    
+    <!-- Including JS and CSS resources <GNT:ExternalLibrary />-->
+    
+    <GNT:ExternalLibrary />   
+    <c:ExternalLibrary /> 
+  
+    <!-- <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">    
+             <GNT:FlexViewLayout templateName="{!templateName}" chartParameters="{!keyValueMap}" recordId="{!recordId}" layoutType="View" 
+                flexTableParameters="{!keyValueMap}" packageName="{!packageName}"  HideSideBar="{!hideSideBar}" />
+        </apex:define> 
+        
+    </apex:composition>-->
+     <apex:composition template="GNT__ModalTemplate">
+    <apex:define name="ModalContent">    
+    <GNT:ModalFlexViewLayout templateName="{!templateName}" recordId="{!recordId}" layoutType="View" flexTableParameters="{!keyValueMap}"  hideSidebar="true"  hideCancelBtn="true"/> 
+  </apex:define>
+    </apex:composition>
+     
+</apex:page>

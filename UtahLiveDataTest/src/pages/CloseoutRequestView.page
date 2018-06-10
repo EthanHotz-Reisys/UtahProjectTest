@@ -1,0 +1,12 @@
+<apex:page cache="false" standardController="Closeout__c" extensions="CloseoutRequestViewCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />   
+    <apex:composition template="GNT__PageTemplate">
+         <apex:define name="content">          
+            <GNT:FlexViewLayout templateName="{!pageTemplateName}" packageId="{!packageId}" layoutType="View" recordId="{!recordId}" deleteURL="{!deleteURL}"
+                flexTableParameters="{!keyValueMap}"/>
+        </apex:define>
+    </apex:composition>
+    
+</apex:page>

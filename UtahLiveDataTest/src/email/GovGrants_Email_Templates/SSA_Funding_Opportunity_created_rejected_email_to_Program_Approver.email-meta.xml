@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE When Funding Opportunity Owner Approves and Sole Source Approval (SSA) Status is Creted or Rejected  or rejects a Funding Opportunity Then email is sent to Program Approver</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GovGrants</letterhead>
+    <name>Sole Source- Funding Opportunity created/rejected email to Program Manager</name>
+    <style>formalLetter</style>
+    <subject>{!Announcement__c.Id} has been Sole Source or Formulae</subject>
+    <textOnly>Hi {!Announcement__c.ProgramApprover__c}
+
+{!Announcement__c.Id} has been {!Announcement__c.Status__c}.
+Sole source or formulae field scenario</textOnly>
+    <type>html</type>
+</EmailTemplate>

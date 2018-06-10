@@ -1,0 +1,73 @@
+<apex:page controller="SiteVisitPersonAddCtrl" showHeader="false" sidebar="false" standardStylesheets="false">
+    
+    <c:ExternalLibrary />
+   <!-- <apex:composition template="GNT__PhaseTemplate">
+        <apex:define name="body">-->
+        <!-- <div  class="bodyDiv bs container-fluid" style="padding-left:30px; float:left; clear:both; width:100%;height:100%;">
+            <GNT:FlexTable rendered="{!IF(userType == 'Internal' || userType == 'External',true,false)}" listParams="{!listParameters}" flexTableName="SiteVisitPersonAdd" tableId="SiteVisitPersonAdd" 
+              flexTableParameters="{!keyValueMap}" flexTableHeader="{!flexTableHeader}"/>
+            <GNT:FlexTable rendered="{!IF(userType == 'Contact',true,false)}" listParams="{!listParameters}" flexTableName="SiteVisitPersonAddContact" tableId="SiteVisitPersonAddContact" 
+              flexTableParameters="{!keyValueMap}" flexTableHeader="{!flexTableHeader}"/>
+            </div> -->
+       <!-- </apex:define>
+    </apex:composition>  -->
+
+
+        <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent"> 
+
+ <!--<div id="modalDiv" class="bs container-fluid" style="clear:both; width:100%;height:100%; min-height : 600px !important;max-height:800 px!important;">-->
+     <GNT:ModalFlexEditLayout templateName="{!pageTemplateName}" recordId="{!recordId}"  layoutType="Edit" flexTableParameters="{!keyValueMap}"  HideSidebar="true" 
+      createDefaultValues="{!listDefaultValues}" saveURL="{!savePage}" cancelURL="{!cancelPage}" hideCancelBtn="true"/> 
+      </apex:define>
+        </apex:composition>
+
+    <!--  <c:temp_ModalFlexEditLayout templateName="{!pageTemplateName}" recordId="{!recordId}"  layoutType="Edit" flexTableParameters="{!keyValueMap}"  HideSidebar="true" 
+      createDefaultValues="{!listDefaultValues}" saveURL="{!savePage}" cancelURL="{!cancelPage}" hideCancelBtn="true"/> -->
+   <!--</div>-->
+    <script>
+        var j$ = jQuery.noConflict();
+        j$(document).ready(function(){
+            //buildLookupIcon();
+        });
+
+        var buildLookupIcon = function(){
+            j$('.lookupIcon').each(function(){
+                var currentNode = j$(this);
+                currentNode.parent().append('<span class="glyphicon glyphicon-search"></span>');
+            });
+        }
+    </script>
+
+<script type='text/javascript'>
+ var j$ = jQuery.noConflict();
+j$(document).ready(function(){
+
+    console.log('*******window***height************'+j$(window).height());
+   console.log('*******document***height************'+ j$(document).height());
+     
+parent.resizeParent(j$(document).height());
+
+});
+
+</script>
+
+     <style>
+        #PageTemplateApp{
+                    min-height : 600px !important;
+                   
+        }
+    </style>  
+
+
+    <script>
+        setPageTitle('Site Visit Person');
+    </script> 
+
+    <!--
+
+
+    <script>
+        setPageTitle('{!flexTableHeader}');
+    </script> -->
+</apex:page>

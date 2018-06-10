@@ -1,0 +1,27 @@
+<apex:page cache="false" standardController="UserRegistration__c" extensions="ExternalRegistrationNDACtrl" action="{!createUserReg}" sidebar="false" showHeader="false" standardStylesheets="false" >
+    <!-- Including JS and CSS resources -->
+    <style>
+    #page-content-wrapper .container-fluid .panel-body{
+      /*  display:none;*/
+    }
+    #page-content-wrapper .container-fluid .tabSection .panel-body{
+      /*  display:block !important; */
+    }
+    .overviewHeader span.customLabelstyle {
+        font-size: 15px !important;
+        font-weight: bold !important;
+    }
+    </style>
+    <c:ExternalLibrary />
+       
+  <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content"> 
+ 
+          <GNT:FlexViewLayout templateName="{!pageTemplateName}" recordId="{!recordId}" layoutType="View" rendered="{!recordId != null}" HideSidebar="true"  hideMenubar="true"/>  
+
+          <apex:pageMessages rendered="{!recordId == null}" />
+           
+        </apex:define>
+  </apex:composition> 
+         
+</apex:page>

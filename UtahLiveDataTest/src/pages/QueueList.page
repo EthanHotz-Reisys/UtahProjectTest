@@ -1,0 +1,6 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false">
+  <c:ExternalLibrary /> 
+   
+   <GNT:FlexTable tableId="QueueList"/>
+      
+</apex:page>

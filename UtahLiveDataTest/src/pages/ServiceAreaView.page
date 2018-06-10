@@ -1,0 +1,13 @@
+<apex:page standardController="ServiceArea__c" extensions="ServiceAreaViewCtrl" 
+        sidebar="false" standardStylesheets="false" showHeader="false">
+    
+    <!-- Including JS and CSS resources -->
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__PageTemplate">
+        <apex:define name="content">
+            <GNT:FlexViewLayout templateName="{!pageTemplateName}" layoutType="View" recordId="{!recordId}" deleteURL="{!deleteURL}" 
+            flexTableParameters="{!keyValueMap}"/>
+        </apex:define>
+    </apex:composition>
+    
+</apex:page>

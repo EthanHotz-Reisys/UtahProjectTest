@@ -1,0 +1,13 @@
+<apex:page controller="InviteOrgForSoleSourceAwardHelper" showHeader="false" sidebar="false" standardStylesheets="false">
+    <GNT:ExternalLibrary />
+    <c:ExternalLibrary />
+    <apex:composition template="GNT__ModalTemplate">
+        <apex:define name="ModalContent">
+            <GNT:FlexTable flexTableName="SoleSourceAwardRecipients" flexTableParameters="{!keyValueMap}" 
+            tableId="SoleSourceAwardRecipientsTable" listParams="{!listParams}"/>
+        </apex:define>
+        </apex:composition>
+            
+        
+    
+</apex:page>

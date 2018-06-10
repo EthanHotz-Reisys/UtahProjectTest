@@ -1,0 +1,28 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<font face="Times New Roman,Times,Serif" size="3">Hello {!UserRegistration__c.<span style="background-color: rgb(255, 255, 255);">PrimaryRepFirstName__c</span>},<br><br></font><div><font face="Times New Roman,Times,Serif" size="3"><span style="font-size: 12pt;">Your
+registration request (Ref. ID:</span><span style="font-size: 12pt; background-color: rgb(255, 255, 255);">&nbsp;</span><span style="font-size: 12pt; background-color: rgb(255, 255, 255);">{!UserRegistration__c.Name}</span><span style="font-size: 12pt;">) with Utah Grants is not approved for the following
+reasons:</span></font></div><div>
+
+<p class="MsoNormal"><font face="Times New Roman,Times,Serif" size="3"><span style="font-size: 12pt;">Reason:<o:p></o:p></span></font></p>
+
+<p class="MsoNormal"><font face="Times New Roman,Times,Serif" size="3"><span style="font-size: 12pt;">&nbsp;</span></font><span style="font-family: DSCDefaultFontRegular; font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(51, 51, 51);">&nbsp;</span><span style="font-family: DSCDefaultFontRegular; font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(51, 51, 51);">{!ApprovalRequest.Comments}</span></p>
+
+<p class="MsoNormal"><font face="Times New Roman,Times,Serif" size="3"><span style="font-size: 12pt;">Please
+visit our website for more details on the requirements for such registrations.
+You may re-register and provide correct data for further review.<o:p></o:p></span></font></p><p class="MsoNormal"><font face="Times New Roman,Times,Serif" size="3"><span style="font-size: 12pt;"><br></span></font></p><p class="MsoNormal"><font face="Times New Roman,Times,Serif" size="3"><span style="font-size: 12pt;">If you need any further assistance then please contact&nbsp;</span></font><span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: medium;">utahgrants.support@reisystems.com.&nbsp;</span></p><p class="MsoNormal"><font face="Times New Roman,Times,Serif" size="3"><span style="font-size: 12pt;"><br></span></font></p>
+
+<p class="MsoNormal"><font face="Times New Roman,Times,Serif" size="3"><span style="font-size: 12pt;">Thank you,<o:p></o:p></span></font></p>
+
+<p class="MsoNormal"><font face="Times New Roman,Times,Serif" size="3"><span style="font-size: 12pt;">UtahGrants Support Team&nbsp;<o:p></o:p></span></font></p><p class="MsoNormal"><span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: medium;">utahgrants.support@reisystems.com</span><br style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: medium;"><span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: medium;">Ph. No. : 703.480.9100</span></p><font face="Times New Roman,Times,Serif" size="3"><br><br></font></div>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

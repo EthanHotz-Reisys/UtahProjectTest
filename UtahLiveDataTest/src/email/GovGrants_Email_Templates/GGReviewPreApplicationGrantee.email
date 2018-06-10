@@ -1,0 +1,26 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<font face="Times New Roman,Times,Serif"><font face="Times New Roman,Times,Serif"><p style="margin: 0cm 0cm 12pt;">Hello<span class="apple-converted-space">&nbsp;</span>{!GO__RolesAndResponsibilities__c.GO__Name__c},<o:p></o:p></p><p style="margin: 0cm 0cm 12pt; widows: 1; font-stretch: normal;">You have been assigned as
+the&nbsp;{!RolesAndResponsibilities__c.Position__c}for the
+Pre-Application#{!RolesAndResponsibilities__c.PreApplication__c}.<o:p></o:p></p><p style="margin: 0cm 0cm 12pt;">Please do not reply to this email. You may contact
+the GovGrants Support Team at<span class="apple-converted-space">&nbsp;</span><a href="mailto:govgrants@support.com">govgrants@support.com</a><span class="apple-converted-space">&nbsp;</span>if you have any questions or need
+assistance with this task.<o:p></o:p></p><p style="margin: 0cm 0cm 0.0001pt;">Sincerely,<o:p></o:p></p><p style="margin: 0in 0in 8pt; line-height: normal; widows: 1; font-stretch: normal;">
+
+
+
+
+
+
+
+<span style="line-height: 107%;">EGMS Team</span></p></font></font>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

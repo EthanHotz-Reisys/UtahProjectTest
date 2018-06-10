@@ -1,0 +1,47 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p><br></p>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:RelyOnVML/>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font face="Times New Roman,Times,Serif" size="3"><span style="mso-bidi-font-weight:bold">Hello Grants Management Official,</span></font></p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font face="Times New Roman,Times,Serif" size="3"><span style="mso-bidi-font-weight:bold">This email is to notify you that, the Award <b>{!Award__c.Name}</b> of the Grant #<b>{!Award__c.Grant__c}</b>,
+has been assigned to you for Review and Approval.</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font face="Times New Roman,Times,Serif" size="3"><span style="mso-bidi-font-weight:bold">To access the task and take
+relevant action, kindly login to the EGMS System and click on the following
+link: {!Award__c.Link}</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:
+0cm"><font face="Times New Roman,Times,Serif" size="3"><span style="mso-bidi-font-weight:bold">If you have any questions or
+concerns, please contact <b>{!User.FirstName}</b> <b>{!User.LastName}</b> at {!User.Email}.</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font face="Times New Roman,Times,Serif" size="3"><span style="mso-bidi-font-weight:
+bold">Please do not reply to this email. You may contact the GovGrants Support
+Team at <a href="mailto:govgrants@support.com"><span style="color:windowtext;
+text-decoration:none;text-underline:none">govgrants@support.com</span></a> if
+you have any questions or need assistance with this task.</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font face="Times New Roman,Times,Serif" size="3"><span style="mso-bidi-font-weight:
+bold">&nbsp;</span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+</font><p style="margin:0cm;margin-bottom:.0001pt"><font face="Times New Roman,Times,Serif" size="3"><span style="mso-bidi-font-weight:
+bold">Sincerely,&nbsp; </span></font></p><font face="Times New Roman,Times,Serif" size="3">
+
+<span style="font-size: 11pt; line-height: 107%;">EGMS Team</span></font>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

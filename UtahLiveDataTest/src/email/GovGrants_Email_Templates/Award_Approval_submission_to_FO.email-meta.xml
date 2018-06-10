@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE Email alert notifying PO and FO of Award submission approval</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Award Approval submission to FO</name>
+    <style>formalLetter</style>
+    <subject>Notification: Award {!Award__c.Name} has been created and Assigned for Review and App.</subject>
+    <textOnly>Subject: Notification of Announcement {!Announcement__c.Name} has been rejected.
+
+This email is to notify that the following Announcement has been Rejected -
+
+Announcement Name  - {!Announcement__c.AnnouncementName__c}
+Program Name - {!Announcement__c.ProgramName__c}
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+
+
+Sincerely,
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

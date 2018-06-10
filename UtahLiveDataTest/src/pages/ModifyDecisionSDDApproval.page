@@ -1,0 +1,13 @@
+<apex:page showHeader="false" sidebar="false" controller="ModifyDecisionSDDApprovalCtrl" standardStylesheets="false">
+    
+    <!-- Including JS and CSS Resources -->
+    <c:ExternalLibrary />
+
+    <apex:composition template="GNT__PageTemplate">
+        <!-- Dynamic Layout -->
+        <apex:define name="content">
+            <GNT:DynamicLayout templateName="SDDReviewStepApplicationApproval" recordId="{!recordId}" saveURL="{!savePage}" layoutType="Edit" flexTableParameters="{!keyValueMap}"/>
+        </apex:define>
+    </apex:composition>
+ <!--ApplicationReviewStepSDDApprovalTemplate-->
+</apex:page>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Contains comma separated federal agency codes</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>AgencyCodes__c</fullName>
+        <description>comma separated agency codes</description>
+        <externalId>false</externalId>
+        <label>AgencyCodes</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <label>FederalAgencies</label>
+    <visibility>Public</visibility>
+</CustomObject>

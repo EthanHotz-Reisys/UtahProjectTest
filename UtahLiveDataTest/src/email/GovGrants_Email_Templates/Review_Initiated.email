@@ -1,0 +1,16 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<span style="background-color: rgb(255, 255, 255);"><font face="Times New Roman, Times, serif" style="">Dear User,</font></span>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<font face="Times New Roman,Times,Serif" size="3" style="color: rgb(0, 0, 0); font-size: 12pt; font-family: arial;">
+
+</font><p style="line-height: 1.5em; margin: 0cm 0cm 12pt; background-color: rgb(255, 255, 255);"><font face="Times New Roman, Times, serif" style=""><font style="color: rgb(0, 0, 0);">Please review the application for&nbsp;</font>{!Review__c.ApplicantExternalOrganization__c} for {!Review__c.ProgramName__c}.</font></p><p style="color: rgb(0, 0, 0); line-height: 1.5em; margin: 0cm 0cm 12pt; background-color: rgb(255, 255, 255);"><font face="Times New Roman, Times, serif">To review, please follow the link below:</font></p><p style="color: rgb(0, 0, 0); line-height: 1.5em; margin: 0cm 0cm 12pt; background-color: rgb(255, 255, 255);"><font face="Times New Roman, Times, serif">Click <a href="{!Review__c.Link}">here</a></font></p><p style="color: rgb(0, 0, 0); margin-bottom: 12pt;"><font face="Times New Roman,Times,Serif" style="background-color: rgb(255, 255, 255);">Sincerely,</font></p><p style="color: rgb(0, 0, 0); margin-bottom: 12pt;"><font face="Times New Roman,Times,Serif" style="background-color: rgb(255, 255, 255);">UtahGrants Support Team</font></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

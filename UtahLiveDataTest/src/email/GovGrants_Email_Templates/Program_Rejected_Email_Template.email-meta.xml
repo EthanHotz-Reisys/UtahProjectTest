@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IN USE When Program Manager rejects program then email sent to Program Owner</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Utah</letterhead>
+    <name>Program Rejected Email Template</name>
+    <style>formalLetter</style>
+    <subject>Notification: Program #{!Program__c.Name} has been Rejected.</subject>
+    <textOnly>Hello {!Program__c.OwnerFirstName},
+
+This email is to notify you the Program # {!Program__c.Id} has been rejected.
+
+Please do not reply to this email. You may contact the GovGrants Support Team at govgrants@support.com if you have any questions or need assistance with this task.
+
+Sincerely,
+EGMS Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

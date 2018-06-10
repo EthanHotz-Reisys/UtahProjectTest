@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<font face="Times New Roman, Times, serif">Dear User,</font>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p style="margin-bottom: 12pt;"><font face="Times New Roman, Times, serif">Application Invite for&nbsp;</font><span style="font-family: &quot;Times New Roman&quot;, Times, serif;">{!Application__c.ProgramTitle__c}</span><font face="Times New Roman, Times, serif">&nbsp;for&nbsp;</font><span style="font-family: &quot;Times New Roman&quot;, Times, serif;">{!Application__c.FiscalYear__c}</span><font face="Times New Roman, Times, serif">&nbsp;by&nbsp;</font><span style="font-family: &quot;Times New Roman&quot;, Times, serif;">{!Application__c.ExternalOrganizationName__c}</span><font face="Times New Roman, Times, serif">&nbsp;has been waived by the LEA for&nbsp;</font><span style="background-color: rgb(255, 255, 255); font-family: &quot;Times New Roman&quot;, Times, serif; font-size: 12pt;">{!Application__c.BudgetAllocation__c}</span><span style="font-family: &quot;Times New Roman&quot;, Times, serif; font-size: 12pt;">&nbsp;amount.&nbsp;</span></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 12pt;"><span style="font-size: 12pt;"><font face="arial"></font></span></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 12pt;"><font face="Times New Roman,Times,Serif" style="background-color: rgb(255, 255, 255);">Sincerely,</font></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 12pt;"><font face="Times New Roman,Times,Serif" style="background-color: rgb(255, 255, 255);">UtahGrants Support Team</font></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[<br>]]></td>
+</tr>
+</table>

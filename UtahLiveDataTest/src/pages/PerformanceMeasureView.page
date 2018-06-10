@@ -1,0 +1,32 @@
+<apex:page cache="false" standardController="PerformanceMeasure__c" extensions="PerformanceMeasureViewCtrl" sidebar="false" showHeader="false" standardStylesheets="false">
+    <style>
+        #PageTemplateApp{
+            min-height : 0px !important; 
+        }
+    </style>   
+            <c:ExternalLibrary /> 
+            <apex:composition template="GNT__ModalTemplate">
+            <apex:define name="ModalContent">    
+             <GNT:ModalFlexViewLayout templateName="{!pageTemplateName}" layoutType="View" recordId="{!recordId}" deleteURL="{!deleteURL}"  HideSidebar="true" flexTableParameters="{!keyValueMap}"/> 
+            </apex:define>
+            </apex:composition>
+
+
+
+
+     <script>
+        var j$ = jQuery.noConflict();
+        j$(document).ready(function(){
+            //buildLookupIcon();
+        });
+
+        var buildLookupIcon = function(){
+            j$('.lookupIcon').each(function(){
+                var currentNode = j$(this);
+                currentNode.parent().append('<span class="glyphicon glyphicon-search"></span>');
+            });
+        }
+         
+    </script>
+ 
+</apex:page>
