@@ -45,6 +45,7 @@
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -95,10 +96,12 @@
                 <value>
                     <fullName>Framework</fullName>
                     <default>false</default>
+                    <label>Framework</label>
                 </value>
                 <value>
                     <fullName>Business</fullName>
                     <default>false</default>
+                    <label>Business</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -129,4 +132,5 @@
     <pluralLabel>GG Release Notes</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

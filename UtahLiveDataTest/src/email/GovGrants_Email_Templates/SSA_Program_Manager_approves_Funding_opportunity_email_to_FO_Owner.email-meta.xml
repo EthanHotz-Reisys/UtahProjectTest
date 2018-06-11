@@ -11,4 +11,5 @@
 
 {!Announcement__c.Id} has been approved.</textOnly>
     <type>html</type>
+    <uiType>Aloha</uiType>
 </EmailTemplate>

@@ -46,6 +46,7 @@
     <description>[Business] Defines a review Panel for an Application /Pre-Application</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -171,26 +172,32 @@
                 <value>
                     <fullName>Added to Step</fullName>
                     <default>true</default>
+                    <label>Added to Step</label>
                 </value>
                 <value>
                     <fullName>Reviewers Assigned</fullName>
                     <default>false</default>
+                    <label>Reviewers Assigned</label>
                 </value>
                 <value>
                     <fullName>Review In Progress</fullName>
                     <default>false</default>
+                    <label>Review In Progress</label>
                 </value>
                 <value>
                     <fullName>Reviews Complete</fullName>
                     <default>false</default>
+                    <label>Reviews Complete</label>
                 </value>
                 <value>
                     <fullName>Promoted</fullName>
                     <default>false</default>
+                    <label>Promoted</label>
                 </value>
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -280,4 +287,5 @@
     </recordTypes>
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

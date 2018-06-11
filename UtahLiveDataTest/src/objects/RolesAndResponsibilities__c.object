@@ -50,6 +50,7 @@
     <description>[Business] Roles and Responsibilities defined for all the objects like Opportunity ,Application etc</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
@@ -147,34 +148,42 @@
                 <value>
                     <fullName>Owner</fullName>
                     <default>false</default>
+                    <label>Owner</label>
                 </value>
                 <value>
                     <fullName>Grants Manager</fullName>
                     <default>false</default>
+                    <label>Grants Manager</label>
                 </value>
                 <value>
                     <fullName>Payment Approver 1</fullName>
                     <default>false</default>
+                    <label>Payment Approver 1</label>
                 </value>
                 <value>
                     <fullName>Payment Approver 2</fullName>
                     <default>false</default>
+                    <label>Payment Approver 2</label>
                 </value>
                 <value>
                     <fullName>Payment Approver 3</fullName>
                     <default>false</default>
+                    <label>Payment Approver 3</label>
                 </value>
                 <value>
                     <fullName>Payment Approver 4</fullName>
                     <default>false</default>
+                    <label>Payment Approver 4</label>
                 </value>
                 <value>
                     <fullName>Executive Approver</fullName>
                     <default>false</default>
+                    <label>Executive Approver</label>
                 </value>
                 <value>
                     <fullName>PM</fullName>
                     <default>false</default>
+                    <label>PM</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -208,10 +217,12 @@
                 <value>
                     <fullName>Update Only This Record</fullName>
                     <default>false</default>
+                    <label>Update Only This Record</label>
                 </value>
                 <value>
                     <fullName>Update All Derivative Records</fullName>
                     <default>false</default>
+                    <label>Update All Derivative Records</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -245,18 +256,22 @@
                 <value>
                     <fullName>Queued</fullName>
                     <default>false</default>
+                    <label>Queued</label>
                 </value>
                 <value>
                     <fullName>Processed</fullName>
                     <default>false</default>
+                    <label>Processed</label>
                 </value>
                 <value>
                     <fullName>Cancelled</fullName>
                     <default>false</default>
+                    <label>Cancelled</label>
                 </value>
                 <value>
                     <fullName>Failed</fullName>
                     <default>false</default>
+                    <label>Failed</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -608,30 +623,37 @@ IF(NOT(ISBLANK(PreApplication__c)), PreApplication__c, IF(NOT(ISBLANK(Program__c
                 <value>
                     <fullName>None</fullName>
                     <default>true</default>
+                    <label>None</label>
                 </value>
                 <value>
                     <fullName>Project Officer</fullName>
                     <default>false</default>
+                    <label>Project Officer</label>
                 </value>
                 <value>
                     <fullName>Grant Monitor</fullName>
                     <default>false</default>
+                    <label>Grant Monitor</label>
                 </value>
                 <value>
                     <fullName>Data Evaluator</fullName>
                     <default>false</default>
+                    <label>Data Evaluator</label>
                 </value>
                 <value>
                     <fullName>Program Manager</fullName>
                     <default>false</default>
+                    <label>Program Manager</label>
                 </value>
                 <value>
                     <fullName>Bureau Chief</fullName>
                     <default>false</default>
+                    <label>Bureau Chief</label>
                 </value>
                 <value>
                     <fullName>Grant Supervisor</fullName>
                     <default>false</default>
+                    <label>Grant Supervisor</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -828,10 +850,12 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
                 <value>
                     <fullName>Assigned</fullName>
                     <default>true</default>
+                    <label>Assigned</label>
                 </value>
                 <value>
                     <fullName>Sent For Review</fullName>
                     <default>false</default>
+                    <label>Sent For Review</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -886,10 +910,12 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
                 <value>
                     <fullName>User</fullName>
                     <default>true</default>
+                    <label>User</label>
                 </value>
                 <value>
                     <fullName>Queue</fullName>
                     <default>false</default>
+                    <label>Queue</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -919,29 +945,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This record type can be used for Roles and Responsibilities on Grantee Amendment Request.</description>
         <label>Amendment Request</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
-            <values>
-                <fullName>Executive Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Fiscal Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Grants Administrator</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Owner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Program Approver</fullName>
-                <default>true</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>BusinessRoleUSBE__c</picklist>
             <values>
                 <fullName>Executive Approver</fullName>
@@ -970,6 +973,29 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             <values>
                 <fullName>Payment Approver 4</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
+            <values>
+                <fullName>Executive Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grants Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Approver</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -1062,7 +1088,38 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This record type can be used for Roles and Responsibilities on Grantee Application.</description>
         <label>Application</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
+            <picklist>BusinessRoleUSBE__c</picklist>
+            <values>
+                <fullName>Executive Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grants Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
             <values>
                 <fullName>Author</fullName>
                 <default>false</default>
@@ -1097,37 +1154,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             </values>
             <values>
                 <fullName>Program Reviewer</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>BusinessRoleUSBE__c</picklist>
-            <values>
-                <fullName>Executive Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Grants Manager</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Owner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 3</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 4</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1221,7 +1247,38 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This record type can be used for Roles and Responsibilities on Grantee Award.</description>
         <label>Award</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
+            <picklist>BusinessRoleUSBE__c</picklist>
+            <values>
+                <fullName>Executive Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grants Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
             <values>
                 <fullName>Author</fullName>
                 <default>false</default>
@@ -1260,37 +1317,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             </values>
             <values>
                 <fullName>Program Reviewer</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>BusinessRoleUSBE__c</picklist>
-            <values>
-                <fullName>Executive Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Grants Manager</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Owner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 3</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 4</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1384,25 +1410,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This record type can be used for Roles and Responsibilities on Grantee Closeout.</description>
         <label>Closeout</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
-            <values>
-                <fullName>Fiscal Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Grants Administrator</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Owner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Program Approver</fullName>
-                <default>true</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>BusinessRoleUSBE__c</picklist>
             <values>
                 <fullName>Executive Approver</fullName>
@@ -1431,6 +1438,25 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             <values>
                 <fullName>Payment Approver 4</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
+            <values>
+                <fullName>Fiscal Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grants Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Approver</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -1523,13 +1549,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This is for the FINET program</description>
         <label>FINETProgram</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
-            <values>
-                <fullName>Program Approver</fullName>
-                <default>true</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>BusinessRoleUSBE__c</picklist>
             <values>
                 <fullName>Executive Approver</fullName>
@@ -1562,6 +1581,13 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             <values>
                 <fullName>Payment Approver 4</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
+            <values>
+                <fullName>Program Approver</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -1653,7 +1679,38 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <active>true</active>
         <label>Grant</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
+            <picklist>BusinessRoleUSBE__c</picklist>
+            <values>
+                <fullName>Executive Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grants Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
             <values>
                 <fullName>Author</fullName>
                 <default>false</default>
@@ -1700,37 +1757,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             </values>
             <values>
                 <fullName>SME Reviewer</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>BusinessRoleUSBE__c</picklist>
-            <values>
-                <fullName>Executive Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Grants Manager</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Owner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 3</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 4</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -1824,25 +1850,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This record type can be used for Roles and Responsibilities on Grantor Amendment Request.</description>
         <label>Grantor Amendment Request</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
-            <values>
-                <fullName>Fiscal Reviewer</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Grants Administrator</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Owner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Program Approver</fullName>
-                <default>true</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>BusinessRoleUSBE__c</picklist>
             <values>
                 <fullName>Executive Approver</fullName>
@@ -1871,6 +1878,25 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             <values>
                 <fullName>Payment Approver 4</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
+            <values>
+                <fullName>Fiscal Reviewer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grants Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Approver</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -1963,7 +1989,38 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This record type can be used for Roles and Responsibilities on Grantor Announcement.</description>
         <label>Grantor Announcement</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
+            <picklist>BusinessRoleUSBE__c</picklist>
+            <values>
+                <fullName>Executive Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grants Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
             <values>
                 <fullName>Executive Approver</fullName>
                 <default>false</default>
@@ -1998,37 +2055,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             </values>
             <values>
                 <fullName>Program Reviewer</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>BusinessRoleUSBE__c</picklist>
-            <values>
-                <fullName>Executive Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Grants Manager</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Owner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 3</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 4</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2110,17 +2136,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This record type can be used for Roles and Responsibilities on Grantor Application.</description>
         <label>Grantor Application</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
-            <values>
-                <fullName>Key POC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Owner</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>BusinessRoleUSBE__c</picklist>
             <values>
                 <fullName>Executive Approver</fullName>
@@ -2148,6 +2163,17 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             </values>
             <values>
                 <fullName>Payment Approver 4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
+            <values>
+                <fullName>Key POC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2241,7 +2267,38 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This record type can be used for Roles and Responsibilities on Grantor Awards.</description>
         <label>Grantor Award</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
+            <picklist>BusinessRoleUSBE__c</picklist>
+            <values>
+                <fullName>Executive Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grants Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
             <values>
                 <fullName>Author</fullName>
                 <default>false</default>
@@ -2280,37 +2337,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             </values>
             <values>
                 <fullName>Program Reviewer</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>BusinessRoleUSBE__c</picklist>
-            <values>
-                <fullName>Executive Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Grants Manager</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Owner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 3</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 4</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2404,25 +2430,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This record type can be used for Roles and Responsibilities on Grantor Closeout.</description>
         <label>Grantor Closeout</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
-            <values>
-                <fullName>Fiscal Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Grants Administrator</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Owner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Program Approver</fullName>
-                <default>true</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>BusinessRoleUSBE__c</picklist>
             <values>
                 <fullName>Executive Approver</fullName>
@@ -2451,6 +2458,25 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             <values>
                 <fullName>Payment Approver 4</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
+            <values>
+                <fullName>Fiscal Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grants Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Approver</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -2543,37 +2569,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This record type can be used for Roles and Responsibilities on Grantor PreApplications.</description>
         <label>Grantor PreApplication</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
-            <values>
-                <fullName>Author</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Executive Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Fiscal Reviewer</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Owner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Program Approver</fullName>
-                <default>true</default>
-            </values>
-            <values>
-                <fullName>Program Reviewer</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>SME Reviewer</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>BusinessRoleUSBE__c</picklist>
             <values>
                 <fullName>Executive Approver</fullName>
@@ -2601,6 +2596,37 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             </values>
             <values>
                 <fullName>Payment Approver 4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
+            <values>
+                <fullName>Author</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal Reviewer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Approver</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Program Reviewer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SME Reviewer</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2694,37 +2720,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This record type can be used for Roles and Responsibilities on Grantor Program.</description>
         <label>Grantor Program</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
-            <values>
-                <fullName>Executive Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Fiscal Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Fiscal Reviewer</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Key POC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Owner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Program Approver</fullName>
-                <default>true</default>
-            </values>
-            <values>
-                <fullName>Program Reviewer</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>BusinessRoleUSBE__c</picklist>
             <values>
                 <fullName>Executive Approver</fullName>
@@ -2752,6 +2747,37 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             </values>
             <values>
                 <fullName>Payment Approver 4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
+            <values>
+                <fullName>Executive Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal Reviewer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Key POC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Approver</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Program Reviewer</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2845,7 +2871,38 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This record type can be used for Roles and Responsibilities on Grantor Progress Reports.</description>
         <label>Grantor Progress Report</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
+            <picklist>BusinessRoleUSBE__c</picklist>
+            <values>
+                <fullName>Executive Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grants Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
             <values>
                 <fullName>Executive Approver</fullName>
                 <default>false</default>
@@ -2880,37 +2937,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             </values>
             <values>
                 <fullName>Program Reviewer</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>BusinessRoleUSBE__c</picklist>
-            <values>
-                <fullName>Executive Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Grants Manager</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Owner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 3</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 4</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3004,25 +3030,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This record type can be used for Roles and Responsibilities on Grantor Risk Assessment.</description>
         <label>Grantor Risk Assessment</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
-            <values>
-                <fullName>Fiscal Reviewer</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Grants Administrator</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Owner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Program Approver</fullName>
-                <default>true</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>BusinessRoleUSBE__c</picklist>
             <values>
                 <fullName>Executive Approver</fullName>
@@ -3051,6 +3058,25 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             <values>
                 <fullName>Payment Approver 4</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
+            <values>
+                <fullName>Fiscal Reviewer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grants Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Approver</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -3143,25 +3169,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This record type can be used for Roles and Responsibilities on Grantor Site Visit.</description>
         <label>Grantor Site Visit</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
-            <values>
-                <fullName>Fiscal Reviewer</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Grants Administrator</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Owner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Program Approver</fullName>
-                <default>true</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>BusinessRoleUSBE__c</picklist>
             <values>
                 <fullName>Executive Approver</fullName>
@@ -3190,6 +3197,25 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             <values>
                 <fullName>Payment Approver 4</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
+            <values>
+                <fullName>Fiscal Reviewer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grants Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Approver</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -3282,25 +3308,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This record type can be used for Roles and Responsibilities on Grantor Strategic Plan and Service Area.</description>
         <label>Grantor Strategic Plan</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
-            <values>
-                <fullName>Fiscal Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Key POC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Owner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Program Approver</fullName>
-                <default>true</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>BusinessRoleUSBE__c</picklist>
             <values>
                 <fullName>Executive Approver</fullName>
@@ -3329,6 +3336,25 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             <values>
                 <fullName>Payment Approver 4</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
+            <values>
+                <fullName>Fiscal Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Key POC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Approver</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -3421,37 +3447,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This record type can be used for Roles and Responsibilities on Grantee Opportunity.</description>
         <label>Opportunity</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
-            <values>
-                <fullName>Executive Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Fiscal Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Fiscal Reviewer</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Key POC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Owner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Program Approver</fullName>
-                <default>true</default>
-            </values>
-            <values>
-                <fullName>Program Reviewer</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>BusinessRoleUSBE__c</picklist>
             <values>
                 <fullName>Executive Approver</fullName>
@@ -3479,6 +3474,37 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             </values>
             <values>
                 <fullName>Payment Approver 4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
+            <values>
+                <fullName>Executive Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal Reviewer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Key POC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Approver</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Program Reviewer</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3572,7 +3598,38 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This record type can be used for Roles and Responsibilities on Grantee Pre-Application.</description>
         <label>PreApplication</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
+            <picklist>BusinessRoleUSBE__c</picklist>
+            <values>
+                <fullName>Executive Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grants Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
             <values>
                 <fullName>Author</fullName>
                 <default>false</default>
@@ -3603,37 +3660,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             </values>
             <values>
                 <fullName>SME Reviewer</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>BusinessRoleUSBE__c</picklist>
-            <values>
-                <fullName>Executive Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Grants Manager</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Owner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 3</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 4</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3727,33 +3753,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This record type can be used for Roles and Responsibilities on Grantee Program.</description>
         <label>Program</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
-            <values>
-                <fullName>Executive Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Fiscal Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Key POC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Owner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Program Approver</fullName>
-                <default>true</default>
-            </values>
-            <values>
-                <fullName>Program Reviewer</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>BusinessRoleUSBE__c</picklist>
             <values>
                 <fullName>Executive Approver</fullName>
@@ -3781,6 +3780,33 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             </values>
             <values>
                 <fullName>Payment Approver 4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
+            <values>
+                <fullName>Executive Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Key POC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Approver</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Program Reviewer</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3874,7 +3900,38 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This record type can be used for Roles and Responsibilities on USBE Programs.</description>
         <label>ProgramUSBE</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
+            <picklist>BusinessRoleUSBE__c</picklist>
+            <values>
+                <fullName>Executive Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grants Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
             <values>
                 <fullName>Award Approver 1</fullName>
                 <default>false</default>
@@ -3909,37 +3966,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             </values>
             <values>
                 <fullName>Program Approver</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>BusinessRoleUSBE__c</picklist>
-            <values>
-                <fullName>Executive Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Grants Manager</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Owner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 3</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 4</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4033,37 +4059,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This record type can be used for Roles and Responsibilities on USBE Programs</description>
         <label>ProgramUploadUSBE</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
-            <values>
-                <fullName>Award Approver 1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Award Approver 2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Executive Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Grants Manager</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 1</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Payment Approver 2</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Program Approver</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>BusinessRoleUSBE__c</picklist>
             <values>
                 <fullName>Executive Approver</fullName>
@@ -4091,6 +4086,37 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             </values>
             <values>
                 <fullName>Payment Approver 4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
+            <values>
+                <fullName>Award Approver 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Award Approver 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grants Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Approver 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Approver</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4184,37 +4210,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This record type can be used for Roles and Responsibilities on Grantee Progress Report.</description>
         <label>Progress Report</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
-            <values>
-                <fullName>Executive Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Fiscal Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Grants Administrator</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Key POC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Owner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Program Approver</fullName>
-                <default>true</default>
-            </values>
-            <values>
-                <fullName>Program Reviewer</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>BusinessRoleUSBE__c</picklist>
             <values>
                 <fullName>Executive Approver</fullName>
@@ -4242,6 +4237,37 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             </values>
             <values>
                 <fullName>Payment Approver 4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
+            <values>
+                <fullName>Executive Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grants Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Key POC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Approver</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Program Reviewer</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4335,25 +4361,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This record type can be used for Roles and Responsibilities on Grantee Risk Assessment.</description>
         <label>RiskAssessment</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
-            <values>
-                <fullName>Fiscal Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Grants Administrator</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Owner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Program Approver</fullName>
-                <default>true</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>BusinessRoleUSBE__c</picklist>
             <values>
                 <fullName>Executive Approver</fullName>
@@ -4382,6 +4389,25 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             <values>
                 <fullName>Payment Approver 4</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
+            <values>
+                <fullName>Fiscal Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grants Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Approver</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
         <picklistValues>
@@ -4474,37 +4500,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This record type can be used for Roles and Responsibilities on Grantee SiteVisit.</description>
         <label>Site Visit</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
-            <values>
-                <fullName>Fiscal Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Fiscal Reviewer</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Grants Administrator</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Key POC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Owner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Program Approver</fullName>
-                <default>true</default>
-            </values>
-            <values>
-                <fullName>Program Reviewer</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>BusinessRoleUSBE__c</picklist>
             <values>
                 <fullName>Executive Approver</fullName>
@@ -4532,6 +4527,37 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             </values>
             <values>
                 <fullName>Payment Approver 4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
+            <values>
+                <fullName>Fiscal Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal Reviewer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grants Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Key POC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Approver</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Program Reviewer</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4625,29 +4651,6 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <description>This record type can be used for Roles and Responsibilities on Grantee Strategic Plan and Service Area.</description>
         <label>Strategic Plan</label>
         <picklistValues>
-            <picklist>BusinessRole</picklist>
-            <values>
-                <fullName>Fiscal Approver</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Key POC</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Owner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Program Approver</fullName>
-                <default>true</default>
-            </values>
-            <values>
-                <fullName>Program Reviewer</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>BusinessRoleUSBE__c</picklist>
             <values>
                 <fullName>Executive Approver</fullName>
@@ -4675,6 +4678,29 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
             </values>
             <values>
                 <fullName>Payment Approver 4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BusinessRole__c</picklist>
+            <values>
+                <fullName>Fiscal Approver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Key POC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Approver</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Program Reviewer</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4777,4 +4803,5 @@ IF(NOT(ISBLANK(StrategicPlan__c)), StrategicPlan__c, null)))))))))))</formula>
         <errorConditionFormula>ISBLANK(TEXT(Position__c)) || (TEXT(Position__c) = &apos;None&apos;)</errorConditionFormula>
         <errorMessage>Position is required field</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

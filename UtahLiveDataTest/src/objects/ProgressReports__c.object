@@ -50,6 +50,7 @@
     <description>[Business] Progress Report on the Grant/Award</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
@@ -306,18 +307,22 @@
                 <value>
                     <fullName>Monthly</fullName>
                     <default>false</default>
+                    <label>Monthly</label>
                 </value>
                 <value>
                     <fullName>Quarterly</fullName>
                     <default>false</default>
+                    <label>Quarterly</label>
                 </value>
                 <value>
                     <fullName>Semi-Annually</fullName>
                     <default>false</default>
+                    <label>Semi-Annually</label>
                 </value>
                 <value>
                     <fullName>Annually</fullName>
                     <default>false</default>
+                    <label>Annually</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -630,14 +635,17 @@
                 <value>
                     <fullName>Program</fullName>
                     <default>false</default>
+                    <label>Program</label>
                 </value>
                 <value>
                     <fullName>Desk Review</fullName>
                     <default>false</default>
+                    <label>Desk Review</label>
                 </value>
                 <value>
                     <fullName>Progress</fullName>
                     <default>false</default>
+                    <label>Progress</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -656,10 +664,12 @@
                 <value>
                     <fullName>Fixed</fullName>
                     <default>false</default>
+                    <label>Fixed</label>
                 </value>
                 <value>
                     <fullName>Recurring</fullName>
                     <default>false</default>
+                    <label>Recurring</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -718,38 +728,47 @@
                 <value>
                     <fullName>Created</fullName>
                     <default>true</default>
+                    <label>Created</label>
                 </value>
                 <value>
                     <fullName>Submitted for Approval</fullName>
                     <default>false</default>
+                    <label>Submitted for Approval</label>
                 </value>
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
                 <value>
                     <fullName>Submitted to Grantor</fullName>
                     <default>false</default>
+                    <label>Submitted to Grantor</label>
                 </value>
                 <value>
                     <fullName>Inactive</fullName>
                     <default>false</default>
+                    <label>Inactive</label>
                 </value>
                 <value>
                     <fullName>Draft</fullName>
                     <default>false</default>
+                    <label>Draft</label>
                 </value>
                 <value>
                     <fullName>Internally Approved</fullName>
                     <default>false</default>
+                    <label>Internally Approved</label>
                 </value>
                 <value>
                     <fullName>Change Requested</fullName>
                     <default>false</default>
+                    <label>Change Requested</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1101,4 +1120,5 @@ AND( (ISBLANK(ProgramApprover__c) ),(ISBLANK(FiscalApprover__c)) )
         <fullName>SharingforReviewandApproval__c</fullName>
         <label>SharingforReviewandApproval</label>
     </sharingReasons>
+    <visibility>Public</visibility>
 </CustomObject>

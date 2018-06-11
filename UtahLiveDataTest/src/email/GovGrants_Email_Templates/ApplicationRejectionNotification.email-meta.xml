@@ -21,4 +21,5 @@ Your Application {!GO__Application__c.GO__Title__c} has been Rejected.
 Sincerely,
 Enterprise Grants Management System(EGMS)</textOnly>
     <type>html</type>
+    <uiType>Aloha</uiType>
 </EmailTemplate>

@@ -50,6 +50,7 @@
     <description>[Business] All the details for the Announcements are stored in this object ,It used two different recordTypes for Grantee and Grantor</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>true</enableFeeds>
     <enableHistory>true</enableHistory>
@@ -384,18 +385,22 @@
                 <value>
                     <fullName>Competitive</fullName>
                     <default>true</default>
+                    <label>Competitive</label>
                 </value>
                 <value>
                     <fullName>Sole Source/Directed</fullName>
                     <default>false</default>
+                    <label>Sole Source/Directed</label>
                 </value>
                 <value>
                     <fullName>Formula Grants</fullName>
                     <default>false</default>
+                    <label>Formula Grants</label>
                 </value>
                 <value>
                     <fullName>Sole Source/Formula</fullName>
                     <default>false</default>
+                    <label>Sole Source/Formula</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -458,10 +463,12 @@
                 <value>
                     <fullName>Yes</fullName>
                     <default>false</default>
+                    <label>Yes</label>
                 </value>
                 <value>
                     <fullName>No</fullName>
                     <default>true</default>
+                    <label>No</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -576,18 +583,22 @@
                 <value>
                     <fullName>Not Started</fullName>
                     <default>true</default>
+                    <label>Not Started</label>
                 </value>
                 <value>
                     <fullName>Ready for Review</fullName>
                     <default>false</default>
+                    <label>Ready for Review</label>
                 </value>
                 <value>
                     <fullName>In Progress</fullName>
                     <default>false</default>
+                    <label>In Progress</label>
                 </value>
                 <value>
                     <fullName>Completed</fullName>
                     <default>false</default>
+                    <label>Completed</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -801,14 +812,17 @@ Name of template.</inlineHelpText>
                 <value>
                     <fullName>Center for Disease Prevention(CDC)</fullName>
                     <default>false</default>
+                    <label>Center for Disease Prevention(CDC)</label>
                 </value>
                 <value>
                     <fullName>HRSA</fullName>
                     <default>false</default>
+                    <label>HRSA</label>
                 </value>
                 <value>
                     <fullName>Other</fullName>
                     <default>false</default>
+                    <label>Other</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -842,10 +856,12 @@ Name of template.</inlineHelpText>
                 <value>
                     <fullName>Budget Category Level</fullName>
                     <default>true</default>
+                    <label>Budget Category Level</label>
                 </value>
                 <value>
                     <fullName>Overall Level</fullName>
                     <default>false</default>
+                    <label>Overall Level</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -866,10 +882,12 @@ Name of template.</inlineHelpText>
                 <value>
                     <fullName>Construction</fullName>
                     <default>false</default>
+                    <label>Construction</label>
                 </value>
                 <value>
                     <fullName>Non-Construction</fullName>
                     <default>true</default>
+                    <label>Non-Construction</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -903,10 +921,12 @@ Name of template.</inlineHelpText>
                 <value>
                     <fullName>Only First Budget Period</fullName>
                     <default>true</default>
+                    <label>Only First Budget Period</label>
                 </value>
                 <value>
                     <fullName>All Budget Periods</fullName>
                     <default>false</default>
+                    <label>All Budget Periods</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -938,14 +958,17 @@ Name of template.</inlineHelpText>
                 <value>
                     <fullName>Strong</fullName>
                     <default>true</default>
+                    <label>Strong</label>
                 </value>
                 <value>
                     <fullName>Moderate</fullName>
                     <default>false</default>
+                    <label>Moderate</label>
                 </value>
                 <value>
                     <fullName>Poor</fullName>
                     <default>false</default>
+                    <label>Poor</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -988,90 +1011,112 @@ Name of template.</inlineHelpText>
                 <value>
                     <fullName>AG: Agriculture</fullName>
                     <default>false</default>
+                    <label>AG: Agriculture</label>
                 </value>
                 <value>
                     <fullName>AR: Arts</fullName>
                     <default>false</default>
+                    <label>AR: Arts</label>
                 </value>
                 <value>
                     <fullName>BC: Business and Commerce</fullName>
                     <default>false</default>
+                    <label>BC: Business and Commerce</label>
                 </value>
                 <value>
                     <fullName>CD: Community Development</fullName>
                     <default>false</default>
+                    <label>CD: Community Development</label>
                 </value>
                 <value>
                     <fullName>CP: Consumer Protection</fullName>
                     <default>false</default>
+                    <label>CP: Consumer Protection</label>
                 </value>
                 <value>
                     <fullName>DPR: Disaster Prevention and Relief</fullName>
                     <default>false</default>
+                    <label>DPR: Disaster Prevention and Relief</label>
                 </value>
                 <value>
                     <fullName>ED: Education</fullName>
                     <default>false</default>
+                    <label>ED: Education</label>
                 </value>
                 <value>
                     <fullName>ELT: Employment, Labor and Training</fullName>
                     <default>false</default>
+                    <label>ELT: Employment, Labor and Training</label>
                 </value>
                 <value>
                     <fullName>EN: Energy</fullName>
                     <default>false</default>
+                    <label>EN: Energy</label>
                 </value>
                 <value>
                     <fullName>ENV: Environment</fullName>
                     <default>false</default>
+                    <label>ENV: Environment</label>
                 </value>
                 <value>
                     <fullName>FN: Food and Nutrition</fullName>
                     <default>false</default>
+                    <label>FN: Food and Nutrition</label>
                 </value>
                 <value>
                     <fullName>HL: Health</fullName>
                     <default>false</default>
+                    <label>HL: Health</label>
                 </value>
                 <value>
                     <fullName>HO: Housing</fullName>
                     <default>false</default>
+                    <label>HO: Housing</label>
                 </value>
                 <value>
                     <fullName>HU: Humanities</fullName>
                     <default>false</default>
+                    <label>HU: Humanities</label>
                 </value>
                 <value>
                     <fullName>ISS: Income Security and Social Service</fullName>
                     <default>false</default>
+                    <label>ISS: Income Security and Social Service</label>
                 </value>
                 <value>
                     <fullName>IS: Information and Statistics</fullName>
                     <default>false</default>
+                    <label>IS: Information and Statistics</label>
                 </value>
                 <value>
                     <fullName>LJL: Law, Justice and Legal Services</fullName>
                     <default>false</default>
+                    <label>LJL: Law, Justice and Legal Services</label>
                 </value>
                 <value>
                     <fullName>NR: Natural Resources</fullName>
                     <default>false</default>
+                    <label>NR: Natural Resources</label>
                 </value>
                 <value>
                     <fullName>RD: Regional Development</fullName>
                     <default>false</default>
+                    <label>RD: Regional Development</label>
                 </value>
                 <value>
                     <fullName>ST: Science and Technology</fullName>
                     <default>false</default>
+                    <label>ST: Science and Technology</label>
                 </value>
                 <value>
                     <fullName>T: Transportation</fullName>
                     <default>false</default>
+                    <label>T: Transportation</label>
                 </value>
                 <value>
                     <fullName>O: Other</fullName>
                     <default>false</default>
+                    <label>O: Other</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1092,22 +1137,27 @@ Name of template.</inlineHelpText>
                 <value>
                     <fullName>Mandatory</fullName>
                     <default>false</default>
+                    <label>Mandatory</label>
                 </value>
                 <value>
                     <fullName>Discretionary</fullName>
                     <default>false</default>
+                    <label>Discretionary</label>
                 </value>
                 <value>
                     <fullName>Continuation</fullName>
                     <default>false</default>
+                    <label>Continuation</label>
                 </value>
                 <value>
                     <fullName>Earmark</fullName>
                     <default>false</default>
+                    <label>Earmark</label>
                 </value>
                 <value>
                     <fullName>Other</fullName>
                     <default>false</default>
+                    <label>Other</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1182,10 +1232,12 @@ Name of template.</inlineHelpText>
                 <value>
                     <fullName>Yes</fullName>
                     <default>false</default>
+                    <label>Yes</label>
                 </value>
                 <value>
                     <fullName>No</fullName>
                     <default>false</default>
+                    <label>No</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1254,10 +1306,12 @@ Name of template.</inlineHelpText>
                 <value>
                     <fullName>Yes</fullName>
                     <default>false</default>
+                    <label>Yes</label>
                 </value>
                 <value>
                     <fullName>No</fullName>
                     <default>false</default>
+                    <label>No</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1277,18 +1331,22 @@ Name of template.</inlineHelpText>
                 <value>
                     <fullName>Prince George’s</fullName>
                     <default>false</default>
+                    <label>Prince George’s</label>
                 </value>
                 <value>
                     <fullName>Montgomery County</fullName>
                     <default>false</default>
+                    <label>Montgomery County</label>
                 </value>
                 <value>
                     <fullName>Arlington</fullName>
                     <default>false</default>
+                    <label>Arlington</label>
                 </value>
                 <value>
                     <fullName>Fairfax</fullName>
                     <default>false</default>
+                    <label>Fairfax</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1447,10 +1505,12 @@ Name of template.</inlineHelpText>
                 <value>
                     <fullName>Yes</fullName>
                     <default>false</default>
+                    <label>Yes</label>
                 </value>
                 <value>
                     <fullName>No</fullName>
                     <default>true</default>
+                    <label>No</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1557,66 +1617,82 @@ Name of template.</inlineHelpText>
                 <value>
                     <fullName>Charter Schools</fullName>
                     <default>false</default>
+                    <label>Charter Schools</label>
                 </value>
                 <value>
                     <fullName>City or township governments</fullName>
                     <default>false</default>
+                    <label>City or township governments</label>
                 </value>
                 <value>
                     <fullName>County governments</fullName>
                     <default>false</default>
+                    <label>County governments</label>
                 </value>
                 <value>
                     <fullName>Independent school districts</fullName>
                     <default>false</default>
+                    <label>Independent school districts</label>
                 </value>
                 <value>
                     <fullName>Individuals</fullName>
                     <default>false</default>
+                    <label>Individuals</label>
                 </value>
                 <value>
                     <fullName>Non Profit</fullName>
                     <default>false</default>
+                    <label>Non Profit</label>
                 </value>
                 <value>
                     <fullName>Nonprofits having a 501 (C)(3)</fullName>
                     <default>false</default>
+                    <label>Nonprofits having a 501 (C)(3)</label>
                 </value>
                 <value>
                     <fullName>Private institutions of higher education</fullName>
                     <default>false</default>
+                    <label>Private institutions of higher education</label>
                 </value>
                 <value>
                     <fullName>Private School</fullName>
                     <default>false</default>
+                    <label>Private School</label>
                 </value>
                 <value>
                     <fullName>Public housing authorities</fullName>
                     <default>false</default>
+                    <label>Public housing authorities</label>
                 </value>
                 <value>
                     <fullName>Special district governments</fullName>
                     <default>false</default>
+                    <label>Special district governments</label>
                 </value>
                 <value>
                     <fullName>State governments</fullName>
                     <default>false</default>
+                    <label>State governments</label>
                 </value>
                 <value>
                     <fullName>State institutions for higher education</fullName>
                     <default>false</default>
+                    <label>State institutions for higher education</label>
                 </value>
                 <value>
                     <fullName>School Districts</fullName>
                     <default>false</default>
+                    <label>School Districts</label>
                 </value>
                 <value>
                     <fullName>Tribal Entity</fullName>
                     <default>false</default>
+                    <label>Tribal Entity</label>
                 </value>
                 <value>
                     <fullName>Other</fullName>
                     <default>false</default>
+                    <label>Other</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1946,38 +2022,47 @@ Name of template.</inlineHelpText>
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Published</fullName>
                     <default>false</default>
+                    <label>Published</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
                 <value>
                     <fullName>Created</fullName>
                     <default>true</default>
+                    <label>Created</label>
                 </value>
                 <value>
                     <fullName>Submitted for Approval</fullName>
                     <default>false</default>
+                    <label>Submitted for Approval</label>
                 </value>
                 <value>
                     <fullName>Reviewed</fullName>
                     <default>false</default>
+                    <label>Reviewed</label>
                 </value>
                 <value>
                     <fullName>Cancelled</fullName>
                     <default>false</default>
+                    <label>Cancelled</label>
                 </value>
                 <value>
                     <fullName>Closed</fullName>
                     <default>false</default>
+                    <label>Closed</label>
                 </value>
                 <value>
                     <fullName>Disapproved</fullName>
                     <default>false</default>
+                    <label>Disapproved</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -2071,166 +2156,207 @@ Name of template.</inlineHelpText>
                 <value>
                     <fullName>2000</fullName>
                     <default>false</default>
+                    <label>2000</label>
                 </value>
                 <value>
                     <fullName>2001</fullName>
                     <default>false</default>
+                    <label>2001</label>
                 </value>
                 <value>
                     <fullName>2002</fullName>
                     <default>false</default>
+                    <label>2002</label>
                 </value>
                 <value>
                     <fullName>2003</fullName>
                     <default>false</default>
+                    <label>2003</label>
                 </value>
                 <value>
                     <fullName>2004</fullName>
                     <default>false</default>
+                    <label>2004</label>
                 </value>
                 <value>
                     <fullName>2005</fullName>
                     <default>false</default>
+                    <label>2005</label>
                 </value>
                 <value>
                     <fullName>2006</fullName>
                     <default>false</default>
+                    <label>2006</label>
                 </value>
                 <value>
                     <fullName>2007</fullName>
                     <default>false</default>
+                    <label>2007</label>
                 </value>
                 <value>
                     <fullName>2008</fullName>
                     <default>false</default>
+                    <label>2008</label>
                 </value>
                 <value>
                     <fullName>2009</fullName>
                     <default>false</default>
+                    <label>2009</label>
                 </value>
                 <value>
                     <fullName>2010</fullName>
                     <default>false</default>
+                    <label>2010</label>
                 </value>
                 <value>
                     <fullName>2011</fullName>
                     <default>false</default>
+                    <label>2011</label>
                 </value>
                 <value>
                     <fullName>2012</fullName>
                     <default>false</default>
+                    <label>2012</label>
                 </value>
                 <value>
                     <fullName>2013</fullName>
                     <default>false</default>
+                    <label>2013</label>
                 </value>
                 <value>
                     <fullName>2014</fullName>
                     <default>false</default>
+                    <label>2014</label>
                 </value>
                 <value>
                     <fullName>2015</fullName>
                     <default>false</default>
+                    <label>2015</label>
                 </value>
                 <value>
                     <fullName>2016</fullName>
                     <default>false</default>
+                    <label>2016</label>
                 </value>
                 <value>
                     <fullName>2017</fullName>
                     <default>false</default>
+                    <label>2017</label>
                 </value>
                 <value>
                     <fullName>2018</fullName>
                     <default>false</default>
+                    <label>2018</label>
                 </value>
                 <value>
                     <fullName>2019</fullName>
                     <default>false</default>
+                    <label>2019</label>
                 </value>
                 <value>
                     <fullName>2020</fullName>
                     <default>false</default>
+                    <label>2020</label>
                 </value>
                 <value>
                     <fullName>2021</fullName>
                     <default>false</default>
+                    <label>2021</label>
                 </value>
                 <value>
                     <fullName>2022</fullName>
                     <default>false</default>
+                    <label>2022</label>
                 </value>
                 <value>
                     <fullName>2023</fullName>
                     <default>false</default>
+                    <label>2023</label>
                 </value>
                 <value>
                     <fullName>2024</fullName>
                     <default>false</default>
+                    <label>2024</label>
                 </value>
                 <value>
                     <fullName>2025</fullName>
                     <default>false</default>
+                    <label>2025</label>
                 </value>
                 <value>
                     <fullName>2026</fullName>
                     <default>false</default>
+                    <label>2026</label>
                 </value>
                 <value>
                     <fullName>2027</fullName>
                     <default>false</default>
+                    <label>2027</label>
                 </value>
                 <value>
                     <fullName>2028</fullName>
                     <default>false</default>
+                    <label>2028</label>
                 </value>
                 <value>
                     <fullName>2029</fullName>
                     <default>false</default>
+                    <label>2029</label>
                 </value>
                 <value>
                     <fullName>2030</fullName>
                     <default>false</default>
+                    <label>2030</label>
                 </value>
                 <value>
                     <fullName>2031</fullName>
                     <default>false</default>
+                    <label>2031</label>
                 </value>
                 <value>
                     <fullName>2032</fullName>
                     <default>false</default>
+                    <label>2032</label>
                 </value>
                 <value>
                     <fullName>2033</fullName>
                     <default>false</default>
+                    <label>2033</label>
                 </value>
                 <value>
                     <fullName>2034</fullName>
                     <default>false</default>
+                    <label>2034</label>
                 </value>
                 <value>
                     <fullName>2035</fullName>
                     <default>false</default>
+                    <label>2035</label>
                 </value>
                 <value>
                     <fullName>2036</fullName>
                     <default>false</default>
+                    <label>2036</label>
                 </value>
                 <value>
                     <fullName>2037</fullName>
                     <default>false</default>
+                    <label>2037</label>
                 </value>
                 <value>
                     <fullName>2038</fullName>
                     <default>false</default>
+                    <label>2038</label>
                 </value>
                 <value>
                     <fullName>2039</fullName>
                     <default>false</default>
+                    <label>2039</label>
                 </value>
                 <value>
                     <fullName>2040</fullName>
                     <default>false</default>
+                    <label>2040</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -2295,18 +2421,22 @@ Name of template.</inlineHelpText>
                 <value>
                     <fullName>Federal</fullName>
                     <default>true</default>
+                    <label>Federal</label>
                 </value>
                 <value>
                     <fullName>State</fullName>
                     <default>false</default>
+                    <label>State</label>
                 </value>
                 <value>
                     <fullName>NGO</fullName>
                     <default>false</default>
+                    <label>NGO</label>
                 </value>
                 <value>
                     <fullName>Internal</fullName>
                     <default>false</default>
+                    <label>Internal</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -2328,22 +2458,27 @@ Name of template.</inlineHelpText>
                 <value>
                     <fullName>Created</fullName>
                     <default>false</default>
+                    <label>Created</label>
                 </value>
                 <value>
                     <fullName>Submitted for Approval</fullName>
                     <default>false</default>
+                    <label>Submitted for Approval</label>
                 </value>
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Notified</fullName>
                     <default>false</default>
+                    <label>Notified</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -2363,18 +2498,22 @@ Name of template.</inlineHelpText>
                 <value>
                     <fullName>G: Grant</fullName>
                     <default>false</default>
+                    <label>G: Grant</label>
                 </value>
                 <value>
                     <fullName>CA: Cooperative Agreement</fullName>
                     <default>false</default>
+                    <label>CA: Cooperative Agreement</label>
                 </value>
                 <value>
                     <fullName>O: Other</fullName>
                     <default>false</default>
+                    <label>O: Other</label>
                 </value>
                 <value>
                     <fullName>PC: Procurement Contract</fullName>
                     <default>false</default>
+                    <label>PC: Procurement Contract</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -2496,10 +2635,12 @@ ISPICKVAL( Status__c , &apos;Closed&apos;))</formula>
                 <value>
                     <fullName>Yes</fullName>
                     <default>true</default>
+                    <label>Yes</label>
                 </value>
                 <value>
                     <fullName>No</fullName>
                     <default>false</default>
+                    <label>No</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -2782,22 +2923,27 @@ text(Status__c) != &apos;Expired&apos;))</formula>
                 <value>
                     <fullName>1</fullName>
                     <default>false</default>
+                    <label>1</label>
                 </value>
                 <value>
                     <fullName>2</fullName>
                     <default>false</default>
+                    <label>2</label>
                 </value>
                 <value>
                     <fullName>3</fullName>
                     <default>false</default>
+                    <label>3</label>
                 </value>
                 <value>
                     <fullName>4</fullName>
                     <default>false</default>
+                    <label>4</label>
                 </value>
                 <value>
                     <fullName>5</fullName>
                     <default>false</default>
+                    <label>5</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -3146,14 +3292,17 @@ text(Status__c) != &apos;Expired&apos;))</formula>
                 <value>
                     <fullName>Strong</fullName>
                     <default>true</default>
+                    <label>Strong</label>
                 </value>
                 <value>
                     <fullName>Moderate</fullName>
                     <default>false</default>
+                    <label>Moderate</label>
                 </value>
                 <value>
                     <fullName>Poor</fullName>
                     <default>false</default>
+                    <label>Poor</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -3293,14 +3442,17 @@ text(Status__c) != &apos;Expired&apos;))</formula>
                 <value>
                     <fullName>TBD</fullName>
                     <default>true</default>
+                    <label>TBD</label>
                 </value>
                 <value>
                     <fullName>Lost</fullName>
                     <default>false</default>
+                    <label>Lost</label>
                 </value>
                 <value>
                     <fullName>Win</fullName>
                     <default>false</default>
+                    <label>Win</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -3358,6 +3510,7 @@ text(Status__c) != &apos;Expired&apos;))</formula>
                 <value>
                     <fullName>Local</fullName>
                     <default>false</default>
+                    <label>Local</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -3390,14 +3543,17 @@ text(Status__c) != &apos;Expired&apos;))</formula>
                 <value>
                     <fullName>Strong</fullName>
                     <default>true</default>
+                    <label>Strong</label>
                 </value>
                 <value>
                     <fullName>Moderate</fullName>
                     <default>false</default>
+                    <label>Moderate</label>
                 </value>
                 <value>
                     <fullName>Poor</fullName>
                     <default>false</default>
+                    <label>Poor</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -3599,14 +3755,17 @@ text(Status__c) != &apos;Expired&apos;))</formula>
                 <value>
                     <fullName>Not Required</fullName>
                     <default>true</default>
+                    <label>Not Required</label>
                 </value>
                 <value>
                     <fullName>Required</fullName>
                     <default>false</default>
+                    <label>Required</label>
                 </value>
                 <value>
                     <fullName>Recommended</fullName>
                     <default>false</default>
+                    <label>Recommended</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -3672,46 +3831,57 @@ text(Status__c) != &apos;Expired&apos;))</formula>
                 <value>
                     <fullName>0%</fullName>
                     <default>false</default>
+                    <label>0%</label>
                 </value>
                 <value>
                     <fullName>10%</fullName>
                     <default>false</default>
+                    <label>10%</label>
                 </value>
                 <value>
                     <fullName>20%</fullName>
                     <default>false</default>
+                    <label>20%</label>
                 </value>
                 <value>
                     <fullName>30%</fullName>
                     <default>false</default>
+                    <label>30%</label>
                 </value>
                 <value>
                     <fullName>40%</fullName>
                     <default>false</default>
+                    <label>40%</label>
                 </value>
                 <value>
                     <fullName>50%</fullName>
                     <default>false</default>
+                    <label>50%</label>
                 </value>
                 <value>
                     <fullName>60%</fullName>
                     <default>false</default>
+                    <label>60%</label>
                 </value>
                 <value>
                     <fullName>70%</fullName>
                     <default>false</default>
+                    <label>70%</label>
                 </value>
                 <value>
                     <fullName>80%</fullName>
                     <default>false</default>
+                    <label>80%</label>
                 </value>
                 <value>
                     <fullName>90%</fullName>
                     <default>false</default>
+                    <label>90%</label>
                 </value>
                 <value>
                     <fullName>100%</fullName>
                     <default>true</default>
+                    <label>100%</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -3882,26 +4052,32 @@ text(Status__c) != &apos;Expired&apos;))</formula>
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Disapproved</fullName>
                     <default>false</default>
+                    <label>Disapproved</label>
                 </value>
                 <value>
                     <fullName>Published</fullName>
                     <default>false</default>
+                    <label>Published</label>
                 </value>
                 <value>
                     <fullName>Created</fullName>
                     <default>false</default>
+                    <label>Created</label>
                 </value>
                 <value>
                     <fullName>Submitted for Approval</fullName>
                     <default>false</default>
+                    <label>Submitted for Approval</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -3953,22 +4129,27 @@ ISPICKVAL( RFAStatus__c , &apos;Published&apos;))</formula>
                 <value>
                     <fullName>1</fullName>
                     <default>false</default>
+                    <label>1</label>
                 </value>
                 <value>
                     <fullName>2</fullName>
                     <default>false</default>
+                    <label>2</label>
                 </value>
                 <value>
                     <fullName>3</fullName>
                     <default>false</default>
+                    <label>3</label>
                 </value>
                 <value>
                     <fullName>4</fullName>
                     <default>false</default>
+                    <label>4</label>
                 </value>
                 <value>
                     <fullName>5</fullName>
                     <default>false</default>
+                    <label>5</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -4104,14 +4285,17 @@ ISPICKVAL( RFAStatus__c , &apos;Published&apos;))</formula>
                 <value>
                     <fullName>Strong</fullName>
                     <default>true</default>
+                    <label>Strong</label>
                 </value>
                 <value>
                     <fullName>Moderate</fullName>
                     <default>false</default>
+                    <label>Moderate</label>
                 </value>
                 <value>
                     <fullName>Poor</fullName>
                     <default>false</default>
+                    <label>Poor</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -4131,18 +4315,22 @@ ISPICKVAL( RFAStatus__c , &apos;Published&apos;))</formula>
                 <value>
                     <fullName>Federal</fullName>
                     <default>false</default>
+                    <label>Federal</label>
                 </value>
                 <value>
                     <fullName>State</fullName>
                     <default>false</default>
+                    <label>State</label>
                 </value>
                 <value>
                     <fullName>NGO</fullName>
                     <default>false</default>
+                    <label>NGO</label>
                 </value>
                 <value>
                     <fullName>other</fullName>
                     <default>false</default>
+                    <label>other</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -4191,58 +4379,72 @@ ISPICKVAL( RFAStatus__c , &apos;Published&apos;))</formula>
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Archived</fullName>
                     <default>false</default>
+                    <label>Archived</label>
                 </value>
                 <value>
                     <fullName>Change Requested</fullName>
                     <default>false</default>
+                    <label>Change Requested</label>
                 </value>
                 <value>
                     <fullName>Closed</fullName>
                     <default>false</default>
+                    <label>Closed</label>
                 </value>
                 <value>
                     <fullName>Converted to Application</fullName>
                     <default>false</default>
+                    <label>Converted to Application</label>
                 </value>
                 <value>
                     <fullName>Converted to Pre-Application</fullName>
                     <default>false</default>
+                    <label>Converted to Pre-Application</label>
                 </value>
                 <value>
                     <fullName>Created</fullName>
                     <default>true</default>
+                    <label>Created</label>
                 </value>
                 <value>
                     <fullName>Published</fullName>
                     <default>false</default>
+                    <label>Published</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
                 <value>
                     <fullName>RFA Approved</fullName>
                     <default>false</default>
+                    <label>RFA Approved</label>
                 </value>
                 <value>
                     <fullName>RFA Published</fullName>
                     <default>false</default>
+                    <label>RFA Published</label>
                 </value>
                 <value>
                     <fullName>RFA Rejected</fullName>
                     <default>false</default>
+                    <label>RFA Rejected</label>
                 </value>
                 <value>
                     <fullName>RFA Submitted for Approval</fullName>
                     <default>false</default>
+                    <label>RFA Submitted for Approval</label>
                 </value>
                 <value>
                     <fullName>Submitted for Approval</fullName>
                     <default>false</default>
+                    <label>Submitted for Approval</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -4334,10 +4536,12 @@ ISPICKVAL( RFAStatus__c , &apos;Published&apos;))</formula>
                 <value>
                     <fullName>Grantee</fullName>
                     <default>false</default>
+                    <label>Grantee</label>
                 </value>
                 <value>
                     <fullName>Grantor</fullName>
                     <default>false</default>
+                    <label>Grantor</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -4371,34 +4575,42 @@ ISPICKVAL( RFAStatus__c , &apos;Published&apos;))</formula>
                 <value>
                     <fullName>1</fullName>
                     <default>true</default>
+                    <label>1</label>
                 </value>
                 <value>
                     <fullName>2</fullName>
                     <default>false</default>
+                    <label>2</label>
                 </value>
                 <value>
                     <fullName>3</fullName>
                     <default>false</default>
+                    <label>3</label>
                 </value>
                 <value>
                     <fullName>4</fullName>
                     <default>false</default>
+                    <label>4</label>
                 </value>
                 <value>
                     <fullName>5</fullName>
                     <default>false</default>
+                    <label>5</label>
                 </value>
                 <value>
                     <fullName>6</fullName>
                     <default>false</default>
+                    <label>6</label>
                 </value>
                 <value>
                     <fullName>7</fullName>
                     <default>false</default>
+                    <label>7</label>
                 </value>
                 <value>
                     <fullName>8</fullName>
                     <default>false</default>
+                    <label>8</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -6524,4 +6736,5 @@ ISBLANK(  EstimatedFundingAmountJustification__c ),
         <errorConditionFormula>AND(MatchRequired__c, ISNULL(GranteeMatch__c) )</errorConditionFormula>
         <errorMessage>Sub Recipient Match % needs to be entered</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

@@ -50,6 +50,7 @@
     <description>[Business] Junction object between Amendment Request and Amendment Type</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -122,4 +123,5 @@
         <errorConditionFormula>ISBLANK(Justification__c)</errorConditionFormula>
         <errorMessage>Justification field cannot be left blank</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

@@ -46,6 +46,7 @@
     <description>[Business] Details of the Grant Progress Report</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -247,10 +248,12 @@
                 <value>
                     <fullName>Program</fullName>
                     <default>true</default>
+                    <label>Program</label>
                 </value>
                 <value>
                     <fullName>Fiscal</fullName>
                     <default>false</default>
+                    <label>Fiscal</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -264,4 +267,5 @@
     <pluralLabel>Progress Report Details</pluralLabel>
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

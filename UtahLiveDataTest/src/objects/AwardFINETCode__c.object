@@ -45,6 +45,7 @@
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>true</enableActivities>
     <enableBulkApi>false</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
@@ -150,14 +151,17 @@
                 <value>
                     <fullName>Draft</fullName>
                     <default>false</default>
+                    <label>Draft</label>
                 </value>
                 <value>
                     <fullName>Pending</fullName>
                     <default>false</default>
+                    <label>Pending</label>
                 </value>
                 <value>
                     <fullName>Final</fullName>
                     <default>false</default>
+                    <label>Final</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -178,14 +182,17 @@
                 <value>
                     <fullName>Held</fullName>
                     <default>false</default>
+                    <label>Held</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
                 <value>
                     <fullName>Submitted</fullName>
                     <default>false</default>
+                    <label>Submitted</label>
                 </value>
             </valueSetDefinition>
             <valueSettings>
@@ -354,4 +361,5 @@
         <errorConditionFormula>SpentAmount__c &gt; Amount__c</errorConditionFormula>
         <errorMessage>Spent Amount Must be Less Than Total Amount</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

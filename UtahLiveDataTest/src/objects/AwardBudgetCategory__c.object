@@ -50,6 +50,7 @@
     <description>[Business] Defines the Budget categories on the Award</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
@@ -246,14 +247,17 @@
                 <value>
                     <fullName>Not Started</fullName>
                     <default>false</default>
+                    <label>Not Started</label>
                 </value>
                 <value>
                     <fullName>In Progress</fullName>
                     <default>false</default>
+                    <label>In Progress</label>
                 </value>
                 <value>
                     <fullName>Completed</fullName>
                     <default>false</default>
+                    <label>Completed</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1128,4 +1132,5 @@ IF(LastGrantorApprovedBudget__c != 0, ( ProposedBudgetRevision__c - LastGrantorA
         <errorConditionFormula>RemainingBudget__c&lt;0</errorConditionFormula>
         <errorMessage>The remaining budget cannot be less than zero.</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

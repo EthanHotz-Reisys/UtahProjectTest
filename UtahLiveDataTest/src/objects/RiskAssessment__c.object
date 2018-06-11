@@ -50,6 +50,7 @@
     <description>[Business] This will be part of Grant Making Module.</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
@@ -355,6 +356,7 @@
                 <value>
                     <fullName>Fiscal</fullName>
                     <default>false</default>
+                    <label>Fiscal</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1049,14 +1051,17 @@ IF(ISNUMBER(ActivityRisk7__c),VALUE(ActivityRisk7__c), 0)+IF(ISNUMBER(ActivityRi
                 <value>
                     <fullName>Low</fullName>
                     <default>true</default>
+                    <label>Low</label>
                 </value>
                 <value>
                     <fullName>Medium</fullName>
                     <default>false</default>
+                    <label>Medium</label>
                 </value>
                 <value>
                     <fullName>High</fullName>
                     <default>false</default>
+                    <label>High</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1464,42 +1469,52 @@ IF(ISNUMBER(ProgramQuestion7__c),VALUE(ProgramQuestion7__c), 0)+IF(ISNUMBER(Prog
                 <value>
                     <fullName>1</fullName>
                     <default>false</default>
+                    <label>1</label>
                 </value>
                 <value>
                     <fullName>2</fullName>
                     <default>false</default>
+                    <label>2</label>
                 </value>
                 <value>
                     <fullName>3</fullName>
                     <default>false</default>
+                    <label>3</label>
                 </value>
                 <value>
                     <fullName>4</fullName>
                     <default>false</default>
+                    <label>4</label>
                 </value>
                 <value>
                     <fullName>5</fullName>
                     <default>false</default>
+                    <label>5</label>
                 </value>
                 <value>
                     <fullName>6</fullName>
                     <default>false</default>
+                    <label>6</label>
                 </value>
                 <value>
                     <fullName>7</fullName>
                     <default>false</default>
+                    <label>7</label>
                 </value>
                 <value>
                     <fullName>8</fullName>
                     <default>false</default>
+                    <label>8</label>
                 </value>
                 <value>
                     <fullName>9</fullName>
                     <default>false</default>
+                    <label>9</label>
                 </value>
                 <value>
                     <fullName>10</fullName>
                     <default>false</default>
+                    <label>10</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1518,42 +1533,52 @@ IF(ISNUMBER(ProgramQuestion7__c),VALUE(ProgramQuestion7__c), 0)+IF(ISNUMBER(Prog
                 <value>
                     <fullName>1</fullName>
                     <default>false</default>
+                    <label>1</label>
                 </value>
                 <value>
                     <fullName>2</fullName>
                     <default>false</default>
+                    <label>2</label>
                 </value>
                 <value>
                     <fullName>3</fullName>
                     <default>false</default>
+                    <label>3</label>
                 </value>
                 <value>
                     <fullName>4</fullName>
                     <default>false</default>
+                    <label>4</label>
                 </value>
                 <value>
                     <fullName>5</fullName>
                     <default>false</default>
+                    <label>5</label>
                 </value>
                 <value>
                     <fullName>6</fullName>
                     <default>false</default>
+                    <label>6</label>
                 </value>
                 <value>
                     <fullName>7</fullName>
                     <default>false</default>
+                    <label>7</label>
                 </value>
                 <value>
                     <fullName>8</fullName>
                     <default>false</default>
+                    <label>8</label>
                 </value>
                 <value>
                     <fullName>9</fullName>
                     <default>false</default>
+                    <label>9</label>
                 </value>
                 <value>
                     <fullName>10</fullName>
                     <default>false</default>
+                    <label>10</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1572,42 +1597,52 @@ IF(ISNUMBER(ProgramQuestion7__c),VALUE(ProgramQuestion7__c), 0)+IF(ISNUMBER(Prog
                 <value>
                     <fullName>1</fullName>
                     <default>false</default>
+                    <label>1</label>
                 </value>
                 <value>
                     <fullName>2</fullName>
                     <default>false</default>
+                    <label>2</label>
                 </value>
                 <value>
                     <fullName>3</fullName>
                     <default>false</default>
+                    <label>3</label>
                 </value>
                 <value>
                     <fullName>4</fullName>
                     <default>false</default>
+                    <label>4</label>
                 </value>
                 <value>
                     <fullName>5</fullName>
                     <default>false</default>
+                    <label>5</label>
                 </value>
                 <value>
                     <fullName>6</fullName>
                     <default>false</default>
+                    <label>6</label>
                 </value>
                 <value>
                     <fullName>7</fullName>
                     <default>false</default>
+                    <label>7</label>
                 </value>
                 <value>
                     <fullName>8</fullName>
                     <default>false</default>
+                    <label>8</label>
                 </value>
                 <value>
                     <fullName>9</fullName>
                     <default>false</default>
+                    <label>9</label>
                 </value>
                 <value>
                     <fullName>10</fullName>
                     <default>false</default>
+                    <label>10</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1626,42 +1661,52 @@ IF(ISNUMBER(ProgramQuestion7__c),VALUE(ProgramQuestion7__c), 0)+IF(ISNUMBER(Prog
                 <value>
                     <fullName>1</fullName>
                     <default>false</default>
+                    <label>1</label>
                 </value>
                 <value>
                     <fullName>2</fullName>
                     <default>false</default>
+                    <label>2</label>
                 </value>
                 <value>
                     <fullName>3</fullName>
                     <default>false</default>
+                    <label>3</label>
                 </value>
                 <value>
                     <fullName>4</fullName>
                     <default>false</default>
+                    <label>4</label>
                 </value>
                 <value>
                     <fullName>5</fullName>
                     <default>false</default>
+                    <label>5</label>
                 </value>
                 <value>
                     <fullName>6</fullName>
                     <default>false</default>
+                    <label>6</label>
                 </value>
                 <value>
                     <fullName>7</fullName>
                     <default>false</default>
+                    <label>7</label>
                 </value>
                 <value>
                     <fullName>8</fullName>
                     <default>false</default>
+                    <label>8</label>
                 </value>
                 <value>
                     <fullName>9</fullName>
                     <default>false</default>
+                    <label>9</label>
                 </value>
                 <value>
                     <fullName>10</fullName>
                     <default>false</default>
+                    <label>10</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1680,42 +1725,52 @@ IF(ISNUMBER(ProgramQuestion7__c),VALUE(ProgramQuestion7__c), 0)+IF(ISNUMBER(Prog
                 <value>
                     <fullName>1</fullName>
                     <default>false</default>
+                    <label>1</label>
                 </value>
                 <value>
                     <fullName>2</fullName>
                     <default>false</default>
+                    <label>2</label>
                 </value>
                 <value>
                     <fullName>3</fullName>
                     <default>false</default>
+                    <label>3</label>
                 </value>
                 <value>
                     <fullName>4</fullName>
                     <default>false</default>
+                    <label>4</label>
                 </value>
                 <value>
                     <fullName>5</fullName>
                     <default>false</default>
+                    <label>5</label>
                 </value>
                 <value>
                     <fullName>6</fullName>
                     <default>false</default>
+                    <label>6</label>
                 </value>
                 <value>
                     <fullName>7</fullName>
                     <default>false</default>
+                    <label>7</label>
                 </value>
                 <value>
                     <fullName>8</fullName>
                     <default>false</default>
+                    <label>8</label>
                 </value>
                 <value>
                     <fullName>9</fullName>
                     <default>false</default>
+                    <label>9</label>
                 </value>
                 <value>
                     <fullName>10</fullName>
                     <default>false</default>
+                    <label>10</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1734,42 +1789,52 @@ IF(ISNUMBER(ProgramQuestion7__c),VALUE(ProgramQuestion7__c), 0)+IF(ISNUMBER(Prog
                 <value>
                     <fullName>1</fullName>
                     <default>false</default>
+                    <label>1</label>
                 </value>
                 <value>
                     <fullName>2</fullName>
                     <default>false</default>
+                    <label>2</label>
                 </value>
                 <value>
                     <fullName>3</fullName>
                     <default>false</default>
+                    <label>3</label>
                 </value>
                 <value>
                     <fullName>4</fullName>
                     <default>false</default>
+                    <label>4</label>
                 </value>
                 <value>
                     <fullName>5</fullName>
                     <default>false</default>
+                    <label>5</label>
                 </value>
                 <value>
                     <fullName>6</fullName>
                     <default>false</default>
+                    <label>6</label>
                 </value>
                 <value>
                     <fullName>7</fullName>
                     <default>false</default>
+                    <label>7</label>
                 </value>
                 <value>
                     <fullName>8</fullName>
                     <default>false</default>
+                    <label>8</label>
                 </value>
                 <value>
                     <fullName>9</fullName>
                     <default>false</default>
+                    <label>9</label>
                 </value>
                 <value>
                     <fullName>10</fullName>
                     <default>false</default>
+                    <label>10</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1800,14 +1865,17 @@ IF(ISNUMBER(ProgramQuestion7__c),VALUE(ProgramQuestion7__c), 0)+IF(ISNUMBER(Prog
                 <value>
                     <fullName>Pre-Award</fullName>
                     <default>false</default>
+                    <label>Pre-Award</label>
                 </value>
                 <value>
                     <fullName>Post-Award</fullName>
                     <default>false</default>
+                    <label>Post-Award</label>
                 </value>
                 <value>
                     <fullName>Other</fullName>
                     <default>false</default>
+                    <label>Other</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1826,14 +1894,17 @@ IF(ISNUMBER(ProgramQuestion7__c),VALUE(ProgramQuestion7__c), 0)+IF(ISNUMBER(Prog
                 <value>
                     <fullName>In Progress</fullName>
                     <default>true</default>
+                    <label>In Progress</label>
                 </value>
                 <value>
                     <fullName>Draft</fullName>
                     <default>false</default>
+                    <label>Draft</label>
                 </value>
                 <value>
                     <fullName>Completed</fullName>
                     <default>false</default>
+                    <label>Completed</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1975,14 +2046,17 @@ IF(ISNUMBER(ActivityRisk17__c),1, 0)+IF(ISNUMBER(ActivityRisk18__c),1, 0)</formu
                 <value>
                     <fullName>Program</fullName>
                     <default>false</default>
+                    <label>Program</label>
                 </value>
                 <value>
                     <fullName>Grantee</fullName>
                     <default>false</default>
+                    <label>Grantee</label>
                 </value>
                 <value>
                     <fullName>Grant Award</fullName>
                     <default>false</default>
+                    <label>Grant Award</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -2061,4 +2135,5 @@ IF(ISNUMBER(ActivityRisk17__c),1, 0)+IF(ISNUMBER(ActivityRisk18__c),1, 0)</formu
         <errorConditionFormula>IF( TEXT(Status__c) == &apos;In Progress&apos; &amp;&amp; AssessmentDate__c &gt; Today(), true,false)</errorConditionFormula>
         <errorMessage>Date selected is in future, Please select correct assessment date</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

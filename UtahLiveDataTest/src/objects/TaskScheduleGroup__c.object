@@ -50,6 +50,7 @@
     <description>[Business] Whenever a Tasks is assigned to a group of Users (Can be DOH specific)</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
@@ -207,18 +208,22 @@
                 <value>
                     <fullName>Not Sent for Approval</fullName>
                     <default>true</default>
+                    <label>Not Sent for Approval</label>
                 </value>
                 <value>
                     <fullName>Sent for Approval</fullName>
                     <default>false</default>
+                    <label>Sent for Approval</label>
                 </value>
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -278,4 +283,5 @@
         <errorDisplayField>EndDate__c</errorDisplayField>
         <errorMessage>Due Date cannot be earlier than Today’s Date</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

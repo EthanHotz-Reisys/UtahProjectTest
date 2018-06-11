@@ -1,4 +1,0 @@
-<apex:page showHeader="false" sidebar="false" controller="GNT.AttachmentDownloadCtrl" action="{!redirect}">
-	<br/><br/>
-	<center>Downloading document....</center>
-</apex:page>

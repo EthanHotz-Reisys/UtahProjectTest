@@ -45,6 +45,7 @@
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>true</enableReports>
@@ -94,55 +95,68 @@
                 <value>
                     <fullName>1-r_unit__c-IntegUtahUnitRequestBatch</fullName>
                     <default>false</default>
+                    <label>1-r_unit__c-IntegUtahUnitRequestBatch</label>
                 </value>
                 <value>
                     <fullName>2-r_fund__c-IntegUtahFundRequestBatch</fullName>
                     <default>false</default>
+                    <label>2-r_fund__c-IntegUtahFundRequestBatch</label>
                 </value>
                 <value>
                     <fullName>3-r_appr__c-IntegUtahAppropriationRequestBatch</fullName>
                     <default>false</default>
+                    <label>3-r_appr__c-IntegUtahAppropriationRequestBatch</label>
                 </value>
                 <value>
                     <fullName>4-r_obj__c-IntegUtahObjectRequestBatch</fullName>
                     <default>false</default>
+                    <label>4-r_obj__c-IntegUtahObjectRequestBatch</label>
                 </value>
                 <value>
                     <fullName>5-r_pgrp__c-IntegUtahProgramGroupRequestBatch</fullName>
                     <default>false</default>
+                    <label>5-r_pgrp__c-IntegUtahProgramGroupRequestBatch</label>
                 </value>
                 <value>
                     <fullName>6-r_ptype__c-IntegUtahProgramTypeRequestBatch</fullName>
                     <default>false</default>
+                    <label>6-r_ptype__c-IntegUtahProgramTypeRequestBatch</label>
                 </value>
                 <value>
                     <fullName>7-r_pcls__c-IntegUtahProgramClassRequestBatch</fullName>
                     <default>false</default>
+                    <label>7-r_pcls__c-IntegUtahProgramClassRequestBatch</label>
                 </value>
                 <value>
                     <fullName>8-r_pcat__c-IntegUtahProgramCategoryRequestBatch</fullName>
                     <default>false</default>
+                    <label>8-r_pcat__c-IntegUtahProgramCategoryRequestBatch</label>
                 </value>
                 <value>
                     <fullName>9-r_mjr_prog__c-IntegUtahMajorProgramRequestBatch</fullName>
                     <default>false</default>
+                    <label>9-r_mjr_prog__c-IntegUtahMajorProgramRequestBatch</label>
                 </value>
                 <value>
                     <fullName>10-r_fprfl__c-IntegUtahFundingInferenceRequestBatch</fullName>
                     <default>false</default>
+                    <label>10-r_fprfl__c-IntegUtahFundingInferenceRequestBatch</label>
                 </value>
                 <value>
                     <fullName>12-vend_cust__c-IntegUtahVendorRequestBatch</fullName>
                     <default>false</default>
+                    <label>12-vend_cust__c-IntegUtahVendorRequestBatch</label>
                 </value>
                 <value>
                     <fullName>13-r_ad-IntegUtahAddressRequestBatch</fullName>
                     <default>false</default>
+                    <label>13-r_ad-IntegUtahAddressRequestBatch</label>
                 </value>
                 <value>
                     <fullName>11-r_prog__c-IntegUtahProgramRequestBatch</fullName>
                     <default>false</default>
                     <isActive>false</isActive>
+                    <label>11-r_prog__c-IntegUtahProgramRequestBatch</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -177,18 +191,22 @@
                 <value>
                     <fullName>Queued</fullName>
                     <default>true</default>
+                    <label>Queued</label>
                 </value>
                 <value>
                     <fullName>Processing</fullName>
                     <default>false</default>
+                    <label>Processing</label>
                 </value>
                 <value>
                     <fullName>Complete</fullName>
                     <default>false</default>
+                    <label>Complete</label>
                 </value>
                 <value>
                     <fullName>Error</fullName>
                     <default>false</default>
+                    <label>Error</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -207,4 +225,5 @@
     <pluralLabel>FINET Batch Schedule Parents</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

@@ -23,4 +23,5 @@ To access the Application please click here  {!Application__c.Link}.
 Sincerely,
 EGMS Team</textOnly>
     <type>html</type>
+    <uiType>Aloha</uiType>
 </EmailTemplate>

@@ -50,6 +50,7 @@
     <description>This object is used to store Key Contacts on both Grantor and Grantee side</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -164,26 +165,32 @@
                 <value>
                     <fullName>Principal Investigator</fullName>
                     <default>false</default>
+                    <label>Principal Investigator</label>
                 </value>
                 <value>
                     <fullName>Project Director/Manager</fullName>
                     <default>false</default>
+                    <label>Project Director/Manager</label>
                 </value>
                 <value>
                     <fullName>Fiscal Contact</fullName>
                     <default>false</default>
+                    <label>Fiscal Contact</label>
                 </value>
                 <value>
                     <fullName>Grants Administrator</fullName>
                     <default>false</default>
+                    <label>Grants Administrator</label>
                 </value>
                 <value>
                     <fullName>Ebiz POC</fullName>
                     <default>false</default>
+                    <label>Ebiz POC</label>
                 </value>
                 <value>
                     <fullName>Other</fullName>
                     <default>false</default>
+                    <label>Other</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -223,14 +230,17 @@
                 <value>
                     <fullName>Funding Opportunity</fullName>
                     <default>false</default>
+                    <label>Funding Opportunity</label>
                 </value>
                 <value>
                     <fullName>Application</fullName>
                     <default>false</default>
+                    <label>Application</label>
                 </value>
                 <value>
                     <fullName>Awards</fullName>
                     <default>false</default>
+                    <label>Awards</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -359,4 +369,5 @@
     </recordTypes>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

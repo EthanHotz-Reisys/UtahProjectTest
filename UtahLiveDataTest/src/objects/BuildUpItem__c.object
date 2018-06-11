@@ -46,6 +46,7 @@
     <description>List of child records that add up to a Budget Category</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -157,10 +158,12 @@
                 <value>
                     <fullName>Property and Equipment</fullName>
                     <default>false</default>
+                    <label>Property and Equipment</label>
                 </value>
                 <value>
                     <fullName>Admin Cost</fullName>
                     <default>false</default>
+                    <label>Admin Cost</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -212,18 +215,22 @@
                 <value>
                     <fullName>A</fullName>
                     <default>false</default>
+                    <label>A</label>
                 </value>
                 <value>
                     <fullName>B</fullName>
                     <default>false</default>
+                    <label>B</label>
                 </value>
                 <value>
                     <fullName>C</fullName>
                     <default>false</default>
+                    <label>C</label>
                 </value>
                 <value>
                     <fullName>D</fullName>
                     <default>false</default>
+                    <label>D</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -264,14 +271,17 @@
                 <value>
                     <fullName>Created</fullName>
                     <default>true</default>
+                    <label>Created</label>
                 </value>
                 <value>
                     <fullName>Active</fullName>
                     <default>false</default>
+                    <label>Active</label>
                 </value>
                 <value>
                     <fullName>Revised</fullName>
                     <default>false</default>
+                    <label>Revised</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -550,14 +560,17 @@
                 <value>
                     <fullName>Federal</fullName>
                     <default>true</default>
+                    <label>Federal</label>
                 </value>
                 <value>
                     <fullName>In-Kind</fullName>
                     <default>false</default>
+                    <label>In-Kind</label>
                 </value>
                 <value>
                     <fullName>Cash</fullName>
                     <default>false</default>
+                    <label>Cash</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -722,18 +735,22 @@
                 <value>
                     <fullName>Federal</fullName>
                     <default>false</default>
+                    <label>Federal</label>
                 </value>
                 <value>
                     <fullName>State</fullName>
                     <default>false</default>
+                    <label>State</label>
                 </value>
                 <value>
                     <fullName>Local</fullName>
                     <default>false</default>
+                    <label>Local</label>
                 </value>
                 <value>
                     <fullName>Private</fullName>
                     <default>false</default>
+                    <label>Private</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -964,42 +981,52 @@
                 <value>
                     <fullName>Boxes</fullName>
                     <default>false</default>
+                    <label>Boxes</label>
                 </value>
                 <value>
                     <fullName>Feet</fullName>
                     <default>false</default>
+                    <label>Feet</label>
                 </value>
                 <value>
                     <fullName>Gallons</fullName>
                     <default>false</default>
+                    <label>Gallons</label>
                 </value>
                 <value>
                     <fullName>Hours</fullName>
                     <default>false</default>
+                    <label>Hours</label>
                 </value>
                 <value>
                     <fullName>Minutes</fullName>
                     <default>false</default>
+                    <label>Minutes</label>
                 </value>
                 <value>
                     <fullName>Months</fullName>
                     <default>false</default>
+                    <label>Months</label>
                 </value>
                 <value>
                     <fullName>Numbers</fullName>
                     <default>false</default>
+                    <label>Numbers</label>
                 </value>
                 <value>
                     <fullName>Pounds</fullName>
                     <default>false</default>
+                    <label>Pounds</label>
                 </value>
                 <value>
                     <fullName>Trips</fullName>
                     <default>false</default>
+                    <label>Trips</label>
                 </value>
                 <value>
                     <fullName>Years</fullName>
                     <default>false</default>
+                    <label>Years</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1053,4 +1080,5 @@
         <errorConditionFormula>StartDate__c &lt; ApplicationBudgetCategory__r.BudgetPeriod__r.BudgetStartDate__c</errorConditionFormula>
         <errorMessage>Start date should be later than application budget period date.</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

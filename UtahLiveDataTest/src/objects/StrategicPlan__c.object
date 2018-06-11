@@ -50,6 +50,7 @@
     <description>[Business] Defines the Strategic plan for an Organization which owns the Application</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>true</enableFeeds>
     <enableHistory>true</enableHistory>
@@ -147,14 +148,17 @@
                 <value>
                     <fullName>Draft</fullName>
                     <default>true</default>
+                    <label>Draft</label>
                 </value>
                 <value>
                     <fullName>Active</fullName>
                     <default>false</default>
+                    <label>Active</label>
                 </value>
                 <value>
                     <fullName>Inactive</fullName>
                     <default>false</default>
+                    <label>Inactive</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -238,4 +242,5 @@
         <fullName>OwnerReplacement__c</fullName>
         <label>Owner Replacement</label>
     </sharingReasons>
+    <visibility>Public</visibility>
 </CustomObject>

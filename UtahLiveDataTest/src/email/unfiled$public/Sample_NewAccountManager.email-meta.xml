@@ -4,7 +4,9 @@
     <description>Introducing yourself as the new Account Manager</description>
     <encodingKey>UTF-8</encodingKey>
     <name>SAMPLE: New Account Manager</name>
+    <relatedEntityType>Account</relatedEntityType>
     <style>none</style>
     <subject>New account manager</subject>
     <type>custom</type>
+    <uiType>SFX_Sample</uiType>
 </EmailTemplate>

@@ -50,22 +50,27 @@
                 <value>
                     <fullName>Document</fullName>
                     <default>true</default>
+                    <label>Document</label>
                 </value>
                 <value>
                     <fullName>Audio</fullName>
                     <default>false</default>
+                    <label>Audio</label>
                 </value>
                 <value>
                     <fullName>Video</fullName>
                     <default>false</default>
+                    <label>Video</label>
                 </value>
                 <value>
                     <fullName>Image</fullName>
                     <default>false</default>
+                    <label>Image</label>
                 </value>
                 <value>
                     <fullName>Link</fullName>
                     <default>false</default>
+                    <label>Link</label>
                 </value>
             </valueSetDefinition>
         </valueSet>

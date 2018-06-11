@@ -48,6 +48,7 @@
     <description>LEA Private School</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -130,10 +131,12 @@
                 <value>
                     <fullName>Receiving Funds</fullName>
                     <default>false</default>
+                    <label>Receiving Funds</label>
                 </value>
                 <value>
                     <fullName>Not Receiving Funds</fullName>
                     <default>false</default>
+                    <label>Not Receiving Funds</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -193,4 +196,5 @@
     <pluralLabel>LEA Private Schools</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

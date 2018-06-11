@@ -46,6 +46,7 @@
     <description>[Business] Stores header record of integration file [ Need to Decide with Shah and Shiva if required and also if its is a Business or a Framework object]</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -119,26 +120,32 @@
                 <value>
                     <fullName>New</fullName>
                     <default>true</default>
+                    <label>New</label>
                 </value>
                 <value>
                     <fullName>In-Progress</fullName>
                     <default>false</default>
+                    <label>In-Progress</label>
                 </value>
                 <value>
                     <fullName>Partial</fullName>
                     <default>false</default>
+                    <label>Partial</label>
                 </value>
                 <value>
                     <fullName>Failed</fullName>
                     <default>false</default>
+                    <label>Failed</label>
                 </value>
                 <value>
                     <fullName>Completed</fullName>
                     <default>false</default>
+                    <label>Completed</label>
                 </value>
                 <value>
                     <fullName>Re-Process</fullName>
                     <default>false</default>
+                    <label>Re-Process</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -189,6 +196,7 @@
     <pluralLabel>Integration Headers</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
     <webLinks>
         <fullName>ProcessAllRecords</fullName>
         <availability>online</availability>

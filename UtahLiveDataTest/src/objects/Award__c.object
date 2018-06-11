@@ -50,6 +50,7 @@
     <description>[Business] Stores the information related to the Award</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>true</enableFeeds>
     <enableHistory>true</enableHistory>
@@ -285,30 +286,37 @@
                 <value>
                     <fullName>Not Issued</fullName>
                     <default>true</default>
+                    <label>Not Issued</label>
                 </value>
                 <value>
                     <fullName>Budget Change In Progress</fullName>
                     <default>false</default>
+                    <label>Budget Change In Progress</label>
                 </value>
                 <value>
                     <fullName>No Cost Extension In Progress</fullName>
                     <default>false</default>
+                    <label>No Cost Extension In Progress</label>
                 </value>
                 <value>
                     <fullName>Cost Extension In Progress</fullName>
                     <default>false</default>
+                    <label>Cost Extension In Progress</label>
                 </value>
                 <value>
                     <fullName>Completed</fullName>
                     <default>false</default>
+                    <label>Completed</label>
                 </value>
                 <value>
                     <fullName>Accepted</fullName>
                     <default>false</default>
+                    <label>Accepted</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -328,30 +336,37 @@
                 <value>
                     <fullName>Renewal</fullName>
                     <default>false</default>
+                    <label>Renewal</label>
                 </value>
                 <value>
                     <fullName>Supplemental</fullName>
                     <default>false</default>
+                    <label>Supplemental</label>
                 </value>
                 <value>
                     <fullName>Extension Without Funds</fullName>
                     <default>false</default>
+                    <label>Extension Without Funds</label>
                 </value>
                 <value>
                     <fullName>Admin Changes</fullName>
                     <default>false</default>
+                    <label>Admin Changes</label>
                 </value>
                 <value>
                     <fullName>Transfer of Award</fullName>
                     <default>false</default>
+                    <label>Transfer of Award</label>
                 </value>
                 <value>
                     <fullName>Termination</fullName>
                     <default>false</default>
+                    <label>Termination</label>
                 </value>
                 <value>
                     <fullName>New</fullName>
                     <default>false</default>
+                    <label>New</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -724,10 +739,12 @@
                 <value>
                     <fullName>I read the terms and agree</fullName>
                     <default>false</default>
+                    <label>I read the terms and agree</label>
                 </value>
                 <value>
                     <fullName>I read the terms and do not agree</fullName>
                     <default>false</default>
+                    <label>I read the terms and do not agree</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -768,10 +785,12 @@
                 <value>
                     <fullName>Yes</fullName>
                     <default>false</default>
+                    <label>Yes</label>
                 </value>
                 <value>
                     <fullName>No</fullName>
                     <default>false</default>
+                    <label>No</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -991,18 +1010,22 @@ From Grant = All Others</description>
                 <value>
                     <fullName>New</fullName>
                     <default>true</default>
+                    <label>New</label>
                 </value>
                 <value>
                     <fullName>Amendment</fullName>
                     <default>false</default>
+                    <label>Amendment</label>
                 </value>
                 <value>
                     <fullName>Continuation</fullName>
                     <default>false</default>
+                    <label>Continuation</label>
                 </value>
                 <value>
                     <fullName>Close Out/Termination</fullName>
                     <default>false</default>
+                    <label>Close Out/Termination</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1060,10 +1083,12 @@ From Grant = All Others</description>
                 <value>
                     <fullName>Yes</fullName>
                     <default>false</default>
+                    <label>Yes</label>
                 </value>
                 <value>
                     <fullName>No</fullName>
                     <default>false</default>
+                    <label>No</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1165,14 +1190,17 @@ From Grant = All Others</description>
                 <value>
                     <fullName>Not Initiated By USBE</fullName>
                     <default>true</default>
+                    <label>Not Initiated By USBE</label>
                 </value>
                 <value>
                     <fullName>Indirect Change</fullName>
                     <default>false</default>
+                    <label>Indirect Change</label>
                 </value>
                 <value>
                     <fullName>Allocation Change</fullName>
                     <default>false</default>
+                    <label>Allocation Change</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1193,22 +1221,27 @@ From Grant = All Others</description>
                 <value>
                     <fullName>Not Started</fullName>
                     <default>true</default>
+                    <label>Not Started</label>
                 </value>
                 <value>
                     <fullName>In Progress</fullName>
                     <default>false</default>
+                    <label>In Progress</label>
                 </value>
                 <value>
                     <fullName>Completed</fullName>
                     <default>false</default>
+                    <label>Completed</label>
                 </value>
                 <value>
                     <fullName>Submitted</fullName>
                     <default>false</default>
+                    <label>Submitted</label>
                 </value>
                 <value>
                     <fullName>Change Requested</fullName>
                     <default>false</default>
+                    <label>Change Requested</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1327,10 +1360,12 @@ From Grant = All Others</description>
                 <value>
                     <fullName>I read the terms and agree</fullName>
                     <default>false</default>
+                    <label>I read the terms and agree</label>
                 </value>
                 <value>
                     <fullName>I read the terms and do not agree</fullName>
                     <default>false</default>
+                    <label>I read the terms and do not agree</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1394,10 +1429,12 @@ From Grant = All Others</description>
                 <value>
                     <fullName>Yes</fullName>
                     <default>false</default>
+                    <label>Yes</label>
                 </value>
                 <value>
                     <fullName>No</fullName>
                     <default>false</default>
+                    <label>No</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1616,10 +1653,12 @@ TRUE
                 <value>
                     <fullName>Yes</fullName>
                     <default>false</default>
+                    <label>Yes</label>
                 </value>
                 <value>
                     <fullName>No</fullName>
                     <default>false</default>
+                    <label>No</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1810,22 +1849,27 @@ Other - If the grant does not fall into either Formula or Project.</description>
                 <value>
                     <fullName>Formula</fullName>
                     <default>false</default>
+                    <label>Formula</label>
                 </value>
                 <value>
                     <fullName>Project/Competitive</fullName>
                     <default>false</default>
+                    <label>Project/Competitive</label>
                 </value>
                 <value>
                     <fullName>Formula and Competitive</fullName>
                     <default>false</default>
+                    <label>Formula and Competitive</label>
                 </value>
                 <value>
                     <fullName>Cooperative agreement</fullName>
                     <default>false</default>
+                    <label>Cooperative agreement</label>
                 </value>
                 <value>
                     <fullName>Other</fullName>
                     <default>false</default>
+                    <label>Other</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1895,166 +1939,207 @@ Other - If the grant does not fall into either Formula or Project.</description>
                 <value>
                     <fullName>2000</fullName>
                     <default>false</default>
+                    <label>2000</label>
                 </value>
                 <value>
                     <fullName>2001</fullName>
                     <default>false</default>
+                    <label>2001</label>
                 </value>
                 <value>
                     <fullName>2002</fullName>
                     <default>false</default>
+                    <label>2002</label>
                 </value>
                 <value>
                     <fullName>2003</fullName>
                     <default>false</default>
+                    <label>2003</label>
                 </value>
                 <value>
                     <fullName>2004</fullName>
                     <default>false</default>
+                    <label>2004</label>
                 </value>
                 <value>
                     <fullName>2005</fullName>
                     <default>false</default>
+                    <label>2005</label>
                 </value>
                 <value>
                     <fullName>2006</fullName>
                     <default>false</default>
+                    <label>2006</label>
                 </value>
                 <value>
                     <fullName>2007</fullName>
                     <default>false</default>
+                    <label>2007</label>
                 </value>
                 <value>
                     <fullName>2008</fullName>
                     <default>false</default>
+                    <label>2008</label>
                 </value>
                 <value>
                     <fullName>2009</fullName>
                     <default>false</default>
+                    <label>2009</label>
                 </value>
                 <value>
                     <fullName>2010</fullName>
                     <default>false</default>
+                    <label>2010</label>
                 </value>
                 <value>
                     <fullName>2011</fullName>
                     <default>false</default>
+                    <label>2011</label>
                 </value>
                 <value>
                     <fullName>2012</fullName>
                     <default>false</default>
+                    <label>2012</label>
                 </value>
                 <value>
                     <fullName>2013</fullName>
                     <default>false</default>
+                    <label>2013</label>
                 </value>
                 <value>
                     <fullName>2014</fullName>
                     <default>false</default>
+                    <label>2014</label>
                 </value>
                 <value>
                     <fullName>2015</fullName>
                     <default>false</default>
+                    <label>2015</label>
                 </value>
                 <value>
                     <fullName>2016</fullName>
                     <default>false</default>
+                    <label>2016</label>
                 </value>
                 <value>
                     <fullName>2017</fullName>
                     <default>false</default>
+                    <label>2017</label>
                 </value>
                 <value>
                     <fullName>2018</fullName>
                     <default>false</default>
+                    <label>2018</label>
                 </value>
                 <value>
                     <fullName>2019</fullName>
                     <default>false</default>
+                    <label>2019</label>
                 </value>
                 <value>
                     <fullName>2020</fullName>
                     <default>false</default>
+                    <label>2020</label>
                 </value>
                 <value>
                     <fullName>2021</fullName>
                     <default>false</default>
+                    <label>2021</label>
                 </value>
                 <value>
                     <fullName>2022</fullName>
                     <default>false</default>
+                    <label>2022</label>
                 </value>
                 <value>
                     <fullName>2023</fullName>
                     <default>false</default>
+                    <label>2023</label>
                 </value>
                 <value>
                     <fullName>2024</fullName>
                     <default>false</default>
+                    <label>2024</label>
                 </value>
                 <value>
                     <fullName>2025</fullName>
                     <default>false</default>
+                    <label>2025</label>
                 </value>
                 <value>
                     <fullName>2026</fullName>
                     <default>false</default>
+                    <label>2026</label>
                 </value>
                 <value>
                     <fullName>2027</fullName>
                     <default>false</default>
+                    <label>2027</label>
                 </value>
                 <value>
                     <fullName>2028</fullName>
                     <default>false</default>
+                    <label>2028</label>
                 </value>
                 <value>
                     <fullName>2029</fullName>
                     <default>false</default>
+                    <label>2029</label>
                 </value>
                 <value>
                     <fullName>2030</fullName>
                     <default>false</default>
+                    <label>2030</label>
                 </value>
                 <value>
                     <fullName>2031</fullName>
                     <default>false</default>
+                    <label>2031</label>
                 </value>
                 <value>
                     <fullName>2032</fullName>
                     <default>false</default>
+                    <label>2032</label>
                 </value>
                 <value>
                     <fullName>2033</fullName>
                     <default>false</default>
+                    <label>2033</label>
                 </value>
                 <value>
                     <fullName>2034</fullName>
                     <default>false</default>
+                    <label>2034</label>
                 </value>
                 <value>
                     <fullName>2035</fullName>
                     <default>false</default>
+                    <label>2035</label>
                 </value>
                 <value>
                     <fullName>2036</fullName>
                     <default>false</default>
+                    <label>2036</label>
                 </value>
                 <value>
                     <fullName>2037</fullName>
                     <default>false</default>
+                    <label>2037</label>
                 </value>
                 <value>
                     <fullName>2038</fullName>
                     <default>false</default>
+                    <label>2038</label>
                 </value>
                 <value>
                     <fullName>2039</fullName>
                     <default>false</default>
+                    <label>2039</label>
                 </value>
                 <value>
                     <fullName>2040</fullName>
                     <default>false</default>
+                    <label>2040</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -2386,14 +2471,17 @@ Other - If the grant does not fall into either Formula or Project.</description>
                 <value>
                     <fullName>Yes</fullName>
                     <default>true</default>
+                    <label>Yes</label>
                 </value>
                 <value>
                     <fullName>No</fullName>
                     <default>false</default>
+                    <label>No</label>
                 </value>
                 <value>
                     <fullName>Not Applicable</fullName>
                     <default>false</default>
+                    <label>Not Applicable</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -3025,10 +3113,12 @@ TEXT(BudgetRevisionInitiated__c) != null, TEXT(BudgetRevisionInitiated__c) = &ap
                 <value>
                     <fullName>Implicit</fullName>
                     <default>false</default>
+                    <label>Implicit</label>
                 </value>
                 <value>
                     <fullName>Explicit</fullName>
                     <default>true</default>
+                    <label>Explicit</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -3769,10 +3859,12 @@ TEXT(BudgetRevisionInitiated__c) != null, TEXT(BudgetRevisionInitiated__c) = &ap
                 <value>
                     <fullName>Yes</fullName>
                     <default>false</default>
+                    <label>Yes</label>
                 </value>
                 <value>
                     <fullName>No</fullName>
                     <default>false</default>
+                    <label>No</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -4519,206 +4611,257 @@ TEXT(BudgetRevisionInitiated__c) != null, TEXT(BudgetRevisionInitiated__c) = &ap
                 <value>
                     <fullName>Alabama</fullName>
                     <default>false</default>
+                    <label>Alabama</label>
                 </value>
                 <value>
                     <fullName>Alaska</fullName>
                     <default>false</default>
+                    <label>Alaska</label>
                 </value>
                 <value>
                     <fullName>Arizona</fullName>
                     <default>false</default>
+                    <label>Arizona</label>
                 </value>
                 <value>
                     <fullName>Arkansas</fullName>
                     <default>false</default>
+                    <label>Arkansas</label>
                 </value>
                 <value>
                     <fullName>California</fullName>
                     <default>false</default>
+                    <label>California</label>
                 </value>
                 <value>
                     <fullName>Colorado</fullName>
                     <default>false</default>
+                    <label>Colorado</label>
                 </value>
                 <value>
                     <fullName>Connecticut</fullName>
                     <default>false</default>
+                    <label>Connecticut</label>
                 </value>
                 <value>
                     <fullName>Delaware</fullName>
                     <default>false</default>
+                    <label>Delaware</label>
                 </value>
                 <value>
                     <fullName>District of Columbia</fullName>
                     <default>false</default>
+                    <label>District of Columbia</label>
                 </value>
                 <value>
                     <fullName>Florida</fullName>
                     <default>false</default>
+                    <label>Florida</label>
                 </value>
                 <value>
                     <fullName>Georgia</fullName>
                     <default>false</default>
+                    <label>Georgia</label>
                 </value>
                 <value>
                     <fullName>Hawaii</fullName>
                     <default>false</default>
+                    <label>Hawaii</label>
                 </value>
                 <value>
                     <fullName>Idaho</fullName>
                     <default>false</default>
+                    <label>Idaho</label>
                 </value>
                 <value>
                     <fullName>Illinois</fullName>
                     <default>false</default>
+                    <label>Illinois</label>
                 </value>
                 <value>
                     <fullName>Indiana</fullName>
                     <default>false</default>
+                    <label>Indiana</label>
                 </value>
                 <value>
                     <fullName>Iowa</fullName>
                     <default>false</default>
+                    <label>Iowa</label>
                 </value>
                 <value>
                     <fullName>Kansas</fullName>
                     <default>false</default>
+                    <label>Kansas</label>
                 </value>
                 <value>
                     <fullName>Kentucky</fullName>
                     <default>false</default>
+                    <label>Kentucky</label>
                 </value>
                 <value>
                     <fullName>Louisiana</fullName>
                     <default>false</default>
+                    <label>Louisiana</label>
                 </value>
                 <value>
                     <fullName>Maine</fullName>
                     <default>false</default>
+                    <label>Maine</label>
                 </value>
                 <value>
                     <fullName>Maryland</fullName>
                     <default>false</default>
+                    <label>Maryland</label>
                 </value>
                 <value>
                     <fullName>Massachusetts</fullName>
                     <default>false</default>
+                    <label>Massachusetts</label>
                 </value>
                 <value>
                     <fullName>Michigan</fullName>
                     <default>false</default>
+                    <label>Michigan</label>
                 </value>
                 <value>
                     <fullName>Minnesota</fullName>
                     <default>false</default>
+                    <label>Minnesota</label>
                 </value>
                 <value>
                     <fullName>Mississippi</fullName>
                     <default>false</default>
+                    <label>Mississippi</label>
                 </value>
                 <value>
                     <fullName>Missouri</fullName>
                     <default>false</default>
+                    <label>Missouri</label>
                 </value>
                 <value>
                     <fullName>Montana</fullName>
                     <default>false</default>
+                    <label>Montana</label>
                 </value>
                 <value>
                     <fullName>Nebraska</fullName>
                     <default>false</default>
+                    <label>Nebraska</label>
                 </value>
                 <value>
                     <fullName>Nevada</fullName>
                     <default>false</default>
+                    <label>Nevada</label>
                 </value>
                 <value>
                     <fullName>New Hampshire</fullName>
                     <default>false</default>
+                    <label>New Hampshire</label>
                 </value>
                 <value>
                     <fullName>New Jersey</fullName>
                     <default>false</default>
+                    <label>New Jersey</label>
                 </value>
                 <value>
                     <fullName>New Mexico</fullName>
                     <default>false</default>
+                    <label>New Mexico</label>
                 </value>
                 <value>
                     <fullName>New York</fullName>
                     <default>false</default>
+                    <label>New York</label>
                 </value>
                 <value>
                     <fullName>North Carolina</fullName>
                     <default>false</default>
+                    <label>North Carolina</label>
                 </value>
                 <value>
                     <fullName>North Dakota</fullName>
                     <default>false</default>
+                    <label>North Dakota</label>
                 </value>
                 <value>
                     <fullName>Ohio</fullName>
                     <default>false</default>
+                    <label>Ohio</label>
                 </value>
                 <value>
                     <fullName>Oklahoma</fullName>
                     <default>false</default>
+                    <label>Oklahoma</label>
                 </value>
                 <value>
                     <fullName>Oregon</fullName>
                     <default>false</default>
+                    <label>Oregon</label>
                 </value>
                 <value>
                     <fullName>Pennsylvania</fullName>
                     <default>false</default>
+                    <label>Pennsylvania</label>
                 </value>
                 <value>
                     <fullName>Rhode Island</fullName>
                     <default>false</default>
+                    <label>Rhode Island</label>
                 </value>
                 <value>
                     <fullName>South Carolina</fullName>
                     <default>false</default>
+                    <label>South Carolina</label>
                 </value>
                 <value>
                     <fullName>South Dakota</fullName>
                     <default>false</default>
+                    <label>South Dakota</label>
                 </value>
                 <value>
                     <fullName>Tennessee</fullName>
                     <default>false</default>
+                    <label>Tennessee</label>
                 </value>
                 <value>
                     <fullName>Texas</fullName>
                     <default>false</default>
+                    <label>Texas</label>
                 </value>
                 <value>
                     <fullName>Utah</fullName>
                     <default>false</default>
+                    <label>Utah</label>
                 </value>
                 <value>
                     <fullName>Vermont</fullName>
                     <default>false</default>
+                    <label>Vermont</label>
                 </value>
                 <value>
                     <fullName>Virginia</fullName>
                     <default>false</default>
+                    <label>Virginia</label>
                 </value>
                 <value>
                     <fullName>Washington</fullName>
                     <default>false</default>
+                    <label>Washington</label>
                 </value>
                 <value>
                     <fullName>West Virginia</fullName>
                     <default>false</default>
+                    <label>West Virginia</label>
                 </value>
                 <value>
                     <fullName>Wisconsin</fullName>
                     <default>false</default>
+                    <label>Wisconsin</label>
                 </value>
                 <value>
                     <fullName>Wyoming</fullName>
                     <default>false</default>
+                    <label>Wyoming</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -4738,50 +4881,62 @@ TEXT(BudgetRevisionInitiated__c) != null, TEXT(BudgetRevisionInitiated__c) = &ap
                 <value>
                     <fullName>Created</fullName>
                     <default>false</default>
+                    <label>Created</label>
                 </value>
                 <value>
                     <fullName>Submitted for Approval</fullName>
                     <default>false</default>
+                    <label>Submitted for Approval</label>
                 </value>
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Activated</fullName>
                     <default>false</default>
+                    <label>Activated</label>
                 </value>
                 <value>
                     <fullName>Being Amended</fullName>
                     <default>false</default>
+                    <label>Being Amended</label>
                 </value>
                 <value>
                     <fullName>Amended</fullName>
                     <default>false</default>
+                    <label>Amended</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
                 <value>
                     <fullName>Sent to Grantee Review</fullName>
                     <default>false</default>
+                    <label>Sent to Grantee Review</label>
                 </value>
                 <value>
                     <fullName>Grantee Accepted</fullName>
                     <default>false</default>
+                    <label>Grantee Accepted</label>
                 </value>
                 <value>
                     <fullName>Waived</fullName>
                     <default>false</default>
+                    <label>Waived</label>
                 </value>
                 <value>
                     <fullName>FINOPS Completed</fullName>
                     <default>false</default>
+                    <label>FINOPS Completed</label>
                 </value>
                 <value>
                     <fullName>Sent to FINOPS</fullName>
                     <default>false</default>
+                    <label>Sent to FINOPS</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -5032,30 +5187,37 @@ old formula</description>
                 <value>
                     <fullName>N/A</fullName>
                     <default>true</default>
+                    <label>N/A</label>
                 </value>
                 <value>
                     <fullName>Sent For Internal Approval</fullName>
                     <default>false</default>
+                    <label>Sent For Internal Approval</label>
                 </value>
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
                 <value>
                     <fullName>Waived</fullName>
                     <default>false</default>
+                    <label>Waived</label>
                 </value>
                 <value>
                     <fullName>Accepted</fullName>
                     <default>false</default>
+                    <label>Accepted</label>
                 </value>
                 <value>
                     <fullName>Sent For Internal Acceptance</fullName>
                     <default>false</default>
+                    <label>Sent For Internal Acceptance</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -6662,6 +6824,7 @@ old formula</description>
         <errorConditionFormula>AND(IsStateMatchRequired__c = true, ISBLANK( StateMatchDueDate__c ), ISBLANK( StateShareAmount__c ) )</errorConditionFormula>
         <errorMessage>Please Enter &apos;State Match Due date&apos;,&apos;State Share Amount&apos; if &apos;Is State Match Required?&apos; is Checked.</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
     <webLinks>
         <fullName>Generate_NOGA</fullName>
         <availability>online</availability>

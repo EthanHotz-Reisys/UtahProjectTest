@@ -46,6 +46,7 @@
     <description>[Business] Need more details</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
@@ -1285,4 +1286,5 @@
         <errorConditionFormula>RemainingAmount__c &lt; 0</errorConditionFormula>
         <errorMessage>Remaining Balance Must Not be Negative</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

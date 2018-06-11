@@ -1,3 +1,0 @@
-<apex:page controller="GNT.CaptureSignatureCtrl" standardStylesheets="false" showHeader="false" sidebar="false" action="{!captureEvent}">
-<!-- This page created for capturing status -->>
-</apex:page>

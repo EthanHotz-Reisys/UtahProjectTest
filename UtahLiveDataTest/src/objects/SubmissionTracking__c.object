@@ -46,6 +46,7 @@
     <description>[Business] Tracks Application submission to Grants.gov</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -128,14 +129,17 @@
                 <value>
                     <fullName>Pre-Application</fullName>
                     <default>false</default>
+                    <label>Pre-Application</label>
                 </value>
                 <value>
                     <fullName>Application</fullName>
                     <default>false</default>
+                    <label>Application</label>
                 </value>
                 <value>
                     <fullName>Progress Report</fullName>
                     <default>false</default>
+                    <label>Progress Report</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -163,14 +167,17 @@
                 <value>
                     <fullName>Info</fullName>
                     <default>false</default>
+                    <label>Info</label>
                 </value>
                 <value>
                     <fullName>Error</fullName>
                     <default>false</default>
+                    <label>Error</label>
                 </value>
                 <value>
                     <fullName>Warning</fullName>
                     <default>false</default>
+                    <label>Warning</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -184,4 +191,5 @@
     <pluralLabel>Submission Tracking</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

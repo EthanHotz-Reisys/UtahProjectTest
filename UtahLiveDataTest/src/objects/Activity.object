@@ -63,10 +63,12 @@
                 <value>
                     <fullName>Internal</fullName>
                     <default>false</default>
+                    <label>Internal</label>
                 </value>
                 <value>
                     <fullName>External</fullName>
                     <default>false</default>
+                    <label>External</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -138,18 +140,22 @@
                 <value>
                     <fullName>Active</fullName>
                     <default>false</default>
+                    <label>Active</label>
                 </value>
                 <value>
                     <fullName>Completed</fullName>
                     <default>false</default>
+                    <label>Completed</label>
                 </value>
                 <value>
                     <fullName>Open</fullName>
                     <default>false</default>
+                    <label>Open</label>
                 </value>
                 <value>
                     <fullName>Tentative</fullName>
                     <default>false</default>
+                    <label>Tentative</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -168,90 +174,112 @@
                 <value>
                     <fullName>Review Announcement</fullName>
                     <default>false</default>
+                    <label>Review Announcement</label>
                 </value>
                 <value>
                     <fullName>Review Program</fullName>
                     <default>false</default>
+                    <label>Review Program</label>
                 </value>
                 <value>
                     <fullName>Review Funding Account</fullName>
                     <default>false</default>
+                    <label>Review Funding Account</label>
                 </value>
                 <value>
                     <fullName>Review Funding Source</fullName>
                     <default>false</default>
+                    <label>Review Funding Source</label>
                 </value>
                 <value>
                     <fullName>Review Submission Package</fullName>
                     <default>false</default>
+                    <label>Review Submission Package</label>
                 </value>
                 <value>
                     <fullName>Review User</fullName>
                     <default>false</default>
+                    <label>Review User</label>
                 </value>
                 <value>
                     <fullName>Review Application</fullName>
                     <default>false</default>
+                    <label>Review Application</label>
                 </value>
                 <value>
                     <fullName>Review Pre-Application</fullName>
                     <default>false</default>
+                    <label>Review Pre-Application</label>
                 </value>
                 <value>
                     <fullName>Create Award</fullName>
                     <default>false</default>
+                    <label>Create Award</label>
                 </value>
                 <value>
                     <fullName>Review Organization</fullName>
                     <default>false</default>
+                    <label>Review Organization</label>
                 </value>
                 <value>
                     <fullName>Review Award</fullName>
                     <default>false</default>
+                    <label>Review Award</label>
                 </value>
                 <value>
                     <fullName>Review Applications</fullName>
                     <default>false</default>
+                    <label>Review Applications</label>
                 </value>
                 <value>
                     <fullName>Review Pre-Applications</fullName>
                     <default>false</default>
+                    <label>Review Pre-Applications</label>
                 </value>
                 <value>
                     <fullName>Review Progress Report</fullName>
                     <default>false</default>
+                    <label>Review Progress Report</label>
                 </value>
                 <value>
                     <fullName>Review Financial Report</fullName>
                     <default>false</default>
+                    <label>Review Financial Report</label>
                 </value>
                 <value>
                     <fullName>Review Close Out Report</fullName>
                     <default>false</default>
+                    <label>Review Close Out Report</label>
                 </value>
                 <value>
                     <fullName>Submit Close Out Report</fullName>
                     <default>false</default>
+                    <label>Submit Close Out Report</label>
                 </value>
                 <value>
                     <fullName>Submit Progress Report</fullName>
                     <default>false</default>
+                    <label>Submit Progress Report</label>
                 </value>
                 <value>
                     <fullName>Submit Financial Report</fullName>
                     <default>false</default>
+                    <label>Submit Financial Report</label>
                 </value>
                 <value>
                     <fullName>Submit Site Visit Report</fullName>
                     <default>false</default>
+                    <label>Submit Site Visit Report</label>
                 </value>
                 <value>
                     <fullName>Review Site Visit Report</fullName>
                     <default>false</default>
+                    <label>Review Site Visit Report</label>
                 </value>
                 <value>
                     <fullName>Review Amendment Request</fullName>
                     <default>false</default>
+                    <label>Review Amendment Request</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -316,10 +344,12 @@
                 <value>
                     <fullName>Internal</fullName>
                     <default>false</default>
+                    <label>Internal</label>
                 </value>
                 <value>
                     <fullName>External</fullName>
                     <default>false</default>
+                    <label>External</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -379,58 +409,72 @@
                 <value>
                     <fullName>Announcement</fullName>
                     <default>false</default>
+                    <label>Announcement</label>
                 </value>
                 <value>
                     <fullName>Program</fullName>
                     <default>false</default>
+                    <label>Program</label>
                 </value>
                 <value>
                     <fullName>Funding Account</fullName>
                     <default>false</default>
+                    <label>Funding Account</label>
                 </value>
                 <value>
                     <fullName>Funding Source</fullName>
                     <default>false</default>
+                    <label>Funding Source</label>
                 </value>
                 <value>
                     <fullName>Submission Package</fullName>
                     <default>false</default>
+                    <label>Submission Package</label>
                 </value>
                 <value>
                     <fullName>Application</fullName>
                     <default>false</default>
+                    <label>Application</label>
                 </value>
                 <value>
                     <fullName>Pre-Application</fullName>
                     <default>false</default>
+                    <label>Pre-Application</label>
                 </value>
                 <value>
                     <fullName>Create Award</fullName>
                     <default>false</default>
+                    <label>Create Award</label>
                 </value>
                 <value>
                     <fullName>Organization</fullName>
                     <default>false</default>
+                    <label>Organization</label>
                 </value>
                 <value>
                     <fullName>User</fullName>
                     <default>false</default>
+                    <label>User</label>
                 </value>
                 <value>
                     <fullName>Applications</fullName>
                     <default>false</default>
+                    <label>Applications</label>
                 </value>
                 <value>
                     <fullName>Pre-Applications</fullName>
                     <default>false</default>
+                    <label>Pre-Applications</label>
                 </value>
                 <value>
                     <fullName>Progress Report</fullName>
                     <default>false</default>
+                    <label>Progress Report</label>
                 </value>
                 <value>
                     <fullName>Review Award</fullName>
                     <default>false</default>
+                    <label>Review Award</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -495,10 +539,12 @@
                 <value>
                     <fullName>Outbound</fullName>
                     <default>false</default>
+                    <label>Outbound</label>
                 </value>
                 <value>
                     <fullName>Inbound</fullName>
                     <default>false</default>
+                    <label>Inbound</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -779,18 +825,22 @@
                 <value>
                     <fullName>Approval</fullName>
                     <default>false</default>
+                    <label>Approval</label>
                 </value>
                 <value>
                     <fullName>Email</fullName>
                     <default>false</default>
+                    <label>Email</label>
                 </value>
                 <value>
                     <fullName>Review</fullName>
                     <default>false</default>
+                    <label>Review</label>
                 </value>
                 <value>
                     <fullName>On-Demand</fullName>
                     <default>false</default>
+                    <label>On-Demand</label>
                 </value>
             </valueSetDefinition>
         </valueSet>

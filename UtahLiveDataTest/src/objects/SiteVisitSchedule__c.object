@@ -50,6 +50,7 @@
     <description>[Business] Site Visit Schedule is stored on this specific object</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
@@ -72,42 +73,52 @@
                 <value>
                     <fullName>2010</fullName>
                     <default>false</default>
+                    <label>2010</label>
                 </value>
                 <value>
                     <fullName>2011</fullName>
                     <default>false</default>
+                    <label>2011</label>
                 </value>
                 <value>
                     <fullName>2012</fullName>
                     <default>false</default>
+                    <label>2012</label>
                 </value>
                 <value>
                     <fullName>2013</fullName>
                     <default>false</default>
+                    <label>2013</label>
                 </value>
                 <value>
                     <fullName>2014</fullName>
                     <default>false</default>
+                    <label>2014</label>
                 </value>
                 <value>
                     <fullName>2015</fullName>
                     <default>false</default>
+                    <label>2015</label>
                 </value>
                 <value>
                     <fullName>2016</fullName>
                     <default>false</default>
+                    <label>2016</label>
                 </value>
                 <value>
                     <fullName>2017</fullName>
                     <default>false</default>
+                    <label>2017</label>
                 </value>
                 <value>
                     <fullName>2018</fullName>
                     <default>false</default>
+                    <label>2018</label>
                 </value>
                 <value>
                     <fullName>2019</fullName>
                     <default>false</default>
+                    <label>2019</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -152,10 +163,12 @@
                 <value>
                     <fullName>In Progress</fullName>
                     <default>true</default>
+                    <label>In Progress</label>
                 </value>
                 <value>
                     <fullName>Finalized</fullName>
                     <default>false</default>
+                    <label>Finalized</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -170,4 +183,5 @@
     <pluralLabel>Site Visit Schedules</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

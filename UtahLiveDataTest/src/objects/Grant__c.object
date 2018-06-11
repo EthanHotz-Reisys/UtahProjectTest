@@ -50,6 +50,7 @@
     <description>[Business] Stores all the grant related information a Grant can have multiple Awards only one award is active at any given point of time</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>true</enableFeeds>
     <enableHistory>true</enableHistory>
@@ -612,6 +613,7 @@
                 <value>
                     <fullName>Formula Grant</fullName>
                     <default>false</default>
+                    <label>Formula Grant</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -800,10 +802,12 @@
                 <value>
                     <fullName>Yes</fullName>
                     <default>true</default>
+                    <label>Yes</label>
                 </value>
                 <value>
                     <fullName>No</fullName>
                     <default>false</default>
+                    <label>No</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1379,18 +1383,22 @@
                 <value>
                     <fullName>Sub Awards</fullName>
                     <default>true</default>
+                    <label>Sub Awards</label>
                 </value>
                 <value>
                     <fullName>Internal Spend</fullName>
                     <default>false</default>
+                    <label>Internal Spend</label>
                 </value>
                 <value>
                     <fullName>Contracts</fullName>
                     <default>false</default>
+                    <label>Contracts</label>
                 </value>
                 <value>
                     <fullName>ISA</fullName>
                     <default>false</default>
+                    <label>ISA</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1410,22 +1418,27 @@
                 <value>
                     <fullName>Active</fullName>
                     <default>false</default>
+                    <label>Active</label>
                 </value>
                 <value>
                     <fullName>Expired</fullName>
                     <default>false</default>
+                    <label>Expired</label>
                 </value>
                 <value>
                     <fullName>Terminated</fullName>
                     <default>false</default>
+                    <label>Terminated</label>
                 </value>
                 <value>
                     <fullName>Draft</fullName>
                     <default>false</default>
+                    <label>Draft</label>
                 </value>
                 <value>
                     <fullName>Closed/Completed</fullName>
                     <default>false</default>
+                    <label>Closed/Completed</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -3379,7 +3392,7 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>TypeOfBudgetCategories</picklist>
+            <picklist>TypeOfBudgetCategories__c</picklist>
             <values>
                 <fullName>Construction</fullName>
                 <default>false</default>
@@ -3451,7 +3464,7 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>TypeOfBudgetCategories</picklist>
+            <picklist>TypeOfBudgetCategories__c</picklist>
             <values>
                 <fullName>Construction</fullName>
                 <default>false</default>
@@ -3534,4 +3547,5 @@
         <errorConditionFormula>AND(ObjectCode__c = &apos;461&apos;)</errorConditionFormula>
         <errorMessage>Error 457</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

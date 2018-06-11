@@ -49,6 +49,7 @@ Formal Approval - Significant changes to Budget Time and/or Cost and results in 
 Periodic/Continuous Renewals -</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -89,10 +90,12 @@ Periodic/Continuous Renewals -</description>
                 <value>
                     <fullName>Yes</fullName>
                     <default>false</default>
+                    <label>Yes</label>
                 </value>
                 <value>
                     <fullName>No</fullName>
                     <default>false</default>
+                    <label>No</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -127,14 +130,17 @@ Periodic/Continuous Renewals -</description>
                 <value>
                     <fullName>Prior Approval</fullName>
                     <default>false</default>
+                    <label>Prior Approval</label>
                 </value>
                 <value>
                     <fullName>Formal Amendment</fullName>
                     <default>false</default>
+                    <label>Formal Amendment</label>
                 </value>
                 <value>
                     <fullName>Periodic Amendment</fullName>
                     <default>false</default>
+                    <label>Periodic Amendment</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -172,4 +178,5 @@ Periodic/Continuous Renewals -</description>
         <searchResultsAdditionalFields>UGGReference__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

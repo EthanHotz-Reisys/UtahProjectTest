@@ -142,10 +142,12 @@
                 <value>
                     <fullName>Primary</fullName>
                     <default>false</default>
+                    <label>Primary</label>
                 </value>
                 <value>
                     <fullName>Secondary</fullName>
                     <default>false</default>
+                    <label>Secondary</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -235,10 +237,12 @@
                 <value>
                     <fullName>SPA</fullName>
                     <default>true</default>
+                    <label>SPA</label>
                 </value>
                 <value>
                     <fullName>SPI</fullName>
                     <default>false</default>
+                    <label>SPI</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -531,6 +535,7 @@
                 <value>
                     <fullName>Others</fullName>
                     <default>false</default>
+                    <label>Others</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -579,22 +584,27 @@
                 <value>
                     <fullName>Invitation Sent</fullName>
                     <default>false</default>
+                    <label>Invitation Sent</label>
                 </value>
                 <value>
                     <fullName>Active</fullName>
                     <default>false</default>
+                    <label>Active</label>
                 </value>
                 <value>
                     <fullName>Inactive</fullName>
                     <default>false</default>
+                    <label>Inactive</label>
                 </value>
                 <value>
                     <fullName>New</fullName>
                     <default>true</default>
+                    <label>New</label>
                 </value>
                 <value>
                     <fullName>Declined</fullName>
                     <default>false</default>
+                    <label>Declined</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -626,6 +636,7 @@
                 <value>
                     <fullName>Others</fullName>
                     <default>false</default>
+                    <label>Others</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -718,18 +729,22 @@
                 <value>
                     <fullName>CCJJ</fullName>
                     <default>false</default>
+                    <label>CCJJ</label>
                 </value>
                 <value>
                     <fullName>UOVC</fullName>
                     <default>false</default>
+                    <label>UOVC</label>
                 </value>
                 <value>
                     <fullName>USBE</fullName>
                     <default>false</default>
+                    <label>USBE</label>
                 </value>
                 <value>
                     <fullName>Finance</fullName>
                     <default>false</default>
+                    <label>Finance</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -748,22 +763,27 @@
                 <value>
                     <fullName>Jr.</fullName>
                     <default>false</default>
+                    <label>Jr.</label>
                 </value>
                 <value>
                     <fullName>Sr.</fullName>
                     <default>false</default>
+                    <label>Sr.</label>
                 </value>
                 <value>
                     <fullName>I.</fullName>
                     <default>false</default>
+                    <label>I.</label>
                 </value>
                 <value>
                     <fullName>II.</fullName>
                     <default>false</default>
+                    <label>II.</label>
                 </value>
                 <value>
                     <fullName>III.</fullName>
                     <default>false</default>
+                    <label>III.</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -795,6 +815,7 @@
                 <value>
                     <fullName>Others</fullName>
                     <default>false</default>
+                    <label>Others</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -935,15 +956,18 @@ swati singh - updated the logic 4/13/2016</description>
                 <value>
                     <fullName>Primary</fullName>
                     <default>false</default>
+                    <label>Approver</label>
                 </value>
                 <value>
                     <fullName>Secondary</fullName>
                     <default>false</default>
+                    <label>Creator</label>
                 </value>
                 <value>
                     <fullName>LEA BA</fullName>
                     <default>false</default>
                     <isActive>false</isActive>
+                    <label>LEA BA</label>
                 </value>
             </valueSetDefinition>
         </valueSet>

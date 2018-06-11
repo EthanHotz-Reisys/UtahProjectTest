@@ -50,6 +50,7 @@
     <description>[Business] Details of the Funding sources which further creates Funding accounts</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
@@ -289,10 +290,12 @@ CFDA number of the federal program funding the sub-award.</inlineHelpText>
                 <value>
                     <fullName>Current</fullName>
                     <default>false</default>
+                    <label>Current</label>
                 </value>
                 <value>
                     <fullName>Pending</fullName>
                     <default>false</default>
+                    <label>Pending</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -526,22 +529,27 @@ CFDA number of the federal program funding the sub-award.</inlineHelpText>
                 <value>
                     <fullName>Contracts</fullName>
                     <default>false</default>
+                    <label>Contracts</label>
                 </value>
                 <value>
                     <fullName>Sub Awards</fullName>
                     <default>false</default>
+                    <label>Sub Awards</label>
                 </value>
                 <value>
                     <fullName>Internal Spends</fullName>
                     <default>false</default>
+                    <label>Internal Spends</label>
                 </value>
                 <value>
                     <fullName>ISA</fullName>
                     <default>false</default>
+                    <label>ISA</label>
                 </value>
                 <value>
                     <fullName>Loans</fullName>
                     <default>false</default>
+                    <label>Loans</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -580,22 +588,27 @@ CFDA number of the federal program funding the sub-award.</inlineHelpText>
                 <value>
                     <fullName>Created</fullName>
                     <default>true</default>
+                    <label>Created</label>
                 </value>
                 <value>
                     <fullName>Submitted For Approval</fullName>
                     <default>false</default>
+                    <label>Submitted For Approval</label>
                 </value>
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Active</fullName>
                     <default>false</default>
+                    <label>Active</label>
                 </value>
                 <value>
                     <fullName>Closed</fullName>
                     <default>false</default>
+                    <label>Closed</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -684,18 +697,22 @@ CFDA number of the federal program funding the sub-award.</inlineHelpText>
                 <value>
                     <fullName>Federal</fullName>
                     <default>true</default>
+                    <label>Federal</label>
                 </value>
                 <value>
                     <fullName>State</fullName>
                     <default>false</default>
+                    <label>State</label>
                 </value>
                 <value>
                     <fullName>NGO</fullName>
                     <default>false</default>
+                    <label>NGO</label>
                 </value>
                 <value>
                     <fullName>Other</fullName>
                     <default>false</default>
+                    <label>Other</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -900,4 +917,5 @@ CFDA number of the federal program funding the sub-award.</inlineHelpText>
         <errorConditionFormula>StartDate__c  &gt;  EndDate__c</errorConditionFormula>
         <errorMessage>Start Date cannot be greater than End Date</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

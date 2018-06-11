@@ -50,6 +50,7 @@
     <description>[Business] Terms and Conditions for Grants ,Awards (The lookup to Package may not be required in this case )</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
@@ -188,14 +189,17 @@
                 <value>
                     <fullName>Desk Review</fullName>
                     <default>false</default>
+                    <label>Desk Review</label>
                 </value>
                 <value>
                     <fullName>Progress Report</fullName>
                     <default>false</default>
+                    <label>Progress Report</label>
                 </value>
                 <value>
                     <fullName>Program Report</fullName>
                     <default>false</default>
+                    <label>Program Report</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -300,22 +304,27 @@
                 <value>
                     <fullName>Fixed</fullName>
                     <default>true</default>
+                    <label>Fixed</label>
                 </value>
                 <value>
                     <fullName>Monthly</fullName>
                     <default>false</default>
+                    <label>Monthly</label>
                 </value>
                 <value>
                     <fullName>Quarterly</fullName>
                     <default>false</default>
+                    <label>Quarterly</label>
                 </value>
                 <value>
                     <fullName>Semi-Annually</fullName>
                     <default>false</default>
+                    <label>Semi-Annually</label>
                 </value>
                 <value>
                     <fullName>Annually</fullName>
                     <default>false</default>
+                    <label>Annually</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -525,10 +534,12 @@ Fixed Date - end on a fixed date</inlineHelpText>
                 <value>
                     <fullName>Budget Period End Date</fullName>
                     <default>false</default>
+                    <label>Budget Period End Date</label>
                 </value>
                 <value>
                     <fullName>Fixed</fullName>
                     <default>false</default>
+                    <label>Fixed</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -561,10 +572,12 @@ Fixed Date - start from a fixed date</inlineHelpText>
                 <value>
                     <fullName>Budget Period Start Date</fullName>
                     <default>false</default>
+                    <label>Budget Period Start Date</label>
                 </value>
                 <value>
                     <fullName>Fixed</fullName>
                     <default>false</default>
+                    <label>Fixed</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -583,10 +596,12 @@ Fixed Date - start from a fixed date</inlineHelpText>
                 <value>
                     <fullName>Fixed</fullName>
                     <default>false</default>
+                    <label>Fixed</label>
                 </value>
                 <value>
                     <fullName>Recurring</fullName>
                     <default>false</default>
+                    <label>Recurring</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -605,22 +620,27 @@ Fixed Date - start from a fixed date</inlineHelpText>
                 <value>
                     <fullName>Calendar Year</fullName>
                     <default>false</default>
+                    <label>Calendar Year</label>
                 </value>
                 <value>
                     <fullName>Federal Fiscal Year</fullName>
                     <default>false</default>
+                    <label>Federal Fiscal Year</label>
                 </value>
                 <value>
                     <fullName>State Fiscal Year</fullName>
                     <default>false</default>
+                    <label>State Fiscal Year</label>
                 </value>
                 <value>
                     <fullName>Academic Year</fullName>
                     <default>false</default>
+                    <label>Academic Year</label>
                 </value>
                 <value>
                     <fullName>Award Year</fullName>
                     <default>false</default>
+                    <label>Award Year</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -694,10 +714,12 @@ Fixed Date - start from a fixed date</inlineHelpText>
                 <value>
                     <fullName>Primary Place of Performance</fullName>
                     <default>false</default>
+                    <label>Primary Place of Performance</label>
                 </value>
                 <value>
                     <fullName>Other Location</fullName>
                     <default>false</default>
+                    <label>Other Location</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -728,18 +750,22 @@ Fixed Date - start from a fixed date</inlineHelpText>
                 <value>
                     <fullName>Standard</fullName>
                     <default>false</default>
+                    <label>Standard</label>
                 </value>
                 <value>
                     <fullName>Federal</fullName>
                     <default>false</default>
+                    <label>Federal</label>
                 </value>
                 <value>
                     <fullName>Grant</fullName>
                     <default>false</default>
+                    <label>Grant</label>
                 </value>
                 <value>
                     <fullName>Program</fullName>
                     <default>false</default>
+                    <label>Program</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -759,18 +785,22 @@ Fixed Date - start from a fixed date</inlineHelpText>
                 <value>
                     <fullName>Active</fullName>
                     <default>false</default>
+                    <label>Active</label>
                 </value>
                 <value>
                     <fullName>Inactive</fullName>
                     <default>false</default>
+                    <label>Inactive</label>
                 </value>
                 <value>
                     <fullName>Fulfilled</fullName>
                     <default>false</default>
+                    <label>Fulfilled</label>
                 </value>
                 <value>
                     <fullName>Draft</fullName>
                     <default>true</default>
+                    <label>Draft</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -789,10 +819,12 @@ Fixed Date - start from a fixed date</inlineHelpText>
                 <value>
                     <fullName>Submission Package</fullName>
                     <default>false</default>
+                    <label>Submission Package</label>
                 </value>
                 <value>
                     <fullName>Attachment</fullName>
                     <default>false</default>
+                    <label>Attachment</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -853,18 +885,22 @@ Fixed Date - start from a fixed date</inlineHelpText>
                 <value>
                     <fullName>Progress Report</fullName>
                     <default>false</default>
+                    <label>Progress Report</label>
                 </value>
                 <value>
                     <fullName>Financial Report</fullName>
                     <default>false</default>
+                    <label>Financial Report</label>
                 </value>
                 <value>
                     <fullName>Payment Request</fullName>
                     <default>false</default>
+                    <label>Payment Request</label>
                 </value>
                 <value>
                     <fullName>Other</fullName>
                     <default>false</default>
+                    <label>Other</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -897,10 +933,12 @@ Fixed Date - start from a fixed date</inlineHelpText>
                 <value>
                     <fullName>Term</fullName>
                     <default>false</default>
+                    <label>Term</label>
                 </value>
                 <value>
                     <fullName>Condition</fullName>
                     <default>false</default>
+                    <label>Condition</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -931,18 +969,22 @@ Fixed Date - start from a fixed date</inlineHelpText>
                 <value>
                     <fullName>State</fullName>
                     <default>true</default>
+                    <label>State</label>
                 </value>
                 <value>
                     <fullName>Program</fullName>
                     <default>false</default>
+                    <label>Program</label>
                 </value>
                 <value>
                     <fullName>Grant</fullName>
                     <default>false</default>
+                    <label>Grant</label>
                 </value>
                 <value>
                     <fullName>Award</fullName>
                     <default>false</default>
+                    <label>Award</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -981,10 +1023,12 @@ Fixed Date - start from a fixed date</inlineHelpText>
                 <value>
                     <fullName>Yes</fullName>
                     <default>false</default>
+                    <label>Yes</label>
                 </value>
                 <value>
                     <fullName>No</fullName>
                     <default>false</default>
+                    <label>No</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -2408,4 +2452,5 @@ NOT(ISNEW()),NOT(ISBLANK(PRIORVALUE(Grant__c))),ISBLANK( Award__c )
         <errorConditionFormula>ISPICKVAL(WillAgencywithholdFundsifnotSubmit__c,&apos;Yes&apos;) &amp;&amp; ISBLANK(AmountWithheld__c)</errorConditionFormula>
         <errorMessage>Please provide the percentage of amount withheld.</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

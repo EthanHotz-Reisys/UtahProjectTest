@@ -7,4 +7,5 @@
     <style>formalLetter</style>
     <subject>Application Rejection Notice</subject>
     <type>html</type>
+    <uiType>Aloha</uiType>
 </EmailTemplate>

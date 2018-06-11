@@ -46,6 +46,7 @@
     <description>[Business] This is the custom object to store all the documents like NDA , COI .</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>false</enableReports>
@@ -86,18 +87,22 @@
                 <value>
                     <fullName>Applicant</fullName>
                     <default>false</default>
+                    <label>Applicant</label>
                 </value>
                 <value>
                     <fullName>Reviewer</fullName>
                     <default>false</default>
+                    <label>Reviewer</label>
                 </value>
                 <value>
                     <fullName>IndApplicant</fullName>
                     <default>false</default>
+                    <label>IndApplicant</label>
                 </value>
                 <value>
                     <fullName>AdditionalApplicant</fullName>
                     <default>false</default>
+                    <label>AdditionalApplicant</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -128,14 +133,17 @@
                 <value>
                     <fullName>Draft</fullName>
                     <default>false</default>
+                    <label>Draft</label>
                 </value>
                 <value>
                     <fullName>Active</fullName>
                     <default>false</default>
+                    <label>Active</label>
                 </value>
                 <value>
                     <fullName>Archived</fullName>
                     <default>false</default>
+                    <label>Archived</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -239,4 +247,5 @@
     </recordTypes>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

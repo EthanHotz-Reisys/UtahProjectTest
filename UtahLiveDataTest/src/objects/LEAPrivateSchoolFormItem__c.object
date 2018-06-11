@@ -46,6 +46,7 @@
     <description>Ties an LEA to an application</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -110,24 +111,29 @@
                 <value>
                     <fullName>Contacted – Participating</fullName>
                     <default>false</default>
+                    <label>Contacted – Participating</label>
                 </value>
                 <value>
                     <fullName>Contacted – Not Participating</fullName>
                     <default>false</default>
+                    <label>Contacted – Not Participating</label>
                 </value>
                 <value>
                     <fullName>Contacted - Refused Consultation</fullName>
                     <default>false</default>
+                    <label>Contacted - Refused Consultation</label>
                 </value>
                 <value>
                     <fullName>Not Participating</fullName>
                     <default>false</default>
                     <isActive>false</isActive>
+                    <label>Not Participating</label>
                 </value>
                 <value>
                     <fullName>Participating</fullName>
                     <default>false</default>
                     <isActive>false</isActive>
+                    <label>Participating</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -158,4 +164,5 @@
     <pluralLabel>LEAPrivateSchoolFormItems</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

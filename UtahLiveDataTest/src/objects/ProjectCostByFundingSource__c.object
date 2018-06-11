@@ -46,6 +46,7 @@
     <description>Project Cost By Funding Source : Details of Funding Sources</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -205,22 +206,27 @@
                 <value>
                     <fullName>State</fullName>
                     <default>false</default>
+                    <label>State</label>
                 </value>
                 <value>
                     <fullName>Federal</fullName>
                     <default>false</default>
+                    <label>Federal</label>
                 </value>
                 <value>
                     <fullName>Private/NGO</fullName>
                     <default>false</default>
+                    <label>Private/NGO</label>
                 </value>
                 <value>
                     <fullName>Program Income</fullName>
                     <default>false</default>
+                    <label>Program Income</label>
                 </value>
                 <value>
                     <fullName>Others</fullName>
                     <default>false</default>
+                    <label>Others</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -267,4 +273,5 @@
  Text(SourceType__c)==&apos;Program Income&apos; )</errorConditionFormula>
         <errorMessage>Requested/Unsecured Amount must be 0 when Financial Source is of type Program Income</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

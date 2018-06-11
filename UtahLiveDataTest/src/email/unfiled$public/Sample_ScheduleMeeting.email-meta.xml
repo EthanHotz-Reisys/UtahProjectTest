@@ -4,7 +4,9 @@
     <description>Setting up a time to talk</description>
     <encodingKey>UTF-8</encodingKey>
     <name>SAMPLE: Schedule an upcoming meeting</name>
+    <relatedEntityType>Opportunity</relatedEntityType>
     <style>none</style>
     <subject>Upcoming Meeting Request</subject>
     <type>custom</type>
+    <uiType>SFX_Sample</uiType>
 </EmailTemplate>

@@ -50,6 +50,7 @@
     <description>[Business] This object is used for the Review of the Grantee Application in the State as a Grantee Application</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -127,10 +128,12 @@
                 <value>
                     <fullName>Evaluated</fullName>
                     <default>true</default>
+                    <label>Evaluated</label>
                 </value>
                 <value>
                     <fullName>Converted to Opportunity</fullName>
                     <default>false</default>
+                    <label>Converted to Opportunity</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -227,22 +230,27 @@ NOT(ISPICKVAL(FundingOpportunity__r.Status__c,&apos;Reviewed&apos;)))</formula>
                 <value>
                     <fullName>1 - NA</fullName>
                     <default>false</default>
+                    <label>1 - NA</label>
                 </value>
                 <value>
                     <fullName>2 - Low</fullName>
                     <default>true</default>
+                    <label>2 - Low</label>
                 </value>
                 <value>
                     <fullName>3 - Medium</fullName>
                     <default>false</default>
+                    <label>3 - Medium</label>
                 </value>
                 <value>
                     <fullName>4 - High</fullName>
                     <default>false</default>
+                    <label>4 - High</label>
                 </value>
                 <value>
                     <fullName>5 - Very High</fullName>
                     <default>false</default>
+                    <label>5 - Very High</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -310,10 +318,12 @@ NOT(ISPICKVAL(FundingOpportunity__r.Status__c,&apos;Reviewed&apos;)))</formula>
                 <value>
                     <fullName>Passed</fullName>
                     <default>false</default>
+                    <label>Passed</label>
                 </value>
                 <value>
                     <fullName>Failed</fullName>
                     <default>false</default>
+                    <label>Failed</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -348,22 +358,27 @@ NOT(ISPICKVAL(FundingOpportunity__r.Status__c,&apos;Reviewed&apos;)))</formula>
                 <value>
                     <fullName>1 - NA</fullName>
                     <default>false</default>
+                    <label>1 - NA</label>
                 </value>
                 <value>
                     <fullName>2 - Low</fullName>
                     <default>true</default>
+                    <label>2 - Low</label>
                 </value>
                 <value>
                     <fullName>3 - Medium</fullName>
                     <default>false</default>
+                    <label>3 - Medium</label>
                 </value>
                 <value>
                     <fullName>4 - High</fullName>
                     <default>false</default>
+                    <label>4 - High</label>
                 </value>
                 <value>
                     <fullName>5 - Very High</fullName>
                     <default>false</default>
+                    <label>5 - Very High</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -391,26 +406,32 @@ NOT(ISPICKVAL(FundingOpportunity__r.Status__c,&apos;Reviewed&apos;)))</formula>
                 <value>
                     <fullName>Fiscal</fullName>
                     <default>false</default>
+                    <label>Fiscal</label>
                 </value>
                 <value>
                     <fullName>Program</fullName>
                     <default>false</default>
+                    <label>Program</label>
                 </value>
                 <value>
                     <fullName>Manager</fullName>
                     <default>false</default>
+                    <label>Manager</label>
                 </value>
                 <value>
                     <fullName>Other</fullName>
                     <default>false</default>
+                    <label>Other</label>
                 </value>
                 <value>
                     <fullName>SME Review</fullName>
                     <default>false</default>
+                    <label>SME Review</label>
                 </value>
                 <value>
                     <fullName>Peer/Author Review</fullName>
                     <default>false</default>
+                    <label>Peer/Author Review</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -461,14 +482,17 @@ NOT(ISPICKVAL(FundingOpportunity__r.Status__c,&apos;Reviewed&apos;)))</formula>
                 <value>
                     <fullName>Sent for Review</fullName>
                     <default>false</default>
+                    <label>Sent for Review</label>
                 </value>
                 <value>
                     <fullName>Under Review</fullName>
                     <default>false</default>
+                    <label>Under Review</label>
                 </value>
                 <value>
                     <fullName>Review Completed</fullName>
                     <default>false</default>
+                    <label>Review Completed</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -498,18 +522,22 @@ NOT(ISPICKVAL(FundingOpportunity__r.Status__c,&apos;Reviewed&apos;)))</formula>
                 <value>
                     <fullName>Program</fullName>
                     <default>true</default>
+                    <label>Program</label>
                 </value>
                 <value>
                     <fullName>Fiscal</fullName>
                     <default>false</default>
+                    <label>Fiscal</label>
                 </value>
                 <value>
                     <fullName>Grants</fullName>
                     <default>false</default>
+                    <label>Grants</label>
                 </value>
                 <value>
                     <fullName>Others</fullName>
                     <default>false</default>
+                    <label>Others</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -523,4 +551,5 @@ NOT(ISPICKVAL(FundingOpportunity__r.Status__c,&apos;Reviewed&apos;)))</formula>
     <pluralLabel>Application Reviews</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

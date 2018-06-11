@@ -46,6 +46,7 @@
     <description>This is FINET Vendor address object</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
@@ -68,10 +69,12 @@
                 <value>
                     <fullName>Residential</fullName>
                     <default>false</default>
+                    <label>Residential</label>
                 </value>
                 <value>
                     <fullName>Work</fullName>
                     <default>false</default>
+                    <label>Work</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -179,4 +182,5 @@
     <pluralLabel>FINETVendorAddresses</pluralLabel>
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

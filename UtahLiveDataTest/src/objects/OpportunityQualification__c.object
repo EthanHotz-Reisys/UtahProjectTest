@@ -48,6 +48,7 @@
     <description>[Business] This is for a Sub Recipient to Mark an Announcement so that after some days he or she can create an application for the same announcement. This is created because there might be lots of announcement but sub recipient might be interested with only few announcement so he/she can mark it as qualified and later convert into an application</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
@@ -207,26 +208,32 @@ DATEVALUE(FundingOpportunity__r.PreApplicationDeadlineWithDateTime__c)&lt;Today(
                 <value>
                     <fullName>Converted to Application</fullName>
                     <default>false</default>
+                    <label>Converted to Application</label>
                 </value>
                 <value>
                     <fullName>Submitted to Grantor</fullName>
                     <default>false</default>
+                    <label>Submitted to Grantor</label>
                 </value>
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
                 <value>
                     <fullName>Awarded</fullName>
                     <default>false</default>
+                    <label>Awarded</label>
                 </value>
                 <value>
                     <fullName>Interested</fullName>
                     <default>true</default>
+                    <label>Interested</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -295,4 +302,5 @@ DATEVALUE(FundingOpportunity__r.PreApplicationDeadlineWithDateTime__c)&lt;Today(
         <fullName>SharetoExternalUsers__c</fullName>
         <label>Share to External Users</label>
     </sharingReasons>
+    <visibility>Public</visibility>
 </CustomObject>

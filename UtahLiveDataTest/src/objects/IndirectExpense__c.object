@@ -46,6 +46,7 @@
     <description>This object is used for SF425 Federal Financial Progress Report form.</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
@@ -153,18 +154,22 @@
                 <value>
                     <fullName>Provisional</fullName>
                     <default>false</default>
+                    <label>Provisional</label>
                 </value>
                 <value>
                     <fullName>Predetermined</fullName>
                     <default>false</default>
+                    <label>Predetermined</label>
                 </value>
                 <value>
                     <fullName>Final</fullName>
                     <default>false</default>
+                    <label>Final</label>
                 </value>
                 <value>
                     <fullName>Fixed</fullName>
                     <default>false</default>
+                    <label>Fixed</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -179,4 +184,5 @@
     <pluralLabel>Indirect Expenses</pluralLabel>
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

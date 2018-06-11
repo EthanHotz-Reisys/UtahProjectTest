@@ -4,7 +4,9 @@
     <description>Introduction email</description>
     <encodingKey>UTF-8</encodingKey>
     <name>SAMPLE: Customer Interest</name>
+    <relatedEntityType>Lead</relatedEntityType>
     <style>none</style>
     <subject>Thanks for your interest</subject>
     <type>custom</type>
+    <uiType>SFX_Sample</uiType>
 </EmailTemplate>

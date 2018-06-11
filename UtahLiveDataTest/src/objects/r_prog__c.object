@@ -52,6 +52,7 @@
     <description>This is the object for the FINET program creation</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
@@ -74,10 +75,12 @@
                 <value>
                     <fullName>True</fullName>
                     <default>true</default>
+                    <label>True</label>
                 </value>
                 <value>
                     <fullName>False</fullName>
                     <default>false</default>
+                    <label>False</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -97,10 +100,12 @@
                 <value>
                     <fullName>True</fullName>
                     <default>true</default>
+                    <label>True</label>
                 </value>
                 <value>
                     <fullName>False</fullName>
                     <default>false</default>
+                    <label>False</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -231,18 +236,22 @@
                 <value>
                     <fullName>Beaver County</fullName>
                     <default>false</default>
+                    <label>Beaver County</label>
                 </value>
                 <value>
                     <fullName>Box Elder County</fullName>
                     <default>false</default>
+                    <label>Box Elder County</label>
                 </value>
                 <value>
                     <fullName>Cache County</fullName>
                     <default>false</default>
+                    <label>Cache County</label>
                 </value>
                 <value>
                     <fullName>Carbon County</fullName>
                     <default>false</default>
+                    <label>Carbon County</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -498,14 +507,17 @@
                 <value>
                     <fullName>Draft</fullName>
                     <default>false</default>
+                    <label>Draft</label>
                 </value>
                 <value>
                     <fullName>Pending</fullName>
                     <default>false</default>
+                    <label>Pending</label>
                 </value>
                 <value>
                     <fullName>Final</fullName>
                     <default>false</default>
+                    <label>Final</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -525,14 +537,17 @@
                 <value>
                     <fullName>Held</fullName>
                     <default>false</default>
+                    <label>Held</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
                 <value>
                     <fullName>Submitted</fullName>
                     <default>false</default>
+                    <label>Submitted</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -763,30 +778,37 @@ LN_TYP = 2 on update</description>
                 <value>
                     <fullName>No Phase</fullName>
                     <default>false</default>
+                    <label>No Phase</label>
                 </value>
                 <value>
                     <fullName>Draft</fullName>
                     <default>false</default>
+                    <label>Draft</label>
                 </value>
                 <value>
                     <fullName>Pending</fullName>
                     <default>false</default>
+                    <label>Pending</label>
                 </value>
                 <value>
                     <fullName>Final</fullName>
                     <default>false</default>
+                    <label>Final</label>
                 </value>
                 <value>
                     <fullName>Historical (Final)</fullName>
                     <default>false</default>
+                    <label>Historical (Final)</label>
                 </value>
                 <value>
                     <fullName>Conflict Draft</fullName>
                     <default>false</default>
+                    <label>Conflict Draft</label>
                 </value>
                 <value>
                     <fullName>Template</fullName>
                     <default>false</default>
+                    <label>Template</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -934,10 +956,12 @@ LN_TYP = 2 on update</description>
                 <value>
                     <fullName>Allowed for Reimbursement</fullName>
                     <default>false</default>
+                    <label>Allowed for Reimbursement</label>
                 </value>
                 <value>
                     <fullName>Suspended for Reimbursement</fullName>
                     <default>false</default>
+                    <label>Suspended for Reimbursement</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -990,22 +1014,27 @@ LN_TYP = 2 on update</description>
                 <value>
                     <fullName>Created</fullName>
                     <default>true</default>
+                    <label>Created</label>
                 </value>
                 <value>
                     <fullName>Submitted for Approval</fullName>
                     <default>false</default>
+                    <label>Submitted for Approval</label>
                 </value>
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Active</fullName>
                     <default>false</default>
+                    <label>Active</label>
                 </value>
                 <value>
                     <fullName>Being Amended</fullName>
                     <default>false</default>
+                    <label>Being Amended</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1192,4 +1221,5 @@ LN_TYP = 2 on update</description>
         <errorConditionFormula>RemainingAmount__c &lt; 0</errorConditionFormula>
         <errorMessage>Remaining Amount cannot be less than zero</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

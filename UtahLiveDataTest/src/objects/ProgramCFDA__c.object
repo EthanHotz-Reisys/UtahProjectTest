@@ -46,6 +46,7 @@
     <description>CFDA object for linking to FINET Program.</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -98,79 +99,98 @@
                 <value>
                     <fullName>10.579</fullName>
                     <default>false</default>
+                    <label>10.579</label>
                 </value>
                 <value>
                     <fullName>84.002</fullName>
                     <default>false</default>
+                    <label>84.002</label>
                 </value>
                 <value>
                     <fullName>84.010</fullName>
                     <default>false</default>
+                    <label>84.010</label>
                 </value>
                 <value>
                     <fullName>84.011</fullName>
                     <default>false</default>
+                    <label>84.011</label>
                 </value>
                 <value>
                     <fullName>84.013</fullName>
                     <default>false</default>
+                    <label>84.013</label>
                 </value>
                 <value>
                     <fullName>84.027</fullName>
                     <default>false</default>
+                    <label>84.027</label>
                 </value>
                 <value>
                     <fullName>84.048</fullName>
                     <default>false</default>
+                    <label>84.048</label>
                 </value>
                 <value>
                     <fullName>84.173</fullName>
                     <default>false</default>
+                    <label>84.173</label>
                 </value>
                 <value>
                     <fullName>84.196</fullName>
                     <default>false</default>
+                    <label>84.196</label>
                 </value>
                 <value>
                     <fullName>84.287</fullName>
                     <default>false</default>
+                    <label>84.287</label>
                 </value>
                 <value>
                     <fullName>84.323</fullName>
                     <default>false</default>
+                    <label>84.323</label>
                 </value>
                 <value>
                     <fullName>84.358B</fullName>
                     <default>false</default>
+                    <label>84.358B</label>
                 </value>
                 <value>
                     <fullName>84.365</fullName>
                     <default>false</default>
+                    <label>84.365</label>
                 </value>
                 <value>
                     <fullName>84.367</fullName>
                     <default>false</default>
+                    <label>84.367</label>
                 </value>
                 <value>
                     <fullName>84.377</fullName>
                     <default>false</default>
+                    <label>84.377</label>
                 </value>
                 <value>
                     <fullName>84.424A</fullName>
                     <default>false</default>
+                    <label>84.424A</label>
                 </value>
                 <value>
                     <fullName>93.558</fullName>
                     <default>false</default>
+                    <label>93.558</label>
                 </value>
                 <value>
                     <fullName>94.006</fullName>
                     <default>false</default>
+                    <label>94.006</label>
                 </value>
                 <value>
                     <fullName>84.01</fullName>
                     <default>false</default>
                     <isActive>false</isActive>
+                    <label>84.01</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -277,4 +297,5 @@
         <lookupDialogsAdditionalFields>CFDATitle__c</lookupDialogsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

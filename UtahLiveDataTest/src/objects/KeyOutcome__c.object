@@ -46,6 +46,7 @@
     <description>[Business] Defines the list of the key outcomes based on key performance Category and Key Performance Indicator</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -222,10 +223,12 @@ AND(ServiceArea__c!=null, ServiceArea__r.HideEditDelete__c)
                 <value>
                     <fullName>Increase</fullName>
                     <default>true</default>
+                    <label>Increase</label>
                 </value>
                 <value>
                     <fullName>Decrease</fullName>
                     <default>false</default>
+                    <label>Decrease</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -278,46 +281,57 @@ AND(ServiceArea__c!=null, ServiceArea__r.HideEditDelete__c)
                 <value>
                     <fullName>Acres (Ac)</fullName>
                     <default>false</default>
+                    <label>Acres (Ac)</label>
                 </value>
                 <value>
                     <fullName>Distance (Miles)</fullName>
                     <default>false</default>
+                    <label>Distance (Miles)</label>
                 </value>
                 <value>
                     <fullName>Dollar ($)</fullName>
                     <default>false</default>
+                    <label>Dollar ($)</label>
                 </value>
                 <value>
                     <fullName>Score</fullName>
                     <default>false</default>
+                    <label>Score</label>
                 </value>
                 <value>
                     <fullName>Gallons (gal)</fullName>
                     <default>false</default>
+                    <label>Gallons (gal)</label>
                 </value>
                 <value>
                     <fullName>Number(#)</fullName>
                     <default>false</default>
+                    <label>Number(#)</label>
                 </value>
                 <value>
                     <fullName>Percentage(%)</fullName>
                     <default>false</default>
+                    <label>Percentage(%)</label>
                 </value>
                 <value>
                     <fullName>Speed (MPH)</fullName>
                     <default>false</default>
+                    <label>Speed (MPH)</label>
                 </value>
                 <value>
                     <fullName>Time (Hours)</fullName>
                     <default>false</default>
+                    <label>Time (Hours)</label>
                 </value>
                 <value>
                     <fullName>Walk Score</fullName>
                     <default>false</default>
+                    <label>Walk Score</label>
                 </value>
                 <value>
                     <fullName>Weight (Tons)</fullName>
                     <default>false</default>
+                    <label>Weight (Tons)</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -372,4 +386,5 @@ AND(ServiceArea__c!=null, ServiceArea__r.HideEditDelete__c)
         <searchResultsAdditionalFields>Unit__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

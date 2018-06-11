@@ -50,6 +50,7 @@
     <description>[Business]  Currently used to track pre-award negotiation requests for application only. In the future this can be enhanced for other objects like award or something else.</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
@@ -105,10 +106,12 @@
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Denied</fullName>
                     <default>false</default>
+                    <label>Denied</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -184,38 +187,47 @@
                 <value>
                     <fullName>Applicant Profile</fullName>
                     <default>false</default>
+                    <label>Applicant Profile</label>
                 </value>
                 <value>
                     <fullName>Overview : Application Overview</fullName>
                     <default>false</default>
+                    <label>Overview : Application Overview</label>
                 </value>
                 <value>
                     <fullName>Overview : Organization Contact Information</fullName>
                     <default>false</default>
+                    <label>Overview : Organization Contact Information</label>
                 </value>
                 <value>
                     <fullName>Overview : Project Abstract</fullName>
                     <default>false</default>
+                    <label>Overview : Project Abstract</label>
                 </value>
                 <value>
                     <fullName>Budget Details</fullName>
                     <default>false</default>
+                    <label>Budget Details</label>
                 </value>
                 <value>
                     <fullName>Attachments :  Business Forms</fullName>
                     <default>false</default>
+                    <label>Attachments :  Business Forms</label>
                 </value>
                 <value>
                     <fullName>Attachments : Attachments</fullName>
                     <default>false</default>
+                    <label>Attachments : Attachments</label>
                 </value>
                 <value>
                     <fullName>Attachments : Notes</fullName>
                     <default>false</default>
+                    <label>Attachments : Notes</label>
                 </value>
                 <value>
                     <fullName>Miscellaneous</fullName>
                     <default>false</default>
+                    <label>Miscellaneous</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -338,10 +350,12 @@
                 <value>
                     <fullName>Internal</fullName>
                     <default>false</default>
+                    <label>Internal</label>
                 </value>
                 <value>
                     <fullName>External</fullName>
                     <default>false</default>
+                    <label>External</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -401,10 +415,12 @@
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -559,10 +575,12 @@ IF(ISPICKVAL(DEDecision__c, &quot;Approved&quot;) &amp;&amp; DEDecisionIndicator
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -873,10 +891,12 @@ IF($User.Id = Application__r.ProjectOfficer__r.Id &amp;&amp; POTaskStatus__c=fal
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -993,10 +1013,12 @@ IF($User.Id = Application__r.ProjectOfficer__r.Id &amp;&amp; POTaskStatus__c=fal
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Denied</fullName>
                     <default>false</default>
+                    <label>Denied</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1026,22 +1048,27 @@ IF($User.Id = Application__r.ProjectOfficer__r.Id &amp;&amp; POTaskStatus__c=fal
                 <value>
                     <fullName>Not Initiated</fullName>
                     <default>true</default>
+                    <label>Not Initiated</label>
                 </value>
                 <value>
                     <fullName>Initiated</fullName>
                     <default>false</default>
+                    <label>Initiated</label>
                 </value>
                 <value>
                     <fullName>In Progress</fullName>
                     <default>false</default>
+                    <label>In Progress</label>
                 </value>
                 <value>
                     <fullName>Submitted</fullName>
                     <default>false</default>
+                    <label>Submitted</label>
                 </value>
                 <value>
                     <fullName>Submitted for Approval</fullName>
                     <default>false</default>
+                    <label>Submitted for Approval</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1060,10 +1087,12 @@ IF($User.Id = Application__r.ProjectOfficer__r.Id &amp;&amp; POTaskStatus__c=fal
                 <value>
                     <fullName>New</fullName>
                     <default>true</default>
+                    <label>New</label>
                 </value>
                 <value>
                     <fullName>Change</fullName>
                     <default>false</default>
+                    <label>Change</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1105,4 +1134,5 @@ IF($User.Id = Application__r.ProjectOfficer__r.Id &amp;&amp; POTaskStatus__c=fal
         <errorDisplayField>Comments__c</errorDisplayField>
         <errorMessage>Maximum character count exceeded.</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

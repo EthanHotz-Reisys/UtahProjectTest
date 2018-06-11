@@ -20,4 +20,5 @@ This email is to notify you that your account have been deactivated.
 Sincerely,
 EGMS Team</textOnly>
     <type>html</type>
+    <uiType>Aloha</uiType>
 </EmailTemplate>

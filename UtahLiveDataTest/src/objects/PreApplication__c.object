@@ -50,6 +50,7 @@
     <description>[Business] Pre-Application is a trimmed version of the Application with limited information</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
@@ -220,14 +221,17 @@
                 <value>
                     <fullName>TBD</fullName>
                     <default>false</default>
+                    <label>TBD</label>
                 </value>
                 <value>
                     <fullName>TBD1</fullName>
                     <default>false</default>
+                    <label>TBD1</label>
                 </value>
                 <value>
                     <fullName>TBD2</fullName>
                     <default>false</default>
+                    <label>TBD2</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -836,10 +840,12 @@ ISPICKVAL( Status__c , &apos;Submitted to Grantor&apos;),
                 <value>
                     <fullName>Application</fullName>
                     <default>false</default>
+                    <label>Application</label>
                 </value>
                 <value>
                     <fullName>Pre-Application</fullName>
                     <default>false</default>
+                    <label>Pre-Application</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -957,10 +963,12 @@ If(AND(NumberOfReviewersAssigned__c = NumberOfReviewsFinalized__c, NumberOfRevie
                 <value>
                     <fullName>Yes</fullName>
                     <default>false</default>
+                    <label>Yes</label>
                 </value>
                 <value>
                     <fullName>No</fullName>
                     <default>false</default>
+                    <label>No</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1000,10 +1008,12 @@ If(AND(NumberOfReviewersAssigned__c = NumberOfReviewsFinalized__c, NumberOfRevie
                 <value>
                     <fullName>Yes</fullName>
                     <default>false</default>
+                    <label>Yes</label>
                 </value>
                 <value>
                     <fullName>No</fullName>
                     <default>false</default>
+                    <label>No</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1110,22 +1120,27 @@ If(AND(NumberOfReviewersAssigned__c = NumberOfReviewsFinalized__c, NumberOfRevie
                 <value>
                     <fullName>Discretionary</fullName>
                     <default>false</default>
+                    <label>Discretionary</label>
                 </value>
                 <value>
                     <fullName>Mandatory</fullName>
                     <default>false</default>
+                    <label>Mandatory</label>
                 </value>
                 <value>
                     <fullName>Continuation</fullName>
                     <default>false</default>
+                    <label>Continuation</label>
                 </value>
                 <value>
                     <fullName>Earmark</fullName>
                     <default>false</default>
+                    <label>Earmark</label>
                 </value>
                 <value>
                     <fullName>Other</fullName>
                     <default>false</default>
+                    <label>Other</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1726,46 +1741,57 @@ DaysLeft__c&lt;1)</formula>
                 <value>
                     <fullName>Created</fullName>
                     <default>true</default>
+                    <label>Created</label>
                 </value>
                 <value>
                     <fullName>Reviewed</fullName>
                     <default>false</default>
+                    <label>Reviewed</label>
                 </value>
                 <value>
                     <fullName>Submitted for Approval</fullName>
                     <default>false</default>
+                    <label>Submitted for Approval</label>
                 </value>
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Submitted to Grantor</fullName>
                     <default>false</default>
+                    <label>Submitted to Grantor</label>
                 </value>
                 <value>
                     <fullName>Awarded</fullName>
                     <default>false</default>
+                    <label>Awarded</label>
                 </value>
                 <value>
                     <fullName>Not Awarded</fullName>
                     <default>false</default>
+                    <label>Not Awarded</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
                 <value>
                     <fullName>Complete</fullName>
                     <default>false</default>
+                    <label>Complete</label>
                 </value>
                 <value>
                     <fullName>Submitted</fullName>
                     <default>false</default>
+                    <label>Submitted</label>
                 </value>
                 <value>
                     <fullName>Change Requested</fullName>
                     <default>false</default>
+                    <label>Change Requested</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1906,14 +1932,17 @@ DaysLeft__c&lt;1)</formula>
                 <value>
                     <fullName>New</fullName>
                     <default>false</default>
+                    <label>New</label>
                 </value>
                 <value>
                     <fullName>Continuation</fullName>
                     <default>false</default>
+                    <label>Continuation</label>
                 </value>
                 <value>
                     <fullName>Revision</fullName>
                     <default>false</default>
+                    <label>Revision</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -2246,4 +2275,5 @@ DaysLeft__c&lt;1)</formula>
         <label>Sharing for Review</label>
     </sharingReasons>
     <startsWith>Vowel</startsWith>
+    <visibility>Public</visibility>
 </CustomObject>

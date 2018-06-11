@@ -45,6 +45,7 @@
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -159,14 +160,17 @@
                 <value>
                     <fullName>Daily</fullName>
                     <default>false</default>
+                    <label>Daily</label>
                 </value>
                 <value>
                     <fullName>Weekly</fullName>
                     <default>false</default>
+                    <label>Weekly</label>
                 </value>
                 <value>
                     <fullName>Monthly</fullName>
                     <default>false</default>
+                    <label>Monthly</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -185,14 +189,17 @@
                 <value>
                     <fullName>Daily</fullName>
                     <default>false</default>
+                    <label>Daily</label>
                 </value>
                 <value>
                     <fullName>Weekly</fullName>
                     <default>false</default>
+                    <label>Weekly</label>
                 </value>
                 <value>
                     <fullName>Monthly</fullName>
                     <default>false</default>
+                    <label>Monthly</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -377,18 +384,22 @@
                 <value>
                     <fullName>Federal</fullName>
                     <default>false</default>
+                    <label>Federal</label>
                 </value>
                 <value>
                     <fullName>State</fullName>
                     <default>false</default>
+                    <label>State</label>
                 </value>
                 <value>
                     <fullName>Local</fullName>
                     <default>false</default>
+                    <label>Local</label>
                 </value>
                 <value>
                     <fullName>Private</fullName>
                     <default>false</default>
+                    <label>Private</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -407,18 +418,22 @@
                 <value>
                     <fullName>Law Enforcement</fullName>
                     <default>false</default>
+                    <label>Law Enforcement</label>
                 </value>
                 <value>
                     <fullName>Prosecution</fullName>
                     <default>false</default>
+                    <label>Prosecution</label>
                 </value>
                 <value>
                     <fullName>Court</fullName>
                     <default>false</default>
+                    <label>Court</label>
                 </value>
                 <value>
                     <fullName>Probation &amp; Parole</fullName>
                     <default>false</default>
+                    <label>Probation &amp; Parole</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -446,18 +461,22 @@
                 <value>
                     <fullName>A</fullName>
                     <default>false</default>
+                    <label>A</label>
                 </value>
                 <value>
                     <fullName>B</fullName>
                     <default>false</default>
+                    <label>B</label>
                 </value>
                 <value>
                     <fullName>C</fullName>
                     <default>false</default>
+                    <label>C</label>
                 </value>
                 <value>
                     <fullName>D</fullName>
                     <default>false</default>
+                    <label>D</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -622,4 +641,5 @@
         <errorConditionFormula>IF(Review__r.ReviewStepName__c = &apos;SME Review&apos;, AwardedPoints__c &gt; PossiblePoints__c, false)</errorConditionFormula>
         <errorMessage>Awarded Points cannot be greater than Possible Points</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

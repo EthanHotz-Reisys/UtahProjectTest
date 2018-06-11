@@ -48,6 +48,7 @@
     <description>[Business] This object stores the Master List of all the Budget categories</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -101,18 +102,22 @@
                 <value>
                     <fullName>Construction</fullName>
                     <default>false</default>
+                    <label>Construction</label>
                 </value>
                 <value>
                     <fullName>Non construction</fullName>
                     <default>false</default>
+                    <label>Non construction</label>
                 </value>
                 <value>
                     <fullName>Type-A</fullName>
                     <default>false</default>
+                    <label>Type-A</label>
                 </value>
                 <value>
                     <fullName>Type-B</fullName>
                     <default>false</default>
+                    <label>Type-B</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -174,30 +179,37 @@
                 <value>
                     <fullName>Award__c</fullName>
                     <default>false</default>
+                    <label>Award__c</label>
                 </value>
                 <value>
                     <fullName>Grant__c</fullName>
                     <default>false</default>
+                    <label>Grant__c</label>
                 </value>
                 <value>
                     <fullName>ProgressReports__c</fullName>
                     <default>false</default>
+                    <label>ProgressReports__c</label>
                 </value>
                 <value>
                     <fullName>FederalCostBreakdownView__c</fullName>
                     <default>false</default>
+                    <label>FederalCostBreakdownView__c</label>
                 </value>
                 <value>
                     <fullName>ProgressReportCostBreakdown__c</fullName>
                     <default>false</default>
+                    <label>ProgressReportCostBreakdown__c</label>
                 </value>
                 <value>
                     <fullName>ProgressReportDetail__c</fullName>
                     <default>false</default>
+                    <label>ProgressReportDetail__c</label>
                 </value>
                 <value>
                     <fullName>ProgressReportCostBreakdown1__c</fullName>
                     <default>false</default>
+                    <label>ProgressReportCostBreakdown1__c</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -215,10 +227,12 @@
                 <value>
                     <fullName>Active</fullName>
                     <default>true</default>
+                    <label>Active</label>
                 </value>
                 <value>
                     <fullName>Inactive</fullName>
                     <default>false</default>
+                    <label>Inactive</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -236,62 +250,77 @@
                 <value>
                     <fullName>Personnel</fullName>
                     <default>true</default>
+                    <label>Personnel</label>
                 </value>
                 <value>
                     <fullName>Service</fullName>
                     <default>false</default>
+                    <label>Service</label>
                 </value>
                 <value>
                     <fullName>Travel</fullName>
                     <default>false</default>
+                    <label>Travel</label>
                 </value>
                 <value>
                     <fullName>Equipment</fullName>
                     <default>false</default>
+                    <label>Equipment</label>
                 </value>
                 <value>
                     <fullName>Construction</fullName>
                     <default>false</default>
+                    <label>Construction</label>
                 </value>
                 <value>
                     <fullName>Occupancy</fullName>
                     <default>false</default>
+                    <label>Occupancy</label>
                 </value>
                 <value>
                     <fullName>Subscription</fullName>
                     <default>false</default>
+                    <label>Subscription</label>
                 </value>
                 <value>
                     <fullName>Supplies</fullName>
                     <default>false</default>
+                    <label>Supplies</label>
                 </value>
                 <value>
                     <fullName>Publication</fullName>
                     <default>false</default>
+                    <label>Publication</label>
                 </value>
                 <value>
                     <fullName>IDC</fullName>
                     <default>false</default>
+                    <label>IDC</label>
                 </value>
                 <value>
                     <fullName>Software</fullName>
                     <default>false</default>
+                    <label>Software</label>
                 </value>
                 <value>
                     <fullName>Other</fullName>
                     <default>false</default>
+                    <label>Other</label>
                 </value>
                 <value>
                     <fullName>Fringe Benefits</fullName>
                     <default>false</default>
+                    <label>Fringe Benefits</label>
                 </value>
                 <value>
                     <fullName>Contracted Fees</fullName>
                     <default>false</default>
+                    <label>Contracted Fees</label>
                 </value>
                 <value>
                     <fullName>Training</fullName>
                     <default>false</default>
+                    <label>Training</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -701,4 +730,5 @@
     </recordTypes>
     <searchLayouts/>
     <sharingModel>Read</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

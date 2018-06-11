@@ -50,6 +50,7 @@
     <description>[Business] Master list of all the Service Area information is stored in this object , Service areas are also applicable to the Announcements ,Programs,Application via Junction objects</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
@@ -97,50 +98,62 @@
                 <value>
                     <fullName>Health</fullName>
                     <default>false</default>
+                    <label>Health</label>
                 </value>
                 <value>
                     <fullName>Transportation</fullName>
                     <default>false</default>
+                    <label>Transportation</label>
                 </value>
                 <value>
                     <fullName>Education/Training</fullName>
                     <default>false</default>
+                    <label>Education/Training</label>
                 </value>
                 <value>
                     <fullName>Infrastructure</fullName>
                     <default>false</default>
+                    <label>Infrastructure</label>
                 </value>
                 <value>
                     <fullName>Economic Development</fullName>
                     <default>false</default>
+                    <label>Economic Development</label>
                 </value>
                 <value>
                     <fullName>Environment</fullName>
                     <default>false</default>
+                    <label>Environment</label>
                 </value>
                 <value>
                     <fullName>Arts/Culture</fullName>
                     <default>false</default>
+                    <label>Arts/Culture</label>
                 </value>
                 <value>
                     <fullName>Public Works</fullName>
                     <default>false</default>
+                    <label>Public Works</label>
                 </value>
                 <value>
                     <fullName>Parks and Recreation</fullName>
                     <default>false</default>
+                    <label>Parks and Recreation</label>
                 </value>
                 <value>
                     <fullName>Finance</fullName>
                     <default>false</default>
+                    <label>Finance</label>
                 </value>
                 <value>
                     <fullName>Safety/Security</fullName>
                     <default>false</default>
+                    <label>Safety/Security</label>
                 </value>
                 <value>
                     <fullName>Information Technology</fullName>
                     <default>false</default>
+                    <label>Information Technology</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -269,14 +282,17 @@
                 <value>
                     <fullName>Draft</fullName>
                     <default>true</default>
+                    <label>Draft</label>
                 </value>
                 <value>
                     <fullName>Active</fullName>
                     <default>false</default>
+                    <label>Active</label>
                 </value>
                 <value>
                     <fullName>Inactive</fullName>
                     <default>false</default>
+                    <label>Inactive</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -363,4 +379,5 @@
         <fullName>OwnerReplacement__c</fullName>
         <label>Owner Replacement</label>
     </sharingReasons>
+    <visibility>Public</visibility>
 </CustomObject>

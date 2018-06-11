@@ -46,6 +46,7 @@
     <description>[Business] This object summarizes number of Applications/Pre-Applications and number of Review Steps. As discussed with Shiva, Shah, Davinder , this object can not removed sometime later when possible.</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -330,18 +331,22 @@
                 <value>
                     <fullName>Not Started</fullName>
                     <default>true</default>
+                    <label>Not Started</label>
                 </value>
                 <value>
                     <fullName>In Progress</fullName>
                     <default>false</default>
+                    <label>In Progress</label>
                 </value>
                 <value>
                     <fullName>Completed</fullName>
                     <default>false</default>
+                    <label>Completed</label>
                 </value>
                 <value>
                     <fullName>Submit for Approve</fullName>
                     <default>false</default>
+                    <label>Submit for Approve</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -427,4 +432,5 @@
         <errorConditionFormula>IF(ReviewStepsCreated__c &gt;  NumberOfReviewSteps__c , TRUE, FALSE)</errorConditionFormula>
         <errorMessage>Review Steps exceed the total number of Review Steps allowed for this Group</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

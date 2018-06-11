@@ -46,6 +46,7 @@
     <description>This is the object for the FINET program creation</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>true</enableReports>
@@ -75,14 +76,17 @@
                 <value>
                     <fullName>Test1</fullName>
                     <default>false</default>
+                    <label>Test1</label>
                 </value>
                 <value>
                     <fullName>Test2</fullName>
                     <default>false</default>
+                    <label>Test2</label>
                 </value>
                 <value>
                     <fullName>Test3</fullName>
                     <default>false</default>
+                    <label>Test3</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -166,18 +170,22 @@
                 <value>
                     <fullName>Beaver County</fullName>
                     <default>false</default>
+                    <label>Beaver County</label>
                 </value>
                 <value>
                     <fullName>Box Elder County</fullName>
                     <default>false</default>
+                    <label>Box Elder County</label>
                 </value>
                 <value>
                     <fullName>Cache County</fullName>
                     <default>false</default>
+                    <label>Cache County</label>
                 </value>
                 <value>
                     <fullName>Carbon County</fullName>
                     <default>false</default>
+                    <label>Carbon County</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -487,10 +495,12 @@
                 <value>
                     <fullName>Allowed for Reimbursement</fullName>
                     <default>false</default>
+                    <label>Allowed for Reimbursement</label>
                 </value>
                 <value>
                     <fullName>Suspended for Reimbursement</fullName>
                     <default>false</default>
+                    <label>Suspended for Reimbursement</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -539,18 +549,22 @@
                 <value>
                     <fullName>Created</fullName>
                     <default>true</default>
+                    <label>Created</label>
                 </value>
                 <value>
                     <fullName>Submitted for Approval</fullName>
                     <default>false</default>
+                    <label>Submitted for Approval</label>
                 </value>
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Active</fullName>
                     <default>false</default>
+                    <label>Active</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -596,4 +610,5 @@
     <pluralLabel>FINET Programs</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

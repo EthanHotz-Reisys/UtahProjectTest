@@ -13,4 +13,5 @@ This email is to notify you that, your Application {!Application__c.Name} for th
 Sincerely,
 UtahGrants Support Team</textOnly>
     <type>html</type>
+    <uiType>Aloha</uiType>
 </EmailTemplate>

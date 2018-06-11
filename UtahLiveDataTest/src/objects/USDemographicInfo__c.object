@@ -46,6 +46,7 @@
     <description>[Business] All the Demographic information related to the Zip Codes, Cities ,latitude ,longitudes related to the Cities in North America</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>false</enableReports>
@@ -176,18 +177,22 @@
                 <value>
                     <fullName>UNIQUE</fullName>
                     <default>false</default>
+                    <label>UNIQUE</label>
                 </value>
                 <value>
                     <fullName>STANDARD</fullName>
                     <default>false</default>
+                    <label>STANDARD</label>
                 </value>
                 <value>
                     <fullName>PO BOX</fullName>
                     <default>false</default>
+                    <label>PO BOX</label>
                 </value>
                 <value>
                     <fullName>MILITARY</fullName>
                     <default>false</default>
+                    <label>MILITARY</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -225,4 +230,5 @@
     <pluralLabel>MST: Demographics</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

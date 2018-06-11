@@ -46,6 +46,7 @@
     <description>[Business] - It Connects Federal Grant to Sub Grant. How Federal Grant is distributed with in Sub Grants.</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -87,4 +88,5 @@
     <pluralLabel>Grants Connector</pluralLabel>
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

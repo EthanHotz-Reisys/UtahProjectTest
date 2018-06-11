@@ -45,6 +45,7 @@
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>true</enableReports>
@@ -178,14 +179,17 @@ UPPER( TEXT( Grants_API_Document_Phase__c ) ) == &quot;FINAL&quot; ||
                 <value>
                     <fullName>Draft</fullName>
                     <default>false</default>
+                    <label>Draft</label>
                 </value>
                 <value>
                     <fullName>Pending</fullName>
                     <default>false</default>
+                    <label>Pending</label>
                 </value>
                 <value>
                     <fullName>Final</fullName>
                     <default>false</default>
+                    <label>Final</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -206,14 +210,17 @@ UPPER( TEXT( Grants_API_Document_Phase__c ) ) == &quot;FINAL&quot; ||
                 <value>
                     <fullName>Held</fullName>
                     <default>false</default>
+                    <label>Held</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
                 <value>
                     <fullName>Submitted</fullName>
                     <default>false</default>
+                    <label>Submitted</label>
                 </value>
             </valueSetDefinition>
             <valueSettings>
@@ -245,14 +252,17 @@ UPPER( TEXT( Grants_API_Document_Phase__c ) ) == &quot;FINAL&quot; ||
                 <value>
                     <fullName>GAX</fullName>
                     <default>false</default>
+                    <label>GAX</label>
                 </value>
                 <value>
                     <fullName>GCAM</fullName>
                     <default>false</default>
+                    <label>GCAM</label>
                 </value>
                 <value>
                     <fullName>IET</fullName>
                     <default>false</default>
+                    <label>IET</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -284,4 +294,5 @@ UPPER( TEXT( Grants_API_Document_Phase__c ) ) == &quot;FINAL&quot; ||
     <pluralLabel>Grants API Document Status</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

@@ -50,6 +50,7 @@
     <description>[Business] Template defined for the Review</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -314,10 +315,12 @@
                 <value>
                     <fullName>Panel End Date</fullName>
                     <default>true</default>
+                    <label>Panel End Date</label>
                 </value>
                 <value>
                     <fullName>Today + Offset</fullName>
                     <default>false</default>
+                    <label>Today + Offset</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -335,10 +338,12 @@
                 <value>
                     <fullName>External</fullName>
                     <default>false</default>
+                    <label>External</label>
                 </value>
                 <value>
                     <fullName>Internal</fullName>
                     <default>false</default>
+                    <label>Internal</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -435,4 +440,5 @@
         <searchFilterFields>AnnoucementId__c</searchFilterFields>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

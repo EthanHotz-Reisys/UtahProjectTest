@@ -1,3 +1,0 @@
-<apex:page action="{!groupRedirect}" controller="GNT.GroupRedirectCtrl" >
-
-</apex:page>

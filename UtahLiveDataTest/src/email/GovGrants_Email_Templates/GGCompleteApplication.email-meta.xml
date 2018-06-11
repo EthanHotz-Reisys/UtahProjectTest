@@ -11,4 +11,5 @@
 
 Please complete the application</textOnly>
     <type>html</type>
+    <uiType>Aloha</uiType>
 </EmailTemplate>

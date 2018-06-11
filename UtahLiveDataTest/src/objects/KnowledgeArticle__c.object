@@ -46,6 +46,7 @@
     <description>This object is created for FAQs for GovGrants Tech Support Application</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -77,34 +78,42 @@
                 <value>
                     <fullName>Functional-Grantee</fullName>
                     <default>false</default>
+                    <label>Functional-Grantee</label>
                 </value>
                 <value>
                     <fullName>Functional-Grantor</fullName>
                     <default>false</default>
+                    <label>Functional-Grantor</label>
                 </value>
                 <value>
                     <fullName>Operational</fullName>
                     <default>false</default>
+                    <label>Operational</label>
                 </value>
                 <value>
                     <fullName>Technical</fullName>
                     <default>false</default>
+                    <label>Technical</label>
                 </value>
                 <value>
                     <fullName>Access</fullName>
                     <default>false</default>
+                    <label>Access</label>
                 </value>
                 <value>
                     <fullName>Reviewer Feature</fullName>
                     <default>false</default>
+                    <label>Reviewer Feature</label>
                 </value>
                 <value>
                     <fullName>User Management</fullName>
                     <default>false</default>
+                    <label>User Management</label>
                 </value>
                 <value>
                     <fullName>Web Browser</fullName>
                     <default>false</default>
+                    <label>Web Browser</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -145,18 +154,22 @@
                 <value>
                     <fullName>Draft</fullName>
                     <default>false</default>
+                    <label>Draft</label>
                 </value>
                 <value>
                     <fullName>Active</fullName>
                     <default>false</default>
+                    <label>Active</label>
                 </value>
                 <value>
                     <fullName>Inactive</fullName>
                     <default>false</default>
+                    <label>Inactive</label>
                 </value>
                 <value>
                     <fullName>Archived</fullName>
                     <default>false</default>
+                    <label>Archived</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -175,38 +188,47 @@
                 <value>
                     <fullName>Login Issue</fullName>
                     <default>false</default>
+                    <label>Login Issue</label>
                 </value>
                 <value>
                     <fullName>Password Reset</fullName>
                     <default>false</default>
+                    <label>Password Reset</label>
                 </value>
                 <value>
                     <fullName>Permission Required</fullName>
                     <default>false</default>
+                    <label>Permission Required</label>
                 </value>
                 <value>
                     <fullName>Assigned Applications</fullName>
                     <default>false</default>
+                    <label>Assigned Applications</label>
                 </value>
                 <value>
                     <fullName>Submit for Review</fullName>
                     <default>false</default>
+                    <label>Submit for Review</label>
                 </value>
                 <value>
                     <fullName>User Error</fullName>
                     <default>false</default>
+                    <label>User Error</label>
                 </value>
                 <value>
                     <fullName>Clear Cache</fullName>
                     <default>false</default>
+                    <label>Clear Cache</label>
                 </value>
                 <value>
                     <fullName>Password Expired</fullName>
                     <default>false</default>
+                    <label>Password Expired</label>
                 </value>
                 <value>
                     <fullName>Supported Browsers</fullName>
                     <default>false</default>
+                    <label>Supported Browsers</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -226,34 +248,42 @@
                 <value>
                     <fullName>Internal</fullName>
                     <default>false</default>
+                    <label>Internal</label>
                 </value>
                 <value>
                     <fullName>Applicant</fullName>
                     <default>false</default>
+                    <label>Applicant</label>
                 </value>
                 <value>
                     <fullName>Reviewer</fullName>
                     <default>false</default>
+                    <label>Reviewer</label>
                 </value>
                 <value>
                     <fullName>Generic</fullName>
                     <default>false</default>
+                    <label>Generic</label>
                 </value>
                 <value>
                     <fullName>Grantor</fullName>
                     <default>false</default>
+                    <label>Grantor</label>
                 </value>
                 <value>
                     <fullName>Grantee</fullName>
                     <default>false</default>
+                    <label>Grantee</label>
                 </value>
                 <value>
                     <fullName>Recipient</fullName>
                     <default>false</default>
+                    <label>Recipient</label>
                 </value>
                 <value>
                     <fullName>Guest</fullName>
                     <default>false</default>
+                    <label>Guest</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -272,4 +302,5 @@
     <pluralLabel>Knowledge Articles</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

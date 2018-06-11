@@ -50,6 +50,7 @@
     <description>[Business] Defines the Review Panel to review the Applications</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -446,10 +447,12 @@
                 <value>
                     <fullName>Panel End Date</fullName>
                     <default>true</default>
+                    <label>Panel End Date</label>
                 </value>
                 <value>
                     <fullName>Today + Offset Days</fullName>
                     <default>false</default>
+                    <label>Today + Offset Days</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -467,10 +470,12 @@
                 <value>
                     <fullName>External</fullName>
                     <default>false</default>
+                    <label>External</label>
                 </value>
                 <value>
                     <fullName>Internal</fullName>
                     <default>false</default>
+                    <label>Internal</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -584,4 +589,5 @@
         <errorConditionFormula>AND(EndDate__c &lt; TODAY(), TEXT(ReviewStep__r.Status__c) = &apos;Not Started&apos;)</errorConditionFormula>
         <errorMessage>Review due date can not be less than today.</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

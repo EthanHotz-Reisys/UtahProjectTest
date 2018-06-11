@@ -29,4 +29,5 @@ To access the Application, kindly login to the UtahGrants portal.
 Sincerely,
 UtahGrants Support Team</textOnly>
     <type>html</type>
+    <uiType>Aloha</uiType>
 </EmailTemplate>

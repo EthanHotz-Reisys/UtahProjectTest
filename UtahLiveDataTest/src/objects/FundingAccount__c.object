@@ -50,6 +50,7 @@
     <description>[Business] Funding account details Funding accounts are created from Funding sources</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
@@ -678,14 +679,17 @@
                 <value>
                     <fullName>Created</fullName>
                     <default>true</default>
+                    <label>Created</label>
                 </value>
                 <value>
                     <fullName>Funded</fullName>
                     <default>false</default>
+                    <label>Funded</label>
                 </value>
                 <value>
                     <fullName>Closed</fullName>
                     <default>false</default>
+                    <label>Closed</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -771,4 +775,5 @@
         <errorDisplayField>FundingSource__c</errorDisplayField>
         <errorMessage>You cannot change a Funding source for an existing Funding Account</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

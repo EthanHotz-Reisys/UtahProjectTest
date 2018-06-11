@@ -50,6 +50,7 @@
     <description>[Business] Defines the details of for the Payment request.Payment request is done when award is already awarded and the Grantee wants to make use of the funds</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>false</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
@@ -74,10 +75,12 @@
                 <value>
                     <fullName>Current Expenditures</fullName>
                     <default>false</default>
+                    <label>Current Expenditures</label>
                 </value>
                 <value>
                     <fullName>Cumulative Expenditures</fullName>
                     <default>false</default>
+                    <label>Cumulative Expenditures</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -387,30 +390,37 @@
                 <value>
                     <fullName>Mr .</fullName>
                     <default>false</default>
+                    <label>Mr .</label>
                 </value>
                 <value>
                     <fullName>Mrs .</fullName>
                     <default>false</default>
+                    <label>Mrs .</label>
                 </value>
                 <value>
                     <fullName>Miss</fullName>
                     <default>false</default>
+                    <label>Miss</label>
                 </value>
                 <value>
                     <fullName>Ms .</fullName>
                     <default>false</default>
+                    <label>Ms .</label>
                 </value>
                 <value>
                     <fullName>Dr .</fullName>
                     <default>false</default>
+                    <label>Dr .</label>
                 </value>
                 <value>
                     <fullName>Rev .</fullName>
                     <default>false</default>
+                    <label>Rev .</label>
                 </value>
                 <value>
                     <fullName>Prof .</fullName>
                     <default>false</default>
+                    <label>Prof .</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -431,18 +441,22 @@
                 <value>
                     <fullName>Jr .</fullName>
                     <default>false</default>
+                    <label>Jr .</label>
                 </value>
                 <value>
                     <fullName>Sr .</fullName>
                     <default>false</default>
+                    <label>Sr .</label>
                 </value>
                 <value>
                     <fullName>M. D.</fullName>
                     <default>false</default>
+                    <label>M. D.</label>
                 </value>
                 <value>
                     <fullName>Ph. D</fullName>
                     <default>false</default>
+                    <label>Ph. D</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -715,10 +729,12 @@
                 <value>
                     <fullName>UOVC</fullName>
                     <default>false</default>
+                    <label>UOVC</label>
                 </value>
                 <value>
                     <fullName>USBE</fullName>
                     <default>false</default>
+                    <label>USBE</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1450,10 +1466,12 @@
                 <value>
                     <fullName>Check</fullName>
                     <default>true</default>
+                    <label>Check</label>
                 </value>
                 <value>
                     <fullName>Direct Deposit</fullName>
                     <default>false</default>
+                    <label>Direct Deposit</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1484,10 +1502,12 @@
                 <value>
                     <fullName>Planned</fullName>
                     <default>true</default>
+                    <label>Planned</label>
                 </value>
                 <value>
                     <fullName>Unplanned</fullName>
                     <default>false</default>
+                    <label>Unplanned</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1808,54 +1828,67 @@
                 <value>
                     <fullName>Created</fullName>
                     <default>true</default>
+                    <label>Created</label>
                 </value>
                 <value>
                     <fullName>Change Requested</fullName>
                     <default>false</default>
+                    <label>Change Requested</label>
                 </value>
                 <value>
                     <fullName>Submitted for Approval</fullName>
                     <default>false</default>
+                    <label>Submitted for Approval</label>
                 </value>
                 <value>
                     <fullName>Submitted to Grantor</fullName>
                     <default>false</default>
+                    <label>Submitted to Grantor</label>
                 </value>
                 <value>
                     <fullName>Approval 1</fullName>
                     <default>false</default>
+                    <label>Approval 1</label>
                 </value>
                 <value>
                     <fullName>Approval 2</fullName>
                     <default>false</default>
+                    <label>Approval 2</label>
                 </value>
                 <value>
                     <fullName>Approval 3</fullName>
                     <default>false</default>
+                    <label>Approval 3</label>
                 </value>
                 <value>
                     <fullName>Approval 4</fullName>
                     <default>false</default>
+                    <label>Approval 4</label>
                 </value>
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Paid</fullName>
                     <default>false</default>
+                    <label>Paid</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
                 <value>
                     <fullName>Waived</fullName>
                     <default>false</default>
+                    <label>Waived</label>
                 </value>
                 <value>
                     <fullName>Sent to FINET</fullName>
                     <default>false</default>
+                    <label>Sent to FINET</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1915,6 +1948,7 @@
                 <value>
                     <fullName>I Agree</fullName>
                     <default>false</default>
+                    <label>I Agree</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -2029,18 +2063,22 @@
                 <value>
                     <fullName>Advance</fullName>
                     <default>true</default>
+                    <label>Advance</label>
                 </value>
                 <value>
                     <fullName>Reimbursement</fullName>
                     <default>false</default>
+                    <label>Reimbursement</label>
                 </value>
                 <value>
                     <fullName>Expenditure</fullName>
                     <default>false</default>
+                    <label>Expenditure</label>
                 </value>
                 <value>
                     <fullName>Waiver</fullName>
                     <default>false</default>
+                    <label>Waiver</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -2420,4 +2458,5 @@ BillingEndDate__c &lt;  Award__r.ProjectPeriodStartDate__c || BillingStartDate__
         <errorConditionFormula>RequestedAmountthisAction__c  &gt;  AwardedAmount__c</errorConditionFormula>
         <errorMessage>Requested Amount this Action cannot be greater than Awarded Amount</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

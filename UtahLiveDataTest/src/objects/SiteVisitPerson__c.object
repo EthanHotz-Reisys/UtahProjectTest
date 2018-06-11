@@ -46,6 +46,7 @@
     <description>[Business] Information related to the person who is performing the Site Visits.</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
@@ -249,14 +250,17 @@
                 <value>
                     <fullName>Internal</fullName>
                     <default>false</default>
+                    <label>Internal</label>
                 </value>
                 <value>
                     <fullName>External</fullName>
                     <default>false</default>
+                    <label>External</label>
                 </value>
                 <value>
                     <fullName>Contact</fullName>
                     <default>false</default>
+                    <label>Contact</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -291,4 +295,5 @@
     <pluralLabel>Site Visit Persons</pluralLabel>
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>
