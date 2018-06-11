@@ -45,6 +45,7 @@
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>true</enableActivities>
     <enableBulkApi>false</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
@@ -236,4 +237,5 @@
     <pluralLabel>MSP Financial Stages</pluralLabel>
     <searchLayouts/>
     <sharingModel>Read</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

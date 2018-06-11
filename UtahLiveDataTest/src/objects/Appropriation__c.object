@@ -46,6 +46,7 @@
     <description>This is for the funding block in USBE</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>true</enableReports>
@@ -108,290 +109,362 @@
                 <value>
                     <fullName>PED Business Services</fullName>
                     <default>false</default>
+                    <label>PED Business Services</label>
                 </value>
                 <value>
                     <fullName>PED District Computer Services</fullName>
                     <default>false</default>
+                    <label>PED District Computer Services</label>
                 </value>
                 <value>
                     <fullName>PED Math Teacher Training</fullName>
                     <default>false</default>
+                    <label>PED Math Teacher Training</label>
                 </value>
                 <value>
                     <fullName>Teacher Salary Supplement</fullName>
                     <default>false</default>
+                    <label>Teacher Salary Supplement</label>
                 </value>
                 <value>
                     <fullName>Comprehensive Health Insurance Pool</fullName>
                     <default>false</default>
+                    <label>Comprehensive Health Insurance Pool</label>
                 </value>
                 <value>
                     <fullName>PSC Alternative Fuel Vehicles</fullName>
                     <default>false</default>
+                    <label>PSC Alternative Fuel Vehicles</label>
                 </value>
                 <value>
                     <fullName>FIN 04 GO Refunding Bonds Series A</fullName>
                     <default>false</default>
+                    <label>FIN 04 GO Refunding Bonds Series A</label>
                 </value>
                 <value>
                     <fullName>DAG needed for deprec</fullName>
                     <default>false</default>
+                    <label>DAG needed for deprec</label>
                 </value>
                 <value>
                     <fullName>DHS Homebound Transportation</fullName>
                     <default>false</default>
+                    <label>DHS Homebound Transportation</label>
                 </value>
                 <value>
                     <fullName>DHS USDC Miscellaneous Donation Fund</fullName>
                     <default>false</default>
+                    <label>DHS USDC Miscellaneous Donation Fund</label>
                 </value>
                 <value>
                     <fullName>DHS USDC Workshop Fund</fullName>
                     <default>false</default>
+                    <label>DHS USDC Workshop Fund</label>
                 </value>
                 <value>
                     <fullName>DHS State Hospital Gift Fund</fullName>
                     <default>false</default>
+                    <label>DHS State Hospital Gift Fund</label>
                 </value>
                 <value>
                     <fullName>DHS State Hospital Unit Fund</fullName>
                     <default>false</default>
+                    <label>DHS State Hospital Unit Fund</label>
                 </value>
                 <value>
                     <fullName>DHS State Developmental Center Land Fund</fullName>
                     <default>false</default>
+                    <label>DHS State Developmental Center Land Fund</label>
                 </value>
                 <value>
                     <fullName>DOH Medicaid Expansion Fund</fullName>
                     <default>false</default>
+                    <label>DOH Medicaid Expansion Fund</label>
                 </value>
                 <value>
                     <fullName>DOT Wire Estate Memorial</fullName>
                     <default>false</default>
+                    <label>DOT Wire Estate Memorial</label>
                 </value>
                 <value>
                     <fullName>DWS Child Care Fund</fullName>
                     <default>false</default>
+                    <label>DWS Child Care Fund</label>
                 </value>
                 <value>
                     <fullName>DWS Refugee Services Fund</fullName>
                     <default>false</default>
+                    <label>DWS Refugee Services Fund</label>
                 </value>
                 <value>
                     <fullName>DNR Water Commissioner Fund</fullName>
                     <default>false</default>
+                    <label>DNR Water Commissioner Fund</label>
                 </value>
                 <value>
                     <fullName>DNR Reclamation Fund</fullName>
                     <default>false</default>
+                    <label>DNR Reclamation Fund</label>
                 </value>
                 <value>
                     <fullName>DAS Waste Tire Recycling</fullName>
                     <default>false</default>
+                    <label>DAS Waste Tire Recycling</label>
                 </value>
                 <value>
                     <fullName>GED Utah Stem Foundation Fund</fullName>
                     <default>false</default>
+                    <label>GED Utah Stem Foundation Fund</label>
                 </value>
                 <value>
                     <fullName>DBS Instruction</fullName>
                     <default>false</default>
+                    <label>DBS Instruction</label>
                 </value>
                 <value>
                     <fullName>DBS Support Services</fullName>
                     <default>false</default>
+                    <label>DBS Support Services</label>
                 </value>
                 <value>
                     <fullName>DBS Instruction-2009</fullName>
                     <default>false</default>
+                    <label>DBS Instruction-2009</label>
                 </value>
                 <value>
                     <fullName>DBS Appropriation Transfer</fullName>
                     <default>false</default>
+                    <label>DBS Appropriation Transfer</label>
                 </value>
                 <value>
                     <fullName>DBS Institutional Council</fullName>
                     <default>false</default>
+                    <label>DBS Institutional Council</label>
                 </value>
                 <value>
                     <fullName>DBS needed for deprec</fullName>
                     <default>false</default>
+                    <label>DBS needed for deprec</label>
                 </value>
                 <value>
                     <fullName>PED Charter School Finance Authority</fullName>
                     <default>false</default>
+                    <label>PED Charter School Finance Authority</label>
                 </value>
                 <value>
                     <fullName>RGT Board of Regents Administration</fullName>
                     <default>false</default>
+                    <label>RGT Board of Regents Administration</label>
                 </value>
                 <value>
                     <fullName>RGT Campus Compact</fullName>
                     <default>false</default>
+                    <label>RGT Campus Compact</label>
                 </value>
                 <value>
                     <fullName>RGT Concurrent Enrollment Coordination</fullName>
                     <default>false</default>
+                    <label>RGT Concurrent Enrollment Coordination</label>
                 </value>
                 <value>
                     <fullName>RGT Federal Programs</fullName>
                     <default>false</default>
+                    <label>RGT Federal Programs</label>
                 </value>
                 <value>
                     <fullName>RGT Engineering Initiative</fullName>
                     <default>false</default>
+                    <label>RGT Engineering Initiative</label>
                 </value>
                 <value>
                     <fullName>RGT Student Financial Aid</fullName>
                     <default>false</default>
+                    <label>RGT Student Financial Aid</label>
                 </value>
                 <value>
                     <fullName>RGT WICHE Waivers</fullName>
                     <default>false</default>
+                    <label>RGT WICHE Waivers</label>
                 </value>
                 <value>
                     <fullName>RGT TH Bell Scholarships</fullName>
                     <default>false</default>
+                    <label>RGT TH Bell Scholarships</label>
                 </value>
                 <value>
                     <fullName>RGT Veterans Tuition Gap Program</fullName>
                     <default>false</default>
+                    <label>RGT Veterans Tuition Gap Program</label>
                 </value>
                 <value>
                     <fullName>RGT Articulation Support</fullName>
                     <default>false</default>
+                    <label>RGT Articulation Support</label>
                 </value>
                 <value>
                     <fullName>RGT College Access Challenge Grant</fullName>
                     <default>false</default>
+                    <label>RGT College Access Challenge Grant</label>
                 </value>
                 <value>
                     <fullName>RGT PS Officer Career Advancement Reimb</fullName>
                     <default>false</default>
+                    <label>RGT PS Officer Career Advancement Reimb</label>
                 </value>
                 <value>
                     <fullName>RGT Services for Hearing Impaired Students</fullName>
                     <default>false</default>
+                    <label>RGT Services for Hearing Impaired Students</label>
                 </value>
                 <value>
                     <fullName>RGT New Century Scholarships</fullName>
                     <default>false</default>
+                    <label>RGT New Century Scholarships</label>
                 </value>
                 <value>
                     <fullName>RGT Math Competency Initiative</fullName>
                     <default>false</default>
+                    <label>RGT Math Competency Initiative</label>
                 </value>
                 <value>
                     <fullName>RGT Higher Ed Success Stipend Program</fullName>
                     <default>false</default>
+                    <label>RGT Higher Ed Success Stipend Program</label>
                 </value>
                 <value>
                     <fullName>RGT Student Prosperity Savings</fullName>
                     <default>false</default>
+                    <label>RGT Student Prosperity Savings</label>
                 </value>
                 <value>
                     <fullName>RGT Technology Initiative</fullName>
                     <default>false</default>
+                    <label>RGT Technology Initiative</label>
                 </value>
                 <value>
                     <fullName>RGT Engineering Loan Repayment</fullName>
                     <default>false</default>
+                    <label>RGT Engineering Loan Repayment</label>
                 </value>
                 <value>
                     <fullName>RGT Minority Scholarships</fullName>
                     <default>false</default>
+                    <label>RGT Minority Scholarships</label>
                 </value>
                 <value>
                     <fullName>RGT Education Excellence</fullName>
                     <default>false</default>
+                    <label>RGT Education Excellence</label>
                 </value>
                 <value>
                     <fullName>RGT Performance Funding</fullName>
                     <default>false</default>
+                    <label>RGT Performance Funding</label>
                 </value>
                 <value>
                     <fullName>RGT Scholarship Program</fullName>
                     <default>false</default>
+                    <label>RGT Scholarship Program</label>
                 </value>
                 <value>
                     <fullName>RGT Academic Library Consortium</fullName>
                     <default>false</default>
+                    <label>RGT Academic Library Consortium</label>
                 </value>
                 <value>
                     <fullName>RGT Economic Development</fullName>
                     <default>false</default>
+                    <label>RGT Economic Development</label>
                 </value>
                 <value>
                     <fullName>RGT Cluster Acceleration Partnership</fullName>
                     <default>false</default>
+                    <label>RGT Cluster Acceleration Partnership</label>
                 </value>
                 <value>
                     <fullName>UOU Education &amp; General</fullName>
                     <default>false</default>
+                    <label>UOU Education &amp; General</label>
                 </value>
                 <value>
                     <fullName>UOU Educationally Disadvantaged</fullName>
                     <default>false</default>
+                    <label>UOU Educationally Disadvantaged</label>
                 </value>
                 <value>
                     <fullName>UOU School of Medicine</fullName>
                     <default>false</default>
+                    <label>UOU School of Medicine</label>
                 </value>
                 <value>
                     <fullName>UOU University Hospital</fullName>
                     <default>false</default>
+                    <label>UOU University Hospital</label>
                 </value>
                 <value>
                     <fullName>UOU School of Dentistry</fullName>
                     <default>false</default>
+                    <label>UOU School of Dentistry</label>
                 </value>
                 <value>
                     <fullName>UOU Tele Health Network</fullName>
                     <default>false</default>
+                    <label>UOU Tele Health Network</label>
                 </value>
                 <value>
                     <fullName>UOU Admin of the Mobile Home Park Helpline</fullName>
                     <default>false</default>
+                    <label>UOU Admin of the Mobile Home Park Helpline</label>
                 </value>
                 <value>
                     <fullName>UOU Public Broadcasting</fullName>
                     <default>false</default>
+                    <label>UOU Public Broadcasting</label>
                 </value>
                 <value>
                     <fullName>UOU Operations &amp; Maintenance</fullName>
                     <default>false</default>
+                    <label>UOU Operations &amp; Maintenance</label>
                 </value>
                 <value>
                     <fullName>UOU Cancer Research &amp; Treatment</fullName>
                     <default>false</default>
+                    <label>UOU Cancer Research &amp; Treatment</label>
                 </value>
                 <value>
                     <fullName>UOU Occupational &amp; Environmental Health</fullName>
                     <default>false</default>
+                    <label>UOU Occupational &amp; Environmental Health</label>
                 </value>
                 <value>
                     <fullName>UOU Miner&apos;s Hospital</fullName>
                     <default>false</default>
+                    <label>UOU Miner&apos;s Hospital</label>
                 </value>
                 <value>
                     <fullName>UOU Poison Control Center</fullName>
                     <default>false</default>
+                    <label>UOU Poison Control Center</label>
                 </value>
                 <value>
                     <fullName>UOU Center on Aging</fullName>
                     <default>false</default>
+                    <label>UOU Center on Aging</label>
                 </value>
                 <value>
                     <fullName>FIN Teacher Salary Supplements</fullName>
                     <default>false</default>
+                    <label>FIN Teacher Salary Supplements</label>
                 </value>
                 <value>
                     <fullName>PED Charter School Revolving Account</fullName>
                     <default>false</default>
+                    <label>PED Charter School Revolving Account</label>
                 </value>
                 <value>
                     <fullName>PED School Building Revolving Account</fullName>
                     <default>false</default>
+                    <label>PED School Building Revolving Account</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -414,4 +487,5 @@
     <pluralLabel>Appropriations</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

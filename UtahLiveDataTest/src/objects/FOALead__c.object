@@ -50,6 +50,7 @@
     <description>[Business] Opportunities imported from Grants.gov in to this object for Grantee Functionality</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>true</enableFeeds>
     <enableHistory>true</enableHistory>
@@ -253,90 +254,112 @@
                 <value>
                     <fullName>AG: Agriculture</fullName>
                     <default>false</default>
+                    <label>AG: Agriculture</label>
                 </value>
                 <value>
                     <fullName>AR: Arts</fullName>
                     <default>false</default>
+                    <label>AR: Arts</label>
                 </value>
                 <value>
                     <fullName>BC: Business and Commerce</fullName>
                     <default>false</default>
+                    <label>BC: Business and Commerce</label>
                 </value>
                 <value>
                     <fullName>CD: Community Development</fullName>
                     <default>false</default>
+                    <label>CD: Community Development</label>
                 </value>
                 <value>
                     <fullName>CP: Consumer Protection</fullName>
                     <default>false</default>
+                    <label>CP: Consumer Protection</label>
                 </value>
                 <value>
                     <fullName>DPR: Disaster Prevention and Relief</fullName>
                     <default>false</default>
+                    <label>DPR: Disaster Prevention and Relief</label>
                 </value>
                 <value>
                     <fullName>ED: Education</fullName>
                     <default>false</default>
+                    <label>ED: Education</label>
                 </value>
                 <value>
                     <fullName>ELT: Employment, Labor and Training</fullName>
                     <default>false</default>
+                    <label>ELT: Employment, Labor and Training</label>
                 </value>
                 <value>
                     <fullName>EN: Energy</fullName>
                     <default>false</default>
+                    <label>EN: Energy</label>
                 </value>
                 <value>
                     <fullName>ENV: Environment</fullName>
                     <default>false</default>
+                    <label>ENV: Environment</label>
                 </value>
                 <value>
                     <fullName>FN: Food and Nutrition</fullName>
                     <default>false</default>
+                    <label>FN: Food and Nutrition</label>
                 </value>
                 <value>
                     <fullName>HL: Health</fullName>
                     <default>false</default>
+                    <label>HL: Health</label>
                 </value>
                 <value>
                     <fullName>HO: Housing</fullName>
                     <default>false</default>
+                    <label>HO: Housing</label>
                 </value>
                 <value>
                     <fullName>HU: Humanities</fullName>
                     <default>false</default>
+                    <label>HU: Humanities</label>
                 </value>
                 <value>
                     <fullName>ISS:  Income Security and Social Service</fullName>
                     <default>false</default>
+                    <label>ISS:  Income Security and Social Service</label>
                 </value>
                 <value>
                     <fullName>IS: Information and Statistics</fullName>
                     <default>false</default>
+                    <label>IS: Information and Statistics</label>
                 </value>
                 <value>
                     <fullName>LJL: Law, Justice and Legal Services</fullName>
                     <default>false</default>
+                    <label>LJL: Law, Justice and Legal Services</label>
                 </value>
                 <value>
                     <fullName>NR: Natural Resources</fullName>
                     <default>false</default>
+                    <label>NR: Natural Resources</label>
                 </value>
                 <value>
                     <fullName>RD: Regional Development</fullName>
                     <default>false</default>
+                    <label>RD: Regional Development</label>
                 </value>
                 <value>
                     <fullName>ST: Science and Technology</fullName>
                     <default>false</default>
+                    <label>ST: Science and Technology</label>
                 </value>
                 <value>
                     <fullName>T: Transportation</fullName>
                     <default>false</default>
+                    <label>T: Transportation</label>
                 </value>
                 <value>
                     <fullName>O: Other</fullName>
                     <default>false</default>
+                    <label>O: Other</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -369,10 +392,12 @@
                 <value>
                     <fullName>Yes</fullName>
                     <default>false</default>
+                    <label>Yes</label>
                 </value>
                 <value>
                     <fullName>No</fullName>
                     <default>false</default>
+                    <label>No</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -428,70 +453,87 @@
                 <value>
                     <fullName>99: Unrestricted</fullName>
                     <default>false</default>
+                    <label>99: Unrestricted</label>
                 </value>
                 <value>
                     <fullName>00: State governments</fullName>
                     <default>false</default>
+                    <label>00: State governments</label>
                 </value>
                 <value>
                     <fullName>01: County governments</fullName>
                     <default>false</default>
+                    <label>01: County governments</label>
                 </value>
                 <value>
                     <fullName>02: City or township governments</fullName>
                     <default>false</default>
+                    <label>02: City or township governments</label>
                 </value>
                 <value>
                     <fullName>04: Special district governments</fullName>
                     <default>false</default>
+                    <label>04: Special district governments</label>
                 </value>
                 <value>
                     <fullName>05: Independent school districts</fullName>
                     <default>false</default>
+                    <label>05: Independent school districts</label>
                 </value>
                 <value>
                     <fullName>06: Public and State higher education</fullName>
                     <default>false</default>
+                    <label>06: Public and State higher education</label>
                 </value>
                 <value>
                     <fullName>07: Native American tribal governments</fullName>
                     <default>false</default>
+                    <label>07: Native American tribal governments</label>
                 </value>
                 <value>
                     <fullName>08: Public housing authorities</fullName>
                     <default>false</default>
+                    <label>08: Public housing authorities</label>
                 </value>
                 <value>
                     <fullName>11: Native American tribal organizations</fullName>
                     <default>false</default>
+                    <label>11: Native American tribal organizations</label>
                 </value>
                 <value>
                     <fullName>12: Nonprofits with 501(c)(3) status</fullName>
                     <default>false</default>
+                    <label>12: Nonprofits with 501(c)(3) status</label>
                 </value>
                 <value>
                     <fullName>13: Nonprofits without 501(c)(3) status</fullName>
                     <default>false</default>
+                    <label>13: Nonprofits without 501(c)(3) status</label>
                 </value>
                 <value>
                     <fullName>20: Private institution higher education</fullName>
                     <default>false</default>
+                    <label>20: Private institution higher education</label>
                 </value>
                 <value>
                     <fullName>21: Individuals</fullName>
                     <default>false</default>
+                    <label>21: Individuals</label>
                 </value>
                 <value>
                     <fullName>22: For-profit organizations</fullName>
                     <default>false</default>
+                    <label>22: For-profit organizations</label>
                 </value>
                 <value>
                     <fullName>23: Small businesses</fullName>
                     <default>false</default>
+                    <label>23: Small businesses</label>
                 </value>
                 <value>
                     <fullName>25: Others</fullName>
                     <default>false</default>
+                    <label>25: Others</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -564,18 +606,22 @@
                 <value>
                     <fullName>G: Grant</fullName>
                     <default>false</default>
+                    <label>G: Grant</label>
                 </value>
                 <value>
                     <fullName>CA: Cooperative Agreement</fullName>
                     <default>false</default>
+                    <label>CA: Cooperative Agreement</label>
                 </value>
                 <value>
                     <fullName>O: Other</fullName>
                     <default>false</default>
+                    <label>O: Other</label>
                 </value>
                 <value>
                     <fullName>PC: Procurement Contract</fullName>
                     <default>false</default>
+                    <label>PC: Procurement Contract</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -666,22 +712,27 @@
                 <value>
                     <fullName>1 - NA</fullName>
                     <default>false</default>
+                    <label>1 - NA</label>
                 </value>
                 <value>
                     <fullName>2 - Low</fullName>
                     <default>true</default>
+                    <label>2 - Low</label>
                 </value>
                 <value>
                     <fullName>3 - Medium</fullName>
                     <default>false</default>
+                    <label>3 - Medium</label>
                 </value>
                 <value>
                     <fullName>4 - High</fullName>
                     <default>false</default>
+                    <label>4 - High</label>
                 </value>
                 <value>
                     <fullName>5 - Very High</fullName>
                     <default>false</default>
+                    <label>5 - Very High</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -768,22 +819,27 @@
                 <value>
                     <fullName>Discretionary</fullName>
                     <default>false</default>
+                    <label>Discretionary</label>
                 </value>
                 <value>
                     <fullName>Mandatory</fullName>
                     <default>false</default>
+                    <label>Mandatory</label>
                 </value>
                 <value>
                     <fullName>Continuation</fullName>
                     <default>false</default>
+                    <label>Continuation</label>
                 </value>
                 <value>
                     <fullName>Earmark</fullName>
                     <default>false</default>
+                    <label>Earmark</label>
                 </value>
                 <value>
                     <fullName>Other</fullName>
                     <default>false</default>
+                    <label>Other</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -845,22 +901,27 @@
                 <value>
                     <fullName>1 - NA</fullName>
                     <default>false</default>
+                    <label>1 - NA</label>
                 </value>
                 <value>
                     <fullName>2 - Low</fullName>
                     <default>true</default>
+                    <label>2 - Low</label>
                 </value>
                 <value>
                     <fullName>3 - Medium</fullName>
                     <default>false</default>
+                    <label>3 - Medium</label>
                 </value>
                 <value>
                     <fullName>4 - High</fullName>
                     <default>false</default>
+                    <label>4 - High</label>
                 </value>
                 <value>
                     <fullName>5 - Very High</fullName>
                     <default>false</default>
+                    <label>5 - Very High</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -896,10 +957,12 @@
                 <value>
                     <fullName>Open</fullName>
                     <default>false</default>
+                    <label>Open</label>
                 </value>
                 <value>
                     <fullName>Closed</fullName>
                     <default>false</default>
+                    <label>Closed</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -931,18 +994,22 @@
                 <value>
                     <fullName>New Lead</fullName>
                     <default>true</default>
+                    <label>New Lead</label>
                 </value>
                 <value>
                     <fullName>Qualified Lead</fullName>
                     <default>false</default>
+                    <label>Qualified Lead</label>
                 </value>
                 <value>
                     <fullName>Rejected Lead</fullName>
                     <default>false</default>
+                    <label>Rejected Lead</label>
                 </value>
                 <value>
                     <fullName>Converted to Opportunity</fullName>
                     <default>false</default>
+                    <label>Converted to Opportunity</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -975,4 +1042,5 @@
         <customTabListAdditionalFields>FundingOpportunityNumber__c</customTabListAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

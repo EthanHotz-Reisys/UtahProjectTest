@@ -4,7 +4,9 @@
     <description>Requesting time to talk</description>
     <encodingKey>UTF-8</encodingKey>
     <name>SAMPLE: Great Meeting You</name>
+    <relatedEntityType>Contact</relatedEntityType>
     <style>none</style>
     <subject>Great Meeting You</subject>
     <type>custom</type>
+    <uiType>SFX_Sample</uiType>
 </EmailTemplate>

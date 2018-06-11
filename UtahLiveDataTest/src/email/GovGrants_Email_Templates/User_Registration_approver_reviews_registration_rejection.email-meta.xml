@@ -11,4 +11,5 @@
 
 {!UserRegistration__c.UserName__c} has been rejected</textOnly>
     <type>html</type>
+    <uiType>Aloha</uiType>
 </EmailTemplate>

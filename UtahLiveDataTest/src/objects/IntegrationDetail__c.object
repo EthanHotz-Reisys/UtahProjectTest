@@ -46,6 +46,7 @@
     <description>[Business] Stores detail records of integration file</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -213,14 +214,17 @@
                 <value>
                     <fullName>JSON</fullName>
                     <default>false</default>
+                    <label>JSON</label>
                 </value>
                 <value>
                     <fullName>XML</fullName>
                     <default>false</default>
+                    <label>XML</label>
                 </value>
                 <value>
                     <fullName>File</fullName>
                     <default>false</default>
+                    <label>File</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -273,14 +277,17 @@
                 <value>
                     <fullName>Get</fullName>
                     <default>false</default>
+                    <label>Get</label>
                 </value>
                 <value>
                     <fullName>Post</fullName>
                     <default>false</default>
+                    <label>Post</label>
                 </value>
                 <value>
                     <fullName>Batch Job</fullName>
                     <default>false</default>
+                    <label>Batch Job</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -319,22 +326,27 @@
                 <value>
                     <fullName>New</fullName>
                     <default>true</default>
+                    <label>New</label>
                 </value>
                 <value>
                     <fullName>In-Progress</fullName>
                     <default>false</default>
+                    <label>In-Progress</label>
                 </value>
                 <value>
                     <fullName>Failed</fullName>
                     <default>false</default>
+                    <label>Failed</label>
                 </value>
                 <value>
                     <fullName>Completed</fullName>
                     <default>false</default>
+                    <label>Completed</label>
                 </value>
                 <value>
                     <fullName>Re-Process</fullName>
                     <default>false</default>
+                    <label>Re-Process</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -372,10 +384,12 @@
                 <value>
                     <fullName>Inbound</fullName>
                     <default>false</default>
+                    <label>Inbound</label>
                 </value>
                 <value>
                     <fullName>Outbound</fullName>
                     <default>false</default>
+                    <label>Outbound</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -397,6 +411,7 @@
     <pluralLabel>Integration Details</pluralLabel>
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
     <webLinks>
         <fullName>ProcessRecord</fullName>
         <availability>online</availability>

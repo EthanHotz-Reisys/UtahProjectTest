@@ -46,6 +46,7 @@
     <description>[Framework] Defines the configuration for the Community registration</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -109,14 +110,17 @@
                 <value>
                     <fullName>Applicant</fullName>
                     <default>false</default>
+                    <label>Applicant</label>
                 </value>
                 <value>
                     <fullName>Reviewer</fullName>
                     <default>false</default>
+                    <label>Reviewer</label>
                 </value>
                 <value>
                     <fullName>Ind Applicant</fullName>
                     <default>false</default>
+                    <label>Ind Applicant</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -141,4 +145,5 @@
     <pluralLabel>Community Registration Configs</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

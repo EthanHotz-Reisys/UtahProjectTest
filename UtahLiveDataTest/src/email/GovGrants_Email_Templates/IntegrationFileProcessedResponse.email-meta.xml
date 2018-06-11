@@ -20,4 +20,5 @@ Please click on the link below to view the details of the status: {!IntegrationH
 
 Thank You</textOnly>
     <type>html</type>
+    <uiType>Aloha</uiType>
 </EmailTemplate>

@@ -4,7 +4,9 @@
     <description>Out of Office notification</description>
     <encodingKey>UTF-8</encodingKey>
     <name>SAMPLE: Out of the Office</name>
+    <relatedEntityType>Account</relatedEntityType>
     <style>none</style>
     <subject>Upcoming Out of the Office</subject>
     <type>custom</type>
+    <uiType>SFX_Sample</uiType>
 </EmailTemplate>

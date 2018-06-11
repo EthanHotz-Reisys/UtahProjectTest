@@ -50,6 +50,7 @@
     <description>[Business] Deliverable for a Grant/Award</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -121,6 +122,7 @@
                 <value>
                     <fullName>Report</fullName>
                     <default>false</default>
+                    <label>Report</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -173,26 +175,32 @@
                 <value>
                     <fullName>Yet to Start</fullName>
                     <default>true</default>
+                    <label>Yet to Start</label>
                 </value>
                 <value>
                     <fullName>In Progress</fullName>
                     <default>false</default>
+                    <label>In Progress</label>
                 </value>
                 <value>
                     <fullName>Completed</fullName>
                     <default>false</default>
+                    <label>Completed</label>
                 </value>
                 <value>
                     <fullName>Delivered</fullName>
                     <default>false</default>
+                    <label>Delivered</label>
                 </value>
                 <value>
                     <fullName>Accepted</fullName>
                     <default>false</default>
+                    <label>Accepted</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -223,34 +231,42 @@
                 <value>
                     <fullName>Documents</fullName>
                     <default>false</default>
+                    <label>Documents</label>
                 </value>
                 <value>
                     <fullName>People</fullName>
                     <default>false</default>
+                    <label>People</label>
                 </value>
                 <value>
                     <fullName>Media</fullName>
                     <default>false</default>
+                    <label>Media</label>
                 </value>
                 <value>
                     <fullName>Campaigns</fullName>
                     <default>false</default>
+                    <label>Campaigns</label>
                 </value>
                 <value>
                     <fullName>Buildings</fullName>
                     <default>false</default>
+                    <label>Buildings</label>
                 </value>
                 <value>
                     <fullName>Equipment</fullName>
                     <default>false</default>
+                    <label>Equipment</label>
                 </value>
                 <value>
                     <fullName>Publications</fullName>
                     <default>false</default>
+                    <label>Publications</label>
                 </value>
                 <value>
                     <fullName>Service</fullName>
                     <default>false</default>
+                    <label>Service</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -269,10 +285,12 @@
                 <value>
                     <fullName>Amount</fullName>
                     <default>false</default>
+                    <label>Amount</label>
                 </value>
                 <value>
                     <fullName>Persons</fullName>
                     <default>false</default>
+                    <label>Persons</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -296,4 +314,5 @@
     <pluralLabel>Deliverables</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

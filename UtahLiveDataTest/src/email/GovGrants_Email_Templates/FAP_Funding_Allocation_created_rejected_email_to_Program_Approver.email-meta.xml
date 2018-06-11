@@ -12,4 +12,5 @@
 {!Announcement__c.Id} has been {!Announcement__c.Status__c}.
 Sole source or formulae field scenario</textOnly>
     <type>html</type>
+    <uiType>Aloha</uiType>
 </EmailTemplate>

@@ -50,6 +50,7 @@
     <description>[Business] Template defined for a Step Review , Previous Name (Review Step Template)</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -95,14 +96,17 @@
                 <value>
                     <fullName>Auto-Assign to All</fullName>
                     <default>true</default>
+                    <label>Auto-Assign to All</label>
                 </value>
                 <value>
                     <fullName>Auto-Divide Equally</fullName>
                     <default>false</default>
+                    <label>Auto-Divide Equally</label>
                 </value>
                 <value>
                     <fullName>Manual Assignment</fullName>
                     <default>false</default>
+                    <label>Manual Assignment</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -197,10 +201,12 @@
                 <value>
                     <fullName>StateasGrantee</fullName>
                     <default>false</default>
+                    <label>StateasGrantee</label>
                 </value>
                 <value>
                     <fullName>StateasGrantor</fullName>
                     <default>false</default>
+                    <label>StateasGrantor</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -326,10 +332,12 @@ ISPICKVAL(Announcement__r.Status__c,&apos;Reviewed&apos;)))</formula>
                 <value>
                     <fullName>Mandatory</fullName>
                     <default>true</default>
+                    <label>Mandatory</label>
                 </value>
                 <value>
                     <fullName>Optional</fullName>
                     <default>false</default>
+                    <label>Optional</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -357,10 +365,12 @@ ISPICKVAL(Announcement__r.Status__c,&apos;Reviewed&apos;)))</formula>
                 <value>
                     <fullName>Yes</fullName>
                     <default>false</default>
+                    <label>Yes</label>
                 </value>
                 <value>
                     <fullName>No</fullName>
                     <default>false</default>
+                    <label>No</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -401,10 +411,12 @@ ISPICKVAL(Announcement__r.Status__c,&apos;Reviewed&apos;)))</formula>
                 <value>
                     <fullName>Yes</fullName>
                     <default>false</default>
+                    <label>Yes</label>
                 </value>
                 <value>
                     <fullName>No</fullName>
                     <default>true</default>
+                    <label>No</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -616,10 +628,12 @@ ISPICKVAL(Announcement__r.Status__c,&apos;Reviewed&apos;)))</formula>
                 <value>
                     <fullName>External</fullName>
                     <default>false</default>
+                    <label>External</label>
                 </value>
                 <value>
                     <fullName>Internal</fullName>
                     <default>false</default>
+                    <label>Internal</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -788,4 +802,5 @@ ISPICKVAL(Announcement__r.Status__c,&apos;Reviewed&apos;)))</formula>
     </recordTypes>
     <searchLayouts/>
     <sharingModel>Read</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

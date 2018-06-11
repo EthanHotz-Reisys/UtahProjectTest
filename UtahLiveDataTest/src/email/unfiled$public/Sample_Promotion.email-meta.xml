@@ -4,7 +4,9 @@
     <description>Reaching out to someone after they have been promoted about the opportunity to do business with them</description>
     <encodingKey>UTF-8</encodingKey>
     <name>SAMPLE: Congratulations On Your Promotion</name>
+    <relatedEntityType>Contact</relatedEntityType>
     <style>none</style>
     <subject>Congratulations on your promotion!</subject>
     <type>custom</type>
+    <uiType>SFX_Sample</uiType>
 </EmailTemplate>

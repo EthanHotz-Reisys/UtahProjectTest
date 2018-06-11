@@ -8,4 +8,5 @@
     <style>formalLetter</style>
     <subject>Notification: You are Requested to Review the Applications for Announcement {!ReviewPanel__c.AnnouncementName__c}</subject>
     <type>html</type>
+    <uiType>Aloha</uiType>
 </EmailTemplate>

@@ -46,6 +46,7 @@
     <description>[Business]  Spend Plan is how the dollars are spend. Is it Sub Award,Internal Spend, ISA and Contracts.</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -134,18 +135,22 @@
                 <value>
                     <fullName>Sub Awards</fullName>
                     <default>false</default>
+                    <label>Sub Awards</label>
                 </value>
                 <value>
                     <fullName>Contracts</fullName>
                     <default>false</default>
+                    <label>Contracts</label>
                 </value>
                 <value>
                     <fullName>Internal Spend</fullName>
                     <default>false</default>
+                    <label>Internal Spend</label>
                 </value>
                 <value>
                     <fullName>ISA</fullName>
                     <default>false</default>
+                    <label>ISA</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -159,4 +164,5 @@
     <pluralLabel>Spend Plans</pluralLabel>
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

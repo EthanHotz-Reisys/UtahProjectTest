@@ -1,6 +1,0 @@
-<apex:page standardController="GNT__ChartConfig__c" standardStylesheets="false" showHeader="false" sidebar="false" extensions="GNT.AssignChartToProfilesCtrl">
-    <c:ExternalLibrary />
-    <div class="bs container-fluid">
-    	<c:FlexTable flexTableHeader="Assign Chart to Profiles" flexTableName="AssignToProfiles" tableId="AssignToProfiles" listparams="{!keyValueMap}"/>
-    </div>
-</apex:page>

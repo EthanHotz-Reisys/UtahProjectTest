@@ -6,4 +6,5 @@
     <style>none</style>
     <subject>Done</subject>
     <type>text</type>
+    <uiType>Aloha</uiType>
 </EmailTemplate>

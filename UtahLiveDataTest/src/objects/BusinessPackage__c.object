@@ -46,6 +46,7 @@
     <description>[Business]  This object associates the Package with the Program or Opportunity</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>false</enableReports>
@@ -248,46 +249,57 @@ ISPICKVAL(FundingOpportunity__r.Status__c,&apos;Reviewed&apos;)))</formula>
                 <value>
                     <fullName>Application</fullName>
                     <default>false</default>
+                    <label>Application</label>
                 </value>
                 <value>
                     <fullName>Pre-Application</fullName>
                     <default>false</default>
+                    <label>Pre-Application</label>
                 </value>
                 <value>
                     <fullName>App-Review</fullName>
                     <default>false</default>
+                    <label>App-Review</label>
                 </value>
                 <value>
                     <fullName>Award</fullName>
                     <default>false</default>
+                    <label>Award</label>
                 </value>
                 <value>
                     <fullName>Amendment Request</fullName>
                     <default>false</default>
+                    <label>Amendment Request</label>
                 </value>
                 <value>
                     <fullName>Progress Report</fullName>
                     <default>false</default>
+                    <label>Progress Report</label>
                 </value>
                 <value>
                     <fullName>Site Visit</fullName>
                     <default>false</default>
+                    <label>Site Visit</label>
                 </value>
                 <value>
                     <fullName>Payment Request</fullName>
                     <default>false</default>
+                    <label>Payment Request</label>
                 </value>
                 <value>
                     <fullName>Closeout</fullName>
                     <default>false</default>
+                    <label>Closeout</label>
                 </value>
                 <value>
                     <fullName>Other</fullName>
                     <default>false</default>
+                    <label>Other</label>
                 </value>
                 <value>
                     <fullName>Risk Assessment</fullName>
                     <default>false</default>
+                    <label>Risk Assessment</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -394,4 +406,5 @@ ISPICKVAL(FundingOpportunity__r.Status__c,&apos;Reviewed&apos;)))</formula>
         <errorConditionFormula>Program__c  &lt;&gt; null &amp;&amp;  FundingOpportunity__c  &lt;&gt; null</errorConditionFormula>
         <errorMessage>Program and Announcement value can not present at a time.</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

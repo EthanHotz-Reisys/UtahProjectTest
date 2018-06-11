@@ -45,6 +45,7 @@
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
@@ -100,14 +101,17 @@
                 <value>
                     <fullName>Tentative</fullName>
                     <default>false</default>
+                    <label>Tentative</label>
                 </value>
                 <value>
                     <fullName>Accepted</fullName>
                     <default>false</default>
+                    <label>Accepted</label>
                 </value>
                 <value>
                     <fullName>Declined</fullName>
                     <default>false</default>
+                    <label>Declined</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -121,4 +125,5 @@
     <pluralLabel>EventRelations</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

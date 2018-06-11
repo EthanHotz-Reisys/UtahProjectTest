@@ -46,6 +46,7 @@
     <description>[Business] Association of a Strategic Plan with the Service Area</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -176,4 +177,5 @@ ServiceArea__r.HideEditDelete__c)</formula>
     <pluralLabel>Strategic Plan Project Areas</pluralLabel>
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

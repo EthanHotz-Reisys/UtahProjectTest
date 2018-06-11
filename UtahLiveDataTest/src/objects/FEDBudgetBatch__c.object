@@ -45,6 +45,7 @@
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -66,10 +67,12 @@
                 <value>
                     <fullName>Create</fullName>
                     <default>false</default>
+                    <label>Create</label>
                 </value>
                 <value>
                     <fullName>Amend</fullName>
                     <default>false</default>
+                    <label>Amend</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -149,30 +152,37 @@
                 <value>
                     <fullName>2016</fullName>
                     <default>false</default>
+                    <label>2016</label>
                 </value>
                 <value>
                     <fullName>2017</fullName>
                     <default>false</default>
+                    <label>2017</label>
                 </value>
                 <value>
                     <fullName>2018</fullName>
                     <default>false</default>
+                    <label>2018</label>
                 </value>
                 <value>
                     <fullName>2019</fullName>
                     <default>false</default>
+                    <label>2019</label>
                 </value>
                 <value>
                     <fullName>2020</fullName>
                     <default>false</default>
+                    <label>2020</label>
                 </value>
                 <value>
                     <fullName>2021</fullName>
                     <default>false</default>
+                    <label>2021</label>
                 </value>
                 <value>
                     <fullName>2022</fullName>
                     <default>false</default>
+                    <label>2022</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -211,30 +221,37 @@
                 <value>
                     <fullName>2016</fullName>
                     <default>false</default>
+                    <label>2016</label>
                 </value>
                 <value>
                     <fullName>2017</fullName>
                     <default>false</default>
+                    <label>2017</label>
                 </value>
                 <value>
                     <fullName>2018</fullName>
                     <default>false</default>
+                    <label>2018</label>
                 </value>
                 <value>
                     <fullName>2019</fullName>
                     <default>false</default>
+                    <label>2019</label>
                 </value>
                 <value>
                     <fullName>2020</fullName>
                     <default>false</default>
+                    <label>2020</label>
                 </value>
                 <value>
                     <fullName>2021</fullName>
                     <default>false</default>
+                    <label>2021</label>
                 </value>
                 <value>
                     <fullName>2022</fullName>
                     <default>false</default>
+                    <label>2022</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -272,38 +289,47 @@
                 <value>
                     <fullName>Created</fullName>
                     <default>true</default>
+                    <label>Created</label>
                 </value>
                 <value>
                     <fullName>Uploaded</fullName>
                     <default>false</default>
+                    <label>Uploaded</label>
                 </value>
                 <value>
                     <fullName>Processed</fullName>
                     <default>false</default>
+                    <label>Processed</label>
                 </value>
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
                 <value>
                     <fullName>Active</fullName>
                     <default>false</default>
+                    <label>Active</label>
                 </value>
                 <value>
                     <fullName>Replaced</fullName>
                     <default>false</default>
+                    <label>Replaced</label>
                 </value>
                 <value>
                     <fullName>Processing  Approve</fullName>
                     <default>false</default>
+                    <label>Processing  Approve</label>
                 </value>
                 <value>
                     <fullName>Processing</fullName>
                     <default>false</default>
+                    <label>Processing</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -322,18 +348,22 @@
                 <value>
                     <fullName>FED</fullName>
                     <default>false</default>
+                    <label>FED</label>
                 </value>
                 <value>
                     <fullName>StateFormula</fullName>
                     <default>false</default>
+                    <label>StateFormula</label>
                 </value>
                 <value>
                     <fullName>App12</fullName>
                     <default>false</default>
+                    <label>App12</label>
                 </value>
                 <value>
                     <fullName>LumsumpApp</fullName>
                     <default>false</default>
+                    <label>LumsumpApp</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -346,4 +376,5 @@
     <pluralLabel>FEDBudgetBatchs</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

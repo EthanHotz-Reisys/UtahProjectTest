@@ -135,62 +135,77 @@
                 <value>
                     <fullName>County governments</fullName>
                     <default>false</default>
+                    <label>County governments</label>
                 </value>
                 <value>
                     <fullName>State governments</fullName>
                     <default>false</default>
+                    <label>State governments</label>
                 </value>
                 <value>
                     <fullName>City or township governments</fullName>
                     <default>false</default>
+                    <label>City or township governments</label>
                 </value>
                 <value>
                     <fullName>Special district governments</fullName>
                     <default>false</default>
+                    <label>Special district governments</label>
                 </value>
                 <value>
                     <fullName>School Districts</fullName>
                     <default>false</default>
+                    <label>School Districts</label>
                 </value>
                 <value>
                     <fullName>Private School</fullName>
                     <default>false</default>
+                    <label>Private School</label>
                 </value>
                 <value>
                     <fullName>Charter School</fullName>
                     <default>false</default>
+                    <label>Charter School</label>
                 </value>
                 <value>
                     <fullName>State institutions for higher education</fullName>
                     <default>false</default>
+                    <label>State institutions for higher education</label>
                 </value>
                 <value>
                     <fullName>Private institutions of higher education</fullName>
                     <default>false</default>
+                    <label>Private institutions of higher education</label>
                 </value>
                 <value>
                     <fullName>Public housing authorities</fullName>
                     <default>false</default>
+                    <label>Public housing authorities</label>
                 </value>
                 <value>
                     <fullName>Nonprofits having a 501 (C)(3)</fullName>
                     <default>false</default>
+                    <label>Nonprofits having a 501 (C)(3)</label>
                 </value>
                 <value>
                     <fullName>Individuals</fullName>
                     <default>false</default>
+                    <label>Individuals</label>
                 </value>
                 <value>
                     <fullName>Non-Profit Victim Services</fullName>
                     <default>false</default>
+                    <label>Non-Profit Victim Services</label>
                 </value>
                 <value>
                     <fullName>Tribal Entity</fullName>
                     <default>false</default>
+                    <label>Tribal Entity</label>
                 </value>
                 <value>
                     <fullName>Other</fullName>
                     <default>false</default>
+                    <label>Other</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -670,18 +685,22 @@
                 <value>
                     <fullName>Level 1</fullName>
                     <default>false</default>
+                    <label>Level 1</label>
                 </value>
                 <value>
                     <fullName>Level 2</fullName>
                     <default>false</default>
+                    <label>Level 2</label>
                 </value>
                 <value>
                     <fullName>Level 3</fullName>
                     <default>false</default>
+                    <label>Level 3</label>
                 </value>
                 <value>
                     <fullName>Level 4</fullName>
                     <default>false</default>
+                    <label>Level 4</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -954,30 +973,37 @@
                 <value>
                     <fullName>1</fullName>
                     <default>false</default>
+                    <label>1</label>
                 </value>
                 <value>
                     <fullName>2</fullName>
                     <default>false</default>
+                    <label>2</label>
                 </value>
                 <value>
                     <fullName>4</fullName>
                     <default>false</default>
+                    <label>4</label>
                 </value>
                 <value>
                     <fullName>5</fullName>
                     <default>false</default>
+                    <label>5</label>
                 </value>
                 <value>
                     <fullName>6</fullName>
                     <default>false</default>
+                    <label>6</label>
                 </value>
                 <value>
                     <fullName>7</fullName>
                     <default>false</default>
+                    <label>7</label>
                 </value>
                 <value>
                     <fullName>8</fullName>
                     <default>false</default>
+                    <label>8</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1063,30 +1089,37 @@
                 <value>
                     <fullName>Review in Progress</fullName>
                     <default>false</default>
+                    <label>Review in Progress</label>
                 </value>
                 <value>
                     <fullName>Active</fullName>
                     <default>false</default>
+                    <label>Active</label>
                 </value>
                 <value>
                     <fullName>Inactive</fullName>
                     <default>false</default>
+                    <label>Inactive</label>
                 </value>
                 <value>
                     <fullName>Disapproved</fullName>
                     <default>false</default>
+                    <label>Disapproved</label>
                 </value>
                 <value>
                     <fullName>Change Requested</fullName>
                     <default>false</default>
+                    <label>Change Requested</label>
                 </value>
                 <value>
                     <fullName>Draft</fullName>
                     <default>false</default>
+                    <label>Draft</label>
                 </value>
                 <value>
                     <fullName>Debarred</fullName>
                     <default>false</default>
+                    <label>Debarred</label>
                 </value>
             </valueSetDefinition>
         </valueSet>

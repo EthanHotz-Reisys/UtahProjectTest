@@ -175,10 +175,12 @@
                 <value>
                     <fullName>Active</fullName>
                     <default>false</default>
+                    <label>Active</label>
                 </value>
                 <value>
                     <fullName>Passive</fullName>
                     <default>false</default>
+                    <label>Passive</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -285,22 +287,27 @@ FALSE ==&gt; Reviewer</inlineHelpText>
                 <value>
                     <fullName>1</fullName>
                     <default>true</default>
+                    <label>1</label>
                 </value>
                 <value>
                     <fullName>2</fullName>
                     <default>false</default>
+                    <label>2</label>
                 </value>
                 <value>
                     <fullName>3</fullName>
                     <default>false</default>
+                    <label>3</label>
                 </value>
                 <value>
                     <fullName>4</fullName>
                     <default>false</default>
+                    <label>4</label>
                 </value>
                 <value>
                     <fullName>5</fullName>
                     <default>false</default>
+                    <label>5</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -320,18 +327,22 @@ FALSE ==&gt; Reviewer</inlineHelpText>
                 <value>
                     <fullName>West</fullName>
                     <default>false</default>
+                    <label>West</label>
                 </value>
                 <value>
                     <fullName>East</fullName>
                     <default>false</default>
+                    <label>East</label>
                 </value>
                 <value>
                     <fullName>South</fullName>
                     <default>false</default>
+                    <label>South</label>
                 </value>
                 <value>
                     <fullName>North</fullName>
                     <default>false</default>
+                    <label>North</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -427,18 +438,22 @@ FALSE ==&gt; Reviewer</inlineHelpText>
                 <value>
                     <fullName>CCJJ</fullName>
                     <default>false</default>
+                    <label>CCJJ</label>
                 </value>
                 <value>
                     <fullName>UOVC</fullName>
                     <default>false</default>
+                    <label>UOVC</label>
                 </value>
                 <value>
                     <fullName>USBE</fullName>
                     <default>false</default>
+                    <label>USBE</label>
                 </value>
                 <value>
                     <fullName>Finance</fullName>
                     <default>false</default>
+                    <label>Finance</label>
                 </value>
             </valueSetDefinition>
         </valueSet>

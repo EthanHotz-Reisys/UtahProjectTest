@@ -49,6 +49,7 @@
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>true</enableReports>
@@ -129,30 +130,37 @@
                 <value>
                     <fullName>Initiated</fullName>
                     <default>false</default>
+                    <label>Initiated</label>
                 </value>
                 <value>
                     <fullName>Created</fullName>
                     <default>true</default>
+                    <label>Created</label>
                 </value>
                 <value>
                     <fullName>Sent for Approval</fullName>
                     <default>false</default>
+                    <label>Sent for Approval</label>
                 </value>
                 <value>
                     <fullName>Sent to FINET</fullName>
                     <default>false</default>
+                    <label>Sent to FINET</label>
                 </value>
                 <value>
                     <fullName>Paid</fullName>
                     <default>false</default>
+                    <label>Paid</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
                 <value>
                     <fullName>Error</fullName>
                     <default>false</default>
+                    <label>Error</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -171,4 +179,5 @@
     <pluralLabel>Payment Batch Request</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

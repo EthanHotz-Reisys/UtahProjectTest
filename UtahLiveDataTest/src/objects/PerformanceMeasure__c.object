@@ -50,6 +50,7 @@
     <description>Performance Measure as part of Performance Management</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -71,6 +72,7 @@
                 <value>
                     <fullName>Performance Measure</fullName>
                     <default>true</default>
+                    <label>Performance Measure</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -171,18 +173,22 @@
                 <value>
                     <fullName>KPI</fullName>
                     <default>false</default>
+                    <label>KPI</label>
                 </value>
                 <value>
                     <fullName>Deliverable</fullName>
                     <default>false</default>
+                    <label>Deliverable</label>
                 </value>
                 <value>
                     <fullName>WBS Task</fullName>
                     <default>false</default>
+                    <label>WBS Task</label>
                 </value>
                 <value>
                     <fullName>Reporting Requirement</fullName>
                     <default>false</default>
+                    <label>Reporting Requirement</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -234,4 +240,5 @@
         <errorConditionFormula>if(Weightage__c&gt;100 || Weightage__c &lt;0,true,false)</errorConditionFormula>
         <errorMessage>Weightage should be between 0-100</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

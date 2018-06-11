@@ -8,4 +8,5 @@
     <style>formalLetter</style>
     <subject>Notification: Funding Decision Memo (FDM) has been Created for the Announcement #{!ReviewStep__c.AnnouncementNumber__c}</subject>
     <type>html</type>
+    <uiType>Aloha</uiType>
 </EmailTemplate>

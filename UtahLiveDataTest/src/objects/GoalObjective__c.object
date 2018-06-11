@@ -50,6 +50,7 @@
     <description>Goals and Objectives object for Performance management</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
@@ -333,10 +334,12 @@
                 <value>
                     <fullName>Yes</fullName>
                     <default>false</default>
+                    <label>Yes</label>
                 </value>
                 <value>
                     <fullName>No</fullName>
                     <default>false</default>
+                    <label>No</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -404,34 +407,42 @@
                 <value>
                     <fullName>Training</fullName>
                     <default>false</default>
+                    <label>Training</label>
                 </value>
                 <value>
                     <fullName>Coordinated Community Response</fullName>
                     <default>false</default>
+                    <label>Coordinated Community Response</label>
                 </value>
                 <value>
                     <fullName>Policies</fullName>
                     <default>false</default>
+                    <label>Policies</label>
                 </value>
                 <value>
                     <fullName>Products</fullName>
                     <default>false</default>
+                    <label>Products</label>
                 </value>
                 <value>
                     <fullName>Data Collection and Communication Systems</fullName>
                     <default>false</default>
+                    <label>Data Collection and Communication Systems</label>
                 </value>
                 <value>
                     <fullName>Specialized Units</fullName>
                     <default>false</default>
+                    <label>Specialized Units</label>
                 </value>
                 <value>
                     <fullName>System Improvements</fullName>
                     <default>false</default>
+                    <label>System Improvements</label>
                 </value>
                 <value>
                     <fullName>Victim Services</fullName>
                     <default>false</default>
+                    <label>Victim Services</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -561,10 +572,12 @@
                 <value>
                     <fullName>Last Year</fullName>
                     <default>false</default>
+                    <label>Last Year</label>
                 </value>
                 <value>
                     <fullName>The Year Before Last</fullName>
                     <default>false</default>
+                    <label>The Year Before Last</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -610,82 +623,102 @@
                 <value>
                     <fullName>1</fullName>
                     <default>false</default>
+                    <label>1</label>
                 </value>
                 <value>
                     <fullName>2</fullName>
                     <default>false</default>
+                    <label>2</label>
                 </value>
                 <value>
                     <fullName>3</fullName>
                     <default>false</default>
+                    <label>3</label>
                 </value>
                 <value>
                     <fullName>4</fullName>
                     <default>false</default>
+                    <label>4</label>
                 </value>
                 <value>
                     <fullName>5</fullName>
                     <default>false</default>
+                    <label>5</label>
                 </value>
                 <value>
                     <fullName>6</fullName>
                     <default>false</default>
+                    <label>6</label>
                 </value>
                 <value>
                     <fullName>7</fullName>
                     <default>false</default>
+                    <label>7</label>
                 </value>
                 <value>
                     <fullName>8</fullName>
                     <default>false</default>
+                    <label>8</label>
                 </value>
                 <value>
                     <fullName>9</fullName>
                     <default>false</default>
+                    <label>9</label>
                 </value>
                 <value>
                     <fullName>10</fullName>
                     <default>false</default>
+                    <label>10</label>
                 </value>
                 <value>
                     <fullName>11</fullName>
                     <default>false</default>
+                    <label>11</label>
                 </value>
                 <value>
                     <fullName>12</fullName>
                     <default>false</default>
+                    <label>12</label>
                 </value>
                 <value>
                     <fullName>13</fullName>
                     <default>false</default>
+                    <label>13</label>
                 </value>
                 <value>
                     <fullName>14</fullName>
                     <default>false</default>
+                    <label>14</label>
                 </value>
                 <value>
                     <fullName>15</fullName>
                     <default>false</default>
+                    <label>15</label>
                 </value>
                 <value>
                     <fullName>16</fullName>
                     <default>false</default>
+                    <label>16</label>
                 </value>
                 <value>
                     <fullName>17</fullName>
                     <default>false</default>
+                    <label>17</label>
                 </value>
                 <value>
                     <fullName>18</fullName>
                     <default>false</default>
+                    <label>18</label>
                 </value>
                 <value>
                     <fullName>19</fullName>
                     <default>false</default>
+                    <label>19</label>
                 </value>
                 <value>
                     <fullName>20</fullName>
                     <default>false</default>
+                    <label>20</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -807,78 +840,97 @@
                 <value>
                     <fullName>Number of trainings provided</fullName>
                     <default>false</default>
+                    <label>Number of trainings provided</label>
                 </value>
                 <value>
                     <fullName>Number of people trained</fullName>
                     <default>false</default>
+                    <label>Number of people trained</label>
                 </value>
                 <value>
                     <fullName>Number of victims served</fullName>
                     <default>false</default>
+                    <label>Number of victims served</label>
                 </value>
                 <value>
                     <fullName>Meetings</fullName>
                     <default>false</default>
+                    <label>Meetings</label>
                 </value>
                 <value>
                     <fullName>Brochures</fullName>
                     <default>false</default>
+                    <label>Brochures</label>
                 </value>
                 <value>
                     <fullName>Manuals</fullName>
                     <default>false</default>
+                    <label>Manuals</label>
                 </value>
                 <value>
                     <fullName>Training curricula</fullName>
                     <default>false</default>
+                    <label>Training curricula</label>
                 </value>
                 <value>
                     <fullName>Training materials</fullName>
                     <default>false</default>
+                    <label>Training materials</label>
                 </value>
                 <value>
                     <fullName>Evaluations</fullName>
                     <default>false</default>
+                    <label>Evaluations</label>
                 </value>
                 <value>
                     <fullName>Interpreters</fullName>
                     <default>false</default>
+                    <label>Interpreters</label>
                 </value>
                 <value>
                     <fullName>Safety audits</fullName>
                     <default>false</default>
+                    <label>Safety audits</label>
                 </value>
                 <value>
                     <fullName>Security personnel or equipment</fullName>
                     <default>false</default>
+                    <label>Security personnel or equipment</label>
                 </value>
                 <value>
                     <fullName>Victim services provided</fullName>
                     <default>false</default>
+                    <label>Victim services provided</label>
                 </value>
                 <value>
                     <fullName>Law enforcement services provided</fullName>
                     <default>false</default>
+                    <label>Law enforcement services provided</label>
                 </value>
                 <value>
                     <fullName>Prosecution victim services provided</fullName>
                     <default>false</default>
+                    <label>Prosecution victim services provided</label>
                 </value>
                 <value>
                     <fullName>Court services provided</fullName>
                     <default>false</default>
+                    <label>Court services provided</label>
                 </value>
                 <value>
                     <fullName>Probation &amp; Parole (offender accountability) Services provided</fullName>
                     <default>false</default>
+                    <label>Probation &amp; Parole (offender accountability) Services provided</label>
                 </value>
                 <value>
                     <fullName>Batterer Intervention Services provided</fullName>
                     <default>false</default>
+                    <label>Batterer Intervention Services provided</label>
                 </value>
                 <value>
                     <fullName>Other</fullName>
                     <default>false</default>
+                    <label>Other</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -897,18 +949,22 @@
                 <value>
                     <fullName>Met</fullName>
                     <default>false</default>
+                    <label>Met</label>
                 </value>
                 <value>
                     <fullName>Partially Met</fullName>
                     <default>false</default>
+                    <label>Partially Met</label>
                 </value>
                 <value>
                     <fullName>Not Met</fullName>
                     <default>false</default>
+                    <label>Not Met</label>
                 </value>
                 <value>
                     <fullName>Created</fullName>
                     <default>true</default>
+                    <label>Created</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -978,14 +1034,17 @@
                 <value>
                     <fullName>Victim Services</fullName>
                     <default>false</default>
+                    <label>Victim Services</label>
                 </value>
                 <value>
                     <fullName>Voca Goal</fullName>
                     <default>false</default>
+                    <label>Voca Goal</label>
                 </value>
                 <value>
                     <fullName>Housing</fullName>
                     <default>false</default>
+                    <label>Housing</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1005,74 +1064,92 @@
                 <value>
                     <fullName>Number of trainings provided</fullName>
                     <default>false</default>
+                    <label>Number of trainings provided</label>
                 </value>
                 <value>
                     <fullName>Number of people trained</fullName>
                     <default>false</default>
+                    <label>Number of people trained</label>
                 </value>
                 <value>
                     <fullName>Number of victims served</fullName>
                     <default>false</default>
+                    <label>Number of victims served</label>
                 </value>
                 <value>
                     <fullName>Meetings</fullName>
                     <default>false</default>
+                    <label>Meetings</label>
                 </value>
                 <value>
                     <fullName>Brochures</fullName>
                     <default>false</default>
+                    <label>Brochures</label>
                 </value>
                 <value>
                     <fullName>Manuals</fullName>
                     <default>false</default>
+                    <label>Manuals</label>
                 </value>
                 <value>
                     <fullName>Training curricula</fullName>
                     <default>false</default>
+                    <label>Training curricula</label>
                 </value>
                 <value>
                     <fullName>Training materials</fullName>
                     <default>false</default>
+                    <label>Training materials</label>
                 </value>
                 <value>
                     <fullName>Evaluations</fullName>
                     <default>false</default>
+                    <label>Evaluations</label>
                 </value>
                 <value>
                     <fullName>Interpreters</fullName>
                     <default>false</default>
+                    <label>Interpreters</label>
                 </value>
                 <value>
                     <fullName>Victim services provided</fullName>
                     <default>false</default>
+                    <label>Victim services provided</label>
                 </value>
                 <value>
                     <fullName>Number of groups provided</fullName>
                     <default>false</default>
+                    <label>Number of groups provided</label>
                 </value>
                 <value>
                     <fullName>Number of total group attendance</fullName>
                     <default>false</default>
+                    <label>Number of total group attendance</label>
                 </value>
                 <value>
                     <fullName>Number of therapy hours</fullName>
                     <default>false</default>
+                    <label>Number of therapy hours</label>
                 </value>
                 <value>
                     <fullName>Number of volunteers recruited</fullName>
                     <default>false</default>
+                    <label>Number of volunteers recruited</label>
                 </value>
                 <value>
                     <fullName>Number of volunteers trained</fullName>
                     <default>false</default>
+                    <label>Number of volunteers trained</label>
                 </value>
                 <value>
                     <fullName>Number of volunteers maintained</fullName>
                     <default>false</default>
+                    <label>Number of volunteers maintained</label>
                 </value>
                 <value>
                     <fullName>Other</fullName>
                     <default>false</default>
+                    <label>Other</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -2479,4 +2556,5 @@
         <errorConditionFormula>AND(ISPICKVAL(EmailCheck__c,&apos;Yes&apos;),OR(ISNULL(Q1DueDate__c),ISNULL(Q2DueDate__c),ISNULL(Q3DueDate__c),ISNULL(Q4DueDate__c)))</errorConditionFormula>
         <errorMessage>Please enter the duedates for respective quarters.</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

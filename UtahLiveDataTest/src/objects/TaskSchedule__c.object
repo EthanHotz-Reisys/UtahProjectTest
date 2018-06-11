@@ -46,6 +46,7 @@
     <description>[Business] Need more Detailed Description on this Objects</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
@@ -113,4 +114,5 @@
     <pluralLabel>Task Schedule</pluralLabel>
     <searchLayouts/>
     <sharingModel>Private</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

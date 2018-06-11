@@ -46,6 +46,7 @@
     <description>[Business] Need more Details (Need to revisit this object) Duplicate for (Progress Report Cost Breakdown1)</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -168,4 +169,5 @@
     <pluralLabel>Progress Report Cost Breakdown</pluralLabel>
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

@@ -8,4 +8,5 @@
     <subject>New case is created</subject>
     <textOnly>New Case is created</textOnly>
     <type>html</type>
+    <uiType>Aloha</uiType>
 </EmailTemplate>

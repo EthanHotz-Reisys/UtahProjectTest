@@ -45,6 +45,7 @@
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -85,50 +86,62 @@
                 <value>
                     <fullName>Jan</fullName>
                     <default>false</default>
+                    <label>Jan</label>
                 </value>
                 <value>
                     <fullName>Feb</fullName>
                     <default>false</default>
+                    <label>Feb</label>
                 </value>
                 <value>
                     <fullName>Mar</fullName>
                     <default>false</default>
+                    <label>Mar</label>
                 </value>
                 <value>
                     <fullName>Apr</fullName>
                     <default>false</default>
+                    <label>Apr</label>
                 </value>
                 <value>
                     <fullName>May</fullName>
                     <default>false</default>
+                    <label>May</label>
                 </value>
                 <value>
                     <fullName>Jun</fullName>
                     <default>false</default>
+                    <label>Jun</label>
                 </value>
                 <value>
                     <fullName>Jul</fullName>
                     <default>false</default>
+                    <label>Jul</label>
                 </value>
                 <value>
                     <fullName>Aug</fullName>
                     <default>false</default>
+                    <label>Aug</label>
                 </value>
                 <value>
                     <fullName>Sep</fullName>
                     <default>false</default>
+                    <label>Sep</label>
                 </value>
                 <value>
                     <fullName>Oct</fullName>
                     <default>false</default>
+                    <label>Oct</label>
                 </value>
                 <value>
                     <fullName>Nov</fullName>
                     <default>false</default>
+                    <label>Nov</label>
                 </value>
                 <value>
                     <fullName>Dec</fullName>
                     <default>false</default>
+                    <label>Dec</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -167,14 +180,17 @@
                 <value>
                     <fullName>2016</fullName>
                     <default>false</default>
+                    <label>2016</label>
                 </value>
                 <value>
                     <fullName>2017</fullName>
                     <default>false</default>
+                    <label>2017</label>
                 </value>
                 <value>
                     <fullName>2018</fullName>
                     <default>false</default>
+                    <label>2018</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -211,22 +227,27 @@
                 <value>
                     <fullName>Created</fullName>
                     <default>true</default>
+                    <label>Created</label>
                 </value>
                 <value>
                     <fullName>Uploaded</fullName>
                     <default>false</default>
+                    <label>Uploaded</label>
                 </value>
                 <value>
                     <fullName>Processed</fullName>
                     <default>false</default>
+                    <label>Processed</label>
                 </value>
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -245,10 +266,12 @@
                 <value>
                     <fullName>Create</fullName>
                     <default>false</default>
+                    <label>Create</label>
                 </value>
                 <value>
                     <fullName>Amend</fullName>
                     <default>false</default>
+                    <label>Amend</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -280,4 +303,5 @@
     <pluralLabel>POC_FinancialBatchs</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

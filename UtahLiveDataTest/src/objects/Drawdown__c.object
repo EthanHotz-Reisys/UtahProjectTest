@@ -49,6 +49,7 @@
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
@@ -108,30 +109,37 @@
                 <value>
                     <fullName>Mr .</fullName>
                     <default>false</default>
+                    <label>Mr .</label>
                 </value>
                 <value>
                     <fullName>Mrs .</fullName>
                     <default>false</default>
+                    <label>Mrs .</label>
                 </value>
                 <value>
                     <fullName>Miss</fullName>
                     <default>false</default>
+                    <label>Miss</label>
                 </value>
                 <value>
                     <fullName>Ms .</fullName>
                     <default>false</default>
+                    <label>Ms .</label>
                 </value>
                 <value>
                     <fullName>Dr .</fullName>
                     <default>false</default>
+                    <label>Dr .</label>
                 </value>
                 <value>
                     <fullName>Rev .</fullName>
                     <default>false</default>
+                    <label>Rev .</label>
                 </value>
                 <value>
                     <fullName>Prof .</fullName>
                     <default>false</default>
+                    <label>Prof .</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -152,18 +160,22 @@
                 <value>
                     <fullName>Jr .</fullName>
                     <default>false</default>
+                    <label>Jr .</label>
                 </value>
                 <value>
                     <fullName>Sr .</fullName>
                     <default>false</default>
+                    <label>Sr .</label>
                 </value>
                 <value>
                     <fullName>M. D.</fullName>
                     <default>false</default>
+                    <label>M. D.</label>
                 </value>
                 <value>
                     <fullName>Ph. D</fullName>
                     <default>false</default>
+                    <label>Ph. D</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -454,18 +466,22 @@
                 <value>
                     <fullName>Created</fullName>
                     <default>true</default>
+                    <label>Created</label>
                 </value>
                 <value>
                     <fullName>Submitted</fullName>
                     <default>false</default>
+                    <label>Submitted</label>
                 </value>
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Paid</fullName>
                     <default>false</default>
+                    <label>Paid</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -501,10 +517,12 @@
                 <value>
                     <fullName>I Agree</fullName>
                     <default>false</default>
+                    <label>I Agree</label>
                 </value>
                 <value>
                     <fullName>I Disagree</fullName>
                     <default>false</default>
+                    <label>I Disagree</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -577,4 +595,5 @@
     <pluralLabel>Drawdowns</pluralLabel>
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

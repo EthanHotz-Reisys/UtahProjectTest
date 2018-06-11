@@ -50,6 +50,7 @@
     <description>Business - Use to create case.</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
@@ -164,22 +165,27 @@
                 <value>
                     <fullName>Individual</fullName>
                     <default>false</default>
+                    <label>Individual</label>
                 </value>
                 <value>
                     <fullName>Internal</fullName>
                     <default>false</default>
+                    <label>Internal</label>
                 </value>
                 <value>
                     <fullName>External</fullName>
                     <default>false</default>
+                    <label>External</label>
                 </value>
                 <value>
                     <fullName>Deactivate</fullName>
                     <default>false</default>
+                    <label>Deactivate</label>
                 </value>
                 <value>
                     <fullName>All</fullName>
                     <default>false</default>
+                    <label>All</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -250,50 +256,62 @@
                 <value>
                     <fullName>Home</fullName>
                     <default>false</default>
+                    <label>Home</label>
                 </value>
                 <value>
                     <fullName>Planning</fullName>
                     <default>false</default>
+                    <label>Planning</label>
                 </value>
                 <value>
                     <fullName>Application</fullName>
                     <default>false</default>
+                    <label>Application</label>
                 </value>
                 <value>
                     <fullName>Pre-Application</fullName>
                     <default>false</default>
+                    <label>Pre-Application</label>
                 </value>
                 <value>
                     <fullName>Funding Opportunity</fullName>
                     <default>false</default>
+                    <label>Funding Opportunity</label>
                 </value>
                 <value>
                     <fullName>Grants</fullName>
                     <default>false</default>
+                    <label>Grants</label>
                 </value>
                 <value>
                     <fullName>Monitoring</fullName>
                     <default>false</default>
+                    <label>Monitoring</label>
                 </value>
                 <value>
                     <fullName>Closeout</fullName>
                     <default>false</default>
+                    <label>Closeout</label>
                 </value>
                 <value>
                     <fullName>Reports &amp; Dashboard</fullName>
                     <default>false</default>
+                    <label>Reports &amp; Dashboard</label>
                 </value>
                 <value>
                     <fullName>Email</fullName>
                     <default>false</default>
+                    <label>Email</label>
                 </value>
                 <value>
                     <fullName>User Management</fullName>
                     <default>false</default>
+                    <label>User Management</label>
                 </value>
                 <value>
                     <fullName>Others</fullName>
                     <default>false</default>
+                    <label>Others</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -325,14 +343,17 @@
                 <value>
                     <fullName>Email</fullName>
                     <default>false</default>
+                    <label>Email</label>
                 </value>
                 <value>
                     <fullName>Phone</fullName>
                     <default>false</default>
+                    <label>Phone</label>
                 </value>
                 <value>
                     <fullName>Web</fullName>
                     <default>false</default>
+                    <label>Web</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -364,14 +385,17 @@
                 <value>
                     <fullName>Low</fullName>
                     <default>false</default>
+                    <label>Low</label>
                 </value>
                 <value>
                     <fullName>Medium</fullName>
                     <default>false</default>
+                    <label>Medium</label>
                 </value>
                 <value>
                     <fullName>High</fullName>
                     <default>false</default>
+                    <label>High</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -427,18 +451,22 @@
                 <value>
                     <fullName>1(Blocker)</fullName>
                     <default>false</default>
+                    <label>1(Blocker)</label>
                 </value>
                 <value>
                     <fullName>2(High)</fullName>
                     <default>false</default>
+                    <label>2(High)</label>
                 </value>
                 <value>
                     <fullName>3(Major)</fullName>
                     <default>false</default>
+                    <label>3(Major)</label>
                 </value>
                 <value>
                     <fullName>4(Minor)</fullName>
                     <default>false</default>
+                    <label>4(Minor)</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -458,22 +486,27 @@
                 <value>
                     <fullName>New</fullName>
                     <default>false</default>
+                    <label>New</label>
                 </value>
                 <value>
                     <fullName>In Progress</fullName>
                     <default>false</default>
+                    <label>In Progress</label>
                 </value>
                 <value>
                     <fullName>Closed</fullName>
                     <default>false</default>
+                    <label>Closed</label>
                 </value>
                 <value>
                     <fullName>Tier1 Support</fullName>
                     <default>false</default>
+                    <label>Tier1 Support</label>
                 </value>
                 <value>
                     <fullName>Tier2 Support</fullName>
                     <default>false</default>
+                    <label>Tier2 Support</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -541,14 +574,17 @@
                 <value>
                     <fullName>Problem</fullName>
                     <default>false</default>
+                    <label>Problem</label>
                 </value>
                 <value>
                     <fullName>Feature Request</fullName>
                     <default>false</default>
+                    <label>Feature Request</label>
                 </value>
                 <value>
                     <fullName>Question</fullName>
                     <default>false</default>
+                    <label>Question</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -605,4 +641,5 @@
     <pluralLabel>Case</pluralLabel>
     <searchLayouts/>
     <sharingModel>Read</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

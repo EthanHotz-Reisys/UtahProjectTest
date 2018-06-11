@@ -1,3 +1,0 @@
-<apex:page controller="GNT.ApprovalWorkItemRedirectCtrl" action="{!redirect}" showHeader="false" sidebar="false">
-	<apex:pageMessages />
-</apex:page>

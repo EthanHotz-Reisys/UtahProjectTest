@@ -8,4 +8,5 @@
     <subject>WBS Task Created</subject>
     <textOnly>s</textOnly>
     <type>html</type>
+    <uiType>Aloha</uiType>
 </EmailTemplate>

@@ -50,6 +50,7 @@
     <description>[Business] Stores all the change requests information</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>true</enableFeeds>
     <enableHistory>true</enableHistory>
@@ -390,14 +391,17 @@
                 <value>
                     <fullName>Work Plan</fullName>
                     <default>false</default>
+                    <label>Work Plan</label>
                 </value>
                 <value>
                     <fullName>Scope</fullName>
                     <default>false</default>
+                    <label>Scope</label>
                 </value>
                 <value>
                     <fullName>Spending Plan</fullName>
                     <default>false</default>
+                    <label>Spending Plan</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1096,34 +1100,42 @@ text( Type__c ) = &apos;Termination&apos;)</formula>
                 <value>
                     <fullName>Created</fullName>
                     <default>true</default>
+                    <label>Created</label>
                 </value>
                 <value>
                     <fullName>Submitted for Approval</fullName>
                     <default>false</default>
+                    <label>Submitted for Approval</label>
                 </value>
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
                 <value>
                     <fullName>Initiated</fullName>
                     <default>false</default>
+                    <label>Initiated</label>
                 </value>
                 <value>
                     <fullName>Completed</fullName>
                     <default>false</default>
+                    <label>Completed</label>
                 </value>
                 <value>
                     <fullName>Accepted</fullName>
                     <default>false</default>
+                    <label>Accepted</label>
                 </value>
                 <value>
                     <fullName>Change Requested</fullName>
                     <default>false</default>
+                    <label>Change Requested</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1995,22 +2007,27 @@ text( Type__c ) = &apos;Termination&apos;)</formula>
                 <value>
                     <fullName>Schedule Change</fullName>
                     <default>false</default>
+                    <label>Schedule Change</label>
                 </value>
                 <value>
                     <fullName>Budget Change</fullName>
                     <default>false</default>
+                    <label>Budget Change</label>
                 </value>
                 <value>
                     <fullName>Personnel Change</fullName>
                     <default>false</default>
+                    <label>Personnel Change</label>
                 </value>
                 <value>
                     <fullName>Project Change</fullName>
                     <default>false</default>
+                    <label>Project Change</label>
                 </value>
                 <value>
                     <fullName>Other</fullName>
                     <default>false</default>
+                    <label>Other</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -2226,18 +2243,22 @@ text( Type__c ) = &apos;Termination&apos;)</formula>
                 <value>
                     <fullName>Federally Mandated</fullName>
                     <default>false</default>
+                    <label>Federally Mandated</label>
                 </value>
                 <value>
                     <fullName>Change In Scope/Plan</fullName>
                     <default>false</default>
+                    <label>Change In Scope/Plan</label>
                 </value>
                 <value>
                     <fullName>Internal Decision</fullName>
                     <default>false</default>
+                    <label>Internal Decision</label>
                 </value>
                 <value>
                     <fullName>Recipient Request</fullName>
                     <default>false</default>
+                    <label>Recipient Request</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -2258,74 +2279,92 @@ text( Type__c ) = &apos;Termination&apos;)</formula>
                 <value>
                     <fullName>Created</fullName>
                     <default>true</default>
+                    <label>Created</label>
                 </value>
                 <value>
                     <fullName>Submitted for Approval</fullName>
                     <default>false</default>
+                    <label>Submitted for Approval</label>
                 </value>
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Submitted to Grantor</fullName>
                     <default>false</default>
+                    <label>Submitted to Grantor</label>
                 </value>
                 <value>
                     <fullName>Accepted</fullName>
                     <default>false</default>
+                    <label>Accepted</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
                 <value>
                     <fullName>Initiated</fullName>
                     <default>false</default>
+                    <label>Initiated</label>
                 </value>
                 <value>
                     <fullName>Completed</fullName>
                     <default>false</default>
+                    <label>Completed</label>
                 </value>
                 <value>
                     <fullName>Submitted to Applicant</fullName>
                     <default>false</default>
+                    <label>Submitted to Applicant</label>
                 </value>
                 <value>
                     <fullName>Review by Grant Monitor</fullName>
                     <default>false</default>
+                    <label>Review by Grant Monitor</label>
                 </value>
                 <value>
                     <fullName>Review by Project Officer</fullName>
                     <default>false</default>
+                    <label>Review by Project Officer</label>
                 </value>
                 <value>
                     <fullName>Review by Program Manager</fullName>
                     <default>false</default>
+                    <label>Review by Program Manager</label>
                 </value>
                 <value>
                     <fullName>Change Requested</fullName>
                     <default>false</default>
+                    <label>Change Requested</label>
                 </value>
                 <value>
                     <fullName>Revised</fullName>
                     <default>false</default>
+                    <label>Revised</label>
                 </value>
                 <value>
                     <fullName>Submitted for Internal Approval</fullName>
                     <default>false</default>
+                    <label>Submitted for Internal Approval</label>
                 </value>
                 <value>
                     <fullName>Approved Internally</fullName>
                     <default>false</default>
+                    <label>Approved Internally</label>
                 </value>
                 <value>
                     <fullName>Approved by Grantor</fullName>
                     <default>false</default>
+                    <label>Approved by Grantor</label>
                 </value>
                 <value>
                     <fullName>Active</fullName>
                     <default>false</default>
+                    <label>Active</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -2358,82 +2397,102 @@ text( Type__c ) = &apos;Termination&apos;)</formula>
                 <value>
                     <fullName>Incurred Pre-Award Costs</fullName>
                     <default>false</default>
+                    <label>Incurred Pre-Award Costs</label>
                 </value>
                 <value>
                     <fullName>Change of Key Personnel</fullName>
                     <default>false</default>
+                    <label>Change of Key Personnel</label>
                 </value>
                 <value>
                     <fullName>Fixed Price Sub-Awards Issuance</fullName>
                     <default>false</default>
+                    <label>Fixed Price Sub-Awards Issuance</label>
                 </value>
                 <value>
                     <fullName>Change in Cost Sharing</fullName>
                     <default>false</default>
+                    <label>Change in Cost Sharing</label>
                 </value>
                 <value>
                     <fullName>Program Income Adjustment</fullName>
                     <default>false</default>
+                    <label>Program Income Adjustment</label>
                 </value>
                 <value>
                     <fullName>Revision of Project Scope and Plan</fullName>
                     <default>false</default>
+                    <label>Revision of Project Scope and Plan</label>
                 </value>
                 <value>
                     <fullName>Revision of Spend Plan or Amounts</fullName>
                     <default>false</default>
+                    <label>Revision of Spend Plan or Amounts</label>
                 </value>
                 <value>
                     <fullName>Revision of Direct Cost</fullName>
                     <default>false</default>
+                    <label>Revision of Direct Cost</label>
                 </value>
                 <value>
                     <fullName>Compensation - Personal Services</fullName>
                     <default>false</default>
+                    <label>Compensation - Personal Services</label>
                 </value>
                 <value>
                     <fullName>Compensation - Fringe Benefits</fullName>
                     <default>false</default>
+                    <label>Compensation - Fringe Benefits</label>
                 </value>
                 <value>
                     <fullName>Adding Entertainment Cost</fullName>
                     <default>false</default>
+                    <label>Adding Entertainment Cost</label>
                 </value>
                 <value>
                     <fullName>Exchange Rate Fluctuations</fullName>
                     <default>false</default>
+                    <label>Exchange Rate Fluctuations</label>
                 </value>
                 <value>
                     <fullName>Fund Raising &amp; Investment Mgmt. Costs</fullName>
                     <default>false</default>
+                    <label>Fund Raising &amp; Investment Mgmt. Costs</label>
                 </value>
                 <value>
                     <fullName>Goods or Services for Personal Use</fullName>
                     <default>false</default>
+                    <label>Goods or Services for Personal Use</label>
                 </value>
                 <value>
                     <fullName>Insurance &amp; Indemnification</fullName>
                     <default>false</default>
+                    <label>Insurance &amp; Indemnification</label>
                 </value>
                 <value>
                     <fullName>Organization Costs</fullName>
                     <default>false</default>
+                    <label>Organization Costs</label>
                 </value>
                 <value>
                     <fullName>Participant Support Costs</fullName>
                     <default>false</default>
+                    <label>Participant Support Costs</label>
                 </value>
                 <value>
                     <fullName>Rearrangement &amp; Re-conversion Costs</fullName>
                     <default>false</default>
+                    <label>Rearrangement &amp; Re-conversion Costs</label>
                 </value>
                 <value>
                     <fullName>Selling &amp; Marketing Costs</fullName>
                     <default>false</default>
+                    <label>Selling &amp; Marketing Costs</label>
                 </value>
                 <value>
                     <fullName>Changes to Travel Costs</fullName>
                     <default>false</default>
+                    <label>Changes to Travel Costs</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -2565,34 +2624,42 @@ text( Type__c ) = &apos;Termination&apos;)</formula>
                 <value>
                     <fullName>Cost-Extension</fullName>
                     <default>false</default>
+                    <label>Cost-Extension</label>
                 </value>
                 <value>
                     <fullName>No Cost-Extension</fullName>
                     <default>false</default>
+                    <label>No Cost-Extension</label>
                 </value>
                 <value>
                     <fullName>Award Increase/Decrease</fullName>
                     <default>false</default>
+                    <label>Award Increase/Decrease</label>
                 </value>
                 <value>
                     <fullName>Budget Revision</fullName>
                     <default>false</default>
+                    <label>Budget Revision</label>
                 </value>
                 <value>
                     <fullName>Project Change</fullName>
                     <default>false</default>
+                    <label>Project Change</label>
                 </value>
                 <value>
                     <fullName>Personnel Change</fullName>
                     <default>false</default>
+                    <label>Personnel Change</label>
                 </value>
                 <value>
                     <fullName>Continuation</fullName>
                     <default>false</default>
+                    <label>Continuation</label>
                 </value>
                 <value>
                     <fullName>Grantee Amendment Request</fullName>
                     <default>false</default>
+                    <label>Grantee Amendment Request</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -3825,4 +3892,5 @@ NoCostExtension__c,BudgetPeriodExtension__c,BudgetPeriodChange__c)</description>
         <errorConditionFormula>ISBLANK( Impact__c )</errorConditionFormula>
         <errorMessage>Impact filed cannot be left blank</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

@@ -50,6 +50,7 @@
     <description>[Business] This object stores all Budget Period Details.</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
@@ -309,18 +310,22 @@
                 <value>
                     <fullName>Open</fullName>
                     <default>true</default>
+                    <label>Open</label>
                 </value>
                 <value>
                     <fullName>Closed</fullName>
                     <default>false</default>
+                    <label>Closed</label>
                 </value>
                 <value>
                     <fullName>Active</fullName>
                     <default>false</default>
+                    <label>Active</label>
                 </value>
                 <value>
                     <fullName>Passive</fullName>
                     <default>false</default>
+                    <label>Passive</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -394,4 +399,5 @@ Grant__r.ProjectPeriodEndDate__c )) ,true,false)</errorConditionFormula>
         <errorConditionFormula>IF(AND($Setup.GNT__UserPreferences__c.GNT__ActiveAppName__c =&apos;StateasGrantee&apos;,FundingOpportunity__c !=null,OR(BudgetStartDate__c &lt;   FundingOpportunity__r.EstimatedProjectPeriodStartDate__c  ,BudgetStartDate__c &gt;  FundingOpportunity__r.EstimatedProjectPeriodEndDate__c  )) ,true,false)</errorConditionFormula>
         <errorMessage>Budget Period Start Date should be in between Estimated Project Period Start Date and End date of Opportunity</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

@@ -24,4 +24,5 @@ Reason for visit:
 Site Visit Attendees:
 {!SiteVisit__c.SiteVisitPersons__c}</textOnly>
     <type>html</type>
+    <uiType>Aloha</uiType>
 </EmailTemplate>

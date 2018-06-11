@@ -50,6 +50,7 @@
     <description>[Business]  Stores all the information related toe the Award Contact</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -143,22 +144,27 @@
                 <value>
                     <fullName>Program Contact</fullName>
                     <default>false</default>
+                    <label>Program Contact</label>
                 </value>
                 <value>
                     <fullName>Fiscal Contact</fullName>
                     <default>false</default>
+                    <label>Fiscal Contact</label>
                 </value>
                 <value>
                     <fullName>Federal/Sponsor Contact</fullName>
                     <default>false</default>
+                    <label>Federal/Sponsor Contact</label>
                 </value>
                 <value>
                     <fullName>Signature Authority</fullName>
                     <default>false</default>
+                    <label>Signature Authority</label>
                 </value>
                 <value>
                     <fullName>KeyPOC</fullName>
                     <default>false</default>
+                    <label>KeyPOC</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -182,4 +188,5 @@
     <pluralLabel>Grant Contacts</pluralLabel>
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

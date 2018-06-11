@@ -1,9 +1,0 @@
-<apex:page sidebar="false" showHeader="false" standardStylesheets="false">
-  <c:ExternalLibrary /> 
-    <apex:composition template="GNT__PhaseTemplate"> 
-        <apex:define name="body"> 
-            <c:FlexTable flexTableName="ManageChartsOnProfile" tableId="ManageChartsOnProfile" headerDescription="" /> 
-            <c:FlexTable flexTableName="ManageUsersCharts" tableId="ManageUsersCharts" headerDescription="" /> 
-        </apex:define> 
-    </apex:composition>
-</apex:page>

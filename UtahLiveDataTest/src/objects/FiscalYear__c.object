@@ -48,6 +48,7 @@
     <description>[Business] Stores the Fiscal Year information (Need to revisit)</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -139,10 +140,12 @@
                 <value>
                     <fullName>State</fullName>
                     <default>true</default>
+                    <label>State</label>
                 </value>
                 <value>
                     <fullName>Federal</fullName>
                     <default>false</default>
+                    <label>Federal</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -169,18 +172,22 @@
                 <value>
                     <fullName>Draft</fullName>
                     <default>false</default>
+                    <label>Draft</label>
                 </value>
                 <value>
                     <fullName>Active</fullName>
                     <default>true</default>
+                    <label>Active</label>
                 </value>
                 <value>
                     <fullName>Passive</fullName>
                     <default>false</default>
+                    <label>Passive</label>
                 </value>
                 <value>
                     <fullName>Inactive</fullName>
                     <default>false</default>
+                    <label>Inactive</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -274,4 +281,5 @@
     </recordTypes>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

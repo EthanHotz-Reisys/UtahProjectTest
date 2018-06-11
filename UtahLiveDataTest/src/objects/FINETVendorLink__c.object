@@ -46,6 +46,7 @@
     <description>This is the custom object for the FINET Vendor Links</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
@@ -155,10 +156,12 @@
                 <value>
                     <fullName>IET</fullName>
                     <default>false</default>
+                    <label>IET</label>
                 </value>
                 <value>
                     <fullName>GAX</fullName>
                     <default>false</default>
+                    <label>GAX</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -177,4 +180,5 @@
     <pluralLabel>FINET Vendor Links</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

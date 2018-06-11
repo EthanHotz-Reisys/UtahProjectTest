@@ -46,6 +46,7 @@
     <description>[Business] This object is used for Budget Information forms.</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
@@ -200,10 +201,12 @@
                 <value>
                     <fullName>Administrative and legal expenses</fullName>
                     <default>false</default>
+                    <label>Administrative and legal expenses</label>
                 </value>
                 <value>
                     <fullName>Land, structures, rights-of-way, appraisals, etc</fullName>
                     <default>false</default>
+                    <label>Land, structures, rights-of-way, appraisals, etc</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -281,38 +284,47 @@
                 <value>
                     <fullName>a. Personnel</fullName>
                     <default>false</default>
+                    <label>a. Personnel</label>
                 </value>
                 <value>
                     <fullName>b. Fringe Benefits</fullName>
                     <default>false</default>
+                    <label>b. Fringe Benefits</label>
                 </value>
                 <value>
                     <fullName>c. Travel</fullName>
                     <default>false</default>
+                    <label>c. Travel</label>
                 </value>
                 <value>
                     <fullName>d. Equipment</fullName>
                     <default>false</default>
+                    <label>d. Equipment</label>
                 </value>
                 <value>
                     <fullName>e. Supplies</fullName>
                     <default>false</default>
+                    <label>e. Supplies</label>
                 </value>
                 <value>
                     <fullName>f. Contractual</fullName>
                     <default>false</default>
+                    <label>f. Contractual</label>
                 </value>
                 <value>
                     <fullName>g. Construction</fullName>
                     <default>false</default>
+                    <label>g. Construction</label>
                 </value>
                 <value>
                     <fullName>h. Other</fullName>
                     <default>false</default>
+                    <label>h. Other</label>
                 </value>
                 <value>
                     <fullName>j. Indirect Charges</fullName>
                     <default>false</default>
+                    <label>j. Indirect Charges</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -365,4 +377,5 @@
     <pluralLabel>Application Overflow Budget Information</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

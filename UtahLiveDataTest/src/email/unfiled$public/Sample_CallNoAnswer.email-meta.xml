@@ -4,7 +4,9 @@
     <description>Call No Answer follow up</description>
     <encodingKey>UTF-8</encodingKey>
     <name>SAMPLE: Called, But No Answer</name>
+    <relatedEntityType>Lead</relatedEntityType>
     <style>none</style>
     <subject>Just Missed You</subject>
     <type>custom</type>
+    <uiType>SFX_Sample</uiType>
 </EmailTemplate>

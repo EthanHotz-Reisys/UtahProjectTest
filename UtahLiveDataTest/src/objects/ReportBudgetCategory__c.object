@@ -46,6 +46,7 @@
     <description>[Business] Defines all the Budget Categories for the Report and Progress Report Details</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>true</enableReports>
@@ -98,14 +99,17 @@
                 <value>
                     <fullName>Internal</fullName>
                     <default>false</default>
+                    <label>Internal</label>
                 </value>
                 <value>
                     <fullName>Federal</fullName>
                     <default>false</default>
+                    <label>Federal</label>
                 </value>
                 <value>
                     <fullName>Non Profit</fullName>
                     <default>false</default>
+                    <label>Non Profit</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -133,18 +137,22 @@
                 <value>
                     <fullName>Program Income</fullName>
                     <default>false</default>
+                    <label>Program Income</label>
                 </value>
                 <value>
                     <fullName>Federal Cash</fullName>
                     <default>false</default>
+                    <label>Federal Cash</label>
                 </value>
                 <value>
                     <fullName>Recipient Share</fullName>
                     <default>false</default>
+                    <label>Recipient Share</label>
                 </value>
                 <value>
                     <fullName>Federal Expenditures</fullName>
                     <default>false</default>
+                    <label>Federal Expenditures</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -162,4 +170,5 @@
     <pluralLabel>Report Budget Categories</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

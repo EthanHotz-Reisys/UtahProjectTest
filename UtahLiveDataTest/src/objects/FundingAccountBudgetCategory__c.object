@@ -46,6 +46,7 @@
     <description>[Business] Mapping Object for Funding Sources and Budget Categories</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -206,4 +207,5 @@
         <errorConditionFormula>Amount__c  &gt;  AmountAllocated__c</errorConditionFormula>
         <errorMessage>Please Enter Encumbered Amount less than Allocated Amount</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

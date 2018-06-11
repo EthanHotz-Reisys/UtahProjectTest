@@ -46,6 +46,7 @@
     <description>[Business] Used to Store the Schedule of of Task in WBS Grid</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -170,22 +171,27 @@
                 <value>
                     <fullName>Created</fullName>
                     <default>true</default>
+                    <label>Created</label>
                 </value>
                 <value>
                     <fullName>Assigned</fullName>
                     <default>false</default>
+                    <label>Assigned</label>
                 </value>
                 <value>
                     <fullName>In-Progress</fullName>
                     <default>false</default>
+                    <label>In-Progress</label>
                 </value>
                 <value>
                     <fullName>Completed</fullName>
                     <default>false</default>
+                    <label>Completed</label>
                 </value>
                 <value>
                     <fullName>Incomplete</fullName>
                     <default>false</default>
+                    <label>Incomplete</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -230,4 +236,5 @@
         <errorConditionFormula>ProgressIndicator__c&lt;0</errorConditionFormula>
         <errorMessage>Please do not enter a negative value</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

@@ -7,4 +7,5 @@
     <style>none</style>
     <subject>A Draft Application for {!Application__c.Title__c} has been Created</subject>
     <type>text</type>
+    <uiType>Aloha</uiType>
 </EmailTemplate>

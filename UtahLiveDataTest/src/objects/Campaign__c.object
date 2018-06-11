@@ -46,6 +46,7 @@
     <description>This object will store Campaign Details .</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
@@ -212,18 +213,22 @@
                 <value>
                     <fullName>Created</fullName>
                     <default>true</default>
+                    <label>Created</label>
                 </value>
                 <value>
                     <fullName>Updated</fullName>
                     <default>false</default>
+                    <label>Updated</label>
                 </value>
                 <value>
                     <fullName>Closed</fullName>
                     <default>false</default>
+                    <label>Closed</label>
                 </value>
                 <value>
                     <fullName>Sent</fullName>
                     <default>false</default>
+                    <label>Sent</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -261,4 +266,5 @@
         <errorConditionFormula>StartDate__c &lt; TODAY()</errorConditionFormula>
         <errorMessage>Campaign Start Date should not be less than Today’s Date</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

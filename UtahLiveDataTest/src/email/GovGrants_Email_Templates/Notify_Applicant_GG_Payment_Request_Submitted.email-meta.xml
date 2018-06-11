@@ -8,4 +8,5 @@
     <style>formalLetter</style>
     <subject>Notification: Payment Request #{!PaymentRequest__c.Name} Approval Task Assigned to You.</subject>
     <type>html</type>
+    <uiType>Aloha</uiType>
 </EmailTemplate>

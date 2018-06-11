@@ -46,6 +46,7 @@
     <description>This object is basically the main form object to be used to build the USBE forms</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -66,10 +67,12 @@
                 <value>
                     <fullName>YES</fullName>
                     <default>false</default>
+                    <label>YES</label>
                 </value>
                 <value>
                     <fullName>NO</fullName>
                     <default>false</default>
+                    <label>NO</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -350,4 +353,5 @@
     <pluralLabel>USBEForms</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

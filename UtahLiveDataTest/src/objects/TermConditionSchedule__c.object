@@ -48,6 +48,7 @@
     <description>[Business] Schedule for the Terms and Conditions</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -251,10 +252,12 @@
                 <value>
                     <fullName>Not Started</fullName>
                     <default>false</default>
+                    <label>Not Started</label>
                 </value>
                 <value>
                     <fullName>Completed</fullName>
                     <default>false</default>
+                    <label>Completed</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -352,4 +355,5 @@
         <errorDisplayField>StartDate__c</errorDisplayField>
         <errorMessage>Start Date cannot be after the End date</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

@@ -11,4 +11,5 @@
 
 Create Site Visit Report</textOnly>
     <type>html</type>
+    <uiType>Aloha</uiType>
 </EmailTemplate>

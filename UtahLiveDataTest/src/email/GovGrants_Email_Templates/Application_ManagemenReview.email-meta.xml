@@ -8,4 +8,5 @@
     <style>formalLetter</style>
     <subject>Notification: You are Requested to start Management Review the Applications for Announcement {!Application__c.Announcement__c}</subject>
     <type>html</type>
+    <uiType>Aloha</uiType>
 </EmailTemplate>

@@ -50,6 +50,7 @@
     <description>[Business] Connects the Application/Pre-Application with the User and Review Step via this object</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -236,14 +237,17 @@
                 <value>
                     <fullName>Pending</fullName>
                     <default>true</default>
+                    <label>Pending</label>
                 </value>
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -618,18 +622,22 @@ ISPICKVAL (Application__r.AwardDecisionStatus__c,&apos;Revision Initiated&apos;)
                 <value>
                     <fullName>Pending</fullName>
                     <default>true</default>
+                    <label>Pending</label>
                 </value>
                 <value>
                     <fullName>Incomplete</fullName>
                     <default>false</default>
+                    <label>Incomplete</label>
                 </value>
                 <value>
                     <fullName>Complete</fullName>
                     <default>false</default>
+                    <label>Complete</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -967,26 +975,32 @@ ISPICKVAL(Application__r.Announcement__r.Program__r.ProgramPathway__c, &apos;Lum
                 <value>
                     <fullName>Reviewers Not Assigned</fullName>
                     <default>true</default>
+                    <label>Reviewers Not Assigned</label>
                 </value>
                 <value>
                     <fullName>Reviewers Assigned</fullName>
                     <default>false</default>
+                    <label>Reviewers Assigned</label>
                 </value>
                 <value>
                     <fullName>Review In Progress</fullName>
                     <default>false</default>
+                    <label>Review In Progress</label>
                 </value>
                 <value>
                     <fullName>Reviews Complete</fullName>
                     <default>false</default>
+                    <label>Reviews Complete</label>
                 </value>
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1227,4 +1241,5 @@ IF((ReviewStep__r.ScoringThreshold__c) == 0,&apos;&apos;,if(ReviewStep__r.Scorin
         <errorConditionFormula>If(	RecommendedAmount__c&gt;RequestedAmount__c, true,false)</errorConditionFormula>
         <errorMessage>Recommended Amount can not be more than Requested Amount</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

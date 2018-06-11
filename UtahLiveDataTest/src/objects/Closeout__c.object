@@ -50,6 +50,7 @@
     <description>[Business] All the close out information is stored on this object</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>true</enableFeeds>
     <enableHistory>true</enableHistory>
@@ -309,18 +310,22 @@
                 <value>
                     <fullName>Requested</fullName>
                     <default>false</default>
+                    <label>Requested</label>
                 </value>
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
                 <value>
                     <fullName>Not Requested</fullName>
                     <default>false</default>
+                    <label>Not Requested</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -993,30 +998,37 @@
                 <value>
                     <fullName>Created</fullName>
                     <default>true</default>
+                    <label>Created</label>
                 </value>
                 <value>
                     <fullName>Notified</fullName>
                     <default>false</default>
+                    <label>Notified</label>
                 </value>
                 <value>
                     <fullName>Submitted for Approval</fullName>
                     <default>false</default>
+                    <label>Submitted for Approval</label>
                 </value>
                 <value>
                     <fullName>Approved</fullName>
                     <default>false</default>
+                    <label>Approved</label>
                 </value>
                 <value>
                     <fullName>Rejected</fullName>
                     <default>false</default>
+                    <label>Rejected</label>
                 </value>
                 <value>
                     <fullName>Notification Accepted</fullName>
                     <default>false</default>
+                    <label>Notification Accepted</label>
                 </value>
                 <value>
                     <fullName>Completed</fullName>
                     <default>false</default>
+                    <label>Completed</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1122,14 +1134,17 @@
                 <value>
                     <fullName>Termination</fullName>
                     <default>false</default>
+                    <label>Termination</label>
                 </value>
                 <value>
                     <fullName>Annual Closeout</fullName>
                     <default>false</default>
+                    <label>Annual Closeout</label>
                 </value>
                 <value>
                     <fullName>Grant Closeout</fullName>
                     <default>false</default>
+                    <label>Grant Closeout</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1205,4 +1220,5 @@
         <errorDisplayField>LockDate__c</errorDisplayField>
         <errorMessage>Lock Date cannot be less than Today</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

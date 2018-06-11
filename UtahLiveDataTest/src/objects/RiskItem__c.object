@@ -50,6 +50,7 @@
     <description>[Business] Individual Risk Item based on which the Risk Assessment is done</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -176,14 +177,17 @@
                 <value>
                     <fullName>Low</fullName>
                     <default>false</default>
+                    <label>Low</label>
                 </value>
                 <value>
                     <fullName>Medium</fullName>
                     <default>false</default>
+                    <label>Medium</label>
                 </value>
                 <value>
                     <fullName>High</fullName>
                     <default>false</default>
+                    <label>High</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -235,14 +239,17 @@
                 <value>
                     <fullName>Low</fullName>
                     <default>false</default>
+                    <label>Low</label>
                 </value>
                 <value>
                     <fullName>Medium</fullName>
                     <default>false</default>
+                    <label>Medium</label>
                 </value>
                 <value>
                     <fullName>High</fullName>
                     <default>false</default>
+                    <label>High</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -306,14 +313,17 @@
                 <value>
                     <fullName>Progress Report</fullName>
                     <default>false</default>
+                    <label>Progress Report</label>
                 </value>
                 <value>
                     <fullName>Site Visit</fullName>
                     <default>false</default>
+                    <label>Site Visit</label>
                 </value>
                 <value>
                     <fullName>Performance Review</fullName>
                     <default>false</default>
+                    <label>Performance Review</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -331,14 +341,17 @@
                 <value>
                     <fullName>Open</fullName>
                     <default>true</default>
+                    <label>Open</label>
                 </value>
                 <value>
                     <fullName>In-Progress</fullName>
                     <default>false</default>
+                    <label>In-Progress</label>
                 </value>
                 <value>
                     <fullName>Closed</fullName>
                     <default>false</default>
+                    <label>Closed</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -368,10 +381,12 @@
                 <value>
                     <fullName>Internal</fullName>
                     <default>false</default>
+                    <label>Internal</label>
                 </value>
                 <value>
                     <fullName>External</fullName>
                     <default>false</default>
+                    <label>External</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -398,4 +413,5 @@
         <errorConditionFormula>RiskIdentifiedDate__c &gt; Today()</errorConditionFormula>
         <errorMessage>Risk Identified Date can not be after Today</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>

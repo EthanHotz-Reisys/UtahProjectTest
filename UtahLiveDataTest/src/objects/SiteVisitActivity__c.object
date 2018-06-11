@@ -50,6 +50,7 @@
     <description>[Business] Site Visit Activity information is stored in this object it provides the detailed information about the Site Visits Activities</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
@@ -92,14 +93,17 @@
                 <value>
                     <fullName>Discussed</fullName>
                     <default>false</default>
+                    <label>Discussed</label>
                 </value>
                 <value>
                     <fullName>Not Discussed</fullName>
                     <default>false</default>
+                    <label>Not Discussed</label>
                 </value>
                 <value>
                     <fullName>Not Started</fullName>
                     <default>false</default>
+                    <label>Not Started</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -277,4 +281,5 @@
     </recordTypes>
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

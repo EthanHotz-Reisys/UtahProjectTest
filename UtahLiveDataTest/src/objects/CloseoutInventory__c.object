@@ -50,6 +50,7 @@
     <description>[Business] Object to Store the Close out Request Details</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
@@ -149,18 +150,22 @@
                 <value>
                     <fullName>Created</fullName>
                     <default>false</default>
+                    <label>Created</label>
                 </value>
                 <value>
                     <fullName>New</fullName>
                     <default>false</default>
+                    <label>New</label>
                 </value>
                 <value>
                     <fullName>Unused/Residual</fullName>
                     <default>false</default>
+                    <label>Unused/Residual</label>
                 </value>
                 <value>
                     <fullName>Old</fullName>
                     <default>false</default>
+                    <label>Old</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -271,4 +276,5 @@
         <errorConditionFormula>DueDate__c &lt; TODAY()</errorConditionFormula>
         <errorMessage>Due Date cannot be a past Date</errorMessage>
     </validationRules>
+    <visibility>Public</visibility>
 </CustomObject>
